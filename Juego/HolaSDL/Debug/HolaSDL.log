@@ -1,0 +1,22 @@
+﻿  objeto.cpp
+  estado.cpp
+c:\users\alejandro\desktop\serious-train\juego\holasdl\estado.cpp(15): error C2065: 'objetos': identificador no declarado
+c:\users\alejandro\desktop\serious-train\juego\holasdl\estado.cpp(15): error C2228: el operando izquierdo de '.size' debe tener class/struct/union
+  c:\users\alejandro\desktop\serious-train\juego\holasdl\estado.cpp(15): note: el tipo es 'unknown-type'
+c:\users\alejandro\desktop\serious-train\juego\holasdl\estado.cpp(16): error C2065: 'objetos': identificador no declarado
+c:\users\alejandro\desktop\serious-train\juego\holasdl\estado.cpp(16): error C2227: el operando izquierdo de '->draw' debe señalar al tipo class/struct/union/generic
+c:\users\alejandro\desktop\serious-train\juego\holasdl\estado.cpp(24): error C2065: 'objetos': identificador no declarado
+c:\users\alejandro\desktop\serious-train\juego\holasdl\estado.cpp(24): error C2228: el operando izquierdo de '.size' debe tener class/struct/union
+  c:\users\alejandro\desktop\serious-train\juego\holasdl\estado.cpp(24): note: el tipo es 'unknown-type'
+c:\users\alejandro\desktop\serious-train\juego\holasdl\estado.cpp(27): error C2065: 'objetos': identificador no declarado
+c:\users\alejandro\desktop\serious-train\juego\holasdl\estado.cpp(27): error C2227: el operando izquierdo de '->onClick' debe señalar al tipo class/struct/union/generic
+c:\users\alejandro\desktop\serious-train\juego\holasdl\estado.cpp(37): error C2065: 'objetos': identificador no declarado
+c:\users\alejandro\desktop\serious-train\juego\holasdl\estado.cpp(37): error C2228: el operando izquierdo de '.size' debe tener class/struct/union
+  c:\users\alejandro\desktop\serious-train\juego\holasdl\estado.cpp(37): note: el tipo es 'unknown-type'
+c:\users\alejandro\desktop\serious-train\juego\holasdl\estado.cpp(38): error C2065: 'objetos': identificador no declarado
+c:\users\alejandro\desktop\serious-train\juego\holasdl\estado.cpp(38): error C2227: el operando izquierdo de '->update' debe señalar al tipo class/struct/union/generic
+  Generando código...
+  Compilando...
+  main.cpp
+  Juego.cpp
+  Generando código...
