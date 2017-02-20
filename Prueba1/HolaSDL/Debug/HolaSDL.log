@@ -1,8 +1,0 @@
-﻿  PlayPG.cpp
-c:\users\alejandro\desktop\prueba1\holasdl\playpg.cpp(70): warning C4018: '<': no coinciden signed/unsigned
-c:\users\alejandro\desktop\prueba1\holasdl\playpg.cpp(75): warning C4018: '<': no coinciden signed/unsigned
-  JuegoPG.cpp
-c:\users\alejandro\desktop\prueba1\holasdl\juegopg.cpp(101): warning C4018: '<': no coinciden signed/unsigned
-  Generando código...
-  HolaSDL.vcxproj -> C:\Users\Alejandro\Desktop\Prueba1\bin\HolaSDLDebug.exe
-  HolaSDL.vcxproj -> C:\Users\Alejandro\Desktop\Prueba1\bin\HolaSDLDebug.pdb (Full PDB)
