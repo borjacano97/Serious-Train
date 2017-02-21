@@ -71,6 +71,7 @@
     <ClCompile Include="Juego.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="objeto.cpp" />
+    <ClCompile Include="play.cpp" />
     <ClCompile Include="texturas.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -78,6 +79,7 @@
     <ClInclude Include="estado.h" />
     <ClInclude Include="Juego.h" />
     <ClInclude Include="objeto.h" />
+    <ClInclude Include="play.h" />
     <ClInclude Include="raizEstado.h" />
     <ClInclude Include="raizObjeto.h" />
     <ClInclude Include="texturas.h" />

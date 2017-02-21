@@ -10,17 +10,30 @@ estado::~estado()
 {
 }
 
-void raizEstado::draw() {
-	
+void estado::draw() {
+	for (int i = 0; i < objetos.size(); i++) {
+		objetos[i]->draw();
+	}
 }
 
 
-void raizEstado::onClick() {
-	
+void estado::onClick() {
+	bool clickeado = false; //igual que en juegoPG
+
+	int i = objetos.size() - 1;
+	while (!clickeado && i >= 0)
+	{
+		if (objetos[i]->onClick())
+			clickeado = true;
+
+		i--;
+	}
 
 }
 
 
-void raizEstado::update() {
-	
+void estado::update() {
+	for (int i = 0; i < objetos.size(); i++) {
+		objetos[i]->update();
+	}
 }

@@ -1,5 +1,6 @@
 ﻿#include "Juego.h"
 #include "error.h"
+#include "play.h"
 
 #include <iostream>
 #include <typeinfo>
@@ -22,6 +23,9 @@ Juego::Juego()
 
 	espera = false;
 	gameOver = false;
+	exit = false;
+
+	estados.push(new play(this)); // estado que queremos inicial
 }
 
 
@@ -79,7 +83,7 @@ bool Juego::initSDL() {
 	else {
 		//Create window: SDL_CreateWindow("SDL Hello World", posX, posY, width, height, SDL_WINDOW_SHOWN);
 		//le paso el tama�o que quiero que tenga la ventana de mi juego
-		pWin = SDL_CreateWindow("SDL Hello World", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 800, 800, SDL_WINDOW_SHOWN);
+		pWin = SDL_CreateWindow("SDL Hello World", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 600, 600, SDL_WINDOW_SHOWN);
 		if (pWin == nullptr) {
 			throw error("Window could not be created!");///////////////
 
@@ -120,6 +124,7 @@ void Juego::render() { //const
 	//fondo
 	texts[0]->draw(pRender, nullptr, nullptr);
 
+	topEstado()->draw();
 	SDL_RenderPresent(pRender);
 }
 
@@ -143,4 +148,43 @@ void Juego::run()
 	
 	SDL_Delay(1000);
 	//std::cin.get();
+}
+
+void Juego::onClick(int pmx, int pmy) { //se guardan las posiciones que pasan por par�metro
+	mx = e.button.x;
+	my = e.button.y;
+	topEstado()->onClick();
+}
+
+void Juego::update() { //el juego corre mientras existan globos en el juego (aunque puede ser pausado)
+
+	topEstado()->update();
+}
+
+
+bool Juego::handle_event() { //eventos del teclado y raton
+	while (SDL_PollEvent(&e) && !exit) {
+		if (e.type == SDL_QUIT) {
+			exit = true;
+			std::cout << "QUIT";
+		}
+		/*else if (e.type == SDL_KEYUP) {
+			if (e.key.keysym.sym = SDLK_ESCAPE) {
+				pushState(new Pausa(this));
+				std::cout << "PAUSE \n";
+			}
+		}*/
+		else if (e.type == SDL_MOUSEBUTTONUP) { // click izquierdo para llamar al onclick
+			if (e.button.button == SDL_BUTTON_LEFT) {
+				onClick(e.button.x, e.button.y);
+
+			}
+		}
+	}
+
+	return espera;
+}
+
+raizEstado * Juego::topEstado() {
+	return estados.top();
 }

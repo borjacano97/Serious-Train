@@ -1,4 +1,4 @@
-﻿  estado.cpp
-Juego.obj : error LNK2019: sÝmbolo externo "private: void __thiscall Juego::update(void)" (?update@Juego@@AAEXXZ) sin resolver al que se hace referencia en la funci¾n "public: void __thiscall Juego::run(void)" (?run@Juego@@QAEXXZ)
-Juego.obj : error LNK2019: sÝmbolo externo "private: bool __thiscall Juego::handle_event(void)" (?handle_event@Juego@@AAE_NXZ) sin resolver al que se hace referencia en la funci¾n "public: void __thiscall Juego::run(void)" (?run@Juego@@QAEXXZ)
-C:\Users\Alejandro\Desktop\Serious-Train\Juego\bin\HolaSDLDebug.exe : fatal error LNK1120: 2 externos sin resolver
+﻿  Juego.cpp
+c:\users\alejandro\desktop\serious-train\juego\holasdl\juego.cpp(64): warning C4018: '<': no coinciden signed/unsigned
+  HolaSDL.vcxproj -> C:\Users\Alejandro\Desktop\Serious-Train\Juego\bin\HolaSDLDebug.exe
+  HolaSDL.vcxproj -> C:\Users\Alejandro\Desktop\Serious-Train\Juego\bin\HolaSDLDebug.pdb (Full PDB)
