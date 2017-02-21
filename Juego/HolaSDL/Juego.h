@@ -14,13 +14,32 @@ public:
 	Juego();
 	~Juego();
 
+	
+
+	enum Texturas_t { TFondo, TPersonaje, TEnemigoT, Tren};
+	texturas* getTextura(Texturas_t et) const { return texts[et]; }
+	SDL_Renderer* getRender() const;
+
+	void initMedia(); // métodos para cargar y borrar texturas
+	void freeMedia();
+
 	void run(); // método principal (bucle del juego)
 
-	// void initMedia(); // métodos para cargar y borrar texturas
-	//void freeMedia();
-
 private:
-	//bool initSDL(); //ventana de render SDL (pantalla)
-	//void closeSDL();
+	SDL_Window * pWin = nullptr;
+	SDL_Renderer* pRender = nullptr;
+	SDL_Event e;
+
+	std::string ntexturas[4];
+	std::vector<texturas*> texts;
+	bool initSDL(); //ventana de render SDL (pantalla)
+	void closeSDL();
+	void render(); //const
+	void onClick(int pmx, int pmy);
+	void update();
+	bool handle_event();
+	void onExit();
+
+	bool espera, gameOver;
 };
 
