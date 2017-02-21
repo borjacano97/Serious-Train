@@ -29,3 +29,11 @@ void personaje::draw() {
 	juegootp->getTextura(Ttextura)->draw(render, nullptr, &rect);
 	
 }
+
+bool personaje::onClick() {
+	return true;
+}
+
+void personaje::update() {
+
+}

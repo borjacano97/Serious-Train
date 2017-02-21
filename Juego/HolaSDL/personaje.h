@@ -7,6 +7,8 @@ public:
 	personaje(Juego* juego, Juego::Texturas_t text, int x, int y);
 	~personaje();
 	void draw();
+	void update();
+	bool onClick();
 	
 
 private:
