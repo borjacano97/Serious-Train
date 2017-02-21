@@ -12,7 +12,10 @@ public:
 protected: // son protegidas porque las subclases usan estas variables, si no serían privadas
 
 	Juego* juegootp;
-	//Juego::Texturas_t Ttextura; // array de texturas (aún no declarado en Juego)
+	Juego::Texturas_t Ttextura; // array de texturas (aún no declarado en Juego)
 		
+	int alto, ancho; // tamaño del objeto
+
+	int pimgx, pimgy; //posición del objeto
 };
 

@@ -123,6 +123,8 @@ void Juego::render() { //const
 
 	//fondo
 	texts[0]->draw(pRender, nullptr, nullptr);
+	//tren
+	texts[3]->draw(pRender, nullptr, nullptr);
 
 	topEstado()->draw();
 	SDL_RenderPresent(pRender);

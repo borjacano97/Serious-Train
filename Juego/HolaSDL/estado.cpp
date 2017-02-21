@@ -18,7 +18,7 @@ void estado::draw() {
 
 
 void estado::onClick() {
-	bool clickeado = false; //igual que en juegoPG
+	bool clickeado = false; 
 
 	int i = objetos.size() - 1;
 	while (!clickeado && i >= 0)

@@ -1,4 +1,18 @@
-﻿  Juego.cpp
+﻿  estado.cpp
+c:\users\alejandro\desktop\serious-train\juego\holasdl\estado.cpp(14): warning C4018: '<': no coinciden signed/unsigned
+c:\users\alejandro\desktop\serious-train\juego\holasdl\estado.cpp(36): warning C4018: '<': no coinciden signed/unsigned
+  Generando código...
+  Compilando...
+  play.cpp
+c:\users\alejandro\desktop\serious-train\juego\holasdl\play.cpp(19): error C2259: 'personaje': no se puede crear una instancia de una clase abstract
+  c:\users\alejandro\desktop\serious-train\juego\holasdl\play.cpp(19): note: debido a los siguientes miembros:
+  c:\users\alejandro\desktop\serious-train\juego\holasdl\play.cpp(19): note: 'void raizObjeto::update(void)': es abstracto
+  c:\users\alejandro\desktop\serious-train\juego\holasdl\raizobjeto.h(14): note: vea la declaración de 'raizObjeto::update'
+  c:\users\alejandro\desktop\serious-train\juego\holasdl\play.cpp(19): note: 'bool raizObjeto::onClick(void)': es abstracto
+  c:\users\alejandro\desktop\serious-train\juego\holasdl\raizobjeto.h(15): note: vea la declaración de 'raizObjeto::onClick'
+  personaje.cpp
+  objeto.cpp
+  main.cpp
+  Juego.cpp
 c:\users\alejandro\desktop\serious-train\juego\holasdl\juego.cpp(64): warning C4018: '<': no coinciden signed/unsigned
-  HolaSDL.vcxproj -> C:\Users\Alejandro\Desktop\Serious-Train\Juego\bin\HolaSDLDebug.exe
-  HolaSDL.vcxproj -> C:\Users\Alejandro\Desktop\Serious-Train\Juego\bin\HolaSDLDebug.pdb (Full PDB)
+  Generando código...
