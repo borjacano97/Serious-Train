@@ -1,7 +1,7 @@
 #include "play.h"
 #include "estado.h"
 #include "personaje.h"
-
+#include "bala.h"
 
 play::play(Juego * j) : estado(j)
 {
@@ -25,7 +25,10 @@ bool play::initObjects() { // creación de los objetos dando un puntero, una text
 
 void play::freeObjects() {
 }
-
+void play::onClick(){
+	//objetos[0]->onClick();
+	objetos.emplace_back(new bala(ptsjuego, Juego::TPersonaje, 650, 350, true));
+}
 void play::update() {
 
 	estado::update();

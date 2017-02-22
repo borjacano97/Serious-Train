@@ -9,7 +9,6 @@ public:
 
 	void draw();
 	void update();
-	void onClick();
 protected:
 
 	Juego* ptsjuego;

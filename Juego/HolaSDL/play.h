@@ -8,6 +8,7 @@ public:
 	play(Juego * j);
 	~play();
 
+	void onClick();
 	void update();
 	void move(char c);
 private:

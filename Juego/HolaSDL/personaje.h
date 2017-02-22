@@ -8,10 +8,12 @@ public:
 	~personaje();
 	void draw();
 	void update();
-	bool onClick();
+	void onClick();
+	void move(char c);
 
 private:
-	
+	std::vector <raizObjeto*> balas; 
 	SDL_Rect rect;
+	bool izq;
 };
 

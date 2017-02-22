@@ -66,6 +66,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="bala.cpp" />
     <ClCompile Include="error.cpp" />
     <ClCompile Include="estado.cpp" />
     <ClCompile Include="Juego.cpp" />
@@ -76,6 +77,7 @@
     <ClCompile Include="texturas.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="bala.h" />
     <ClInclude Include="error.h" />
     <ClInclude Include="estado.h" />
     <ClInclude Include="Juego.h" />

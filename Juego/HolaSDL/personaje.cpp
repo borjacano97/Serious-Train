@@ -1,5 +1,5 @@
 #include "personaje.h"
-
+#include "bala.h"
 
 
 personaje::personaje(Juego* juego, Juego::Texturas_t text, int x, int y)
@@ -30,10 +30,21 @@ void personaje::draw() {
 	
 }
 
-bool personaje::onClick() {
-	return true;
-}
 
 void personaje::update() {
 
+}
+
+void personaje::onClick() {
+}
+void personaje::move(char c) {
+	if (c == 'W'){
+		if (pimgy >= 60)
+			pimgy -= 5;
+	}
+	else if (c == 'S'){
+		if (pimgy <= 540)
+			pimgy += 5;
+	}
+	
 }

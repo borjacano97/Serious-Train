@@ -18,19 +18,7 @@ void estado::draw() {
 }
 
 
-void estado::onClick() {
-	bool clickeado = false; 
 
-	int i = objetos.size() - 1;
-	while (!clickeado && i >= 0)
-	{
-		if (objetos[i]->onClick())
-			clickeado = true;
-
-		i--;
-	}
-
-}
 
 
 void estado::update() {

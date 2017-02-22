@@ -168,13 +168,12 @@ bool Juego::handle_event() { //eventos del teclado y raton
 	while (SDL_PollEvent(&e) && !exit) {
 		if (e.type == SDL_QUIT) {
 			exit = true;
-			std::cout << "QUIT";
 		}
-		/*else if (e.type == SDL_KEYUP) {
+		else if (e.type == SDL_KEYUP) {
 			if (e.key.keysym.sym = SDLK_ESCAPE) {
 				//pushState(new Pausa(this));				
 			}
-		}*/
+		}
 		else if (e.type == SDL_KEYDOWN){
 			if (e.key.keysym.sym == SDLK_s){
 				topEstado()->move('S');
@@ -186,8 +185,7 @@ bool Juego::handle_event() { //eventos del teclado y raton
 		
 		else if (e.type == SDL_MOUSEBUTTONUP) { // click izquierdo para llamar al onclick
 			if (e.button.button == SDL_BUTTON_LEFT) {
-				onClick(e.button.x, e.button.y);
-
+				topEstado()->onClick();
 			}
 		}
 	}
