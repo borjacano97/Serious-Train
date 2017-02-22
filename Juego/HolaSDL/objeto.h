@@ -8,7 +8,7 @@ public:
 	~objeto();
 	// Los métodos de raizObjeto los hereda y no hace falta ponerlos aqui
 	// Aún así hay que poner otros métodos aquí
-
+	void move(char c);
 protected: // son protegidas porque las subclases usan estas variables, si no serían privadas
 
 	Juego* juegootp;

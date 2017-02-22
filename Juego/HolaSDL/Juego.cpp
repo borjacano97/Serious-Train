@@ -83,7 +83,7 @@ bool Juego::initSDL() {
 	else {
 		//Create window: SDL_CreateWindow("SDL Hello World", posX, posY, width, height, SDL_WINDOW_SHOWN);
 		//le paso el tama�o que quiero que tenga la ventana de mi juego
-		pWin = SDL_CreateWindow("SDL Hello World", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 600, 600, SDL_WINDOW_SHOWN);
+		pWin = SDL_CreateWindow("SDL Hello World", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 1300, 700, SDL_WINDOW_SHOWN);
 		if (pWin == nullptr) {
 			throw error("Window could not be created!");///////////////
 
@@ -132,7 +132,7 @@ void Juego::render() { //const
 
 void Juego::run()
 {
-	Uint32 MSxUpdate = 500; // velocidad del juego
+	Uint32 MSxUpdate = 50; // velocidad del juego
 	std::cout << "PLAY \n";
 	Uint32 lastUpdate = SDL_GetTicks();
 	render();
@@ -172,10 +172,18 @@ bool Juego::handle_event() { //eventos del teclado y raton
 		}
 		/*else if (e.type == SDL_KEYUP) {
 			if (e.key.keysym.sym = SDLK_ESCAPE) {
-				pushState(new Pausa(this));
-				std::cout << "PAUSE \n";
+				//pushState(new Pausa(this));				
 			}
 		}*/
+		else if (e.type == SDL_KEYDOWN){
+			if (e.key.keysym.sym == SDLK_s){
+				topEstado()->move('S');
+			}
+			else if (e.key.keysym.sym == SDLK_w){
+				topEstado()->move('W');
+			}
+		}
+		
 		else if (e.type == SDL_MOUSEBUTTONUP) { // click izquierdo para llamar al onclick
 			if (e.button.button == SDL_BUTTON_LEFT) {
 				onClick(e.button.x, e.button.y);

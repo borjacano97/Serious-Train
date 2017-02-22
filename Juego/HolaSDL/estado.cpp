@@ -1,4 +1,5 @@
 #include "estado.h"
+#include "play.h"
 
 estado::estado(Juego * j)
 {
@@ -37,3 +38,4 @@ void estado::update() {
 		objetos[i]->update();
 	}
 }
+

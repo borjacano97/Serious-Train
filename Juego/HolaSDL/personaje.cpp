@@ -7,8 +7,8 @@ personaje::personaje(Juego* juego, Juego::Texturas_t text, int x, int y)
 	juegootp = juego;
 	Ttextura = text;
 
-	alto  = 500;
-	ancho = 500;
+	alto  = 50;
+	ancho = 50;
 
 	pimgx = x;
 	pimgy = y;

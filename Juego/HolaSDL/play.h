@@ -1,5 +1,6 @@
 #pragma once
 #include "estado.h"
+#include "personaje.h"
 
 class play: public estado
 {
@@ -8,9 +9,10 @@ public:
 	~play();
 
 	void update();
-
+	void move(char c);
 private:
 	bool initObjects(); //crear y destruir los objetos del juego
 	void freeObjects();
+
 };
 
