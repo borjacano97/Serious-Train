@@ -13,12 +13,13 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{28A4C5CD-307A-4FE6-81E4-4CE1F1E49AB4}</ProjectGuid>
     <RootNamespace>HolaSDL</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -69,7 +70,7 @@
     <ClCompile Include="bala.cpp" />
     <ClCompile Include="error.cpp" />
     <ClCompile Include="estado.cpp" />
-    <ClCompile Include="Juego.cpp" />
+    <ClCompile Include="game.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="objeto.cpp" />
     <ClCompile Include="personaje.cpp" />
@@ -80,7 +81,7 @@
     <ClInclude Include="bala.h" />
     <ClInclude Include="error.h" />
     <ClInclude Include="estado.h" />
-    <ClInclude Include="Juego.h" />
+    <ClInclude Include="game.h" />
     <ClInclude Include="objeto.h" />
     <ClInclude Include="personaje.h" />
     <ClInclude Include="play.h" />

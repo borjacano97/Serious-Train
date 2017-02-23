@@ -21,9 +21,6 @@
     <ClCompile Include="error.cpp">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
-    <ClCompile Include="Juego.cpp">
-      <Filter>Archivos de código fuente</Filter>
-    </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
@@ -42,15 +39,15 @@
     <ClCompile Include="bala.cpp">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
+    <ClCompile Include="game.cpp">
+      <Filter>Archivos de código fuente</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="texturas.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="error.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="Juego.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="raizEstado.h">
@@ -72,6 +69,9 @@
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="bala.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="game.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>

@@ -2,7 +2,7 @@
 #include "bala.h"
 
 
-personaje::personaje(Juego* juego, Juego::Texturas_t text, int x, int y)
+personaje::personaje(game* juego, game::Texturas_t text, int x, int y)
 {
 	juegootp = juego;
 	Ttextura = text;

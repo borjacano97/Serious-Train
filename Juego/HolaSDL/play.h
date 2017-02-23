@@ -5,7 +5,7 @@
 class play: public estado
 {
 public:
-	play(Juego * j);
+	play(game * j);
 	~play();
 
 	void onClick();

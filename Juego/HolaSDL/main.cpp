@@ -2,7 +2,7 @@
 
 #include "SDL.h"       //debe incluir SDL y texturas
 #include "texturas.h"
-#include "Juego.h"
+#include "game.h"
 #include "error.h"
 
 #include <iostream> 
@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 	// Hacer un try-catch en el main para posibles errores en texturas o SDL
 
 
-	Juego j;
+	game j;
 	
 	try {
 		j.run();

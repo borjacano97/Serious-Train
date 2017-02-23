@@ -1,7 +1,7 @@
 #include "bala.h"
 
 
-bala::bala(Juego* juego, Juego::Texturas_t text, int x, int y, bool i)
+bala::bala(game* juego, game::Texturas_t text, int x, int y, bool i)
 {
 
 	juegootp = juego;

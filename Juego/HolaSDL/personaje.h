@@ -4,7 +4,7 @@
 class personaje:public objeto
 {
 public:
-	personaje(Juego* juego, Juego::Texturas_t text, int x, int y);
+	personaje(game* juego, game::Texturas_t text, int x, int y);
 	~personaje();
 	void draw();
 	void update();

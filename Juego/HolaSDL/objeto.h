@@ -1,5 +1,5 @@
 #pragma once
-#include "Juego.h" // tiene que incluirse para que pueda heredar de raizObjeto, y para el puntero
+#include "game.h" // tiene que incluirse para que pueda heredar de raizObjeto, y para el puntero
 
 class objeto: public raizObjeto 
 {
@@ -12,8 +12,8 @@ public:
 
 protected: // son protegidas porque las subclases usan estas variables, si no serían privadas
 
-	Juego* juegootp;
-	Juego::Texturas_t Ttextura; // array de texturas (aún no declarado en Juego)
+	game* juegootp;
+	game::Texturas_t Ttextura; // array de texturas (aún no declarado en Juego)
 	
 
 	int alto, ancho; // tamaño del objeto

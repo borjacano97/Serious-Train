@@ -1,7 +1,7 @@
 #include "estado.h"
 #include "play.h"
 
-estado::estado(Juego * j)
+estado::estado(game * j)
 {
 	ptsjuego = j;
 }
