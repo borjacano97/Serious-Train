@@ -12,8 +12,8 @@ bala::bala(game* juego, game::Texturas_t text, int x, int y, bool i)
 
 	pimgx = x;
 	pimgy = y;
-	if (i)
-		vel *= -1;
+	std::cout << i;
+	if (i)	vel *= -1;
 }
 
 

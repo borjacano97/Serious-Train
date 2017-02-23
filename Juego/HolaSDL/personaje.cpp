@@ -38,13 +38,18 @@ void personaje::update() {
 void personaje::onClick() {
 }
 void personaje::move(char c) {
-	if (c == 'W'){
-		if (pimgy >= 60)
+	if (c == 'W' && pimgy >= 60){
 			pimgy -= 5;
 	}
-	else if (c == 'S'){
-		if (pimgy <= 540)
+	else if (c == 'S' && pimgy <= 540){
 			pimgy += 5;
 	}
-	
+	else if (c == 'A' && pimgx >= 580) {
+		izq = true;
+		pimgx -= 5;
+	}
+	else if (c == 'D' && pimgx <= 700) {
+		izq = false;
+		pimgx += 5;
+	}
 }

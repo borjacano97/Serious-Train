@@ -181,6 +181,12 @@ bool game::handle_event() { //eventos del teclado y raton
 			else if (e.key.keysym.sym == SDLK_w){
 				topEstado()->move('W');
 			}
+			else if (e.key.keysym.sym == SDLK_a) {
+				topEstado()->move('A');
+			}
+			else if (e.key.keysym.sym == SDLK_d) {
+				topEstado()->move('D');
+			}
 		}
 		
 		else if (e.type == SDL_MOUSEBUTTONUP) { // click izquierdo para llamar al onclick

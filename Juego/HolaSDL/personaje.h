@@ -14,6 +14,5 @@ public:
 private:
 	std::vector <raizObjeto*> balas; 
 	SDL_Rect rect;
-	bool izq;
 };
 
