@@ -30,7 +30,13 @@ void play::onClick(){
 	objetos.emplace_back(new bala(ptsjuego, game::TPersonaje, objetos[0]->getx(), objetos[0]->gety(), objetos[0]->getI()));
 }
 void play::update() {
+	for (int i = 0; i < objetos.size(); i++) {
+		if(objetos[i]->getx()<=100 && objetos[i]->getx() >= 1200){
+			delete objetos[i];
+			objetos[i] = nullptr;
+		}	
 
+	}
 	estado::update();
 }
 

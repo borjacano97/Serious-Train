@@ -18,8 +18,9 @@ protected: // son protegidas porque las subclases usan estas variables, si no se
 	game::Texturas_t Ttextura; // array de texturas (aún no declarado en Juego)
 	
 	bool izq;
+	bool destruido = false;
 	int alto, ancho; // tamaño del objeto
-
+	
 	int pimgx, pimgy; //posición del objeto
 };
 

@@ -175,18 +175,18 @@ bool game::handle_event() { //eventos del teclado y raton
 			}
 		}
 		else if (e.type == SDL_KEYDOWN){
-			if (e.key.keysym.sym == SDLK_s){
+			if (e.key.keysym.sym == SDLK_s){ //mov lateral
 				topEstado()->move('S');
 			}
 			else if (e.key.keysym.sym == SDLK_w){
 				topEstado()->move('W');
 			}
-			else if (e.key.keysym.sym == SDLK_a) {
+			if (e.key.keysym.sym == SDLK_a) {
 				topEstado()->move('A');
 			}
 			else if (e.key.keysym.sym == SDLK_d) {
 				topEstado()->move('D');
-			}
+			}			
 		}
 		
 		else if (e.type == SDL_MOUSEBUTTONUP) { // click izquierdo para llamar al onclick
@@ -194,6 +194,7 @@ bool game::handle_event() { //eventos del teclado y raton
 				topEstado()->onClick();
 			}
 		}
+
 	}
 
 	return espera;

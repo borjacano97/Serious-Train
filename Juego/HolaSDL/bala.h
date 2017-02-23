@@ -10,6 +10,7 @@ public:
 	void update();
 	void onClick();
 	void move(char c);
+	
 private:
 	int vel = 1;
 	SDL_Rect rect;

@@ -26,15 +26,24 @@ void bala::draw() {
 	rect.x = pimgx;
 	rect.y = pimgy;
 
-	SDL_Renderer* render = juegootp->getRender();
-	juegootp->getTextura(Ttextura)->draw(render, nullptr, &rect);
+	if (!destruido) {
+		SDL_Renderer* render = juegootp->getRender();
+		juegootp->getTextura(Ttextura)->draw(render, nullptr, &rect);
+	}
+	
 }
 
 void bala::onClick() {
 }
 
 void bala::update() {
+	if (pimgx <= 100 || pimgx >=1200){
+		destruido = true;	
+	}
+		
 	pimgx += vel;
+
+
 }
 void bala::move(char c){
 

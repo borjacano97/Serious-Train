@@ -13,8 +13,9 @@ estado::~estado()
 
 void estado::draw() {
 	for (int i = 0; i < objetos.size(); i++) {
-		objetos[i]->draw();
-	}
+		if (objetos[i] != nullptr)
+		    objetos[i]->draw();
+	}	
 }
 
 
@@ -23,7 +24,8 @@ void estado::draw() {
 
 void estado::update() {
 	for (int i = 0; i < objetos.size(); i++) {
-		objetos[i]->update();
+		if (objetos[i] != nullptr)
+		    objetos[i]->update();
 	}
 }
 
