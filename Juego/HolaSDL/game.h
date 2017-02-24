@@ -45,5 +45,6 @@ private:
 
 	bool espera, gameOver, exit;
 	int mx, my;
+	int cadencia;
 };
 

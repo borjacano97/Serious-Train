@@ -17,5 +17,6 @@ public:
 	virtual int getx() = 0;
 	virtual int gety() = 0;
 	virtual bool getI() = 0;
+	virtual bool getDest() = 0;
 };
 

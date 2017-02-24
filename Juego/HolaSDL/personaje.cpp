@@ -44,7 +44,7 @@ void personaje::move(char c) {
 	else if (c == 'S' && pimgy <= 540){
 			pimgy += 5;
 	}
-	else if (c == 'A' && pimgx >= 580) {
+	if (c == 'A' && pimgx >= 580) {
 		izq = true;
 		pimgx -= 5;
 	}

@@ -10,7 +10,7 @@ public:
 	void update();
 	void onClick();
 	void move(char c);
-
+	bool getDest() { return destruido; }
 private:
 	std::vector <raizObjeto*> balas; 
 	SDL_Rect rect;

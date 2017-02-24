@@ -10,6 +10,7 @@ public:
 	void update();
 	void onClick();
 	void move(char c);
+	bool getDest() { return destruido; }
 	
 private:
 	int vel = 1;

@@ -19,7 +19,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v120</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -68,6 +68,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="bala.cpp" />
+    <ClCompile Include="enemigo.cpp" />
     <ClCompile Include="error.cpp" />
     <ClCompile Include="estado.cpp" />
     <ClCompile Include="game.cpp" />
@@ -79,6 +80,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="bala.h" />
+    <ClInclude Include="enemigo.h" />
     <ClInclude Include="error.h" />
     <ClInclude Include="estado.h" />
     <ClInclude Include="game.h" />

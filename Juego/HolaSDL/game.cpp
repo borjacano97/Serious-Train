@@ -24,6 +24,7 @@ game::game()
 	espera = false;
 	gameOver = false;
 	exit = false;
+	cadencia = 20;
 
 	estados.push(new play(this)); // estado que queremos inicial
 }
@@ -189,14 +190,15 @@ bool game::handle_event() { //eventos del teclado y raton
 			}			
 		}
 		
-		else if (e.type == SDL_MOUSEBUTTONUP) { // click izquierdo para llamar al onclick
-			if (e.button.button == SDL_BUTTON_LEFT) {
+		else if (e.type == SDL_MOUSEBUTTONDOWN) { // click izquierdo para llamar al onclick
+			if (e.button.state == SDL_BUTTON_LEFT && cadencia >=200) {
+				cadencia = 0;
 				topEstado()->onClick();
 			}
 		}
 
 	}
-
+	cadencia++;
 	return espera;
 }
 

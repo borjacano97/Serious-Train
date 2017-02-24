@@ -9,6 +9,7 @@ public:
 
 	void draw();
 	void update();
+
 protected:
 
 	game* ptsjuego;
