@@ -1,16 +1,5 @@
-﻿  texturas.cpp
-  play.cpp
-c:\users\andre\desktop\universidad\segundo\proyecto 2\serious-train\juego\holasdl\play.cpp(35): warning C4018: '<' : signed/unsigned mismatch
-  personaje.cpp
-  objeto.cpp
-  main.cpp
-  game.cpp
-c:\users\andre\desktop\universidad\segundo\proyecto 2\serious-train\juego\holasdl\game.cpp(65): warning C4018: '<' : signed/unsigned mismatch
-  estado.cpp
-c:\users\andre\desktop\universidad\segundo\proyecto 2\serious-train\juego\holasdl\estado.cpp(15): warning C4018: '<' : signed/unsigned mismatch
-c:\users\andre\desktop\universidad\segundo\proyecto 2\serious-train\juego\holasdl\estado.cpp(26): warning C4018: '<' : signed/unsigned mismatch
-  error.cpp
-  enemigo.cpp
-  bala.cpp
-  Generating Code...
-  HolaSDL.vcxproj -> C:\Users\andre\Desktop\Universidad\Segundo\Proyecto 2\Serious-Train\Juego\bin\HolaSDLDebug.exe
+﻿  play.cpp
+c:\users\alejandro\desktop\serious-train\juego\holasdl\play.cpp(37): warning C4018: '<': no coinciden signed/unsigned
+c:\users\alejandro\desktop\serious-train\juego\holasdl\play.cpp(43): warning C4018: '<': no coinciden signed/unsigned
+  HolaSDL.vcxproj -> C:\Users\Alejandro\Desktop\Serious-Train\Juego\bin\HolaSDLDebug.exe
+  HolaSDL.vcxproj -> C:\Users\Alejandro\Desktop\Serious-Train\Juego\bin\HolaSDLDebug.pdb (Full PDB)

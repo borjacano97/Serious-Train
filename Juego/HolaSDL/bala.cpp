@@ -7,12 +7,11 @@ bala::bala(game* juego, game::Texturas_t text, int x, int y, bool i)
 	juegootp = juego;
 	Ttextura = text;
 
-	alto = 50;
-	ancho = 50;
+	alto = 20;
+	ancho = 20;
 
 	pimgx = x;
 	pimgy = y;
-	std::cout << i;
 	if (i)	vel *= -1;
 }
 
@@ -26,10 +25,10 @@ void bala::draw() {
 	rect.x = pimgx;
 	rect.y = pimgy;
 
-	if (!destruido) {
+	
 		SDL_Renderer* render = juegootp->getRender();
 		juegootp->getTextura(Ttextura)->draw(render, nullptr, &rect);
-	}
+	
 	
 }
 
