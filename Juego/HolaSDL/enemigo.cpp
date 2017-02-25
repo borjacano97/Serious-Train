@@ -41,6 +41,10 @@ void enemigo::update() {
 		cont = 0;
 		pimgx--;
 	}
+	if (cont >= 5 && pimgx <= 520) {
+		cont = 0;
+		pimgx++;
+	}
 
 }
 

@@ -20,7 +20,8 @@ bool play::initObjects() { // creación de los objetos dando un puntero, una text
 	objetos.emplace_back(new personaje(ptsjuego, game::TPersonaje, 650, 350));
 	objetos.emplace_back(new enemigo(ptsjuego, game::TEnemigo, 1200, 50));
 	objetos.emplace_back(new enemigo(ptsjuego, game::TEnemigo, 1200, 350));
-	objetos.emplace_back(new enemigo(ptsjuego, game::TEnemigo, 1200, 550));
+	objetos.emplace_back(new enemigo(ptsjuego, game::TEnemigo, 50, 550));
+	objetos.emplace_back(new enemigo(ptsjuego, game::TEnemigo, 50, 150));
 	//objetos.emplace_back(new Enemigo(ptsjuego, Juego::TEnemigo, rand() % 700, 0));
 	//objetos.emplace_back(new Tren(ptsjuego, Juego::TTren, 350, 350));
 
@@ -44,7 +45,7 @@ void play::update() {
 			// muerte por colisión de objetos exceptuando el personaje que es objetos[0], si va a haber choque entre zombies hay que poner
 			// un booleano que identifique entre balas y sombis
 		     if (i!= j && objetos[i] != nullptr && objetos[j] != nullptr &&  objetos[i]->getx() == objetos[j]->getx() && 
-				 (objetos[i]->gety() - objetos[j]->gety())<=50 && (objetos[i]->gety() - objetos[j]->gety()) >= -50) {
+				 (objetos[i]->gety() - objetos[j]->gety()) <= 50 && (objetos[i]->gety() - objetos[j]->gety()) >= -50) {
 
 			    delete objetos[i];
 			    objetos[i] = nullptr;
