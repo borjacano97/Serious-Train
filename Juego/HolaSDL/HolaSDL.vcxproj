@@ -77,6 +77,7 @@
     <ClCompile Include="personaje.cpp" />
     <ClCompile Include="play.cpp" />
     <ClCompile Include="texturas.cpp" />
+    <ClCompile Include="tren.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="bala.h" />
@@ -90,6 +91,7 @@
     <ClInclude Include="raizEstado.h" />
     <ClInclude Include="raizObjeto.h" />
     <ClInclude Include="texturas.h" />
+    <ClInclude Include="tren.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

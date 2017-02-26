@@ -7,9 +7,9 @@ public:
 	enemigo(game* juego, game::Texturas_t text, int x, int y);
 	~enemigo();
 	void draw();
-	void update();
-	void move(char c);
+	void update();	
 	void onClick();
+	void move(char c);
 	bool getDest() { return destruido; }
 private:
 	int cont = 0;
