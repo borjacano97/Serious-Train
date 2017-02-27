@@ -12,7 +12,7 @@ game::game()
 	//inicialización de texturas, SDL y demás atributos privados
 
 	ntexturas[0] = "../bmps/fondo.jpg";
-	ntexturas[1] = "../bmps/personaje.jpg";
+	ntexturas[1] = "../bmps/flecha.png";
 	ntexturas[2] = "../bmps/enemigo.png";
 	ntexturas[3] = "../bmps/tren.png";
 	ntexturas[4] = "../bmps/barraHP.png";

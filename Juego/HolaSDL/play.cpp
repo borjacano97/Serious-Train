@@ -38,30 +38,27 @@ void play::freeObjects() {
 }
 void play::onClick(){
 	//objetos[0]->onClick();
-	objetos.emplace_back(new bala(ptsjuego, game::TPersonaje, objetos[1]->getx(), objetos[1]->gety(), objetos[1]->getI()));
+	balas.emplace_back(new bala(ptsjuego, game::TPersonaje, objetos[1]->getx(), objetos[1]->gety(), objetos[1]->getI()));
 }
 void play::update() {  
 	for (int i = 3; i < objetos.size(); i++) {
 
-		if(objetos[i] != nullptr && objetos[i]->getDest()){// si se destruye, se destruye
-			delete objetos[i];
-			objetos[i] = nullptr;
-		}	
+		
 		if (objetos[i] != nullptr  && objetos[i]->getId() == 'E' 
 			&& objetos[i]->getx() >= 520 && objetos[i]->getx() <= 775) {// detecta zombis que quitan vida al tren
 			objetos[2]->move('h');
 		}
-		for (int j = 3; j < objetos.size(); j++) {
+		for (int j = 0; j < balas.size(); j++) {
 			// muerte por colisión de objetos exceptuando el personaje, tren y barra de vida, si va a haber choque entre zombies hay que poner
 			// un booleano que identifique entre balas y sombis
-		     if (i!= j && objetos[i] != nullptr && objetos[j] != nullptr &&  objetos[i]->getx() == objetos[j]->getx() && 
-				 (objetos[i]->gety() - objetos[j]->gety()) <= 50 && (objetos[i]->gety() - objetos[j]->gety()) >= -50
-				 && objetos[i]->getId() == 'B') {
+			if (objetos[i] != nullptr && balas[j] != nullptr && 
+				(objetos[i]->getx() - balas[j]->getx()) <= 30 && (objetos[i]->getx() - balas[j]->getx()) >= -30 &&
+				 (objetos[i]->gety() - balas[j]->gety()) <= 40 && (objetos[i]->gety() - balas[j]->gety()) >= -40) {
 
 			    delete objetos[i];
 			    objetos[i] = nullptr;
-				delete objetos[j];
-				objetos[j] = nullptr;
+				delete balas[j];
+				balas[j] = nullptr;
 		     }
 		}
 		
