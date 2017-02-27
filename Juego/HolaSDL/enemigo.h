@@ -11,6 +11,7 @@ public:
 	void onClick();
 	void move(char c);
 	bool getDest() { return destruido; }
+	char getId() { return 'E'; }
 private:
 	int cont = 0;
 	SDL_Rect rect;

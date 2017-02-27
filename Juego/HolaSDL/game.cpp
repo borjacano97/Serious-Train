@@ -15,6 +15,7 @@ game::game()
 	ntexturas[1] = "../bmps/personaje.jpg";
 	ntexturas[2] = "../bmps/enemigo.png";
 	ntexturas[3] = "../bmps/tren.png";
+	ntexturas[4] = "../bmps/barraHP.png";
 
 	srand(SDL_GetTicks()); // no se que coño es esto xd
 
@@ -57,6 +58,9 @@ void game::initMedia() {
 
 	texts.emplace_back(new texturas);
 	texts[3]->load(getRender(), ntexturas[3]);
+
+	texts.emplace_back(new texturas);
+	texts[4]->load(getRender(), ntexturas[4]);
 
 }
 

@@ -1,7 +1,9 @@
-﻿  tren.cpp
+﻿  barraHP.cpp
+  Generando código...
+  Compilando...
   play.cpp
-c:\users\alejandro\desktop\serious-train\juego\holasdl\play.cpp(43): warning C4018: '<': no coinciden signed/unsigned
-c:\users\alejandro\desktop\serious-train\juego\holasdl\play.cpp(49): warning C4018: '<': no coinciden signed/unsigned
+c:\users\alejandro\desktop\serious-train\juego\holasdl\play.cpp(46): warning C4018: '<': no coinciden signed/unsigned
+c:\users\alejandro\desktop\serious-train\juego\holasdl\play.cpp(56): warning C4018: '<': no coinciden signed/unsigned
   Generando código...
   HolaSDL.vcxproj -> C:\Users\Alejandro\Desktop\Serious-Train\Juego\bin\HolaSDLDebug.exe
   HolaSDL.vcxproj -> C:\Users\Alejandro\Desktop\Serious-Train\Juego\bin\HolaSDLDebug.pdb (Full PDB)

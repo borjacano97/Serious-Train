@@ -11,6 +11,7 @@ public:
 	void onClick();
 	void move(char c);
 	bool getDest() { return destruido; }
+	char getId() { return 'P'; }
 private:
 	std::vector <raizObjeto*> balas; 
 	SDL_Rect rect;

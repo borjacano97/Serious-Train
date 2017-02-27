@@ -68,6 +68,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="bala.cpp" />
+    <ClCompile Include="barraHP.cpp" />
     <ClCompile Include="enemigo.cpp" />
     <ClCompile Include="error.cpp" />
     <ClCompile Include="estado.cpp" />
@@ -81,6 +82,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="bala.h" />
+    <ClInclude Include="barraHP.h" />
     <ClInclude Include="enemigo.h" />
     <ClInclude Include="error.h" />
     <ClInclude Include="estado.h" />

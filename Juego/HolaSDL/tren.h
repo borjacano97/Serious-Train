@@ -13,6 +13,7 @@ public:
 	void onClick();
 	void move(char c);
 	bool getDest() { return destruido; }
+	char getId() { return 'T'; }
 
 private: 
 	std::string tipo;
