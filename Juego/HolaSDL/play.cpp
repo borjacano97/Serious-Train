@@ -7,9 +7,12 @@
 #include "barraHP.h"
 
 #include <string>
+#include<stdlib.h> // para nms aleatorios
+#include<time.h>
 
 play::play(game * j) : estado(j)
 {
+	srand(time(NULL));
 	initObjects();
 }
 
@@ -25,11 +28,6 @@ bool play::initObjects() { // creación de los objetos dando un puntero, una text
 	objetos.emplace_back(new personaje(ptsjuego, game::TPersonaje, 650, 350));
 	objetos.emplace_back(new barraHP(ptsjuego, game::TBarra, 10, 0, 0));
 
-	objetos.emplace_back(new enemigo(ptsjuego, game::TEnemigo, 1200, 50));
-	objetos.emplace_back(new enemigo(ptsjuego, game::TEnemigo, 1200, 350));
-	objetos.emplace_back(new enemigo(ptsjuego, game::TEnemigo, 50, 550));
-	objetos.emplace_back(new enemigo(ptsjuego, game::TEnemigo, 50, 150));
-	//objetos.emplace_back(new Enemigo(ptsjuego, Juego::TEnemigo, rand() % 700, 0));
 	
 
 	return true;
@@ -57,7 +55,8 @@ void play::update() {
 			// muerte por colisión de objetos exceptuando el personaje, tren y barra de vida, si va a haber choque entre zombies hay que poner
 			// un booleano que identifique entre balas y sombis
 		     if (i!= j && objetos[i] != nullptr && objetos[j] != nullptr &&  objetos[i]->getx() == objetos[j]->getx() && 
-				 (objetos[i]->gety() - objetos[j]->gety()) <= 50 && (objetos[i]->gety() - objetos[j]->gety()) >= -50) {
+				 (objetos[i]->gety() - objetos[j]->gety()) <= 50 && (objetos[i]->gety() - objetos[j]->gety()) >= -50
+				 && objetos[i]->getId() == 'B') {
 
 			    delete objetos[i];
 			    objetos[i] = nullptr;
@@ -67,6 +66,13 @@ void play::update() {
 		}
 		
 		
+		
+	}
+	aleatorio = rand() % 10000; //generar zombies aleatorios
+	if (aleatorio >= 9980) {
+		izq = rand() % 2;
+		if (izq == 0) objetos.emplace_back(new enemigo(ptsjuego, game::TEnemigo, 0, rand() % 500 + 50));
+		else objetos.emplace_back(new enemigo(ptsjuego, game::TEnemigo, 1300, rand() % 500 + 50));
 	}
 	estado::update();
 }

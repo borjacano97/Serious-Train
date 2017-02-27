@@ -12,6 +12,9 @@ public:
 	void update();
 	void move(char c);
 private:
+	int izq;
+	int aleatorio;
+
 	bool initObjects(); //crear y destruir los objetos del juego
 	void freeObjects();
 

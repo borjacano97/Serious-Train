@@ -1,9 +1,6 @@
-﻿  barraHP.cpp
-  Generando código...
-  Compilando...
-  play.cpp
-c:\users\alejandro\desktop\serious-train\juego\holasdl\play.cpp(46): warning C4018: '<': no coinciden signed/unsigned
-c:\users\alejandro\desktop\serious-train\juego\holasdl\play.cpp(56): warning C4018: '<': no coinciden signed/unsigned
-  Generando código...
+﻿  play.cpp
+c:\users\alejandro\desktop\serious-train\juego\holasdl\play.cpp(15): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+c:\users\alejandro\desktop\serious-train\juego\holasdl\play.cpp(44): warning C4018: '<': no coinciden signed/unsigned
+c:\users\alejandro\desktop\serious-train\juego\holasdl\play.cpp(54): warning C4018: '<': no coinciden signed/unsigned
   HolaSDL.vcxproj -> C:\Users\Alejandro\Desktop\Serious-Train\Juego\bin\HolaSDLDebug.exe
   HolaSDL.vcxproj -> C:\Users\Alejandro\Desktop\Serious-Train\Juego\bin\HolaSDLDebug.pdb (Full PDB)
