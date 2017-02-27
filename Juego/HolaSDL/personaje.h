@@ -12,7 +12,13 @@ public:
 	void move(char c);
 	bool getDest() { return destruido; }
 	char getId() { return 'P'; }
+
 private:
+	
+	int velx;
+	int vely;
+	
+
 	std::vector <raizObjeto*> balas; 
 	SDL_Rect rect;
 };

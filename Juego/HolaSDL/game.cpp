@@ -12,7 +12,7 @@ game::game()
 	//inicialización de texturas, SDL y demás atributos privados
 
 	ntexturas[0] = "../bmps/fondo.jpg";
-	ntexturas[1] = "../bmps/flecha.png";
+	ntexturas[1] = "../bmps/personaje.jpg";
 	ntexturas[2] = "../bmps/enemigo.png";
 	ntexturas[3] = "../bmps/tren.png";
 	ntexturas[4] = "../bmps/barraHP.png";
@@ -174,9 +174,8 @@ bool game::handle_event() { //eventos del teclado y raton
 			exit = true;
 		}
 		else if (e.type == SDL_KEYUP) {
-			if (e.key.keysym.sym = SDLK_ESCAPE) {
-				//pushState(new Pausa(this));				
-			}
+			if (e.key.keysym.sym == SDLK_s || e.key.keysym.sym == SDLK_w || e.key.keysym.sym == SDLK_a || e.key.keysym.sym == SDLK_d)
+			    topEstado()->move('N');
 		}
 		else if (e.type == SDL_KEYDOWN){
 			if (e.key.keysym.sym == SDLK_s){ //mov lateral
@@ -190,9 +189,13 @@ bool game::handle_event() { //eventos del teclado y raton
 			}
 			else if (e.key.keysym.sym == SDLK_d) {
 				topEstado()->move('D');
-			}			
+			}	
+			if (e.key.keysym.sym = SDLK_ESCAPE) {
+				//pushState(new Pausa(this));				
+			}
 		}
 		
+
 		else if (e.type == SDL_MOUSEBUTTONDOWN) { // click izquierdo para llamar al onclick
 			if (e.button.state == SDL_BUTTON_LEFT && cadencia >=200) {
 				cadencia = 0;

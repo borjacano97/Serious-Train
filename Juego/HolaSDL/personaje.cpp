@@ -12,6 +12,9 @@ personaje::personaje(game* juego, game::Texturas_t text, int x, int y)
 
 	pimgx = x;
 	pimgy = y;
+
+	velx = 0;
+	vely = 0;
 }
 
 
@@ -32,24 +35,38 @@ void personaje::draw() {
 
 
 void personaje::update() {
-
+	int aux1, aux2;
+	aux1 = pimgx;
+	aux2 = pimgy;
+    pimgx += velx;
+	pimgy += vely;
+	if (pimgx < 580 || pimgx > 700)
+		pimgx = aux1;
+	if (pimgy < 60 || pimgy > 560)
+		pimgy = aux2;
 }
 
 void personaje::onClick() {
 }
 void personaje::move(char c) {
-	if (c == 'W' && pimgy >= 60){
-			pimgy -= 5;
+	if (c == 'W' ){		
+		vely = -1;
 	}
-	else if (c == 'S' && pimgy <= 540){
-			pimgy += 5;
+	else if (c == 'S'){
+		vely = 1;
 	}
-	if (c == 'A' && pimgx >= 580) {
+	if (c == 'A' ) {
 		izq = true;
-		pimgx -= 5;
+		velx = -1;
 	}
-	else if (c == 'D' && pimgx <= 700) {
+	else if (c == 'D') {
 		izq = false;
-		pimgx += 5;
+		velx = 1;
 	}	
+	if (c == 'N') {
+		
+		velx = 0;
+		vely = 0;
+	}
+	
 }

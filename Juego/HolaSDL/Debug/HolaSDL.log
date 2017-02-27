@@ -1,8 +1,28 @@
-﻿Build started 27/02/2017 17:33:18.
+﻿Build started 27/02/2017 19:01:43.
      1>Project "C:\hlocal\Serious-Train\Juego\HolaSDL\HolaSDL.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\software\programacion\MSVStudio2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt personaje.cpp
+         C:\software\programacion\MSVStudio2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt bala.cpp barraHP.cpp enemigo.cpp estado.cpp game.cpp objeto.cpp personaje.cpp play.cpp tren.cpp
+         tren.cpp
+         play.cpp
+     1>c:\hlocal\serious-train\juego\holasdl\play.cpp(15): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
+     1>c:\hlocal\serious-train\juego\holasdl\play.cpp(44): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\hlocal\serious-train\juego\holasdl\play.cpp(51): warning C4018: '<' : signed/unsigned mismatch
          personaje.cpp
+         objeto.cpp
+         game.cpp
+     1>c:\hlocal\serious-train\juego\holasdl\game.cpp(69): warning C4018: '<' : signed/unsigned mismatch
+         estado.cpp
+     1>c:\hlocal\serious-train\juego\holasdl\estado.cpp(15): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\hlocal\serious-train\juego\holasdl\estado.cpp(19): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\hlocal\serious-train\juego\holasdl\estado.cpp(30): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\hlocal\serious-train\juego\holasdl\estado.cpp(34): warning C4018: '<' : signed/unsigned mismatch
+         enemigo.cpp
+         barraHP.cpp
+         Generating Code...
+         Compiling...
+         bala.cpp
+         Generating Code...
+     1>cl : Command line warning D9028: minimal rebuild failure, reverting to normal build
        Link:
          C:\software\programacion\MSVStudio2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\hlocal\Serious-Train\Juego\bin\HolaSDLDebug.exe" /INCREMENTAL /NOLOGO SDL2.lib SDL2main.lib SDL2_image.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\hlocal\Serious-Train\Juego\bin\HolaSDLDebug.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\hlocal\Serious-Train\Juego\bin\HolaSDLDebug.lib" /MACHINE:X86 Debug\bala.obj
          Debug\barraHP.obj
@@ -21,4 +41,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.62
+Time Elapsed 00:00:02.90
