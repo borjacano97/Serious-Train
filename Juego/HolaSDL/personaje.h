@@ -4,6 +4,14 @@
 class personaje:public objeto
 {
 public:
+	class Direccion {
+	public:
+		int x, y;
+		Direccion(): x(0), y(0) {};
+		Direccion(int _x, int _y) : x(_x), y(_y) {};
+
+		Direccion set(int _x, int _y) { x = _x;	y = _y; };
+	};
 	personaje(game* juego, game::Texturas_t text, int x, int y);
 	~personaje();
 	void draw();
@@ -14,12 +22,10 @@ public:
 	char getId() { return 'P'; }
 
 private:
-	
-	int velx;
-	int vely;
+	Direccion dir;
+	int vel;
 	
 
 	std::vector <raizObjeto*> balas; 
 	SDL_Rect rect;
 };
-

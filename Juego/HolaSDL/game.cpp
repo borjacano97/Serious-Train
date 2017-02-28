@@ -66,7 +66,7 @@ void game::initMedia() {
 
 void game::freeMedia() {
 	//borramos las texturas y hacemos el puntero nulo
-	for (int i = 0; i < texts.size(); i++) {
+	for (unsigned int i = 0; i < texts.size(); i++) {
 		delete texts[i];
 		texts[i] = nullptr;
 	}

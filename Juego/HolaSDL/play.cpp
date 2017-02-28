@@ -41,14 +41,14 @@ void play::onClick(){
 	balas.emplace_back(new bala(ptsjuego, game::TPersonaje, objetos[1]->getx(), objetos[1]->gety(), objetos[1]->getI()));
 }
 void play::update() {  
-	for (int i = 3; i < objetos.size(); i++) {
+	for (unsigned int i = 3; i < objetos.size(); i++) {
 
 		
 		if (objetos[i] != nullptr  && objetos[i]->getId() == 'E' 
 			&& objetos[i]->getx() >= 520 && objetos[i]->getx() <= 775) {// detecta zombis que quitan vida al tren
 			objetos[2]->move('h');
 		}
-		for (int j = 0; j < balas.size(); j++) {
+		for (unsigned int j = 0; j < balas.size(); j++) {
 			// muerte por colisión de objetos exceptuando el personaje, tren y barra de vida, si va a haber choque entre zombies hay que poner
 			// un booleano que identifique entre balas y sombis
 			if (objetos[i] != nullptr && balas[j] != nullptr && 
