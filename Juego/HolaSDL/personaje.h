@@ -4,25 +4,22 @@
 class personaje:public objeto
 {
 public:
-	class Direccion {
-	public:
-		int x, y;
-		Direccion(): x(0), y(0) {};
-		Direccion(int _x, int _y) : x(_x), y(_y) {};
-
-		Direccion set(int _x, int _y) { x = _x;	y = _y; };
-	};
 	personaje(game* juego, game::Texturas_t text, int x, int y);
 	~personaje();
 	void draw();
 	void update();
 	void onClick();
 	void move(char c);
+	Direccion getDir() {
+		if (dir.x == 0 && dir.y == 0)
+			return lastDir;
+		else return dir;
+	};
 	bool getDest() { return destruido; }
 	char getId() { return 'P'; }
 
 private:
-	Direccion dir;
+	Direccion dir, lastDir;
 	int vel;
 	
 

@@ -38,7 +38,7 @@ void play::freeObjects() {
 }
 void play::onClick(){
 	//objetos[0]->onClick();
-	balas.emplace_back(new bala(ptsjuego, game::TPersonaje, objetos[1]->getx(), objetos[1]->gety(), objetos[1]->getI()));
+	balas.emplace_back(new bala(ptsjuego, game::TPersonaje, objetos[1]->getx(), objetos[1]->gety(), objetos[1]->getDir()));
 }
 void play::update() {  
 	for (unsigned int i = 3; i < objetos.size(); i++) {

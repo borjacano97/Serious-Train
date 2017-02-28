@@ -197,7 +197,7 @@ bool game::handle_event() { //eventos del teclado y raton
 		
 
 		else if (e.type == SDL_MOUSEBUTTONDOWN) { // click izquierdo para llamar al onclick
-			if (e.button.state == SDL_BUTTON_LEFT && cadencia >=200) {
+			if (e.button.state == SDL_BUTTON_LEFT && cadencia >=100) {
 				cadencia = 0;
 				topEstado()->onClick();
 			}

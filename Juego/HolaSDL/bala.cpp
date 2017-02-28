@@ -1,7 +1,7 @@
 #include "bala.h"
 
 
-bala::bala(game* juego, game::Texturas_t text, int x, int y, bool i)
+bala::bala(game* juego, game::Texturas_t text, int x, int y, Direccion dirparam)
 {
 
 	juegootp = juego;
@@ -12,7 +12,7 @@ bala::bala(game* juego, game::Texturas_t text, int x, int y, bool i)
 
 	pimgx = x;
 	pimgy = y;
-	if (i)	vel *= -1;
+	dir = dirparam;
 }
 
 
@@ -24,10 +24,8 @@ void bala::draw() {
 	rect.w = ancho;
 	rect.x = pimgx;
 	rect.y = pimgy;
-
-	
-		SDL_Renderer* render = juegootp->getRender();
-		juegootp->getTextura(Ttextura)->draw(render, nullptr, &rect);
+	SDL_Renderer* render = juegootp->getRender();
+	juegootp->getTextura(Ttextura)->draw(render, nullptr, &rect);
 	
 	
 }
@@ -40,7 +38,7 @@ void bala::update() {
 		destruido = true;	
 	}
 		
-	pimgx += vel;
+	pimgx += dir.x * vel;
 
 
 }

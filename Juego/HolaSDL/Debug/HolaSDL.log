@@ -1,8 +1,3 @@
-﻿  play.cpp
-d:\documentos\ucm\segundo curso\proyecto_2\repositorio\juego\holasdl\play.cpp(15): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
-  personaje.cpp
-  game.cpp
-  estado.cpp
-  Generando código...
+﻿  personaje.cpp
   HolaSDL.vcxproj -> D:\Documentos\UCM\Segundo curso\Proyecto_2\Repositorio\Juego\bin\HolaSDLDebug.exe
   HolaSDL.vcxproj -> D:\Documentos\UCM\Segundo curso\Proyecto_2\Repositorio\Juego\bin\HolaSDLDebug.pdb (Full PDB)

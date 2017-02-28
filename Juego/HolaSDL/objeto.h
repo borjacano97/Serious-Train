@@ -10,6 +10,7 @@ public:
 	// Aún así hay que poner otros métodos aquí
 	int getx() { return pimgx; }
 	int gety() { return pimgy; }
+	virtual Direccion getDir() { return dir; };
 	bool getI() { return izq; }
 
 protected: // son protegidas porque las subclases usan estas variables, si no serían privadas
@@ -18,6 +19,7 @@ protected: // son protegidas porque las subclases usan estas variables, si no se
 	game::Texturas_t Ttextura; // array de texturas (aún no declarado en Juego)
 	
 	bool izq;
+	Direccion dir;
 	bool destruido = false;
 	int alto, ancho; // tamaño del objeto
 	

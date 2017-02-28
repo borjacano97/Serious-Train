@@ -17,7 +17,7 @@ personaje::personaje(game* juego, game::Texturas_t text, int x, int y)
 	dir.x = 0;
 	dir.y = 0;
 
-	vel = 3;
+	vel = 1;
 }
 
 
@@ -60,15 +60,15 @@ void personaje::move(char c) {
 		dir.y = 1;
 	}
 	if (c == 'A' ) {
-		izq = true;
+		//izq = true;
 		dir.x = -1;
 	}
 	else if (c == 'D') {
-		izq = false;
+		//izq = false;
 		dir.x = 1;
 	}	
 	if (c == 'N') {
-		
+		lastDir = dir;
 		dir.x = 0;
 		dir.y = 0;
 	}
