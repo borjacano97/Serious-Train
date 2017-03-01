@@ -33,8 +33,8 @@ void barraHP::draw() {
 void barraHP::update() {
 	
 }
-void barraHP::onClick() {
-
+bool barraHP::onClick() {
+	return true;
 }
 void barraHP::move(char c) {
 	cont++;

@@ -12,7 +12,7 @@
 
 play::play(game * j) : estado(j)
 {
-	srand(time(NULL));
+	//srand(time(NULL));
 	initObjects();
 }
 

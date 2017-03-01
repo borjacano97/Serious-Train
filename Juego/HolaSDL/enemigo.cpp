@@ -32,8 +32,8 @@ void enemigo::draw() {
 
 }
 
-void enemigo::onClick() {
-
+bool enemigo::onClick() {
+	return true;
 }
 void enemigo::update() {
 	cont++;

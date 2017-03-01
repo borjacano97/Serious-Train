@@ -1,5 +1,6 @@
 ﻿#include "game.h"
 #include "error.h"
+#include "menu.h"
 #include "play.h"
 
 #include <iostream>
@@ -16,6 +17,7 @@ game::game()
 	ntexturas[2] = "../bmps/enemigo.png";
 	ntexturas[3] = "../bmps/tren.png";
 	ntexturas[4] = "../bmps/barraHP.png";
+	ntexturas[5] = "../bmps/boton.png";
 
 	srand(SDL_GetTicks()); // no se que coño es esto xd
 
@@ -27,7 +29,7 @@ game::game()
 	exit = false;
 	cadencia = 20;
 
-	estados.push(new play(this)); // estado que queremos inicial
+	estados.push(new menu(this)); // estado que queremos inicial
 }
 
 
@@ -62,6 +64,14 @@ void game::initMedia() {
 	texts.emplace_back(new texturas);
 	texts[4]->load(getRender(), ntexturas[4]);
 
+	texts.emplace_back(new texturas);
+	texts[5]->load(getRender(), ntexturas[5]);
+
+}
+
+void game::getMousePos(int & mpx, int & mpy) const{ //obtener posicion del mouse
+	mpx = mx;
+	mpy = my;
 }
 
 void game::freeMedia() {
@@ -200,6 +210,7 @@ bool game::handle_event() { //eventos del teclado y raton
 			if (e.button.state == SDL_BUTTON_LEFT && cadencia >=100) {
 				cadencia = 0;
 				topEstado()->onClick();
+				onClick(e.button.x, e.button.y);
 			}
 		}
 
@@ -210,4 +221,23 @@ bool game::handle_event() { //eventos del teclado y raton
 
 raizEstado * game::topEstado() {
 	return estados.top();
+}
+
+void game::setSalir(){
+	exit = true;
+	closeSDL();
+
+}
+void game::changeState(raizEstado* newSt){
+	popState();
+	pushState(newSt);
+}
+void game::pushState(raizEstado* newState){
+	estados.push(newState);
+}
+
+
+void game::popState(){
+	delete estados.top();
+	estados.pop();
 }

@@ -30,7 +30,8 @@ void bala::draw() {
 	
 }
 
-void bala::onClick() {
+bool bala::onClick() {
+	return true;
 }
 
 void bala::update() {

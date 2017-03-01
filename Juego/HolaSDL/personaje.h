@@ -8,7 +8,7 @@ public:
 	~personaje();
 	void draw();
 	void update();
-	void onClick();
+	bool onClick();
 	void move(char c);
 	Direccion getDir() {
 		if (dir.x == 0 && dir.y == 0)

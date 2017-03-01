@@ -36,8 +36,8 @@ void tren::draw() {
 void tren::update() {
 	//hacer uso de la variable TIPO
 }
-void tren::onClick() {
-
+bool tren::onClick() {
+	return true;
 }
 void tren::move(char c) {
 

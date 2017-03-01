@@ -50,7 +50,8 @@ void personaje::update() {
 		pimgy = 560;
 }
 
-void personaje::onClick() {
+bool personaje::onClick() {
+	return true;
 }
 void personaje::move(char c) {
 	if (c == 'W' ){		

@@ -7,7 +7,7 @@ public:
 	~bala();
 	void draw();
 	void update();
-	void onClick();
+	bool onClick();
 	void move(char c);
 	bool getDest() { return destruido; }
 	char getId() { return 'B'; }

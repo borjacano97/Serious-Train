@@ -9,6 +9,8 @@ public:
 
 	void draw();
 	void update();
+	void onClick(){ ; }
+	void move(char c){ ; }
 
 protected:
 

@@ -12,6 +12,7 @@ public:
 	int gety() { return pimgy; }
 	virtual Direccion getDir() { return dir; };
 	bool getI() { return izq; }
+	bool dentro(int x, int y) const;
 
 protected: // son protegidas porque las subclases usan estas variables, si no serían privadas
 

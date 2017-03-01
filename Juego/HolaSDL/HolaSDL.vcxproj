@@ -19,7 +19,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v120</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -69,11 +69,13 @@
   <ItemGroup>
     <ClCompile Include="bala.cpp" />
     <ClCompile Include="barraHP.cpp" />
+    <ClCompile Include="button.cpp" />
     <ClCompile Include="enemigo.cpp" />
     <ClCompile Include="error.cpp" />
     <ClCompile Include="estado.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="menu.cpp" />
     <ClCompile Include="objeto.cpp" />
     <ClCompile Include="personaje.cpp" />
     <ClCompile Include="play.cpp" />
@@ -83,10 +85,12 @@
   <ItemGroup>
     <ClInclude Include="bala.h" />
     <ClInclude Include="barraHP.h" />
+    <ClInclude Include="button.h" />
     <ClInclude Include="enemigo.h" />
     <ClInclude Include="error.h" />
     <ClInclude Include="estado.h" />
     <ClInclude Include="game.h" />
+    <ClInclude Include="menu.h" />
     <ClInclude Include="objeto.h" />
     <ClInclude Include="personaje.h" />
     <ClInclude Include="play.h" />

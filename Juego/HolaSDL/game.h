@@ -16,7 +16,7 @@ public:
 
 	
 
-	enum Texturas_t { TFondo, TPersonaje, TEnemigo, TTren, TBarra};
+	enum Texturas_t { TFondo, TPersonaje, TEnemigo, TTren, TBarra, TBoton};
 	texturas* getTextura(Texturas_t et) const { return texts[et]; }
 	SDL_Renderer* getRender() const;
 
@@ -26,13 +26,19 @@ public:
 	void freeMedia();
 
 	void run(); // método principal (bucle del juego)
+	void getMousePos(int & mpx, int & mpy) const;
+
+	void changeState(raizEstado* newSt);
+	void pushState(raizEstado* newState);
+	void popState();
+	void setSalir();
 
 private:
 	SDL_Window * pWin = nullptr;
 	SDL_Renderer* pRender = nullptr;
 	SDL_Event e;
 
-	std::string ntexturas[5];
+	std::string ntexturas[6];
 	std::vector<texturas*> texts;
 	std::stack<raizEstado*> estados;
 
