@@ -3,25 +3,25 @@
 #include "play.h"
 
 
-menu::menu(game * juego) :estado(juego)
+Menu::Menu(game * juego) :estado(juego)
 {
 	objetos.emplace_back(new button(ptsjuego, game::TBoton, 500, 400, salir));
 	objetos.emplace_back(new button(ptsjuego, game::TBoton, 200, 400, jugar));
 }
 
 
-menu::~menu()
+Menu::~Menu()
 {
 }
-void menu::salir(game * jg){
+void Menu::salir(game * jg){
 	jg->setSalir();
 }
 
-void menu::jugar(game * jg){
+void Menu::jugar(game * jg){
 	jg->changeState(new play(jg));  
 }
 
-void menu::onClick(){
+void Menu::onClick(){
 	bool clickeado = false;
 
 	int i = objetos.size() - 1;

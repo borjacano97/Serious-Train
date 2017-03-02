@@ -1,27 +1,25 @@
 #pragma once
 #include "objeto.h"
 
-class personaje:public objeto
+class Personaje:public objeto
 {
 public:
-	personaje(game* juego, game::Texturas_t text, int x, int y);
-	~personaje();
+	Personaje(game* juego, game::Texturas_t text, int x, int y);
+	~Personaje();
 	void draw();
 	void update();
 	bool onClick();
 	void move(char c);
-	Direccion getDir() {
-		if (dir.x == 0 && dir.y == 0)
-			return lastDir;
-		else return dir;
-	};
+	Direccion getDir() {return dir;};
+	int getMira(){ return mira; };
 	bool getDest() { return destruido; }
 	char getId() { return 'P'; }
 
 private:
-	Direccion dir, lastDir;
-	int vel;
 	
+	Direccion dir;
+	int vel;
+	int mira;
 
 	std::vector <raizObjeto*> balas; 
 	SDL_Rect rect;

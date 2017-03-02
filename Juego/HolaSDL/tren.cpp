@@ -3,7 +3,7 @@
 
 
 
-tren::tren(game* juego, game::Texturas_t text, int x, int y, std::string t)
+Tren::Tren(game* juego, game::Texturas_t text, int x, int y, std::string t)
 {
 	juegootp = juego;
 	Ttextura = text;
@@ -18,12 +18,12 @@ tren::tren(game* juego, game::Texturas_t text, int x, int y, std::string t)
 }
 
 
-tren::~tren()
+Tren::~Tren()
 {
 }
 
 
-void tren::draw() {
+void Tren::draw() {
 	rect.h = alto;
 	rect.w = ancho;
 	rect.x = pimgx;
@@ -33,12 +33,12 @@ void tren::draw() {
 	juegootp->getTextura(Ttextura)->draw(render, nullptr, &rect);
 }
 
-void tren::update() {
+void Tren::update() {
 	//hacer uso de la variable TIPO
 }
-bool tren::onClick() {
+bool Tren::onClick() {
 	return true;
 }
-void tren::move(char c) {
+void Tren::move(char c) {
 
 }

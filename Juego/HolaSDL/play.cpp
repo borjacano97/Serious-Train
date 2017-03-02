@@ -24,9 +24,14 @@ play::~play()
 
 bool play::initObjects() { // creación de los objetos dando un puntero, una textura y una posición (constructora de objs)
 
-	objetos.emplace_back(new tren(ptsjuego, game::TTren, 50, 0, " ")); // en el último hueco poner como string tipo de vagón
-	objetos.emplace_back(new personaje(ptsjuego, game::TPersonaje, 650, 350));
-	objetos.emplace_back(new barraHP(ptsjuego, game::TBarra, 10, 0, 0));
+	train = new Tren(ptsjuego, game::TTren, 50, 0, " ");// en el último hueco poner como string tipo de vagón
+	player = new Personaje(ptsjuego, game::TPersonaje, 650, 350);
+	TrainHp = new barraHP(ptsjuego, game::TBarra, 10, 0, 0);
+
+
+	objetos.emplace_back(train); 
+	objetos.emplace_back(player);
+	objetos.emplace_back(TrainHp);
 
 	
 
@@ -38,7 +43,7 @@ void play::freeObjects() {
 }
 void play::onClick(){
 	//objetos[0]->onClick();
-	balas.emplace_back(new bala(ptsjuego, game::TPersonaje, objetos[1]->getx(), objetos[1]->gety(), objetos[1]->getDir()));
+	balas.emplace_back(new Bala(ptsjuego, game::TPersonaje, player->getx(), player->gety(), player->getMira()));
 }
 void play::update() {  
 	for (unsigned int i = 3; i < objetos.size(); i++) {

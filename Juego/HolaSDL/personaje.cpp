@@ -3,7 +3,7 @@
 
 
 
-personaje::personaje(game* juego, game::Texturas_t text, int x, int y)
+Personaje::Personaje(game* juego, game::Texturas_t text, int x, int y)
 {
 	juegootp = juego;
 	Ttextura = text;
@@ -16,16 +16,16 @@ personaje::personaje(game* juego, game::Texturas_t text, int x, int y)
 
 	dir.x = 0;
 	dir.y = 0;
-
+	mira = 1;
 	vel = 1;
 }
 
 
-personaje::~personaje()
+Personaje::~Personaje()
 {
 }
 
-void personaje::draw() {
+void Personaje::draw() {
 	rect.h = alto;
 	rect.w = ancho;
 	rect.x = pimgx;
@@ -37,7 +37,7 @@ void personaje::draw() {
 }
 
 
-void personaje::update() {
+void Personaje::update() {
 	pimgx += dir.x*vel;
 	pimgy += dir.y*vel;
 	if (pimgx < 580)
@@ -50,10 +50,10 @@ void personaje::update() {
 		pimgy = 560;
 }
 
-bool personaje::onClick() {
+bool Personaje::onClick() {
 	return true;
 }
-void personaje::move(char c) {
+void Personaje::move(char c) {
 	if (c == 'W' ){		
 		dir.y = -1;
 	}
@@ -61,15 +61,14 @@ void personaje::move(char c) {
 		dir.y = 1;
 	}
 	if (c == 'A' ) {
-		//izq = true;
+		mira = -1;
 		dir.x = -1;
 	}
 	else if (c == 'D') {
-		//izq = false;
+		mira = 1;
 		dir.x = 1;
 	}	
 	if (c == 'N') {
-		lastDir = dir;
 		dir.x = 0;
 		dir.y = 0;
 	}

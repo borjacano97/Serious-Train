@@ -1,11 +1,11 @@
 #pragma once
 #include "estado.h"
-class menu :
+class Menu :
 	public estado
 {
 public:
-	menu(game* juego);
-	~menu();
+	Menu(game* juego);
+	~Menu();
 	void onClick();
 	static void salir(game * jg);
 	static void jugar(game * jg);

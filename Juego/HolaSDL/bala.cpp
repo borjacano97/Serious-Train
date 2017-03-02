@@ -1,7 +1,7 @@
 #include "bala.h"
 
 
-bala::bala(game* juego, game::Texturas_t text, int x, int y, Direccion dirparam)
+Bala::Bala(game* juego, game::Texturas_t text, int x, int y, int mira)
 {
 
 	juegootp = juego;
@@ -12,14 +12,15 @@ bala::bala(game* juego, game::Texturas_t text, int x, int y, Direccion dirparam)
 
 	pimgx = x;
 	pimgy = y;
-	dir = dirparam;
+	
+	dir = mira;
 }
 
 
-bala::~bala()
+Bala::~Bala()
 {
 }
-void bala::draw() {
+void Bala::draw() {
 	rect.h = alto;
 	rect.w = ancho;
 	rect.x = pimgx;
@@ -30,19 +31,19 @@ void bala::draw() {
 	
 }
 
-bool bala::onClick() {
+bool Bala::onClick() {
 	return true;
 }
 
-void bala::update() {
+void Bala::update() {
 	if (pimgx <= 100 || pimgx >=1200){
 		destruido = true;	
 	}
 		
-	pimgx += dir.x * vel;
+	pimgx += dir * vel;
 
 
 }
-void bala::move(char c){
+void Bala::move(char c){
 
 }

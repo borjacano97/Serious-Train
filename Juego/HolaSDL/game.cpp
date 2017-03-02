@@ -29,7 +29,7 @@ game::game()
 	exit = false;
 	cadencia = 20;
 
-	estados.push(new menu(this)); // estado que queremos inicial
+	estados.push(new Menu(this)); // estado que queremos inicial
 }
 
 

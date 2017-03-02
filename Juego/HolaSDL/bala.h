@@ -1,10 +1,10 @@
 #pragma once
 #include "objeto.h"
-class bala : public objeto
+class Bala : public objeto
 {
 public:
-	bala(game* juego, game::Texturas_t text, int x, int y, Direccion dirparam);
-	~bala();
+	Bala(game* juego, game::Texturas_t text, int x, int y, int mira);
+	~Bala();
 	void draw();
 	void update();
 	bool onClick();
@@ -12,6 +12,7 @@ public:
 	bool getDest() { return destruido; }
 	char getId() { return 'B'; }
 private:
+	int dir;
 	int vel = 1;
 	SDL_Rect rect;
 };
