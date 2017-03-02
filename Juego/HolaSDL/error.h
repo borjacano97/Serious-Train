@@ -1,11 +1,11 @@
 #pragma once
 #include <string>
 
-class error 
+class Error 
 {
 public:
-	error(std::string mens);
-	~error(); // Hay que declararlo virtual si se hacen más subtipos de error
+	Error(std::string mens);
+	~Error(); // Hay que declararlo virtual si se hacen más subtipos de error
 	const std::string& mensaje();
 
 protected:

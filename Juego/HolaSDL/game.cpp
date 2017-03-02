@@ -8,7 +8,7 @@
 #include <vector>
 #include <string>
 
-game::game()
+Game::Game()
 {
 	//inicialización de texturas, SDL y demás atributos privados
 
@@ -33,7 +33,7 @@ game::game()
 }
 
 
-game::~game()
+Game::~Game()
 {
 	freeMedia();
 	closeSDL();
@@ -42,39 +42,39 @@ game::~game()
 	pRender = nullptr;
 }
 
-SDL_Renderer* game::getRender()const {
+SDL_Renderer* Game::getRender()const {
 	return pRender;
 }
 
-void game::initMedia() {
+void Game::initMedia() {
 
 	//cargar todo tipo de texturas
-	texts.emplace_back(new texturas);
+	texts.emplace_back(new Texturas);
 	texts[0]->load(getRender(), ntexturas[0]);
 
-	texts.emplace_back(new texturas);
+	texts.emplace_back(new Texturas);
 	texts[1]->load(getRender(), ntexturas[1]);
 
-	texts.emplace_back(new texturas);
+	texts.emplace_back(new Texturas);
 	texts[2]->load(getRender(), ntexturas[2]);
 
-	texts.emplace_back(new texturas);
+	texts.emplace_back(new Texturas);
 	texts[3]->load(getRender(), ntexturas[3]);
 
-	texts.emplace_back(new texturas);
+	texts.emplace_back(new Texturas);
 	texts[4]->load(getRender(), ntexturas[4]);
 
-	texts.emplace_back(new texturas);
+	texts.emplace_back(new Texturas);
 	texts[5]->load(getRender(), ntexturas[5]);
 
 }
 
-void game::getMousePos(int & mpx, int & mpy) const{ //obtener posicion del mouse
+void Game::getMousePos(int & mpx, int & mpy) const{ //obtener posicion del mouse
 	mpx = mx;
 	mpy = my;
 }
 
-void game::freeMedia() {
+void Game::freeMedia() {
 	//borramos las texturas y hacemos el puntero nulo
 	for (unsigned int i = 0; i < texts.size(); i++) {
 		delete texts[i];
@@ -83,14 +83,14 @@ void game::freeMedia() {
 }
 
 
-bool game::initSDL() {
+bool Game::initSDL() {
 
 
 	bool success = true; //Initialization flag
 
 						 //Initialize SDL
 	if (SDL_Init(SDL_INIT_EVERYTHING) < 0) {
-		throw error("SDL could not initialize!");///////
+		throw Error("SDL could not initialize!");///////
 
 		std::cout << "SDL could not initialize! \nSDL_Error: " << SDL_GetError() << '\n';
 		success = false;
@@ -100,7 +100,7 @@ bool game::initSDL() {
 		//le paso el tama�o que quiero que tenga la ventana de mi juego
 		pWin = SDL_CreateWindow("SDL Hello World", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 1300, 700, SDL_WINDOW_SHOWN);
 		if (pWin == nullptr) {
-			throw error("Window could not be created!");///////////////
+			throw Error("Window could not be created!");///////////////
 
 			std::cout << "Window could not be created! \nSDL_Error: " << SDL_GetError() << '\n';
 			success = false;
@@ -110,7 +110,7 @@ bool game::initSDL() {
 			pRender = SDL_CreateRenderer(pWin, -1, SDL_RENDERER_ACCELERATED);
 			//SDL_SetRenderDrawColor(pRender, color.r, color.g, color.b, color.a); //Set background color to black 
 			if (pRender == nullptr) {
-				throw error("Renderer could not be created!");//////Puedes hacer un error especial para render
+				throw Error("Renderer could not be created!");//////Puedes hacer un error especial para render
 
 				std::cout << "Renderer could not be created! \nSDL_Error: " << SDL_GetError() << '\n';
 				success = false;
@@ -122,7 +122,7 @@ bool game::initSDL() {
 }
 
 //para destruir la ventana el render y cerrarla
-void game::closeSDL() {
+void Game::closeSDL() {
 	SDL_DestroyRenderer(pRender);
 	pRender = nullptr;
 
@@ -132,7 +132,7 @@ void game::closeSDL() {
 	SDL_Quit();
 }
 
-void game::render() { //const
+void Game::render() { //const
 						 //limpiamos el render
 	SDL_RenderClear(pRender);
 
@@ -144,7 +144,7 @@ void game::render() { //const
 	SDL_RenderPresent(pRender);
 }
 
-void game::run()
+void Game::run()
 {
 	Uint32 MSxUpdate = 500; // velocidad del juego
 	std::cout << "PLAY \n";
@@ -166,19 +166,19 @@ void game::run()
 	//std::cin.get();
 }
 
-void game::onClick(int pmx, int pmy) { //se guardan las posiciones que pasan por par�metro
+void Game::onClick(int pmx, int pmy) { //se guardan las posiciones que pasan por par�metro
 	mx = e.button.x;
 	my = e.button.y;
 	topEstado()->onClick();
 }
 
-void game::update() { //el juego corre mientras existan globos en el juego (aunque puede ser pausado)
+void Game::update() { //el juego corre mientras existan globos en el juego (aunque puede ser pausado)
 
 	topEstado()->update();
 }
 
 
-bool game::handle_event() { //eventos del teclado y raton
+bool Game::handle_event() { //eventos del teclado y raton
 	while (SDL_PollEvent(&e) && !exit) {
 		if (e.type == SDL_QUIT) {
 			exit = true;
@@ -219,25 +219,25 @@ bool game::handle_event() { //eventos del teclado y raton
 	return espera;
 }
 
-raizEstado * game::topEstado() {
+raizEstado * Game::topEstado() {
 	return estados.top();
 }
 
-void game::setSalir(){
+void Game::setSalir(){
 	exit = true;
 	closeSDL();
 
 }
-void game::changeState(raizEstado* newSt){
+void Game::changeState(raizEstado* newSt){
 	popState();
 	pushState(newSt);
 }
-void game::pushState(raizEstado* newState){
+void Game::pushState(raizEstado* newState){
 	estados.push(newState);
 }
 
 
-void game::popState(){
+void Game::popState(){
 	delete estados.top();
 	estados.pop();
 }

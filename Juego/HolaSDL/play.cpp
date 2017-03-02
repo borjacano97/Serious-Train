@@ -10,23 +10,23 @@
 #include<stdlib.h> // para nms aleatorios
 #include<time.h>
 
-play::play(game * j) : estado(j)
+Play::Play(Game * j) : Estado(j)
 {
 	//srand(time(NULL));
 	initObjects();
 }
 
 
-play::~play()
+Play::~Play()
 {
 	
 }
 
-bool play::initObjects() { // creación de los objetos dando un puntero, una textura y una posición (constructora de objs)
+bool Play::initObjects() { // creación de los objetos dando un puntero, una textura y una posición (constructora de objs)
 
-	train = new Tren(ptsjuego, game::TTren, 50, 0, " ");// en el último hueco poner como string tipo de vagón
-	player = new Personaje(ptsjuego, game::TPersonaje, 650, 350);
-	TrainHp = new barraHP(ptsjuego, game::TBarra, 10, 0, 0);
+	train = new Tren(ptsjuego, Game::TTren, 50, 0, " ");// en el último hueco poner como string tipo de vagón
+	player = new Personaje(ptsjuego, Game::TPersonaje, 650, 350);
+	TrainHp = new barraHP(ptsjuego, Game::TBarra, 10, 0, 0);
 
 
 	objetos.emplace_back(train); 
@@ -38,14 +38,14 @@ bool play::initObjects() { // creación de los objetos dando un puntero, una text
 	return true;
 }
 
-void play::freeObjects() {
+void Play::freeObjects() {
 	
 }
-void play::onClick(){
+void Play::onClick(){
 	//objetos[0]->onClick();
-	balas.emplace_back(new Bala(ptsjuego, game::TPersonaje, player->getx(), player->gety(), player->getMira()));
+	balas.emplace_back(new Bala(ptsjuego, Game::TPersonaje, player->getx(), player->gety(), player->getMira()));
 }
-void play::update() {  
+void Play::update() {  
 	for (unsigned int i = 3; i < objetos.size(); i++) {
 
 		
@@ -73,12 +73,12 @@ void play::update() {
 	aleatorio = rand() % 10000; //generar zombies aleatorios
 	if (aleatorio >= 9980) {
 		izq = rand() % 2;
-		if (izq == 0) objetos.emplace_back(new enemigo(ptsjuego, game::TEnemigo, 0, rand() % 500 + 50));
-		else objetos.emplace_back(new enemigo(ptsjuego, game::TEnemigo, 1300, rand() % 500 + 50));
+		if (izq == 0) objetos.emplace_back(new Enemigo(ptsjuego, Game::TEnemigo, 0, rand() % 500 + 50));
+		else objetos.emplace_back(new Enemigo(ptsjuego, Game::TEnemigo, 1300, rand() % 500 + 50));
 	}
-	estado::update();
+	Estado::update();
 }
 
-void play::move(char c){
+void Play::move(char c){
 	objetos[1]->move(c);
 }

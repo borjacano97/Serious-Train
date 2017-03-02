@@ -3,10 +3,10 @@
 
 #include <string>
 class Tren :
-	public objeto
+	public Objeto
 {
 public:
-	Tren(game* juego, game::Texturas_t text, int x, int y, std::string tipo);
+	Tren(Game* juego, Game::Texturas_t text, int x, int y, std::string tipo);
 	~Tren();
 	void draw();
 	void update();	

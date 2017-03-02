@@ -4,11 +4,11 @@
 #include "tren.h"
 #include "barraHP.h"
 
-class play: public estado
+class Play: public Estado
 {
 public:
-	play(game * j);
-	~play();
+	Play(Game * j);
+	~Play();
 
 	void onClick();
 	void update();

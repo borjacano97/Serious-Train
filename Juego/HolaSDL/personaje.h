@@ -1,10 +1,10 @@
 #pragma once
 #include "objeto.h"
 
-class Personaje:public objeto
+class Personaje:public Objeto
 {
 public:
-	Personaje(game* juego, game::Texturas_t text, int x, int y);
+	Personaje(Game* juego, Game::Texturas_t text, int x, int y);
 	~Personaje();
 	void draw();
 	void update();

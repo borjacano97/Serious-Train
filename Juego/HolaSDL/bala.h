@@ -1,9 +1,9 @@
 #pragma once
 #include "objeto.h"
-class Bala : public objeto
+class Bala : public Objeto
 {
 public:
-	Bala(game* juego, game::Texturas_t text, int x, int y, int mira);
+	Bala(Game* juego, Game::Texturas_t text, int x, int y, int mira);
 	~Bala();
 	void draw();
 	void update();

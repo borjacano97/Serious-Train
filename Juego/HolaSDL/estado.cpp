@@ -1,17 +1,17 @@
 #include "estado.h"
 #include "play.h"
 
-estado::estado(game * j)
+Estado::Estado(Game * j)
 {
 	ptsjuego = j;
 }
 
 
-estado::~estado()
+Estado::~Estado()
 {
 }
 
-void estado::draw() {
+void Estado::draw() {
 	for (unsigned int i = 0; i < objetos.size(); i++) {
 		if (objetos[i] != nullptr)
 		    objetos[i]->draw();
@@ -26,7 +26,7 @@ void estado::draw() {
 
 
 
-void estado::update() {
+void Estado::update() {
 	for (unsigned int i = 0; i < objetos.size(); i++) {
 		if (objetos[i] != nullptr)
 		    objetos[i]->update();

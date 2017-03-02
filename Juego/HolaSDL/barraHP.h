@@ -1,10 +1,10 @@
 #pragma once
 #include "objeto.h"
 class barraHP :
-	public objeto
+	public Objeto
 {
 public:
-	barraHP(game* juego, game::Texturas_t text, int x, int y, int extraHP);
+	barraHP(Game* juego, Game::Texturas_t text, int x, int y, int extraHP);
 	~barraHP();
 
 	void draw();

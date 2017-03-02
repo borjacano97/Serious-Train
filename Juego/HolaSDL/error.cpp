@@ -2,16 +2,16 @@
 #include <string>
 
 
-error::error(std::string mens)
+Error::Error(std::string mens)
 {
 	mailinfo = mens;
 }
 
 
-error::~error()
+Error::~Error()
 {
 }
 
-const std::string & error::mensaje() {
+const std::string & Error::mensaje() {
 	return mailinfo;
 }

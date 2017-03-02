@@ -1,7 +1,7 @@
 #include "button.h"
 
 
-button::button(game* juego, game::Texturas_t text, int x, int y, CallBack_t * cbCons)
+Button::Button(Game* juego, Game::Texturas_t text, int x, int y, CallBack_t * cbCons)
 {
 	juegootp = juego;
 
@@ -17,14 +17,14 @@ button::button(game* juego, game::Texturas_t text, int x, int y, CallBack_t * cb
 }
 
 
-button::~button()
+Button::~Button()
 {
 }
-void button::move(char c){
+void Button::move(char c){
 
 }
 
-void button::draw(){
+void Button::draw(){
 	rectb.h = alto;
 	rectb.w = ancho;
 	rectb.x = pimgx;
@@ -34,7 +34,7 @@ void button::draw(){
 }
 
 
-bool button::onClick(){
+bool Button::onClick(){
 	juegootp->getMousePos(mpbx, mpby);
 
 	if (dentro(mpbx, mpby)){
@@ -45,6 +45,6 @@ bool button::onClick(){
 }
 
 
-void button::update(){
+void Button::update(){
 
 }

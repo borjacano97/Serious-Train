@@ -3,22 +3,22 @@
 #include "play.h"
 
 
-Menu::Menu(game * juego) :estado(juego)
+Menu::Menu(Game * juego) :Estado(juego)
 {
-	objetos.emplace_back(new button(ptsjuego, game::TBoton, 500, 400, salir));
-	objetos.emplace_back(new button(ptsjuego, game::TBoton, 200, 400, jugar));
+	objetos.emplace_back(new Button(ptsjuego, Game::TBoton, 500, 400, salir));
+	objetos.emplace_back(new Button(ptsjuego, Game::TBoton, 200, 400, jugar));
 }
 
 
 Menu::~Menu()
 {
 }
-void Menu::salir(game * jg){
+void Menu::salir(Game * jg){
 	jg->setSalir();
 }
 
-void Menu::jugar(game * jg){
-	jg->changeState(new play(jg));  
+void Menu::jugar(Game * jg){
+	jg->changeState(new Play(jg));  
 }
 
 void Menu::onClick(){

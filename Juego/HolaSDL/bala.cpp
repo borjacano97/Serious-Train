@@ -1,7 +1,7 @@
 #include "bala.h"
 
 
-Bala::Bala(game* juego, game::Texturas_t text, int x, int y, int mira)
+Bala::Bala(Game* juego, Game::Texturas_t text, int x, int y, int mira)
 {
 
 	juegootp = juego;
@@ -36,13 +36,10 @@ bool Bala::onClick() {
 }
 
 void Bala::update() {
-	if (pimgx <= 100 || pimgx >=1200){
-		destruido = true;	
-	}
-		
 	pimgx += dir * vel;
-
-
+	
+	if (pimgx <= 100 || pimgx >=1200)
+		destruido = true;
 }
 void Bala::move(char c){
 

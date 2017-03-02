@@ -4,11 +4,11 @@
 #include <iostream>
 #include <string>
 
-class texturas 
+class Texturas 
 {
 public:
-	texturas();
-	~texturas();
+	Texturas();
+	~Texturas();
 	//métodos públicos para cargar y pintar
 	bool load(SDL_Renderer*prender, std::string const& nombArch);
 	void draw(SDL_Renderer*prender, SDL_Rect* const &rect2, SDL_Rect* const& rect);

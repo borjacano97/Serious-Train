@@ -1,12 +1,12 @@
 #pragma once
 #include "objeto.h"
-class button :
-	public objeto
+class Button :
+	public Objeto
 {
 public:
-	typedef void CallBack_t(game * g);
-	button(game* juego, game::Texturas_t text, int x, int y, CallBack_t * cbCons);
-	~button();
+	typedef void CallBack_t(Game * g);
+	Button(Game* juego, Game::Texturas_t text, int x, int y, CallBack_t * cbCons);
+	~Button();
 	void draw();
 	void update();
 	bool onClick();

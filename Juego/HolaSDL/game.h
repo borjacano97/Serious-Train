@@ -7,17 +7,15 @@
 #include <vector> // para vectores de texturas, objetos, ect.
 #include <string>
 #include <stack> //  uso de pila para los estados
-class game 
-
-{
+class Game{
 public:
-	game();
-	~game();
+	Game();
+	~Game();
 
 	
 
 	enum Texturas_t { TFondo, TPersonaje, TEnemigo, TTren, TBarra, TBoton};
-	texturas* getTextura(Texturas_t et) const { return texts[et]; }
+	Texturas* getTextura(Texturas_t et) const { return texts[et]; }
 	SDL_Renderer* getRender() const;
 
 	raizEstado* topEstado();
@@ -39,7 +37,7 @@ private:
 	SDL_Event e;
 
 	std::string ntexturas[6];
-	std::vector<texturas*> texts;
+	std::vector<Texturas*> texts;
 	std::stack<raizEstado*> estados;
 
 	bool initSDL(); //ventana de render SDL (pantalla)

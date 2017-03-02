@@ -1,15 +1,15 @@
 #include "objeto.h"
 
 
-objeto::objeto()
+Objeto::Objeto()
 {
 }
 
 
-objeto::~objeto()
+Objeto::~Objeto()
 {
 }
-bool objeto::dentro(int x, int y) const{
+bool Objeto::dentro(int x, int y) const{
 	std::cout << x << "\n";
 	return (x >= pimgx && x <= pimgx + ancho && y >= pimgy && y <= pimgy + alto);
 	

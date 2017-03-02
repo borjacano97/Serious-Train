@@ -4,7 +4,7 @@
 
 
 
-enemigo::enemigo(game* juego, game::Texturas_t text, int x, int y)
+Enemigo::Enemigo(Game* juego, Game::Texturas_t text, int x, int y)
 {
 	juegootp = juego;
 	Ttextura = text;
@@ -17,11 +17,11 @@ enemigo::enemigo(game* juego, game::Texturas_t text, int x, int y)
 }
 
 
-enemigo::~enemigo()
+Enemigo::~Enemigo()
 {
 }
 
-void enemigo::draw() {
+void Enemigo::draw() {
 	rect.h = alto;
 	rect.w = ancho;
 	rect.x = pimgx;
@@ -32,10 +32,10 @@ void enemigo::draw() {
 
 }
 
-bool enemigo::onClick() {
+bool Enemigo::onClick() {
 	return true;
 }
-void enemigo::update() {
+void Enemigo::update() {
 	cont++;
 	if (cont >= 5 && pimgx >=775) {
 		cont = 0;
@@ -49,7 +49,7 @@ void enemigo::update() {
 }
 
 
-void enemigo::move(char c) {
+void Enemigo::move(char c) {
 
 }
 

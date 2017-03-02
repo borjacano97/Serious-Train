@@ -3,7 +3,7 @@
 
 
 
-Personaje::Personaje(game* juego, game::Texturas_t text, int x, int y)
+Personaje::Personaje(Game* juego, Game::Texturas_t text, int x, int y)
 {
 	juegootp = juego;
 	Ttextura = text;

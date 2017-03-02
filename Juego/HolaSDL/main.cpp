@@ -12,12 +12,12 @@ int main(int argc, char *argv[])
 	// Hacer un try-catch en el main para posibles errores en texturas o SDL
 
 
-	game j;
+	Game j;
 	
 	try {
 		j.run();
 	}
-	catch (error & errorSDL) {
+	catch (Error & errorSDL) {
 		char const *eMens = errorSDL.mensaje().c_str();
 		SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_INFORMATION, "Error SDL", eMens, nullptr);
 		//j.freeMedia();

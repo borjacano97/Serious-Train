@@ -2,7 +2,7 @@
 
 
 
-barraHP::barraHP(game* juego, game::Texturas_t text, int x, int y, int extraHP)
+barraHP::barraHP(Game* juego, Game::Texturas_t text, int x, int y, int extraHP)
 {
 	juegootp = juego;
 	Ttextura = text;
