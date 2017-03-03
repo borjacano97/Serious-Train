@@ -31,7 +31,7 @@ void barraHP::draw() {
 }
 
 void barraHP::update() {
-	
+	if (ancho <= 0) destruido = true;
 }
 bool barraHP::onClick() {
 	return true;

@@ -38,6 +38,7 @@ Game::~Game()
 	freeMedia();
 	closeSDL();
 
+
 	pWin = nullptr;
 	pRender = nullptr;
 }

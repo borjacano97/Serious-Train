@@ -5,6 +5,7 @@
 #include "enemigo.h"
 #include "tren.h"
 #include "barraHP.h"
+#include "gameOver.h"
 
 #include <string>
 #include<stdlib.h> // para nms aleatorios
@@ -13,12 +14,15 @@
 Play::Play(Game * j) : Estado(j)
 {
 	//srand(time(NULL));
+	//ptsjuego = j;
 	initObjects();
 }
 
 
 Play::~Play()
 {
+	freeObjects();
+	ptsjuego = nullptr;
 	
 }
 
@@ -39,6 +43,15 @@ bool Play::initObjects() { // creación de los objetos dando un puntero, una text
 }
 
 void Play::freeObjects() {
+	for (unsigned int i = 3; i < objetos.size(); i++) {
+		delete objetos[i];
+		objetos[i] = nullptr;
+	}
+	for (unsigned int i = 3; i < balas.size(); i++) {
+		delete balas[i];
+		balas[i] = nullptr;
+	}
+
 	
 }
 void Play::onClick(){
@@ -46,37 +59,41 @@ void Play::onClick(){
 	balas.emplace_back(new Bala(ptsjuego, Game::TPersonaje, player->getx(), player->gety(), player->getMira()));
 }
 void Play::update() {  
-	for (unsigned int i = 3; i < objetos.size(); i++) {
-
-		
-		if (objetos[i] != nullptr  && objetos[i]->getId() == 'E' 
-			&& objetos[i]->getx() >= 520 && objetos[i]->getx() <= 775) {// detecta zombis que quitan vida al tren
-			objetos[2]->move('h');
+	
+		if (TrainHp != nullptr && TrainHp->getDest()) {
+			ptsjuego->changeState(new gameOver(ptsjuego));
 		}
-		for (unsigned int j = 0; j < balas.size(); j++) {
-			// muerte por colisión de objetos exceptuando el personaje, tren y barra de vida, si va a haber choque entre zombies hay que poner
-			// un booleano que identifique entre balas y sombis
-			if (objetos[i] != nullptr && balas[j] != nullptr && 
-				(objetos[i]->getx() - balas[j]->getx()) <= 30 && (objetos[i]->getx() - balas[j]->getx()) >= -30 &&
-				 (objetos[i]->gety() - balas[j]->gety()) <= 40 && (objetos[i]->gety() - balas[j]->gety()) >= -40) {
+		else {
+			for (unsigned int i = 3; i < objetos.size(); i++) {
 
-			    delete objetos[i];
-			    objetos[i] = nullptr;
-				delete balas[j];
-				balas[j] = nullptr;
-		     }
+
+				if (objetos[i] != nullptr  && objetos[i]->getId() == 'E'
+					&& objetos[i]->getx() >= 520 && objetos[i]->getx() <= 775) {// detecta zombis que quitan vida al tren
+					TrainHp->move('h');
+				}
+				for (unsigned int j = 0; j < balas.size(); j++) {
+					// muerte por colisión de objetos exceptuando el personaje, tren y barra de vida, si va a haber choque entre zombies hay que poner
+					// un booleano que identifique entre balas y sombis
+					if (objetos[i] != nullptr && balas[j] != nullptr &&
+						(objetos[i]->getx() - balas[j]->getx()) <= 30 && (objetos[i]->getx() - balas[j]->getx()) >= -30 &&
+						(objetos[i]->gety() - balas[j]->gety()) <= 40 && (objetos[i]->gety() - balas[j]->gety()) >= -40) {
+
+						delete objetos[i];
+						objetos[i] = nullptr;
+						delete balas[j];
+						balas[j] = nullptr;
+					}
+				}
 		}
-		
-		
-		
+			aleatorio = rand() % 10000; //generar zombies aleatorios
+			if (aleatorio >= 9980) {
+				izq = rand() % 2;
+				if (izq == 0) objetos.emplace_back(new Enemigo(ptsjuego, Game::TEnemigo, 0, rand() % 500 + 50));
+				else objetos.emplace_back(new Enemigo(ptsjuego, Game::TEnemigo, 1300, rand() % 500 + 50));
+			}
+			Estado::update();
 	}
-	aleatorio = rand() % 10000; //generar zombies aleatorios
-	if (aleatorio >= 9980) {
-		izq = rand() % 2;
-		if (izq == 0) objetos.emplace_back(new Enemigo(ptsjuego, Game::TEnemigo, 0, rand() % 500 + 50));
-		else objetos.emplace_back(new Enemigo(ptsjuego, Game::TEnemigo, 1300, rand() % 500 + 50));
-	}
-	Estado::update();
+	
 }
 
 void Play::move(char c){
