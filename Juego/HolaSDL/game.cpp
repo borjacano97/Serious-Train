@@ -201,20 +201,24 @@ bool Game::handle_event() { //eventos del teclado y raton
 			else if (e.key.keysym.sym == SDLK_d) {
 				topEstado()->move('D');
 			}	
-			if (e.key.keysym.sym = SDLK_ESCAPE) {
+			if (e.key.keysym.sym == SDLK_ESCAPE) {
 				//pushState(new Pausa(this));				
 			}
-		}
-		
-
-		else if (e.type == SDL_MOUSEBUTTONDOWN) { // click izquierdo para llamar al onclick
-			if (e.button.state == SDL_BUTTON_LEFT && cadencia >=100) {
+			else if ((e.key.keysym.sym == SDLK_l || e.key.keysym.sym == SDLK_SPACE) && cadencia >= 100) {
 				cadencia = 0;
+				topEstado()->onClick();
+				//onClick(e.button.x, e.button.y); PUSSY ASS BITCH IDON FACK WITH U
+			}
+			
+		 // click izquierdo para llamar al onclick
+			
+		}
+		else if (e.type == SDL_MOUSEBUTTONDOWN) { // click izquierdo para llamar al onclick
+			if (e.button.state == SDL_BUTTON_LEFT) {
 				topEstado()->onClick();
 				onClick(e.button.x, e.button.y);
 			}
 		}
-
 	}
 	cadencia++;
 	return espera;
