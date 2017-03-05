@@ -40,10 +40,10 @@ void Personaje::draw() {
 void Personaje::update() {
 	pimgx += dir.x*vel;
 	pimgy += dir.y*vel;
-	if (pimgx < 580)
-		pimgx = 580;
-	else if (pimgx > 700)
-		pimgx = 700;
+	if (pimgx < 555)
+		pimgx = 555;
+	else if (pimgx > 675)
+		pimgx = 675;
 	if (pimgy < 60)
 		pimgy = 60;
 	else if (pimgy > 560)

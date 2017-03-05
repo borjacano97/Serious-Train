@@ -37,11 +37,11 @@ bool Enemigo::onClick() {
 }
 void Enemigo::update() {
 	cont++;
-	if (cont >= 5 && pimgx >=775) {
+	if (cont >= 5 && pimgx >=745) {
 		cont = 0;
 		pimgx--;
 	}
-	if (cont >= 5 && pimgx <= 520) {
+	if (cont >= 5 && pimgx <= 500) {
 		cont = 0;
 		pimgx++;
 	}

@@ -12,7 +12,7 @@ Game::Game()
 {
 	//inicialización de texturas, SDL y demás atributos privados
 
-	ntexturas[0] = "../bmps/fondo.jpg";
+	ntexturas[0] = "../bmps/fondoprot.png";
 	ntexturas[1] = "../bmps/personaje.jpg";
 	ntexturas[2] = "../bmps/enemigo.png";
 	ntexturas[3] = "../bmps/tren.png";
@@ -204,11 +204,11 @@ bool Game::handle_event() { //eventos del teclado y raton
 			if (e.key.keysym.sym == SDLK_ESCAPE) {
 				//pushState(new Pausa(this));				
 			}
-			else if ((e.key.keysym.sym == SDLK_l || e.key.keysym.sym == SDLK_SPACE) && cadencia >= 100) {
+			/*else if ((e.key.keysym.sym == SDLK_l || e.key.keysym.sym == SDLK_SPACE) && cadencia >= 100) {
 				cadencia = 0;
 				topEstado()->onClick();
 				//onClick(e.button.x, e.button.y); PUSSY ASS BITCH IDON FACK WITH U
-			}
+			}*/
 			
 		 // click izquierdo para llamar al onclick
 			

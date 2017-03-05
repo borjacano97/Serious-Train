@@ -23,12 +23,15 @@ Play::~Play()
 {
 	freeObjects();
 	ptsjuego = nullptr;
+	train = nullptr;
+	player = nullptr;
+	TrainHp = nullptr;
 	
 }
 
 bool Play::initObjects() { // creación de los objetos dando un puntero, una textura y una posición (constructora de objs)
 
-	train = new Tren(ptsjuego, Game::TTren, 50, 0, " ");// en el último hueco poner como string tipo de vagón
+	train = new Tren(ptsjuego, Game::TTren, 25, 0, " ");// en el último hueco poner como string tipo de vagón
 	player = new Personaje(ptsjuego, Game::TPersonaje, 650, 350);
 	TrainHp = new barraHP(ptsjuego, Game::TBarra, 10, 0, 0);
 
@@ -68,7 +71,7 @@ void Play::update() {
 
 
 				if (objetos[i] != nullptr  && objetos[i]->getId() == 'E'
-					&& objetos[i]->getx() >= 520 && objetos[i]->getx() <= 775) {// detecta zombis que quitan vida al tren
+					&& objetos[i]->getx() >= 500 && objetos[i]->getx() <= 745) {// detecta zombis que quitan vida al tren
 					TrainHp->move('h');
 				}
 				for (unsigned int j = 0; j < balas.size(); j++) {

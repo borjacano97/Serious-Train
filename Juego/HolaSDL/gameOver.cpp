@@ -22,7 +22,8 @@ void gameOver::salir(Game * jg){
 void gameOver::jugar(Game * jg){
 	jg->changeState(new Play(jg));
 }
-
+// ADVICE: HAY QUE DISPARAR AL MENOS UNA VEZ CON EL RATÓN EN PLAY PARA QUE FUNCIONE
+// CORRECTAMENTE EL GAMEOVER, NO PREGUNTÉIS POR QUE
 void gameOver::onClick(){
 	bool clickeado = false;
 
