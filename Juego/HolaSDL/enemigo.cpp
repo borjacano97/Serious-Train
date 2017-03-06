@@ -37,7 +37,7 @@ bool Enemigo::onClick() {
 }
 void Enemigo::update() {
 	cont++;
-	if (cont >= 5 && pimgx >=745) {
+	if (cont >= 5 && pimgx >=745) { // ZAS, En TODA LA BOCA
 		cont = 0;
 		pimgx--;
 	}

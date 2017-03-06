@@ -46,10 +46,14 @@ bool Play::initObjects() { // creación de los objetos dando un puntero, una text
 }
 
 void Play::freeObjects() {
-	for (unsigned int i = 3; i < objetos.size(); i++) {
-		delete objetos[i];
-		objetos[i] = nullptr;
+	// c++11
+	for (auto o : objetos) { //unsigned int i = 3; i < objetos.size(); i++) {
+	//for (unsigned int i = 3; i < objetos.size(); i++) {
+		//delete objetos[i];
+		//objetos[i] = nullptr;
+		delete o;
 	}
+	// hacer aquí lo mismo
 	for (unsigned int i = 3; i < balas.size(); i++) {
 		delete balas[i];
 		balas[i] = nullptr;
@@ -63,10 +67,12 @@ void Play::onClick(){
 }
 void Play::update() {  
 	
+	// si esto no puede (o no debe ser null) quitad esto
 		if (TrainHp != nullptr && TrainHp->getDest()) {
 			ptsjuego->changeState(new gameOver(ptsjuego));
 		}
 		else {
+			// for guay aquí. cuidado con i = 3.
 			for (unsigned int i = 3; i < objetos.size(); i++) {
 
 
@@ -81,6 +87,9 @@ void Play::update() {
 						delete balas[j];
 						balas[j] = nullptr;
 					}
+
+					// El Dios de la programación está llorando.
+					// Amargamente.
 
 					if (objetos[i] != nullptr && balas[j] != nullptr &&
 						(objetos[i]->getx() - balas[j]->getx()) <= 30 && (objetos[i]->getx() - balas[j]->getx()) >= -30 &&
@@ -105,5 +114,5 @@ void Play::update() {
 }
 
 void Play::move(char c){
-	objetos[1]->move(c);
+	objetos[1]->move(c); // El Dios de la programación quiere suicidarse. Pero no puede, es inmortal.
 }

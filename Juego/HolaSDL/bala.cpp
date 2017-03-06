@@ -7,7 +7,7 @@ Bala::Bala(Game* juego, Game::Texturas_t text, int x, int y, int mira)
 	juegootp = juego;
 	Ttextura = text;
 
-	alto = 20;
+	alto = 20;  // "Esto para probar, luego..."
 	ancho = 20;
 
 	pimgx = x;

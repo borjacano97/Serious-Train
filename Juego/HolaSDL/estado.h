@@ -17,7 +17,7 @@ protected:
 	Game* ptsjuego;
 
 	std::vector <raizObjeto*> objetos; // objetos que contiene cada estado
-	std::vector <raizObjeto*> balas; 
+	std::vector <raizObjeto*> balas; // TODO mirad estándares de código
 
 };
 
