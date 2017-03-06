@@ -19,7 +19,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v120</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -67,39 +67,39 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="bala.cpp" />
-    <ClCompile Include="barraHP.cpp" />
-    <ClCompile Include="button.cpp" />
-    <ClCompile Include="enemigo.cpp" />
-    <ClCompile Include="error.cpp" />
-    <ClCompile Include="estado.cpp" />
-    <ClCompile Include="game.cpp" />
-    <ClCompile Include="gameOver.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="menu.cpp" />
-    <ClCompile Include="objeto.cpp" />
-    <ClCompile Include="personaje.cpp" />
-    <ClCompile Include="play.cpp" />
-    <ClCompile Include="texturas.cpp" />
-    <ClCompile Include="tren.cpp" />
+    <ClCompile Include="Bala.cpp" />
+    <ClCompile Include="BarraHP.cpp" />
+    <ClCompile Include="Button.cpp" />
+    <ClCompile Include="Enemigo.cpp" />
+    <ClCompile Include="Error.cpp" />
+    <ClCompile Include="Estado.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameOver.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Menu.cpp" />
+    <ClCompile Include="Objeto.cpp" />
+    <ClCompile Include="Personaje.cpp" />
+    <ClCompile Include="Play.cpp" />
+    <ClCompile Include="Texturas.cpp" />
+    <ClCompile Include="Tren.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="bala.h" />
-    <ClInclude Include="barraHP.h" />
-    <ClInclude Include="button.h" />
-    <ClInclude Include="enemigo.h" />
-    <ClInclude Include="error.h" />
-    <ClInclude Include="estado.h" />
-    <ClInclude Include="game.h" />
-    <ClInclude Include="gameOver.h" />
-    <ClInclude Include="menu.h" />
-    <ClInclude Include="objeto.h" />
-    <ClInclude Include="personaje.h" />
-    <ClInclude Include="play.h" />
-    <ClInclude Include="raizEstado.h" />
-    <ClInclude Include="raizObjeto.h" />
-    <ClInclude Include="texturas.h" />
-    <ClInclude Include="tren.h" />
+    <ClInclude Include="Bala.h" />
+    <ClInclude Include="BarraHP.h" />
+    <ClInclude Include="Button.h" />
+    <ClInclude Include="Enemigo.h" />
+    <ClInclude Include="Error.h" />
+    <ClInclude Include="Estado.h" />
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="GameOver.h" />
+    <ClInclude Include="Menu.h" />
+    <ClInclude Include="Objeto.h" />
+    <ClInclude Include="Personaje.h" />
+    <ClInclude Include="Play.h" />
+    <ClInclude Include="RaizEstado.h" />
+    <ClInclude Include="RaizObjeto.h" />
+    <ClInclude Include="Texturas.h" />
+    <ClInclude Include="Tren.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,6 +1,6 @@
-#include "menu.h"
-#include "button.h"
-#include "play.h"
+#include "Menu.h"
+#include "Button.h"
+#include "Play.h"
 
 
 Menu::Menu(Game * juego) :Estado(juego)

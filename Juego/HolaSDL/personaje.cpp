@@ -1,5 +1,5 @@
-#include "personaje.h"
-#include "bala.h"
+#include "Personaje.h"
+#include "Bala.h"
 
 
 

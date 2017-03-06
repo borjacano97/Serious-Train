@@ -1,4 +1,4 @@
-#include "objeto.h"
+#include "Objeto.h"
 
 
 Objeto::Objeto()

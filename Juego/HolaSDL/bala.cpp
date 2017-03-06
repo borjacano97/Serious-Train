@@ -1,4 +1,4 @@
-#include "bala.h"
+#include "Bala.h"
 
 
 Bala::Bala(Game* juego, Game::Texturas_t text, int x, int y, int mira)

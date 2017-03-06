@@ -1,5 +1,5 @@
-#include "estado.h"
-#include "play.h"
+#include "Estado.h"
+#include "Play.h"
 
 Estado::Estado(Game * j)
 {

@@ -1,5 +1,5 @@
-#include "texturas.h"
-#include "error.h"
+#include "Texturas.h"
+#include "Error.h"
 #include "SDL.h"
 #include <iostream>
 

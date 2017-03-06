@@ -1,7 +1,7 @@
-﻿#include "game.h"
-#include "error.h"
-#include "menu.h"
-#include "play.h"
+﻿#include "Game.h"
+#include "Error.h"
+#include "Menu.h"
+#include "Play.h"
 
 #include <iostream>
 #include <typeinfo>
@@ -27,7 +27,7 @@ Game::Game()
 	espera = false;
 	gameOver = false;
 	exit = false;
-	cadencia = 20;
+	cadencia = 150;
 
 	estados.push(new Menu(this)); // estado que queremos inicial
 }
@@ -214,7 +214,8 @@ bool Game::handle_event() { //eventos del teclado y raton
 			
 		}
 		else if (e.type == SDL_MOUSEBUTTONDOWN) { // click izquierdo para llamar al onclick
-			if (e.button.state == SDL_BUTTON_LEFT) {
+			if (e.button.state == SDL_BUTTON_LEFT && cadencia >= 150) {
+				cadencia = 0;
 				topEstado()->onClick();
 				onClick(e.button.x, e.button.y);
 			}

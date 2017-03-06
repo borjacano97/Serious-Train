@@ -1,8 +1,8 @@
 #pragma once
-#include "estado.h"
-#include "personaje.h"
-#include "tren.h"
-#include "barraHP.h"
+#include "Estado.h"
+#include "Personaje.h"
+#include "Tren.h"
+#include "BarraHP.h"
 
 class Play: public Estado
 {
@@ -20,6 +20,7 @@ private:
 	Tren* train;
 	barraHP* TrainHp;
 
+	bool dest;
 	bool initObjects(); //crear y destruir los objetos del juego
 	void freeObjects();
 

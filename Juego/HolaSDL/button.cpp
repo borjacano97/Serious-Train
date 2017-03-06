@@ -1,4 +1,4 @@
-#include "button.h"
+#include "Button.h"
 
 
 Button::Button(Game* juego, Game::Texturas_t text, int x, int y, CallBack_t * cbCons)

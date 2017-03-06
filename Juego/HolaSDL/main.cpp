@@ -1,9 +1,9 @@
 // Método main a ejecutar, sólo debe llamar a la clase Juego
 
 #include "SDL.h"       //debe incluir SDL y texturas
-#include "texturas.h"
-#include "game.h"
-#include "error.h"
+#include "Texturas.h"
+#include "Game.h"
+#include "Error.h"
 
 #include <iostream> 
 

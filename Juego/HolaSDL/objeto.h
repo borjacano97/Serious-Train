@@ -1,5 +1,5 @@
 #pragma once
-#include "game.h" // tiene que incluirse para que pueda heredar de raizObjeto, y para el puntero
+#include "Game.h" // tiene que incluirse para que pueda heredar de raizObjeto, y para el puntero
 
 class Objeto: public raizObjeto 
 {

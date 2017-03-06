@@ -1,6 +1,6 @@
-#include "enemigo.h"
-#include "estado.h"
-#include "game.h"
+#include "Enemigo.h"
+#include "Estado.h"
+#include "Game.h"
 
 
 

@@ -1,7 +1,7 @@
 #pragma once
-#include "texturas.h"
-#include "raizObjeto.h"
-#include "raizEstado.h"
+#include "Texturas.h"
+#include "RaizObjeto.h"
+#include "RaizEstado.h"
 
 #include <SDL.h>
 #include <vector> // para vectores de texturas, objetos, ect.

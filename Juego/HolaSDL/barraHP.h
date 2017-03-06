@@ -1,5 +1,5 @@
 #pragma once
-#include "objeto.h"
+#include "Objeto.h"
 class barraHP :
 	public Objeto
 {

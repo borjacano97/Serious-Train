@@ -1,6 +1,6 @@
-#include "gameOver.h"
-#include "button.h"
-#include "play.h"
+#include "GameOver.h"
+#include "Button.h"
+#include "Play.h"
 
 
 gameOver::gameOver(Game* juego) :Estado(juego)
