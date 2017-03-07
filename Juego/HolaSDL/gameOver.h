@@ -1,14 +1,16 @@
 #pragma once
 #include "Estado.h"
 
-class gameOver :
+class GameOver :
 	public Estado
 {
 public:
-	gameOver(Game* juego);
-	~gameOver();
+	GameOver(Game* juego);
+	~GameOver();
 	void onClick();
+	void draw();
 	static void salir(Game * jg);
 	static void jugar(Game * jg);
+
 };
 

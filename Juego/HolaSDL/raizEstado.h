@@ -1,13 +1,13 @@
 #pragma once
-class raizEstado
+class RaizEstado
 {
 public:
 
-	raizEstado()
+	RaizEstado()
 	{
 	}
 
-	virtual ~raizEstado()
+	virtual ~RaizEstado()
 	{
 	}
 	virtual void draw() = 0;

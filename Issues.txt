@@ -4,3 +4,11 @@
   Posible solución: reimplemntar las colecciones de objetos con linkedList en vez de vectores
 
   - Balas destruyendose pls xd
+
+
+Issue #2: 
+  Cosillas que van a quedar guapas pa la presen:
+      - Tren dividido en vagones
+      - Enemigo 2	
+      - Fin de partida cuando ganas   
+

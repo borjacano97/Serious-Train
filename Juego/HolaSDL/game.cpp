@@ -15,9 +15,12 @@ Game::Game()
 	ntexturas[0] = "../bmps/fondoprot.png";
 	ntexturas[1] = "../bmps/personaje.jpg";
 	ntexturas[2] = "../bmps/enemigo.png";
-	ntexturas[3] = "../bmps/tren.png";
-	ntexturas[4] = "../bmps/barraHP.png";
-	ntexturas[5] = "../bmps/boton.png";
+	ntexturas[3] = "../bmps/enemigo2.png";
+	ntexturas[4] = "../bmps/tren.png";
+	ntexturas[5] = "../bmps/barraHP.png";
+	ntexturas[6] = "../bmps/botonJ.png";
+	ntexturas[7] = "../bmps/botonS.png";
+	ntexturas[8] = "../bmps/botonC.png";
 
 	srand(SDL_GetTicks()); // no se que coño es esto xd
 
@@ -48,26 +51,10 @@ SDL_Renderer* Game::getRender()const {
 }
 
 void Game::initMedia() {
-
-	//cargar todo tipo de texturas
-	texts.emplace_back(new Texturas);
-	texts[0]->load(getRender(), ntexturas[0]);
-
-	texts.emplace_back(new Texturas);
-	texts[1]->load(getRender(), ntexturas[1]);
-
-	texts.emplace_back(new Texturas);
-	texts[2]->load(getRender(), ntexturas[2]);
-
-	texts.emplace_back(new Texturas);
-	texts[3]->load(getRender(), ntexturas[3]);
-
-	texts.emplace_back(new Texturas);
-	texts[4]->load(getRender(), ntexturas[4]);
-
-	texts.emplace_back(new Texturas);
-	texts[5]->load(getRender(), ntexturas[5]);
-
+	for (unsigned int i = 0; i < 8/*magic namber dude*/; i++) {
+		texts.emplace_back(new Texturas);
+		texts[i]->load(getRender(), ntexturas[i]);
+	}
 }
 
 void Game::getMousePos(int & mpx, int & mpy) const{ //obtener posicion del mouse
@@ -225,7 +212,7 @@ bool Game::handle_event() { //eventos del teclado y raton
 	return espera;
 }
 
-raizEstado * Game::topEstado() {
+RaizEstado * Game::topEstado() {
 	return estados.top();
 }
 
@@ -234,11 +221,11 @@ void Game::setSalir(){
 	closeSDL();
 
 }
-void Game::changeState(raizEstado* newSt){
+void Game::changeState(RaizEstado* newSt){
 	popState();
 	pushState(newSt);
 }
-void Game::pushState(raizEstado* newState){
+void Game::pushState(RaizEstado* newState){
 	estados.push(newState);
 }
 

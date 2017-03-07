@@ -1,7 +1,7 @@
 #pragma once
 #include "Estado.h"
 #include "Personaje.h"
-#include "Tren.h"
+#include "Vagon.h"
 #include "BarraHP.h"
 
 class Play: public Estado
@@ -11,18 +11,25 @@ public:
 	~Play();
 
 	void onClick();
+	void draw();
 	void update();
 	void move(char c);
 private:
 	int izq;
 	int aleatorio;
 	Personaje* player;
-	Tren* train;
 	barraHP* TrainHp;
 
+	int vag = 5;
 	bool dest;
 	bool initObjects(); //crear y destruir los objetos del juego
 	void freeObjects();
 
+	std::vector <RaizObjeto*> balas; // TODO mirad estándares de código
+	std::vector <RaizObjeto*> tren; // TODO mirad estándares de código
+
+
+	int enem;
+	int killed;
 };
 

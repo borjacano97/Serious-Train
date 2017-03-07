@@ -21,6 +21,5 @@ private:
 	int vel;
 	int mira;
 
-	std::vector <raizObjeto*> balas; 
 	SDL_Rect rect;
 };

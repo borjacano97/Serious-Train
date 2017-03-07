@@ -1,9 +1,8 @@
 #include "Play.h"
-#include "Estado.h"
 #include "Personaje.h"
 #include "Bala.h"
 #include "Enemigo.h"
-#include "Tren.h"
+#include "Vagon.h"
 #include "BarraHP.h"
 #include "GameOver.h"
 
@@ -16,27 +15,25 @@ Play::Play(Game * j) : Estado(j)
 	//srand(time(NULL));
 	//ptsjuego = j;
 	initObjects();
+	enem = 0;
+	killed = 0;
 }
 
 
 Play::~Play()
 {
-	freeObjects();
-	ptsjuego = nullptr;
-	train = nullptr;
-	player = nullptr;
-	TrainHp = nullptr;
-	
+	freeObjects();	
 }
 
 bool Play::initObjects() { // creación de los objetos dando un puntero, una textura y una posición (constructora de objs)
-
-	train = new Tren(ptsjuego, Game::TTren, 25, 0, " ");// en el último hueco poner como string tipo de vagón
+	for (unsigned int i = 0; i < vag; i++) {
+		tren.emplace_back(new Tren(ptsjuego, Game::TTren, 25, 131*i, ""));
+	}
+	//train = new Tren(ptsjuego, Game::TTren, 25, 0, " ");// en el último hueco poner como string tipo de vagón
 	player = new Personaje(ptsjuego, Game::TPersonaje, 650, 350);
-	TrainHp = new barraHP(ptsjuego, Game::TBarra, 10, 0, 0);
+	TrainHp = new barraHP(ptsjuego, Game::TBarra, 10, 15, 0);
 
 
-	objetos.emplace_back(train); 
 	objetos.emplace_back(player);
 	objetos.emplace_back(TrainHp);
 
@@ -47,33 +44,57 @@ bool Play::initObjects() { // creación de los objetos dando un puntero, una text
 
 void Play::freeObjects() {
 	// c++11
-	for (auto o : objetos) { //unsigned int i = 3; i < objetos.size(); i++) {
-	//for (unsigned int i = 3; i < objetos.size(); i++) {
-		//delete objetos[i];
-		//objetos[i] = nullptr;
+	for (auto o : objetos) { 
 		delete o;
 	}
-	// hacer aquí lo mismo
-	for (unsigned int i = 3; i < balas.size(); i++) {
-		delete balas[i];
-		balas[i] = nullptr;
+	for (auto b : balas) {
+		delete b;
+	}	
+}
+void Play::draw() {
+	for (unsigned int i = 0; i < tren.size(); i++) {
+		if (tren[i] != nullptr)
+			tren[i]->draw();
 	}
-
+	for (unsigned int i = 0; i < objetos.size(); i++) {
+		if (objetos[i] != nullptr)
+			objetos[i]->draw();
+	}
+	for (unsigned int i = 0; i < balas.size(); i++) {
+		if (balas[i] != nullptr)
+			balas[i]->draw();
+	}
 	
 }
+
 void Play::onClick(){
 	//objetos[0]->onClick();
 	balas.emplace_back(new Bala(ptsjuego, Game::TPersonaje, player->getx(), player->gety(), player->getMira()));
 }
 void Play::update() {  
-	
-	// si esto no puede (o no debe ser null) quitad esto
-		if (TrainHp != nullptr && TrainHp->getDest()) {
-			ptsjuego->changeState(new gameOver(ptsjuego));
+
+	    for (unsigned int i = 0; i < tren.size(); i++) {
+		    if (tren[i] != nullptr)
+			    tren[i]->update();
+	    } 
+		for (unsigned int i = 0; i < objetos.size(); i++) {
+			if (objetos[i] != nullptr)
+				objetos[i]->update();
 		}
+		for (unsigned int i = 0; i < balas.size(); i++) {
+			if (balas[i] != nullptr)
+				balas[i]->update();
+		}
+		
+
+	// si esto no puede (o no debe ser null) quitad esto
+		if (TrainHp->getDest() || killed >= 5) {
+			ptsjuego->changeState(new GameOver(ptsjuego));
+		}
+		
 		else {
-			// for guay aquí. cuidado con i = 3.
-			for (unsigned int i = 3; i < objetos.size(); i++) {
+			// for guay aquí. cuidado con i = 2.
+			for (unsigned int i = 2; i < objetos.size(); i++) {
 
 
 				if (objetos[i] != nullptr  && objetos[i]->getId() == 'E'
@@ -99,20 +120,28 @@ void Play::update() {
 						balas[j] = nullptr;		
 						delete objetos[i];
 						objetos[i] = nullptr;
+						killed++;
 					}					
 				}
 		}
 			aleatorio = rand() % 10000; //generar zombies aleatorios
-			if (aleatorio >= 9982) {
-				izq = rand() % 2;
-				if (izq == 0) objetos.emplace_back(new Enemigo(ptsjuego, Game::TEnemigo, 0, rand() % 500 + 50));
-				else objetos.emplace_back(new Enemigo(ptsjuego, Game::TEnemigo, 1300, rand() % 500 + 50));
+			if (enem < 5 && aleatorio >= 9985){
+				if (izq == 0) objetos.emplace_back(new Enemigo(ptsjuego, Game::TEnemigo, 0, rand() % 500 + 50, false));
+				else objetos.emplace_back(new Enemigo(ptsjuego, Game::TEnemigo, 1300, rand() % 500 + 50, false));
+				enem++;
 			}
+			else if (enem < 5 && aleatorio >= 9980) {
+				izq = rand() % 2;
+				if (izq == 0) objetos.emplace_back(new Enemigo(ptsjuego, Game::TEnemigo2, 0, rand() % 500 + 50, true));
+				else objetos.emplace_back(new Enemigo(ptsjuego, Game::TEnemigo2, 1300, rand() % 500 + 50, true));
+				enem++;
+			}
+			
 			Estado::update();
 	}
 	
 }
 
 void Play::move(char c){
-	objetos[1]->move(c); // El Dios de la programación quiere suicidarse. Pero no puede, es inmortal.
+	player->move(c); // El Dios de la programación quiere suicidarse. Pero no puede, es inmortal.
 }

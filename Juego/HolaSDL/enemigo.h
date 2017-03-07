@@ -3,7 +3,7 @@
 class Enemigo: public Objeto
 {
 public:
-	Enemigo(Game* juego, Game::Texturas_t text, int x, int y);
+	Enemigo(Game* juego, Game::Texturas_t text, int x, int y, bool rap);
 	~Enemigo();
 	void draw();
 	void update();	
@@ -14,5 +14,7 @@ public:
 private:
 	int cont = 0;
 	SDL_Rect rect;
+
+	bool r;
 };
 

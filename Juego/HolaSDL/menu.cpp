@@ -5,8 +5,8 @@
 
 Menu::Menu(Game * juego) :Estado(juego)
 {
-	objetos.emplace_back(new Button(ptsjuego, Game::TBoton, 800, 400, salir));
-	objetos.emplace_back(new Button(ptsjuego, Game::TBoton, 300, 400, jugar));
+	objetos.emplace_back(new Button(ptsjuego, Game::TBotonJ, 300, 400, jugar));
+	objetos.emplace_back(new Button(ptsjuego, Game::TBotonS, 800, 400, salir));
 }
 
 
@@ -19,6 +19,12 @@ void Menu::salir(Game * jg){
 
 void Menu::jugar(Game * jg){
 	jg->changeState(new Play(jg));  
+}
+void Menu::draw(){
+	for (unsigned int i = 0; i < objetos.size(); i++) {
+		if (objetos[i] != nullptr)
+			objetos[i]->draw();
+	}
 }
 
 void Menu::onClick(){

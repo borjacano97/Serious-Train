@@ -1,5 +1,5 @@
 #pragma once
-class raizObjeto
+class RaizObjeto
 {
 
 public:
@@ -19,8 +19,8 @@ public:
 
 	};
 public:
-	raizObjeto(){}
-	virtual ~raizObjeto(){}
+	RaizObjeto(){}
+	virtual ~RaizObjeto(){}
 
 	virtual void draw() = 0;
 	virtual void update() = 0;
