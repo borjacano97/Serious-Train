@@ -2,12 +2,12 @@
 #include "Objeto.h"
 
 #include <string>
-class Tren :
+class Vagon :
 	public Objeto
 {
 public:
-	Tren(Game* juego, Game::Texturas_t text, int x, int y, std::string tipo);
-	~Tren();
+	Vagon(Game* juego, Game::Texturas_t text, int x, int y, std::string tipo);
+	~Vagon();
 	void draw();
 	void update();	
 	bool onClick();

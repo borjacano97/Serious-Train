@@ -3,7 +3,7 @@
 
 
 
-Tren::Tren(Game* juego, Game::Texturas_t text, int x, int y, std::string t)
+Vagon::Vagon(Game* juego, Game::Texturas_t text, int x, int y, std::string t)
 {
 	juegootp = juego;
 	Ttextura = text;
@@ -18,12 +18,12 @@ Tren::Tren(Game* juego, Game::Texturas_t text, int x, int y, std::string t)
 }
 
 
-Tren::~Tren()
+Vagon::~Vagon()
 {
 }
 
 
-void Tren::draw() {
+void Vagon::draw() {
 	rect.h = alto;
 	rect.w = ancho;
 	rect.x = pimgx;
@@ -33,12 +33,12 @@ void Tren::draw() {
 	juegootp->getTextura(Ttextura)->draw(render, nullptr, &rect);
 }
 
-void Tren::update() {
+void Vagon::update() {
 	//hacer uso de la variable TIPO
 }
-bool Tren::onClick() {
+bool Vagon::onClick() {
 	return true;
 }
-void Tren::move(char c) {
+void Vagon::move(char c) {
 
 }

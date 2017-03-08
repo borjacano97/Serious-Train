@@ -7,8 +7,8 @@
 #include "GameOver.h"
 
 #include <string>
-#include<stdlib.h> // para nms aleatorios
-#include<time.h>
+#include <stdlib.h> // para nms aleatorios
+#include <time.h>
 
 Play::Play(Game * j) : Estado(j)
 {
@@ -27,7 +27,7 @@ Play::~Play()
 
 bool Play::initObjects() { // creación de los objetos dando un puntero, una textura y una posición (constructora de objs)
 	for (unsigned int i = 0; i < vag; i++) {
-		tren.emplace_back(new Tren(ptsjuego, Game::TTren, 25, 131*i, ""));
+		tren.emplace_back(new Vagon(ptsjuego, Game::TTren, 25, 131*i, ""));
 	}
 	//train = new Tren(ptsjuego, Game::TTren, 25, 0, " ");// en el último hueco poner como string tipo de vagón
 	player = new Personaje(ptsjuego, Game::TPersonaje, 650, 350);
@@ -88,7 +88,7 @@ void Play::update() {
 		
 
 	// si esto no puede (o no debe ser null) quitad esto
-		if (TrainHp->getDest() || killed >= 5) {
+		if (TrainHp->getDest() || killed >= emax) {
 			ptsjuego->changeState(new GameOver(ptsjuego));
 		}
 		
@@ -125,12 +125,12 @@ void Play::update() {
 				}
 		}
 			aleatorio = rand() % 10000; //generar zombies aleatorios
-			if (enem < 5 && aleatorio >= 9985){
+			if (enem < emax && aleatorio >= 9980){
 				if (izq == 0) objetos.emplace_back(new Enemigo(ptsjuego, Game::TEnemigo, 0, rand() % 500 + 50, false));
 				else objetos.emplace_back(new Enemigo(ptsjuego, Game::TEnemigo, 1300, rand() % 500 + 50, false));
 				enem++;
 			}
-			else if (enem < 5 && aleatorio >= 9980) {
+			else if (enem < emax && aleatorio >= 9975) {
 				izq = rand() % 2;
 				if (izq == 0) objetos.emplace_back(new Enemigo(ptsjuego, Game::TEnemigo2, 0, rand() % 500 + 50, true));
 				else objetos.emplace_back(new Enemigo(ptsjuego, Game::TEnemigo2, 1300, rand() % 500 + 50, true));
