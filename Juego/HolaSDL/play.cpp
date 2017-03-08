@@ -52,39 +52,33 @@ void Play::freeObjects() {
 	}	
 }
 void Play::draw() {
-	for (unsigned int i = 0; i < tren.size(); i++) {
-		if (tren[i] != nullptr)
-			tren[i]->draw();
+	for (auto i : tren){
+			i->draw();
 	}
-	for (unsigned int i = 0; i < objetos.size(); i++) {
-		if (objetos[i] != nullptr)
-			objetos[i]->draw();
-	}
-	for (unsigned int i = 0; i < balas.size(); i++) {
-		if (balas[i] != nullptr)
-			balas[i]->draw();
+	for (auto i : objetos){
+		if (i != nullptr){
+			i->draw();
+		}
 	}
 	
 }
 
 void Play::onClick(){
 	//objetos[0]->onClick();
-	balas.emplace_back(new Bala(ptsjuego, Game::TPersonaje, player->getx(), player->gety(), player->getMira()));
+	objetos.emplace_back(new Bala(ptsjuego, Game::TPersonaje, player->getx(), player->gety(), player->getMira()));
 }
 void Play::update() {  
 
-	    for (unsigned int i = 0; i < tren.size(); i++) {
-		    if (tren[i] != nullptr)
-			    tren[i]->update();
-	    } 
-		for (unsigned int i = 0; i < objetos.size(); i++) {
-			if (objetos[i] != nullptr)
-				objetos[i]->update();
+	for (auto i : tren){
+			i->update();
+	}
+
+
+	for (auto i : objetos){
+		if (i != nullptr){
+			i->update();
 		}
-		for (unsigned int i = 0; i < balas.size(); i++) {
-			if (balas[i] != nullptr)
-				balas[i]->update();
-		}
+	}
 		
 
 	// si esto no puede (o no debe ser null) quitad esto
@@ -101,23 +95,23 @@ void Play::update() {
 					&& objetos[i]->getx() >= 500 && objetos[i]->getx() <= 745) {// detecta zombis que quitan vida al tren
 					TrainHp->move('h');
 				}
-				for (unsigned int j = 0; j < balas.size(); j++) {
+				for (unsigned int j = 0; j < objetos.size(); j++) {
 					// muerte por colisión de objetos exceptuando el personaje, tren y barra de vida, si va a haber choque entre zombies hay que poner
 					// un booleano que identifique entre balas y sombis
-					if (balas[j] != nullptr && balas[j]->getDest()){
-						delete balas[j];
-						balas[j] = nullptr;
+					if (objetos[j] != nullptr  && objetos[j]->getId() == 'B' && objetos[j]->getDest()){
+						delete objetos[j];
+						objetos[j] = nullptr;
 					}
 
 					// El Dios de la programación está llorando.
 					// Amargamente.
 
-					if (objetos[i] != nullptr && balas[j] != nullptr &&
-						(objetos[i]->getx() - balas[j]->getx()) <= 30 && (objetos[i]->getx() - balas[j]->getx()) >= -30 &&
-						(objetos[i]->gety() - balas[j]->gety()) <= 40 && (objetos[i]->gety() - balas[j]->gety()) >= -40) {
+					if (objetos[i] != nullptr && objetos[j] != nullptr && objetos[i]->getId() == 'E' && objetos[j]->getId() == 'B' &&
+						(objetos[i]->getx() - objetos[j]->getx()) <= 30 && (objetos[i]->getx() - objetos[j]->getx()) >= -30 &&
+						(objetos[i]->gety() - objetos[j]->gety()) <= 40 && (objetos[i]->gety() - objetos[j]->gety()) >= -40) {
 												
-						delete balas[j];
-						balas[j] = nullptr;		
+						delete objetos[j];
+						objetos[j] = nullptr;		
 						delete objetos[i];
 						objetos[i] = nullptr;
 						killed++;
