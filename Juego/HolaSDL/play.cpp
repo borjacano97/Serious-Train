@@ -83,12 +83,8 @@ void Play::update() {
 
 	// si esto no puede (o no debe ser null) quitad esto
 		if (TrainHp->getDest() || killed >= emax) {
-<<<<<<< HEAD
-			ptsjuego->changeState(new GameOver(ptsjuego));
-=======
 			if (TrainHp->getDest())	ptsjuego->changeState(new FinNivel(ptsjuego, false));
 			else ptsjuego->changeState(new FinNivel(ptsjuego, true));
->>>>>>> issue#2
 		}
 		
 		else {
@@ -124,20 +120,10 @@ void Play::update() {
 				}
 		}
 			aleatorio = rand() % 10000; //generar zombies aleatorios
-<<<<<<< HEAD
-<<<<<<< HEAD
-			if (enem < emax && aleatorio >= 9980){
-=======
 			if (enem < emax && aleatorio >= 9980){
 				izq = rand() % 2;
->>>>>>> issue#2
-				if (izq == 0) objetos.emplace_back(new Enemigo(ptsjuego, Game::TEnemigo, 0, rand() % 500 + 50, false));
-				else objetos.emplace_back(new Enemigo(ptsjuego, Game::TEnemigo, 1300, rand() % 500 + 50, false));
-=======
-			if (enem < 5 && aleatorio >= 9985){
 				if (izq == 0) objetos.emplace_back(new Enemigo(ptsjuego, Game::TEnemigo2, 0, rand() % 500 + 50, false));
 				else objetos.emplace_back(new Enemigo(ptsjuego, Game::TEnemigo2, 1300, rand() % 500 + 50, false));
->>>>>>> Sprites
 				enem++;
 			}
 			else if (enem < emax && aleatorio >= 9975) {

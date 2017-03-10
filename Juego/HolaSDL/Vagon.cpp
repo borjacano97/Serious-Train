@@ -3,15 +3,7 @@
 
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 Vagon::Vagon(Game* juego, Game::Texturas_t text, int x, int y, std::string t)
-=======
-Tren::Tren(Game* juego, Game::Texturas_t text,  int x, int y, std::string t)
->>>>>>> Sprites
-=======
-Vagon::Vagon(Game* juego, Game::Texturas_t text, int x, int y, std::string t)
->>>>>>> issue#2
 {
 	juegootp = juego;
 	Ttextura = text;
