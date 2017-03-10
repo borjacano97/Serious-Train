@@ -14,6 +14,7 @@ public:
 	void draw();
 	void update();
 	void move(char c);
+	char getEst(){ return 'P'; }
 private:
 	int izq;
 	int aleatorio;
@@ -28,7 +29,11 @@ private:
 	std::vector <RaizObjeto*> balas; // TODO mirad estándares de código
 	std::vector <RaizObjeto*> tren; // TODO mirad estándares de código
 
+<<<<<<< HEAD
 	int emax = 30;
+=======
+	int emax = 5;
+>>>>>>> issue#2
 	int enem;
 	int killed;
 };

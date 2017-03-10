@@ -1,16 +1,20 @@
 #pragma once
 #include "Estado.h"
-class Menu :
+
+class FinNivel :
 	public Estado
 {
 public:
-	Menu(Game* juego);
-	~Menu();
+	FinNivel(Game* juego, bool v);
+	~FinNivel();
 	void onClick();
 	void draw();
-	void update(){ ; }
 	static void salir(Game * jg);
 	static void jugar(Game * jg);
-	char getEst(){ return 'M'; }
+	char getEst(){ if (victory) return 'W'; else return 'L'; }
+
+private: 
+	bool victory;
+
 };
 

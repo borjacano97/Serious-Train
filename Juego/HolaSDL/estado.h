@@ -11,6 +11,7 @@ public:
 	void update(){ ; }
 	void onClick(){ ; }
 	void move(char c){ ; }
+	char getEst(){ return 'E'; }
 
 protected:
 
