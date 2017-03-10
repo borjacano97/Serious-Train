@@ -3,7 +3,7 @@
 
 
 
-Tren::Tren(Game* juego, Game::Texturas_t text, int x, int y, std::string t)
+Tren::Tren(Game* juego, Game::Texturas_t text,  int x, int y, std::string t)
 {
 	juegootp = juego;
 	Ttextura = text;

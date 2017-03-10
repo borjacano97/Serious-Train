@@ -9,8 +9,8 @@ Enemigo::Enemigo(Game* juego, Game::Texturas_t text, int x, int y, bool rap)
 	juegootp = juego;
 	Ttextura = text;
 
-	alto = 1000;
-	ancho = 1000;
+	alto = 50;
+	ancho = 50;
 
 	pimgx = x;
 	pimgy = y;
