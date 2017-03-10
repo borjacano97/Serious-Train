@@ -125,12 +125,19 @@ void Game::render() { //const
 	SDL_RenderClear(pRender);
 
 	//fondo
-	texts[0]->draw(pRender, nullptr, nullptr);
-	
+	if (topEstado()->getEst() == 'P')
+	    texts[0]->draw(pRender, nullptr, nullptr);
+	else if (topEstado()->getEst() == 'M')
+		texts[0]->draw(pRender, nullptr, nullptr);
+	else if (topEstado()->getEst() == 'W')
+		texts[0]->draw(pRender, nullptr, nullptr);
+	else 
+		texts[0]->draw(pRender, nullptr, nullptr);
 
 	topEstado()->draw();
 	SDL_RenderPresent(pRender);
 }
+
 
 void Game::run()
 {

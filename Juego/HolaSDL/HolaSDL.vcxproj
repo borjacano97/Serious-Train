@@ -74,7 +74,7 @@
     <ClCompile Include="Error.cpp" />
     <ClCompile Include="Estado.cpp" />
     <ClCompile Include="Game.cpp" />
-    <ClCompile Include="GameOver.cpp" />
+    <ClCompile Include="FinNivel.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Objeto.cpp" />
@@ -91,7 +91,7 @@
     <ClInclude Include="Error.h" />
     <ClInclude Include="Estado.h" />
     <ClInclude Include="Game.h" />
-    <ClInclude Include="GameOver.h" />
+    <ClInclude Include="FinNivel.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="Objeto.h" />
     <ClInclude Include="Personaje.h" />

@@ -1,18 +1,17 @@
-﻿Build started 08/03/2017 16:30:26.
-     1>Project "C:\hlocal\Proyecto\Serious-Train\Juego\HolaSDL\HolaSDL.vcxproj" on node 2 (Build target(s)).
+﻿Build started 10/03/2017 12:49:48.
+     1>Project "C:\hlocal\Serious-Train\Juego\HolaSDL\HolaSDL.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\software\programacion\MSVStudio2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Play.cpp
-         Play.cpp
-     1>c:\hlocal\proyecto\serious-train\juego\holasdl\play.cpp(29): warning C4018: '<' : signed/unsigned mismatch
+         C:\software\programacion\MSVStudio2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Game.cpp
+         Game.cpp
        Link:
-         C:\software\programacion\MSVStudio2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\hlocal\Proyecto\Serious-Train\Juego\bin\HolaSDLDebug.exe" /INCREMENTAL /NOLOGO SDL2.lib SDL2main.lib SDL2_image.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\hlocal\Proyecto\Serious-Train\Juego\bin\HolaSDLDebug.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\hlocal\Proyecto\Serious-Train\Juego\bin\HolaSDLDebug.lib" /MACHINE:X86 Debug\Bala.obj
+         C:\software\programacion\MSVStudio2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\hlocal\Serious-Train\Juego\bin\HolaSDLDebug.exe" /INCREMENTAL /NOLOGO SDL2.lib SDL2main.lib SDL2_image.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\hlocal\Serious-Train\Juego\bin\HolaSDLDebug.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\hlocal\Serious-Train\Juego\bin\HolaSDLDebug.lib" /MACHINE:X86 Debug\Bala.obj
          Debug\BarraHP.obj
          Debug\Button.obj
          Debug\Enemigo.obj
          Debug\Error.obj
          Debug\Estado.obj
          Debug\Game.obj
-         Debug\GameOver.obj
+         Debug\FinNivel.obj
          Debug\Main.obj
          Debug\Menu.obj
          Debug\Objeto.obj
@@ -20,9 +19,9 @@
          Debug\Play.obj
          Debug\Texturas.obj
          Debug\Vagon.obj
-         HolaSDL.vcxproj -> C:\hlocal\Proyecto\Serious-Train\Juego\bin\HolaSDLDebug.exe
-     1>Done Building Project "C:\hlocal\Proyecto\Serious-Train\Juego\HolaSDL\HolaSDL.vcxproj" (Build target(s)).
+         HolaSDL.vcxproj -> C:\hlocal\Serious-Train\Juego\bin\HolaSDLDebug.exe
+     1>Done Building Project "C:\hlocal\Serious-Train\Juego\HolaSDL\HolaSDL.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.65
+Time Elapsed 00:00:00.82

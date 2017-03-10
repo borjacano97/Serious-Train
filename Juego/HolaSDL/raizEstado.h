@@ -14,5 +14,6 @@ public:
 	virtual void update() = 0;
 	virtual void onClick() = 0;
 	virtual void move(char c) = 0;
+	virtual char getEst() = 0;
 };
 
