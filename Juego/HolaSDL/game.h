@@ -30,6 +30,8 @@ public:
 	void pushState(RaizEstado* newState);
 	void popState();
 	void setSalir();
+	void incrNivel() { nivel++; }
+	int getNivel() { return nivel;; }
 
 private:
 	SDL_Window * pWin = nullptr;
@@ -51,5 +53,6 @@ private:
 	bool espera, gameOver, exit;
 	int mx, my;
 	int cadencia;
+	int nivel = 1;
 };
 

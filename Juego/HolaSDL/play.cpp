@@ -10,14 +10,14 @@
 #include <stdlib.h> // para nms aleatorios
 #include <time.h>
 
-Play::Play(Game * j, int n) : Estado(j)
+Play::Play(Game * j) : Estado(j)
 {
 	//srand(time(NULL));
 	//ptsjuego = j;
 	initObjects();
 	enem = 0;
 	killed = 0;
-	nivel = n;
+	emax = 5 * ptsjuego->getNivel();
 }
 
 
@@ -79,13 +79,15 @@ void Play::update() {
 		if (i != nullptr){
 			i->update();
 		}
-	}
-		
+	}	
 
 	// si esto no puede (o no debe ser null) quitad esto
 		if (TrainHp->getDest() || killed >= emax) {
-			if (TrainHp->getDest())	ptsjuego->changeState(new FinNivel(ptsjuego, false, nivel));
-			else ptsjuego->changeState(new FinNivel(ptsjuego, true, nivel));
+			if (TrainHp->getDest())	ptsjuego->changeState(new FinNivel(ptsjuego, false));
+			else {
+				ptsjuego->incrNivel();
+				ptsjuego->changeState(new FinNivel(ptsjuego, true));
+			}
 		}
 		
 		else {

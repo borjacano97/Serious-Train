@@ -5,7 +5,7 @@ class FinNivel :
 	public Estado
 {
 public:
-	FinNivel(Game* juego, bool v, int n);
+	FinNivel(Game* juego, bool v);
 	~FinNivel();
 	void onClick();
 	void draw();
@@ -14,8 +14,6 @@ public:
 	char getEst(){ if (victory) return 'W'; else return 'L'; }
 	
 private: 
-
-	static int nivel;
 	bool victory;
 };
 

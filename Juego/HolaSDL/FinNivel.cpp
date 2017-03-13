@@ -3,9 +3,8 @@
 #include "Play.h"
 
 
-FinNivel::FinNivel(Game* juego, bool v, int n) :Estado(juego)
-{	
-	nivel = n;
+FinNivel::FinNivel(Game* juego, bool v) :Estado(juego)
+{		
 	victory = v;
 	objetos.emplace_back(new Button(ptsjuego, Game::TBotonJ, 300, 400, jugar));
 	objetos.emplace_back(new Button(ptsjuego, Game::TBotonS, 800, 400, salir));
@@ -22,7 +21,7 @@ void FinNivel::salir(Game * jg){
 }
 
 void FinNivel::jugar(Game * jg){
-	jg->changeState(new Play(jg, nivel));
+	jg->changeState(new Play(jg));
 }
 void FinNivel::draw(){
 	for (unsigned int i = 0; i < objetos.size(); i++) {

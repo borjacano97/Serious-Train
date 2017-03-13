@@ -18,7 +18,7 @@ void Menu::salir(Game * jg){
 }
 
 void Menu::jugar(Game * jg){
-	jg->changeState(new Play(jg, 1));  
+	jg->changeState(new Play(jg));  
 }
 void Menu::draw(){
 	for (unsigned int i = 0; i < objetos.size(); i++) {
