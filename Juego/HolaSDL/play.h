@@ -7,7 +7,7 @@
 class Play: public Estado
 {
 public:
-	Play(Game * j);
+	Play(Game * j, int n);
 	~Play();
 
 	void onClick();
@@ -15,8 +15,9 @@ public:
 	void update();
 	void move(char c);
 	char getEst(){ return 'P'; }
+
 private:
-	int izq;
+	int izq, nivel;
 	int aleatorio;
 	Personaje* player;
 	barraHP* TrainHp;
@@ -29,7 +30,7 @@ private:
 	std::vector <RaizObjeto*> balas; // TODO mirad estándares de código
 	std::vector <RaizObjeto*> tren; // TODO mirad estándares de código
 
-	int emax = 5;
+	int emax = 30;
 	int enem;
 	int killed;
 };

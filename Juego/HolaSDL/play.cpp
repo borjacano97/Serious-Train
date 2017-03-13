@@ -10,13 +10,14 @@
 #include <stdlib.h> // para nms aleatorios
 #include <time.h>
 
-Play::Play(Game * j) : Estado(j)
+Play::Play(Game * j, int n) : Estado(j)
 {
 	//srand(time(NULL));
 	//ptsjuego = j;
 	initObjects();
 	enem = 0;
 	killed = 0;
+	nivel = n;
 }
 
 
@@ -83,8 +84,8 @@ void Play::update() {
 
 	// si esto no puede (o no debe ser null) quitad esto
 		if (TrainHp->getDest() || killed >= emax) {
-			if (TrainHp->getDest())	ptsjuego->changeState(new FinNivel(ptsjuego, false));
-			else ptsjuego->changeState(new FinNivel(ptsjuego, true));
+			if (TrainHp->getDest())	ptsjuego->changeState(new FinNivel(ptsjuego, false, nivel));
+			else ptsjuego->changeState(new FinNivel(ptsjuego, true, nivel));
 		}
 		
 		else {
@@ -122,14 +123,14 @@ void Play::update() {
 			aleatorio = rand() % 10000; //generar zombies aleatorios
 			if (enem < emax && aleatorio >= 9980){
 				izq = rand() % 2;
-				if (izq == 0) objetos.emplace_back(new Enemigo(ptsjuego, Game::TEnemigo, 0, rand() % 500 + 50, false));
-				else objetos.emplace_back(new Enemigo(ptsjuego, Game::TEnemigo, 1300, rand() % 500 + 50, false));
+				if (izq == 0) objetos.emplace_back(new Enemigo(ptsjuego, Game::TEnemigo2, 0, rand() % 500 + 50, false));
+				else objetos.emplace_back(new Enemigo(ptsjuego, Game::TEnemigo2, 1300, rand() % 500 + 50, false));
 				enem++;
 			}
 			else if (enem < emax && aleatorio >= 9975) {
 				izq = rand() % 2;
-				if (izq == 0) objetos.emplace_back(new Enemigo(ptsjuego, Game::TEnemigo2, 0, rand() % 500 + 50, true));
-				else objetos.emplace_back(new Enemigo(ptsjuego, Game::TEnemigo2, 1300, rand() % 500 + 50, true));
+				if (izq == 0) objetos.emplace_back(new Enemigo(ptsjuego, Game::TEnemigo, 0, rand() % 500 + 50, true));
+				else objetos.emplace_back(new Enemigo(ptsjuego, Game::TEnemigo, 1300, rand() % 500 + 50, true));
 				enem++;
 			}
 			

@@ -12,5 +12,6 @@ public:
 	static void salir(Game * jg);
 	static void jugar(Game * jg);
 	char getEst(){ return 'M'; }
+
 };
 
