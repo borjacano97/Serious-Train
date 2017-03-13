@@ -17,6 +17,7 @@ Play::Play(Game * j) : Estado(j)
 	initObjects();
 	enem = 0;
 	killed = 0;
+	emax = 5 * ptsjuego->getNivel();
 }
 
 
@@ -78,13 +79,15 @@ void Play::update() {
 		if (i != nullptr){
 			i->update();
 		}
-	}
-		
+	}	
 
 	// si esto no puede (o no debe ser null) quitad esto
 		if (TrainHp->getDest() || killed >= emax) {
 			if (TrainHp->getDest())	ptsjuego->changeState(new FinNivel(ptsjuego, false));
-			else ptsjuego->changeState(new FinNivel(ptsjuego, true));
+			else {
+				ptsjuego->incrNivel();
+				ptsjuego->changeState(new FinNivel(ptsjuego, true));
+			}
 		}
 		
 		else {

@@ -16,9 +16,7 @@ public:
 protected:
 
 	Game* ptsjuego;
-
 	std::vector <RaizObjeto*> objetos; // objetos que contiene cada estado
 	
-
 };
 

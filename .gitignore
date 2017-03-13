@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 -# Created by https://www.gitignore.io/api/c++
  -
  -### C++ ###
@@ -327,3 +328,22 @@
  +Debug
  +.vs/
  +.vs 
+=======
+*.db
+*.user
+*.userosscache
+*.sdf
+*.opensdf
+*.exe
+*.log
+*.opendb
+*.suo
+*.filters
+*.tlog
+*.ilk
+*.pdb
+Proyecto/Proyecto/Debug
+Debug
+.vs/
+.vs
+>>>>>>> issue#2
