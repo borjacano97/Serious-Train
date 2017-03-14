@@ -88,7 +88,7 @@ void Play::update() {
 	}	
 
 	// si esto no puede (o no debe ser null) quitad esto
-		if (TrainHp->getDest() || killed >= emax) {
+		if (TrainHp->getDest() || killed >= emax*2) {
 			if (TrainHp->getDest())	ptsjuego->changeState(new FinNivel(ptsjuego, false));
 			else {
 				ptsjuego->incrNivel();
@@ -121,14 +121,13 @@ void Play::update() {
 						objetos[i]->destroy();
 						objetos[j]->destroy();
 						killed++;
-					}		
-					if (objetos[i] != nullptr && objetos[i]->getDest()){
-						delete objetos[i];
-						objetos[i] = nullptr;
-					}
+					}						
 				}
 
-				
+				if (objetos[i] != nullptr && objetos[i]->getDest()){
+					delete objetos[i];
+					objetos[i] = nullptr;
+				}
 		}
 			aleatorio = rand() % 10000; //generar zombies aleatorios
 			if (enem < emax && aleatorio >= 9980){
