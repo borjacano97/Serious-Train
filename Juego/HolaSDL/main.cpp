@@ -7,6 +7,7 @@
 
 #include <iostream> 
 
+
 int main(int argc, char *argv[])
 {
 	// Hacer un try-catch en el main para posibles errores en texturas o SDL

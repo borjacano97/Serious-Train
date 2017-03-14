@@ -10,7 +10,7 @@ public:
 	bool onClick();
 	void move(char c);
 	bool getDest() { return destruido; }
-	char getId() { return 'E'; }
+	char getId() { if (r) return 'R'; else return 'L'; }
 private:
 	int cont = 0;
 	SDL_Rect rect;

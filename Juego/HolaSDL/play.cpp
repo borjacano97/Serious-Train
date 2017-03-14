@@ -10,6 +10,7 @@
 #include <stdlib.h> // para nms aleatorios
 #include <time.h>
 
+
 Play::Play(Game * j) : Estado(j)
 {
 	//srand(time(NULL));
@@ -18,6 +19,12 @@ Play::Play(Game * j) : Estado(j)
 	enem = 0;
 	killed = 0;
 	emax = 5 * ptsjuego->getNivel();
+	
+	/*SDL_Surface *text;
+	SDL_Color text_color = { 255, 255, 255 };
+	text = TTF_RenderText_Solid(font,
+		"A journey of a thousand miles begins with a single step.",
+		text_color);*/
 }
 
 
@@ -95,7 +102,7 @@ void Play::update() {
 			for (unsigned int i = 2; i < objetos.size(); i++) {
 
 
-				if (objetos[i] != nullptr  && objetos[i]->getId() == 'E'
+				if (objetos[i] != nullptr  && (objetos[i]->getId() == 'R' || objetos[i]->getId() == 'L')
 					&& objetos[i]->getx() >= 500 && objetos[i]->getx() <= 745) {// detecta zombis que quitan vida al tren
 					TrainHp->move('h');
 				}
@@ -110,10 +117,13 @@ void Play::update() {
 					// El Dios de la programación está llorando.
 					// Amargamente.
 
-					if (objetos[i] != nullptr && objetos[j] != nullptr && objetos[i]->getId() == 'E' && objetos[j]->getId() == 'B' &&
+					if (objetos[i] != nullptr && objetos[j] != nullptr && (objetos[i]->getId() == 'R' || objetos[i]->getId() == 'L') && objetos[j]->getId() == 'B' &&
 						(objetos[i]->getx() - objetos[j]->getx()) <= 30 && (objetos[i]->getx() - objetos[j]->getx()) >= -30 &&
 						(objetos[i]->gety() - objetos[j]->gety()) <= 40 && (objetos[i]->gety() - objetos[j]->gety()) >= -40) {
-												
+						
+						if (objetos[i]->getId() == 'L') ptsjuego->addCoins(5);
+						else  ptsjuego->addCoins(10);
+
 						delete objetos[j];
 						objetos[j] = nullptr;		
 						delete objetos[i];

@@ -32,6 +32,7 @@ public:
 	void setSalir();
 	void incrNivel() { nivel++; }
 	int getNivel() { return nivel;; }
+	void addCoins(int n){ coins += n; std::cout << coins << "\n"; }
 
 private:
 	SDL_Window * pWin = nullptr;
@@ -50,9 +51,10 @@ private:
 	bool handle_event();
 
 
-	bool espera, gameOver, exit;
+	bool espera, exit;
 	int mx, my;
 	int cadencia;
 	int nivel = 1;
+	int coins = 0;
 };
 

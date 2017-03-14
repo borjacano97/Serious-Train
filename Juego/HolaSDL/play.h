@@ -30,12 +30,7 @@ private:
 	std::vector <RaizObjeto*> balas; // TODO mirad estándares de código
 	std::vector <RaizObjeto*> tren; // TODO mirad estándares de código
 
-<<<<<<< HEAD
-	int emax = 30;
-	int enem;
-=======
 	int emax, enem;
->>>>>>> issue#2
 	int killed;
 };
 

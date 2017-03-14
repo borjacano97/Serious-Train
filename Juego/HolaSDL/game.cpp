@@ -28,7 +28,6 @@ Game::Game()
 	initMedia();
 
 	espera = false;
-	gameOver = false;
 	exit = false;
 	cadencia = 150;
 
@@ -146,7 +145,7 @@ void Game::run()
 	Uint32 lastUpdate = SDL_GetTicks();
 	render();
 	espera = handle_event();
-	while (!exit && !gameOver) {
+	while (!exit) {
 		//if ((SDL_GetTicks() - lastUpdate) >= MSxUpdate && !espera) { 
 			update();
 			lastUpdate = SDL_GetTicks();
@@ -226,7 +225,6 @@ RaizEstado * Game::topEstado() {
 void Game::setSalir(){
 	exit = true;
 	closeSDL();
-
 }
 void Game::changeState(RaizEstado* newSt){
 	popState();
