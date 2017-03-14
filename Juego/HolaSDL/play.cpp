@@ -88,7 +88,7 @@ void Play::update() {
 	}	
 
 	// si esto no puede (o no debe ser null) quitad esto
-		if (TrainHp->getDest() || killed >= emax*2) {
+		if (TrainHp->getDest() || killed >= emax) {
 			if (TrainHp->getDest())	ptsjuego->changeState(new FinNivel(ptsjuego, false));
 			else {
 				ptsjuego->incrNivel();
@@ -107,27 +107,32 @@ void Play::update() {
 				for (unsigned int j = 0; j < objetos.size(); j++) {
 					// muerte por colisión de objetos exceptuando el personaje, tren y barra de vida, si va a haber choque entre zombies hay que poner
 					// un booleano que identifique entre balas y sombis
-					
+				
 					// El Dios de la programación está llorando.
 					// Amargamente.
 
 					if (objetos[i] != nullptr && objetos[j] != nullptr && (objetos[i]->getId() == 'R' || objetos[i]->getId() == 'L') && objetos[j]->getId() == 'B' &&
 						(objetos[i]->getx() - objetos[j]->getx()) <= 30 && (objetos[i]->getx() - objetos[j]->getx()) >= -30 &&
 						(objetos[i]->gety() - objetos[j]->gety()) <= 40 && (objetos[i]->gety() - objetos[j]->gety()) >= -40) {
-						
-						if (objetos[i]->getId() == 'L') ptsjuego->addCoins(5);
-						else  ptsjuego->addCoins(10);
+						if (!objetos[i]->getDest()){
+							objetos[i]->destroy();
+							objetos[j]->destroy();
+						}
+						else{
+							objetos[i]->destroy();
+							objetos[j]->destroy();
+							if (objetos[i]->getId() == 'L') ptsjuego->addCoins(5);
+							else  ptsjuego->addCoins(10);
+							killed++;
 
-						objetos[i]->destroy();
-						objetos[j]->destroy();
-						killed++;
+						}
+						
 					}						
 				}
-
 				if (objetos[i] != nullptr && objetos[i]->getDest()){
 					delete objetos[i];
 					objetos[i] = nullptr;
-				}
+				}				
 		}
 			aleatorio = rand() % 10000; //generar zombies aleatorios
 			if (enem < emax && aleatorio >= 9980){
