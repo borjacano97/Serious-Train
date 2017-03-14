@@ -14,7 +14,7 @@ public:
 
 	
 
-	enum Texturas_t { TFondo, TPersonaje, TEnemigo, TEnemigo2, TTren, TBarra, TBotonJ, TBotonS, TBotonC};
+	enum Texturas_t { TFondo, TPersonaje, TEnemigo, TEnemigo2, TTren, TBarra, TBotonJ, TBotonS, TBotonC, Tlose, TWin};
 	Texturas* getTextura(Texturas_t et) const { return texts[et]; }
 	SDL_Renderer* getRender() const;
 
@@ -39,7 +39,7 @@ private:
 	SDL_Renderer* pRender = nullptr;
 	SDL_Event e;
 
-	std::string ntexturas[9];
+	std::string ntexturas[11];
 	std::vector<Texturas*> texts;
 	std::stack<RaizEstado*> estados;
 

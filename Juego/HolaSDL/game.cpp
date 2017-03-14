@@ -21,6 +21,8 @@ Game::Game()
 	ntexturas[6] = "../bmps/botonJ.png";
 	ntexturas[7] = "../bmps/botonS.png";
 	ntexturas[8] = "../bmps/botonC.png";
+	ntexturas[9] = "../bmps/win.png";
+	ntexturas[10] = "../bmps/lose.png";
 
 	srand(SDL_GetTicks()); // no se que coño es esto xd
 
@@ -50,7 +52,7 @@ SDL_Renderer* Game::getRender()const {
 }
 
 void Game::initMedia() {
-	for (unsigned int i = 0; i < 8/*magic namber dude*/; i++) {
+	for (unsigned int i = 0; i < 11/*magic namber dude*/; i++) {
 		texts.emplace_back(new Texturas);
 		texts[i]->load(getRender(), ntexturas[i]);
 	}
@@ -129,9 +131,9 @@ void Game::render() { //const
 	else if (topEstado()->getEst() == 'M')
 		texts[0]->draw(pRender, nullptr, nullptr);
 	else if (topEstado()->getEst() == 'W')
-		texts[0]->draw(pRender, nullptr, nullptr);
+		texts[9]->draw(pRender, nullptr, nullptr);
 	else 
-		texts[0]->draw(pRender, nullptr, nullptr);
+		texts[10]->draw(pRender, nullptr, nullptr);
 
 	topEstado()->draw();
 	SDL_RenderPresent(pRender);
