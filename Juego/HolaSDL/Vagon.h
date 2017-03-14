@@ -14,6 +14,7 @@ public:
 	void move(char c);
 	bool getDest() { return destruido; }
 	char getId() { return 'T'; }
+	void destroy() { destruido = true; }
 
 private: 
 	std::string tipo;

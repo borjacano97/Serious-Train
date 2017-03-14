@@ -11,6 +11,7 @@ public:
 	void move(char c);
 	bool getDest() { return destruido; }
 	char getId() { if (r) return 'R'; else return 'L'; }
+	void destroy() { destruido = true; }
 private:
 	int cont = 0;
 	SDL_Rect rect;

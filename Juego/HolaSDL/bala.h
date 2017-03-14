@@ -11,6 +11,7 @@ public:
 	void move(char c);
 	bool getDest() { return destruido; }
 	char getId() { return 'B'; }
+	void destroy() { destruido = true; }
 private:
 	int dir;
 	int vel = 1;

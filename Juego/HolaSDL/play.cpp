@@ -81,7 +81,6 @@ void Play::update() {
 			i->update();
 	}
 
-
 	for (auto i : objetos){
 		if (i != nullptr){
 			i->update();
@@ -101,7 +100,6 @@ void Play::update() {
 			// for guay aquí. cuidado con i = 2.
 			for (unsigned int i = 2; i < objetos.size(); i++) {
 
-
 				if (objetos[i] != nullptr  && (objetos[i]->getId() == 'R' || objetos[i]->getId() == 'L')
 					&& objetos[i]->getx() >= 500 && objetos[i]->getx() <= 745) {// detecta zombis que quitan vida al tren
 					TrainHp->move('h');
@@ -109,11 +107,7 @@ void Play::update() {
 				for (unsigned int j = 0; j < objetos.size(); j++) {
 					// muerte por colisión de objetos exceptuando el personaje, tren y barra de vida, si va a haber choque entre zombies hay que poner
 					// un booleano que identifique entre balas y sombis
-					if (objetos[j] != nullptr  && objetos[j]->getId() == 'B' && objetos[j]->getDest()){
-						delete objetos[j];
-						objetos[j] = nullptr;
-					}
-
+					
 					// El Dios de la programación está llorando.
 					// Amargamente.
 
@@ -124,13 +118,17 @@ void Play::update() {
 						if (objetos[i]->getId() == 'L') ptsjuego->addCoins(5);
 						else  ptsjuego->addCoins(10);
 
-						delete objetos[j];
-						objetos[j] = nullptr;		
+						objetos[i]->destroy();
+						objetos[j]->destroy();
+						killed++;
+					}		
+					if (objetos[i] != nullptr && objetos[i]->getDest()){
 						delete objetos[i];
 						objetos[i] = nullptr;
-						killed++;
-					}					
+					}
 				}
+
+				
 		}
 			aleatorio = rand() % 10000; //generar zombies aleatorios
 			if (enem < emax && aleatorio >= 9980){

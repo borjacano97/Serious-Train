@@ -14,6 +14,7 @@ public:
 	int getMira(){ return mira; };
 	bool getDest() { return destruido; }
 	char getId() { return 'P'; }
+	void destroy() { destruido = true; }
 
 private:
 	

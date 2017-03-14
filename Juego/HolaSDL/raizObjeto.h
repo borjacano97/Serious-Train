@@ -31,5 +31,6 @@ public:
 	virtual Direccion getDir() = 0;
 	virtual char getId() = 0;
 	virtual bool getDest() = 0;
+	virtual void destroy() = 0;
 };
 

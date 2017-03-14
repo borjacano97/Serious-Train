@@ -6,7 +6,7 @@
 FinNivel::FinNivel(Game* juego, bool v) :Estado(juego)
 {		
 	victory = v;
-	objetos.emplace_back(new Button(ptsjuego, Game::TBotonJ, 300, 400, jugar));
+	if (victory) objetos.emplace_back(new Button(ptsjuego, Game::TBotonJ, 300, 400, jugar));
 	objetos.emplace_back(new Button(ptsjuego, Game::TBotonS, 800, 400, salir));
 }
 

@@ -13,6 +13,7 @@ public:
 	void move(char c);
 	bool getDest() { return destruido; }
 	char getId() { return 'U'; }
+	void destroy() { destruido = true; }
 protected:
 	CallBack_t * cb;
 
