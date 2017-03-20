@@ -17,8 +17,6 @@ public:
 	char getEst(){ return 'P'; }
 
 private:
-	int izq;
-	int aleatorio;
 	Personaje* player;
 	barraHP* TrainHp;
 

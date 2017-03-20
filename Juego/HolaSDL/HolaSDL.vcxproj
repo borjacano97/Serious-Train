@@ -19,7 +19,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -77,6 +77,8 @@
     <ClCompile Include="FinNivel.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Menu.cpp" />
+    <ClCompile Include="Nivel1.cpp" />
+    <ClCompile Include="Nivel2.cpp" />
     <ClCompile Include="Objeto.cpp" />
     <ClCompile Include="Personaje.cpp" />
     <ClCompile Include="Play.cpp" />
@@ -93,6 +95,8 @@
     <ClInclude Include="Game.h" />
     <ClInclude Include="FinNivel.h" />
     <ClInclude Include="Menu.h" />
+    <ClInclude Include="Nivel1.h" />
+    <ClInclude Include="Nivel2.h" />
     <ClInclude Include="Objeto.h" />
     <ClInclude Include="Personaje.h" />
     <ClInclude Include="Play.h" />
