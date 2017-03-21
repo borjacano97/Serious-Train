@@ -19,6 +19,8 @@ Play::Play(Game * j) : Estado(j)
 	enem = 0;
 	killed = 0;
 	emax = 5 * ptsjuego->getNivel();
+
+	fin = false;
 	
 	/*SDL_Surface *text;
 	SDL_Color text_color = { 255, 255, 255 };
@@ -88,7 +90,7 @@ void Play::update() {
 	}	
 
 	// si esto no puede (o no debe ser null) quitad esto
-		if (TrainHp->getDest() || killed >= emax) {
+		if (TrainHp->getDest() || fin) {
 			if (TrainHp->getDest())	ptsjuego->changeState(new FinNivel(ptsjuego, false));
 			else {
 				ptsjuego->incrNivel();

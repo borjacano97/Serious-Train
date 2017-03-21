@@ -15,13 +15,15 @@ public:
 	void update();
 	void move(char c);
 	char getEst(){ return 'P'; }
+	int getKilled(){ return killed; }
+	void finish() { fin = true; }
 
 private:
 	Personaje* player;
 	barraHP* TrainHp;
 
 	int vag = 5;
-	bool dest;
+	bool fin;
 	bool initObjects(); //crear y destruir los objetos del juego
 	void freeObjects();
 
