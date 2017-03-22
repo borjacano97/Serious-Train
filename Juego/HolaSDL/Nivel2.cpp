@@ -2,6 +2,7 @@
 #include "enemigo.h"
 
 
+
 Nivel2::Nivel2(Game * j) : Play(j)
 {
 	enem = 0;

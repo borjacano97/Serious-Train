@@ -42,11 +42,6 @@ bool Play::initObjects() { // creación de los objetos dando un puntero, una text
 	//train = new Tren(ptsjuego, Game::TTren, 25, 0, " ");// en el último hueco poner como string tipo de vagón
 	player = new Personaje(ptsjuego, Game::TPersonaje, 650, 350);
 	TrainHp = new barraHP(ptsjuego, Game::TBarra, 10, 15, 0);
-
-
-	objetos.emplace_back(player);
-	objetos.emplace_back(TrainHp);
-
 	
 
 	return true;
@@ -70,7 +65,10 @@ void Play::draw() {
 			i->draw();
 		}
 	}
-	
+
+	player->draw();
+	TrainHp->draw();
+
 }
 
 void Play::onClick(){
@@ -78,7 +76,7 @@ void Play::onClick(){
 	objetos.emplace_back(new Bala(ptsjuego, Game::TPersonaje, player->getx(), player->gety(), player->getMira()));
 }
 void Play::update() {  
-
+	
 	for (auto i : tren){
 			i->update();
 	}
@@ -88,7 +86,8 @@ void Play::update() {
 			i->update();
 		}
 	}	
-
+	player->update();
+	TrainHp->update();
 	// si esto no puede (o no debe ser null) quitad esto
 		if (TrainHp->getDest() || fin) {
 			if (TrainHp->getDest())	ptsjuego->changeState(new FinNivel(ptsjuego, false));
@@ -97,10 +96,23 @@ void Play::update() {
 				ptsjuego->changeState(new FinNivel(ptsjuego, true));
 			}
 		}
-		
-		else {
+		/*else {
+			for (auto obj : objetos){
+				for (auto target : objetos){
+					if (target == obj);
+					else
+					{
+						if (obj->collision(target++)){
+							delete obj;
+							obj = nullptr;
+							delete target;
+							target = nullptr;
+						}
+					}				
+				}
+			}*/
 			// for guay aquí. cuidado con i = 2.
-			for (unsigned int i = 2; i < objetos.size(); i++) {
+			for (unsigned int i = 0; i < objetos.size(); i++) {
 
 				if (objetos[i] != nullptr  && (objetos[i]->getId() == 'R' || objetos[i]->getId() == 'L')
 					&& objetos[i]->getx() >= 500 && objetos[i]->getx() <= 745) {// detecta zombis que quitan vida al tren
@@ -114,8 +126,7 @@ void Play::update() {
 					// Amargamente.
 
 					if (objetos[i] != nullptr && objetos[j] != nullptr && (objetos[i]->getId() == 'R' || objetos[i]->getId() == 'L') && objetos[j]->getId() == 'B' &&
-						(objetos[i]->getx() - objetos[j]->getx()) <= 30 && (objetos[i]->getx() - objetos[j]->getx()) >= -30 &&
-						(objetos[i]->gety() - objetos[j]->gety()) <= 40 && (objetos[i]->gety() - objetos[j]->gety()) >= -40) {
+						objetos[i]->collision(objetos[j])) {
 						if (!objetos[i]->getDest()){
 							objetos[i]->destroy();
 							objetos[j]->destroy();
@@ -140,7 +151,7 @@ void Play::update() {
 			Estado::update();
 	}
 	
-}
+
 
 void Play::move(char c){
 	player->move(c); // El Dios de la programación quiere suicidarse. Pero no puede, es inmortal.

@@ -34,6 +34,7 @@ public:
 	virtual char getId() = 0;
 	virtual bool getDest() = 0;
 	virtual void destroy() = 0;
+	virtual bool collision(RaizObjeto* other) = 0;
 };
 
 

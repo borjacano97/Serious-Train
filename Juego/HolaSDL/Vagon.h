@@ -22,6 +22,4 @@ private:
 	std::string tipo;
 	SDL_Rect rect;
 };
-
-
 #endif

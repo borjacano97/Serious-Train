@@ -15,6 +15,8 @@ public:
 	virtual Direccion getDir() { return dir; };
 	bool dentro(int x, int y) const;
 
+	bool collision(RaizObjeto* other);
+
 protected: // son protegidas porque las subclases usan estas variables, si no serían privadas
 
 	Game* juegootp;
