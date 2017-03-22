@@ -4,13 +4,39 @@
 #include "Play.h"
 
 #include <iostream>
+#include <fstream>
 #include <typeinfo>
 #include <vector>
 #include <string>
 
+
+using namespace std;
 Game::Game()
-{
-	//inicialización de texturas, SDL y demás atributos privados
+{	
+	/*//inicialización de texturas, SDL y demás atributos privados
+	ifstream f;
+	int i = 0;
+	string input;
+
+	f.open("../bmps/init.txt", ios::in);
+	while (!f.eof()){
+		getline(f, input);
+		ntexturas[i] = input;
+		i++;
+		
+		/*input = f.getline();
+		ntexturas[i] = input;
+		i++;
+	}
+	f.close();*/
+	/*
+	ifstream in("../bmps/init.txt");
+	auto cinbuf = cin.rdbuf(in.rdbuf());
+	int i = 0;
+	while (!cin){
+		getline(cin, ntexturas[i]);
+		i++;
+	}*/
 
 	ntexturas[0] = "../bmps/fondoprot.png";
 	ntexturas[1] = "../bmps/personaje.jpg";
@@ -23,6 +49,7 @@ Game::Game()
 	ntexturas[8] = "../bmps/botonC.png";
 	ntexturas[9] = "../bmps/win.png";
 	ntexturas[10] = "../bmps/lose.png";
+	
 
 	srand(SDL_GetTicks()); // no se que coño es esto xd
 

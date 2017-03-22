@@ -1,4 +1,4 @@
-﻿Compilación iniciada a las 22/03/2017 13:45:09.
+﻿Compilación iniciada a las 22/03/2017 16:38:38.
      1>Proyecto "C:\hlocal\Serious-Train\Juego\HolaSDL\HolaSDL.vcxproj" en el nodo 2 (Build destinos).
      1>ClCompile:
          C:\software\programacion\MSVStudio2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Play.cpp
@@ -27,4 +27,4 @@
 
 Compilación correcta.
 
-Tiempo transcurrido 00:00:00.65
+Tiempo transcurrido 00:00:00.68
