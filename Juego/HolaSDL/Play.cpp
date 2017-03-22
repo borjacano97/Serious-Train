@@ -49,6 +49,9 @@ bool Play::initObjects() { // creación de los objetos dando un puntero, una text
 
 void Play::freeObjects() {
 	// c++11
+	for (auto o : tren) {
+		delete o;
+	}
 	for (auto o : objetos) { 
 		delete o;
 	}
@@ -65,7 +68,11 @@ void Play::draw() {
 			i->draw();
 		}
 	}
-
+	for (auto i : balas){
+		if (i != nullptr){
+			i->draw();
+		}
+	}
 	player->draw();
 	TrainHp->draw();
 
@@ -73,84 +80,108 @@ void Play::draw() {
 
 void Play::onClick(){
 	//objetos[0]->onClick();
-	objetos.emplace_back(new Bala(ptsjuego, Game::TPersonaje, player->getx(), player->gety(), player->getMira()));
+	balas.emplace_back(new Bala(ptsjuego, Game::TPersonaje, player->getx(), player->gety(), player->getMira()));
 }
-void Play::update() {  
-	
+void Play::update() {
+
 	for (auto i : tren){
-			i->update();
+		i->update();
 	}
 
 	for (auto i : objetos){
 		if (i != nullptr){
 			i->update();
 		}
-	}	
+	}
+	for (auto i : balas){
+		if (i != nullptr){
+			i->update();
+		}
+	}
 	player->update();
 	TrainHp->update();
 	// si esto no puede (o no debe ser null) quitad esto
-		if (TrainHp->getDest() || fin) {
-			if (TrainHp->getDest())	ptsjuego->changeState(new FinNivel(ptsjuego, false));
-			else {
-				ptsjuego->incrNivel();
-				ptsjuego->changeState(new FinNivel(ptsjuego, true));
-			}
+	if (TrainHp->getDest() || fin) {
+		if (TrainHp->getDest())	ptsjuego->changeState(new FinNivel(ptsjuego, false));
+		else {
+			ptsjuego->incrNivel();
+			ptsjuego->changeState(new FinNivel(ptsjuego, true));
 		}
-		/*else {
-			for (auto obj : objetos){
-				for (auto target : objetos){
-					if (target == obj);
-					else
-					{
-						if (obj->collision(target++)){
-							delete obj;
-							obj = nullptr;
-							delete target;
-							target = nullptr;
-						}
-					}				
-				}
-			}*/
-			// for guay aquí. cuidado con i = 2.
-			for (unsigned int i = 0; i < objetos.size(); i++) {
+	}
+
+	/*else {
+	for (auto obj : objetos){
+
+	for (auto target : balas){
+	if (target != nullptr && target->getDest()){
+	delete target;
+	target = nullptr;
+	}
+	if (target != nullptr && target->getDest()){
+	delete target;
+	target = nullptr;
+	}
+	if (obj != nullptr && target != nullptr && obj->collision(target)){
+	target->destroy();
+	obj->destroy();
+	if (obj->getId() == 'L') ptsjuego->addCoins(5);
+	else  ptsjuego->addCoins(10);
+	killed++;
+	}
+	}
+	if (obj != nullptr && obj->getDest()){
+	delete obj;
+	obj = nullptr;
+	}
+
+	}*/
+	
+	/**/
+	    // esto va perfe
+		for (unsigned int i = 0; i < objetos.size(); i++) {
 
 				if (objetos[i] != nullptr  && (objetos[i]->getId() == 'R' || objetos[i]->getId() == 'L')
-					&& objetos[i]->getx() >= 500 && objetos[i]->getx() <= 745) {// detecta zombis que quitan vida al tren
-					TrainHp->move('h');
+				&& objetos[i]->getx() >= 500 && objetos[i]->getx() <= 745) {// detecta zombis que quitan vida al tren
+				TrainHp->move('h');
 				}
-				for (unsigned int j = 0; j < objetos.size(); j++) {
-					// muerte por colisión de objetos exceptuando el personaje, tren y barra de vida, si va a haber choque entre zombies hay que poner
-					// un booleano que identifique entre balas y sombis
-				
-					// El Dios de la programación está llorando.
-					// Amargamente.
+				for (unsigned int j = 0; j < balas.size(); j++) {
+				// muerte por colisión de objetos exceptuando el personaje, tren y barra de vida, si va a haber choque entre zombies hay que poner
+				// un booleano que identifique entre balas y sombis
 
-					if (objetos[i] != nullptr && objetos[j] != nullptr && (objetos[i]->getId() == 'R' || objetos[i]->getId() == 'L') && objetos[j]->getId() == 'B' &&
-						objetos[i]->collision(objetos[j])) {
-						if (!objetos[i]->getDest()){
-							objetos[i]->destroy();
-							objetos[j]->destroy();
-						}
-						else{
-							objetos[i]->destroy();
-							objetos[j]->destroy();
-							if (objetos[i]->getId() == 'L') ptsjuego->addCoins(5);
-							else  ptsjuego->addCoins(10);
-							killed++;
+				// El Dios de la programación está llorando.
+				// Amargamente.
+				if (balas[j] != nullptr && balas[j]->getDest()){
+				delete balas[j];
+				balas[j] = nullptr;
+				}
+				if (objetos[i] != nullptr && balas[j] != nullptr &&	objetos[i]->collision(balas[j])) {
+				if (!objetos[i]->getDest()){
+				objetos[i]->destroy();
+				balas[j]->destroy();
+				}
+				else{
+				objetos[i]->destroy();
+				balas[j]->destroy();
+				if (objetos[i]->getId() == 'L') ptsjuego->addCoins(5);
+				else  ptsjuego->addCoins(10);
+				killed++;
 
-						}
-						
-					}						
+				}
+
+				}
 				}
 				if (objetos[i] != nullptr && objetos[i]->getDest()){
-					delete objetos[i];
-					objetos[i] = nullptr;
-				}				
-		}		
-			
-			Estado::update();
+				delete objetos[i];
+				objetos[i] = nullptr;
+				}
+
+				}	
+
+
+
+		Estado::update();
 	}
-	
+
 
 
 void Play::move(char c){
