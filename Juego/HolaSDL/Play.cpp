@@ -138,8 +138,7 @@ void Play::update() {
 		// esto va perfe
 		for (unsigned int i = 0; i < objetos.size(); i++) {
 
-			if (objetos[i] != nullptr && (objetos[i]->getId() == 'R' || objetos[i]->getId() == 'L')
-				&& objetos[i]->getx() >= 500 && objetos[i]->getx() <= 745) {// detecta zombis que quitan vida al tren
+			if (objetos[i] != nullptr && objetos[i]->getx() >= 500 && objetos[i]->getx() <= 745) {// detecta zombis que quitan vida al tren
 				TrainHp->move('h');
 			}
 			for (unsigned int j = 0; j < balas.size(); j++) {
@@ -163,18 +162,14 @@ void Play::update() {
 						if (objetos[i]->getId() == 'L') ptsjuego->addCoins(5);
 						else  ptsjuego->addCoins(10);
 						killed++;
-
 					}
-
 				}
 			}
 			if (objetos[i] != nullptr && objetos[i]->getDest()){
 				delete objetos[i];
 				objetos[i] = nullptr;
 			}
-
 		}
-
 	}
 		Estado::update();
 }
