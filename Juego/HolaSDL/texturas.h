@@ -1,4 +1,6 @@
-#pragma once
+#ifndef H_TEXTURAS_H
+#define H_TEXTURAS_H
+
 #include "SDL.h"
 #include "SDL_image.h"
 #include <iostream>
@@ -20,3 +22,4 @@ private:
 	int ancho;
 };
 
+#endif

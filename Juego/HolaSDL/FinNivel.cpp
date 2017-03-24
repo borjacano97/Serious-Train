@@ -40,8 +40,13 @@ void FinNivel::draw(){
 			objetos[i]->draw();
 	}
 }
-// ADVICE: HAY QUE DISPARAR AL MENOS UNA VEZ CON EL RATÓN EN PLAY PARA QUE FUNCIONE
-// CORRECTAMENTE EL GAMEOVER, NO PREGUNTÉIS POR QUE
+void FinNivel::update(Uint32 delta){
+	for (unsigned int i = 0; i < objetos.size(); i++) {
+		if (objetos[i] != nullptr)
+			objetos[i]->update(delta);
+	}
+}
+
 void FinNivel::onClick(){
 	bool clickeado = false;
 

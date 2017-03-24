@@ -1,4 +1,6 @@
-#pragma once
+#ifndef H_NIVEL2_H
+#define H_NIVEL2_H
+
 #include "play.h"
 class Nivel2 :
 	public Play
@@ -6,8 +8,9 @@ class Nivel2 :
 public:
 	Nivel2(Game * j);
 	~Nivel2();
-	void update();
+	void update(Uint32 delta);
 private:
 	int aleatorio, enem, emax, izq;
 };
 
+#endif

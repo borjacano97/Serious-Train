@@ -1,4 +1,6 @@
-#pragma once
+#ifndef H_GAME_H
+#define H_GAME_H
+
 #include "Texturas.h"
 #include "RaizObjeto.h"
 #include "RaizEstado.h"
@@ -12,9 +14,9 @@ public:
 	Game();
 	~Game();
 
-	
-
 	enum Texturas_t { TFondo, TPersonaje, TEnemigo, TEnemigo2, TTren, TBarra, TBotonJ, TBotonS, TBotonC, Tlose, TWin};
+	enum Enemigo_t{ ENormal, ERapido/*...*/ };
+	
 	Texturas* getTextura(Texturas_t et) const { return texts[et]; }
 	SDL_Renderer* getRender() const;
 
@@ -34,6 +36,10 @@ public:
 	int getNivel() { return nivel;; }
 	void addCoins(int n){ coins += n; std::cout << coins << "\n"; }
 
+
+
+	SDL_DisplayMode dm;
+
 private:
 	SDL_Window * pWin = nullptr;
 	SDL_Renderer* pRender = nullptr;
@@ -47,7 +53,7 @@ private:
 	void closeSDL();
 	void render(); //const
 	void onClick(int pmx, int pmy);
-	void update();
+	void update(Uint32 delta);
 	bool handle_event();
 
 
@@ -58,3 +64,5 @@ private:
 	int coins = 0;
 };
 
+
+#endif

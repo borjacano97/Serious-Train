@@ -30,7 +30,7 @@ void barraHP::draw() {
 	juegootp->getTextura(Ttextura)->draw(render, nullptr, &rect);
 }
 
-void barraHP::update() {
+void barraHP::update(Uint32 delta) {
 	if (ancho <= 0) destruido = true;
 }
 bool barraHP::onClick() {

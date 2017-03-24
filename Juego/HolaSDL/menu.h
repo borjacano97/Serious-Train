@@ -1,4 +1,6 @@
-#pragma once
+#ifndef H_MENU_H
+#define H_MENU_H
+
 #include "Estado.h"
 class Menu :
 	public Estado
@@ -8,9 +10,10 @@ public:
 	~Menu();
 	void onClick();
 	void draw();
-	void update(){ ; }
 	static void salir(Game * jg);
 	static void jugar(Game * jg);
 	char getEst(){ return 'M'; }
 };
 
+
+#endif

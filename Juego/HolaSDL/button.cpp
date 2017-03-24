@@ -45,6 +45,6 @@ bool Button::onClick(){
 }
 
 
-void Button::update(){
+void Button::update(Uint32 delta){
 
 }

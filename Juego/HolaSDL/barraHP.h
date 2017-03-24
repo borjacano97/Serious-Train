@@ -1,4 +1,6 @@
-#pragma once
+#ifndef H_BARRAHP_H
+#define H_BARRAHP_H
+
 #include "Objeto.h"
 class barraHP :
 	public Objeto
@@ -8,14 +10,15 @@ public:
 	~barraHP();
 
 	void draw();
-	void update();
+	void update(Uint32 delta);
 	bool onClick();
 	void move(char c);
 	bool getDest() { return destruido; }
-	char getId() { return 'H'; }
+	Objeto_t getId() { return Objeto_t::OBarraHP; }
 	void destroy() { destruido = true; }
 private:
 	int cont;
 	SDL_Rect rect;
 };
 
+#endif

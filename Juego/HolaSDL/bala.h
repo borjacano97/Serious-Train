@@ -1,4 +1,6 @@
-#pragma once
+#ifndef H_BALA_H
+#define H_BALA_H
+
 #include "Objeto.h"
 class Bala : public Objeto
 {
@@ -6,11 +8,11 @@ public:
 	Bala(Game* juego, Game::Texturas_t text, int x, int y, int mira);
 	~Bala();
 	void draw();
-	void update();
+	void update(Uint32 delta);
 	bool onClick();
 	void move(char c);
 	bool getDest() { return destruido; }
-	char getId() { return 'B'; }
+	Objeto_t getId() { return Objeto_t::OBala; }
 	void destroy() { destruido = true; }
 private:
 	int dir;
@@ -18,3 +20,4 @@ private:
 	SDL_Rect rect;
 };
 
+#endif

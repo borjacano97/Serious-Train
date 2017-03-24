@@ -1,0 +1,11 @@
+../bmps/fondoprot.png
+../bmps/personaje.jpg
+../bmps/batidle.png
+../bmps/ene.png
+../bmps/tren.png
+../bmps/barraHP.png
+../bmps/botonJ.png
+../bmps/botonS.png
+../bmps/botonC.png
+../bmps/win.png
+../bmps/lose.png

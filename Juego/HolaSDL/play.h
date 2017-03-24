@@ -1,8 +1,12 @@
-#pragma once
+#ifndef H_PLAY_H
+#define H_PLAY_H
+
 #include "Estado.h"
 #include "Personaje.h"
 #include "Vagon.h"
 #include "BarraHP.h"
+
+
 
 class Play: public Estado
 {
@@ -12,7 +16,7 @@ public:
 
 	void onClick();
 	void draw();
-	void update();
+	void update(Uint32 delta);
 	void move(char c);
 	char getEst(){ return 'P'; }
 	int getKilled(){ return killed; }
@@ -34,3 +38,5 @@ private:
 	int killed;
 };
 
+
+#endif

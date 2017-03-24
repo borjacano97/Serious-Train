@@ -1,4 +1,6 @@
-#pragma once
+#ifndef H_ERROR_H
+#define H_ERROR_H
+
 #include <string>
 
 class Error 
@@ -12,3 +14,4 @@ protected:
 	std::string mailinfo;
 };
 
+#endif

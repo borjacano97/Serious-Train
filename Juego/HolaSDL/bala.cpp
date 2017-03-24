@@ -35,10 +35,10 @@ bool Bala::onClick() {
 	return true;
 }
 
-void Bala::update() {
-	pimgx += dir * vel;
+void Bala::update(Uint32 delta) {
+	pimgx += dir * vel*delta;
 	
-	if (pimgx <= 100 || pimgx >=1200)
+	if (pimgx <= 0 || pimgx >= juegootp->dm.w)
 		destruido = true;
 }
 void Bala::move(char c){

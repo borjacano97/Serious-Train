@@ -12,15 +12,15 @@ Nivel1::Nivel1(Game * j) : Play(j)
 Nivel1::~Nivel1()
 {
 }
-void Nivel1::update() {
+void Nivel1::update(Uint32 delta) {
 	
 
 	if (enem < emax){
 		aleatorio = rand() % 10000; //generar zombies aleatorios
 		if (aleatorio >= 9980) {
 			izq = rand() % 2;
-			if (izq == 0) objetos.emplace_back(new Enemigo(ptsjuego, Game::TEnemigo2, 0, rand() % 500 + 50, false));
-			else objetos.emplace_back(new Enemigo(ptsjuego, Game::TEnemigo2, 1300, rand() % 500 + 50, false));
+			if (izq == 0) objetos.emplace_back(new Enemigo(ptsjuego, Game::TEnemigo2, 0, rand() % 500 + 50, Game::Enemigo_t::ENormal));
+			else objetos.emplace_back(new Enemigo(ptsjuego, Game::TEnemigo2, 1300, rand() % 500 + 50, Game::Enemigo_t::ENormal));
 			enem++;
 		}	
 	}
@@ -29,6 +29,6 @@ void Nivel1::update() {
 	}
 	
 	
-    Play::update();
+	Play::update(delta);
 	
 }

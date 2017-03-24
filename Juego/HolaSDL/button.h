@@ -1,4 +1,6 @@
-#pragma once
+#ifndef H_BUTTON_H
+#define H_BUTTON_H
+
 #include "Objeto.h"
 class Button :
 	public Objeto
@@ -8,11 +10,11 @@ public:
 	Button(Game* juego, Game::Texturas_t text, int x, int y, CallBack_t * cbCons);
 	~Button();
 	void draw();
-	void update();
+	void update(Uint32 delta);
 	bool onClick();
 	void move(char c);
 	bool getDest() { return destruido; }
-	char getId() { return 'U'; }
+	Objeto_t getId() { return Objeto_t::OButton; }
 	void destroy() { destruido = true; }
 protected:
 	CallBack_t * cb;
@@ -23,3 +25,4 @@ protected:
 	int mpby;
 };
 
+#endif

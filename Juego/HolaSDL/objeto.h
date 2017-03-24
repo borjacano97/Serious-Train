@@ -1,4 +1,6 @@
-#pragma once
+#ifndef H_OBJETO_H
+#define H_OBJETO_H
+
 #include "Game.h" // tiene que incluirse para que pueda heredar de raizObjeto, y para el puntero
 
 class Objeto: public RaizObjeto 
@@ -13,6 +15,8 @@ public:
 	virtual Direccion getDir() { return dir; };
 	bool dentro(int x, int y) const;
 
+	bool collision(RaizObjeto* other);
+
 protected: // son protegidas porque las subclases usan estas variables, si no serían privadas
 
 	Game* juegootp;
@@ -25,3 +29,5 @@ protected: // son protegidas porque las subclases usan estas variables, si no se
 	int pimgx, pimgy; //posición del objeto
 };
 
+
+#endif

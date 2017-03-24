@@ -2,15 +2,42 @@
 #include "Error.h"
 #include "Menu.h"
 #include "Play.h"
+#include "Pausa.h"
 
 #include <iostream>
+#include <fstream>
 #include <typeinfo>
 #include <vector>
 #include <string>
 
+
+using namespace std;
 Game::Game()
-{
-	//inicialización de texturas, SDL y demás atributos privados
+{	
+	/*//inicialización de texturas, SDL y demás atributos privados
+	ifstream f;
+	int i = 0;
+	string input;
+
+	f.open("../bmps/init.txt", ios::in);
+	while (!f.eof()){
+		getline(f, input);
+		ntexturas[i] = input;
+		i++;
+		
+		/*input = f.getline();
+		ntexturas[i] = input;
+		i++;
+	}
+	f.close();*/
+	/*
+	ifstream in("../bmps/init.txt");
+	auto cinbuf = cin.rdbuf(in.rdbuf());
+	int i = 0;
+	while (!cin){
+		getline(cin, ntexturas[i]);
+		i++;
+	}*/
 
 	ntexturas[0] = "../bmps/fondoprot.png";
 	ntexturas[1] = "../bmps/personaje.jpg";
@@ -23,6 +50,7 @@ Game::Game()
 	ntexturas[8] = "../bmps/botonC.png";
 	ntexturas[9] = "../bmps/win.png";
 	ntexturas[10] = "../bmps/lose.png";
+	
 
 	srand(SDL_GetTicks()); // no se que coño es esto xd
 
@@ -34,6 +62,7 @@ Game::Game()
 	cadencia = 150;
 
 	estados.push(new Menu(this)); // estado que queremos inicial
+	SDL_DisplayMode dm;
 }
 
 
@@ -87,7 +116,16 @@ bool Game::initSDL() {
 	else {
 		//Create window: SDL_CreateWindow("SDL Hello World", posX, posY, width, height, SDL_WINDOW_SHOWN);
 		//le paso el tama�o que quiero que tenga la ventana de mi juego
-		pWin = SDL_CreateWindow("SDL Hello World", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 1300, 700, SDL_WINDOW_SHOWN);
+		
+		if (SDL_GetDesktopDisplayMode(0, &dm) != 0) {
+			SDL_Log("SDL_GetDesktopDisplayMode failed: %s", SDL_GetError());
+			return 1;
+		}
+		SDL_GetCurrentDisplayMode(0, &dm);
+		auto SCREEN_WIDTH = dm.w;
+		auto SCEEN_HEIGHT = dm.h;
+
+		pWin = SDL_CreateWindow("Non Solum", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,SCREEN_WIDTH, SCEEN_HEIGHT, SDL_WINDOW_SHOWN);
 		if (pWin == nullptr) {
 			throw Error("Window could not be created!");///////////////
 
@@ -132,7 +170,7 @@ void Game::render() { //const
 		texts[0]->draw(pRender, nullptr, nullptr);
 	else if (topEstado()->getEst() == 'W')
 		texts[9]->draw(pRender, nullptr, nullptr);
-	else 
+	else if (topEstado()->getEst() == 'L')
 		texts[10]->draw(pRender, nullptr, nullptr);
 
 	topEstado()->draw();
@@ -142,24 +180,15 @@ void Game::render() { //const
 
 void Game::run()
 {
-	Uint32 MSxUpdate = 500; // velocidad del juego
-	std::cout << "PLAY \n";
-	Uint32 lastUpdate = SDL_GetTicks();
-	render();
-	espera = handle_event();
-	while (!exit) {
-		//if ((SDL_GetTicks() - lastUpdate) >= MSxUpdate && !espera) { 
-			update();
-			lastUpdate = SDL_GetTicks();
-		
+	Uint32 delta;
+	Uint32 lastUpdate = SDL_GetTicks();	
+	while (!exit){
+		delta = SDL_GetTicks() - lastUpdate;
+		update(delta);
+		lastUpdate = SDL_GetTicks();
 		render();
-		espera = handle_event();
+		handle_event();
 	}
-	if (exit)
-		std::cout << "EXIT \n";
-	
-	SDL_Delay(1000);
-	//std::cin.get();
 }
 
 void Game::onClick(int pmx, int pmy) { //se guardan las posiciones que pasan por par�metro
@@ -168,9 +197,9 @@ void Game::onClick(int pmx, int pmy) { //se guardan las posiciones que pasan por
 	topEstado()->onClick();
 }
 
-void Game::update() { //el juego corre mientras existan globos en el juego (aunque puede ser pausado)
+void Game::update(Uint32 delta) { //el juego corre mientras existan globos en el juego (aunque puede ser pausado)
 
-	topEstado()->update();
+	topEstado()->update(delta);
 }
 
 
@@ -197,7 +226,7 @@ bool Game::handle_event() { //eventos del teclado y raton
 				topEstado()->move('D');
 			}	
 			if (e.key.keysym.sym == SDLK_ESCAPE) {
-				//pushState(new Pausa(this));				
+				if (topEstado()->getEst() == 'P') pushState(new Pausa(this));				
 			}
 			/*else if ((e.key.keysym.sym == SDLK_l || e.key.keysym.sym == SDLK_SPACE) && cadencia >= 100) {
 				cadencia = 0;

@@ -42,11 +42,6 @@ bool Play::initObjects() { // creación de los objetos dando un puntero, una text
 	//train = new Tren(ptsjuego, Game::TTren, 25, 0, " ");// en el último hueco poner como string tipo de vagón
 	player = new Personaje(ptsjuego, Game::TPersonaje, 650, 350);
 	TrainHp = new barraHP(ptsjuego, Game::TBarra, 10, 15, 0);
-
-
-	objetos.emplace_back(player);
-	objetos.emplace_back(TrainHp);
-
 	
 
 	return true;
@@ -54,6 +49,9 @@ bool Play::initObjects() { // creación de los objetos dando un puntero, una text
 
 void Play::freeObjects() {
 	// c++11
+	for (auto o : tren) {
+		delete o;
+	}
 	for (auto o : objetos) { 
 		delete o;
 	}
@@ -70,78 +68,111 @@ void Play::draw() {
 			i->draw();
 		}
 	}
-	
+	for (auto i : balas){
+		if (i != nullptr){
+			i->draw();
+		}
+	}
+	player->draw();
+	TrainHp->draw();
+
 }
 
 void Play::onClick(){
 	//objetos[0]->onClick();
-	objetos.emplace_back(new Bala(ptsjuego, Game::TPersonaje, player->getx(), player->gety(), player->getMira()));
+	balas.emplace_back(new Bala(ptsjuego, Game::TPersonaje, player->getx(), player->gety(), player->getMira()));
 }
-void Play::update() {  
+void Play::update(Uint32 delta) {
 
 	for (auto i : tren){
-			i->update();
+		i->update(delta);
 	}
 
 	for (auto i : objetos){
 		if (i != nullptr){
-			i->update();
+			i->update(delta);
 		}
-	}	
-
+	}
+	for (auto i : balas){
+		if (i != nullptr){
+			i->update(delta);
+		}
+	}
+	player->update(delta);
+	TrainHp->update(delta);
 	// si esto no puede (o no debe ser null) quitad esto
-		if (TrainHp->getDest() || fin) {
-			if (TrainHp->getDest())	ptsjuego->changeState(new FinNivel(ptsjuego, false));
-			else {
-				ptsjuego->incrNivel();
-				ptsjuego->changeState(new FinNivel(ptsjuego, true));
+	if (TrainHp->getDest() || fin) {
+		if (TrainHp->getDest())	ptsjuego->changeState(new FinNivel(ptsjuego, false));
+		else {
+			ptsjuego->incrNivel();
+			ptsjuego->changeState(new FinNivel(ptsjuego, true));
+		}
+	}
+
+	else {
+		//for (auto obj : objetos){
+		//	if (obj != nullptr && obj->getx() >= 500 && obj->getx() <= 745) {// detecta zombis que quitan vida al tren
+		//		TrainHp->move('h');
+		//	}
+
+		//	for (auto target : balas){	
+		//		if (target != nullptr && target->getDest()){
+		//			delete target;
+		//			target = nullptr;
+		//		}
+
+		//		if (obj != nullptr && target != nullptr && obj->collision(target)){
+		//			target->destroy();
+		//			obj->destroy();
+		//			if (obj->getId() == 'L') ptsjuego->addCoins(5);
+		//			else  ptsjuego->addCoins(10);
+		//			killed++;
+		//		}
+		//		if (obj != nullptr && obj->getDest()){
+		//			delete obj;
+		//			obj = nullptr;
+		//		}
+		//	}
+		//}
+
+		// esto va perfe
+		for (unsigned int i = 0; i < objetos.size(); i++) {
+
+			if (objetos[i] != nullptr && objetos[i]->getx() >= 500 && objetos[i]->getx() <= 745) {// detecta zombis que quitan vida al tren
+				TrainHp->move('h');
+			}
+			for (unsigned int j = 0; j < balas.size(); j++) {
+				// muerte por colisión de objetos exceptuando el personaje, tren y barra de vida, si va a haber choque entre zombies hay que poner
+				// un booleano que identifique entre balas y sombis
+
+				// El Dios de la programación está llorando.
+				// Amargamente.
+				if (balas[j] != nullptr && balas[j]->getDest()){
+					delete balas[j];
+					balas[j] = nullptr;
+				}
+				if (objetos[i] != nullptr && balas[j] != nullptr &&	objetos[i]->collision(balas[j])) {
+					if (!objetos[i]->getDest()){
+						objetos[i]->destroy();
+						balas[j]->destroy();
+					}
+					else{
+						objetos[i]->destroy();
+						balas[j]->destroy();
+						if (objetos[i]->getId() == 'L') ptsjuego->addCoins(5);
+						else  ptsjuego->addCoins(10);
+						killed++;
+					}
+				}
+			}
+			if (objetos[i] != nullptr && objetos[i]->getDest()){
+				delete objetos[i];
+				objetos[i] = nullptr;
 			}
 		}
-		
-		else {
-			// for guay aquí. cuidado con i = 2.
-			for (unsigned int i = 2; i < objetos.size(); i++) {
-
-				if (objetos[i] != nullptr  && (objetos[i]->getId() == 'R' || objetos[i]->getId() == 'L')
-					&& objetos[i]->getx() >= 500 && objetos[i]->getx() <= 745) {// detecta zombis que quitan vida al tren
-					TrainHp->move('h');
-				}
-				for (unsigned int j = 0; j < objetos.size(); j++) {
-					// muerte por colisión de objetos exceptuando el personaje, tren y barra de vida, si va a haber choque entre zombies hay que poner
-					// un booleano que identifique entre balas y sombis
-				
-					// El Dios de la programación está llorando.
-					// Amargamente.
-
-					if (objetos[i] != nullptr && objetos[j] != nullptr && (objetos[i]->getId() == 'R' || objetos[i]->getId() == 'L') && objetos[j]->getId() == 'B' &&
-						(objetos[i]->getx() - objetos[j]->getx()) <= 30 && (objetos[i]->getx() - objetos[j]->getx()) >= -30 &&
-						(objetos[i]->gety() - objetos[j]->gety()) <= 40 && (objetos[i]->gety() - objetos[j]->gety()) >= -40) {
-						if (!objetos[i]->getDest()){
-							objetos[i]->destroy();
-							objetos[j]->destroy();
-						}
-						else{
-							objetos[i]->destroy();
-							objetos[j]->destroy();
-							if (objetos[i]->getId() == 'L') ptsjuego->addCoins(5);
-							else  ptsjuego->addCoins(10);
-							killed++;
-
-						}
-						
-					}						
-				}
-				if (objetos[i] != nullptr && objetos[i]->getDest()){
-					delete objetos[i];
-					objetos[i] = nullptr;
-				}				
-		}		
-			
-			Estado::update();
 	}
-	
+		Estado::update(delta);
 }
-
 void Play::move(char c){
 	player->move(c); // El Dios de la programación quiere suicidarse. Pero no puede, es inmortal.
 }
