@@ -80,6 +80,7 @@
     <ClCompile Include="Nivel1.cpp" />
     <ClCompile Include="Nivel2.cpp" />
     <ClCompile Include="Objeto.cpp" />
+    <ClCompile Include="Pausa.cpp" />
     <ClCompile Include="Personaje.cpp" />
     <ClCompile Include="Play.cpp" />
     <ClCompile Include="Texturas.cpp" />
@@ -98,6 +99,7 @@
     <ClInclude Include="Nivel1.h" />
     <ClInclude Include="Nivel2.h" />
     <ClInclude Include="Objeto.h" />
+    <ClInclude Include="Pausa.h" />
     <ClInclude Include="Personaje.h" />
     <ClInclude Include="Play.h" />
     <ClInclude Include="RaizEstado.h" />

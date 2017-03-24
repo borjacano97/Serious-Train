@@ -2,6 +2,7 @@
 #include "Error.h"
 #include "Menu.h"
 #include "Play.h"
+#include "Pausa.h"
 
 #include <iostream>
 #include <fstream>
@@ -168,7 +169,7 @@ void Game::render() { //const
 		texts[0]->draw(pRender, nullptr, nullptr);
 	else if (topEstado()->getEst() == 'W')
 		texts[9]->draw(pRender, nullptr, nullptr);
-	else 
+	else if (topEstado()->getEst() == 'L')
 		texts[10]->draw(pRender, nullptr, nullptr);
 
 	topEstado()->draw();
@@ -224,7 +225,7 @@ bool Game::handle_event() { //eventos del teclado y raton
 				topEstado()->move('D');
 			}	
 			if (e.key.keysym.sym == SDLK_ESCAPE) {
-				//pushState(new Pausa(this));				
+				if (topEstado()->getEst() == 'P') pushState(new Pausa(this));				
 			}
 			/*else if ((e.key.keysym.sym == SDLK_l || e.key.keysym.sym == SDLK_SPACE) && cadencia >= 100) {
 				cadencia = 0;
