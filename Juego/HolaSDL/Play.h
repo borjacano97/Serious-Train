@@ -6,6 +6,8 @@
 #include "Vagon.h"
 #include "BarraHP.h"
 
+
+
 class Play: public Estado
 {
 public:

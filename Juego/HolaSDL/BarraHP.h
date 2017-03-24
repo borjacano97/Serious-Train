@@ -14,7 +14,7 @@ public:
 	bool onClick();
 	void move(char c);
 	bool getDest() { return destruido; }
-	char getId() { return 'H'; }
+	Objeto_t getId() { return Objeto_t::OBarraHP; }
 	void destroy() { destruido = true; }
 private:
 	int cont;

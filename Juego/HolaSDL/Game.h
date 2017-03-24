@@ -15,6 +15,8 @@ public:
 	~Game();
 
 	enum Texturas_t { TFondo, TPersonaje, TEnemigo, TEnemigo2, TTren, TBarra, TBotonJ, TBotonS, TBotonC, Tlose, TWin};
+	enum Enemigo_t{ ENormal, ERapido/*...*/ };
+	
 	Texturas* getTextura(Texturas_t et) const { return texts[et]; }
 	SDL_Renderer* getRender() const;
 

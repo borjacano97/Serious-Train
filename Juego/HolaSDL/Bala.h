@@ -12,7 +12,7 @@ public:
 	bool onClick();
 	void move(char c);
 	bool getDest() { return destruido; }
-	char getId() { return 'B'; }
+	Objeto_t getId() { return Objeto_t::OBala; }
 	void destroy() { destruido = true; }
 private:
 	int dir;

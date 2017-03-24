@@ -14,7 +14,7 @@ public:
 	bool onClick();
 	void move(char c);
 	bool getDest() { return destruido; }
-	char getId() { return 'U'; }
+	Objeto_t getId() { return Objeto_t::OButton; }
 	void destroy() { destruido = true; }
 protected:
 	CallBack_t * cb;

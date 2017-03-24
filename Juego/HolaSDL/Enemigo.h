@@ -5,20 +5,20 @@
 class Enemigo: public Objeto
 {
 public:
-	Enemigo(Game* juego, Game::Texturas_t text, int x, int y, bool rap);
+	Enemigo(Game* juego, Game::Texturas_t text, int x, int y, Game::Enemigo_t clase);
 	~Enemigo();
 	void draw();
 	void update(Uint32 delta);
 	bool onClick();
 	void move(char c);
 	bool getDest() { return destruido; }
-	char getId() { if (r) return 'R'; else return 'L'; }
+	Objeto_t getId() { return Objeto_t::OEnemigo; }
 	void destroy() { destruido = true; }
 private:
 	int cont = 0;
 	SDL_Rect rect;
-
-	bool r;
+	float vel;
+	Game::Enemigo_t _clase;
 };
 
 #endif

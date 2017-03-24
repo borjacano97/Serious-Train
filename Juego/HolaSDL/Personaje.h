@@ -15,7 +15,7 @@ public:
 	Direccion getDir() {return dir;};
 	int getMira(){ return mira; };
 	bool getDest() { return destruido; }
-	char getId() { return 'P'; }
+	Objeto_t getId() { return Objeto_t::OPlayer; }
 	void destroy() { destruido = true; }
 
 private:
