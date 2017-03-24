@@ -1,18 +1,10 @@
-<<<<<<< HEAD
-﻿Build started 24/03/2017 13:26:55.
-     1>Project "C:\hlocal\Borja\Serious-Train\Juego\HolaSDL\HolaSDL.vcxproj" on node 2 (Build target(s)).
+﻿Build started 24/03/2017 15:22:54.
+     1>Project "C:\hlocal\Project\Serious-Train\Juego\HolaSDL\HolaSDL.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\software\programacion\MSVStudio2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Nivel1.cpp
-         Nivel1.cpp
-=======
-﻿Build started 24/03/2017 13:00:29.
-     1>Project "C:\hlocal\ProyectoPrueba\Serious-Train\Juego\HolaSDL\HolaSDL.vcxproj" on node 2 (Build target(s)).
-     1>ClCompile:
-         C:\software\programacion\MSVStudio2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Game.cpp
-         Game.cpp
->>>>>>> ba80374d716eb981fc194598026808640986194e
+         C:\software\programacion\MSVStudio2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Bala.cpp
+         Bala.cpp
        Link:
-         C:\software\programacion\MSVStudio2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\hlocal\ProyectoPrueba\Serious-Train\Juego\bin\HolaSDLDebug.exe" /INCREMENTAL /NOLOGO SDL2.lib SDL2main.lib SDL2_image.lib SDL2_ttf.lib SDL2_mixer.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\hlocal\ProyectoPrueba\Serious-Train\Juego\bin\HolaSDLDebug.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\hlocal\ProyectoPrueba\Serious-Train\Juego\bin\HolaSDLDebug.lib" /MACHINE:X86 Debug\Bala.obj
+         C:\software\programacion\MSVStudio2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\hlocal\Project\Serious-Train\Juego\bin\HolaSDLDebug.exe" /INCREMENTAL /NOLOGO SDL2.lib SDL2main.lib SDL2_image.lib SDL2_ttf.lib SDL2_mixer.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\hlocal\Project\Serious-Train\Juego\bin\HolaSDLDebug.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\hlocal\Project\Serious-Train\Juego\bin\HolaSDLDebug.lib" /MACHINE:X86 Debug\Bala.obj
          Debug\BarraHP.obj
          Debug\Button.obj
          Debug\Enemigo.obj
@@ -30,9 +22,9 @@
          Debug\Play.obj
          Debug\Texturas.obj
          Debug\Vagon.obj
-         HolaSDL.vcxproj -> C:\hlocal\ProyectoPrueba\Serious-Train\Juego\bin\HolaSDLDebug.exe
-     1>Done Building Project "C:\hlocal\ProyectoPrueba\Serious-Train\Juego\HolaSDL\HolaSDL.vcxproj" (Build target(s)).
+         HolaSDL.vcxproj -> C:\hlocal\Project\Serious-Train\Juego\bin\HolaSDLDebug.exe
+     1>Done Building Project "C:\hlocal\Project\Serious-Train\Juego\HolaSDL\HolaSDL.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.65
+Time Elapsed 00:00:00.68

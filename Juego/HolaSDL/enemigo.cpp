@@ -25,6 +25,7 @@ Enemigo::Enemigo(Game* juego, Game::Texturas_t text, int x, int y, Game::Enemigo
 	default:
 		break;
 	}
+	if (pimgx > 745) vel *=-1;//Programming God, please forgive us
 }
 
 
@@ -46,8 +47,10 @@ bool Enemigo::onClick() {
 }
 void Enemigo::update(Uint32 delta) {
 
-	if (pimgx <= 745 || pimgx >= 500) vel = 0; // ZAS, En TODA LA BOCA
-	else if (pimgx > 745) vel *=-1;//Programming God, please forgive us
+	if (pimgx <= 745 && pimgx >= 500){
+		vel = 0; // ZAS, En TODA LA BOCA
+		}
+	
 
 	pimgx += vel*delta;//*dir //someday
 

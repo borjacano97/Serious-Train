@@ -62,6 +62,7 @@ Game::Game()
 	cadencia = 150;
 
 	estados.push(new Menu(this)); // estado que queremos inicial
+	SDL_DisplayMode dm;
 }
 
 
@@ -115,7 +116,7 @@ bool Game::initSDL() {
 	else {
 		//Create window: SDL_CreateWindow("SDL Hello World", posX, posY, width, height, SDL_WINDOW_SHOWN);
 		//le paso el tama�o que quiero que tenga la ventana de mi juego
-		SDL_DisplayMode dm;
+		
 		if (SDL_GetDesktopDisplayMode(0, &dm) != 0) {
 			SDL_Log("SDL_GetDesktopDisplayMode failed: %s", SDL_GetError());
 			return 1;
