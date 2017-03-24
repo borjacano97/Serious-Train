@@ -10,7 +10,7 @@ public:
 	~barraHP();
 
 	void draw();
-	void update();
+	void update(Uint32 delta);
 	bool onClick();
 	void move(char c);
 	bool getDest() { return destruido; }

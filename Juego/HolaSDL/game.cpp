@@ -169,24 +169,15 @@ void Game::render() { //const
 
 void Game::run()
 {
-	Uint32 MSxUpdate = 500; // velocidad del juego
-	std::cout << "PLAY \n";
-	Uint32 lastUpdate = SDL_GetTicks();
-	render();
-	espera = handle_event();
-	while (!exit) {
-		//if ((SDL_GetTicks() - lastUpdate) >= MSxUpdate && !espera) { 
-			update();
-			lastUpdate = SDL_GetTicks();
-		
+	Uint32 delta;
+	Uint32 lastUpdate = SDL_GetTicks();	
+	while (!exit){
+		delta = SDL_GetTicks() - lastUpdate;
+		update(delta);
+		lastUpdate = SDL_GetTicks();
 		render();
-		espera = handle_event();
+		handle_event();
 	}
-	if (exit)
-		std::cout << "EXIT \n";
-	
-	SDL_Delay(1000);
-	//std::cin.get();
 }
 
 void Game::onClick(int pmx, int pmy) { //se guardan las posiciones que pasan por par�metro
@@ -195,9 +186,9 @@ void Game::onClick(int pmx, int pmy) { //se guardan las posiciones que pasan por
 	topEstado()->onClick();
 }
 
-void Game::update() { //el juego corre mientras existan globos en el juego (aunque puede ser pausado)
+void Game::update(Uint32 delta) { //el juego corre mientras existan globos en el juego (aunque puede ser pausado)
 
-	topEstado()->update();
+	topEstado()->update(delta);
 }
 
 

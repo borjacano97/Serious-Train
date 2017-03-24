@@ -82,24 +82,24 @@ void Play::onClick(){
 	//objetos[0]->onClick();
 	balas.emplace_back(new Bala(ptsjuego, Game::TPersonaje, player->getx(), player->gety(), player->getMira()));
 }
-void Play::update() {
+void Play::update(Uint32 delta) {
 
 	for (auto i : tren){
-		i->update();
+		i->update(delta);
 	}
 
 	for (auto i : objetos){
 		if (i != nullptr){
-			i->update();
+			i->update(delta);
 		}
 	}
 	for (auto i : balas){
 		if (i != nullptr){
-			i->update();
+			i->update(delta);
 		}
 	}
-	player->update();
-	TrainHp->update();
+	player->update(delta);
+	TrainHp->update(delta);
 	// si esto no puede (o no debe ser null) quitad esto
 	if (TrainHp->getDest() || fin) {
 		if (TrainHp->getDest())	ptsjuego->changeState(new FinNivel(ptsjuego, false));
@@ -171,7 +171,7 @@ void Play::update() {
 			}
 		}
 	}
-		Estado::update();
+		Estado::update(delta);
 }
 void Play::move(char c){
 	player->move(c); // El Dios de la programación quiere suicidarse. Pero no puede, es inmortal.

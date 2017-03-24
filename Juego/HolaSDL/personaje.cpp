@@ -37,7 +37,7 @@ void Personaje::draw() {
 }
 
 
-void Personaje::update() {
+void Personaje::update(Uint32 delta) {
 	pimgx += dir.x*vel;
 	pimgy += dir.y*vel;
 	if (pimgx < 555)

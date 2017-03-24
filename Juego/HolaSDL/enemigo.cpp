@@ -37,7 +37,7 @@ void Enemigo::draw() {
 bool Enemigo::onClick() {
 	return true;
 }
-void Enemigo::update() {
+void Enemigo::update(Uint32 delta) {
 
 	cont++;
 	if (cont >= 5 && pimgx >=745) { // ZAS, En TODA LA BOCA

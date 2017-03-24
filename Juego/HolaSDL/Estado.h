@@ -10,7 +10,7 @@ public:
 	~Estado();
 
 	void draw(){}
-	void update(){}
+	void update(Uint32 delta){}
 	void onClick(){}
 	void move(char c){}
 	// Estos métodos solo se pueden quitar si TODOS los miembros que heredan de esto tienen

@@ -25,7 +25,7 @@ public:
 	virtual ~RaizObjeto(){}
 
 	virtual void draw() = 0;
-	virtual void update() = 0;
+	virtual void update(Uint32 delta) = 0;
 	virtual bool onClick() = 0;
 	virtual void move(char c) = 0;
 	virtual int getx() = 0;

@@ -40,10 +40,10 @@ void FinNivel::draw(){
 			objetos[i]->draw();
 	}
 }
-void FinNivel::update(){
+void FinNivel::update(Uint32 delta){
 	for (unsigned int i = 0; i < objetos.size(); i++) {
 		if (objetos[i] != nullptr)
-			objetos[i]->update();
+			objetos[i]->update(delta);
 	}
 }
 

@@ -33,7 +33,7 @@ void Vagon::draw() {
 	juegootp->getTextura(Ttextura)->draw(render, nullptr, &rect);
 }
 
-void Vagon::update() {
+void Vagon::update(Uint32 delta) {
 	//hacer uso de la variable TIPO
 }
 bool Vagon::onClick() {

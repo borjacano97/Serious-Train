@@ -47,7 +47,7 @@ private:
 	void closeSDL();
 	void render(); //const
 	void onClick(int pmx, int pmy);
-	void update();
+	void update(Uint32 delta);
 	bool handle_event();
 
 

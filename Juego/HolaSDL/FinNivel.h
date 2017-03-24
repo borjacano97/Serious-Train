@@ -11,7 +11,7 @@ public:
 	~FinNivel();
 	void onClick();
 	void draw();
-	void update();
+	void update(Uint32 delta);
 	static void salir(Game * jg);
 	static void jugar(Game * jg);
 	char getEst(){ if (victory) return 'W'; else return 'L'; }

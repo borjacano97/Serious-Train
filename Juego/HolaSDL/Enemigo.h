@@ -8,7 +8,7 @@ public:
 	Enemigo(Game* juego, Game::Texturas_t text, int x, int y, bool rap);
 	~Enemigo();
 	void draw();
-	void update();	
+	void update(Uint32 delta);
 	bool onClick();
 	void move(char c);
 	bool getDest() { return destruido; }

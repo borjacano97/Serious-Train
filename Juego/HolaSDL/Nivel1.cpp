@@ -12,7 +12,7 @@ Nivel1::Nivel1(Game * j) : Play(j)
 Nivel1::~Nivel1()
 {
 }
-void Nivel1::update() {
+void Nivel1::update(Uint32 delta) {
 	
 
 	if (enem < emax){
@@ -29,6 +29,6 @@ void Nivel1::update() {
 	}
 	
 	
-    Play::update();
+	Play::update(delta);
 	
 }

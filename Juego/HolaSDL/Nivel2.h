@@ -8,7 +8,7 @@ class Nivel2 :
 public:
 	Nivel2(Game * j);
 	~Nivel2();
-	void update();
+	void update(Uint32 delta);
 private:
 	int aleatorio, enem, emax, izq;
 };

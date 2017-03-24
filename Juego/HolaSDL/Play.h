@@ -14,7 +14,7 @@ public:
 
 	void onClick();
 	void draw();
-	void update();
+	void update(Uint32 delta);
 	void move(char c);
 	char getEst(){ return 'P'; }
 	int getKilled(){ return killed; }

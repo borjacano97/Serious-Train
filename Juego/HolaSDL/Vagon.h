@@ -11,7 +11,7 @@ public:
 	Vagon(Game* juego, Game::Texturas_t text, int x, int y, std::string tipo);
 	~Vagon();
 	void draw();
-	void update();	
+	void update(Uint32 delta);
 	bool onClick();
 	void move(char c);
 	bool getDest() { return destruido; }

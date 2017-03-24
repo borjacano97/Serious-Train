@@ -13,7 +13,7 @@ Nivel2::Nivel2(Game * j) : Play(j)
 Nivel2::~Nivel2()
 {
 }
-void Nivel2::update() {
+void Nivel2::update(Uint32 delta) {
 
 	if (enem < emax){
 		aleatorio = rand() % 10000; //generar zombies aleatorios
@@ -33,5 +33,5 @@ void Nivel2::update() {
 	else if (emax == Play::getKilled()){
 		Play::finish();
 	}
-	Play::update();		
+	Play::update(delta);		
 }
