@@ -38,8 +38,8 @@ void Personaje::draw() {
 
 
 void Personaje::update(Uint32 delta) {
-	pimgx += dir.x*vel;
-	pimgy += dir.y*vel;
+	pimgx += dir.x*vel*delta;
+	pimgy += dir.y*vel*delta;
 	if (pimgx < 555)
 		pimgx = 555;
 	else if (pimgx > 675)
