@@ -40,17 +40,10 @@ void Personaje::draw() {
 void Personaje::update(Uint32 delta) {
 	pimgx += dir.x*vel*delta;
 	pimgy += dir.y*vel*delta;
-<<<<<<< HEAD
-	if (pimgx < 555)
-		pimgx = 555;
-	else if (pimgx > 675)
-		pimgx = 675;
-=======
 	if (pimgx < 620)
 		pimgx = 620;
 	else if (pimgx > 740)
 		pimgx = 740;
->>>>>>> ReStart
 	if (pimgy < 60)
 		pimgy = 60;
 	else if (pimgy > 600)

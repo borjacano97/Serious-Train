@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-﻿  Game.cpp
-c:\users\alejandro\desktop\serious-train\juego\holasdl\game.cpp(65): warning C4101: 'dm': variable local sin referencia
-=======
-﻿  Personaje.cpp
->>>>>>> ReStart
+﻿  Nivel2.cpp
+  Nivel1.cpp
+  Generando código...
   HolaSDL.vcxproj -> C:\Users\Alejandro\Desktop\Serious-Train\Juego\bin\HolaSDLDebug.exe
   HolaSDL.vcxproj -> C:\Users\Alejandro\Desktop\Serious-Train\Juego\bin\HolaSDLDebug.pdb (Full PDB)
