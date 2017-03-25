@@ -17,9 +17,11 @@ Enemigo::Enemigo(Game* juego, Game::Texturas_t text, int x, int y, Game::Enemigo
 	switch (_clase)
 	{
 	case Game::Enemigo_t::ENormal:
+		points = 5;
 		vel = 1;
 		break;
 	case Game::Enemigo_t::ERapido:
+		points = 10;
 		vel = 2;
 		break;
 	default:
@@ -52,8 +54,8 @@ void Enemigo::update(Uint32 delta) {
 		}
 	
 
-	pimgx += vel*delta;//*dir //someday
-
+	pimgx += vel*delta;//*dir //someday 
+    //me pone que puede haber perdida de datos porque vel es float y lo demas int xd
 
 }
 

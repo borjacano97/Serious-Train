@@ -14,6 +14,7 @@ public:
 	int gety() { return pimgy; }
 	virtual Direccion getDir() { return dir; };
 	bool dentro(int x, int y) const;
+	int getPoints() { return 0; }
 
 	bool collision(RaizObjeto* other);
 
