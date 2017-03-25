@@ -26,7 +26,7 @@ private:
 	Personaje* player;
 	barraHP* TrainHp;
 
-	int vag = 5;
+	unsigned int vag = 5;
 	bool fin;
 	bool initObjects(); //crear y destruir los objetos del juego
 	void freeObjects();

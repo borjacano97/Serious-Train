@@ -157,10 +157,9 @@ void Play::update(Uint32 delta) {
 						balas[j]->destroy();
 					}
 					else{
+						ptsjuego->addCoins(objetos[i]->getPoints());
 						objetos[i]->destroy();
-						balas[j]->destroy();
-						if (objetos[i]->getId() == 'L') ptsjuego->addCoins(5);
-						else  ptsjuego->addCoins(10);
+						balas[j]->destroy();	
 						killed++;
 					}
 				}
