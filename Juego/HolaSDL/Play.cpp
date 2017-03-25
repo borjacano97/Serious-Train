@@ -37,7 +37,7 @@ Play::~Play()
 
 bool Play::initObjects() { // creación de los objetos dando un puntero, una textura y una posición (constructora de objs)
 	for (unsigned int i = 0; i < vag; i++) {
-		tren.emplace_back(new Vagon(ptsjuego, Game::TTren, 25, 131*i, ""));
+		tren.emplace_back(new Vagon(ptsjuego, Game::TTren, ptsjuego->dm.h/(2*vag), (ptsjuego->dm.h/vag)*i, ""));
 	}
 	//train = new Tren(ptsjuego, Game::TTren, 25, 0, " ");// en el último hueco poner como string tipo de vagón
 	player = new Personaje(ptsjuego, Game::TPersonaje, 650, 350);
@@ -138,7 +138,7 @@ void Play::update(Uint32 delta) {
 		// esto va perfe
 		for (unsigned int i = 0; i < objetos.size(); i++) {
 
-			if (objetos[i] != nullptr && objetos[i]->getx() >= 500 && objetos[i]->getx() <= 745) {// detecta zombis que quitan vida al tren
+			if (objetos[i] != nullptr && objetos[i]->getx() >= 560 && objetos[i]->getx() <= 790) {// detecta zombis que quitan vida al tren
 				TrainHp->move('h');
 			}
 			for (unsigned int j = 0; j < balas.size(); j++) {

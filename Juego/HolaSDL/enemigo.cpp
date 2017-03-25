@@ -49,7 +49,7 @@ bool Enemigo::onClick() {
 }
 void Enemigo::update(Uint32 delta) {
 
-	if (pimgx <= 745 && pimgx >= 500){
+	if (pimgx <= 790 && pimgx >= 560){
 		vel = 0; // ZAS, En TODA LA BOCA
 		}
 	
