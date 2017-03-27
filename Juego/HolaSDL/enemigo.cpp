@@ -32,10 +32,6 @@ Enemigo::Enemigo(Game* juego, Game::Texturas_t text, int x, int y, Game::Enemigo
 
 void Enemigo::update(Uint32 delta) {
 
-	if (pimgx <= 790 && pimgx >= 560){
-		vel = 0; // ZAS, En TODA LA BOCA
-		}
-	
 
 	pimgx += vel*delta;//*dir //someday 
     //me pone que puede haber perdida de datos porque vel es float y lo demas int xd

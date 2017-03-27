@@ -23,10 +23,10 @@ Personaje::Personaje(Game* juego, Game::Texturas_t text, int x, int y)
 void Personaje::update(Uint32 delta) {
 	pimgx += dir.x*vel*delta;
 	pimgy += dir.y*vel*delta;
-	if (pimgx < 620)
-		pimgx = 620;
-	else if (pimgx > 740)
-		pimgx = 740;
+	if (pimgx < 550)
+		pimgx = 550;
+	else if (pimgx > 640)
+		pimgx = 640;
 	if (pimgy < 60)
 		pimgy = 60;
 	else if (pimgy > 750)

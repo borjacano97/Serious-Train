@@ -98,7 +98,7 @@ void Play::update(Uint32 delta) {
 		}
 	}
 
-	// if (tg->collision(player))	player->update(delta); //fuck, no va por la fucking move que tenemos de player
+    //if (tg->collision(player))	player->update(delta); //fuck, no va por la fucking move que tenemos de player
 	player->update(delta);
 	TrainHp->update(delta);
 	// si esto no puede (o no debe ser null) quitad esto
