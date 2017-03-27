@@ -16,24 +16,6 @@ Button::Button(Game* juego, Game::Texturas_t text, int x, int y, CallBack_t * cb
 	cb = cbCons;
 }
 
-
-Button::~Button()
-{
-}
-void Button::move(char c){
-
-}
-
-void Button::draw(){
-	rectb.h = alto;
-	rectb.w = ancho;
-	rectb.x = pimgx;
-	rectb.y = pimgy;
-
-	juegootp->getTextura(Ttextura)->draw(juegootp->getRender(), nullptr, &rectb);
-}
-
-
 bool Button::onClick(){
 	juegootp->getMousePos(mpbx, mpby);
 

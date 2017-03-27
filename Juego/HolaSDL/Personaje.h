@@ -7,16 +7,12 @@ class Personaje:public Objeto
 {
 public:
 	Personaje(Game* juego, Game::Texturas_t text, int x, int y);
-	~Personaje();
-	void draw();
+	~Personaje(){}
 	void update(Uint32 delta);
-	bool onClick();
 	void move(char c);
 	Direccion getDir() {return dir;};
 	int getMira(){ return mira; };
-	bool getDest() { return destruido; }
 	Objeto_t getId() { return Objeto_t::OPlayer; }
-	void destroy() { destruido = true; }
 
 private:
 	

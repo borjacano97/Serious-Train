@@ -62,7 +62,6 @@ Game::Game()
 	cadencia = 150;
 
 	estados.push(new Menu(this)); // estado que queremos inicial
-	SDL_DisplayMode dm;
 }
 
 

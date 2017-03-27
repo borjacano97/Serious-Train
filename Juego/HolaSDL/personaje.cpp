@@ -20,23 +20,6 @@ Personaje::Personaje(Game* juego, Game::Texturas_t text, int x, int y)
 	vel = 1;
 }
 
-
-Personaje::~Personaje()
-{
-}
-
-void Personaje::draw() {
-	rect.h = alto;
-	rect.w = ancho;
-	rect.x = pimgx;
-	rect.y = pimgy;
-		
-	SDL_Renderer* render = juegootp->getRender();
-	juegootp->getTextura(Ttextura)->draw(render, nullptr, &rect);
-	
-}
-
-
 void Personaje::update(Uint32 delta) {
 	pimgx += dir.x*vel*delta;
 	pimgy += dir.y*vel*delta;
@@ -50,9 +33,6 @@ void Personaje::update(Uint32 delta) {
 		pimgy = 600;
 }
 
-bool Personaje::onClick() {
-	return true;
-}
 void Personaje::move(char c) {
 	if (c == 'W' ){		
 		dir.y = -1;
@@ -71,6 +51,5 @@ void Personaje::move(char c) {
 	if (c == 'N') {
 		dir.x = 0;
 		dir.y = 0;
-	}
-	
+	}	
 }

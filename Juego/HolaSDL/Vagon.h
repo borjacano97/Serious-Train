@@ -9,14 +9,9 @@ class Vagon :
 {
 public:
 	Vagon(Game* juego, Game::Texturas_t text, int x, int y, std::string tipo);
-	~Vagon();
-	void draw();
+	~Vagon(){}
 	void update(Uint32 delta);
-	bool onClick();
-	void move(char c);
-	bool getDest() { return destruido; }
 	Objeto_t getId() { return Objeto_t::OVagon; }
-	void destroy() { destruido = true; }
 
 private: 
 	std::string tipo;

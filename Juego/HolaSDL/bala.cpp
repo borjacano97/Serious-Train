@@ -17,30 +17,9 @@ Bala::Bala(Game* juego, Game::Texturas_t text, int x, int y, int mira)
 }
 
 
-Bala::~Bala()
-{
-}
-void Bala::draw() {
-	rect.h = alto;
-	rect.w = ancho;
-	rect.x = pimgx;
-	rect.y = pimgy;
-	SDL_Renderer* render = juegootp->getRender();
-	juegootp->getTextura(Ttextura)->draw(render, nullptr, &rect);
-	
-	
-}
-
-bool Bala::onClick() {
-	return true;
-}
-
 void Bala::update(Uint32 delta) {
 	pimgx += dir * vel*delta;
 	
 	if (pimgx <= 0 || pimgx >= juegootp->dm.w)
 		destruido = true;
-}
-void Bala::move(char c){
-
 }

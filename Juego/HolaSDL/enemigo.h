@@ -6,14 +6,9 @@ class Enemigo: public Objeto
 {
 public:
 	Enemigo(Game* juego, Game::Texturas_t text, int x, int y, Game::Enemigo_t clase);
-	~Enemigo();
-	void draw();
+	~Enemigo(){}
 	void update(Uint32 delta);
-	bool onClick();
-	void move(char c);
-	bool getDest() { return destruido; }
 	Objeto_t getId() { return Objeto_t::OEnemigo; }
-	void destroy() { destruido = true; }
 	int getPoints() { return points; }
 private:
 	int cont = 0;
