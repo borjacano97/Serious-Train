@@ -13,7 +13,6 @@ public:
 private:
 	int cont = 0;
 	int points;
-	SDL_Rect rect;
 	float vel;
 	Game::Enemigo_t _clase;
 };

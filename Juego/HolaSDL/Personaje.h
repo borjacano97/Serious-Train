@@ -14,13 +14,10 @@ public:
 	int getMira(){ return mira; };
 	Objeto_t getId() { return Objeto_t::OPlayer; }
 
-private:
-	
+private:	
 	Direccion dir;
 	int vel;
 	int mira;
-
-	SDL_Rect rect;
 };
 
 #endif

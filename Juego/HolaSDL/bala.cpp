@@ -3,7 +3,6 @@
 
 Bala::Bala(Game* juego, Game::Texturas_t text, int x, int y, int mira)
 {
-
 	juegootp = juego;
 	Ttextura = text;
 

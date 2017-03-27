@@ -12,7 +12,7 @@ public:
 private:
 	int dir;
 	int vel = 1;
-	SDL_Rect rect;
+	//struct para tipos de bala(arma)
 };
 
 #endif

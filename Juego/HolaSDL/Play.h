@@ -5,7 +5,7 @@
 #include "Personaje.h"
 #include "Vagon.h"
 #include "BarraHP.h"
-
+#include "Trigger.h"
 
 
 class Play: public Estado
@@ -25,6 +25,7 @@ public:
 private:
 	Personaje* player;
 	barraHP* TrainHp;
+	Trigger* tg;
 
 	unsigned int vag = 5;
 	bool fin;

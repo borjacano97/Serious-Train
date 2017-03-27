@@ -14,7 +14,6 @@ public:
 	Objeto_t getId() { return Objeto_t::OVagon; }
 
 private: 
-	std::string tipo;
-	SDL_Rect rect;
+	std::string tipo; //struct tbn
 };
 #endif

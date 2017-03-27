@@ -13,7 +13,6 @@ public:
 	Objeto_t getId() { return Objeto_t::OBarraHP; }
 private:
 	int cont;
-	SDL_Rect rect;
 };
 
 #endif

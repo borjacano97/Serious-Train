@@ -15,8 +15,6 @@ public:
 protected:
 	CallBack_t * cb;
 
-	SDL_Rect rectb;
-
 	int mpbx;
 	int mpby;
 };

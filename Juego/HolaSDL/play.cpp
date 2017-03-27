@@ -1,10 +1,9 @@
 #include "Play.h"
-#include "Personaje.h"
 #include "Bala.h"
 #include "Enemigo.h"
 #include "Vagon.h"
-#include "BarraHP.h"
 #include "FinNivel.h"
+#include "Trigger.h"
 
 #include <string>
 #include <stdlib.h> // para nms aleatorios
@@ -25,7 +24,7 @@ Play::Play(Game * j) : Estado(j)
 	/*SDL_Surface *text;
 	SDL_Color text_color = { 255, 255, 255 };
 	text = TTF_RenderText_Solid(font,
-		"A journey of a thousand miles begins with a single step.",
+		"points",
 		text_color);*/
 }
 
@@ -39,7 +38,8 @@ bool Play::initObjects() { // creación de los objetos dando un puntero, una text
 	for (unsigned int i = 0; i < vag; i++) {
 		tren.emplace_back(new Vagon(ptsjuego, Game::TTren, ptsjuego->dm.h/(2*vag), (ptsjuego->dm.h/vag)*i, ""));
 	}
-	//train = new Tren(ptsjuego, Game::TTren, 25, 0, " ");// en el último hueco poner como string tipo de vagón
+	
+	tg = new Trigger(ptsjuego, Game::TEnemigo2, 650, 350);
 	player = new Personaje(ptsjuego, Game::TPersonaje, 650, 350);
 	TrainHp = new barraHP(ptsjuego, Game::TBarra, 10, 15, 0);
 	
@@ -73,6 +73,7 @@ void Play::draw() {
 			i->draw();
 		}
 	}
+	tg->draw();
 	player->draw();
 	TrainHp->draw();
 

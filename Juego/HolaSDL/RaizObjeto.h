@@ -20,7 +20,7 @@ public:
 		Direccion set(int a, int b) { x = a; y = b; };
 
 	};
-	enum Objeto_t{ OBala, OEnemigo, OBarraHP, OButton, OPlayer, OVagon/*...*/ };
+	enum Objeto_t{ OBala, OEnemigo, OBarraHP, OButton, OPlayer, OVagon, OTrigger/*...*/ };
 public:
 	RaizObjeto(){}
 	virtual ~RaizObjeto(){}
