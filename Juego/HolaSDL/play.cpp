@@ -39,8 +39,8 @@ bool Play::initObjects() { // creación de los objetos dando un puntero, una text
 		tren.emplace_back(new Vagon(ptsjuego, Game::TTren, ptsjuego->dm.h/(2*vag), (ptsjuego->dm.h/vag)*i, ""));
 	}
 	
-	tg = new Trigger(ptsjuego, Game::TEnemigo2, 650, 350);
-	player = new Personaje(ptsjuego, Game::TPersonaje, 650, 350);
+	tg = new Trigger(ptsjuego, ptsjuego->dm.h/2, -200);
+	player = new Personaje(ptsjuego, Game::TPersonaje, ptsjuego->dm.h / 2, ptsjuego->dm.w / 2);
 	TrainHp = new barraHP(ptsjuego, Game::TBarra, 10, 15, 0);
 	
 
@@ -60,6 +60,7 @@ void Play::freeObjects() {
 	}	
 }
 void Play::draw() {
+
 	for (auto i : tren){
 			i->draw();
 	}
@@ -73,10 +74,9 @@ void Play::draw() {
 			i->draw();
 		}
 	}
-	tg->draw();
+		
 	player->draw();
 	TrainHp->draw();
-
 }
 
 void Play::onClick(){
@@ -89,16 +89,13 @@ void Play::update(Uint32 delta) {
 		i->update(delta);
 	}
 
-	for (auto i : objetos){
-		if (i != nullptr){
-			i->update(delta);
-		}
-	}
 	for (auto i : balas){
 		if (i != nullptr){
 			i->update(delta);
 		}
 	}
+
+	// if (tg->collision(player))	player->update(delta); //fuck, no va por la fucking move que tenemos de player
 	player->update(delta);
 	TrainHp->update(delta);
 	// si esto no puede (o no debe ser null) quitad esto
@@ -139,8 +136,9 @@ void Play::update(Uint32 delta) {
 		// esto va perfe
 		for (unsigned int i = 0; i < objetos.size(); i++) {
 
-			if (objetos[i] != nullptr && objetos[i]->getx() >= 560 && objetos[i]->getx() <= 790) {// detecta zombis que quitan vida al tren
-				TrainHp->move('h');
+			if (objetos[i] != nullptr)  { 
+				if( tg->collision(objetos[i])) TrainHp->move('h');
+				else objetos[i]->update(delta);
 			}
 			for (unsigned int j = 0; j < balas.size(); j++) {
 				// muerte por colisión de objetos exceptuando el personaje, tren y barra de vida, si va a haber choque entre zombies hay que poner

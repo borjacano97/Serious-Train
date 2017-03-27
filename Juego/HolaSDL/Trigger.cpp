@@ -1,12 +1,11 @@
 #include "Trigger.h"
 
 
-Trigger::Trigger(Game* juego, Game::Texturas_t text, int x, int y)
+Trigger::Trigger(Game* juego, int x, int y)
 {
 	juegootp = juego;
-	Ttextura = text;
 
-	alto = 200;  
+	alto = 2000;  
 	ancho = 200;
 
 	pimgx = x;

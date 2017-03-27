@@ -29,8 +29,8 @@ void Personaje::update(Uint32 delta) {
 		pimgx = 740;
 	if (pimgy < 60)
 		pimgy = 60;
-	else if (pimgy > 650)
-		pimgy = 650;
+	else if (pimgy > 750)
+		pimgy = 750;
 }
 
 void Personaje::move(char c) {
