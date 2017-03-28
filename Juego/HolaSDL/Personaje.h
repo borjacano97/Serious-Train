@@ -6,7 +6,7 @@
 class Personaje:public Objeto
 {
 public:
-	Personaje(Game* juego, Game::Texturas_t text, int x, int y);
+	Personaje(Game* juego, Game::Texturas_t text, float x, float y);
 	~Personaje(){}
 	void update(Uint32 delta);
 	void move(char c);
@@ -16,7 +16,7 @@ public:
 
 private:	
 	Direccion dir;
-	int vel;
+	float vel;
 	int mira;
 };
 

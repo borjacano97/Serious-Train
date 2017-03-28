@@ -13,9 +13,8 @@ public:
 	void draw();
 	bool onClick() { return true; }
 	void move(char c){}
-	int getx() { return pimgx; }
-	int gety() { return pimgy; }
 	virtual Direccion getDir() { return dir; };
+	Posicion getPos(){ return pos; }
 	bool getDest() { return destruido; }
 	void destroy() { destruido = true; }
 	bool collision(RaizObjeto* other);
@@ -27,11 +26,10 @@ protected: // son protegidas porque las subclases usan estas variables, si no se
 	Game* juegootp;
 	Game::Texturas_t Ttextura; // array de texturas (aún no declarado en Juego)
 
+	Posicion pos; //posición del objeto
 	Direccion dir;
 	bool destruido = false;
 	int alto, ancho; // tamaño del objeto
-	
-	int pimgx, pimgy; //posición del objeto
 };
 
 

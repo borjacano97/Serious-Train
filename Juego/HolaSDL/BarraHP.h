@@ -6,7 +6,7 @@ class barraHP :
 	public Objeto
 {
 public:
-	barraHP(Game* juego, Game::Texturas_t text, int x, int y, int extraHP);
+	barraHP(Game* juego, Game::Texturas_t text, float x, float y, int extraHP);
 	~barraHP(){}
 	void update(Uint32 delta);
 	void move(char c);

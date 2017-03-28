@@ -3,7 +3,7 @@
 
 
 
-Personaje::Personaje(Game* juego, Game::Texturas_t text, int x, int y)
+Personaje::Personaje(Game* juego, Game::Texturas_t text, float x, float y)
 {
 	juegootp = juego;
 	Ttextura = text;
@@ -11,26 +11,25 @@ Personaje::Personaje(Game* juego, Game::Texturas_t text, int x, int y)
 	alto  = 50;
 	ancho = 50;
 
-	pimgx = x;
-	pimgy = y;
+	pos.set(x, y);
 
 	dir.x = 0;
 	dir.y = 0;
 	mira = 1;
-	vel = 1;
+	vel = 0.5;
 }
 
 void Personaje::update(Uint32 delta) {
-	pimgx += dir.x*vel*delta;
-	pimgy += dir.y*vel*delta;
-	if (pimgx < 550)
-		pimgx = 550;
-	else if (pimgx > 640)
-		pimgx = 640;
-	if (pimgy < 60)
-		pimgy = 60;
-	else if (pimgy > 750)
-		pimgy = 750;
+	pos.x += dir.x*vel*delta;
+	pos.y += dir.y*vel*delta;
+	if (pos.x < 550)
+		pos.x = 550;
+	else if (pos.x > 640)
+		pos.x = 640;
+	if (pos.y < 60)
+		pos.y = 60;
+	else if (pos.y > 1000)
+		pos.y = 1000;
 }
 
 void Personaje::move(char c) {

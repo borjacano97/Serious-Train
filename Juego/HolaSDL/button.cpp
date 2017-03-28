@@ -1,12 +1,11 @@
 #include "Button.h"
 
 
-Button::Button(Game* juego, Game::Texturas_t text, int x, int y, CallBack_t * cbCons)
+Button::Button(Game* juego, Game::Texturas_t text, float x, float y, CallBack_t * cbCons)
 {
 	juegootp = juego;
 
-	pimgx = x;
-	pimgy = y;
+	pos.set(x, y);
 
 	alto = 100;
 	ancho = 200;

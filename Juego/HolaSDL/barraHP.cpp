@@ -2,7 +2,7 @@
 
 
 
-barraHP::barraHP(Game* juego, Game::Texturas_t text, int x, int y, int extraHP)
+barraHP::barraHP(Game* juego, Game::Texturas_t text, float x, float y, int extraHP)
 {
 	juegootp = juego;
 	Ttextura = text;
@@ -10,8 +10,7 @@ barraHP::barraHP(Game* juego, Game::Texturas_t text, int x, int y, int extraHP)
 	alto = 50;
 	ancho = 200 + extraHP;
 
-	pimgx = x;
-	pimgy = y;
+	pos.set(x, y);
 
 	cont = 0;
 }

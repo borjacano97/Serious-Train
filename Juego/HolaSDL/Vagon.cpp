@@ -3,7 +3,7 @@
 
 
 
-Vagon::Vagon(Game* juego, Game::Texturas_t text, int x, int y, std::string t)
+Vagon::Vagon(Game* juego, Game::Texturas_t text, float x, float y, std::string t)
 {
 	juegootp = juego;
 	Ttextura = text;
@@ -11,8 +11,7 @@ Vagon::Vagon(Game* juego, Game::Texturas_t text, int x, int y, std::string t)
 	alto = 201;
 	ancho = 120;
 
-	pimgx = x;
-	pimgy = y;
+	pos.set(x, y);
 
 	tipo = t;
 }

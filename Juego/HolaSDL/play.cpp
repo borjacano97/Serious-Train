@@ -40,7 +40,7 @@ bool Play::initObjects() { // creación de los objetos dando un puntero, una text
 		tren.emplace_back(new Vagon(ptsjuego, Game::TVagon1, (ptsjuego->dm.w / 2) - 49, 201 *i, ""));
 	}	
 	// en cuanto aparezca algún número en las posiciones, va a ser siempre distinto al cambiar el tamaño de pantalla
-	tg = new Trigger(ptsjuego, ptsjuego->dm.w / 2, -200); 
+	tg = new Trigger(ptsjuego, ptsjuego->dm.h/2, 0); 
 	player = new Personaje(ptsjuego, Game::TPersonaje, ptsjuego->dm.h / 2, ptsjuego->dm.w / 2);
 	TrainHp = new barraHP(ptsjuego, Game::TBarra, 10, 15, 0);
 	
@@ -82,11 +82,9 @@ void Play::draw() {
 
 void Play::onClick(){
 	//objetos[0]->onClick();
-	balas.emplace_back(new Bala(ptsjuego, Game::TRoca, player->getx(), player->gety(), player->getMira()));
+	balas.emplace_back(new Bala(ptsjuego, Game::TRoca, player->getPos().x, player->getPos().y, player->getMira()));
 }
 void Play::update(Uint32 delta) {
-	cont += delta;
-	if (cont >= 8) {
 		cont = 0;
 		for (auto i : tren) {
 			i->update(delta);
@@ -98,10 +96,9 @@ void Play::update(Uint32 delta) {
 			}
 		}
 
-		//if (tg->collision(player))	player->update(delta); //fuck, no va por la fucking move que tenemos de player
-		player->update(delta);
+		if (tg->collision(player))	player->update(delta); //fuck, no va por la fucking move que tenemos de player
 		TrainHp->update(delta);
-		// si esto no puede (o no debe ser null) quitad esto
+		
 		if (TrainHp->getDest() || fin) {
 			if (TrainHp->getDest())	ptsjuego->changeState(new FinNivel(ptsjuego, false));
 			else {
@@ -172,9 +169,7 @@ void Play::update(Uint32 delta) {
 				}
 			}
 		}
-		Estado::update(delta);
-	}
-	
+		Estado::update(delta);	
 }
 void Play::move(char c){
 	player->move(c); // El Dios de la programación quiere suicidarse. Pero no puede, es inmortal.

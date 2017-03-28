@@ -7,7 +7,7 @@ class Button :
 {
 public:
 	typedef void CallBack_t(Game * g);
-	Button(Game* juego, Game::Texturas_t text, int x, int y, CallBack_t * cbCons);
+	Button(Game* juego, Game::Texturas_t text, float x, float y, CallBack_t * cbCons);
 	~Button(){}
 	void update(Uint32 delta);
 	bool onClick();

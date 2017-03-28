@@ -5,7 +5,7 @@
 class Enemigo: public Objeto
 {
 public:
-	Enemigo(Game* juego, Game::Texturas_t text, int x, int y, Game::Enemigo_t clase);
+	Enemigo(Game* juego, Game::Texturas_t text, float x, float y, Game::Enemigo_t clase);
 	~Enemigo(){}
 	void update(Uint32 delta);
 	Objeto_t getId() { return Objeto_t::OEnemigo; }

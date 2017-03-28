@@ -1,15 +1,14 @@
 #include "Trigger.h"
 
 
-Trigger::Trigger(Game* juego, int x, int y)
+Trigger::Trigger(Game* juego, float x, float y)
 {
 	juegootp = juego;
 
 	alto = 2000;  
 	ancho = 200;
 
-	pimgx = x;
-	pimgy = y;
+	pos.set(x, y);
 }
 
 

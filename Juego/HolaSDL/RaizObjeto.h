@@ -20,6 +20,12 @@ public:
 		Direccion set(int a, int b) { x = a; y = b; };
 
 	};
+
+	struct  Posicion
+	{
+		float x, y;
+		void set(float x_, float y_){ x = x_; y = y_; }
+	};
 	enum Objeto_t{ OBala, OEnemigo, OBarraHP, OButton, OPlayer, OVagon, OTrigger/*...*/ };
 public:
 	RaizObjeto(){}
@@ -29,8 +35,7 @@ public:
 	virtual void update(Uint32 delta) = 0;
 	virtual bool onClick() = 0;
 	virtual void move(char c) = 0;
-	virtual int getx() = 0;
-	virtual int gety() = 0;
+	virtual Posicion getPos() = 0;
 	virtual Direccion getDir() = 0;
 	virtual Objeto_t getId() = 0;
 	virtual bool getDest() = 0;

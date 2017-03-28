@@ -1,7 +1,7 @@
 #include "Bala.h"
 
 
-Bala::Bala(Game* juego, Game::Texturas_t text, int x, int y, int mira)
+Bala::Bala(Game* juego, Game::Texturas_t text, float x, float y, int mira)
 {
 	juegootp = juego;
 	Ttextura = text;
@@ -9,16 +9,16 @@ Bala::Bala(Game* juego, Game::Texturas_t text, int x, int y, int mira)
 	alto = 20;  // "Esto para probar, luego..."
 	ancho = 20;
 
-	pimgx = x;
-	pimgy = y;
+	pos.set(x, y);
 	
+	vel = 0.5;
 	dir = mira;
 }
 
 
 void Bala::update(Uint32 delta) {
-	pimgx += dir * vel*delta;
+	pos.x += dir * vel*delta;
 	
-	if (pimgx <= 0 || pimgx >= juegootp->dm.w)
+	if (pos.x <= 0 || pos.x >= juegootp->dm.w)
 		destruido = true;
 }

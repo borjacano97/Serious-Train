@@ -8,7 +8,7 @@ class Vagon :
 	public Objeto
 {
 public:
-	Vagon(Game* juego, Game::Texturas_t text, int x, int y, std::string tipo);
+	Vagon(Game* juego, Game::Texturas_t text, float x, float y, std::string tipo);
 	~Vagon(){}
 	void update(Uint32 delta);
 	Objeto_t getId() { return Objeto_t::OVagon; }
