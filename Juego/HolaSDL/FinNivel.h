@@ -9,13 +9,11 @@ class FinNivel :
 public:
 	FinNivel(Game* juego, bool v);
 	~FinNivel(){}
-	void update(Uint32 delta);
 	char getEst(){ if (victory) return 'W'; else return 'L'; }
-
+private:
 	static void salir(Game * jg);
 	static void jugar(Game * jg);
-	
-private: 
+
 	bool victory;
 };
 

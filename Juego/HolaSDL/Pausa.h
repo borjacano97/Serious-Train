@@ -9,9 +9,8 @@ class Pausa :
 public:
 	Pausa(Game* juego);
 	~Pausa(){}
-	void update(Uint32 delta);
 	char getEst(){  return 'S'; }	
-
+private:
 	static void salir(Game * jg);
 	static void reanudar(Game * jg);
 };

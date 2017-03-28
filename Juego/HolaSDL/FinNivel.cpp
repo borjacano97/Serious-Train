@@ -11,28 +11,21 @@ FinNivel::FinNivel(Game* juego, bool v) :Estado(juego)
 	objetos.emplace_back(new Button(ptsjuego, Game::TBotonS, 800, 500, salir));
 }
 
+void FinNivel::jugar(Game * jg) {
+	jg->changeState(new Play(jg));
+	switch (jg->getNivel())
+	{
+	case(1): {
+		jg->changeState(new Nivel1(jg));
+		break; }
+	case(2): {
+		jg->changeState(new Nivel2(jg));
+		break; }
+	default:
+		break;
+	}
+}
 
 void FinNivel::salir(Game * jg){
 	jg->setSalir();
-}
-
-void FinNivel::jugar(Game * jg){
-	jg->changeState(new Play(jg));
-	switch (jg->getNivel())
-		 {
-		case(1): {
-			jg->changeState(new Nivel1(jg));
-			break;}
-		case(2): {
-			jg->changeState(new Nivel2(jg));
-			break;}
-		default:
-			break;}
-}
-void FinNivel::update(Uint32 delta) {
-	for (auto i : objetos) {
-		if (i != nullptr) {
-			i->update(delta);
-		}
-	}
 }

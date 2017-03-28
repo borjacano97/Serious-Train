@@ -82,7 +82,7 @@ void Play::draw() {
 
 void Play::onClick(){
 	//objetos[0]->onClick();
-	balas.emplace_back(new Bala(ptsjuego, Game::TPersonaje, player->getx(), player->gety(), player->getMira()));
+	balas.emplace_back(new Bala(ptsjuego, Game::TRoca, player->getx(), player->gety(), player->getMira()));
 }
 void Play::update(Uint32 delta) {
 	cont += delta;

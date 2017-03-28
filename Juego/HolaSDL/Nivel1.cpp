@@ -5,7 +5,7 @@
 Nivel1::Nivel1(Game * j) : Play(j)
 {
 	enem = 0;
-	emax = 5;
+	emax = 20;
 }
 
 

@@ -9,17 +9,9 @@ Pausa::Pausa(Game* juego) : Estado(juego)
 	objetos.emplace_back(new Button(ptsjuego, Game::TBotonS, 800, 500, salir));
 }
 
-void Pausa::salir(Game * jg){
-	jg->setSalir();
-}
-
-void Pausa::reanudar(Game * jg){
+void Pausa::reanudar(Game * jg) {
 	jg->popState();
 }
-void Pausa::update(Uint32 delta) {
-	for (auto i : objetos) {
-		if (i != nullptr) {
-			i->update(delta);
-		}
-	}
+void Pausa::salir(Game * jg){
+	jg->setSalir();
 }

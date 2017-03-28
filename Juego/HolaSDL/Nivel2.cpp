@@ -6,7 +6,7 @@
 Nivel2::Nivel2(Game * j) : Play(j)
 {
 	enem = 0;
-	emax = 10;
+	emax = 30;
 }
 
 
