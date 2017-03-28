@@ -7,12 +7,12 @@ class Menu :
 {
 public:
 	Menu(Game* juego);
-	~Menu();
-	void onClick();
-	void draw();
+	~Menu(){}
+	void update(Uint32 delta);
+	char getEst(){ return 'M'; }
+
 	static void salir(Game * jg);
 	static void jugar(Game * jg);
-	char getEst(){ return 'M'; }
 };
 
 

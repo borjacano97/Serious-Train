@@ -9,7 +9,7 @@ Vagon::Vagon(Game* juego, Game::Texturas_t text, int x, int y, std::string t)
 	Ttextura = text;
 
 	alto = 201;
-	ancho = 98;
+	ancho = 120;
 
 	pimgx = x;
 	pimgy = y;

@@ -37,6 +37,7 @@ private:
 
 	int emax, enem;
 	int killed;
+	Uint32 cont;
 };
 
 

@@ -9,9 +9,9 @@ public:
 	Estado(Game * j);
 	~Estado();
 
-	void draw(){}
-	void update(Uint32 delta){}
-	void onClick(){}
+	void draw();
+	void onClick();
+	void update(Uint32 d){}
 	void move(char c){}
 	// Estos métodos solo se pueden quitar si TODOS los miembros que heredan de esto tienen
 	// implementados dicho método. Si hay algún estado que por ejemplo no necesita un onClick

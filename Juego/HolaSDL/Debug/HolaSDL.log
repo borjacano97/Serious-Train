@@ -1,9 +1,2 @@
-﻿Build started 27/03/2017 18:50:25.
-     1>Project "C:\hlocal\Nueva carpeta\Serious-Train\Juego\HolaSDL\HolaSDL.vcxproj" on node 2 (Build target(s)).
-     1>Link:
-         HolaSDL.vcxproj -> C:\hlocal\Nueva carpeta\Serious-Train\Juego\bin\HolaSDLDebug.exe
-     1>Done Building Project "C:\hlocal\Nueva carpeta\Serious-Train\Juego\HolaSDL\HolaSDL.vcxproj" (Build target(s)).
-
-Build succeeded.
-
-Time Elapsed 00:00:00.17
+﻿  HolaSDL.vcxproj -> C:\Users\Alejandro\Desktop\Serious-Train\Juego\bin\HolaSDLDebug.exe
+  HolaSDL.vcxproj -> C:\Users\Alejandro\Desktop\Serious-Train\Juego\bin\HolaSDLDebug.pdb (Full PDB)

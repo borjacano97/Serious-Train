@@ -8,15 +8,12 @@ class Pausa :
 {
 public:
 	Pausa(Game* juego);
-	~Pausa();
-	void onClick();
-	void draw();
+	~Pausa(){}
 	void update(Uint32 delta);
+	char getEst(){  return 'S'; }	
+
 	static void salir(Game * jg);
 	static void reanudar(Game * jg);
-	char getEst(){  return 'S'; }
-
-	
 };
 
 
