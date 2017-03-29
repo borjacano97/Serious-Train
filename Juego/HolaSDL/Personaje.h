@@ -1,27 +1,23 @@
-#pragma once
+#ifndef H_PERSONAJE_H
+#define H_PERSONAJE_H
+
 #include "Objeto.h"
 
-class Personaje :public Objeto
+class Personaje:public Objeto
 {
 public:
-	Personaje(Game* juego, Game::Texturas_t text, int x, int y);
-	~Personaje();
-	void draw();
+	Personaje(Game* juego, Game::Texturas_t text, float x, float y);
+	~Personaje(){}
 	void update(Uint32 delta);
-	bool onClick();
 	void move(char c);
-	Direccion getDir() { return dir; };
-	int getMira() { return mira; };
-	bool getDest() { return destruido; }
-	Objeto_t getId() { return OPlayer; }
-	void destroy() { destruido = true; }
+	Direccion getDir() {return dir;};
+	int getMira(){ return mira; };
+	Objeto_t getId() { return Objeto_t::OPlayer; }
 
-private:
-
+private:	
 	Direccion dir;
-	int vel;
+	float vel;
 	int mira;
-	int pimgx, pimgy;
-	SDL_Rect rect;
-	SDL_Rect SrcR;
 };
+
+#endif
