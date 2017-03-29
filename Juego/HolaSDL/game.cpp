@@ -126,11 +126,11 @@ bool Game::initSDL() {
 			SDL_Log("SDL_GetDesktopDisplayMode failed: %s", SDL_GetError());
 			return 1;
 		}
-		SDL_GetCurrentDisplayMode(0, &dm);
+		/*SDL_GetCurrentDisplayMode(0, &dm);
 		auto SCREEN_WIDTH = dm.w;
-		auto SCEEN_HEIGHT = dm.h;
+		auto SCEEN_HEIGHT = dm.h;*/
 
-		pWin = SDL_CreateWindow("Non Solum", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCEEN_HEIGHT, SDL_WINDOW_SHOWN);
+		pWin = SDL_CreateWindow("Non Solum", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 1400, 700, SDL_WINDOW_SHOWN);
 		if (pWin == nullptr) {
 			throw Error("Window could not be created!");///////////////
 
