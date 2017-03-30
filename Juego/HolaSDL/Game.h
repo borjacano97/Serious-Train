@@ -18,6 +18,7 @@ public:
 		TFondo, TPersonaje, TEnemigo, TEnemigo2, TLocomotora, TBarra, TBotonJ, TBotonS, TBotonC, Tlose, TWin,
 		TVagon1, TVagon2, TVagon3, TVagon4, TRoca};
 	enum Enemigo_t{ ENormal, ERapido/*...*/ };
+	enum Vagon_t { VLocom, VVacio, VAutomatico/*...*/ };
 	
 	Texturas* getTextura(Texturas_t et) const { return texts[et]; }
 	SDL_Renderer* getRender() const;

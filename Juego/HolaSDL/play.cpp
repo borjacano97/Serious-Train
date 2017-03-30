@@ -35,9 +35,10 @@ Play::~Play()
 }
 
 bool Play::initObjects() { // creación de los objetos dando un puntero, una textura y una posición (constructora de objs)
-	tren.emplace_back(new Vagon(ptsjuego, Game::TLocomotora, (ptsjuego->dm.w / 2) - 75, 0, ""));
-	for (unsigned int i = 1; i < vag; i++) {
-		tren.emplace_back(new Vagon(ptsjuego, Game::TVagon1, (ptsjuego->dm.w / 2) - 75, 201 *i, ""));
+	tren.emplace_back(new Vagon(ptsjuego, Game::TLocomotora, (ptsjuego->dm.w / 2) - 75, -50, Game::Vagon_t::VLocom));
+	tren.emplace_back(new Vagon(ptsjuego, Game::TVagon1, (ptsjuego->dm.w / 2) - 75, 100, Game::Vagon_t::VAutomatico));
+	for (unsigned int i = 2; i < vag; i++) {
+		tren.emplace_back(new Vagon(ptsjuego, Game::TVagon1, (ptsjuego->dm.w / 2) - 75, 150 *i-50, Game::Vagon_t::VVacio));
 	}	
 	// en cuanto aparezca algún número en las posiciones, va a ser siempre distinto al cambiar el tamaño de pantalla
 	tg = new Trigger(ptsjuego, ptsjuego->dm.h/2 +180, 0); 
@@ -85,7 +86,6 @@ void Play::onClick(){
 	balas.emplace_back(new Bala(ptsjuego, Game::TRoca, player->getPos().x, player->getPos().y, player->getMira()));
 }
 void Play::update(Uint32 delta) {
-		cont = 0;
 		for (auto i : tren) {
 			i->update(delta);
 		}
@@ -99,7 +99,12 @@ void Play::update(Uint32 delta) {
 		//if (tg->collision(player))	player->update(delta); //fuck, no va por la fucking move que tenemos de player
 		player->update(delta);
 		TrainHp->update(delta);
-		
+
+		if (tren[1]->Disparo()) {
+			balas.emplace_back(new Bala(ptsjuego, Game::TRoca, tren[1]->getPos().x + 120, tren[1]->getPos().y + 75, 1));
+			balas.emplace_back(new Bala(ptsjuego, Game::TRoca, tren[1]->getPos().x, tren[1]->getPos().y + 75, -1));
+			tren[1]->Stop();
+		}
 		if (TrainHp->getDest() || fin) {
 			if (TrainHp->getDest())	ptsjuego->changeState(new FinNivel(ptsjuego, false));
 			else {

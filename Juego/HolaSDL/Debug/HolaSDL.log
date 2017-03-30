@@ -1,3 +1,8 @@
-﻿  Personaje.cpp
+﻿  Play.cpp
+c:\users\alejandro\desktop\serious-train\juego\holasdl\play.cpp(38): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\alejandro\desktop\serious-train\juego\holasdl\play.cpp(39): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\alejandro\desktop\serious-train\juego\holasdl\play.cpp(41): warning C4244: 'argumento': conversión de 'unsigned int' a 'float'; posible pérdida de datos
+c:\users\alejandro\desktop\serious-train\juego\holasdl\play.cpp(41): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\alejandro\desktop\serious-train\juego\holasdl\play.cpp(44): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
   HolaSDL.vcxproj -> C:\Users\Alejandro\Desktop\Serious-Train\Juego\bin\HolaSDLDebug.exe
   HolaSDL.vcxproj -> C:\Users\Alejandro\Desktop\Serious-Train\Juego\bin\HolaSDLDebug.pdb (Full PDB)

@@ -6,7 +6,7 @@
 #include "Vagon.h"
 #include "BarraHP.h"
 #include "Trigger.h"
-
+#include "Bala.h"
 
 class Play: public Estado
 {
@@ -32,12 +32,11 @@ private:
 	bool initObjects(); //crear y destruir los objetos del juego
 	void freeObjects();
 
-	std::vector <RaizObjeto*> balas; // TODO mirad estándares de código
-	std::vector <RaizObjeto*> tren; // TODO mirad estándares de código
+	std::vector <Bala*> balas; // TODO mirad estándares de código
+	std::vector <Vagon*> tren; // TODO mirad estándares de código
 
 	int emax, enem;
 	int killed;
-	Uint32 cont;
 };
 
 

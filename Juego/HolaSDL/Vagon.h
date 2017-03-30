@@ -8,12 +8,15 @@ class Vagon :
 	public Objeto
 {
 public:
-	Vagon(Game* juego, Game::Texturas_t text, float x, float y, std::string tipo);
+	Vagon(Game* juego, Game::Texturas_t text, float x, float y, Game::Vagon_t t);
 	~Vagon(){}
 	void update(Uint32 delta);
 	Objeto_t getId() { return Objeto_t::OVagon; }
-
+	bool Disparo() { return disparo; }
+	void Stop() { disparo = false; }
 private: 
-	std::string tipo; //struct tbn
+	Uint32 cont;
+	bool disparo;
+	Game::Vagon_t tipo; //struct tbn
 };
 #endif
