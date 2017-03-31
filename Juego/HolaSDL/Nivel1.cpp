@@ -14,7 +14,7 @@ Nivel1::~Nivel1()
 }
 void Nivel1::update(Uint32 delta) {
 	
-	if (enem <= emax){
+	if (enem < emax){
 		aleatorio = rand() % 10000; //generar zombies aleatorios
 		if (aleatorio >= 9990) {
 			izq = rand() % 2;
