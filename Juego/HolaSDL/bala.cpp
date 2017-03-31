@@ -19,6 +19,6 @@ Bala::Bala(Game* juego, Game::Texturas_t text, float x, float y, int mira)
 void Bala::update(Uint32 delta) {
 	pos.x += dir * vel*delta;
 	
-	if (pos.x <= 0 || pos.x >= juegootp->dm.w)
+	if (pos.x <= 0 || pos.x >=  1300)
 		destruido = true;
 }

@@ -22,10 +22,10 @@ Personaje::Personaje(Game* juego, Game::Texturas_t text, float x, float y)
 void Personaje::update(Uint32 delta) {
 	pos.x += dir.x*vel*delta;
 	pos.y += dir.y*vel*delta;
-	if (pos.x < 630)
-		pos.x = 630;
-	else if (pos.x > 710)
-		pos.x = 710;
+	if (pos.x < 600)
+		pos.x = 600;
+	else if (pos.x > 650)
+		pos.x = 650;
 	if (pos.y < 130)
 		pos.y = 130;
 	else if (pos.y > 650)

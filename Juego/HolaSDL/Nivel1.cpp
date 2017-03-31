@@ -19,9 +19,9 @@ void Nivel1::update(Uint32 delta) {
 		if (aleatorio >= 9990) {
 			izq = rand() % 2;
 			if (izq == 0) objetos.emplace_back
-			(new Enemigo(ptsjuego, Game::TEnemigo2, 0, rand() % (ptsjuego->dm.h- 200) + 100, Game::Enemigo_t::ENormal));
+			(new Enemigo(ptsjuego, Game::TEnemigo2, 0, (rand() % 550) +100, Game::Enemigo_t::ENormal));
 			else objetos.emplace_back
-			(new Enemigo(ptsjuego, Game::TEnemigo2, ptsjuego->dm.w, rand() % (ptsjuego->dm.h -200) +100, Game::Enemigo_t::ENormal));
+			(new Enemigo(ptsjuego, Game::TEnemigo2,1300, (rand() % 550) +100, Game::Enemigo_t::ENormal));
 			enem++;
 		}	
 	}

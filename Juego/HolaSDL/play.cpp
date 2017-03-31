@@ -35,13 +35,13 @@ Play::~Play()
 }
 
 bool Play::initObjects() { // creación de los objetos dando un puntero, una textura y una posición (constructora de objs)
-	tren.emplace_back(new Vagon(ptsjuego, Game::TLocomotora, (ptsjuego->dm.w / 2) - 75, -50, Game::Vagon_t::VLocom));
-	tren.emplace_back(new Vagon(ptsjuego, Game::TVagon1, (ptsjuego->dm.w / 2) - 75, 100, Game::Vagon_t::VAutomatico));
+	tren.emplace_back(new Vagon(ptsjuego, Game::TLocomotora, 585, -50, Game::Vagon_t::VLocom));
+	tren.emplace_back(new Vagon(ptsjuego, Game::TVagon1, 585, 100, Game::Vagon_t::VAutomatico));
 	for (unsigned int i = 2; i < vag; i++) {
-		tren.emplace_back(new Vagon(ptsjuego, Game::TVagon1, (ptsjuego->dm.w / 2) - 75, 150 *i-50, Game::Vagon_t::VVacio));
+		tren.emplace_back(new Vagon(ptsjuego, Game::TVagon1, 585, 150 *i-50, Game::Vagon_t::VVacio));
 	}	
 	// en cuanto aparezca algún número en las posiciones, va a ser siempre distinto al cambiar el tamaño de pantalla
-	tg = new Trigger(ptsjuego, ptsjuego->dm.h/2 +180, 0); 
+	tg = new Trigger(ptsjuego, 530, -20); 
 	player = new Personaje(ptsjuego, Game::TPersonaje, 650, 500);
 	TrainHp = new barraHP(ptsjuego, Game::TBarra, 10, 15, 0);
 	

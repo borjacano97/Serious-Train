@@ -40,9 +40,6 @@ public:
 	void addCoins(int n){ coins += n; std::cout << coins << "\n"; }
 
 
-
-	SDL_DisplayMode dm;
-
 private:
 	SDL_Window * pWin = nullptr;
 	SDL_Renderer* pRender = nullptr;
