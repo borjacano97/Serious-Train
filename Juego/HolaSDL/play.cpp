@@ -100,13 +100,13 @@ void Play::update(Uint32 delta) {
 		//if (tg->collision(player))	player->update(delta); //fuck, no va por la fucking move que tenemos de player
 		player->update(delta);
 		TrainHp->update(delta);
-		/*
-		if (tren[1]->Disparo()) {
+		
+		if (tren[1]->Disparo()) { //automatico
 			balas.emplace_back(new Bala(ptsjuego, Game::TRoca, tren[1]->getPos().x + 120, tren[1]->getPos().y + 75, 1, Game::Bala_t::BNormal));
 			balas.emplace_back(new Bala(ptsjuego, Game::TRoca, tren[1]->getPos().x, tren[1]->getPos().y + 75, -1, Game::Bala_t::BNormal));
 			tren[1]->Stop();
 		}
-		if (tren[2]->Disparo()) {
+		if (tren[2]->Disparo()) { //laser
 			balas.emplace_back(new Bala(ptsjuego, Game::TLaser, tren[2]->getPos().x -700 , tren[2]->getPos().y-630, 1, Game::Bala_t::BLaser));
 			balas.emplace_back(new Bala(ptsjuego, Game::TLaser, tren[2]->getPos().x+120, tren[2]->getPos().y-630, -1, Game::Bala_t::BLaser));
 			tren[2]->Stop();
@@ -117,7 +117,7 @@ void Play::update(Uint32 delta) {
 					killed++;
 				}
 			}
-		}*/
+		}
 		if (TrainHp->getDest() || fin) {
 			if (TrainHp->getDest())	ptsjuego->changeState(new FinNivel(ptsjuego, false));
 			else {
@@ -170,16 +170,10 @@ void Play::update(Uint32 delta) {
 						balas[j] = nullptr;
 					}
 					if (objetos[i] != nullptr && balas[j] != nullptr &&	objetos[i]->collision(balas[j]) ) {
-						if (!objetos[i]->getDest()) {
-							objetos[i]->destroy();
-							balas[j]->destroy();
-						}
-						else {
 							ptsjuego->addCoins(objetos[i]->getPoints());
 							objetos[i]->destroy();
 							balas[j]->destroy();
-							killed++;
-						}
+							killed++;						
 					}
 				}
 				if (objetos[i] != nullptr && objetos[i]->getDest()) {

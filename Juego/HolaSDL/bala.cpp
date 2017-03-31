@@ -15,7 +15,6 @@ Bala::Bala(Game* juego, Game::Texturas_t text, float x, float y, int mira, Game:
 		vel = 0.5;
 		break;
 	case Game::BLaser:
-		std::cout << "laser";
 		alto = 1400; 
 		ancho = 700;
 		vel = 0;
@@ -27,7 +26,6 @@ Bala::Bala(Game* juego, Game::Texturas_t text, float x, float y, int mira, Game:
 	pos.set(x, y);	
 	
 	dir = mira;
-
 }
 
 
