@@ -19,11 +19,23 @@ Vagon::Vagon(Game* juego, Game::Texturas_t text, float x, float y, Game::Vagon_t
 }
 
 void Vagon::update(Uint32 delta) {
-	if (tipo == Game::Vagon_t::VAutomatico) {
+	switch (tipo)
+	{
+	case Game::VAutomatico:
 		cont += delta;
 		if (cont >= 1500) {
 			disparo = true;
 			cont = 0;
 		}
-	}	
+		break;
+	case Game::VLaser:
+		cont += delta;
+		if (cont >= 3000) {
+			disparo = true;
+			cont = 0;
+		}
+		break;
+	default:
+		break;
+	}
 }

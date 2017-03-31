@@ -37,7 +37,8 @@ Play::~Play()
 bool Play::initObjects() { // creación de los objetos dando un puntero, una textura y una posición (constructora de objs)
 	tren.emplace_back(new Vagon(ptsjuego, Game::TLocomotora, 585, -50, Game::Vagon_t::VLocom));
 	tren.emplace_back(new Vagon(ptsjuego, Game::TVagon1, 585, 100, Game::Vagon_t::VAutomatico));
-	for (unsigned int i = 2; i < vag; i++) {
+	tren.emplace_back(new Vagon(ptsjuego, Game::TVagon1, 585, 250, Game::Vagon_t::VLaser));
+	for (unsigned int i = 3; i < vag; i++) {
 		tren.emplace_back(new Vagon(ptsjuego, Game::TVagon1, 585, 150 *i-50, Game::Vagon_t::VVacio));
 	}	
 	// en cuanto aparezca algún número en las posiciones, va a ser siempre distinto al cambiar el tamaño de pantalla
@@ -83,7 +84,7 @@ void Play::draw() {
 
 void Play::onClick(){
 	//objetos[0]->onClick();
-	balas.emplace_back(new Bala(ptsjuego, Game::TRoca, player->getPos().x, player->getPos().y, player->getMira()));
+	balas.emplace_back(new Bala(ptsjuego, Game::TRoca, player->getPos().x, player->getPos().y, player->getMira(), Game::Bala_t::BNormal));
 }
 void Play::update(Uint32 delta) {
 		for (auto i : tren) {
@@ -99,12 +100,24 @@ void Play::update(Uint32 delta) {
 		//if (tg->collision(player))	player->update(delta); //fuck, no va por la fucking move que tenemos de player
 		player->update(delta);
 		TrainHp->update(delta);
-
+		/*
 		if (tren[1]->Disparo()) {
-			balas.emplace_back(new Bala(ptsjuego, Game::TRoca, tren[1]->getPos().x + 120, tren[1]->getPos().y + 75, 1));
-			balas.emplace_back(new Bala(ptsjuego, Game::TRoca, tren[1]->getPos().x, tren[1]->getPos().y + 75, -1));
+			balas.emplace_back(new Bala(ptsjuego, Game::TRoca, tren[1]->getPos().x + 120, tren[1]->getPos().y + 75, 1, Game::Bala_t::BNormal));
+			balas.emplace_back(new Bala(ptsjuego, Game::TRoca, tren[1]->getPos().x, tren[1]->getPos().y + 75, -1, Game::Bala_t::BNormal));
 			tren[1]->Stop();
 		}
+		if (tren[2]->Disparo()) {
+			balas.emplace_back(new Bala(ptsjuego, Game::TLaser, tren[2]->getPos().x -700 , tren[2]->getPos().y-630, 1, Game::Bala_t::BLaser));
+			balas.emplace_back(new Bala(ptsjuego, Game::TLaser, tren[2]->getPos().x+120, tren[2]->getPos().y-630, -1, Game::Bala_t::BLaser));
+			tren[2]->Stop();
+			for (unsigned int i = 0; i < objetos.size(); i++){
+				if (objetos[i] != nullptr && tren[2]->getPos().y - objetos[i]->getPos().y <= 20 && tren[2]->getPos().y - objetos[i]->getPos().y >= -100){
+					ptsjuego->addCoins(objetos[i]->getPoints());
+					objetos[i]->destroy();
+					killed++;
+				}
+			}
+		}*/
 		if (TrainHp->getDest() || fin) {
 			if (TrainHp->getDest())	ptsjuego->changeState(new FinNivel(ptsjuego, false));
 			else {
@@ -156,7 +169,7 @@ void Play::update(Uint32 delta) {
 						delete balas[j];
 						balas[j] = nullptr;
 					}
-					if (objetos[i] != nullptr && balas[j] != nullptr &&	objetos[i]->collision(balas[j])) {
+					if (objetos[i] != nullptr && balas[j] != nullptr &&	objetos[i]->collision(balas[j]) ) {
 						if (!objetos[i]->getDest()) {
 							objetos[i]->destroy();
 							balas[j]->destroy();
