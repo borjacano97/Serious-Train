@@ -1,63 +1,9 @@
-﻿Build started 03/04/2017 17:22:57.
-     1>Project "C:\hlocal\Proyecto\Serious-Train\Juego\HolaSDL\HolaSDL.vcxproj" on node 2 (Build target(s)).
-     1>ClCompile:
-         C:\software\programacion\MSVStudio2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Bala.cpp BarraHP.cpp Button.cpp Enemigo.cpp Error.cpp Estado.cpp Game.cpp FinNivel.cpp Main.cpp Menu.cpp Nivel1.cpp Nivel2.cpp Objeto.cpp Pausa.cpp Personaje.cpp Play.cpp Texturas.cpp Trigger.cpp Vagon.cpp
-         Vagon.cpp
-         Trigger.cpp
-         Texturas.cpp
-         Play.cpp
-     1>c:\hlocal\proyecto\serious-train\juego\holasdl\play.cpp(42): warning C4244: 'argument' : conversion from 'unsigned int' to 'float', possible loss of data
-         Personaje.cpp
-         Pausa.cpp
-         Objeto.cpp
-     1>c:\hlocal\proyecto\serious-train\juego\holasdl\objeto.cpp(15): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
-     1>c:\hlocal\proyecto\serious-train\juego\holasdl\objeto.cpp(16): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
-     1>c:\hlocal\proyecto\serious-train\juego\holasdl\objeto.cpp(26): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-         Nivel2.cpp
-     1>c:\hlocal\proyecto\serious-train\juego\holasdl\nivel2.cpp(22): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\hlocal\proyecto\serious-train\juego\holasdl\nivel2.cpp(23): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\hlocal\proyecto\serious-train\juego\holasdl\nivel2.cpp(28): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\hlocal\proyecto\serious-train\juego\holasdl\nivel2.cpp(29): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-         Nivel1.cpp
-     1>c:\hlocal\proyecto\serious-train\juego\holasdl\nivel1.cpp(22): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\hlocal\proyecto\serious-train\juego\holasdl\nivel1.cpp(24): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-         Menu.cpp
-         Main.cpp
-         FinNivel.cpp
-         Game.cpp
-         Estado.cpp
-         Error.cpp
-         Enemigo.cpp
-     1>c:\hlocal\proyecto\serious-train\juego\holasdl\enemigo.cpp(20): warning C4305: '=' : truncation from 'double' to 'float'
-     1>c:\hlocal\proyecto\serious-train\juego\holasdl\enemigo.cpp(24): warning C4305: '=' : truncation from 'double' to 'float'
-         Button.cpp
-         BarraHP.cpp
-         Bala.cpp
-         Generating Code...
-       Link:
-         C:\software\programacion\MSVStudio2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\hlocal\Proyecto\Serious-Train\Juego\bin\HolaSDLDebug.exe" /INCREMENTAL /NOLOGO SDL2.lib SDL2main.lib SDL2_image.lib SDL2_ttf.lib SDL2_mixer.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\hlocal\Proyecto\Serious-Train\Juego\bin\HolaSDLDebug.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\hlocal\Proyecto\Serious-Train\Juego\bin\HolaSDLDebug.lib" /MACHINE:X86 Debug\Bala.obj
-         Debug\BarraHP.obj
-         Debug\Button.obj
-         Debug\Enemigo.obj
-         Debug\Error.obj
-         Debug\Estado.obj
-         Debug\Game.obj
-         Debug\FinNivel.obj
-         Debug\Main.obj
-         Debug\Menu.obj
-         Debug\Nivel1.obj
-         Debug\Nivel2.obj
-         Debug\Objeto.obj
-         Debug\Pausa.obj
-         Debug\Personaje.obj
-         Debug\Play.obj
-         Debug\Texturas.obj
-         Debug\Trigger.obj
-         Debug\Vagon.obj
-         LINK : C:\hlocal\Proyecto\Serious-Train\Juego\bin\HolaSDLDebug.exe not found or not built by the last incremental link; performing full link
-         HolaSDL.vcxproj -> C:\hlocal\Proyecto\Serious-Train\Juego\bin\HolaSDLDebug.exe
-     1>Done Building Project "C:\hlocal\Proyecto\Serious-Train\Juego\HolaSDL\HolaSDL.vcxproj" (Build target(s)).
+﻿Compilación iniciada a las 03/04/2017 17:48:54.
+     1>Proyecto "C:\hlocal\Serious-Train\Juego\HolaSDL\HolaSDL.vcxproj" en el nodo 2 (Build destinos).
+     1>Link:
+         HolaSDL.vcxproj -> C:\hlocal\Serious-Train\Juego\bin\HolaSDLDebug.exe
+     1>Compilación del proyecto terminada "C:\hlocal\Serious-Train\Juego\HolaSDL\HolaSDL.vcxproj" (Build destinos).
 
-Build succeeded.
+Compilación correcta.
 
-Time Elapsed 00:00:07.08
+Tiempo transcurrido 00:00:00.24
