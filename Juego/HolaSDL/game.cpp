@@ -131,7 +131,7 @@ bool Game::initSDL() {
 		auto SCREEN_WIDTH = dm.w;
 		auto SCEEN_HEIGHT = dm.h;*/
 
-		pWin = SDL_CreateWindow("Non Solum", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 1300, 700, SDL_WINDOW_SHOWN);
+		pWin = SDL_CreateWindow("Non Solum", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 1280, 720, SDL_WINDOW_SHOWN);
 		if (pWin == nullptr) {
 			throw Error("Window could not be created!");///////////////
 
