@@ -17,9 +17,10 @@ public:
 	enum Texturas_t {
 		TFondo, TPersonaje, TEnemigo, TEnemigo2, TLocomotora, TBarra, TBotonJ, TBotonS, TBotonC, Tlose, TWin,
 		TVagon1, TVagon2, TVagon3, TVagon4, TRoca, TLaser};
-	enum Enemigo_t{ ENormal, ERapido/*...*/ };
-	enum Vagon_t { VLocom, VVacio, VAutomatico, VLaser/*...*/ };
-	enum Bala_t { BNormal, BLaser/*...*/ };
+	enum Enemigo_t{ Normal, Rapido/*...*/ };
+	enum Vagon_t { Locom, Vacio, Automatico, Laser/*...*/ };
+	enum Bala_t { Piedra, Rayo/*...*/ };
+	
 	
 	Texturas* getTextura(Texturas_t et) const { return texts[et]; }
 	SDL_Renderer* getRender() const;

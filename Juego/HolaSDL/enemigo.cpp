@@ -15,11 +15,11 @@ Enemigo::Enemigo(Game* juego, Game::Texturas_t text, float x, float y, Game::Ene
 	_clase = clase;
 	switch (_clase)
 	{
-	case Game::Enemigo_t::ENormal:
+	case Game::Enemigo_t::Normal:
 		points = 5;
 		vel = 0.1;
 		break;
-	case Game::Enemigo_t::ERapido:
+	case Game::Enemigo_t::Rapido:
 		points = 10;
 		vel = 0.3;
 		break;

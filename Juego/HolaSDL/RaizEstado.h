@@ -1,10 +1,10 @@
 #ifndef H_RAIZESTADO_H
 #define H_RAIZESTADO_H
-
+#include "Game.h"
 class RaizEstado
 {
 public:
-
+	
 	RaizEstado()
 	{
 	}

@@ -1,8 +1,6 @@
 #include "FinNivel.h"
 #include "Button.h"
-#include "Play.h"
-#include "Nivel1.h"
-#include "Nivel2.h"
+#include "Tienda.h"
 
 FinNivel::FinNivel(Game* juego, bool v) :Estado(juego)
 {		
@@ -12,18 +10,7 @@ FinNivel::FinNivel(Game* juego, bool v) :Estado(juego)
 }
 
 void FinNivel::jugar(Game * jg) {
-	jg->changeState(new Play(jg));
-	switch (jg->getNivel())
-	{
-	case(1): {
-		jg->changeState(new Nivel1(jg));
-		break; }
-	case(2): {
-		jg->changeState(new Nivel2(jg));
-		break; }
-	default:
-		break;
-	}
+		jg->changeState(new Tienda(jg));
 }
 
 void FinNivel::salir(Game * jg){

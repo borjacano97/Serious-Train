@@ -84,6 +84,7 @@
     <ClCompile Include="Personaje.cpp" />
     <ClCompile Include="Play.cpp" />
     <ClCompile Include="Texturas.cpp" />
+    <ClCompile Include="Tienda.cpp" />
     <ClCompile Include="Trigger.cpp" />
     <ClCompile Include="Vagon.cpp" />
   </ItemGroup>
@@ -106,6 +107,7 @@
     <ClInclude Include="RaizEstado.h" />
     <ClInclude Include="RaizObjeto.h" />
     <ClInclude Include="Texturas.h" />
+    <ClInclude Include="Tienda.h" />
     <ClInclude Include="Trigger.h" />
     <ClInclude Include="Vagon.h" />
   </ItemGroup>
