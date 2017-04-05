@@ -1,5 +1,5 @@
 #include "Bala.h"
-
+#include "Play.h"
 
 Bala::Bala(Game* juego, Game::Texturas_t text, float x, float y, int mira, Game::Bala_t b)
 {
@@ -17,8 +17,7 @@ Bala::Bala(Game* juego, Game::Texturas_t text, float x, float y, int mira, Game:
 	case Game::Rayo:
 		alto = 1400; 
 		ancho = 700;
-		vel = 0;
-		break;
+		vel = 0;		
 	default:
 		break;
 	}
@@ -47,6 +46,5 @@ void Bala::update(Uint32 delta) {
 		break;
 	default:
 		break;
-	}
-	
+	}	
 }

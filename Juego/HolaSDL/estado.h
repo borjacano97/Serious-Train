@@ -17,10 +17,11 @@ public:
 	// implementados dicho método. Si hay algún estado que por ejemplo no necesita un onClick
 	// lo coge directamente de esta clase, y por ello el cuerpo está vacío o tiene un cuerpo propio a 
 	// todas las subclases
+	std::vector <RaizObjeto*> objetos; // objetos que contiene cada estado	
 protected:
 
 	Game* ptsjuego;
-	std::vector <RaizObjeto*> objetos; // objetos que contiene cada estado	
+	
 };
 
 

@@ -35,11 +35,11 @@ Play::~Play()
 }
 
 bool Play::initObjects() { // creación de los objetos dando un puntero, una textura y una posición (constructora de objs)
-	tren.emplace_back(new Vagon(ptsjuego, Game::TLocomotora, 585, -50, Game::Vagon_t::Locom));
-	tren.emplace_back(new Vagon(ptsjuego, Game::TVagon1, 585, 100, Game::Vagon_t::Automatico));
-	tren.emplace_back(new Vagon(ptsjuego, Game::TVagon1, 585, 250, Game::Vagon_t::Laser));
+	tren.emplace_back(new Vagon(ptsjuego, this, Game::TLocomotora, 585, -50, Game::Vagon_t::Locom));
+	tren.emplace_back(new Vagon(ptsjuego, this, Game::TVagon1, 585, 100, Game::Vagon_t::Automatico));
+	tren.emplace_back(new Vagon(ptsjuego, this, Game::TVagon1, 585, 250, Game::Vagon_t::Laser));
 	for (unsigned int i = 3; i < vag; i++) {
-		tren.emplace_back(new Vagon(ptsjuego, Game::TVagon1, 585, 150 *i-50, Game::Vagon_t::Vacio));
+		tren.emplace_back(new Vagon(ptsjuego, this, Game::TVagon1, 585, 150 * i - 50, Game::Vagon_t::Vacio));
 	}	
 	// en cuanto aparezca algún número en las posiciones, va a ser siempre distinto al cambiar el tamaño de pantalla
 	tg = new Trigger(ptsjuego, 530, -20); 
@@ -101,23 +101,7 @@ void Play::update(Uint32 delta) {
 		player->update(delta);
 		TrainHp->update(delta);
 		
-		if (tren[1]->Disparo()) { //automatico
-			balas.emplace_back(new Bala(ptsjuego, Game::TRoca, tren[1]->getPos().x + 120, tren[1]->getPos().y + 75, 1, Game::Bala_t::Piedra));
-			balas.emplace_back(new Bala(ptsjuego, Game::TRoca, tren[1]->getPos().x, tren[1]->getPos().y + 75, -1, Game::Bala_t::Piedra));
-			tren[1]->Stop();
-		}
-		if (tren[2]->Disparo()) { //laser
-			balas.emplace_back(new Bala(ptsjuego, Game::TLaser, tren[2]->getPos().x -700 , tren[2]->getPos().y-630, 1, Game::Bala_t::Rayo));
-			balas.emplace_back(new Bala(ptsjuego, Game::TLaser, tren[2]->getPos().x+120, tren[2]->getPos().y-630, -1, Game::Bala_t::Rayo));
-			tren[2]->Stop();
-			for (unsigned int i = 0; i < objetos.size(); i++){
-				if (objetos[i] != nullptr && tren[2]->getPos().y - objetos[i]->getPos().y <= 20 && tren[2]->getPos().y - objetos[i]->getPos().y >= -100){
-					ptsjuego->addCoins(objetos[i]->getPoints());
-					objetos[i]->destroy();
-					killed++;
-				}
-			}
-		}
+		
 		if (TrainHp->getDest() || fin) {
 			if (TrainHp->getDest())	ptsjuego->changeState(new FinNivel(ptsjuego, false));
 			else {

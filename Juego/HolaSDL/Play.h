@@ -21,7 +21,9 @@ public:
 	char getEst(){ return 'P'; }
 	int getKilled(){ return killed; }
 	void finish() { fin = true; }
+	std::vector <Bala*> balas; // TODO mirad estándares de código
 
+	int killed;
 private:
 	Personaje* player;
 	barraHP* TrainHp;
@@ -32,11 +34,10 @@ private:
 	bool initObjects(); //crear y destruir los objetos del juego
 	void freeObjects();
 
-	std::vector <Bala*> balas; // TODO mirad estándares de código
+	
 	std::vector <Vagon*> tren; // TODO mirad estándares de código
 
 	int emax, enem;
-	int killed;
 };
 
 
