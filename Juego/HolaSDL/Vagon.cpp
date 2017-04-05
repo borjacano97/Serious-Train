@@ -42,7 +42,6 @@ void Vagon::update(Uint32 delta) {
 					var->destroy();
 					p->killed++;
 				}
-
 			}
 		}
 		break;
