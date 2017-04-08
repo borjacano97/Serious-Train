@@ -24,16 +24,16 @@ void Vagon::update(Uint32 delta) {
 	case Game::Automatico:
 		cont += delta;
 		if (cont >= 1500) {
-			p->balas.emplace_back(new Bala(juegootp, Game::TRoca, pos.x + 120, pos.y + 75, 1, Game::Bala_t::Piedra));
-			p->balas.emplace_back(new Bala(juegootp, Game::TRoca, pos.x, pos.y + 75, -1, Game::Bala_t::Piedra));
+			p->balas.emplace_back(new Bala(juegootp, p, Game::TRoca, pos.x + 120, pos.y + 75, 1, Game::Bala_t::Piedra));
+			p->balas.emplace_back(new Bala(juegootp, p, Game::TRoca, pos.x, pos.y + 75, -1, Game::Bala_t::Piedra));
 			cont = 0;
 		}
 		break;
 	case Game::Laser:
 		cont += delta;
 		if (cont >= 3000) {
-			p->balas.emplace_back(new Bala(juegootp, Game::TLaser, pos.x - 700, pos.y - 630, 1, Game::Bala_t::Rayo));
-			p->balas.emplace_back(new Bala(juegootp, Game::TLaser, pos.x + 120, pos.y - 630, -1, Game::Bala_t::Rayo));
+			p->balas.emplace_back(new Bala(juegootp, p, Game::TLaser, pos.x - 700, pos.y - 630, 1, Game::Bala_t::Rayo));
+			p->balas.emplace_back(new Bala(juegootp, p, Game::TLaser, pos.x + 120, pos.y - 630, -1, Game::Bala_t::Rayo));
 			cont = 0;
 			for each (auto var in p->objetos)
 			{
