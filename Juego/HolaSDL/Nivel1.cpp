@@ -18,9 +18,9 @@ void Nivel1::update(Uint32 delta) {
 		aleatorio = rand() % 10000; //generar zombies aleatorios
 		if (aleatorio >= 9970) {
 			izq = rand() % 2;
-			if (izq == 0) objetos.emplace_back
+			if (izq == 0) enems.emplace_back
 			(new Enemigo(ptsjuego, Game::TEnemigo2, 0, (rand() % 550) +100, Game::Enemigo_t::Normal));
-			else objetos.emplace_back
+			else enems.emplace_back
 			(new Enemigo(ptsjuego, Game::TEnemigo2,1300, (rand() % 550) +100, Game::Enemigo_t::Normal));
 			enem++;
 		}	

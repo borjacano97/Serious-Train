@@ -63,7 +63,7 @@ void Play::freeObjects() {
 	for (auto o : tren) {
 		delete o;
 	}
-	for (auto o : objetos) {
+	for (auto o : enems) {
 		delete o;
 	}
 	for (auto b : balas) {
@@ -78,7 +78,7 @@ void Play::draw() {
 	for (auto i : tren) {
 		i->draw();
 	}
-	for (auto i : objetos) {
+	for (auto i : enems) {
 		if (i != nullptr) {
 			i->draw();
 		}
@@ -121,15 +121,18 @@ void Play::update(Uint32 delta) {
 	}
 
 	else {
-		for (unsigned int i = 0; i < objetos.size(); i++) {
+		for (unsigned int i = 0; i < enems.size(); i++) {
 
-			if (objetos[i] != nullptr) {
-				if (tg->collision(objetos[i])) TrainHp->move('h');
-				else objetos[i]->update(delta);
+			if (enems[i] != nullptr) {
+				if (tg->collision(enems[i])) {
+					TrainHp->move('h');
+					enems[i]->parar();
+				}
+				enems[i]->update(delta);
 			}
-			if (objetos[i] != nullptr && objetos[i]->getDest()) {
-				delete objetos[i];
-				objetos[i] = nullptr;
+			if (enems[i] != nullptr && enems[i]->getDest()) {
+				delete enems[i];
+				enems[i] = nullptr;
 
 			}
 		}

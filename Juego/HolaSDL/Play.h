@@ -3,6 +3,7 @@
 
 #include "Estado.h"
 #include "Personaje.h"
+#include "Enemigo.h"
 #include "Vagon.h"
 #include "BarraHP.h"
 #include "Trigger.h"
@@ -22,7 +23,7 @@ public:
 	int getKilled() { return killed; }
 	void finish() { fin = true; }
 	std::vector <Bala*> balas; // TODO mirad estándares de código
-
+	std::vector <Enemigo*> enems;
 	int killed;
 private:
 	Personaje* player;

@@ -35,7 +35,7 @@ void Vagon::update(Uint32 delta) {
 			p->balas.emplace_back(new Bala(juegootp, p, Game::TLaser, pos.x - 700, pos.y - 630, 1, Game::Bala_t::Rayo));
 			p->balas.emplace_back(new Bala(juegootp, p, Game::TLaser, pos.x + 120, pos.y - 630, -1, Game::Bala_t::Rayo));
 			cont = 0;
-			for each (auto var in p->objetos)
+			for each (auto var in p->enems)
 			{
 				if (var != nullptr && pos.y - var->getPos().y <= 20 && pos.y - var->getPos().y >= -100) {
 					juegootp->addCoins(var->getPoints());

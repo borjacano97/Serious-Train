@@ -37,7 +37,7 @@ void Bala::update(Uint32 delta) {
 
 		if (pos.x <= 0 || pos.x >= 1300)
 			destruido = true;
-		for each (auto var in p->objetos)
+		for each (auto var in p->enems)
 		{
 			if (var != nullptr && var->collision(this)) {
 				juegootp->addCoins(var->getPoints());

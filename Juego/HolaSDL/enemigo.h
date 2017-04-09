@@ -12,11 +12,16 @@ public:
 	Objeto_t getId() { return Objeto_t::OEnemigo; }
 	void destroy() { destruido = true; }
 	int getPoints() { return points; }
+	void draw();
+	void parar() { parado = true; }
 private:
 	int cont = 0;
 	int points;
 	SDL_Rect rect;
+	SDL_Rect rectA;
 	float vel;
+	int i, j; //animacion
+	bool parado;
 	Game::Enemigo_t _clase;
 };
 
