@@ -14,7 +14,7 @@ Texturas::Texturas() //constructora
 
 Texturas::~Texturas() // destructora
 {
-	SDL_DestroyTexture(ptext);
+	//SDL_DestroyTexture(ptext);
 	ptext = nullptr;
 }
 
@@ -44,4 +44,21 @@ bool Texturas::load(SDL_Renderer*prender, std::string const& nombArch) {
 //metodo que llama al rendercopy con el render la textura y un rect
 void Texturas::draw(SDL_Renderer*prender, SDL_Rect* const& rect2, SDL_Rect* const& rect) {
 	SDL_RenderCopy(prender, ptext, rect2, rect);
+}
+
+//Metodos para la fuente
+bool Texturas::loadFromText(SDL_Renderer* pRenderer, const std::string texture, SDL_Color color) {
+
+	SDL_Surface *pSurface = myFont.textSolid(texture, color);
+	//myFont.freeSurface(pSurface);
+	SDL_DestroyTexture(ptext);
+	ptext = SDL_CreateTextureFromSurface(pRenderer, pSurface);
+	SDL_FreeSurface(pSurface);
+	return true;
+}
+
+bool Texturas::loadFuente(std::string fuente, int tamano) {
+
+	myFont.load(fuente, tamano);
+	return true;
 }

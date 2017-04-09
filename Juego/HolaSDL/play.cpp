@@ -19,6 +19,13 @@ Play::Play(Game * j) : Estado(j)
 	killed = 0;
 	emax = 5 * ptsjuego->getNivel();
 
+	font = new Texturas;
+	font->loadFuente("../fonts/AlexBrush-Regular.ttf", 200);
+
+	fontColor.r = 218;
+	fontColor.g = 165;
+	fontColor.b = 32;
+
 	fin = false;
 
 	/*SDL_Surface *text;
@@ -46,12 +53,13 @@ bool Play::initObjects() { // creaci�n de los objetos dando un puntero, una te
 	player = new Personaje(ptsjuego, Game::TPersonaje, 650, 500);
 	TrainHp = new barraHP(ptsjuego, Game::TBarra, 10, 15, 0);
 
-
+	TTF_Init();
 	return true;
 }
 
 void Play::freeObjects() {
 	// c++11
+	TTF_Quit();
 	for (auto o : tren) {
 		delete o;
 	}
@@ -63,6 +71,9 @@ void Play::freeObjects() {
 	}
 }
 void Play::draw() {
+
+	font->draw(ptsjuego->pRender, nullptr, &font->myFont.rectFont);
+	font->loadFromText(ptsjuego->pRender, /* + Aqui podria ir imagen de monedas */ std::to_string(ptsjuego->coins), fontColor);
 
 	for (auto i : tren) {
 		i->draw();

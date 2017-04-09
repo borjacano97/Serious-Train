@@ -9,19 +9,20 @@
 #include <vector> // para vectores de texturas, objetos, ect.
 #include <string>
 #include <stack> //  uso de pila para los estados
-class Game{
+class Game {
 public:
 	Game();
 	~Game();
 
 	enum Texturas_t {
 		TFondo, TPersonaje, TEnemigo, TEnemigo2, TLocomotora, TBarra, TBotonJ, TBotonS, TBotonC, Tlose, TWin,
-		TVagon1, TVagon2, TVagon3, TVagon4, TRoca, TLaser};
-	enum Enemigo_t{ Normal, Rapido/*...*/ };
+		TVagon1, TVagon2, TVagon3, TVagon4, TRoca, TLaser
+	};
+	enum Enemigo_t { Normal, Rapido/*...*/ };
 	enum Vagon_t { Locom, Vacio, Automatico, Laser/*...*/ };
 	enum Bala_t { Piedra, Rayo/*...*/ };
-	
-	
+
+
 	Texturas* getTextura(Texturas_t et) const { return texts[et]; }
 	SDL_Renderer* getRender() const;
 
@@ -39,12 +40,14 @@ public:
 	void setSalir();
 	void incrNivel() { nivel++; }
 	int getNivel() { return nivel;; }
-	void addCoins(int n){ coins += n; std::cout << coins << "\n"; }
-
-
-private:
+	void addCoins(int n) { coins += n; std::cout << coins << "\n"; }
 	SDL_Window * pWin = nullptr;
 	SDL_Renderer* pRender = nullptr;
+	int coins = 0;
+
+private:
+	/*SDL_Window * pWin = nullptr;
+	SDL_Renderer* pRender = nullptr;*/
 	SDL_Event e;
 
 	std::string ntexturas[17];
@@ -63,7 +66,7 @@ private:
 	int mx, my;
 	int cadencia;
 	int nivel = 1;
-	int coins = 0;
+
 };
 
 

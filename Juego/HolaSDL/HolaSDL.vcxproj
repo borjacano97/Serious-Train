@@ -73,6 +73,7 @@
     <ClCompile Include="Enemigo.cpp" />
     <ClCompile Include="Error.cpp" />
     <ClCompile Include="Estado.cpp" />
+    <ClCompile Include="Font.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="FinNivel.cpp" />
     <ClCompile Include="Main.cpp" />
@@ -95,6 +96,7 @@
     <ClInclude Include="Enemigo.h" />
     <ClInclude Include="Error.h" />
     <ClInclude Include="Estado.h" />
+    <ClInclude Include="Font.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="FinNivel.h" />
     <ClInclude Include="Menu.h" />

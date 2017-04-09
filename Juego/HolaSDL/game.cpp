@@ -13,7 +13,7 @@
 
 using namespace std;
 Game::Game()
-{	
+{
 	/*//inicialización de texturas, SDL y demás atributos privados
 	ifstream f;
 	int i = 0;
@@ -21,13 +21,13 @@ Game::Game()
 
 	f.open("../bmps/init.txt", ios::in);
 	while (!f.eof()){
-		getline(f, input);
-		ntexturas[i] = input;
-		i++;
-		
-		/*input = f.getline();
-		ntexturas[i] = input;
-		i++;
+	getline(f, input);
+	ntexturas[i] = input;
+	i++;
+
+	/*input = f.getline();
+	ntexturas[i] = input;
+	i++;
 	}
 	f.close();*/
 	/*
@@ -35,8 +35,8 @@ Game::Game()
 	auto cinbuf = cin.rdbuf(in.rdbuf());
 	int i = 0;
 	while (!cin){
-		getline(cin, ntexturas[i]);
-		i++;
+	getline(cin, ntexturas[i]);
+	i++;
 	}*/
 
 	ntexturas[0] = "../bmps/fondoprot.png";
@@ -56,7 +56,7 @@ Game::Game()
 	ntexturas[14] = "../bmps/vagon4.png";
 	ntexturas[15] = "../bmps/roca.png";
 	ntexturas[16] = "../bmps/laser.png";
-	
+
 
 	srand(SDL_GetTicks()); // no se que coño es esto xd
 
@@ -92,7 +92,7 @@ void Game::initMedia() {
 	}
 }
 
-void Game::getMousePos(int & mpx, int & mpy) const{ //obtener posicion del mouse
+void Game::getMousePos(int & mpx, int & mpy) const { //obtener posicion del mouse
 	mpx = mx;
 	mpy = my;
 }
@@ -166,12 +166,12 @@ void Game::closeSDL() {
 }
 
 void Game::render() { //const
-						 //limpiamos el render
+					  //limpiamos el render
 	SDL_RenderClear(pRender);
 
 	//fondo
 	if (topEstado()->getEst() == 'P')
-	    texts[0]->draw(pRender, nullptr, nullptr);
+		texts[0]->draw(pRender, nullptr, nullptr);
 	else if (topEstado()->getEst() == 'M')
 		texts[0]->draw(pRender, nullptr, nullptr);
 	else if (topEstado()->getEst() == 'W')
@@ -187,8 +187,8 @@ void Game::render() { //const
 void Game::run()
 {
 	Uint32 delta;
-	Uint32 lastUpdate = SDL_GetTicks();	
-	while (!exit){
+	Uint32 lastUpdate = SDL_GetTicks();
+	while (!exit) {
 		delta = SDL_GetTicks() - lastUpdate;
 		update(delta);
 		lastUpdate = SDL_GetTicks();
@@ -216,13 +216,13 @@ bool Game::handle_event() { //eventos del teclado y raton
 		}
 		else if (e.type == SDL_KEYUP) {
 			if (e.key.keysym.sym == SDLK_s || e.key.keysym.sym == SDLK_w || e.key.keysym.sym == SDLK_a || e.key.keysym.sym == SDLK_d)
-			    topEstado()->move('N');
+				topEstado()->move('N');
 		}
-		else if (e.type == SDL_KEYDOWN){
-			if (e.key.keysym.sym == SDLK_s){ //mov lateral
+		else if (e.type == SDL_KEYDOWN) {
+			if (e.key.keysym.sym == SDLK_s) { //mov lateral
 				topEstado()->move('S');
 			}
-			else if (e.key.keysym.sym == SDLK_w){
+			else if (e.key.keysym.sym == SDLK_w) {
 				topEstado()->move('W');
 			}
 			if (e.key.keysym.sym == SDLK_a) {
@@ -230,18 +230,18 @@ bool Game::handle_event() { //eventos del teclado y raton
 			}
 			else if (e.key.keysym.sym == SDLK_d) {
 				topEstado()->move('D');
-			}	
+			}
 			if (e.key.keysym.sym == SDLK_ESCAPE) {
-				if (topEstado()->getEst() == 'P') pushState(new Pausa(this));				
+				if (topEstado()->getEst() == 'P') pushState(new Pausa(this));
 			}
 			/*else if ((e.key.keysym.sym == SDLK_l || e.key.keysym.sym == SDLK_SPACE) && cadencia >= 100) {
-				cadencia = 0;
-				topEstado()->onClick();
-				//onClick(e.button.x, e.button.y); PUSSY ASS BITCH IDON FACK WITH U
+			cadencia = 0;
+			topEstado()->onClick();
+			//onClick(e.button.x, e.button.y); PUSSY ASS BITCH IDON FACK WITH U
 			}*/
-			
-		 // click izquierdo para llamar al onclick
-			
+
+			// click izquierdo para llamar al onclick
+
 		}
 		else if (e.type == SDL_MOUSEBUTTONDOWN) { // click izquierdo para llamar al onclick
 			if (e.button.state == SDL_BUTTON_LEFT && cadencia >= 150) {
@@ -258,20 +258,20 @@ RaizEstado * Game::topEstado() {
 	return estados.top();
 }
 
-void Game::setSalir(){
+void Game::setSalir() {
 	exit = true;
 	closeSDL();
 }
-void Game::changeState(RaizEstado* newSt){
+void Game::changeState(RaizEstado* newSt) {
 	popState();
 	pushState(newSt);
 }
-void Game::pushState(RaizEstado* newState){
+void Game::pushState(RaizEstado* newState) {
 	estados.push(newState);
 }
 
 
-void Game::popState(){
+void Game::popState() {
 	delete estados.top();
 	estados.pop();
 }
