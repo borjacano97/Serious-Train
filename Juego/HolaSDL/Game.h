@@ -16,11 +16,10 @@ public:
 
 	enum Texturas_t {
 		TFondo, TPersonaje, TEnemigo, TEnemigo2, TLocomotora, TBarra, TBotonJ, TBotonS, TBotonC, Tlose, TWin,
-		TVagon1, TVagon2, TVagon3, TVagon4, TRoca, TLaser
-	};
+		TVagon1, TRoca, TLaser, TFuegod, TFuegoi	};
 	enum Enemigo_t { Normal, Rapido/*...*/ };
-	enum Vagon_t { Locom, Vacio, Automatico, Laser/*...*/ };
-	enum Bala_t { Piedra, Rayo/*...*/ };
+	enum Vagon_t { Locom, Vacio, Automatico, Laser, Lanzallamas/*...*/ };
+	enum Bala_t { Piedra, Rayo, Fuego/*...*/ };
 
 
 	Texturas* getTextura(Texturas_t et) const { return texts[et]; }
@@ -50,7 +49,7 @@ private:
 	SDL_Renderer* pRender = nullptr;*/
 	SDL_Event e;
 
-	std::string ntexturas[17];
+	std::string ntexturas[16];
 	std::vector<Texturas*> texts;
 	std::stack<RaizEstado*> estados;
 

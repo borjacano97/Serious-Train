@@ -19,7 +19,7 @@ void Objeto::draw() {
 }
 
 bool Objeto::dentro(int x, int y) const{
-	return (x >= pos.x && x <= pos.x + ancho && y >= pos.y && y <= pos.y + alto);	
+	return (x >= pos.x -ancho&& x <= pos.x + ancho && y >= pos.y && y <= pos.y + alto);	
 }
 
 bool Objeto::collision(RaizObjeto* other){

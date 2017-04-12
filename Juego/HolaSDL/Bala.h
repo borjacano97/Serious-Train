@@ -11,7 +11,7 @@ public:
 	void update(Uint32 delta);
 	Objeto_t getId() { return Objeto_t::OBala; }
 private:
-	int dir;
+	int dir, cont;
 	float vel;
 	Game::Bala_t tipo;
 	Play*p;

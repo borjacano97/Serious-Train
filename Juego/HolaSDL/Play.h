@@ -25,10 +25,11 @@ public:
 	std::vector <Bala*> balas; // TODO mirad estándares de código
 	std::vector <Enemigo*> enems;
 	int killed;
+
+	Trigger* tg;
 private:
 	Personaje* player;
 	barraHP* TrainHp;
-	Trigger* tg;
 	Texturas* font;
 	SDL_Color fontColor;
 
