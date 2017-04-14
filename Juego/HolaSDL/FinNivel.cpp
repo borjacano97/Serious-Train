@@ -10,7 +10,7 @@ FinNivel::FinNivel(Game* juego, bool v) :Estado(juego)
 }
 
 void FinNivel::jugar(Game * jg) {
-		jg->changeState(new Tienda(jg));
+	jg->popState(); // vuelve a la tienda
 }
 
 void FinNivel::salir(Game * jg){

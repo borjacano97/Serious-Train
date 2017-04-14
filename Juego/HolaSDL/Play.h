@@ -9,6 +9,8 @@
 #include "Trigger.h"
 #include "Bala.h"
 
+using namespace std;
+
 class Play : public Estado
 {
 public:
@@ -22,8 +24,9 @@ public:
 	char getEst() { return 'P'; }
 	int getKilled() { return killed; }
 	void finish() { fin = true; }
-	std::vector <Bala*> balas; // TODO mirad estándares de código
-	std::vector <Enemigo*> enems;
+	vector <Bala*> balas; // TODO mirad estándares de código
+	vector <Enemigo*> enems;
+	vector <Vagon*> tren; // TODO mirad estándares de código
 	int killed;
 
 	Trigger* tg;
@@ -33,13 +36,9 @@ private:
 	Texturas* font;
 	SDL_Color fontColor;
 
-	unsigned int vag = 5;
 	bool fin;
 	bool initObjects(); //crear y destruir los objetos del juego
 	void freeObjects();
-
-
-	std::vector <Vagon*> tren; // TODO mirad estándares de código
 
 	int emax, enem;
 };

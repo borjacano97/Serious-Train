@@ -42,13 +42,7 @@ Play::~Play()
 }
 
 bool Play::initObjects() { // creaci�n de los objetos dando un puntero, una textura y una posici�n (constructora de objs)
-	tren.emplace_back(new Vagon(ptsjuego, this, Game::TLocomotora, 585, -50, Game::Vagon_t::Locom));
-	tren.emplace_back(new Vagon(ptsjuego, this, Game::TVagon1, 585, 100, Game::Vagon_t::Automatico));
-	tren.emplace_back(new Vagon(ptsjuego, this, Game::TVagon1, 585, 250, Game::Vagon_t::Laser));
-	tren.emplace_back(new Vagon(ptsjuego, this, Game::TVagon1, 585, 400, Game::Vagon_t::Lanzallamas));
-	tren.emplace_back(new Vagon(ptsjuego, this, Game::TVagon1, 585, 550, Game::Vagon_t::Vacio));
 	
-
 	tg = new Trigger(ptsjuego, 620, -20);
 	player = new Personaje(ptsjuego, Game::TPersonaje, 650, 500);
 	TrainHp = new barraHP(ptsjuego, Game::TBarra, 10, 15, 0);

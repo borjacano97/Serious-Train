@@ -13,10 +13,12 @@ void Tienda::jugar(Game * jg) {
 	switch (jg->getNivel())
 	{
 	case(1) : {
-		jg->changeState(new Nivel1(jg));
+		jg->pushState(new Nivel1(jg)); 
+		// hacemos pushState para "salvar" la tienda y no tener que volver a hacer un new tienda
+		// ya que perderíamos los datos de los objetos desbloqueados
 		break; }
 	case(2) : {
-		jg->changeState(new Nivel2(jg));
+		jg->pushState(new Nivel2(jg));
 		break; }
 	default:
 		break;
@@ -24,5 +26,5 @@ void Tienda::jugar(Game * jg) {
 }
 
 void Tienda::recolocar(Game * jg){
-	jg->changeState(new Tienda(jg));
+	// no se como vamos a hacer esto xd
 }

@@ -1,6 +1,6 @@
 #include "Menu.h"
 #include "Button.h"
-#include "Nivel1.h"
+#include "Tienda.h"
 
 
 Menu::Menu(Game * juego) :Estado(juego)
@@ -10,7 +10,7 @@ Menu::Menu(Game * juego) :Estado(juego)
 }
 
 void Menu::jugar(Game * jg) {
-	jg->changeState(new Nivel1(jg));
+	jg->changeState(new Tienda(jg));
 }
 
 void Menu::salir(Game * jg){
