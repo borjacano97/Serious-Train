@@ -81,6 +81,7 @@
     <ClCompile Include="Nivel1.cpp" />
     <ClCompile Include="Nivel2.cpp" />
     <ClCompile Include="Objeto.cpp" />
+    <ClCompile Include="ObjetoTienda.cpp" />
     <ClCompile Include="Pausa.cpp" />
     <ClCompile Include="Personaje.cpp" />
     <ClCompile Include="Play.cpp" />
@@ -103,6 +104,7 @@
     <ClInclude Include="Nivel1.h" />
     <ClInclude Include="Nivel2.h" />
     <ClInclude Include="Objeto.h" />
+    <ClInclude Include="ObjetoTienda.h" />
     <ClInclude Include="Pausa.h" />
     <ClInclude Include="Personaje.h" />
     <ClInclude Include="Play.h" />

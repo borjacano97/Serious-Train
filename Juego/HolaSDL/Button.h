@@ -9,14 +9,12 @@ public:
 	typedef void CallBack_t(Game * g);
 	Button(Game* juego, Game::Texturas_t text, float x, float y, CallBack_t * cbCons);
 	~Button(){}
-	void update(Uint32 delta);
 	bool onClick();
 	Objeto_t getId() { return Objeto_t::OButton; }
 protected:
 	CallBack_t * cb;
 
-	int mpbx;
-	int mpby;
+	int mpbx, mpby;
 };
 
 #endif

@@ -11,6 +11,7 @@ public:
 	// Los métodos de raizObjeto los hereda y no hace falta ponerlos aqui
 	// Aún así hay que poner otros métodos aquí
 	void draw();
+	void update(Uint32 delta){}
 	bool onClick() { return true; }
 	void move(char c){}
 	virtual Direccion getDir() { return dir; };

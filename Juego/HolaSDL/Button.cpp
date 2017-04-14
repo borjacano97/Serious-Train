@@ -24,8 +24,3 @@ bool Button::onClick(){
 	}
 	else return false;
 }
-
-
-void Button::update(Uint32 delta){
-
-}

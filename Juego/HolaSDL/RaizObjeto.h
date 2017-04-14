@@ -26,7 +26,7 @@ public:
 		float x, y;
 		void set(float x_, float y_){ x = x_; y = y_; }
 	};
-	enum Objeto_t{ OBala, OEnemigo, OBarraHP, OButton, OPlayer, OVagon, OTrigger/*...*/ };
+	enum Objeto_t{ OBala, OEnemigo, OBarraHP, OButton, OPlayer, OVagon, OTrigger, OObjetoTienda/*...*/ };
 public:
 	RaizObjeto(){}
 	virtual ~RaizObjeto(){}

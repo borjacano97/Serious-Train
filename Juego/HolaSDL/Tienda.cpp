@@ -2,13 +2,26 @@
 #include "Button.h"
 #include "Nivel1.h"
 #include "Nivel2.h"
-
+#include "ObjetoTienda.h"
 
 Tienda::Tienda(Game* juego) :Estado(juego)
 {
 	objetos.emplace_back(new Button(ptsjuego, Game::TBotonJ, 300, 400, jugar));
 	objetos.emplace_back(new Button(ptsjuego, Game::TBotonS, 800, 400, recolocar));
+	//objs.emplace_back(new ObjetoTienda(ptsjuego, Game::TVagon1, 200, 200, 150 ));
 }
+
+
+void Tienda::draw() {
+	for (auto i : objs) {
+		i->draw();
+	}
+	for (auto i : objetos) {
+		i->draw();
+	}
+}
+
+
 void Tienda::jugar(Game * jg) {
 	switch (jg->getNivel())
 	{
@@ -27,4 +40,23 @@ void Tienda::jugar(Game * jg) {
 
 void Tienda::recolocar(Game * jg){
 	// no se como vamos a hacer esto xd
+}
+
+void Tienda::onClick() {
+	bool clickeado = false;
+
+	int i = objetos.size() - 1;
+	while (!clickeado && i >= 0)
+	{
+		if (objetos[i]->onClick())
+			clickeado = true;
+		i--;
+	}
+	int j = objs.size() - 1;
+	while (!clickeado && j >= 0 /*&& se puede comprar*/)
+	{
+		if (objs[j]->onClick())
+			clickeado = true;
+		j--;
+	}
 }
