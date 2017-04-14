@@ -7,7 +7,7 @@ class ObjetoTienda :
 	public Objeto
 {
 public:
-	ObjetoTienda(Game* juego, Game::Texturas_t text, float x, float y, int p);
+	ObjetoTienda(Game* juego, Game::Texturas_t bloq, Game::Texturas_t desblo, float x, float y, int p);
 	~ObjetoTienda(){}
 	Objeto_t getId() { return Objeto_t::OObjetoTienda; }
 	bool onClick();

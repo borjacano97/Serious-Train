@@ -2,11 +2,11 @@
 
 
 
-ObjetoTienda::ObjetoTienda(Game* juego, Game::Texturas_t text, float x, float y, int p)
+ObjetoTienda::ObjetoTienda(Game* juego, Game::Texturas_t bloq, Game::Texturas_t desbl, float x, float y, int p)
 {
 	juegootp = juego;
-	//Ttextura = Game::Texturas_t::TBloqueado;
-	desb = text;
+	Ttextura = bloq;
+	desb = desbl;
 
 	alto = 151;
 	ancho = 120;

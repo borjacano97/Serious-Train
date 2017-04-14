@@ -2,7 +2,7 @@
 #include "Enemigo.h"
 
 
-Nivel1::Nivel1(Game * j) : Play(j)
+Nivel1::Nivel1(Game * j/*, std::vector <Game::Vagon_t> v*/) : Play(j)
 {
 	enem = 0;
 	emax = 30;

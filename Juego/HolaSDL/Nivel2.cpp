@@ -3,7 +3,7 @@
 
 
 
-Nivel2::Nivel2(Game * j) : Play(j)
+Nivel2::Nivel2(Game * j/*, std::vector <Game::Vagon_t> v*/) : Play(j)
 {
 	enem = 0;
 	emax = 30;

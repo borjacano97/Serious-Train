@@ -8,7 +8,11 @@ Tienda::Tienda(Game* juego) :Estado(juego)
 {
 	objetos.emplace_back(new Button(ptsjuego, Game::TBotonJ, 300, 400, jugar));
 	objetos.emplace_back(new Button(ptsjuego, Game::TBotonS, 800, 400, recolocar));
-	//objs.emplace_back(new ObjetoTienda(ptsjuego, Game::TVagon1, 200, 200, 150 ));
+	objs.emplace_back(new ObjetoTienda(ptsjuego, Game::TVacioBloq, Game::TVagon1,  200, 200, 150 ));
+
+	for (auto i : vagonesNivel) {
+		i = Game::Vagon_t::Vacio;
+	}
 }
 
 

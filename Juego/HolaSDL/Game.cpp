@@ -44,17 +44,18 @@ Game::Game()
 	ntexturas[2] = "../bmps/murcielago.png";
 	ntexturas[3] = "../bmps/zombief.png";
 	ntexturas[4] = "../bmps/locomotora.png";
-	ntexturas[5] = "../bmps/barraHP.png";
-	ntexturas[6] = "../bmps/botonJ.png";
-	ntexturas[7] = "../bmps/botonS.png";
-	ntexturas[8] = "../bmps/botonC.png";
-	ntexturas[9] = "../bmps/win.png";
-	ntexturas[10] = "../bmps/lose.png";
-	ntexturas[11] = "../bmps/vagon1.png";
-	ntexturas[12] = "../bmps/roca.png";
-	ntexturas[13] = "../bmps/laser.png";
-	ntexturas[14] = "../bmps/fuegod.png";
-	ntexturas[15] = "../bmps/fuegoi.png";
+	ntexturas[5] = "../bmps/vagon1.png";
+	ntexturas[6] = "../bmps/vacioBloq.png";
+	ntexturas[7] = "../bmps/barraHP.png";
+	ntexturas[8] = "../bmps/botonJ.png";
+	ntexturas[9] = "../bmps/botonS.png";
+	ntexturas[10] = "../bmps/botonC.png";
+	ntexturas[11] = "../bmps/win.png";
+	ntexturas[12] = "../bmps/lose.png";
+	ntexturas[13] = "../bmps/roca.png";
+	ntexturas[14] = "../bmps/laser.png";
+	ntexturas[15] = "../bmps/fuegod.png";
+	ntexturas[16] = "../bmps/fuegoi.png";
 
 	srand(SDL_GetTicks()); // no se que coño es esto xd
 
@@ -84,7 +85,7 @@ SDL_Renderer* Game::getRender()const {
 }
 
 void Game::initMedia() {
-	for (unsigned int i = 0; i < 16  /*magic namber dude*/; i++) {
+	for (unsigned int i = 0; i < 17  /*magic namber dude*/; i++) {
 		texts.emplace_back(new Texturas);
 		texts[i]->load(getRender(), ntexturas[i]);
 	}
