@@ -13,10 +13,15 @@ public:
 	char getEst(){  return 'T';}
 	void draw();
 	void onClick();
+	void comprar(ObjetoTienda*o) { o->desbloquear(); ptsjuego->buy(o->getPoints()); }
 private:
 	static void recolocar(Game * jg);
 	static void jugar(Game * jg);
-	std::vector <Game::Vagon_t> vagonesNivel; // va a contener los tipos de vagones que pasarán a cada nvl
+
+	Texturas* font;
+	SDL_Color fontColor;
+
+	std::vector <Game::Vagon_t> vagonesNivel; // va a contener los tipos de vagones que pasarán a cada nvl sin locomotora
 	std::vector <ObjetoTienda*> objs; // armas y vagones del nivel
 };
 

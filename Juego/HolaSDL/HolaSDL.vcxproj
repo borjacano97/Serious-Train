@@ -69,6 +69,7 @@
   <ItemGroup>
     <ClCompile Include="Bala.cpp" />
     <ClCompile Include="BarraHP.cpp" />
+    <ClCompile Include="BotonComprar.cpp" />
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="Enemigo.cpp" />
     <ClCompile Include="Error.cpp" />
@@ -85,6 +86,7 @@
     <ClCompile Include="Pausa.cpp" />
     <ClCompile Include="Personaje.cpp" />
     <ClCompile Include="Play.cpp" />
+    <ClCompile Include="Selector.cpp" />
     <ClCompile Include="Texturas.cpp" />
     <ClCompile Include="Tienda.cpp" />
     <ClCompile Include="Trigger.cpp" />
@@ -93,6 +95,7 @@
   <ItemGroup>
     <ClInclude Include="Bala.h" />
     <ClInclude Include="BarraHP.h" />
+    <ClInclude Include="BotonComprar.h" />
     <ClInclude Include="Button.h" />
     <ClInclude Include="Enemigo.h" />
     <ClInclude Include="Error.h" />
@@ -110,6 +113,7 @@
     <ClInclude Include="Play.h" />
     <ClInclude Include="RaizEstado.h" />
     <ClInclude Include="RaizObjeto.h" />
+    <ClInclude Include="Selector.h" />
     <ClInclude Include="Texturas.h" />
     <ClInclude Include="Tienda.h" />
     <ClInclude Include="Trigger.h" />

@@ -37,7 +37,6 @@ public:
 	virtual void move(char c) = 0;
 	virtual Posicion getPos() = 0;
 	virtual Direccion getDir() = 0;
-	virtual Objeto_t getId() = 0;
 	virtual bool getDest() = 0;
 	virtual void destroy() = 0;
 	virtual bool collision(RaizObjeto* other) = 0;

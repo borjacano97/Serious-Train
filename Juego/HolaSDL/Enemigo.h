@@ -9,7 +9,6 @@ public:
 	~Enemigo(){}
 	void update(Uint32 delta);
 	bool getDest() { return destruido; }
-	Objeto_t getId() { return Objeto_t::OEnemigo; }
 	void destroy() { destruido = true; }
 	int getPoints() { return points; }
 	void draw();

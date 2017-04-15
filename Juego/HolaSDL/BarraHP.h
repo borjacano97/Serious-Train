@@ -10,7 +10,6 @@ public:
 	~barraHP(){}
 	void update(Uint32 delta);
 	void move(char c);
-	Objeto_t getId() { return Objeto_t::OBarraHP; }
 private:
 	int cont;
 };

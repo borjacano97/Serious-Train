@@ -3,26 +3,40 @@
 #include "Nivel1.h"
 #include "Nivel2.h"
 #include "ObjetoTienda.h"
+#include "BotonComprar.h"
 
 Tienda::Tienda(Game* juego) :Estado(juego)
 {
-	objetos.emplace_back(new Button(ptsjuego, Game::TBotonJ, 300, 400, jugar));
-	objetos.emplace_back(new Button(ptsjuego, Game::TBotonS, 800, 400, recolocar));
-	objs.emplace_back(new ObjetoTienda(ptsjuego, Game::TVacioBloq, Game::TVagon1,  200, 200, 150 ));
+	objetos.emplace_back(new Button(ptsjuego, Game::TBtienda1, 400, 100, jugar));
+	objetos.emplace_back(new Button(ptsjuego, Game::TBtienda2, 800, 100, recolocar));
+
+	objs.emplace_back(new ObjetoTienda(ptsjuego, this, Game::TVacioBloq, Game::TVagon1, 500, 500, 100));
+
+	objetos.emplace_back(new BotonComprar(ptsjuego, this, objs[0], Game::TBotonS, 700, 500));
 
 	for (auto i : vagonesNivel) {
 		i = Game::Vagon_t::Vacio;
 	}
+
+	font = new Texturas;
+	font->loadFuente("../fonts/AlexBrush-Regular.ttf", 200);
+
+	fontColor.r = 218;
+	fontColor.g = 165;
+	fontColor.b = 32;
 }
 
 
 void Tienda::draw() {
+	
 	for (auto i : objs) {
 		i->draw();
 	}
 	for (auto i : objetos) {
 		i->draw();
 	}
+	font->draw(ptsjuego->pRender, nullptr, &font->myFont.rectFont);
+	font->loadFromText(ptsjuego->pRender, std::to_string(ptsjuego->coins), fontColor);
 }
 
 

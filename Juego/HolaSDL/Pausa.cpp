@@ -5,7 +5,7 @@
 
 Pausa::Pausa(Game* juego) : Estado(juego)
 {
-	objetos.emplace_back(new Button(ptsjuego, Game::TBotonJ, 300, 500, reanudar)); // hay que poner sdl_center o algo asi xd
+	objetos.emplace_back(new Button(ptsjuego, Game::TBotonC, 300, 500, reanudar));
 	objetos.emplace_back(new Button(ptsjuego, Game::TBotonS, 800, 500, salir));
 }
 

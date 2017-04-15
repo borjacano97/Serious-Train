@@ -50,12 +50,14 @@ Game::Game()
 	ntexturas[8] = "../bmps/botonJ.png";
 	ntexturas[9] = "../bmps/botonS.png";
 	ntexturas[10] = "../bmps/botonC.png";
-	ntexturas[11] = "../bmps/win.png";
-	ntexturas[12] = "../bmps/lose.png";
-	ntexturas[13] = "../bmps/roca.png";
-	ntexturas[14] = "../bmps/laser.png";
-	ntexturas[15] = "../bmps/fuegod.png";
-	ntexturas[16] = "../bmps/fuegoi.png";
+	ntexturas[11] = "../bmps/btienda1.png";
+	ntexturas[12] = "../bmps/btienda2.png";
+	ntexturas[13] = "../bmps/win.png";
+	ntexturas[14] = "../bmps/lose.png";
+	ntexturas[15] = "../bmps/roca.png";
+	ntexturas[16] = "../bmps/laser.png";
+	ntexturas[17] = "../bmps/fuegod.png";
+	ntexturas[18] = "../bmps/fuegoi.png";
 
 	srand(SDL_GetTicks()); // no se que coño es esto xd
 
@@ -85,7 +87,7 @@ SDL_Renderer* Game::getRender()const {
 }
 
 void Game::initMedia() {
-	for (unsigned int i = 0; i < 17  /*magic namber dude*/; i++) {
+	for (unsigned int i = 0; i < 19  /*magic namber dude*/; i++) {
 		texts.emplace_back(new Texturas);
 		texts[i]->load(getRender(), ntexturas[i]);
 	}
@@ -174,9 +176,9 @@ void Game::render() { //const
 	else if (topEstado()->getEst() == 'M')
 		texts[0]->draw(pRender, nullptr, nullptr);
 	else if (topEstado()->getEst() == 'W')
-		texts[9]->draw(pRender, nullptr, nullptr);
+		texts[13]->draw(pRender, nullptr, nullptr);
 	else if (topEstado()->getEst() == 'L')
-		texts[10]->draw(pRender, nullptr, nullptr);
+		texts[14]->draw(pRender, nullptr, nullptr);
 
 	topEstado()->draw();
 	SDL_RenderPresent(pRender);

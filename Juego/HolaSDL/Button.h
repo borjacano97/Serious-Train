@@ -10,7 +10,6 @@ public:
 	Button(Game* juego, Game::Texturas_t text, float x, float y, CallBack_t * cbCons);
 	~Button(){}
 	bool onClick();
-	Objeto_t getId() { return Objeto_t::OButton; }
 protected:
 	CallBack_t * cb;
 

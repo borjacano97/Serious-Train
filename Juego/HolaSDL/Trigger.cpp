@@ -10,8 +10,3 @@ Trigger::Trigger(Game* juego, float x, float y)
 
 	pos.set(x, y);
 }
-
-
-void Trigger::update(Uint32 delta){
-	//en principio nada aqui 
-}

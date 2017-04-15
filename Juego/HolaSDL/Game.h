@@ -15,7 +15,7 @@ public:
 	~Game();
 
 	enum Texturas_t {
-		TFondo, TPersonaje, TEnemigo, TEnemigo2, TLocomotora, TVagon1, TVacioBloq, TBarra, TBotonJ, TBotonS, TBotonC, Tlose, TWin,
+		TFondo, TPersonaje, TEnemigo, TEnemigo2, TLocomotora, TVagon1, TVacioBloq, TBarra, TBotonJ, TBotonS, TBotonC, TBtienda1, TBtienda2, Tlose, TWin,
 		 TRoca, TLaser, TFuegod, TFuegoi	};
 	enum Enemigo_t { Normal, Rapido/*...*/ };
 	enum Vagon_t { Locom, Vacio, Automatico, Laser, Lanzallamas/*...*/ };
@@ -39,7 +39,8 @@ public:
 	void setSalir();
 	void incrNivel() { nivel++; }
 	int getNivel() { return nivel;; }
-	void addCoins(int n) { coins += n; std::cout << coins << "\n"; }
+	void addCoins(int n) { coins += n; }
+	void buy(int n) { for (unsigned int i = 0; i < n; i++) coins--; }
 	SDL_Window * pWin = nullptr;
 	SDL_Renderer* pRender = nullptr;
 	int coins = 0;
@@ -49,7 +50,7 @@ private:
 	SDL_Renderer* pRender = nullptr;*/
 	SDL_Event e;
 
-	std::string ntexturas[17];
+	std::string ntexturas[19];
 	std::vector<Texturas*> texts;
 	std::stack<RaizEstado*> estados;
 

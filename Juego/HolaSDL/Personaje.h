@@ -13,8 +13,6 @@ public:
 	void move(char c);
 	Direccion getDir() { return dir; };
 	int getMira() { return mira; };
-	Objeto_t getId() { return Objeto_t::OPlayer; }
-
 
 private:
 	Direccion dir;
