@@ -10,8 +10,8 @@ Tienda::Tienda(Game* juego) :Estado(juego)
 {
 
 	sel = new Selector(ptsjuego, Game::TRect, 20, 170);
-	objetos.emplace_back(new Button(ptsjuego, Game::TBtienda1, 300, 400, jugar));
-	objetos.emplace_back(new Button(ptsjuego, Game::TBtienda2, 800, 400, recolocar));
+	objetos.emplace_back(new Button(ptsjuego, Game::TBtienda1, 1100, 625, jugar));
+	objetos.emplace_back(new Button(ptsjuego, Game::TBtienda2, -25, 625, recolocar));
 	objs.emplace_back(new ObjetoTienda(ptsjuego, this, Game::TVacioBloq, Game::TVagon1, 200, 200, 100));
 
 	objetos.emplace_back(new BotonComprar(ptsjuego, this, objs[0], Game::TBotonB, 500, 200));

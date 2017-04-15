@@ -34,6 +34,6 @@ SDL_Rect Font::setRect(int h, int w, int x, int y) {
 	rectFont.w = w;
 	rectFont.x = x;
 	rectFont.y = y;
-	std::cout << "Pues si salgo" << std::endl;
+	//std::cout << "Pues si salgo" << std::endl;
 	return rectFont;
 }
