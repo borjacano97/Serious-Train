@@ -1,8 +1,9 @@
 #ifndef H_TIENDA_H
 #define H_TIENDA_H
 
-#include "estado.h"
+#include "Estado.h"
 #include "ObjetoTienda.h"
+#include "Selector.h"
 
 class Tienda :
 	public Estado
@@ -21,6 +22,7 @@ private:
 	Texturas* font;
 	SDL_Color fontColor;
 
+	Selector* sel;
 	std::vector <Game::Vagon_t> vagonesNivel; // va a contener los tipos de vagones que pasarán a cada nvl sin locomotora
 	std::vector <ObjetoTienda*> objs; // armas y vagones del nivel
 };

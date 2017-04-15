@@ -4,15 +4,19 @@
 #include "Nivel2.h"
 #include "ObjetoTienda.h"
 #include "BotonComprar.h"
+#include "Selector.h"
 
 Tienda::Tienda(Game* juego) :Estado(juego)
 {
-	objetos.emplace_back(new Button(ptsjuego, Game::TBtienda1, 400, 100, jugar));
-	objetos.emplace_back(new Button(ptsjuego, Game::TBtienda2, 800, 100, recolocar));
 
-	objs.emplace_back(new ObjetoTienda(ptsjuego, this, Game::TVacioBloq, Game::TVagon1, 500, 500, 100));
+	sel = new Selector(ptsjuego, Game::TRect, 20, 170);
 
-	objetos.emplace_back(new BotonComprar(ptsjuego, this, objs[0], Game::TBotonS, 700, 500));
+	objetos.emplace_back(new Button(ptsjuego, Game::TBtienda1, 980, 80, jugar));
+	objetos.emplace_back(new Button(ptsjuego, Game::TBtienda2, 1110, 80, recolocar));
+
+	objs.emplace_back(new ObjetoTienda(ptsjuego, this, Game::TVacioBloq, Game::TVagon1, 200, 200, 100));
+
+	objetos.emplace_back(new BotonComprar(ptsjuego, this, objs[0], Game::TBotonS, 500, 200));
 
 	for (auto i : vagonesNivel) {
 		i = Game::Vagon_t::Vacio;
@@ -28,7 +32,8 @@ Tienda::Tienda(Game* juego) :Estado(juego)
 
 
 void Tienda::draw() {
-	
+	sel->draw();
+
 	for (auto i : objs) {
 		i->draw();
 	}
@@ -78,3 +83,7 @@ void Tienda::onClick() {
 		j--;
 	}
 }
+/*void Tienda::update(Uint32 n) {
+	std::cout << n;
+	sel->update(n);
+}*/

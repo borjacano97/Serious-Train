@@ -40,24 +40,27 @@ Game::Game()
 	}*/
 
 	ntexturas[0] = "../bmps/fondoprot.png";
-	ntexturas[1] = "../bmps/personaje.png";
-	ntexturas[2] = "../bmps/murcielago.png";
-	ntexturas[3] = "../bmps/zombief.png";
-	ntexturas[4] = "../bmps/locomotora.png";
-	ntexturas[5] = "../bmps/vagon1.png";
-	ntexturas[6] = "../bmps/vacioBloq.png";
-	ntexturas[7] = "../bmps/barraHP.png";
-	ntexturas[8] = "../bmps/botonJ.png";
-	ntexturas[9] = "../bmps/botonS.png";
-	ntexturas[10] = "../bmps/botonC.png";
-	ntexturas[11] = "../bmps/btienda1.png";
-	ntexturas[12] = "../bmps/btienda2.png";
-	ntexturas[13] = "../bmps/win.png";
-	ntexturas[14] = "../bmps/lose.png";
-	ntexturas[15] = "../bmps/roca.png";
-	ntexturas[16] = "../bmps/laser.png";
-	ntexturas[17] = "../bmps/fuegod.png";
-	ntexturas[18] = "../bmps/fuegoi.png";
+	ntexturas[1] = "../bmps/menutienda.png";
+	ntexturas[2] = "../bmps/personaje.png";
+	ntexturas[3] = "../bmps/murcielago.png";
+	ntexturas[4] = "../bmps/zombief.png";
+	ntexturas[5] = "../bmps/locomotora.png";
+	ntexturas[6] = "../bmps/vagon1.png";
+	ntexturas[7] = "../bmps/vacioBloq.png";
+	ntexturas[8] = "../bmps/barraHP.png";
+	ntexturas[9] = "../bmps/botonJ.png";
+	ntexturas[10] = "../bmps/botonS.png";
+	ntexturas[11] = "../bmps/botonC.png";
+	ntexturas[12] = "../bmps/botonB.png";
+	ntexturas[13] = "../bmps/btienda1.png";
+	ntexturas[14] = "../bmps/btienda2.png";
+	ntexturas[15] = "../bmps/win.png";
+	ntexturas[16] = "../bmps/lose.png";
+	ntexturas[17] = "../bmps/roca.png";
+	ntexturas[18] = "../bmps/laser.png";
+	ntexturas[19] = "../bmps/fuegod.png";
+	ntexturas[20] = "../bmps/fuegoi.png";
+	ntexturas[21] = "../bmps/rect.png";
 
 	srand(SDL_GetTicks()); // no se que coño es esto xd
 
@@ -87,7 +90,7 @@ SDL_Renderer* Game::getRender()const {
 }
 
 void Game::initMedia() {
-	for (unsigned int i = 0; i < 19  /*magic namber dude*/; i++) {
+	for (unsigned int i = 0; i < 22  /*magic namber dude*/; i++) {
 		texts.emplace_back(new Texturas);
 		texts[i]->load(getRender(), ntexturas[i]);
 	}
@@ -176,9 +179,11 @@ void Game::render() { //const
 	else if (topEstado()->getEst() == 'M')
 		texts[0]->draw(pRender, nullptr, nullptr);
 	else if (topEstado()->getEst() == 'W')
-		texts[13]->draw(pRender, nullptr, nullptr);
+		texts[15]->draw(pRender, nullptr, nullptr);
 	else if (topEstado()->getEst() == 'L')
-		texts[14]->draw(pRender, nullptr, nullptr);
+		texts[16]->draw(pRender, nullptr, nullptr);
+	else if (topEstado()->getEst() == 'T')
+		texts[1]->draw(pRender, nullptr, nullptr);
 
 	topEstado()->draw();
 	SDL_RenderPresent(pRender);
@@ -235,6 +240,10 @@ bool Game::handle_event() { //eventos del teclado y raton
 			if (e.key.keysym.sym == SDLK_ESCAPE) {
 				if (topEstado()->getEst() == 'P') pushState(new Pausa(this));
 			}
+			else if (e.key.keysym.sym == SDLK_1) if (topEstado()->getEst() == 'T') topEstado()->update(1);
+			else if (e.key.keysym.sym == SDLK_2) if (topEstado()->getEst() == 'T') topEstado()->update(2);
+			else if (e.key.keysym.sym == SDLK_3) if (topEstado()->getEst() == 'T') topEstado()->update(3);
+			else if (e.key.keysym.sym == SDLK_4) if (topEstado()->getEst() == 'T') topEstado()->update(4);
 			/*else if ((e.key.keysym.sym == SDLK_l || e.key.keysym.sym == SDLK_SPACE) && cadencia >= 100) {
 			cadencia = 0;
 			topEstado()->onClick();
