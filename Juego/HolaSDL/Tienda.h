@@ -14,7 +14,7 @@ public:
 	char getEst(){  return 'T';}
 	void draw();
 	void onClick();
-	void comprar(ObjetoTienda*o) { o->desbloquear(); ptsjuego->buy(o->getPoints()); }
+	void comprar(ObjetoTienda*o) { o->desbloquear(); ptsjuego->buy(o->getPrecio()); }
 private:
 	static void recolocar(Game * jg);
 	static void jugar(Game * jg);

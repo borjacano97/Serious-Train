@@ -5,7 +5,7 @@
 class Font
 {
 public:
-	Font();
+	Font(/*int h, int w, int x, int y*/);
 	~Font();
 	TTF_Font * font;
 	SDL_Rect rectFont;

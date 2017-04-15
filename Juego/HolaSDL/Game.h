@@ -40,7 +40,8 @@ public:
 	void incrNivel() { nivel++; }
 	int getNivel() { return nivel;; }
 	void addCoins(int n) { coins += n; }
-	void buy(int n) { for (unsigned int i = 0; i < n; i++) coins--; }
+	void buy(int n) { coins -= n; }
+
 	SDL_Window * pWin = nullptr;
 	SDL_Renderer* pRender = nullptr;
 	int coins = 0;
