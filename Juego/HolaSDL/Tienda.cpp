@@ -10,20 +10,18 @@ Tienda::Tienda(Game* juego) :Estado(juego)
 {
 
 	sel = new Selector(ptsjuego, Game::TRect, 20, 170);
-
-	objetos.emplace_back(new Button(ptsjuego, Game::TBtienda1, 980, 80, jugar));
-	objetos.emplace_back(new Button(ptsjuego, Game::TBtienda2, 1110, 80, recolocar));
-
+	objetos.emplace_back(new Button(ptsjuego, Game::TBotonJ, 300, 400, jugar));
+	objetos.emplace_back(new Button(ptsjuego, Game::TBotonS, 800, 400, recolocar));
 	objs.emplace_back(new ObjetoTienda(ptsjuego, this, Game::TVacioBloq, Game::TVagon1, 200, 200, 100));
 
-	objetos.emplace_back(new BotonComprar(ptsjuego, this, objs[0], Game::TBotonS, 500, 200));
+	objetos.emplace_back(new BotonComprar(ptsjuego, this, objs[0], Game::TBotonB, 500, 200));
 
 	for (auto i : vagonesNivel) {
 		i = Game::Vagon_t::Vacio;
 	}
 	TTF_Init();
 
-	font = new Texturas;
+	font = new Texturas(100, 80, 50, 50);
 	font->loadFuente("../fonts/AlexBrush-Regular.ttf", 200);
 
 	//font->setRect(80, 80, 50, 50);
@@ -79,7 +77,7 @@ void Tienda::onClick() {
 		i--;
 	}
 	int j = objs.size() - 1;
-	while (!clickeado && j >= 0 /*&& se puede comprar*/)
+	while (!clickeado && j >= 0 )
 	{
 		if (objs[j]->onClick())
 			clickeado = true;

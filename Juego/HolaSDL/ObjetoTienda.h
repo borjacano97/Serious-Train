@@ -13,6 +13,7 @@ public:
 	~ObjetoTienda(){}
 	bool onClick();
 	void desbloquear() { bloqueado = false; Ttextura = desb;}
+	bool getBloq() { return bloqueado; }
 	int getPrecio() { return precio; }
 private: 
 	bool bloqueado = true;

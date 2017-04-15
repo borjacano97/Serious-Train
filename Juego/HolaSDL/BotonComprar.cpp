@@ -10,8 +10,8 @@ BotonComprar::BotonComprar(Game* juego, Tienda*ti, ObjetoTienda*obj, Game::Textu
 	
 	Ttextura = text;
 
-	alto = 50;
-	ancho = 70;
+	alto = 70;
+	ancho = 90;
 
 	pos.set(x, y);
 }
@@ -20,7 +20,7 @@ bool BotonComprar::onClick() {
 	juegootp->getMousePos(mpbx, mpby);
 
 	if (dentro(mpbx, mpby)) {
-		if (o->getPrecio() <= juegootp->coins) {
+		if (o->getBloq() && o->getPrecio() <= juegootp->coins) {
 			t->comprar(o);
 		}
 			

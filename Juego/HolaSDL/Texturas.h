@@ -11,6 +11,7 @@ class Texturas
 {
 public:
 	Texturas();
+	Texturas(int h, int w, int x, int y);
 	~Texturas();
 	//métodos públicos para cargar y pintar
 	bool load(SDL_Renderer*prender, std::string const& nombArch);
