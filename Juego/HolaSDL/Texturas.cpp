@@ -11,6 +11,13 @@ Texturas::Texturas() //constructora
 	alto = 0;
 }
 
+Texturas::Texturas(int h, int w, int x, int y) {
+	rectFont.h = h;
+	rectFont.w = w;
+	rectFont.x = x;
+	rectFont.y = y;
+}
+
 
 Texturas::~Texturas() // destructora
 {

@@ -1,7 +1,7 @@
 #include "Font.h"
 #include "SDL_ttf.h"
 
-Font::Font()
+Font::Font(/*int h, int w, int x, int y*/)
 {
 	rectFont.h = 80;
 	rectFont.w = 80;

@@ -19,7 +19,7 @@ Play::Play(Game * j) : Estado(j)
 	killed = 0;
 	emax = 5 * ptsjuego->getNivel();
 
-	font = new Texturas;
+	font = new Texturas();
 	font->loadFuente("../fonts/AlexBrush-Regular.ttf", 200);
 
 	fontColor.r = 218;

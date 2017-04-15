@@ -21,8 +21,9 @@ Tienda::Tienda(Game* juego) :Estado(juego)
 	for (auto i : vagonesNivel) {
 		i = Game::Vagon_t::Vacio;
 	}
+	TTF_Init();
 
-	font = new Texturas;
+	font = new Texturas(100, 80, 50, 50);
 	font->loadFuente("../fonts/AlexBrush-Regular.ttf", 200);
 
 	fontColor.r = 218;
@@ -32,7 +33,6 @@ Tienda::Tienda(Game* juego) :Estado(juego)
 
 
 void Tienda::draw() {
-	sel->draw();
 
 	for (auto i : objs) {
 		i->draw();
@@ -42,6 +42,7 @@ void Tienda::draw() {
 	}
 	font->draw(ptsjuego->pRender, nullptr, &font->myFont.rectFont);
 	font->loadFromText(ptsjuego->pRender, std::to_string(ptsjuego->coins), fontColor);
+	sel->draw();
 }
 
 
