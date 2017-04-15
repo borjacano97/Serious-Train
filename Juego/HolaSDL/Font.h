@@ -12,6 +12,7 @@ public:
 
 	bool load(std::string text, int tamaño);
 	SDL_Surface* textSolid(std::string texto, SDL_Color color);
+	SDL_Rect setRect(int h, int w, int x, int y);
 	//void freeSurface(SDL_Surface* surf);
 
 };

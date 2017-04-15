@@ -11,12 +11,6 @@ Texturas::Texturas() //constructora
 	alto = 0;
 }
 
-Texturas::Texturas(int h, int w, int x, int y) {
-	rectFont.h = h;
-	rectFont.w = w;
-	rectFont.x = x;
-	rectFont.y = y;
-}
 
 
 Texturas::~Texturas() // destructora
@@ -24,6 +18,8 @@ Texturas::~Texturas() // destructora
 	//SDL_DestroyTexture(ptext);
 	ptext = nullptr;
 }
+
+
 
 //load para cargar la imagen y asignar un valor a alto y ancho
 bool Texturas::load(SDL_Renderer*prender, std::string const& nombArch) {
@@ -69,3 +65,13 @@ bool Texturas::loadFuente(std::string fuente, int tamano) {
 	myFont.load(fuente, tamano);
 	return true;
 }
+
+/*SDL_Rect Texturas::setRect(int h, int w, int x, int y) {
+	//return rectFont = { h, w, x, y };
+	rectFont.h = h;
+	rectFont.w = w;
+	rectFont.x = x;
+	rectFont.y = y;
+	std::cout << "Pues si salgo" << std::endl;
+	return rectFont;
+}*/

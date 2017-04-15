@@ -19,7 +19,7 @@ Play::Play(Game * j) : Estado(j)
 	killed = 0;
 	emax = 5 * ptsjuego->getNivel();
 
-	font = new Texturas();
+	font = new Texturas(/*80, 80, 50, 50*/);
 	font->loadFuente("../fonts/AlexBrush-Regular.ttf", 200);
 
 	fontColor.r = 218;
@@ -61,7 +61,7 @@ void Play::freeObjects() {
 }
 void Play::draw() {
 
-	font->draw(ptsjuego->pRender, nullptr, &font->myFont.rectFont);
+	font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(80, 80, 50, 50));
 	font->loadFromText(ptsjuego->pRender, /* + Aqui podria ir imagen de monedas */ std::to_string(ptsjuego->coins), fontColor);
 
 	for (auto i : tren) {

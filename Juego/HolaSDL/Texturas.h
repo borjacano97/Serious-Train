@@ -11,7 +11,6 @@ class Texturas
 {
 public:
 	Texturas();
-	Texturas(int h, int w, int x, int y);
 	~Texturas();
 	//métodos públicos para cargar y pintar
 	bool load(SDL_Renderer*prender, std::string const& nombArch);
@@ -22,7 +21,7 @@ public:
 
 	bool loadFuente(std::string fuente, int tamaño);
 	bool loadFromText(SDL_Renderer* pRender, const std::string texture, SDL_Color color);
-
+	//SDL_Rect setRect(int h, int w, int x, int y);
 private:
 	SDL_Texture* ptext;
 	SDL_Surface* pSurface;

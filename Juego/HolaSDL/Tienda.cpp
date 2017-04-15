@@ -23,8 +23,10 @@ Tienda::Tienda(Game* juego) :Estado(juego)
 	}
 	TTF_Init();
 
-	font = new Texturas(100, 80, 50, 50);
+	font = new Texturas;
 	font->loadFuente("../fonts/AlexBrush-Regular.ttf", 200);
+
+	//font->setRect(80, 80, 50, 50);
 
 	fontColor.r = 218;
 	fontColor.g = 165;
@@ -40,7 +42,7 @@ void Tienda::draw() {
 	for (auto i : objetos) {
 		i->draw();
 	}
-	font->draw(ptsjuego->pRender, nullptr, &font->myFont.rectFont);
+	font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(80, 50, 1150, 50));
 	font->loadFromText(ptsjuego->pRender, std::to_string(ptsjuego->coins), fontColor);
 	sel->draw();
 }
