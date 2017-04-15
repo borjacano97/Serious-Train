@@ -11,7 +11,7 @@ BotonComprar::BotonComprar(Game* juego, Tienda*ti, ObjetoTienda*obj, Game::Textu
 	Ttextura = text;
 
 	alto = 70;
-	ancho = 90;
+	ancho = 170;
 
 	pos.set(x, y);
 }
