@@ -42,7 +42,7 @@ void Tienda::draw() {
 	for (auto i : objetos) {
 		i->draw();
 	}
-	font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(80, 50, 1150, 50));
+	font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(50, 45, 1100, 30));
 	font->loadFromText(ptsjuego->pRender, std::to_string(ptsjuego->coins), fontColor);
 	sel->draw();
 }
