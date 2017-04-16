@@ -40,9 +40,13 @@ void Enemigo::update(Uint32 delta) {
 		if (i >= Enemigo::anchoc) i = ancho;
 		j = 0;
 	}
-	if (!parado)
+	if (!parado) {
+		pos.y += (delta / 5);
+
 		pos.x += vel*delta;//*dir //someday 
 						   //me pone que puede haber perdida de datos porque vel es float y lo demas int xd
+		
+	}
 }
 void Enemigo::draw() {
 
