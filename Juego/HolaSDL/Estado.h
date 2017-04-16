@@ -13,6 +13,7 @@ public:
 	void onClick();
 	void update(Uint32 d){}
 	void move(char c){}
+	void select(Uint32 n){}
 	// Estos métodos solo se pueden quitar si TODOS los miembros que heredan de esto tienen
 	// implementados dicho método. Si hay algún estado que por ejemplo no necesita un onClick
 	// lo coge directamente de esta clase, y por ello el cuerpo está vacío o tiene un cuerpo propio a 

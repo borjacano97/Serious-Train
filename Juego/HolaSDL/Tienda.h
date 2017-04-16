@@ -15,6 +15,8 @@ public:
 	void draw();
 	void onClick();
 	void comprar(ObjetoTienda*o) { o->desbloquear(); ptsjuego->buy(o->getPrecio()); }
+	void select(Uint32 n);
+	void colocarVagon(Game::Vagon_t v) { vagonesNivel[seleccionado] = v; std::cout << seleccionado;	}
 private:
 	static void recolocar(Game * jg);
 	static void jugar(Game * jg);
@@ -23,8 +25,10 @@ private:
 	SDL_Color fontColor;
 
 	Selector* sel;
-	std::vector <Game::Vagon_t> vagonesNivel; // va a contener los tipos de vagones que pasarán a cada nvl sin locomotora
+	
 	std::vector <ObjetoTienda*> objs; // armas y vagones del nivel
+	std::vector <Game::Vagon_t> vagonesNivel; // va a contener los tipos de vagones que pasarán a cada nvl sin locomotora
+	int seleccionado = 0;
 };
 
 #endif

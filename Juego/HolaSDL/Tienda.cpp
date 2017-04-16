@@ -10,15 +10,18 @@ Tienda::Tienda(Game* juego) :Estado(juego)
 {
 
 	sel = new Selector(ptsjuego, Game::TRect, 20, 170);
+
 	objetos.emplace_back(new Button(ptsjuego, Game::TBtienda1, 1100, 625, jugar));
-	objetos.emplace_back(new Button(ptsjuego, Game::TBtienda2, -25, 625, recolocar));
-	objs.emplace_back(new ObjetoTienda(ptsjuego, this, Game::TVacioBloq, Game::TVagon1, 200, 200, 100));
+	objetos.emplace_back(new Button(ptsjuego, Game::TBtienda2, -25, 635, recolocar));
+
+	objs.emplace_back(new ObjetoTienda(ptsjuego, this, Game::TVacioBloq, Game::TVagon1, 200, 200, 100, Game::Vagon_t::Automatico));
 
 	objetos.emplace_back(new BotonComprar(ptsjuego, this, objs[0], Game::TBotonB, 500, 200));
 
-	for (auto i : vagonesNivel) {
-		i = Game::Vagon_t::Vacio;
+	for (int i = 0; i < 4; i++) {
+		vagonesNivel.emplace_back(Game::Vagon_t::Vacio);
 	}
+
 	TTF_Init();
 
 	font = new Texturas(100, 80, 50, 50);
@@ -47,14 +50,16 @@ void Tienda::draw() {
 
 
 void Tienda::jugar(Game * jg) {
+	// hacemos pushState para "salvar" la tienda y no tener que volver a hacer un new tienda
+	// ya que perderíamos los datos de los objetos desbloqueados
 	switch (jg->getNivel())
 	{
 	case(1) : {
-		jg->pushState(new Nivel1(jg)); 
-		// hacemos pushState para "salvar" la tienda y no tener que volver a hacer un new tienda
-		// ya que perderíamos los datos de los objetos desbloqueados
+		recolocar(jg);
+		jg->pushState(new Nivel1(jg /*, vagonesNivel*/)); 
 		break; }
 	case(2) : {
+		recolocar(jg);
 		jg->pushState(new Nivel2(jg));
 		break; }
 	default:
@@ -63,7 +68,11 @@ void Tienda::jugar(Game * jg) {
 }
 
 void Tienda::recolocar(Game * jg){
-	// no se como vamos a hacer esto xd
+	// for (auto i: vagonesNivel) i = Game::Vagon_t::Vacio
+	// seleccionado = 0;
+	// sel->update(0);
+	// for (auto o: objs) o->rehacer();
+	// for (auto d: vagonsPicture) delete d; // aun no hecho
 }
 
 void Tienda::onClick() {
@@ -84,7 +93,8 @@ void Tienda::onClick() {
 		j--;
 	}
 }
-/*void Tienda::update(Uint32 n) {
-	std::cout << n;
+
+void Tienda::select(Uint32 n) {
+	seleccionado = n - 1;
 	sel->update(n);
-}*/
+}

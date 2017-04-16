@@ -18,6 +18,7 @@ public:
 	virtual void onClick() = 0;
 	virtual void move(char c) = 0;
 	virtual char getEst() = 0;
+	virtual void select(Uint32 n) = 0;
 };
 
 
