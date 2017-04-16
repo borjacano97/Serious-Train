@@ -81,10 +81,10 @@
     <ClCompile Include="ObjetoTienda.cpp">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
-    <ClCompile Include="BotonComprar.cpp">
+    <ClCompile Include="Selector.cpp">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
-    <ClCompile Include="Selector.cpp">
+    <ClCompile Include="BotonTienda.cpp">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
   </ItemGroup>
@@ -158,10 +158,10 @@
     <ClInclude Include="ObjetoTienda.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="BotonComprar.h">
+    <ClInclude Include="Selector.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="Selector.h">
+    <ClInclude Include="BotonTienda.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>

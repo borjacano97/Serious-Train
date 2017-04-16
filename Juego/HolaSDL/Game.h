@@ -20,7 +20,7 @@ public:
 	enum Enemigo_t { Normal, Rapido/*...*/ };
 	enum Vagon_t { Locom, Vacio, Automatico, Laser, Lanzallamas/*...*/ };
 	enum Bala_t { Piedra, Rayo, Fuego/*...*/ };
-
+	enum Boton_t { Comprar, Jugar, Recolocar/*...*/ };
 
 	Texturas* getTextura(Texturas_t et) const { return texts[et]; }
 	SDL_Renderer* getRender() const;

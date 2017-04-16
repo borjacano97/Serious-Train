@@ -6,7 +6,7 @@ class Nivel2 :
 	public Play
 {
 public:
-	Nivel2(Game * j/*, std::vector <Game::Vagon_t> v*/);
+	Nivel2(Game * j, std::vector <Game::Vagon_t> v);
 	~Nivel2();
 	void update(Uint32 delta);
 private:

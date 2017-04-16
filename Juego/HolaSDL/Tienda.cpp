@@ -3,20 +3,22 @@
 #include "Nivel1.h"
 #include "Nivel2.h"
 #include "ObjetoTienda.h"
-#include "BotonComprar.h"
+#include "BotonTienda.h"
 #include "Selector.h"
 
 Tienda::Tienda(Game* juego) :Estado(juego)
 {
-
+	// SELECTOR
 	sel = new Selector(ptsjuego, Game::TRect, 20, 170);
 
-	objetos.emplace_back(new Button(ptsjuego, Game::TBtienda1, 1100, 625, jugar));
-	objetos.emplace_back(new Button(ptsjuego, Game::TBtienda2, -25, 635, recolocar));
+	// BOTONES PRINCIPALES 
+	botones.emplace_back(new BotonTienda(ptsjuego, this, NULL, Game::TBtienda1, 1130, 650, Game::Boton_t::Jugar));
+	botones.emplace_back(new BotonTienda(ptsjuego, this, NULL, Game::TBtienda2, -10, 650, Game::Boton_t::Recolocar));
 
+	//OBJETOS PARA COMPRAR Y RESPECTIVOS BOTONES
 	objs.emplace_back(new ObjetoTienda(ptsjuego, this, Game::TVacioBloq, Game::TVagon1, 200, 200, 100, Game::Vagon_t::Automatico));
 
-	objetos.emplace_back(new BotonComprar(ptsjuego, this, objs[0], Game::TBotonB, 500, 200));
+	botones.emplace_back(new BotonTienda(ptsjuego, this, objs[0], Game::TBotonB, 500, 200, Game::Boton_t::Comprar));
 
 	for (int i = 0; i < 4; i++) {
 		vagonesNivel.emplace_back(Game::Vagon_t::Vacio);
@@ -40,7 +42,7 @@ void Tienda::draw() {
 	for (auto i : objs) {
 		i->draw();
 	}
-	for (auto i : objetos) {
+	for (auto i : botones) {
 		i->draw();
 	}
 	font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(50, 45, 1100, 30));
@@ -55,12 +57,12 @@ void Tienda::jugar(Game * jg) {
 	switch (jg->getNivel())
 	{
 	case(1) : {
+		jg->pushState(new Nivel1(jg, vagonesNivel));
 		recolocar(jg);
-		jg->pushState(new Nivel1(jg /*, vagonesNivel*/)); 
 		break; }
 	case(2) : {
+		jg->pushState(new Nivel2(jg, vagonesNivel));
 		recolocar(jg);
-		jg->pushState(new Nivel2(jg));
 		break; }
 	default:
 		break;
@@ -68,20 +70,20 @@ void Tienda::jugar(Game * jg) {
 }
 
 void Tienda::recolocar(Game * jg){
-	// for (auto i: vagonesNivel) i = Game::Vagon_t::Vacio
-	// seleccionado = 0;
-	// sel->update(0);
-	// for (auto o: objs) o->rehacer();
+	for (auto i : vagonesNivel) i = Game::Vagon_t::Vacio; // falta comprobar esto 
+	 seleccionado = 0;
+	 sel->update(1);
+	 for (auto o: objs) o->rehacer();
 	// for (auto d: vagonsPicture) delete d; // aun no hecho
 }
 
 void Tienda::onClick() {
 	bool clickeado = false;
 
-	int i = objetos.size() - 1;
+	int i = botones.size() - 1;
 	while (!clickeado && i >= 0)
 	{
-		if (objetos[i]->onClick())
+		if (botones[i]->onClick())
 			clickeado = true;
 		i--;
 	}

@@ -69,7 +69,7 @@
   <ItemGroup>
     <ClCompile Include="Bala.cpp" />
     <ClCompile Include="BarraHP.cpp" />
-    <ClCompile Include="BotonComprar.cpp" />
+    <ClCompile Include="BotonTienda.cpp" />
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="Enemigo.cpp" />
     <ClCompile Include="Error.cpp" />
@@ -95,7 +95,7 @@
   <ItemGroup>
     <ClInclude Include="Bala.h" />
     <ClInclude Include="BarraHP.h" />
-    <ClInclude Include="BotonComprar.h" />
+    <ClInclude Include="BotonTienda.h" />
     <ClInclude Include="Button.h" />
     <ClInclude Include="Enemigo.h" />
     <ClInclude Include="Error.h" />
