@@ -18,7 +18,7 @@ public:
 
 	void comprar(ObjetoTienda*o) { o->desbloquear(); ptsjuego->buy(o->getPrecio()); }
 	void select(Uint32 n);
-	void colocarVagon(Game::Vagon_t v) { vagonesNivel[seleccionado] = v; std::cout << seleccionado;	}
+	void colocarVagon(Game::Vagon_t v);
 
 	void recolocar(Game * jg);
 	void jugar(Game * jg);
@@ -30,6 +30,7 @@ private:
 
 	std::vector <BotonTienda*> botones;
 	std::vector <ObjetoTienda*> objs; // armas y vagones del nivel
+	std::vector <ObjetoTienda*> vags; // vagones visuales en el tren izq
 	std::vector <Game::Vagon_t> vagonesNivel; // va a contener los tipos de vagones que pasarán a cada nvl sin locomotora
 	int seleccionado = 0;
 };

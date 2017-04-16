@@ -9,7 +9,7 @@ class Vagon :
 	public Objeto
 {
 public:
-	Vagon(Game* juego, Play*pl, Game::Texturas_t text, float x, float y, Game::Vagon_t t);
+	Vagon(Game* juego, Play*pl, float x, float y, Game::Vagon_t t);
 	~Vagon(){}
 	void update(Uint32 delta);
 private: 

@@ -9,7 +9,7 @@ class ObjetoTienda :
 	public Objeto
 {
 public:
-	ObjetoTienda(Game* juego, Tienda*ti, Game::Texturas_t bloq, Game::Texturas_t desblo, float x, float y, int p, Game::Vagon_t tipo);
+	ObjetoTienda(Game* juego, Tienda*ti, float x, float y, int p, Game::Vagon_t tipo, bool est);
 	~ObjetoTienda(){}
 	bool onClick();
 	void desbloquear() { bloqueado = false; Ttextura = desb;}
@@ -19,6 +19,7 @@ public:
 private: 
 	bool bloqueado = true;
 	bool usado = false;
+	bool estatico;
 	Tienda*t;
 
 	int mpbx, mpby, precio; // pos raton

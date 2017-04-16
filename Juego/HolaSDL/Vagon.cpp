@@ -2,10 +2,9 @@
 #include "Play.h"
 
 
-Vagon::Vagon(Game* juego, Play*pl, Game::Texturas_t text, float x, float y, Game::Vagon_t t)
+Vagon::Vagon(Game* juego, Play*pl, float x, float y, Game::Vagon_t t)
 {
 	juegootp = juego;
-	Ttextura = text;
 	p= pl;
 
 	alto = 151;
@@ -16,6 +15,22 @@ Vagon::Vagon(Game* juego, Play*pl, Game::Texturas_t text, float x, float y, Game
 	tipo = t;
 	
 	disparo = false;
+
+	switch (tipo)
+	{
+	case Game::Locom: Ttextura = Game::Texturas_t::TLocomotora;
+		break;
+	case Game::Vacio: Ttextura = Game::Texturas_t::TVagon1;
+		break;
+	case Game::Automatico: Ttextura = Game::Texturas_t::TVagonAuto;
+		break;
+	case Game::Laser: Ttextura = Game::Texturas_t::TVagon1;
+		break;
+	case Game::Lanzallamas: Ttextura = Game::Texturas_t::TVagon1;
+		break;
+	default:
+		break;
+	}
 }
 
 void Vagon::update(Uint32 delta) {

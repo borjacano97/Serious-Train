@@ -7,7 +7,7 @@ Nivel1::Nivel1(Game * j, std::vector <Game::Vagon_t> v) : Play(j)
 	enem = 0;
 	emax = 20;
 	for (unsigned int i = 0; i < 4; i++) {
-		tren.emplace_back(new Vagon(ptsjuego, this, Game::TVagon1, 580, 100 +150*i, v[i]));
+		tren.emplace_back(new Vagon(ptsjuego, this, 580, 100 +150*i, v[i]));
 	}	
 }
 

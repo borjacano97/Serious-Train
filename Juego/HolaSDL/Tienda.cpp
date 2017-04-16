@@ -16,7 +16,7 @@ Tienda::Tienda(Game* juego) :Estado(juego)
 	botones.emplace_back(new BotonTienda(ptsjuego, this, NULL, Game::TBtienda2, -10, 650, Game::Boton_t::Recolocar));
 
 	//OBJETOS PARA COMPRAR Y RESPECTIVOS BOTONES
-	objs.emplace_back(new ObjetoTienda(ptsjuego, this, Game::TVacioBloq, Game::TVagon1, 200, 200, 100, Game::Vagon_t::Automatico));
+	objs.emplace_back(new ObjetoTienda(ptsjuego, this, 200, 200, 100, Game::Vagon_t::Automatico, false));
 
 	botones.emplace_back(new BotonTienda(ptsjuego, this, objs[0], Game::TBotonB, 500, 200, Game::Boton_t::Comprar));
 
@@ -41,6 +41,10 @@ void Tienda::draw() {
 
 	for (auto i : objs) {
 		i->draw();
+	}
+	
+	for (auto i : vags) {
+		if (i!=nullptr)	i->draw();
 	}
 	for (auto i : botones) {
 		i->draw();
@@ -70,11 +74,14 @@ void Tienda::jugar(Game * jg) {
 }
 
 void Tienda::recolocar(Game * jg){
-	for (auto i : vagonesNivel) i = Game::Vagon_t::Vacio; // falta comprobar esto 
+	for (int i = 0; i < 4; i++) vagonesNivel[i] = Game::Vagon_t::Vacio; 
 	 seleccionado = 0;
 	 sel->update(1);
 	 for (auto o: objs) o->rehacer();
-	// for (auto d: vagonsPicture) delete d; // aun no hecho
+	 for (unsigned int i = 0; i < vags.size(); i++) {
+		 delete vags[i];
+		 vags[i] = nullptr;
+	 }
 }
 
 void Tienda::onClick() {
@@ -99,4 +106,8 @@ void Tienda::onClick() {
 void Tienda::select(Uint32 n) {
 	seleccionado = n - 1;
 	sel->update(n);
+}
+void Tienda::colocarVagon(Game::Vagon_t v){ 
+	vagonesNivel[seleccionado] = v; 
+	vags.emplace_back(new ObjetoTienda(ptsjuego, this, 30, seleccionado*130 + 170, 100, v, true));
 }

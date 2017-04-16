@@ -40,7 +40,7 @@ bool Play::initObjects() { // creaci�n de los objetos dando un puntero, una te
 	tg = new Trigger(ptsjuego, 620, -20);
 	player = new Personaje(ptsjuego, Game::TPersonaje, 650, 500);
 	TrainHp = new barraHP(ptsjuego, Game::TBarra, 10, 15, 0);
-	tren.emplace_back(new Vagon(ptsjuego, this, Game::TLocomotora, 580, -50, Game::Vagon_t::Locom));
+	tren.emplace_back(new Vagon(ptsjuego, this, 580, -50, Game::Vagon_t::Locom));
 
 	TTF_Init();
 	return true;
