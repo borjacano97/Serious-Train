@@ -17,10 +17,12 @@ Enemigo::Enemigo(Game* juego, Game::Texturas_t text, float x, float y, Game::Ene
 	switch (_clase)
 	{
 	case Game::Enemigo_t::Normal:
+		hp = 100;
 		points = 5;
 		vel = 0.1;
 		break;
 	case Game::Enemigo_t::Rapido:
+		hp = 50;
 		points = 10;
 		vel = 0.3;
 		break;
@@ -31,7 +33,7 @@ Enemigo::Enemigo(Game* juego, Game::Texturas_t text, float x, float y, Game::Ene
 }
 
 void Enemigo::update(Uint32 delta) {
-	
+	if (hp <= 0) destruido = true;
 	j += delta;
 	if (j >= 150) {
 		i += ancho;
@@ -44,8 +46,6 @@ void Enemigo::update(Uint32 delta) {
 		pos.y += (delta / 4) + 0.050;
 
 		pos.x += vel*delta;//*dir //someday 
-						   //me pone que puede haber perdida de datos porque vel es float y lo demas int xd
-		
 	}
 }
 void Enemigo::draw() {
@@ -63,10 +63,6 @@ void Enemigo::draw() {
 
 	SDL_Renderer* render = juegootp->getRender();
 	juegootp->getTextura(Ttextura)->draw(render, &rectA, &rect);
-
-
-
-
 }
 
 

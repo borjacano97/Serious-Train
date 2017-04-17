@@ -10,7 +10,7 @@ public:
 	~Bala() {}
 	void update(Uint32 delta);
 private:
-	int dir, cont;
+	int dir, cont, dmg;
 	float vel;
 	Game::Bala_t tipo;
 	Play*p;

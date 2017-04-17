@@ -52,11 +52,7 @@ void Vagon::update(Uint32 delta) {
 			cont = 0;
 			for each (auto var in p->enems)
 			{
-				if (var != nullptr && pos.y - var->getPos().y <= 20 && pos.y - var->getPos().y >= -100) {
-					juegootp->addCoins(var->getPoints());
-					var->destroy();
-					p->killed++;
-				}
+				if (var != nullptr && pos.y - var->getPos().y <= 20 && pos.y - var->getPos().y >= -100) 	var->destroy();
 			}
 		}
 		break;

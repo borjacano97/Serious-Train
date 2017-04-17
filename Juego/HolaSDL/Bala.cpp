@@ -14,9 +14,10 @@ Bala::Bala(Game* juego, Play*pl, Game::Texturas_t text, float x, float y, int mi
 	switch (tipo)
 	{
 	case Game::Piedra:
-		alto = 20;  // "Esto para probar, luego..."
+		alto = 20; 
 		ancho = 20;
 		vel = 0.5;
+		dmg = 50;
 		break;
 	case Game::Rayo:
 		alto = 1400;
@@ -27,6 +28,7 @@ Bala::Bala(Game* juego, Play*pl, Game::Texturas_t text, float x, float y, int mi
 		alto = 100;
 		ancho = 100;
 		vel = 0;
+		dmg = 1;
 		break;
 	default:
 		break;
@@ -47,10 +49,8 @@ void Bala::update(Uint32 delta) {
 		for each (auto var in p->enems)
 		{
 			if (var != nullptr && var->collision(this)) {
-				juegootp->addCoins(var->getPoints());
-				var->destroy();
+				var->damage(dmg);
 				destruido = true;
-				p->killed++;
 			}
 		}
 		break;
@@ -67,11 +67,8 @@ void Bala::update(Uint32 delta) {
 		else ancho += 5;
 		for each (auto var in p->enems)
 		{
-			if (var != nullptr &&  var->collision(this)) {
-				juegootp->addCoins(var->getPoints());
-				var->destroy();
-				p->killed++;
-			}
+			if (var != nullptr &&  var->collision(this)) var->damage(dmg);
+			
 		}
 
 		if (cont >= 1000) destruido = true;
