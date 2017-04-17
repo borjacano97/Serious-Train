@@ -41,7 +41,7 @@ void Enemigo::update(Uint32 delta) {
 		j = 0;
 	}
 	if (!parado) {
-		pos.y += (delta / 5);
+		pos.y += (delta / 4) + 0.050;
 
 		pos.x += vel*delta;//*dir //someday 
 						   //me pone que puede haber perdida de datos porque vel es float y lo demas int xd

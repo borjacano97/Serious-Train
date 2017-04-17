@@ -22,6 +22,9 @@ Play::Play(Game * j) : Estado(j)
 	font = new Texturas(/*80, 80, 50, 50*/);
 	font->loadFuente("../fonts/AlexBrush-Regular.ttf", 200);
 
+	sonido = new Sound;
+	sonido->playMusic("../sounds/prueba.mp3");
+
 	fontColor.r = 218;
 	fontColor.g = 165;
 	fontColor.b = 32;
@@ -43,6 +46,10 @@ bool Play::initObjects() { // creaci�n de los objetos dando un puntero, una te
 	tren.emplace_back(new Vagon(ptsjuego, this, 580, -50, Game::Vagon_t::Locom));
 
 	TTF_Init();
+	if (Mix_OpenAudio(22050, MIX_DEFAULT_FORMAT, 2, 4096) == -1)
+	{
+		return false;
+	}
 	return true;
 }
 

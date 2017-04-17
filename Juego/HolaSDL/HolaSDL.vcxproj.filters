@@ -87,6 +87,9 @@
     <ClCompile Include="BotonTienda.cpp">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
+    <ClCompile Include="Sound.cpp">
+      <Filter>Archivos de código fuente</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bala.h">
@@ -162,6 +165,9 @@
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="BotonTienda.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>

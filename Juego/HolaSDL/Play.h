@@ -8,6 +8,7 @@
 #include "BarraHP.h"
 #include "Trigger.h"
 #include "Bala.h"
+#include "Sound.h"
 
 using namespace std;
 
@@ -35,6 +36,8 @@ private:
 	barraHP* TrainHp;
 	Texturas* font;
 	SDL_Color fontColor;
+	Sound* sonido;
+
 
 	bool fin;
 	bool initObjects(); //crear y destruir los objetos del juego
