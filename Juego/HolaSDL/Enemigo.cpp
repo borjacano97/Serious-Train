@@ -17,12 +17,12 @@ Enemigo::Enemigo(Game* juego, Game::Texturas_t text, float x, float y, Game::Ene
 	switch (_clase)
 	{
 	case Game::Enemigo_t::Normal:
-		hp = 100;
+		hp = 1000;
 		points = 5;
 		vel = 0.1;
 		break;
 	case Game::Enemigo_t::Rapido:
-		hp = 50;
+		hp = 500;
 		points = 10;
 		vel = 0.3;
 		break;
@@ -43,7 +43,7 @@ void Enemigo::update(Uint32 delta) {
 		j = 0;
 	}
 	if (!parado) {
-		pos.y += (delta / 4) + 0.050;
+		pos.y += (delta / 5) + 0.050;
 
 		pos.x += vel*delta;//*dir //someday 
 	}

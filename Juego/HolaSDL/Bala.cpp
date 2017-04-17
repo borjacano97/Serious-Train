@@ -17,7 +17,7 @@ Bala::Bala(Game* juego, Play*pl, Game::Texturas_t text, float x, float y, int mi
 		alto = 20; 
 		ancho = 20;
 		vel = 0.5;
-		dmg = 50;
+		dmg = 500;
 		break;
 	case Game::Rayo:
 		alto = 1400;
