@@ -18,7 +18,7 @@ Tienda::Tienda(Game* juego) :Estado(juego)
 	//OBJETOS PARA COMPRAR Y RESPECTIVOS BOTONES
 	objs.emplace_back(new ObjetoTienda(ptsjuego, this, 200, 200, 100, Game::Vagon_t::Automatico, false));
 
-	botones.emplace_back(new BotonTienda(ptsjuego, this, objs[0], Game::TBotonB, 500, 200, Game::Boton_t::Comprar));
+	botones.emplace_back(new BotonTienda(ptsjuego, this, objs[0], Game::TBotonPosible, 400, 220, Game::Boton_t::Comprar));
 
 	for (int i = 0; i < 4; i++) {
 		vagonesNivel.emplace_back(Game::Vagon_t::Vacio);

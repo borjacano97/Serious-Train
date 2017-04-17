@@ -23,9 +23,12 @@ private:
 	bool estatico;
 	Tienda*t;
 	Texturas* puntosText;
+	Texturas* tipoText;
+	SDL_Color tipoTextColor;
 	SDL_Color fontColor;
 
 	int mpbx, mpby, precio; // pos raton
+	std::string tipoVagon;
 
 	Game::Texturas_t desb;
 	Game::Vagon_t tip;
