@@ -43,7 +43,7 @@ void Enemigo::update(Uint32 delta) {
 		j = 0;
 	}
 	if (!parado) {
-		pos.y += (delta / 5) + 0.050;
+		pos.y += (delta / 5) + 0.04;
 
 		pos.x += vel*delta;//*dir //someday 
 	}
