@@ -62,7 +62,12 @@ void Enemigo::draw() {
 
 
 	SDL_Renderer* render = juegootp->getRender();
-	juegootp->getTextura(Ttextura)->draw(render, &rectA, &rect);
+	if (rect.x < 640) {
+		juegootp->getTextura(Ttextura)->draw(render, &rectA, &rect);
+	}
+	else if (rect.x > 640) {
+		juegootp->getTextura(Ttextura)->drawInvertido(render, &rectA, &rect);
+	}
 }
 
 

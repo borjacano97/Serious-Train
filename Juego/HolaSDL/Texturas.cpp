@@ -55,6 +55,9 @@ bool Texturas::load(SDL_Renderer*prender, std::string const& nombArch) {
 void Texturas::draw(SDL_Renderer*prender, SDL_Rect* const& rect2, SDL_Rect* const& rect) {
 	SDL_RenderCopy(prender, ptext, rect2, rect);
 }
+void Texturas::drawInvertido(SDL_Renderer*prender, SDL_Rect* const& rect2, SDL_Rect* const& rect) {
+	SDL_RenderCopyEx(prender, ptext, rect2, rect, 0, NULL, SDL_FLIP_HORIZONTAL);
+}
 
 //Metodos para la fuente
 bool Texturas::loadFromText(SDL_Renderer* pRenderer, const std::string texture, SDL_Color color) {
