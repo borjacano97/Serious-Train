@@ -28,6 +28,11 @@ Vagon::Vagon(Game* juego, Play*pl, float x, float y, Game::Vagon_t t)
 		break;
 	case Game::Lanzallamas: Ttextura = Game::Texturas_t::TVagon1;
 		break;
+	case Game::Escudo: {
+		Ttextura = Game::Texturas_t::TVagon1; 
+		p->TrainHp->giveHP(150);
+	}
+		break;
 	default:
 		break;
 	}

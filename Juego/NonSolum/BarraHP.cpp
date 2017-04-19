@@ -2,13 +2,13 @@
 
 
 
-barraHP::barraHP(Game* juego, Game::Texturas_t text, float x, float y, int extraHP)
+barraHP::barraHP(Game* juego, Game::Texturas_t text, float x, float y)
 {
 	juegootp = juego;
 	Ttextura = text;
 
 	alto = 50;
-	ancho = 200 + extraHP;
+	ancho = 200 ;
 
 	pos.set(x, y);
 

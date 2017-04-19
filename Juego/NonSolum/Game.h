@@ -18,7 +18,7 @@ public:
 		TFondo, TFondoT, TPersonaje, TEnemigo, TEnemigo2, TLocomotora, TVagon1, TVacioBloq, TBarra, TBotonJ, TBotonS, TBotonC, TBotonB, 
 		TBtienda1, TBtienda2, Tlose, TWin, TRoca, TLaser, TFuegod, TFuegoi, TRect, TVagonAuto, TBotonPosible};
 	enum Enemigo_t { Normal, Rapido, Tank, ElQueDispara/*...*/ };
-	enum Vagon_t { Locom, Vacio, Automatico, Laser, Lanzallamas/*...*/ };
+	enum Vagon_t { Locom, Vacio, Automatico, Laser, Lanzallamas, Escudo/*...*/ };
 	enum Bala_t { BalaEnem, Piedra, Rayo, Fuego/*...*/ };
 	enum Boton_t { Comprar, Jugar, Recolocar/*...*/ };
 

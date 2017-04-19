@@ -93,9 +93,6 @@
     <ClCompile Include="Objeto.cpp">
       <Filter>Archivos de código fuente\Abstractas/Padres</Filter>
     </ClCompile>
-    <ClCompile Include="ObjetoTienda.cpp">
-      <Filter>Archivos de código fuente\Abstractas/Padres</Filter>
-    </ClCompile>
     <ClCompile Include="Font.cpp">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
@@ -119,6 +116,9 @@
     </ClCompile>
     <ClCompile Include="Nivel4.cpp">
       <Filter>Archivos de código fuente\Niveles</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjetoTienda.cpp">
+      <Filter>Archivos de código fuente\Objetos</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -156,9 +156,6 @@
       <Filter>Archivos de encabezado\Estados</Filter>
     </ClInclude>
     <ClInclude Include="Objeto.h">
-      <Filter>Archivos de encabezado\Abstractas/Padres</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjetoTienda.h">
       <Filter>Archivos de encabezado\Abstractas/Padres</Filter>
     </ClInclude>
     <ClInclude Include="Pausa.h">
@@ -205,6 +202,9 @@
     </ClInclude>
     <ClInclude Include="Nivel4.h">
       <Filter>Archivos de encabezado\Niveles</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjetoTienda.h">
+      <Filter>Archivos de encabezado\Objetos</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
