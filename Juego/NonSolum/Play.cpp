@@ -121,7 +121,7 @@ void Play::update(Uint32 delta) {
 
 			if (enems[i] != nullptr) {
 				if (tg->collision(enems[i])) {
-					TrainHp->move('h');
+					TrainHp->move('z');
 					enems[i]->parar();
 				}
 				enems[i]->update(delta);

@@ -20,9 +20,14 @@ void barraHP::update(Uint32 delta) {
 	if (ancho <= 0) destruido = true;
 }
 void barraHP::move(char c) {
-	cont++;
-	if (cont >= 50) {
-		cont = 0;
-		ancho--;
-	}	
+	if (c == 'b'){ //daño por bala
+		ancho -= 10;
+	}
+	if (c == 'z'){ // daño por zombie
+		cont++;
+		if (cont >= 50) {
+			cont = 0;
+			ancho--;
+		}
+	}
 }

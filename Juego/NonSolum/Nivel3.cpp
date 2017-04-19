@@ -22,14 +22,14 @@ void Nivel3::update(Uint32 delta) {
 		aleatorio = rand() % 10000; //generar zombies aleatorios
 		if (aleatorio >= 9990) {
 			izq = rand() % 2;
-			if (izq == 0) enems.emplace_back(new Enemigo(ptsjuego, Game::TEnemigo2, 0, (rand() % 550) -50, Game::Enemigo_t::Normal));
-			else enems.emplace_back(new Enemigo(ptsjuego, Game::TEnemigo2, 1300, (rand() % 550) - 50, Game::Enemigo_t::Normal));
+			if (izq == 0) enems.emplace_back(new Enemigo(ptsjuego, this, Game::TEnemigo2, 0, (rand() % 550) - 50, Game::Enemigo_t::Normal));
+			else enems.emplace_back(new Enemigo(ptsjuego, this, Game::TEnemigo2, 1300, (rand() % 550) - 50, Game::Enemigo_t::Normal));
 			enem++;
 		}
 		else if (aleatorio >= 9985) {
 			izq = rand() % 2;
-			if (izq == 0) enems.emplace_back(new Enemigo(ptsjuego, Game::TEnemigo, 0, (rand() % 550)+50, Game::Enemigo_t::Rapido));
-			else enems.emplace_back(new Enemigo(ptsjuego, Game::TEnemigo, 1300, (rand() % 550)+50 , Game::Enemigo_t::Rapido));
+			if (izq == 0) enems.emplace_back(new Enemigo(ptsjuego, this, Game::TEnemigo, 0, (rand() % 550) + 50, Game::Enemigo_t::Rapido));
+			else enems.emplace_back(new Enemigo(ptsjuego, this, Game::TEnemigo, 1300, (rand() % 550) + 50, Game::Enemigo_t::Rapido));
 			enem++;
 		}
 	}

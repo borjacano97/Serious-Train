@@ -30,6 +30,11 @@ Bala::Bala(Game* juego, Play*pl, Game::Texturas_t text, float x, float y, int mi
 		vel = 0;
 		dmg = 1;
 		break;
+	case Game::BalaEnem:
+		alto = 20;
+		ancho = 20;
+		vel = 0.5;
+		break;
 	default:
 		break;
 	}
@@ -72,6 +77,13 @@ void Bala::update(Uint32 delta) {
 		}
 
 		if (cont >= 1000) destruido = true;
+		break;
+	case Game::BalaEnem:
+		pos.x += dir * vel*delta;
+		if (p->tg->collision(this))	{
+			p->TrainHp->move('b');	
+			destruido = true;
+		}
 		break;
 	default:
 		break;

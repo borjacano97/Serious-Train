@@ -31,9 +31,9 @@ public:
 	int killed;
 
 	Trigger* tg;
+	barraHP* TrainHp;
 private:
 	Personaje* player;
-	barraHP* TrainHp;
 	Texturas* font;
 	SDL_Color fontColor;
 	Sound* sonido;

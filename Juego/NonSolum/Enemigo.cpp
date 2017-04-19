@@ -2,9 +2,10 @@
 #include "Estado.h"
 #include "Game.h"
 
-Enemigo::Enemigo(Game* juego, Game::Texturas_t text, float x, float y, Game::Enemigo_t clase)
+Enemigo::Enemigo(Game* juego, Play* pl, Game::Texturas_t text, float x, float y, Game::Enemigo_t clase)
 {
 	juegootp = juego;
+	p = pl;
 	Ttextura = text;
 
 	alto = 80;
@@ -43,23 +44,38 @@ Enemigo::Enemigo(Game* juego, Game::Texturas_t text, float x, float y, Game::Ene
 }
 
 void Enemigo::update(Uint32 delta) {
-	if (hp <= 0) destruido = true;
-	j += delta;
-	if (j >= 150) {
-		i += ancho;
-		rectA.x = i;
 
-		if (i >= Enemigo::anchoc) i = ancho;
-		j = 0;
-	}
-	if (!parado) {
-		pos.y += (delta / 5) + 0.04;
 
-		pos.x += vel*delta;//*dir //someday 
-	}
+		if (hp <= 0) destruido = true;
+		j += delta;
+		if (!parado) {
+			pos.y += (delta / 5) + 0.04;
+
+			pos.x += vel*delta;//*dir //someday 
+		}
+
+		if (_clase == Game::Enemigo_t::ElQueDispara && pos.x <= 1100 && pos.x >= 100){
+			if (disparo == nullptr)  disparo = new Bala(juegootp, p, Game::TRoca, pos.x, pos.y, vel * 10, Game::Bala_t::BalaEnem);
+			else if ( disparo->getDest()) {
+				delete disparo;
+				disparo = nullptr;
+			}
+			else disparo->update(delta);
+			 
+			parado = true;
+		}
+		else if (j >= 150){
+			i += ancho;
+			rectA.x = i;
+
+			if (i >= Enemigo::anchoc) i = ancho;
+			j = 0;
+		}
+
 }
 void Enemigo::draw() {
 
+	if (disparo != nullptr) disparo->draw();
 	rect.h = alto;
 	rect.w = ancho;
 	rect.x = pos.x;
