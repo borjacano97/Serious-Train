@@ -2,11 +2,10 @@
 #include "Estado.h"
 #include "Game.h"
 
-Enemigo::Enemigo(Game* juego, Play* pl, Game::Texturas_t text, float x, float y, Game::Enemigo_t clase)
+Enemigo::Enemigo(Game* juego, Play* pl, float x, float y, Game::Enemigo_t clase)
 {
 	juegootp = juego;
 	p = pl;
-	Ttextura = text;
 
 	alto = 80;
 	anchoc = 342;
@@ -18,21 +17,25 @@ Enemigo::Enemigo(Game* juego, Play* pl, Game::Texturas_t text, float x, float y,
 	switch (_clase)
 	{
 	case Game::Enemigo_t::Normal:
+		Ttextura = Game::Texturas_t::TEnemigo2;
 		hp = 1000;
 		points = 5;
 		vel = 0.1;
 		break;
 	case Game::Enemigo_t::Rapido:
+		Ttextura = Game::Texturas_t::TEnemigo;
 		hp = 500;
 		points = 10;
 		vel = 0.3;
 		break;
 	case Game::Enemigo_t::Tank:
+		Ttextura = Game::Texturas_t::TEnemigo2;
 		hp = 5000;
 		points = 50;
 		vel = 0.05;
 		break;
 	case Game::Enemigo_t::ElQueDispara:
+		Ttextura = Game::Texturas_t::TEnemigo2;
 		hp = 1000;
 		points = 15;
 		vel = 0.1;

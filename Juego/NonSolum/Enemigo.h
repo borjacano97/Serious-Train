@@ -7,7 +7,7 @@ class Play;
 class Enemigo: public Objeto
 {
 public:
-	Enemigo(Game* juego, Play* pl, Game::Texturas_t text, float x, float y, Game::Enemigo_t clase);
+	Enemigo(Game* juego, Play* pl,  float x, float y, Game::Enemigo_t clase);
 	~Enemigo(){}
 	void update(Uint32 delta);
 	bool getDest() { return destruido; }
