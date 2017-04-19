@@ -13,6 +13,4 @@ private:
 	int aleatorio, enem, emax, izq;
 };
 
-
 #endif
-

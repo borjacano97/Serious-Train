@@ -117,6 +117,9 @@
     <ClCompile Include="Nivel1.cpp">
       <Filter>Archivos de código fuente\Niveles</Filter>
     </ClCompile>
+    <ClCompile Include="Nivel4.cpp">
+      <Filter>Archivos de código fuente\Niveles</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Texturas.h">
@@ -147,9 +150,6 @@
       <Filter>Archivos de encabezado\Abstractas/Padres</Filter>
     </ClInclude>
     <ClInclude Include="FinNivel.h">
-      <Filter>Archivos de encabezado\Estados</Filter>
-    </ClInclude>
-    <ClInclude Include="Game.h">
       <Filter>Archivos de encabezado\Estados</Filter>
     </ClInclude>
     <ClInclude Include="Menu.h">
@@ -198,6 +198,12 @@
       <Filter>Archivos de encabezado\Niveles</Filter>
     </ClInclude>
     <ClInclude Include="Nivel1.h">
+      <Filter>Archivos de encabezado\Niveles</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Nivel4.h">
       <Filter>Archivos de encabezado\Niveles</Filter>
     </ClInclude>
   </ItemGroup>

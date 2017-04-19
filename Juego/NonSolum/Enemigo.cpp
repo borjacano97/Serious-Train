@@ -26,6 +26,16 @@ Enemigo::Enemigo(Game* juego, Game::Texturas_t text, float x, float y, Game::Ene
 		points = 10;
 		vel = 0.3;
 		break;
+	case Game::Enemigo_t::Tank:
+		hp = 5000;
+		points = 50;
+		vel = 0.05;
+		break;
+	case Game::Enemigo_t::ElQueDispara:
+		hp = 1000;
+		points = 15;
+		vel = 0.1;
+		break;
 	default:
 		break;
 	}

@@ -3,6 +3,7 @@
 #include "Nivel1.h"
 #include "Nivel2.h"
 #include "Nivel3.h"
+#include "Nivel4.h"
 #include "ObjetoTienda.h"
 #include "BotonTienda.h"
 #include "Selector.h"
@@ -19,7 +20,7 @@ Tienda::Tienda(Game* juego) :Estado(juego)
 	//OBJETOS PARA COMPRAR Y RESPECTIVOS BOTONES
 	objs.emplace_back(new ObjetoTienda(ptsjuego, this, 200, 200, 100, Game::Vagon_t::Automatico, false));
 
-	botones.emplace_back(new BotonTienda(ptsjuego, this, objs[0], Game::TBotonPosible, 400, 220, Game::Boton_t::Comprar));
+	botones.emplace_back(new BotonTienda(ptsjuego, this, objs[0], Game::TBotonPosible, 170, 340, Game::Boton_t::Comprar));
 
 	for (int i = 0; i < 4; i++) {
 		vagonesNivel.emplace_back(Game::Vagon_t::Vacio);
@@ -71,6 +72,10 @@ void Tienda::jugar(Game * jg) {
 		break; }
 	case(3) : {
 		jg->pushState(new Nivel3(jg, vagonesNivel));
+		recolocar(jg);
+		break; }
+	case(4) : {
+		jg->pushState(new Nivel4(jg, vagonesNivel));
 		recolocar(jg);
 		break; }
 	default:
