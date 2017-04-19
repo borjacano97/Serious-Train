@@ -2,6 +2,7 @@
 #include "Button.h"
 #include "Nivel1.h"
 #include "Nivel2.h"
+#include "Nivel3.h"
 #include "ObjetoTienda.h"
 #include "BotonTienda.h"
 #include "Selector.h"
@@ -66,6 +67,10 @@ void Tienda::jugar(Game * jg) {
 		break; }
 	case(2) : {
 		jg->pushState(new Nivel2(jg, vagonesNivel));
+		recolocar(jg);
+		break; }
+	case(3) : {
+		jg->pushState(new Nivel3(jg, vagonesNivel));
 		recolocar(jg);
 		break; }
 	default:

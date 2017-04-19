@@ -1,18 +1,16 @@
-#ifndef H_NIVEL1_H
-#define H_NIVEL1_H
+#ifndef H_NIVEL3_H
+#define H_NIVEL3_H
 
 #include "play.h"
-class Nivel1 :
+class Nivel3 :
 	public Play
 {
 public:
-	Nivel1(Game * j, std::vector <Game::Vagon_t> v);
-	~Nivel1();
+	Nivel3(Game * j, std::vector <Game::Vagon_t> v);
+	~Nivel3();
 	void update(Uint32 delta);
 private:
 	int aleatorio, enem, emax, izq;
 };
 
-
 #endif
-
