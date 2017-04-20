@@ -18,21 +18,21 @@ public:
 	Play(Game * j);
 	~Play();
 
-	void onClick();
 	void draw();
 	void update(Uint32 delta);
 	void move(char c);
 	char getEst() { return 'P'; }
 	int getKilled() { return killed; }
 	void finish() { fin = true; }
-	vector <Bala*> balas; // TODO mirad estándares de código
+
+	vector <Bala*> balas;
 	vector <Enemigo*> enems;
-	vector <Vagon*> tren; // TODO mirad estándares de código
+	vector <Vagon*> tren; 
 	int killed;
 
 	Trigger* tg;
 	barraHP* TrainHp;
-private:
+protected:
 	Personaje* player;
 	Texturas* font;
 	SDL_Color fontColor;

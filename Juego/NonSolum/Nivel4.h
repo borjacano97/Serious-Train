@@ -6,12 +6,14 @@ class Nivel4 :
 	public Play
 {
 public:
-	Nivel4(Game * j, std::vector <Game::Vagon_t> v);
-	~Nivel4();
+	Nivel4(Game * j, std::vector <Game::Vagon_t> v, Game::Bala_t a);
+	~Nivel4(){}
+	void onClick();
 	void update(Uint32 delta);
 private:
 	int aleatorio, enem, emax, izq;
 	bool created = false;
+	Game::Bala_t arma;
 };
 
 

@@ -19,7 +19,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -67,6 +67,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ArmaTienda.cpp" />
     <ClCompile Include="Bala.cpp" />
     <ClCompile Include="BarraHP.cpp" />
     <ClCompile Include="BotonTienda.cpp" />
@@ -94,8 +95,10 @@
     <ClCompile Include="Tienda.cpp" />
     <ClCompile Include="Trigger.cpp" />
     <ClCompile Include="Vagon.cpp" />
+    <ClCompile Include="VagonTienda.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ArmaTienda.h" />
     <ClInclude Include="Bala.h" />
     <ClInclude Include="BarraHP.h" />
     <ClInclude Include="BotonTienda.h" />
@@ -124,6 +127,7 @@
     <ClInclude Include="Tienda.h" />
     <ClInclude Include="Trigger.h" />
     <ClInclude Include="Vagon.h" />
+    <ClInclude Include="VagonTienda.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

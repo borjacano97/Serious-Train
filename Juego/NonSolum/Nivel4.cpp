@@ -2,18 +2,18 @@
 #include "Enemigo.h"
 
 
-Nivel4::Nivel4(Game * j, std::vector <Game::Vagon_t> v) : Play(j)
+Nivel4::Nivel4(Game * j, std::vector <Game::Vagon_t> v, Game::Bala_t a) : Play(j)
 {
 	enem = 0;
 	emax = 20;
 	for (unsigned int i = 0; i < 4; i++) {
 		tren.emplace_back(new Vagon(ptsjuego, this, 580, 100 + 150 * i, v[i]));
 	}
+	arma = a;
 }
 
-
-Nivel4::~Nivel4()
-{
+void Nivel4::onClick() {
+	balas.emplace_back(new Bala(ptsjuego, this, Game::TRoca, player->getPos().x, player->getPos().y, player->getMira(), arma));
 }
 void Nivel4::update(Uint32 delta) {
 	if (enem < emax-1){

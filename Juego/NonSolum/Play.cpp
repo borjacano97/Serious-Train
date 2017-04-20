@@ -89,9 +89,7 @@ void Play::draw() {
 	TrainHp->draw();
 }
 
-void Play::onClick() {
-	balas.emplace_back(new Bala(ptsjuego, this, Game::TRoca, player->getPos().x, player->getPos().y, player->getMira(), Game::Bala_t::Piedra));
-}
+
 void Play::update(Uint32 delta) {
 	for (auto i : tren) {
 		i->update(delta);
