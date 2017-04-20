@@ -1,12 +1,4 @@
 ﻿  Tienda.cpp
 c:\users\alejandro\desktop\serious-train\juego\nonsolum\tienda.cpp(140): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-  Generando código...
-  Omitiendo... (no se detectaron cambios relevantes)
-  VagonTienda.cpp
-  ObjetoTienda.cpp
-  Menu.cpp
-  FinNivel.cpp
-  BotonTienda.cpp
-  ArmaTienda.cpp
   NonSolum.vcxproj -> C:\Users\Alejandro\Desktop\Serious-Train\Juego\bin\NonSolumDebug.exe
   NonSolum.vcxproj -> C:\Users\Alejandro\Desktop\Serious-Train\Juego\bin\NonSolumDebug.pdb (Full PDB)

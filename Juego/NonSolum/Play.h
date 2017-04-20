@@ -32,8 +32,8 @@ public:
 
 	Trigger* tg;
 	barraHP* TrainHp;
-protected:
 	Personaje* player;
+protected:
 	Texturas* font;
 	SDL_Color fontColor;
 	Sound* sonido;

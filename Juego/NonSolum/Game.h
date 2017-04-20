@@ -19,7 +19,7 @@ public:
 		TBtienda1, TBtienda2, Tlose, TWin, TRoca, TLaser, TFuegod, TFuegoi, TRect, TVagonAuto, TBotonPosible};
 	enum Enemigo_t { Normal, Rapido, Tank, ElQueDispara/*...*/ };
 	enum Vagon_t { Locom, Vacio, Automatico, Laser, Lanzallamas, Escudo/*...*/ };
-	enum Bala_t { BalaEnem, Piedra, Rayo, Fuego, Escopeta/*...*/ };
+	enum Bala_t { BalaEnem, Piedra, Rayo, Fuego, Escopeta, E1, E2, Pistola, Sniper /*...*/ };
 	enum Boton_t { Comprar, Jugar, Recolocar/*...*/ };
 
 	Texturas* getTextura(Texturas_t et) const { return texts[et]; }
