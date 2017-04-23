@@ -1,11 +1,4 @@
-﻿  Enemigo.cpp
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\enemigo.cpp(23): warning C4305: '=': truncamiento de 'double' a 'float'
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\enemigo.cpp(29): warning C4305: '=': truncamiento de 'double' a 'float'
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\enemigo.cpp(35): warning C4305: '=': truncamiento de 'double' a 'float'
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\enemigo.cpp(41): warning C4305: '=': truncamiento de 'double' a 'float'
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\enemigo.cpp(55): warning C4244: '+=': conversión de 'double' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\enemigo.cpp(61): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\enemigo.cpp(84): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\enemigo.cpp(85): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-  NonSolum.vcxproj -> C:\Users\Alejandro\Desktop\Serious-Train\Juego\bin\NonSolumDebug.exe
-  NonSolum.vcxproj -> C:\Users\Alejandro\Desktop\Serious-Train\Juego\bin\NonSolumDebug.pdb (Full PDB)
+﻿  Game.cpp
+  LINK : no se encontró D:\Documentos\UCM\Segundo curso\Proyecto_2\Repositorio\Serious-Train\Juego\bin\NonSolumDebug.exe o no lo generó el último vínculo incremental; ejecutando vínculo completo
+  NonSolum.vcxproj -> D:\Documentos\UCM\Segundo curso\Proyecto_2\Repositorio\Serious-Train\Juego\bin\NonSolumDebug.exe
+  NonSolum.vcxproj -> D:\Documentos\UCM\Segundo curso\Proyecto_2\Repositorio\Serious-Train\Juego\bin\NonSolumDebug.pdb (Full PDB)

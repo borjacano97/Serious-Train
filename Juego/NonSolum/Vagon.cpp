@@ -44,16 +44,16 @@ void Vagon::update(Uint32 delta) {
 	case Game::Automatico:
 		cont += delta;
 		if (cont >= 1500) {
-			p->balas.emplace_back(new Bala(juegootp, p, Game::TRoca, pos.x + 120, pos.y + 75, 1, Game::Bala_t::Piedra));
-			p->balas.emplace_back(new Bala(juegootp, p, Game::TRoca, pos.x, pos.y + 75, -1, Game::Bala_t::Piedra));
+			p->balas.emplace_back(new Bala(juegootp, p, pos.x + 120, pos.y + 75, 1, Game::Bala_t::Piedra));
+			p->balas.emplace_back(new Bala(juegootp, p, pos.x, pos.y + 75, -1, Game::Bala_t::Piedra));
 			cont = 0;
 		}
 		break;
 	case Game::Laser:
 		cont += delta;
 		if (cont >= 4000) {
-			p->balas.emplace_back(new Bala(juegootp, p, Game::TLaser, pos.x - 700, pos.y - 630, 1, Game::Bala_t::Rayo));
-			p->balas.emplace_back(new Bala(juegootp, p, Game::TLaser, pos.x + 120, pos.y - 630, -1, Game::Bala_t::Rayo));
+			p->balas.emplace_back(new Bala(juegootp, p, pos.x - 700, pos.y - 630, 1, Game::Bala_t::Rayo));
+			p->balas.emplace_back(new Bala(juegootp, p, pos.x + 120, pos.y - 630, -1, Game::Bala_t::Rayo));
 			cont = 0;
 			for each (auto var in p->enems)
 			{
@@ -64,8 +64,8 @@ void Vagon::update(Uint32 delta) {
 	case Game::Lanzallamas:
 		cont += delta;
 		if (cont >= 3000) {
-			p->balas.emplace_back(new Bala(juegootp, p, Game::TFuegod, pos.x + 130, pos.y, 1, Game::Bala_t::Fuego));
-			p->balas.emplace_back(new Bala(juegootp, p, Game::TFuegoi, pos.x - 100, pos.y, -1, Game::Bala_t::Fuego));
+			p->balas.emplace_back(new Bala(juegootp, p, pos.x + 130, pos.y, 1, Game::Bala_t::Fuego));
+			p->balas.emplace_back(new Bala(juegootp, p, pos.x - 100, pos.y, -1, Game::Bala_t::Fuego));
 			cont = 0;
 		}
 		break;

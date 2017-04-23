@@ -58,7 +58,7 @@ void Enemigo::update(Uint32 delta) {
 		}
 
 		if (_clase == Game::Enemigo_t::ElQueDispara && pos.x <= 1100 && pos.x >= 100){
-			if (disparo == nullptr)  disparo = new Bala(juegootp, p, Game::TRoca, pos.x, pos.y, vel * 10, Game::Bala_t::BalaEnem);
+			if (disparo == nullptr)  disparo = new Bala(juegootp, p, pos.x, pos.y, vel * 10, Game::Bala_t::BalaEnem);
 			else if ( disparo->getDest()) {
 				delete disparo;
 				disparo = nullptr;

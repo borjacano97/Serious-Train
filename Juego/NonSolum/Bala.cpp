@@ -1,71 +1,79 @@
 #include "Bala.h"
 #include "Play.h"
 
-Bala::Bala(Game* juego, Play*pl, Game::Texturas_t text, float x, float y, int mira, Game::Bala_t b)
+Bala::Bala(Game* juego, Play*pl, float x, float y, int mira, Game::Bala_t b)
 {
 	juegootp = juego;
-	Ttextura = text;
 
 	tipo = b;
 	pos.set(x, y);
 
 	dir = mira;
 	p = pl;
-	switch (tipo)
+	switch (tipo)//Cambiar las texturas cuando estes implementadas
 	{
 	case Game::BalaEnem:
 		alto = 20;
 		ancho = 20;
 		vel = 0.5;
+		Ttextura = Game::Texturas_t::TRoca;
 		break;
 	case Game::Piedra:
 		alto = 20; 
 		ancho = 20;
 		vel = 0.5;
 		dmg = 500;
+		Ttextura = Game::Texturas_t::TRoca;
 		break;
 	case Game::Rayo:
 		alto = 1400;
 		ancho = 700;
 		vel = 0;
+		Ttextura = Game::Texturas_t::TRoca;
 		break;
 	case Game::Fuego:
 		alto = 100;
 		ancho = 100;
 		vel = 0;
 		dmg = 1;
+		Ttextura = Game::Texturas_t::TRoca;
 		break;
 	case Game::Escopeta:
 		alto = 20;
 		ancho = 20;
 		vel = 0.5;
 		dmg = 500;
-		p->balas.emplace_back(new Bala(juegootp, p, Game::TRoca, p->player->getPos().x, p->player->getPos().y, p->player->getMira(), Game::Bala_t::E1));
-		p->balas.emplace_back(new Bala(juegootp, p, Game::TRoca, p->player->getPos().x, p->player->getPos().y, p->player->getMira(), Game::Bala_t::E2));
+		Ttextura = Game::Texturas_t::TRoca;
+		p->balas.emplace_back(new Bala(juegootp, p, p->player->getPos().x, p->player->getPos().y, p->player->getMira(), Game::Bala_t::E1));
+		p->balas.emplace_back(new Bala(juegootp, p, p->player->getPos().x, p->player->getPos().y, p->player->getMira(), Game::Bala_t::E2));
 		break;
 	case Game::E1: // digamos que son balas auxiliares de la escopeta xd
 		alto = 20;
 		ancho = 20;
 		vel = 0.5;
 		dmg = 500;
+		Ttextura = Game::Texturas_t::TRoca;
 		break;
 	case Game::E2:
 		alto = 20;
 		ancho = 20;
 		vel = 0.5;
 		dmg = 500;
+		Ttextura = Game::Texturas_t::TRoca;
 		break;	
 	case Game::Pistola:
 		alto = 20;
 		ancho = 20;
 		vel = 0.5;
 		dmg = 500;
+		Ttextura = Game::Texturas_t::TRoca;
 		break;
 	case Game::Sniper:
 		alto = 14;
 		ancho = 14;
 		vel = 0.7;
 		dmg = 1000;
+		Ttextura = Game::Texturas_t::TRoca;
 		break;
 	default:
 		break;

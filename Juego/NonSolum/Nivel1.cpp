@@ -10,12 +10,25 @@ Nivel1::Nivel1(Game * j, std::vector <Game::Vagon_t> v, Game::Bala_t a) : Play(j
 		tren.emplace_back(new Vagon(ptsjuego, this, 580, 100 + 150 * i, v[i]));
 	}
 	arma = a;
+	timer = 0;
+	//Falta por completar conforme se implementen las nuevas clases y me da palo hacerlo para nada ^^'
+	switch (arma) 
+	{
+	case Game::Bala_t::Piedra:
+		cadencia = 800;//0'8s || 800 ms 
+	/*case Game::Bala_t::Pistola:
+		cadencia = 400;//0'4s || 400 ms */
+	}
 }
 
-void Nivel1::onClick() {
-	balas.emplace_back(new Bala(ptsjuego, this, Game::TRoca, player->getPos().x, player->getPos().y, player->getMira(), arma));
+void Nivel1::onClick() {	
+	if (timer >= cadencia) {
+		balas.emplace_back(new Bala(ptsjuego, this, player->getPos().x, player->getPos().y, player->getMira(), arma));
+		timer = 0;
+	}
 }
 void Nivel1::update(Uint32 delta) {
+	timer += delta;
 	if (enem < emax){
 		//generar zombies aleatorios
 		aleatorio = rand() % 10000;

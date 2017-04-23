@@ -6,7 +6,7 @@
 #include "Trigger.h"
 
 #include <string>
-#include <stdlib.h> // para nms aleatorios
+#include <stdlib.h> // para nºs aleatorios
 #include <time.h>
 
 
@@ -46,11 +46,12 @@ bool Play::initObjects() { // creaci�n de los objetos dando un puntero, una te
 	tren.emplace_back(new Vagon(ptsjuego, this, 580, -50, Game::Vagon_t::Locom));
 
 	TTF_Init();
-	if (Mix_OpenAudio(22050, MIX_DEFAULT_FORMAT, 2, 4096) == -1)
+	/*if (Mix_OpenAudio(22050, MIX_DEFAULT_FORMAT, 2, 4096) == -1)
 	{
 		return false;
 	}
-	return true;
+	return true;*/
+	return Mix_OpenAudio(22050, MIX_DEFAULT_FORMAT, 2, 4096) != -1;
 }
 
 void Play::freeObjects() {
