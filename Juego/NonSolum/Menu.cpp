@@ -16,3 +16,10 @@ void Menu::jugar(Game * jg) {
 void Menu::salir(Game * jg){
 	jg->setSalir();
 }
+bool Menu::initLibraries() {
+	if (Mix_OpenAudio(22050, MIX_DEFAULT_FORMAT, 2, 4096) == -1)
+	{
+		return false;
+	}
+	return true;
+}

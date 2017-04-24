@@ -42,7 +42,7 @@ Tienda::Tienda(Game* juego) :Estado(juego)
 		vagonesNivel.emplace_back(Game::Vagon_t::Vacio);
 	}
 
-	TTF_Init();
+	initLibraries();
 
 	font = new Texturas(100, 80, 50, 50);
 	font->loadFuente("../fonts/AlexBrush-Regular.ttf", 200);
@@ -75,6 +75,18 @@ void Tienda::draw() {
 	sel->draw();
 	armaActual->draw();
 }
+
+bool Tienda::initLibraries() {
+
+	TTF_Init();
+
+	if (Mix_OpenAudio(22050, MIX_DEFAULT_FORMAT, 2, 4096) == -1)
+	{
+		return false;
+	}
+	return true;
+}
+
 
 
 void Tienda::jugar(Game * jg) {

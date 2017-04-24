@@ -16,3 +16,11 @@ void FinNivel::jugar(Game * jg) {
 void FinNivel::salir(Game * jg){
 	jg->setSalir();
 }
+
+bool FinNivel::initLibraries() {
+	if (Mix_OpenAudio(22050, MIX_DEFAULT_FORMAT, 2, 4096) == -1)
+	{
+		return false;
+	}
+	return true;
+}

@@ -39,6 +39,8 @@ private:
 	Game::Bala_t armaNivel; //tipo de arma finalmente usada
 	std::vector <Game::Vagon_t> vagonesNivel; // va a contener los tipos de vagones que pasarán a cada nvl sin locomotora
 	int seleccionado = 0;
+
+	bool initLibraries();
 };
 
 #endif

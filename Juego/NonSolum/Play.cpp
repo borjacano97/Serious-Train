@@ -23,7 +23,7 @@ Play::Play(Game * j) : Estado(j)
 	font->loadFuente("../fonts/AlexBrush-Regular.ttf", 200);
 
 	sonido = new Sound;
-	sonido->playMusic("../sounds/prueba.mp3");
+	//sonido->playMusic("../sounds/prueba.mp3");
 
 	fontColor.r = 218;
 	fontColor.g = 165;

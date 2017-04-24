@@ -2,6 +2,8 @@
 #define H_MENU_H
 
 #include "Estado.h"
+#include "Sound.h"
+
 class Menu :
 	public Estado
 {
@@ -12,6 +14,7 @@ public:
 private:
 	static void salir(Game * jg);
 	static void jugar(Game * jg);
+	bool initLibraries();
 };
 
 

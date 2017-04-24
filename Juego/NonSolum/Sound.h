@@ -23,7 +23,7 @@ public:
 		return instance;
 	}
 
-	void playMusic(const std::string& file);
+	void playMusic(const std::string& file, int loops);
 	void pauseMusic();
 	void stopMusic();
 	void playEffect(const std::string& file);

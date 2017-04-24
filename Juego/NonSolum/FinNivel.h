@@ -2,7 +2,7 @@
 #define H_FINNIVEL_H
 
 #include "Estado.h"
-
+#include "Sound.h"
 class FinNivel :
 	public Estado
 {
@@ -13,7 +13,7 @@ public:
 private:
 	static void salir(Game * jg);
 	static void jugar(Game * jg);
-
+	bool initLibraries();
 	bool victory;
 };
 
