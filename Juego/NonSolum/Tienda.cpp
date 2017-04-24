@@ -18,16 +18,25 @@ Tienda::Tienda(Game* juego) :Estado(juego)
 	armaActual = new ArmaTienda(ptsjuego, this, 1000, 170, 100, Game::Bala_t::Piedra, true);
 
 	// BOTONES PRINCIPALES 
-	botones.emplace_back(new BotonTienda(ptsjuego, this, NULL, Game::TBtienda1, 1130, 650, Game::Boton_t::Jugar));
+	botones.emplace_back(new BotonTienda(ptsjuego, this, NULL, Game::TBtienda1, 1120, 640, Game::Boton_t::Jugar));
 	botones.emplace_back(new BotonTienda(ptsjuego, this, NULL, Game::TBtienda2, -10, 650, Game::Boton_t::Recolocar));
 
 	//VAGONES PARA COMPRAR Y RESPECTIVOS BOTONES
-	vags.emplace_back(new VagonTienda(ptsjuego, this, 200, 200, 100, Game::Vagon_t::Automatico, false));
+	vags.emplace_back(new VagonTienda(ptsjuego, this, 200, 200, 0, Game::Vagon_t::Automatico, false));
 
-	botones.emplace_back(new BotonTienda(ptsjuego, this, vags[0], Game::TBotonPosible, 170, 340, Game::Boton_t::Comprar));
+	botones.emplace_back(new BotonTienda(ptsjuego, this, vags[0], Game::TBotonPosible, 200, 340, Game::Boton_t::Comprar));
 
 	//ARMAS PARA COMPRAR Y RESPECTIVOS BOTONES
-	armas.emplace_back(new ArmaTienda(ptsjuego, this, 1000, 300, 0, Game::Bala_t::Piedra, false));
+	armas.emplace_back(new ArmaTienda(ptsjuego, this, 830, 300, 0, Game::Bala_t::Piedra, false));
+
+	armas.emplace_back(new ArmaTienda(ptsjuego, this, 1020, 300, 0, Game::Bala_t::Pistola, false));
+	botones.emplace_back(new BotonTienda(ptsjuego, this, armas[1], Game::TBotonPosible, 1020, 430, Game::Boton_t::Comprar));
+
+	armas.emplace_back(new ArmaTienda(ptsjuego, this, 830, 500, 0, Game::Bala_t::Escopeta, false));
+	botones.emplace_back(new BotonTienda(ptsjuego, this, armas[2], Game::TBotonPosible, 830, 630, Game::Boton_t::Comprar));
+
+	armas.emplace_back(new ArmaTienda(ptsjuego, this, 1020, 500, 0, Game::Bala_t::Sniper, false));
+	botones.emplace_back(new BotonTienda(ptsjuego, this, armas[3], Game::TBotonPosible, 1020, 630, Game::Boton_t::Comprar));
 
 	for (int i = 0; i < 4; i++) {
 		vagonesNivel.emplace_back(Game::Vagon_t::Vacio);
@@ -59,7 +68,7 @@ void Tienda::draw() {
 		if (i!=nullptr)	i->draw();
 	}
 	for (auto i : botones) {
-		i->draw();
+		if (!i->getDest())	i->draw();
 	}
 	font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(50, 45, 1100, 30));
 	font->loadFromText(ptsjuego->pRender, std::to_string(ptsjuego->coins), fontColor);

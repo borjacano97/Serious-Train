@@ -11,7 +11,7 @@ ArmaTienda::ArmaTienda(Game* juego, Tienda* ti, float x, float y, int p, Game::B
 	t = ti;	
 
 	alto = 90;
-	ancho = 90;
+	ancho = 120;
 	precio = p;
 
 	pos.set(x, y);
@@ -39,9 +39,13 @@ ArmaTienda::ArmaTienda(Game* juego, Tienda* ti, float x, float y, int p, Game::B
 	switch (tipo)
 	{
 	case Game::Piedra: Ttextura = Game::Texturas_t::TRoca; desb = Game::Texturas_t::TRoca; tipoArma = "Piedra"; if (!estatico) desbloquear();
+		break;	
+	case Game::Pistola: Ttextura = Game::Texturas_t::TPistol;  desb = Game::Texturas_t::TPistol; tipoArma = "Pistola";
 		break;
-	case Game::Escopeta: Ttextura = Game::Texturas_t::TVacioBloq;  desb = Game::Texturas_t::TVagonAuto; tipoArma = "Escopeta";
+	case Game::Escopeta: Ttextura = Game::Texturas_t::TEscopeta;  desb = Game::Texturas_t::TEscopeta; tipoArma = "Escopeta";
 		break;
+	case Game::Sniper: Ttextura = Game::Texturas_t::TSniper;  desb = Game::Texturas_t::TSniper; tipoArma = "Francotirador";
+		break;	
 	default:
 		break;
 	}

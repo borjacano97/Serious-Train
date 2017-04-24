@@ -9,12 +9,20 @@ BotonTienda::BotonTienda(Game* juego, Tienda*ti, ObjetoTienda*obj, Game::Textura
 	o = obj;
 	
 	Ttextura = text;
-
-	alto = 70;
-	ancho = 170;
+	if (tipo == Game::Boton_t::Comprar) {
+		alto = 40;
+		ancho = 90;
+	}
+	else {
+		alto = 100;
+		ancho = 190;
+	}
+	
 
 	pos.set(x, y);
 	tip = tipo;
+
+	destruido = false;
 }
 
 bool BotonTienda::onClick() {
@@ -24,7 +32,10 @@ bool BotonTienda::onClick() {
 		switch (tip)
 		{
 		case Game::Comprar:
-			if (o->getBloq() && o->getPrecio() <= juegootp->coins) t->comprar(o);			
+			if (o->getBloq() && o->getPrecio() <= juegootp->coins) {
+				t->comprar(o);
+				destruido = true;
+			}
 			break;
 		case Game::Jugar:
 			t->jugar(juegootp);
