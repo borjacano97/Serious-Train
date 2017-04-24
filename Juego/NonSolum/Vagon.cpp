@@ -44,8 +44,8 @@ void Vagon::update(Uint32 delta) {
 	case Game::Automatico:
 		cont += delta;
 		if (cont >= 1500) {
-			p->balas.emplace_back(new Bala(juegootp, p, pos.x + 120, pos.y + 75, 1, Game::Bala_t::Piedra));
-			p->balas.emplace_back(new Bala(juegootp, p, pos.x, pos.y + 75, -1, Game::Bala_t::Piedra));
+			p->balas.emplace_back(new Bala(juegootp, p, pos.x + 120, pos.y + 75, 1, Game::Bala_t::Pistola));
+			p->balas.emplace_back(new Bala(juegootp, p, pos.x, pos.y + 75, -1, Game::Bala_t::Pistola));
 			cont = 0;
 		}
 		break;

@@ -1,9 +1,6 @@
-﻿  Nivel4.cpp
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\nivel4.cpp(10): warning C4244: 'argumento': conversión de 'unsigned int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\nivel4.cpp(41): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\nivel4.cpp(42): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\nivel4.cpp(47): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\nivel4.cpp(48): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\nivel4.cpp(55): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+﻿  Nivel1.cpp
+c:\users\alejandro\desktop\serious-train\juego\nonsolum\nivel1.cpp(10): warning C4244: 'argumento': conversión de 'unsigned int' a 'float'; posible pérdida de datos
+c:\users\alejandro\desktop\serious-train\juego\nonsolum\nivel1.cpp(38): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\alejandro\desktop\serious-train\juego\nonsolum\nivel1.cpp(40): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
   NonSolum.vcxproj -> C:\Users\Alejandro\Desktop\Serious-Train\Juego\bin\NonSolumDebug.exe
   NonSolum.vcxproj -> C:\Users\Alejandro\Desktop\Serious-Train\Juego\bin\NonSolumDebug.pdb (Full PDB)

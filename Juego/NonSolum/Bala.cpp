@@ -29,21 +29,22 @@ Bala::Bala(Game* juego, Play*pl, float x, float y, int mira, Game::Bala_t b)
 		alto = 1400;
 		ancho = 700;
 		vel = 0;
-		Ttextura = Game::Texturas_t::TRoca;
+		Ttextura = Game::Texturas_t::TLaser;
 		break;
 	case Game::Fuego:
 		alto = 100;
 		ancho = 100;
 		vel = 0;
 		dmg = 1;
-		Ttextura = Game::Texturas_t::TRoca;
+		if (x <= 600) Ttextura = Game::Texturas_t::TFuegoi;
+		else Ttextura = Game::Texturas_t::TFuegod;
 		break;
 	case Game::Escopeta:
 		alto = 20;
 		ancho = 20;
 		vel = 0.5;
 		dmg = 500;
-		Ttextura = Game::Texturas_t::TRoca;
+		Ttextura = Game::Texturas_t::TBala;
 		p->balas.emplace_back(new Bala(juegootp, p, p->player->getPos().x, p->player->getPos().y, p->player->getMira(), Game::Bala_t::E1));
 		p->balas.emplace_back(new Bala(juegootp, p, p->player->getPos().x, p->player->getPos().y, p->player->getMira(), Game::Bala_t::E2));
 		break;
@@ -52,28 +53,28 @@ Bala::Bala(Game* juego, Play*pl, float x, float y, int mira, Game::Bala_t b)
 		ancho = 20;
 		vel = 0.5;
 		dmg = 500;
-		Ttextura = Game::Texturas_t::TRoca;
+		Ttextura = Game::Texturas_t::TBala;
 		break;
 	case Game::E2:
 		alto = 20;
 		ancho = 20;
 		vel = 0.5;
 		dmg = 500;
-		Ttextura = Game::Texturas_t::TRoca;
+		Ttextura = Game::Texturas_t::TBala;
 		break;	
 	case Game::Pistola:
 		alto = 20;
 		ancho = 20;
 		vel = 0.5;
 		dmg = 500;
-		Ttextura = Game::Texturas_t::TRoca;
+		Ttextura = Game::Texturas_t::TBala;
 		break;
 	case Game::Sniper:
 		alto = 14;
 		ancho = 14;
 		vel = 0.7;
 		dmg = 1000;
-		Ttextura = Game::Texturas_t::TRoca;
+		Ttextura = Game::Texturas_t::TBala;
 		break;
 	default:
 		break;

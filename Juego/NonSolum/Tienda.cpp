@@ -22,7 +22,7 @@ Tienda::Tienda(Game* juego) :Estado(juego)
 	botones.emplace_back(new BotonTienda(ptsjuego, this, NULL, Game::TBtienda2, -10, 650, Game::Boton_t::Recolocar));
 
 	//VAGONES PARA COMPRAR Y RESPECTIVOS BOTONES
-	vags.emplace_back(new VagonTienda(ptsjuego, this, 200, 200, 0, Game::Vagon_t::Automatico, false));
+	vags.emplace_back(new VagonTienda(ptsjuego, this, 200, 200, 100, Game::Vagon_t::Automatico, false));
 
 	botones.emplace_back(new BotonTienda(ptsjuego, this, vags[0], Game::TBotonPosible, 200, 340, Game::Boton_t::Comprar));
 
