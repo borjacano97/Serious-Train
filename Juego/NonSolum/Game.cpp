@@ -76,7 +76,6 @@ Game::Game()
 
 	espera = false;
 	exit = false;
-	cadencia = 150;
 
 	estados.push(new Menu(this)); // estado que queremos inicial
 }
@@ -196,7 +195,7 @@ void Game::render() { //const
 	SDL_RenderPresent(pRender);
 }
 
-
+////////////////////MAINLOOP///////////////////
 void Game::run()
 {
 	Uint32 delta;
@@ -209,6 +208,7 @@ void Game::run()
 		handle_event();
 	}
 }
+//////////////////////////////////////////////
 
 void Game::onClick(int pmx, int pmy) { //se guardan las posiciones que pasan por par�metro
 	mx = e.button.x;
@@ -216,7 +216,8 @@ void Game::onClick(int pmx, int pmy) { //se guardan las posiciones que pasan por
 	topEstado()->onClick();
 }
 
-void Game::update(Uint32 delta) { //el juego corre mientras existan globos en el juego (aunque puede ser pausado)
+//Llama al update del estado activo
+void Game::update(Uint32 delta) {
 
 	topEstado()->update(delta);
 }
@@ -261,13 +262,11 @@ bool Game::handle_event() { //eventos del teclado y raton
 
 		}
 		else if (e.type == SDL_MOUSEBUTTONDOWN) { // click izquierdo para llamar al onclick
-			if (e.button.state == SDL_BUTTON_LEFT && cadencia >= 150) {
-				cadencia = 0;
+			if (e.button.state == SDL_BUTTON_LEFT) {
 				onClick(e.button.x, e.button.y);
 			}
 		}
 	}
-	cadencia++;
 	return espera;
 }
 

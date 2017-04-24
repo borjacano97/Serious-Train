@@ -65,7 +65,6 @@ private:
 
 	bool espera, exit;
 	int mx, my;
-	int cadencia;
 	int nivel = 1;
 
 };

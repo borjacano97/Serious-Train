@@ -6,7 +6,7 @@ class Play;
 class Bala : public Objeto
 {
 public:
-	Bala(Game* juego, Play*pl, Game::Texturas_t text, float x, float y, int mira, Game::Bala_t b);
+	Bala(Game* juego, Play*pl, float x, float y, int mira, Game::Bala_t b);
 	~Bala() {}
 	void update(Uint32 delta);
 private:

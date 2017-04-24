@@ -10,8 +10,9 @@ public:
 	~Nivel1(){}
 	void onClick();
 	void update(Uint32 delta);
+
 private:
-	int aleatorio, enem, emax, izq;
+	int aleatorio, enem, emax, izq, timer, cadencia;
 	Game::Bala_t arma;
 };
 

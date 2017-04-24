@@ -29,13 +29,13 @@ Tienda::Tienda(Game* juego) :Estado(juego)
 	//ARMAS PARA COMPRAR Y RESPECTIVOS BOTONES
 	armas.emplace_back(new ArmaTienda(ptsjuego, this, 830, 300, 0, Game::Bala_t::Piedra, false));
 
-	armas.emplace_back(new ArmaTienda(ptsjuego, this, 1020, 300, 0, Game::Bala_t::Pistola, false));
+	armas.emplace_back(new ArmaTienda(ptsjuego, this, 1020, 300, 100, Game::Bala_t::Pistola, false));
 	botones.emplace_back(new BotonTienda(ptsjuego, this, armas[1], Game::TBotonPosible, 1020, 430, Game::Boton_t::Comprar));
 
-	armas.emplace_back(new ArmaTienda(ptsjuego, this, 830, 500, 0, Game::Bala_t::Escopeta, false));
+	armas.emplace_back(new ArmaTienda(ptsjuego, this, 830, 500, 150, Game::Bala_t::Escopeta, false));
 	botones.emplace_back(new BotonTienda(ptsjuego, this, armas[2], Game::TBotonPosible, 830, 630, Game::Boton_t::Comprar));
 
-	armas.emplace_back(new ArmaTienda(ptsjuego, this, 1020, 500, 0, Game::Bala_t::Sniper, false));
+	armas.emplace_back(new ArmaTienda(ptsjuego, this, 1020, 500, 300, Game::Bala_t::Sniper, false));
 	botones.emplace_back(new BotonTienda(ptsjuego, this, armas[3], Game::TBotonPosible, 1020, 630, Game::Boton_t::Comprar));
 
 	for (int i = 0; i < 4; i++) {
