@@ -5,8 +5,8 @@
 FinNivel::FinNivel(Game* juego, bool v) :Estado(juego)
 {		
 	victory = v;
-	objetos.emplace_back(new Button(ptsjuego, Game::TBotonJ, 300, 500, jugar)); // hay que poner sdl_center o algo asi xd
-	objetos.emplace_back(new Button(ptsjuego, Game::TBotonS, 800, 500, salir));
+	objetos.emplace_back(new Button(ptsjuego, Game::TBotonJ, 300, 600, jugar)); // hay que poner sdl_center o algo asi xd
+	objetos.emplace_back(new Button(ptsjuego, Game::TBotonS, 800, 600, salir));
 }
 
 void FinNivel::jugar(Game * jg) {

@@ -15,7 +15,7 @@ Tienda::Tienda(Game* juego) :Estado(juego)
 	sel = new Selector(ptsjuego, Game::TRect, 20, 170);
 	//ARMA ELEGIDA
 	armaNivel = Game::Bala_t::Piedra;
-	armaActual = new ArmaTienda(ptsjuego, this, 1000, 170, 100, Game::Bala_t::Piedra, true);
+	armaActual = new ArmaTienda(ptsjuego, this, 920, 180, 100, Game::Bala_t::Piedra, true);
 
 	// BOTONES PRINCIPALES 
 	botones.emplace_back(new BotonTienda(ptsjuego, this, NULL, Game::TBtienda1, 1120, 640, Game::Boton_t::Jugar));
@@ -35,19 +35,18 @@ Tienda::Tienda(Game* juego) :Estado(juego)
 	botones.emplace_back(new BotonTienda(ptsjuego, this, vags[3], Game::TBotonPosible, 200, 640, Game::Boton_t::Comprar));
 
 	//ARMAS PARA COMPRAR Y RESPECTIVOS BOTONES
-	armas.emplace_back(new ArmaTienda(ptsjuego, this, 820, 300, 0, Game::Bala_t::Piedra, false));
 
-	armas.emplace_back(new ArmaTienda(ptsjuego, this, 950, 300, 100, Game::Bala_t::Pistola, false));
-	botones.emplace_back(new BotonTienda(ptsjuego, this, armas[1], Game::TBotonPosible, 950, 430, Game::Boton_t::Comprar));
+	armas.emplace_back(new ArmaTienda(ptsjuego, this, 850, 300, 100, Game::Bala_t::Pistola, false));
+	botones.emplace_back(new BotonTienda(ptsjuego, this, armas[0], Game::TBotonPosible, 850, 430, Game::Boton_t::Comprar));
 
-	armas.emplace_back(new ArmaTienda(ptsjuego, this, 1080, 300, 150, Game::Bala_t::Metralleta, false));
-	botones.emplace_back(new BotonTienda(ptsjuego, this, armas[2], Game::TBotonPosible, 1080, 430, Game::Boton_t::Comprar));
+	armas.emplace_back(new ArmaTienda(ptsjuego, this, 1050, 300, 150, Game::Bala_t::Metralleta, false));
+	botones.emplace_back(new BotonTienda(ptsjuego, this, armas[1], Game::TBotonPosible, 1050, 430, Game::Boton_t::Comprar));
 
 	armas.emplace_back(new ArmaTienda(ptsjuego, this, 850, 500, 200, Game::Bala_t::Escopeta, false));
-	botones.emplace_back(new BotonTienda(ptsjuego, this, armas[3], Game::TBotonPosible, 850, 630, Game::Boton_t::Comprar));
+	botones.emplace_back(new BotonTienda(ptsjuego, this, armas[2], Game::TBotonPosible, 850, 630, Game::Boton_t::Comprar));
 
 	armas.emplace_back(new ArmaTienda(ptsjuego, this, 1050, 500, 300, Game::Bala_t::Sniper, false));
-	botones.emplace_back(new BotonTienda(ptsjuego, this, armas[4], Game::TBotonPosible, 1050, 630, Game::Boton_t::Comprar));
+	botones.emplace_back(new BotonTienda(ptsjuego, this, armas[3], Game::TBotonPosible, 1050, 630, Game::Boton_t::Comprar));
 
 	for (int i = 0; i < 4; i++) {
 		vagonesNivel.emplace_back(Game::Vagon_t::Vacio);
