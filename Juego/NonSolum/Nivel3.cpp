@@ -11,7 +11,8 @@ Nivel3::Nivel3(Game * j, std::vector <Game::Vagon_t> v, Game::Bala_t a) : Play(j
 		tren.emplace_back(new Vagon(ptsjuego, this, 580, 100 + 150 * i, v[i]));
 	}
 	arma = a;
-	timer = 0;
+	shootTimer = 0;
+	spawnTimer = 0;
 	//Falta por completar conforme se implementen las nuevas clases y me da palo hacerlo para nada ^^'
 	switch (a)
 	{
@@ -22,7 +23,7 @@ Nivel3::Nivel3(Game * j, std::vector <Game::Vagon_t> v, Game::Bala_t a) : Play(j
 		break;
 	case Game::Pistola: cadencia = 600;//0'6s || 600 ms 
 		break;
-	case Game::Sniper: cadencia = 800;
+	case Game::Sniper: cadencia = 1000;
 		break;
 	case Game::Metralleta: cadencia = 200;
 		break;
@@ -31,30 +32,34 @@ Nivel3::Nivel3(Game * j, std::vector <Game::Vagon_t> v, Game::Bala_t a) : Play(j
 	}
 }
 void Nivel3::onClick() {
-	if (timer >= cadencia) {
+	if (shootTimer >= cadencia) {
 		balas.emplace_back(new Bala(ptsjuego, this, player->getPos().x, player->getPos().y, player->getMira(), arma));
-		timer = 0;
+		shootTimer = 0;
 	}
 }
 void Nivel3::update(Uint32 delta) {
-	timer += delta;
+	shootTimer += delta;
+	spawnTimer += delta;
 	if (enem < emax){
-		aleatorio = rand() % 10000; //generar zombies aleatorios
-		if (aleatorio >= 9990) {
-			izq = rand() % 2;
-			if (izq == 0) enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) - 100, Game::Enemigo_t::Normal));
-			else enems.emplace_back(new Enemigo(ptsjuego, this,  1300, (rand() % 550) - 100, Game::Enemigo_t::Normal));
-			enem++;
-		}
-		else if (aleatorio >= 9985) {
-			izq = rand() % 2;
-			if (izq == 0) enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 50, Game::Enemigo_t::Rapido));
-			else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 50, Game::Enemigo_t::Rapido));
-			enem++;
+
+		if (spawnTimer >= 1400){
+
+			if (rand() % 2 == 0){
+				if (rand() % 2 == 0) enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) - 120, Game::Enemigo_t::Normal));
+				else  enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) - 120, Game::Enemigo_t::Normal));
+				enem++;
+			}
+			else {
+				if (rand() % 2 == 0) enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550), Game::Enemigo_t::Rapido));
+				else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550), Game::Enemigo_t::Rapido));
+				enem++;
+			}
+			spawnTimer = 0;
 		}
 	}
-	else if (emax == Play::getKilled()){
-		Play::finish();
+		else if (emax == Play::getKilled()){
+			Play::finish();
+		
 	}
-	Play::update(delta);		
-}
+		Play::update(delta);
+	}

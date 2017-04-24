@@ -13,7 +13,8 @@ void Pausa::reanudar(Game * jg) {
 	jg->popState();
 }
 void Pausa::salir(Game * jg){
-	jg->setSalir();
+	jg->popState();
+	jg->popState();
 }
 
 bool Pausa::initLibraries() {

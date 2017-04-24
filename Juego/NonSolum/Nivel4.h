@@ -11,7 +11,7 @@ public:
 	void onClick();
 	void update(Uint32 delta);
 private:
-	int aleatorio, enem, emax, izq, timer, cadencia;
+	int  enem, emax, shootTimer, spawnTimer, cadencia;
 	bool created = false;
 	Game::Bala_t arma;
 };
