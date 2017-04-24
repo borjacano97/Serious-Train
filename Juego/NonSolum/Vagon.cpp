@@ -65,7 +65,7 @@ void Vagon::update(Uint32 delta) {
 		cont += delta;
 		if (cont >= 3000) {
 			p->balas.emplace_back(new Bala(juegootp, p, pos.x + 130, pos.y, 1, Game::Bala_t::Fuego));
-			p->balas.emplace_back(new Bala(juegootp, p, pos.x - 100, pos.y, -1, Game::Bala_t::Fuego));
+			p->balas.emplace_back(new Bala(juegootp, p, pos.x - 120, pos.y, -1, Game::Bala_t::Fuego));
 			cont = 0;
 		}
 		break;

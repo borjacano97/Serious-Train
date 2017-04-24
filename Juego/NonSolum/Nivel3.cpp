@@ -13,12 +13,21 @@ Nivel3::Nivel3(Game * j, std::vector <Game::Vagon_t> v, Game::Bala_t a) : Play(j
 	arma = a;
 	timer = 0;
 	//Falta por completar conforme se implementen las nuevas clases y me da palo hacerlo para nada ^^'
-	switch (arma)
+	switch (a)
 	{
-	case Game::Bala_t::Piedra:
-		cadencia = 800;//0'8s || 800 ms 
-					   /*case Game::Bala_t::Pistola:
-					   cadencia = 400;//0'4s || 400 ms */
+
+	case Game::Piedra: cadencia = 800;//0'8s || 800 ms 
+		break;
+	case Game::Escopeta: cadencia = 700;
+		break;
+	case Game::Pistola: cadencia = 600;//0'6s || 600 ms 
+		break;
+	case Game::Sniper: cadencia = 800;
+		break;
+	case Game::Metralleta: cadencia = 200;
+		break;
+	default:
+		break;
 	}
 }
 void Nivel3::onClick() {

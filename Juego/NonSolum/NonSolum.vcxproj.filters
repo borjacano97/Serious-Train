@@ -120,11 +120,11 @@
     <ClCompile Include="ObjetoTienda.cpp">
       <Filter>Archivos de código fuente\Objetos</Filter>
     </ClCompile>
-    <ClCompile Include="VagonTienda.cpp">
-      <Filter>Archivos de código fuente</Filter>
-    </ClCompile>
     <ClCompile Include="ArmaTienda.cpp">
-      <Filter>Archivos de código fuente</Filter>
+      <Filter>Archivos de código fuente\Objetos</Filter>
+    </ClCompile>
+    <ClCompile Include="VagonTienda.cpp">
+      <Filter>Archivos de código fuente\Objetos</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -213,10 +213,10 @@
       <Filter>Archivos de encabezado\Objetos</Filter>
     </ClInclude>
     <ClInclude Include="VagonTienda.h">
-      <Filter>Archivos de encabezado</Filter>
+      <Filter>Archivos de encabezado\Objetos</Filter>
     </ClInclude>
     <ClInclude Include="ArmaTienda.h">
-      <Filter>Archivos de encabezado</Filter>
+      <Filter>Archivos de encabezado\Objetos</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

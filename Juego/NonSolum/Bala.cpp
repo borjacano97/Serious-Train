@@ -32,10 +32,10 @@ Bala::Bala(Game* juego, Play*pl, float x, float y, int mira, Game::Bala_t b)
 		Ttextura = Game::Texturas_t::TLaser;
 		break;
 	case Game::Fuego:
-		alto = 100;
-		ancho = 100;
+		alto = 120;
+		ancho = 120;
 		vel = 0;
-		dmg = 1;
+		dmg = 5;
 		if (x <= 600) Ttextura = Game::Texturas_t::TFuegoi;
 		else Ttextura = Game::Texturas_t::TFuegod;
 		break;
@@ -74,6 +74,13 @@ Bala::Bala(Game* juego, Play*pl, float x, float y, int mira, Game::Bala_t b)
 		ancho = 14;
 		vel = 0.7;
 		dmg = 1000;
+		Ttextura = Game::Texturas_t::TBala;
+		break;
+	case Game::Metralleta:
+		alto = 14;
+		ancho = 14;
+		vel = 0.5;
+		dmg = 250;
 		Ttextura = Game::Texturas_t::TBala;
 		break;
 	default:
@@ -118,8 +125,8 @@ void Bala::update(Uint32 delta) {
 		else ancho += 5;
 		for each (auto var in p->enems)
 		{
-			if (var != nullptr &&  var->collision(this)) var->damage(dmg);
-			
+			if (var != nullptr &&  this->collision(var) || var != nullptr && var->collision(this)) var->damage(dmg);
+						
 		}
 
 		if (cont >= 1000) destruido = true;
@@ -183,6 +190,18 @@ void Bala::update(Uint32 delta) {
 		{
 			if (var != nullptr && var->collision(this)) {
 				var->damage(dmg);
+			}
+		}
+		break;
+	case Game::Metralleta:
+		pos.x += dir * vel*delta;
+		if (pos.x <= 0 || pos.x >= 1500)
+			destruido = true;
+		for each (auto var in p->enems)
+		{
+			if (var != nullptr && var->collision(this)) {
+				var->damage(dmg);
+				destruido = true;
 			}
 		}
 		break;

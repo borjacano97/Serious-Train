@@ -46,6 +46,8 @@ ArmaTienda::ArmaTienda(Game* juego, Tienda* ti, float x, float y, int p, Game::B
 		break;
 	case Game::Sniper: Ttextura = Game::Texturas_t::TSniper;  desb = Game::Texturas_t::TSniper; tipoArma = "Francotirador";
 		break;	
+	case Game::Metralleta: Ttextura = Game::Texturas_t::TMetralleta;  desb = Game::Texturas_t::TMetralleta; tipoArma = "Metralleta";
+		break;
 	default:
 		break;
 	}

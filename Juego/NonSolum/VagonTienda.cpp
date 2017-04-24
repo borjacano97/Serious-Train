@@ -42,9 +42,11 @@ VagonTienda::VagonTienda(Game* juego, Tienda* ti, float x, float y, int p, Game:
 	{
 	case Game::Automatico: desb = Game::Texturas_t::TVagonAuto; tipoVagon = "Automático";
 		break;
-	case Game::Laser: desb = Game::Texturas_t::TVagon1; tipoVagon = "Laser";
+	case Game::Laser: desb = Game::Texturas_t::TVagon1; tipoVagon = "Láser";
 		break;
 	case Game::Lanzallamas: desb = Game::Texturas_t::TVagon1; tipoVagon = "Lanzallamas";
+		break;
+	case Game::Escudo: desb = Game::Texturas_t::TVagon1; tipoVagon = "Escudo";
 		break;
 	default:
 		break;
