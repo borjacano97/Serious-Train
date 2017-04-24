@@ -17,9 +17,11 @@ void Sound::playMusic(const std::string& file, int loops) {
 		// Load music
 		Mix_Music* music = Mix_LoadMUS(file.c_str());
 		//Play music
-		Mix_PlayMusic(music, loops);
-		currentState = PLAYING;
-		currentSound = file.c_str();
+		if (music != NULL) {
+			Mix_PlayMusic(music, loops);
+			currentState = PLAYING;
+			currentSound = file.c_str();
+		}
 	}
 	else
 	{

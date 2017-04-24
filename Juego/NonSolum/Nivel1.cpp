@@ -30,6 +30,11 @@ Nivel1::Nivel1(Game * j, std::vector <Game::Vagon_t> v, Game::Bala_t a) : Play(j
 	default:
 		break;
 	}
+	initLibraries();
+	sound = new Sound;
+	sound->playMusic("../sounds/prueba.mp3", 1);
+
+	winSound = new Sound;
 }
 
 void Nivel1::onClick() {	
@@ -63,3 +68,14 @@ void Nivel1::update(Uint32 delta) {
 	Play::update(delta);
 
 }
+
+bool Nivel1::initLibraries() {
+	TTF_Init();
+	/*if (Mix_OpenAudio(22050, MIX_DEFAULT_FORMAT, 2, 4096) == -1)
+	{
+	return false;
+	}
+	return true;*/
+	return Mix_OpenAudio(22050, MIX_DEFAULT_FORMAT, 2, 4096) != -1;
+}
+

@@ -8,13 +8,14 @@ class FinNivel :
 {
 public:
 	FinNivel(Game* juego, bool v);
-	~FinNivel(){}
+	~FinNivel() { sound->stopMusic(); }
 	char getEst(){ if (victory) return 'W'; else return 'L'; }
 private:
 	static void salir(Game * jg);
 	static void jugar(Game * jg);
 	bool initLibraries();
 	bool victory;
+	Sound* sound;
 };
 
 

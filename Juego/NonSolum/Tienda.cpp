@@ -54,8 +54,8 @@ Tienda::Tienda(Game* juego) :Estado(juego)
 
 	initLibraries();
 
-	font = new Texturas(100, 80, 50, 50);
-	font->loadFuente("../fonts/AlexBrush-Regular.ttf", 200);
+	font = new Texturas(/*100, 80, 50, 50*/);
+	font->loadFuente("../fonts/fuenteNumbers.ttf", 200);
 
 	//font->setRect(80, 80, 50, 50);
 
@@ -80,7 +80,7 @@ void Tienda::draw() {
 	for (auto i : botones) {
 		if (!i->getDest())	i->draw();
 	}
-	font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(50, 45, 1100, 30));
+	font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(45, 45, 1100, 30));
 	font->loadFromText(ptsjuego->pRender, std::to_string(ptsjuego->coins), fontColor);
 	sel->draw();
 	armaActual->draw();

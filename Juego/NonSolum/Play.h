@@ -36,7 +36,8 @@ public:
 protected:
 	Texturas* font;
 	SDL_Color fontColor;
-	Sound* sonido;
+	Sound* soundLoss;
+	Sound* soundWon;
 
 
 	bool fin;

@@ -9,12 +9,13 @@ class Menu :
 {
 public:
 	Menu(Game* juego);
-	~Menu(){}
+	~Menu();
 	char getEst(){ return 'M'; }
 private:
 	static void salir(Game * jg);
 	static void jugar(Game * jg);
 	bool initLibraries();
+	Sound* sound;
 };
 
 

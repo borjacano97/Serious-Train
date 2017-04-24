@@ -30,6 +30,10 @@ Nivel3::Nivel3(Game * j, std::vector <Game::Vagon_t> v, Game::Bala_t a) : Play(j
 	default:
 		break;
 	}
+
+	initLibraries();
+	sound = new Sound;
+	sound->playMusic("../sounds/level3Music.mp3", 3);
 }
 void Nivel3::onClick() {
 	if (shootTimer >= cadencia) {
@@ -63,3 +67,13 @@ void Nivel3::update(Uint32 delta) {
 	}
 		Play::update(delta);
 	}
+
+bool Nivel3::initLibraries() {
+	TTF_Init();
+	/*if (Mix_OpenAudio(22050, MIX_DEFAULT_FORMAT, 2, 4096) == -1)
+	{
+	return false;
+	}
+	return true;*/
+	return Mix_OpenAudio(22050, MIX_DEFAULT_FORMAT, 2, 4096) != -1;
+}

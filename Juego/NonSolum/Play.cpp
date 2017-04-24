@@ -20,10 +20,12 @@ Play::Play(Game * j) : Estado(j)
 	emax = 5 * ptsjuego->getNivel();
 
 	font = new Texturas(/*80, 80, 50, 50*/);
-	font->loadFuente("../fonts/AlexBrush-Regular.ttf", 200);
+	font->loadFuente("../fonts/fuenteNumbers.ttf", 200);
 
-	sonido = new Sound;
-	//sonido->playMusic("../sounds/prueba.mp3");
+	/*sonido = new Sound;
+	sonido->playMusic("../sounds/prueba.mp3", 3);*/
+	soundLoss = new Sound;
+	soundWon = new Sound;
 
 	fontColor.r = 218;
 	fontColor.g = 165;
@@ -69,7 +71,7 @@ void Play::freeObjects() {
 }
 void Play::draw() {
 
-	font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(80, 80, 50, 50));
+	font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(60, 60, 50, 70));
 	font->loadFromText(ptsjuego->pRender, /* + Aqui podria ir imagen de monedas */ std::to_string(ptsjuego->coins), fontColor);
 
 	for (auto i : tren) {
@@ -108,10 +110,13 @@ void Play::update(Uint32 delta) {
 
 
 	if (TrainHp->getDest() || fin) {
-		if (TrainHp->getDest())	ptsjuego->changeState(new FinNivel(ptsjuego, false));
+		if (TrainHp->getDest()) { ptsjuego->changeState(new FinNivel(ptsjuego, false)); 
+		soundLoss->playMusic("../sounds/lossLevel.mp3", 2);
+		}
 		else {
 			ptsjuego->incrNivel();
 			ptsjuego->changeState(new FinNivel(ptsjuego, true));
+			soundWon->playMusic("../sounds/wonLevel.mp3", 2);
 		}
 	}
 

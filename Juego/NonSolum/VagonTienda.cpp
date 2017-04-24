@@ -22,7 +22,7 @@ VagonTienda::VagonTienda(Game* juego, Tienda* ti, float x, float y, int p, Game:
 
 
 	puntosText = new Texturas();
-	puntosText->loadFuente("../fonts/western.ttf", 250);
+	puntosText->loadFuente("../fonts/fuenteNumbers.ttf", 250);
 
 	tipoText = new Texturas();
 	tipoText->loadFuente("../fonts/AlexBrush-Regular.ttf", 200);

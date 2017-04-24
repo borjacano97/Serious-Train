@@ -7,6 +7,7 @@ Pausa::Pausa(Game* juego) : Estado(juego)
 {
 	objetos.emplace_back(new Button(ptsjuego, Game::TBotonC, 300, 500, reanudar));
 	objetos.emplace_back(new Button(ptsjuego, Game::TBotonS, 800, 500, salir));
+	//SDL_PauseAudio(4);
 }
 
 void Pausa::reanudar(Game * jg) {
