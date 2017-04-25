@@ -24,9 +24,9 @@ Vagon::Vagon(Game* juego, Play*pl, float x, float y, Game::Vagon_t t)
 		break;
 	case Game::Automatico: Ttextura = Game::Texturas_t::TVagonAuto;
 		break;
-	case Game::Laser: Ttextura = Game::Texturas_t::TVagon1;
+	case Game::Laser: Ttextura = Game::Texturas_t::TVagonLaser;
 		break;
-	case Game::Lanzallamas: Ttextura = Game::Texturas_t::TVagon1;
+	case Game::Lanzallamas: Ttextura = Game::Texturas_t::TVagonFuego;
 		break;
 	case Game::Escudo: {
 		Ttextura = Game::Texturas_t::TVagon1; 
@@ -72,13 +72,13 @@ void Vagon::update(Uint32 delta) {
 	default:
 		break;
 	}
-	cont++;
-	if (cont >= 1500 ){
+	vib++;
+	if (vib >= 1500 ){
 		
-		if ( cont % 8 == 0) pos.x -= 4;
-		else if (cont % 8 == 1) pos.x += 4;
+		if ( vib % 8 == 0) pos.x -= 4;
+		else if (vib % 8 == 1) pos.x += 4;
 		
 	}
-	 if (cont >= 2001) cont = 0;
+	 if (vib >= 2001) vib = 0;
 	
 }

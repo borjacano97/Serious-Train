@@ -69,6 +69,8 @@ Game::Game()
 	ntexturas[27] = "../bmps/metralleta.png";
 	ntexturas[28] = "../bmps/sniper.png";
 	ntexturas[29] = "../bmps/menuP.png";
+	ntexturas[30] = "../bmps/vagonFuego.png";
+	ntexturas[31] = "../bmps/vagonLaser.png";
 
 	srand(SDL_GetTicks()); // no se que coño es esto xd
 
@@ -97,7 +99,7 @@ SDL_Renderer* Game::getRender()const {
 }
 
 void Game::initMedia() {
-	for (unsigned int i = 0; i < 30 /*magic namber dude*/; i++) {
+	for (unsigned int i = 0; i < 32 /*magic namber dude*/; i++) {
 		texts.emplace_back(new Texturas);
 		texts[i]->load(getRender(), ntexturas[i]);
 	}
