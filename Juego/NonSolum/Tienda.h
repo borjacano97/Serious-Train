@@ -7,6 +7,7 @@
 #include "Selector.h"
 #include "BotonTienda.h"
 #include "Menu.h"
+#include "Sound.h"
 
 class Tienda :
 	public Estado
@@ -20,6 +21,7 @@ public:
 
 	void comprar(ObjetoTienda*o) { o->desbloquear(); ptsjuego->buy(o->getPrecio()); }
 	void select(Uint32 n);
+	void update(Uint32 d);
 	void colocarVagon(Game::Vagon_t v);
 	void elegirArma(Game::Bala_t a);
 	void recolocar(Game * jg);
@@ -43,6 +45,13 @@ private:
 	int seleccionado = 0;
 
 	bool initLibraries();
+	Sound* s;
+	Sound*s1;
+	Sound*s2;
+	Sound*s3;
+	Sound*s4;
+
+	bool suena = false;
 };
 
 #endif

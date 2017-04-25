@@ -7,15 +7,13 @@ class Nivel4 :
 {
 public:
 	Nivel4(Game * j, std::vector <Game::Vagon_t> v, Game::Bala_t a);
-	~Nivel4(){ sound->stopMusic(); }
+	~Nivel4(){  }
 	void onClick();
 	void update(Uint32 delta);
 private:
 	int  enem, emax, shootTimer, spawnTimer, cadencia;
 	bool created = false;
 	Game::Bala_t arma;
-	Sound* sound;
-	bool initLibraries();
 };
 
 

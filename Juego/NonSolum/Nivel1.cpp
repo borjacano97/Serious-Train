@@ -31,17 +31,12 @@ Nivel1::Nivel1(Game * j, std::vector <Game::Vagon_t> v, Game::Bala_t a) : Play(j
 	default:
 		break;
 	}
-	initLibraries();
-	sound = new Sound;
-	sound->playMusic("../sounds/prueba.mp3", 1);
-
-	winSound = new Sound;
-	esc = new Escenario(ptsjuego, Game::Texturas_t::TFondo, 0, -4200);
+	esc = new Escenario(ptsjuego, Game::Texturas_t::TFondo, 0, -4280);
 }
 
 void Nivel1::onClick() {	
 	if (shootTimer >= cadencia) {
-		balas.emplace_back(new Bala(ptsjuego, this, player->getPos().x, player->getPos().y, player->getMira(), arma));
+		balas.emplace_back(new Bala(ptsjuego, this, player->getPos().x, player->getPos().y+10, player->getMira(), arma));
 		shootTimer = 0;
 	}
 }
@@ -64,6 +59,7 @@ void Nivel1::update(Uint32 delta) {
 	}
 	else if (emax == Play::getKilled()){
 		Play::finish();
+
 	}
 
 
@@ -71,13 +67,4 @@ void Nivel1::update(Uint32 delta) {
 
 }
 
-bool Nivel1::initLibraries() {
-	TTF_Init();
-	/*if (Mix_OpenAudio(22050, MIX_DEFAULT_FORMAT, 2, 4096) == -1)
-	{
-	return false;
-	}
-	return true;*/
-	return Mix_OpenAudio(22050, MIX_DEFAULT_FORMAT, 2, 4096) != -1;
-}
 

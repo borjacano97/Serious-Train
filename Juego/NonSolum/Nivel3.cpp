@@ -31,9 +31,6 @@ Nivel3::Nivel3(Game * j, std::vector <Game::Vagon_t> v, Game::Bala_t a) : Play(j
 		break;
 	}
 
-	initLibraries();
-	sound = new Sound;
-	sound->playMusic("../sounds/level3Music.mp3", 3);
 	esc = new Escenario(ptsjuego, Game::Texturas_t::TFondo, 0, -4200);
 }
 void Nivel3::onClick() {
@@ -69,12 +66,3 @@ void Nivel3::update(Uint32 delta) {
 		Play::update(delta);
 	}
 
-bool Nivel3::initLibraries() {
-	TTF_Init();
-	/*if (Mix_OpenAudio(22050, MIX_DEFAULT_FORMAT, 2, 4096) == -1)
-	{
-	return false;
-	}
-	return true;*/
-	return Mix_OpenAudio(22050, MIX_DEFAULT_FORMAT, 2, 4096) != -1;
-}

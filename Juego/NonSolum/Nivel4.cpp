@@ -29,9 +29,6 @@ Nivel4::Nivel4(Game * j, std::vector <Game::Vagon_t> v, Game::Bala_t a) : Play(j
 	default:
 		break;
 	}
-	initLibraries();
-	sound = new Sound;
-	sound->playMusic("../sounds/level4.mp3", 3);
 	esc = new Escenario(ptsjuego, Game::Texturas_t::TFondo, 0, -4200);
 }
 
@@ -77,12 +74,3 @@ void Nivel4::update(Uint32 delta) {
 		Play::update(delta);
 
 	}
-bool Nivel4::initLibraries() {
-	TTF_Init();
-	/*if (Mix_OpenAudio(22050, MIX_DEFAULT_FORMAT, 2, 4096) == -1)
-	{
-	return false;
-	}
-	return true;*/
-	return Mix_OpenAudio(22050, MIX_DEFAULT_FORMAT, 2, 4096) != -1;
-}

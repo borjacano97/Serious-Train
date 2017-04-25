@@ -111,7 +111,8 @@ void Play::update(Uint32 delta) {
 
 
 	if (TrainHp->getDest() || fin) {
-		if (TrainHp->getDest()) { ptsjuego->changeState(new FinNivel(ptsjuego, false)); 
+		if (TrainHp->getDest()) {
+			ptsjuego->changeState(new FinNivel(ptsjuego, false));
 		soundLoss->playMusic("../sounds/lossLevel.mp3", 2);
 		}
 		else {

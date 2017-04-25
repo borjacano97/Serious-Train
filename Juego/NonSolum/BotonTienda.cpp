@@ -13,6 +13,10 @@ BotonTienda::BotonTienda(Game* juego, Tienda*ti, ObjetoTienda*obj, Game::Textura
 		alto = 40;
 		ancho = 90;
 	}
+	else if (tipo == Game::Boton_t::Salir) {
+		alto = 80;
+		ancho = 130;
+	}
 	else {
 		alto = 100;
 		ancho = 190;

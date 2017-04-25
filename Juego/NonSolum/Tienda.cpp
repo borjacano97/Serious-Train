@@ -20,7 +20,7 @@ Tienda::Tienda(Game* juego) :Estado(juego)
 	// BOTONES PRINCIPALES 
 	botones.emplace_back(new BotonTienda(ptsjuego, this, NULL, Game::TBtienda1, 1050, 70, Game::Boton_t::Jugar));
 	botones.emplace_back(new BotonTienda(ptsjuego, this, NULL, Game::TBtienda2, -20, 650, Game::Boton_t::Recolocar));
-	botones.emplace_back(new BotonTienda(ptsjuego, this, NULL, Game::TBotonS, 1120, 650, Game::Boton_t::Salir));
+	botones.emplace_back(new BotonTienda(ptsjuego, this, NULL, Game::TBotonS, 1140, 650, Game::Boton_t::Salir));
 
 	//VAGONES PARA COMPRAR Y RESPECTIVOS BOTONES
 	vags.emplace_back(new VagonTienda(ptsjuego, this, 200, 200, 50, Game::Vagon_t::Automatico, false));
@@ -63,6 +63,9 @@ Tienda::Tienda(Game* juego) :Estado(juego)
 	fontColor.r = 218;
 	fontColor.g = 165;
 	fontColor.b = 32;
+
+	s = new Sound;
+	s1 = new Sound;
 }
 
 
@@ -103,27 +106,34 @@ bool Tienda::initLibraries() {
 void Tienda::jugar(Game * jg) {
 	// hacemos pushState para "salvar" la tienda y no tener que volver a hacer un new tienda
 	// ya que perderíamos los datos de los objetos desbloqueados
+	
 	switch (jg->getNivel())
-	{
-	case(1) : {
-		jg->pushState(new Nivel1(jg, vagonesNivel, armaNivel));
-		recolocar(jg);
+	{		
+	case(1) : {		
+		jg->pushState(new Nivel1(jg, vagonesNivel, armaNivel));	
+		s->stopMusic();
+		s1->playMusic("../sounds/prueba.mp3", 1);
 		break; }
 	case(2) : {
 		jg->pushState(new Nivel2(jg, vagonesNivel, armaNivel));
-		recolocar(jg);
+		s->stopMusic();
+		s2->playMusic("../sounds/inGameMusic2.mp3", 1);
 		break; }
 	case(3) : {
 		jg->pushState(new Nivel3(jg, vagonesNivel, armaNivel));
-		recolocar(jg);
+		s->stopMusic();
+		s3->playMusic("../sounds/level3Music.mp3", 3);
 		break; }
 	case(4) : {
 		jg->pushState(new Nivel4(jg, vagonesNivel, armaNivel));
-		recolocar(jg);
+		s->stopMusic();
+		s4->playMusic("../sounds/level4.mp3", 3);
 		break; }
 	default:
 		break;
 	}
+	suena = false;
+	recolocar(jg);
 }
 
 void Tienda::recolocar(Game * jg){
@@ -138,6 +148,7 @@ void Tienda::recolocar(Game * jg){
 }
 
 void Tienda::onClick() {
+	
 	bool clickeado = false;
 
 	int i = botones.size() - 1;
@@ -189,4 +200,10 @@ void Tienda::colocarVagon(Game::Vagon_t v){
 void Tienda::elegirArma(Game::Bala_t a) {
 	armaNivel = a;
 	armaActual = new ArmaTienda(ptsjuego, this, 1000, 170, 100, a, true);
+}
+void Tienda::update(Uint32 d){ 
+	if (!suena)	{
+		s->playMusic("../sounds/menuMusic1.mp3", 2);
+		suena = true;
+	}
 }
