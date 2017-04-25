@@ -45,17 +45,17 @@ void Nivel4::update(Uint32 delta) {
 	shootTimer += delta;
 	spawnTimer += delta;
 	if (enem < emax - 1){
-		if (spawnTimer >= 1300){
+		if (spawnTimer >= 1400){
 
 			if (rand() % 2 == 0){
-				if (rand() % 2 == 0) enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 400, Game::Enemigo_t::Normal));
-				else  enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 400, Game::Enemigo_t::Normal));
+				if (rand() % 2 == 0) enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 300, Game::Enemigo_t::Normal));
+				else  enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 300, Game::Enemigo_t::Normal));
 				enem++;
 			}
 			else {
-				if (rand() % 2 == 0) enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550), Game::Enemigo_t::Rapido));
-				else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550), Game::Enemigo_t::Rapido));
-				enem++;
+				if (rand() % 2 == 0) enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) +100, Game::Enemigo_t::Rapido));
+				else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 100, Game::Enemigo_t::Rapido));
+				enem++; 
 			}
 			spawnTimer = 0;
 		}
@@ -63,7 +63,7 @@ void Nivel4::update(Uint32 delta) {
 	else {
 		if (!created){
 			enems.emplace_back
-				(new Enemigo(ptsjuego, this, 0, (rand() % 550) - 120, Game::Enemigo_t::Tank));
+				(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 300, Game::Enemigo_t::Tank));
 			created = true;
 		}
 

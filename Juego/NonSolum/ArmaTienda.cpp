@@ -38,10 +38,32 @@ ArmaTienda::ArmaTienda(Game* juego, Tienda* ti, float x, float y, int p, Game::B
 	estatico = est;
 	switch (tipo)
 	{
-	case Game::Piedra: Ttextura = Game::Texturas_t::TRoca; desb = Game::Texturas_t::TRoca; tipoArma = "Piedra"; if (!estatico) desbloquear();
+	case Game::Piedra: 
+
+		alto = 70;
+		ancho = 90;
+
+		pos.y -= 20;
+		pos.x += 70;
+
+		Ttextura = Game::Texturas_t::TRoca;
+		desb = Game::Texturas_t::TRoca;
+		tipoArma = "Piedra";
+
+		if (!estatico) desbloquear();
+
 		break;	
-	case Game::Pistola: Ttextura = Game::Texturas_t::TPistol;  desb = Game::Texturas_t::TPistol; tipoArma = "Pistola";
+	case Game::Pistola: 
+
+		alto = 70; 
+		ancho = 100; 
+		pos.y += 10;
+
+		Ttextura = Game::Texturas_t::TPistol;  
+		desb = Game::Texturas_t::TPistol;
+		tipoArma = "Pistola";
 		break;
+
 	case Game::Escopeta: Ttextura = Game::Texturas_t::TEscopeta;  desb = Game::Texturas_t::TEscopeta; tipoArma = "Escopeta";
 		break;
 	case Game::Sniper: Ttextura = Game::Texturas_t::TSniper;  desb = Game::Texturas_t::TSniper; tipoArma = "Francotirador";
@@ -89,7 +111,7 @@ void ArmaTienda::draw() {
 	else {
 		puntosText->draw(juegootp->pRender, nullptr, &puntosText->myFont.setRect(50, 45, mpbx, mpby));
 		puntosText->loadFromText(juegootp->pRender, " ", fontColor);
-		tipoText->draw(juegootp->pRender, nullptr, &puntosText->myFont.setRect(50, 120, this->pos.x - 13, this->pos.y - 25));
-		tipoText->loadFromText(juegootp->pRender, " ", tipoTextColor);
+		tipoText->draw(juegootp->pRender, nullptr, &puntosText->myFont.setRect(50, 120, 850, 190));
+		tipoText->loadFromText(juegootp->pRender, "Elegida -> ", tipoTextColor);
 	}
 }

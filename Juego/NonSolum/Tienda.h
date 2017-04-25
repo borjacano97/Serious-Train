@@ -6,6 +6,7 @@
 #include "ArmaTienda.h"
 #include "Selector.h"
 #include "BotonTienda.h"
+#include "Menu.h"
 
 class Tienda :
 	public Estado
@@ -23,6 +24,7 @@ public:
 	void elegirArma(Game::Bala_t a);
 	void recolocar(Game * jg);
 	void jugar(Game * jg);
+	void salir(Game * jg){ jg->changeState(new Menu(jg)); }
 private:
 	Texturas* font;
 	SDL_Color fontColor;

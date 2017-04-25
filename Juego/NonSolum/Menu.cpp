@@ -9,7 +9,7 @@ Menu::Menu(Game * juego) :Estado(juego)
 	objetos.emplace_back(new Button(ptsjuego, Game::TBotonS, 300, 200, salir));
 	initLibraries();
 	sound = new Sound;
-	sound->playMusic("../sounds/menuMusic1.mp3", 2);
+	sound->playMusic("../sounds/finalMusic.mp3", 2);
 	
 }
 

@@ -15,11 +15,12 @@ Tienda::Tienda(Game* juego) :Estado(juego)
 	sel = new Selector(ptsjuego, Game::TRect, 20, 170);
 	//ARMA ELEGIDA
 	armaNivel = Game::Bala_t::Piedra;
-	armaActual = new ArmaTienda(ptsjuego, this, 920, 180, 100, Game::Bala_t::Piedra, true);
+	armaActual = new ArmaTienda(ptsjuego, this, 920, 200, 0, Game::Bala_t::Piedra, true);
 
 	// BOTONES PRINCIPALES 
-	botones.emplace_back(new BotonTienda(ptsjuego, this, NULL, Game::TBtienda1, 1120, 640, Game::Boton_t::Jugar));
-	botones.emplace_back(new BotonTienda(ptsjuego, this, NULL, Game::TBtienda2, -10, 650, Game::Boton_t::Recolocar));
+	botones.emplace_back(new BotonTienda(ptsjuego, this, NULL, Game::TBtienda1, 1050, 70, Game::Boton_t::Jugar));
+	botones.emplace_back(new BotonTienda(ptsjuego, this, NULL, Game::TBtienda2, -20, 650, Game::Boton_t::Recolocar));
+	botones.emplace_back(new BotonTienda(ptsjuego, this, NULL, Game::TBotonS, 1120, 650, Game::Boton_t::Salir));
 
 	//VAGONES PARA COMPRAR Y RESPECTIVOS BOTONES
 	vags.emplace_back(new VagonTienda(ptsjuego, this, 200, 200, 50, Game::Vagon_t::Automatico, false));

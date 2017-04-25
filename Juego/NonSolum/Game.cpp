@@ -252,11 +252,11 @@ bool Game::handle_event() { //eventos del teclado y raton
 			 if (e.key.keysym.sym == SDLK_2) if (topEstado()->getEst() == 'T') topEstado()->select(2);
 			 if (e.key.keysym.sym == SDLK_3) if (topEstado()->getEst() == 'T') topEstado()->select(3);
 			 if (e.key.keysym.sym == SDLK_4) if (topEstado()->getEst() == 'T') topEstado()->select(4);
-			/*else if ((e.key.keysym.sym == SDLK_l || e.key.keysym.sym == SDLK_SPACE) && cadencia >= 100) {
-			cadencia = 0;
-			topEstado()->onClick();
-			//onClick(e.button.x, e.button.y); PUSSY ASS BITCH IDON FACK WITH U
-			}*/
+
+			 if ((e.key.keysym.sym ==  SDLK_l || e.key.keysym.sym == SDLK_SPACE)) {
+			
+			onClick(e.button.x, e.button.y); //PUSSY ASS BITCH IDON FACK WITH U
+			}
 
 			// click izquierdo para llamar al onclick
 

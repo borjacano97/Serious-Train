@@ -43,6 +43,9 @@ bool BotonTienda::onClick() {
 		case Game::Recolocar:
 			t->recolocar(juegootp);
 			break;
+		case Game::Salir:
+			t->salir(juegootp);
+			break;
 		default:
 			break;
 		}			

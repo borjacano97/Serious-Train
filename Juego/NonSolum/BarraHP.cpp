@@ -25,7 +25,7 @@ void barraHP::move(char c) {
 	}
 	if (c == 'z'){ // daño por zombie
 		cont++;
-		if (cont >= 50) {
+		if (cont >= 100) {
 			cont = 0;
 			ancho--;
 		}
