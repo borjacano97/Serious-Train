@@ -1,5 +1,6 @@
 #include "Nivel1.h"
 #include "Enemigo.h"
+#include "Escenario.h"
 
 
 Nivel1::Nivel1(Game * j, std::vector <Game::Vagon_t> v, Game::Bala_t a) : Play(j)
@@ -35,6 +36,7 @@ Nivel1::Nivel1(Game * j, std::vector <Game::Vagon_t> v, Game::Bala_t a) : Play(j
 	sound->playMusic("../sounds/prueba.mp3", 1);
 
 	winSound = new Sound;
+	esc = new Escenario(ptsjuego, Game::Texturas_t::TFondo, 0, -4200);
 }
 
 void Nivel1::onClick() {	
@@ -52,9 +54,9 @@ void Nivel1::update(Uint32 delta) {
 		if (spawnTimer >= 1500){			
 			if (rand()%2 == 0) {				
 				if (rand() % 2 == 0) enems.emplace_back
-					(new Enemigo(ptsjuego, this, 0, (rand() % 550) - 120, Game::Enemigo_t::Normal));
+					(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 400, Game::Enemigo_t::Normal));
 				else enems.emplace_back
-					(new Enemigo(ptsjuego, this, 1300, (rand() % 550) - 120, Game::Enemigo_t::Normal));
+					(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 400, Game::Enemigo_t::Normal));
 				enem++;
 			}
 			spawnTimer = 0;

@@ -13,7 +13,8 @@ public:
 	~Vagon(){}
 	void update(Uint32 delta);
 private: 
-	Uint32 cont;
+	Uint32 cont = 0;
+	Uint32 vib = 0;
 	bool disparo;
 	Game::Vagon_t tipo; //struct tbn
 	Play*p;

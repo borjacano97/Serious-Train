@@ -120,7 +120,7 @@ void Bala::update(Uint32 delta) {
 		else destruido = true;
 		break;
 	case Game::Fuego:
-		cont++;
+		cont += delta;
 		if (cont %2 ==0) ancho -= 5;
 		else ancho += 5;
 		for each (auto var in p->enems)

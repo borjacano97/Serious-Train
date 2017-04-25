@@ -2,6 +2,7 @@
 #define H_NIVEL1_H
 
 #include "play.h"
+
 class Nivel1 :
 	public Play
 {

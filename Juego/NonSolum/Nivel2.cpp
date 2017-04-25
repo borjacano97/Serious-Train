@@ -32,6 +32,7 @@ Nivel2::Nivel2(Game * j, std::vector <Game::Vagon_t> v, Game::Bala_t a) : Play(j
 	initLibraries();
 	sound = new Sound;
 	sound->playMusic("../sounds/inGameMusic2.mp3", 1);
+	esc = new Escenario(ptsjuego, Game::Texturas_t::TFondo, 0, -4200);
 }
 void Nivel2::onClick() {
 	if (shootTimer >= cadencia) {
@@ -47,9 +48,9 @@ void Nivel2::update(Uint32 delta) {
 		if (spawnTimer >= 1400){
 			if (rand() % 2 == 0) {
 				if (rand() % 2 == 0) enems.emplace_back
-					(new Enemigo(ptsjuego, this, 0, (rand() % 550) - 120, Game::Enemigo_t::Normal));
+					(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 400, Game::Enemigo_t::Normal));
 				else enems.emplace_back
-					(new Enemigo(ptsjuego, this, 1300, (rand() % 550) - 120, Game::Enemigo_t::Normal));
+					(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 400, Game::Enemigo_t::Normal));
 				enem++;
 			}
 			spawnTimer = 0;

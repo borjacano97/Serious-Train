@@ -9,6 +9,7 @@
 #include "Trigger.h"
 #include "Bala.h"
 #include "Sound.h"
+#include "Escenario.h"
 
 using namespace std;
 
@@ -45,6 +46,7 @@ protected:
 	void freeObjects();
 
 	int emax, enem;
+	Escenario*esc;
 };
 
 

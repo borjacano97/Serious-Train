@@ -70,7 +70,7 @@ void Play::freeObjects() {
 	}
 }
 void Play::draw() {
-
+	esc->draw();
 	font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(60, 60, 50, 70));
 	font->loadFromText(ptsjuego->pRender, /* + Aqui podria ir imagen de monedas */ std::to_string(ptsjuego->coins), fontColor);
 
@@ -94,6 +94,7 @@ void Play::draw() {
 
 
 void Play::update(Uint32 delta) {
+	esc->update(delta);
 	for (auto i : tren) {
 		i->update(delta);
 	}
@@ -124,10 +125,14 @@ void Play::update(Uint32 delta) {
 		for (unsigned int i = 0; i < enems.size(); i++) {
 
 			if (enems[i] != nullptr) {
+				
 				if (tg->collision(enems[i])) {
+					
 					TrainHp->move('z');
 					enems[i]->parar();
+					esc->ralentizar(delta);
 				}
+				
 				enems[i]->update(delta);
 			}
 			if (enems[i] != nullptr && enems[i]->getDest()) {

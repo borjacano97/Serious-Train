@@ -52,7 +52,7 @@ void Enemigo::update(Uint32 delta) {
 		if (hp <= 0) destruido = true;
 		j += delta;
 		if (!parado) {
-			pos.y += delta *0.04;
+			pos.y -= delta *0.04;
 
 			pos.x += vel*delta;//*dir //someday 
 		}

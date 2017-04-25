@@ -72,4 +72,7 @@ void Vagon::update(Uint32 delta) {
 	default:
 		break;
 	}
+	vib ++;
+	if (vib % 2 == 0) pos.x -=2;
+	else pos.x+=2;
 }

@@ -126,6 +126,9 @@
     <ClCompile Include="VagonTienda.cpp">
       <Filter>Archivos de código fuente\Objetos</Filter>
     </ClCompile>
+    <ClCompile Include="Escenario.cpp">
+      <Filter>Archivos de código fuente\Objetos</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Texturas.h">
@@ -216,6 +219,9 @@
       <Filter>Archivos de encabezado\Objetos</Filter>
     </ClInclude>
     <ClInclude Include="ArmaTienda.h">
+      <Filter>Archivos de encabezado\Objetos</Filter>
+    </ClInclude>
+    <ClInclude Include="Escenario.h">
       <Filter>Archivos de encabezado\Objetos</Filter>
     </ClInclude>
   </ItemGroup>

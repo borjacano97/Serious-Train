@@ -32,6 +32,7 @@ Nivel4::Nivel4(Game * j, std::vector <Game::Vagon_t> v, Game::Bala_t a) : Play(j
 	initLibraries();
 	sound = new Sound;
 	sound->playMusic("../sounds/level4.mp3", 3);
+	esc = new Escenario(ptsjuego, Game::Texturas_t::TFondo, 0, -4200);
 }
 
 void Nivel4::onClick() {
@@ -44,11 +45,11 @@ void Nivel4::update(Uint32 delta) {
 	shootTimer += delta;
 	spawnTimer += delta;
 	if (enem < emax - 1){
-		if (spawnTimer >= 1200){
+		if (spawnTimer >= 1300){
 
 			if (rand() % 2 == 0){
-				if (rand() % 2 == 0) enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) - 120, Game::Enemigo_t::Normal));
-				else  enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) - 120, Game::Enemigo_t::Normal));
+				if (rand() % 2 == 0) enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 400, Game::Enemigo_t::Normal));
+				else  enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 400, Game::Enemigo_t::Normal));
 				enem++;
 			}
 			else {
@@ -58,14 +59,15 @@ void Nivel4::update(Uint32 delta) {
 			}
 			spawnTimer = 0;
 		}
-		else {
-			if (!created){
-				enems.emplace_back
-					(new Enemigo(ptsjuego, this, 0, (rand() % 550) - 120, Game::Enemigo_t::Tank));
-				created = true;
-			}
-
+	}
+	else {
+		if (!created){
+			enems.emplace_back
+				(new Enemigo(ptsjuego, this, 0, (rand() % 550) - 120, Game::Enemigo_t::Tank));
+			created = true;
 		}
+
+
 	}
 		if (emax == Play::getKilled()){
 			Play::finish();
