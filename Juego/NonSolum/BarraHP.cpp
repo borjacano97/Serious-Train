@@ -17,6 +17,7 @@ barraHP::barraHP(Game* juego, Game::Texturas_t text, float x, float y)
 
 
 void barraHP::update(Uint32 delta) {
+	d = delta;
 	if (ancho <= 0) destruido = true;
 }
 void barraHP::move(char c) {
@@ -24,7 +25,7 @@ void barraHP::move(char c) {
 		ancho -= 10;
 	}
 	if (c == 'z'){ // daño por zombie
-		cont++;
+		cont+=d;
 		if (cont >= 100) {
 			cont = 0;
 			ancho--;

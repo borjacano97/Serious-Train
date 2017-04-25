@@ -73,10 +73,10 @@ void Vagon::update(Uint32 delta) {
 		break;
 	}
 	cont++;
-	if (cont >= 1500){
+	if (cont >= 1500 ){
 		
-		if ( cont% 2 == 0) pos.x -= 3;
-		else pos.x += 3;	
+		if ( cont % 8 == 0) pos.x -= 4;
+		else if (cont % 8 == 1) pos.x += 4;
 		
 	}
 	 if (cont >= 2001) cont = 0;

@@ -13,6 +13,7 @@ public:
 	void giveHP(int extra){ ancho += extra; }
 private:
 	int cont;
+	Uint32 d;
 };
 
 #endif
