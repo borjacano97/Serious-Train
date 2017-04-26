@@ -29,3 +29,4 @@
 ../bmps/menuP.png
 ../bmps/vagonFuego.png
 ../bmps/vagonLaser.png
+../bmps/minigun.png

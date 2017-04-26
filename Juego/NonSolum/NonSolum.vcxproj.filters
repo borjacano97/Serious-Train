@@ -130,7 +130,7 @@
       <Filter>Archivos de código fuente\Objetos</Filter>
     </ClCompile>
     <ClCompile Include="Nivel5.cpp">
-      <Filter>Archivos de código fuente</Filter>
+      <Filter>Archivos de código fuente\Niveles</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -228,7 +228,7 @@
       <Filter>Archivos de encabezado\Objetos</Filter>
     </ClInclude>
     <ClInclude Include="Nivel5.h">
-      <Filter>Archivos de encabezado</Filter>
+      <Filter>Archivos de encabezado\Niveles</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

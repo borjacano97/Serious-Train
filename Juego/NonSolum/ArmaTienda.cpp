@@ -10,8 +10,8 @@ ArmaTienda::ArmaTienda(Game* juego, Tienda* ti, float x, float y, int p, Game::B
 	juegootp = juego;
 	t = ti;	
 
-	alto = 90;
-	ancho = 120;
+	alto = 65;
+	ancho = 95;
 	precio = p;
 
 	pos.set(x, y);
@@ -40,10 +40,10 @@ ArmaTienda::ArmaTienda(Game* juego, Tienda* ti, float x, float y, int p, Game::B
 	{
 	case Game::Piedra: 
 
-		alto = 70;
-		ancho = 90;
+		alto = 60;
+		ancho = 80;
 
-		pos.y -= 20;
+		pos.y -= 10;
 		pos.x += 70;
 
 		Ttextura = Game::Texturas_t::TRoca;
@@ -65,10 +65,12 @@ ArmaTienda::ArmaTienda(Game* juego, Tienda* ti, float x, float y, int p, Game::B
 		break;
 
 	case Game::Escopeta: Ttextura = Game::Texturas_t::TEscopeta;  desb = Game::Texturas_t::TEscopeta; tipoArma = "Escopeta";
+		break;		
+	case Game::Metralleta: Ttextura = Game::Texturas_t::TMetralleta;  desb = Game::Texturas_t::TMetralleta; tipoArma = "Metralleta";
 		break;
 	case Game::Sniper: Ttextura = Game::Texturas_t::TSniper;  desb = Game::Texturas_t::TSniper; tipoArma = "Francotirador";
-		break;	
-	case Game::Metralleta: Ttextura = Game::Texturas_t::TMetralleta;  desb = Game::Texturas_t::TMetralleta; tipoArma = "Metralleta";
+		break;
+	case Game::Minigun: if (estatico) pos.y += 20; Ttextura = Game::Texturas_t::TMinigun;  desb = Game::Texturas_t::TMinigun; tipoArma = "Minigun";
 		break;
 	default:
 		break;
@@ -99,9 +101,11 @@ void ArmaTienda::draw() {
 	juegootp->getTextura(Ttextura)->draw(render, nullptr, &rect);
 
 	if (bloqueado && !estatico) {
-		puntosText->draw(juegootp->pRender, nullptr, &puntosText->myFont.setRect(40, 70, this->pos.x + 15, this->pos.y + 85));
+		if (tip == Game::Bala_t::Pistola)puntosText->draw(juegootp->pRender, nullptr, &puntosText->myFont.setRect(40, 70, this->pos.x + 15, this->pos.y + 75));
+		else puntosText->draw(juegootp->pRender, nullptr, &puntosText->myFont.setRect(40, 70, this->pos.x + 15, this->pos.y + 85));
 		puntosText->loadFromText(juegootp->pRender, "$" + std::to_string(precio), fontColor);
-		tipoText->draw(juegootp->pRender, nullptr, &puntosText->myFont.setRect(50, 120, this->pos.x - 13, this->pos.y - 25));
+		if (tip==Game::Bala_t::Pistola) tipoText->draw(juegootp->pRender, nullptr, &puntosText->myFont.setRect(50, 120, this->pos.x - 13, this->pos.y - 35));
+		else tipoText->draw(juegootp->pRender, nullptr, &puntosText->myFont.setRect(50, 120, this->pos.x - 13, this->pos.y - 25));
 		tipoText->loadFromText(juegootp->pRender, tipoArma, tipoTextColor);
 	}
 	else if (!bloqueado) {

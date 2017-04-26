@@ -71,16 +71,24 @@ Bala::Bala(Game* juego, Play*pl, float x, float y, int mira, Game::Bala_t b)
 		break;
 	case Game::Sniper:
 		alto = 14;
-		ancho = 14;
+		ancho = 34;
 		vel = 0.7;
-		dmg = 1000;
+		dmg = 30; // no nos habiamos dado cuenta que como la bala no se destruye en el franco colisiona varias veces con el enemigo
+		          // por eso hay que poner menor damage que si no es insta kill hasta pa los bosses xd
 		Ttextura = Game::Texturas_t::TBala;
 		break;
 	case Game::Metralleta:
-		alto = 14;
-		ancho = 14;
+		alto = 20;
+		ancho = 20;
 		vel = 0.5;
-		dmg = 250;
+		dmg = 500;
+		Ttextura = Game::Texturas_t::TBala;
+		break;
+	case Game::Minigun:
+		alto = 20;
+		ancho = 20;
+		vel = 0.6;
+		dmg = 400;
 		Ttextura = Game::Texturas_t::TBala;
 		break;
 	default:
@@ -114,8 +122,8 @@ void Bala::update(Uint32 delta) {
 		break;
 	case Game::Rayo:
 		if (alto > 0) {
-			alto -= 2;
-			pos.y++;
+			alto -= delta;
+			pos.y+= delta*0.5;
 		}
 		else destruido = true;
 		break;
@@ -194,6 +202,18 @@ void Bala::update(Uint32 delta) {
 		}
 		break;
 	case Game::Metralleta:
+		pos.x += dir * vel*delta;
+		if (pos.x <= 0 || pos.x >= 1500)
+			destruido = true;
+		for each (auto var in p->enems)
+		{
+			if (var != nullptr && var->collision(this)) {
+				var->damage(dmg);
+				destruido = true;
+			}
+		}
+		break;
+	case Game::Minigun:
 		pos.x += dir * vel*delta;
 		if (pos.x <= 0 || pos.x >= 1500)
 			destruido = true;
