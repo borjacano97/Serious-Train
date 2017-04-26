@@ -7,15 +7,16 @@ Sound* Sound::instance = 0;
 Sound::audioState Sound::currentState = ERROR;
 std::string Sound::currentSound = "";
 
-void Sound::playMusic(const std::string& file, int loops) {
+void Sound::playMusic(const std::string& file, int loops, int volume) {
 	//if (currentState != ERROR)
 	//{
 	// If no music is playing, play it
 	if (Mix_PlayingMusic() == 0)
 	{
-		std::cout << "Pues si sueno" << std::endl;
 		// Load music
+		
 		Mix_Music* music = Mix_LoadMUS(file.c_str());
+		Mix_VolumeMusic(volume);
 		//Play music
 		if (music != NULL) {
 			Mix_PlayMusic(music, loops);

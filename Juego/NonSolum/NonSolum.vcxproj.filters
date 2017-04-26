@@ -129,6 +129,9 @@
     <ClCompile Include="Escenario.cpp">
       <Filter>Archivos de código fuente\Objetos</Filter>
     </ClCompile>
+    <ClCompile Include="Nivel5.cpp">
+      <Filter>Archivos de código fuente</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Texturas.h">
@@ -223,6 +226,9 @@
     </ClInclude>
     <ClInclude Include="Escenario.h">
       <Filter>Archivos de encabezado\Objetos</Filter>
+    </ClInclude>
+    <ClInclude Include="Nivel5.h">
+      <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

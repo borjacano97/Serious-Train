@@ -26,7 +26,7 @@ public:
 	void elegirArma(Game::Bala_t a);
 	void recolocar(Game * jg);
 	void jugar(Game * jg);
-	void salir(Game * jg){ jg->changeState(new Menu(jg)); }
+	void salir(Game * jg){ jg->pushState(new Menu(jg)); }
 private:
 	Texturas* font;
 	SDL_Color fontColor;

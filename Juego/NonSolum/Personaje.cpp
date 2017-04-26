@@ -36,10 +36,10 @@ void Personaje::draw() {
 void Personaje::update(Uint32 delta) {
 	pos.x += dir.x*vel*delta;
 	pos.y += dir.y*vel*delta;
-	if (pos.x < 600)
-		pos.x = 600;
-	else if (pos.x > 650)
-		pos.x = 650;
+	if (pos.x < 590)
+		pos.x = 590;
+	else if (pos.x > 660)
+		pos.x = 660;
 	if (pos.y < 110)
 		pos.y = 110;
 	else if (pos.y > 650)

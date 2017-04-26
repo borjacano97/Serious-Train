@@ -58,7 +58,7 @@ SDL_Renderer* Game::getRender()const {
 }
 
 void Game::initMedia() {
-	for (unsigned int i = 0; i < 32 /*magic namber dude*/; i++) {
+	for (unsigned int i = 0; i < 31 /*magic namber dude*/; i++) {
 		texts.emplace_back(new Texturas);
 		texts[i]->load(getRender(), ntexturas[i]);
 	}
@@ -145,11 +145,11 @@ void Game::render() { //const
 	/*if (topEstado()->getEst() == 'P' || topEstado()->getEst() == 'S')
 		texts[0]->draw(pRender, nullptr, nullptr);*/
 	 if (topEstado()->getEst() == 'M')
-		texts[29]->draw(pRender, nullptr, nullptr);
+		texts[28]->draw(pRender, nullptr, nullptr);
 	else if (topEstado()->getEst() == 'W')
-		texts[29]->draw(pRender, nullptr, nullptr);
+		texts[28]->draw(pRender, nullptr, nullptr);
 	else if (topEstado()->getEst() == 'L')
-		texts[16]->draw(pRender, nullptr, nullptr);
+		texts[15]->draw(pRender, nullptr, nullptr);
 	else if (topEstado()->getEst() == 'T')
 		texts[1]->draw(pRender, nullptr, nullptr);
 	topEstado()->draw();

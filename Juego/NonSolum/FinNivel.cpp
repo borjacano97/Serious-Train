@@ -5,11 +5,10 @@
 FinNivel::FinNivel(Game* juego, bool v) :Estado(juego)
 {		
 	victory = v;
-	objetos.emplace_back(new Button(ptsjuego, Game::TBotonJ, 300, 600, jugar)); // hay que poner sdl_center o algo asi xd
-	objetos.emplace_back(new Button(ptsjuego, Game::TBotonS, 800, 600, salir));
+	objetos.emplace_back(new Button(ptsjuego, Game::TBotonJ, 300, 600, jugar)); 
 	initLibraries();
 	sound = new Sound;
-	sound->playMusic("../sounds/wonLevel.mp3", 2);
+	sound->playMusic("../sounds/wonLevel.mp3", 2, 20);
 }
 
 void FinNivel::jugar(Game * jg) {

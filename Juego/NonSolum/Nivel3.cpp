@@ -6,7 +6,7 @@
 Nivel3::Nivel3(Game * j, std::vector <Game::Vagon_t> v, Game::Bala_t a) : Play(j)
 {
 	enem = 0;
-	emax = 20;
+	emax = 30;
 	for (unsigned int i = 0; i < 4; i++) {
 		tren.emplace_back(new Vagon(ptsjuego, this, 580, 100 + 150 * i, v[i]));
 	}
@@ -52,8 +52,8 @@ void Nivel3::update(Uint32 delta) {
 				enem++;
 			}
 			else {
-				if (rand() % 2 == 0) enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) +100, Game::Enemigo_t::Rapido));
-				else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) +100, Game::Enemigo_t::Rapido));
+				if (rand() % 2 == 0) enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) +120, Game::Enemigo_t::Rapido));
+				else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) +120, Game::Enemigo_t::Rapido));
 				enem++;
 			}
 			spawnTimer = 0;

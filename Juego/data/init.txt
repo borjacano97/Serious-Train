@@ -9,7 +9,6 @@
 ../bmps/barraHP.png
 ../bmps/botonJ.png
 ../bmps/botonS.png
-../bmps/botonC.png
 ../bmps/botonB.png
 ../bmps/btienda1.png
 ../bmps/btienda2.png

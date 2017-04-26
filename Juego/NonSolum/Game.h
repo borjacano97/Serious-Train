@@ -15,7 +15,7 @@ public:
 	~Game();
 
 	enum Texturas_t {
-		TFondo, TFondoT, TPersonaje, TEnemigo, TEnemigo2, TLocomotora, TVagon1, TVacioBloq, TBarra, TBotonJ, TBotonS, TBotonC, TBotonB, 
+		TFondo, TFondoT, TPersonaje, TEnemigo, TEnemigo2, TLocomotora, TVagon1, TVacioBloq, TBarra, TBotonJ, TBotonS, TBotonB, 
 		TBtienda1, TBtienda2, Tlose, TWin, TRoca, TLaser, TFuegod, TFuegoi, TRect, TVagonAuto, TBotonPosible, TBala, TPistol,
 		TEscopeta, TMetralleta, TSniper, TMenuP, TVagonFuego, TVagonLaser};
 	enum Enemigo_t { Normal, Rapido, Tank, ElQueDispara/*...*/ };
@@ -47,11 +47,13 @@ public:
 	SDL_Renderer* pRender = nullptr;
 	int coins = 0;
 
+	bool tiendaCreada = false;
+
 private:
 	
 	SDL_Event e;
 
-	std::string ntexturas[32]; 
+	std::string ntexturas[31]; 
 	std::vector<Texturas*> texts;
 	std::stack<RaizEstado*> estados;
 
@@ -66,7 +68,6 @@ private:
 	bool espera, exit;
 	int mx, my;
 	int nivel = 1;
-
 };
 
 

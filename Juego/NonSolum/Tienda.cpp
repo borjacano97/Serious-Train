@@ -1,9 +1,12 @@
 #include "Tienda.h"
 #include "Button.h"
+
 #include "Nivel1.h"
 #include "Nivel2.h"
 #include "Nivel3.h"
 #include "Nivel4.h"
+#include "Nivel5.h"
+
 #include "VagonTienda.h"
 #include "ArmaTienda.h"
 #include "BotonTienda.h"
@@ -18,21 +21,21 @@ Tienda::Tienda(Game* juego) :Estado(juego)
 	armaActual = new ArmaTienda(ptsjuego, this, 920, 200, 0, Game::Bala_t::Piedra, true);
 
 	// BOTONES PRINCIPALES 
-	botones.emplace_back(new BotonTienda(ptsjuego, this, NULL, Game::TBtienda1, 1050, 70, Game::Boton_t::Jugar));
+	botones.emplace_back(new BotonTienda(ptsjuego, this, NULL, Game::TBtienda1, 1120, 630, Game::Boton_t::Jugar));
 	botones.emplace_back(new BotonTienda(ptsjuego, this, NULL, Game::TBtienda2, -20, 650, Game::Boton_t::Recolocar));
-	botones.emplace_back(new BotonTienda(ptsjuego, this, NULL, Game::TBotonS, 1140, 650, Game::Boton_t::Salir));
+	botones.emplace_back(new BotonTienda(ptsjuego, this, NULL, Game::TBotonS, 700, 640, Game::Boton_t::Salir));
 
 	//VAGONES PARA COMPRAR Y RESPECTIVOS BOTONES
 	vags.emplace_back(new VagonTienda(ptsjuego, this, 200, 200, 50, Game::Vagon_t::Automatico, false));
 	botones.emplace_back(new BotonTienda(ptsjuego, this, vags[0], Game::TBotonPosible, 200, 340, Game::Boton_t::Comprar));
 
-	vags.emplace_back(new VagonTienda(ptsjuego, this, 400, 200, 100, Game::Vagon_t::Lanzallamas, false));
+	vags.emplace_back(new VagonTienda(ptsjuego, this, 400, 200, 150, Game::Vagon_t::Lanzallamas, false));
 	botones.emplace_back(new BotonTienda(ptsjuego, this, vags[1], Game::TBotonPosible, 400, 340, Game::Boton_t::Comprar));
 
 	vags.emplace_back(new VagonTienda(ptsjuego, this, 600, 200, 150, Game::Vagon_t::Escudo, false));
 	botones.emplace_back(new BotonTienda(ptsjuego, this, vags[2], Game::TBotonPosible, 600, 340, Game::Boton_t::Comprar));
 
-	vags.emplace_back(new VagonTienda(ptsjuego, this, 200, 500, 300, Game::Vagon_t::Laser, false));
+	vags.emplace_back(new VagonTienda(ptsjuego, this, 200, 500, 200, Game::Vagon_t::Laser, false));
 	botones.emplace_back(new BotonTienda(ptsjuego, this, vags[3], Game::TBotonPosible, 200, 640, Game::Boton_t::Comprar));
 
 	//ARMAS PARA COMPRAR Y RESPECTIVOS BOTONES
@@ -112,22 +115,27 @@ void Tienda::jugar(Game * jg) {
 	case(1) : {		
 		jg->pushState(new Nivel1(jg, vagonesNivel, armaNivel));	
 		s->stopMusic();
-		s1->playMusic("../sounds/prueba.mp3", 1);
+		s1->playMusic("../sounds/prueba.mp3", 1, 20);
 		break; }
 	case(2) : {
 		jg->pushState(new Nivel2(jg, vagonesNivel, armaNivel));
 		s->stopMusic();
-		s2->playMusic("../sounds/inGameMusic2.mp3", 1);
+		s2->playMusic("../sounds/inGameMusic2.mp3", 1, 20);
 		break; }
 	case(3) : {
 		jg->pushState(new Nivel3(jg, vagonesNivel, armaNivel));
 		s->stopMusic();
-		s3->playMusic("../sounds/level3Music.mp3", 3);
+		s3->playMusic("../sounds/inGameMusic2.mp3", 3, 20);
 		break; }
 	case(4) : {
 		jg->pushState(new Nivel4(jg, vagonesNivel, armaNivel));
 		s->stopMusic();
-		s4->playMusic("../sounds/level4.mp3", 3);
+		s4->playMusic("../sounds/level4.mp3", 3, 20);
+		break; }
+	case(5): {
+		jg->pushState(new Nivel5(jg, vagonesNivel, armaNivel));
+		s->stopMusic();
+		s4->playMusic("../sounds/level3Music.mp3", 3, 20);
 		break; }
 	default:
 		break;
@@ -203,7 +211,7 @@ void Tienda::elegirArma(Game::Bala_t a) {
 }
 void Tienda::update(Uint32 d){ 
 	if (!suena)	{
-		s->playMusic("../sounds/menuMusic1.mp3", 2);
+		s->playMusic("../sounds/menuMusic1.mp3", 2, 20);
 		suena = true;
 	}
 }

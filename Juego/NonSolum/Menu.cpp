@@ -5,12 +5,11 @@
 
 Menu::Menu(Game * juego) :Estado(juego)
 {
-	objetos.emplace_back(new Button(ptsjuego, Game::TBotonJ, 100, 100, jugar));
-	objetos.emplace_back(new Button(ptsjuego, Game::TBotonS, 300, 200, salir));
+	objetos.emplace_back(new Button(ptsjuego, Game::TBotonJ, 300, 100, jugar));
+	objetos.emplace_back(new Button(ptsjuego, Game::TBotonS, 200, 200, salir));
 	initLibraries();
 	sound = new Sound;
-	sound->playMusic("../sounds/finalMusic.mp3", 2);
-	
+	sound->playMusic("../sounds/musicaMenuP.mp3", 2, 12);
 }
 
 Menu::~Menu() {
@@ -18,7 +17,11 @@ Menu::~Menu() {
 }
 
 void Menu::jugar(Game * jg) {
-	jg->changeState(new Tienda(jg));
+	if (!jg->tiendaCreada) {
+		jg->changeState(new Tienda(jg));
+		jg->tiendaCreada = true;
+	}
+	else jg->popState();
 	//shopSound = new Sound;
 	//Problemas para crear musica en tienda ya que se necesita un miembro estatico.
 }
