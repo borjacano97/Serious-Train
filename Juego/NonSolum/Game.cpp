@@ -14,63 +14,22 @@
 using namespace std;
 Game::Game()
 {
-	/*//inicialización de texturas, SDL y demás atributos privados
+	//inicialización de texturas desde archivo, SDL y demás atributos privados
 	ifstream f;
 	int i = 0;
-	string input;
+	string file = "../data/init.txt";
+	string input;	
 
-	f.open("../bmps/init.txt", ios::in);
+	f.open(file, ios::in);
 	while (!f.eof()){
+		
+		if (f.eof())
+			break;
 	getline(f, input);
 	ntexturas[i] = input;
 	i++;
-
-	/*input = f.getline();
-	ntexturas[i] = input;
-	i++;
 	}
-	f.close();*/
-	/*
-	ifstream in("../bmps/init.txt");
-	auto cinbuf = cin.rdbuf(in.rdbuf());
-	int i = 0;
-	while (!cin){
-	getline(cin, ntexturas[i]);
-	i++;
-	}*/
-
-	ntexturas[0] = "../bmps/fondoprot.png";
-	ntexturas[1] = "../bmps/menutienda.png";
-	ntexturas[2] = "../bmps/personaje.png";
-	ntexturas[3] = "../bmps/murcielago.png";
-	ntexturas[4] = "../bmps/zombief.png";
-	ntexturas[5] = "../bmps/locomotora.png";
-	ntexturas[6] = "../bmps/vagon1.png";
-	ntexturas[7] = "../bmps/vacioBloq.png";
-	ntexturas[8] = "../bmps/barraHP.png";
-	ntexturas[9] = "../bmps/botonJ.png";
-	ntexturas[10] = "../bmps/botonS.png";
-	ntexturas[11] = "../bmps/botonC.png";
-	ntexturas[12] = "../bmps/botonB.png";
-	ntexturas[13] = "../bmps/btienda1.png";
-	ntexturas[14] = "../bmps/btienda2.png";
-	ntexturas[15] = "../bmps/win.png";
-	ntexturas[16] = "../bmps/lose.png";
-	ntexturas[17] = "../bmps/roca.png";
-	ntexturas[18] = "../bmps/laser.png";
-	ntexturas[19] = "../bmps/fuegod.png";
-	ntexturas[20] = "../bmps/fuegoi.png";
-	ntexturas[21] = "../bmps/rect.png";
-	ntexturas[22] = "../bmps/vagonAuto.png";
-	ntexturas[23] = "../bmps/botonPosibilidad.png";
-	ntexturas[24] = "../bmps/bala.png";
-	ntexturas[25] = "../bmps/pistol.png";
-	ntexturas[26] = "../bmps/escopeta.png";
-	ntexturas[27] = "../bmps/metralleta.png";
-	ntexturas[28] = "../bmps/sniper.png";
-	ntexturas[29] = "../bmps/menuP.png";
-	ntexturas[30] = "../bmps/vagonFuego.png";
-	ntexturas[31] = "../bmps/vagonLaser.png";
+	f.close();
 
 	srand(SDL_GetTicks()); // no se que coño es esto xd
 
