@@ -15,9 +15,7 @@ Play::Play(Game * j) : Estado(j)
 	//srand(time(NULL));
 	//ptsjuego = j;
 	initObjects();
-	enem = 0;
 	killed = 0;
-	emax = 5 * ptsjuego->getNivel();
 
 	font = new Texturas(/*80, 80, 50, 50*/);
 	font->loadFuente("../fonts/fuenteNumbers.ttf", 200);

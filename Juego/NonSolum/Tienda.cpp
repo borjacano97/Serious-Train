@@ -156,8 +156,8 @@ void Tienda::recolocar(Game * jg){
 		 delete vagsIzq[i];
 		 vagsIzq[i] = nullptr;
 	 }
-	 armaNivel = Game::Bala_t::Piedra;
-	 armaActual = new ArmaTienda(ptsjuego, this, 920, 200, 0, Game::Bala_t::Piedra, true);
+	 //armaNivel = Game::Bala_t::Piedra;
+	 //armaActual = new ArmaTienda(ptsjuego, this, 920, 200, 0, Game::Bala_t::Piedra, true);
 }
 
 void Tienda::onClick() {

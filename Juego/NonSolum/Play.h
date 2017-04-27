@@ -45,7 +45,6 @@ protected:
 	bool initObjects(); //crear y destruir los objetos del juego
 	void freeObjects();
 
-	int emax, enem;
 	Escenario*esc;
 };
 

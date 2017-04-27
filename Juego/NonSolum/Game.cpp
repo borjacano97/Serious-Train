@@ -147,7 +147,7 @@ void Game::render() { //const
 	 if (topEstado()->getEst() == 'M')
 		texts[28]->draw(pRender, nullptr, nullptr);
 	else if (topEstado()->getEst() == 'W')
-		texts[28]->draw(pRender, nullptr, nullptr);
+		texts[28]->draw(pRender, nullptr, nullptr); // texts[28] for Borja :D
 	else if (topEstado()->getEst() == 'L')
 		texts[15]->draw(pRender, nullptr, nullptr);
 	else if (topEstado()->getEst() == 'T')

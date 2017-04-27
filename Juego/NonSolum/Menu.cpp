@@ -1,11 +1,13 @@
 #include "Menu.h"
 #include "Button.h"
 #include "Tienda.h"
+#include "Survival.h"
 
 
 Menu::Menu(Game * juego) :Estado(juego)
 {
-	objetos.emplace_back(new Button(ptsjuego, Game::TBotonJ, 300, 100, jugar));
+	objetos.emplace_back(new Button(ptsjuego, Game::TBotonJ, 600, 0, jugar));
+	objetos.emplace_back(new Button(ptsjuego, Game::TBotonJ, 400, 100, survMode));
 	objetos.emplace_back(new Button(ptsjuego, Game::TBotonS, 200, 200, salir));
 	initLibraries();
 	sound = new Sound;
@@ -25,7 +27,9 @@ void Menu::jugar(Game * jg) {
 	//shopSound = new Sound;
 	//Problemas para crear musica en tienda ya que se necesita un miembro estatico.
 }
-	
+void Menu::survMode(Game * jg) {
+	jg->changeState(new Survival(jg));
+}
 
 void Menu::salir(Game * jg){
 	jg->setSalir();

@@ -93,6 +93,7 @@
     <ClCompile Include="Play.cpp" />
     <ClCompile Include="Selector.cpp" />
     <ClCompile Include="Sound.cpp" />
+    <ClCompile Include="Survival.cpp" />
     <ClCompile Include="Texturas.cpp" />
     <ClCompile Include="Tienda.cpp" />
     <ClCompile Include="Trigger.cpp" />
@@ -127,6 +128,7 @@
     <ClInclude Include="RaizObjeto.h" />
     <ClInclude Include="Selector.h" />
     <ClInclude Include="Sound.h" />
+    <ClInclude Include="Survival.h" />
     <ClInclude Include="Texturas.h" />
     <ClInclude Include="Tienda.h" />
     <ClInclude Include="Trigger.h" />

@@ -14,6 +14,7 @@ public:
 private:
 	static void salir(Game * jg);
 	static void jugar(Game * jg);
+	static void survMode(Game * jg);
 	bool initLibraries();
 	Sound* sound;
 };

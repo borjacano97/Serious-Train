@@ -15,7 +15,7 @@ Bala::Bala(Game* juego, Play*pl, float x, float y, int mira, Game::Bala_t b)
 	case Game::BalaEnem:
 		alto = 20;
 		ancho = 20;
-		vel = 0.5;
+		vel = 0.3;
 		Ttextura = Game::Texturas_t::TRoca;
 		break;
 	case Game::Piedra:
