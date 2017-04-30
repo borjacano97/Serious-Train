@@ -9,13 +9,14 @@ class Survival :
 public:
 	Survival(Game * j);
 	~Survival() {  }
-	void onClick();
+	void dispara(bool shoot) { disparando = shoot; }
 	void update(Uint32 delta);
 
 private:
 	int  shootTimer, spawnTimer, cadencia, contRondas, spawn;
 	Game::Bala_t arma;
 	bool newRonda = false;
+	bool disparando = false;
 };
 
 #endif

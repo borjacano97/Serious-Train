@@ -192,6 +192,8 @@ bool Game::handle_event() { //eventos del teclado y raton
 		else if (e.type == SDL_KEYUP) {
 			if (e.key.keysym.sym == SDLK_s || e.key.keysym.sym == SDLK_w || e.key.keysym.sym == SDLK_a || e.key.keysym.sym == SDLK_d)
 				topEstado()->move('N');
+			else if (e.key.keysym.sym == SDLK_l || e.key.keysym.sym == SDLK_SPACE && topEstado()->getEst() == 'P')
+				topEstado()->dispara(false);
 		}
 		else if (e.type == SDL_KEYDOWN) {
 			if (e.key.keysym.sym == SDLK_s) { //mov lateral
@@ -216,11 +218,9 @@ bool Game::handle_event() { //eventos del teclado y raton
 
 			 if ((e.key.keysym.sym ==  SDLK_l || e.key.keysym.sym == SDLK_SPACE)) {
 			
-			onClick(e.button.x, e.button.y); //PUSSY ASS BITCH IDON FACK WITH U
+				 topEstado()->dispara(true);
 			}
-
-			// click izquierdo para llamar al onclick
-
+			 
 		}
 		else if (e.type == SDL_MOUSEBUTTONDOWN) { // click izquierdo para llamar al onclick
 			if (e.button.state == SDL_BUTTON_LEFT) {

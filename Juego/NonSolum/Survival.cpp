@@ -22,15 +22,14 @@ Survival::Survival(Game * j) : Play(j)
 
 	contRondas = 1;
 }
-void Survival::onClick() {
-	if (shootTimer >= cadencia) {
-		balas.emplace_back(new Bala(ptsjuego, this, player->getPos().x, player->getPos().y + 10, player->getMira(), arma));
-		shootTimer = 0;
-	}
-}
 void Survival::update(Uint32 delta) {
 	shootTimer += delta;
 	spawnTimer += delta;
+
+	if (disparando && shootTimer >= cadencia) {
+		balas.emplace_back(new Bala(ptsjuego, this, player->getPos().x, player->getPos().y + 10, player->getMira(), arma));
+		shootTimer = 0;
+	}
 
 	switch (contRondas)
 	{

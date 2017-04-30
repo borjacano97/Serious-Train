@@ -28,7 +28,7 @@ void Menu::jugar(Game * jg) {
 	//Problemas para crear musica en tienda ya que se necesita un miembro estatico.
 }
 void Menu::survMode(Game * jg) {
-	jg->changeState(new Survival(jg));
+	jg->pushState(new Survival(jg));
 }
 
 void Menu::salir(Game * jg){

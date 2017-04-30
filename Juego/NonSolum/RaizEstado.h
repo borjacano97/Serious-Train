@@ -19,6 +19,7 @@ public:
 	virtual void move(char c) = 0;
 	virtual char getEst() = 0;
 	virtual void select(Uint32 n) = 0;
+	virtual void dispara(bool shoot) = 0;
 };
 
 

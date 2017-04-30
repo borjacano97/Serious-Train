@@ -8,11 +8,12 @@ class Nivel2 :
 public:
 	Nivel2(Game * j, std::vector <Game::Vagon_t> v, Game::Bala_t a);
 	~Nivel2(){  }
-	void onClick();
+	void dispara(bool shoot) { disparando = shoot; }
 	void update(Uint32 delta);
 private:
 	int  enem, emax, shootTimer, spawnTimer, cadencia;
 	Game::Bala_t arma;
+	bool disparando= false;
 };
 
 
