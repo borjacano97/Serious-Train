@@ -13,10 +13,12 @@ public:
 	void update(Uint32 delta);
 
 private:
-	int  shootTimer, spawnTimer, cadencia, contRondas, spawn;
-	Game::Bala_t arma;
+	int  enem, shootTimer, spawnTimer, cadencia, contRondas, spawn;
 	bool newRonda = false;
 	bool disparando = false;
+	bool created = true;
+
+	Game::Bala_t arma;
 };
 
 #endif

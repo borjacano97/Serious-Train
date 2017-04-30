@@ -43,8 +43,11 @@ ArmaTienda::ArmaTienda(Game* juego, Tienda* ti, float x, float y, int p, Game::B
 		alto = 60;
 		ancho = 80;
 
-		pos.y -= 10;
-		pos.x += 70;
+		if (t != NULL) {
+			pos.y -= 10;
+			pos.x += 70;
+		}
+		
 
 		Ttextura = Game::Texturas_t::TRoca;
 		desb = Game::Texturas_t::TRoca;
@@ -116,6 +119,6 @@ void ArmaTienda::draw() {
 		puntosText->draw(juegootp->pRender, nullptr, &puntosText->myFont.setRect(50, 45, mpbx, mpby));
 		puntosText->loadFromText(juegootp->pRender, " ", fontColor);
 		tipoText->draw(juegootp->pRender, nullptr, &puntosText->myFont.setRect(50, 120, 850, 190));
-		tipoText->loadFromText(juegootp->pRender, "Elegida -> ", tipoTextColor);
+		if (t != NULL) tipoText->loadFromText(juegootp->pRender, "Elegida -> ", tipoTextColor);
 	}
 }

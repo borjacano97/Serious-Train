@@ -88,6 +88,7 @@ void Play::draw() {
 
 	player->draw();
 	TrainHp->draw();
+	if (armaActual != nullptr) armaActual->draw(); // quitar comprobación de nullptr si se traslada al modo Historia
 }
 
 

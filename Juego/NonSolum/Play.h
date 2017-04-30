@@ -10,6 +10,7 @@
 #include "Bala.h"
 #include "Sound.h"
 #include "Escenario.h"
+#include "ArmaTienda.h"
 
 using namespace std;
 
@@ -39,6 +40,7 @@ protected:
 	SDL_Color fontColor;
 	Sound* soundLoss;
 	Sound* soundWon;
+	ArmaTienda* armaActual;
 
 
 	bool fin;
