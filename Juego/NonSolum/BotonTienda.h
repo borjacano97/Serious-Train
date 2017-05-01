@@ -10,7 +10,7 @@ class BotonTienda :
 	public Objeto
 {
 public:
-	BotonTienda(Game* juego, Tienda*ti, ObjetoTienda*obj, Game::Texturas_t t, float x, float y, Game::Boton_t tipo);
+	BotonTienda(Game* juego, Tienda*ti, ObjetoTienda*obj,  float x, float y, Game::Boton_t tipo);
 	~BotonTienda(){}
 	bool onClick();
 	void draw();

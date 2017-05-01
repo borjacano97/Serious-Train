@@ -7,11 +7,6 @@
 ../bmps/vagon1.png
 ../bmps/vacioBloq.png
 ../bmps/barraHP.png
-../bmps/botonJ.png
-../bmps/botonS.png
-../bmps/botonB.png
-../bmps/btienda1.png
-../bmps/btienda2.png
 ../bmps/win.png
 ../bmps/lose.png
 ../bmps/roca.png
@@ -30,3 +25,6 @@
 ../bmps/vagonFuego.png
 ../bmps/vagonLaser.png
 ../bmps/minigun.png
+../bmps/botonV.png
+../bmps/botonR.png
+../bmps/botonA.png

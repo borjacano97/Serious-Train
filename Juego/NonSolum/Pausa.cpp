@@ -5,8 +5,8 @@
 
 Pausa::Pausa(Game* juego) : Estado(juego)
 {
-	objetos.emplace_back(new Button(ptsjuego, Game::TBotonJ, 300, 500, Game::Boton_t::Jugar, reanudar));
-	objetos.emplace_back(new Button(ptsjuego, Game::TBotonS, 800, 500, Game::Boton_t::Salir, salir));
+	objetos.emplace_back(new Button(ptsjuego, 300, 500, Game::Boton_t::Jugar, reanudar));
+	objetos.emplace_back(new Button(ptsjuego, 800, 500, Game::Boton_t::Salir, salir));
 }
 
 void Pausa::reanudar(Game * jg) {

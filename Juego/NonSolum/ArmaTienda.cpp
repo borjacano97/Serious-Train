@@ -67,11 +67,11 @@ ArmaTienda::ArmaTienda(Game* juego, Tienda* ti, float x, float y, int p, Game::B
 		tipoArma = "Pistola";
 		break;
 
-	case Game::Escopeta: Ttextura = Game::Texturas_t::TEscopeta;  desb = Game::Texturas_t::TEscopeta; tipoArma = "Escopeta";
+	case Game::Escopeta: Ttextura = Game::Texturas_t::TEscopeta;  desb = Game::Texturas_t::TEscopeta; 
 		break;		
-	case Game::Metralleta: Ttextura = Game::Texturas_t::TMetralleta;  desb = Game::Texturas_t::TMetralleta; tipoArma = "Metralleta";
+	case Game::Metralleta: Ttextura = Game::Texturas_t::TMetralleta;  desb = Game::Texturas_t::TMetralleta;
 		break;
-	case Game::Sniper: Ttextura = Game::Texturas_t::TSniper;  desb = Game::Texturas_t::TSniper; tipoArma = "Francotirador";
+	case Game::Sniper: Ttextura = Game::Texturas_t::TSniper;  desb = Game::Texturas_t::TSniper;
 		break;
 	case Game::Minigun: if (estatico) pos.y += 20; Ttextura = Game::Texturas_t::TMinigun;  desb = Game::Texturas_t::TMinigun; tipoArma = "Minigun";
 		break;
@@ -96,6 +96,29 @@ bool ArmaTienda::onClick() {
 
 
 void ArmaTienda::draw() {
+
+	switch (tip)
+	{
+	case Game::Escopeta:
+		if (juegootp->spanish) tipoArma = "Escopeta";
+		else tipoArma = "Shootgun";
+		break;
+	case Game::Pistola:
+		if (juegootp->spanish) tipoArma = "Pistola";
+		else tipoArma = "Pistol";
+		break;
+	case Game::Sniper:
+		if (juegootp->spanish) tipoArma = "Francotirador";
+		else tipoArma = "Sniper";
+		break;
+	case Game::Metralleta:
+		if (juegootp->spanish) tipoArma = "Metralleta";
+		else tipoArma = "Machine-gun";
+		break;
+	default:
+		break;
+	}
+
 	rect.h = alto;
 	rect.w = ancho;
 	rect.x = pos.x;
@@ -107,8 +130,8 @@ void ArmaTienda::draw() {
 		if (tip == Game::Bala_t::Pistola)puntosText->draw(juegootp->pRender, nullptr, &puntosText->myFont.setRect(40, 70, this->pos.x + 15, this->pos.y + 75));
 		else puntosText->draw(juegootp->pRender, nullptr, &puntosText->myFont.setRect(40, 70, this->pos.x + 15, this->pos.y + 85));
 		puntosText->loadFromText(juegootp->pRender, "$" + std::to_string(precio), fontColor);
-		if (tip==Game::Bala_t::Pistola) tipoText->draw(juegootp->pRender, nullptr, &puntosText->myFont.setRect(50, 120, this->pos.x - 13, this->pos.y - 35));
-		else tipoText->draw(juegootp->pRender, nullptr, &puntosText->myFont.setRect(50, 120, this->pos.x - 13, this->pos.y - 25));
+		if (tip==Game::Bala_t::Pistola) tipoText->draw(juegootp->pRender, nullptr, &puntosText->myFont.setRect(50, 110, this->pos.x - 13, this->pos.y - 35));
+		else tipoText->draw(juegootp->pRender, nullptr, &puntosText->myFont.setRect(50, 110, this->pos.x - 13, this->pos.y - 25));
 		tipoText->loadFromText(juegootp->pRender, tipoArma, tipoTextColor);
 	}
 	else if (!bloqueado) {
@@ -119,6 +142,10 @@ void ArmaTienda::draw() {
 		puntosText->draw(juegootp->pRender, nullptr, &puntosText->myFont.setRect(50, 45, mpbx, mpby));
 		puntosText->loadFromText(juegootp->pRender, " ", fontColor);
 		tipoText->draw(juegootp->pRender, nullptr, &puntosText->myFont.setRect(50, 120, 850, 190));
-		if (t != NULL) tipoText->loadFromText(juegootp->pRender, "Elegida -> ", tipoTextColor);
+		if (t != NULL) {
+			if (juegootp->spanish) tipoText->loadFromText(juegootp->pRender, "Elegida -> ", tipoTextColor);
+			else tipoText->loadFromText(juegootp->pRender, "Chosen -> ", tipoTextColor);
+		}
+			
 	}
 }

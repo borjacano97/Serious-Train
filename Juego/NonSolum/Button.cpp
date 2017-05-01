@@ -1,7 +1,7 @@
 #include "Button.h"
 
 
-Button::Button(Game* juego, Game::Texturas_t text, float x, float y, Game::Boton_t tipo, CallBack_t * cbCons)
+Button::Button(Game* juego,  float x, float y, Game::Boton_t tipo, CallBack_t * cbCons)
 {
 	TTF_Init();
 
@@ -10,10 +10,9 @@ Button::Button(Game* juego, Game::Texturas_t text, float x, float y, Game::Boton
 
 	pos.set(x, y);
 
-	alto = 100;
+	alto = 90;
 	ancho = 200;
 
-	Ttextura = text;
 
 	cb = cbCons;
 
@@ -25,13 +24,21 @@ Button::Button(Game* juego, Game::Texturas_t text, float x, float y, Game::Boton
 	fontColor.b = 218;
 	switch (t)
 	{	
-	case Game::Jugar: textB = "Continuar";
+	case Game::Jugar:Ttextura = Game::Texturas_t::TBotonV;
 		break;
-	case Game::Salir:  textB = "Salir";
+	case Game::Salir: Ttextura = Game::Texturas_t::TBotonR;
 		break;
-	case Game::Supervivencia:  textB = "Supervivencia";
+	case Game::Supervivencia: Ttextura = Game::Texturas_t::TBotonV;
 		break;
-	case Game::Historia:  textB = "Historia";
+	case Game::Historia:Ttextura = Game::Texturas_t::TBotonV;
+		break;
+	case Game::Spanish: 
+		textB = "Spanish";
+		Ttextura = Game::Texturas_t::TBotonA;
+		break;
+	case Game::English: 
+		textB = "English";
+		Ttextura = Game::Texturas_t::TBotonA;
 		break;
 	default:
 		break;
@@ -48,13 +55,38 @@ bool Button::onClick(){
 	else return false;
 }
 void Button::draw() {
+	
+
+	switch (t)
+	{
+	case Game::Jugar:
+		if (juegootp->spanish)	textB = "Continuar";
+		else textB = "Continue";
+		break;
+	case Game::Salir:
+		if (juegootp->spanish) textB = "Salir";
+		else textB = "Exit";
+		break;
+	case Game::Supervivencia:
+		if (juegootp->spanish) textB = "Supervivencia";
+		else textB = "Survival";
+		break;
+	case Game::Historia:
+		if (juegootp->spanish) textB = "Historia";
+		else textB = "The Story";
+		break;
+	default:
+		break;
+
+	}
 	rect.h = alto;
 	rect.w = ancho;
 	rect.x = pos.x;
 	rect.y = pos.y;
 	SDL_Renderer* render = juegootp->getRender();
 	juegootp->getTextura(Ttextura)->draw(render, nullptr, &rect);
-
-	texto->draw(juegootp->pRender, nullptr, &texto->myFont.setRect(40, 70, this->pos.x +70, this->pos.y + 30));
+	if (textB == "Supervivencia")h = 120;
+	else h = 90;
+	texto->draw(juegootp->pRender, nullptr, &texto->myFont.setRect(a, h, this->pos.x + 60, this->pos.y + 24));
 	texto->loadFromText(juegootp->pRender, textB , fontColor);
 }

@@ -2,7 +2,7 @@
 #include "Tienda.h"
 
 
-BotonTienda::BotonTienda(Game* juego, Tienda*ti, ObjetoTienda*obj, Game::Texturas_t text, float x, float y, Game::Boton_t tipo)
+BotonTienda::BotonTienda(Game* juego, Tienda*ti, ObjetoTienda*obj,  float x, float y, Game::Boton_t tipo)
 {
 	TTF_Init();
 
@@ -10,30 +10,30 @@ BotonTienda::BotonTienda(Game* juego, Tienda*ti, ObjetoTienda*obj, Game::Textura
 	t = ti;
 	o = obj;
 	
-	Ttextura = text;
 	if (tipo == Game::Boton_t::Comprar) {
 		alto = 40;
 		ancho = 90;
-		textB = "";
+		Ttextura = Game::Texturas_t::TBotonPosible;
 	}
 	else if (tipo == Game::Boton_t::Salir) {
 
-		alto = 80;
-		ancho = 130;
-		textB = "Salir";
+		alto = 60;
+		ancho = 140;
+		Ttextura = Game::Texturas_t::TBotonR;
 	}
 	else if (tipo == Game::Boton_t::Recolocar) {
 
-		alto = 100;
-		ancho = 190;
-		textB = "Recolocar";
+		alto = 60;
+		ancho = 140;
+		Ttextura = Game::Texturas_t::TBotonR;
 	}
 	else if (tipo == Game::Boton_t::Jugar) {
 
-		alto = 100;
-		ancho = 190;
-		textB = "Jugar";
+		alto = 60;
+		ancho = 140;
+		Ttextura = Game::Texturas_t::TBotonV;
 	}
+	
 	
 
 	pos.set(x, y);
@@ -79,13 +79,39 @@ bool BotonTienda::onClick() {
 }
 
 void BotonTienda::draw() {
+	switch (tip)
+	{
+	case Game::Jugar:
+		if (juegootp->spanish)	textB = "Jugar";
+		else textB = "Play";
+		break;
+	case Game::Salir:
+		if (juegootp->spanish) textB = "Salir";
+		else textB = "Exit";
+		break;
+	case Game::Comprar:
+		if (juegootp->spanish)	textB = "Comprar";
+		else textB = "Buy";
+		break;
+	case Game::Recolocar:
+		if (juegootp->spanish)	textB = "Recolocar";
+		else textB = "Choose Again";
+		break;
+	default:
+		break;
+
+	}
+
 	rect.h = alto;
 	rect.w = ancho;
 	rect.x = pos.x;
 	rect.y = pos.y;
 	SDL_Renderer* render = juegootp->getRender();
 	juegootp->getTextura(Ttextura)->draw(render, nullptr, &rect);
-
-	texto->draw(juegootp->pRender, nullptr, &texto->myFont.setRect(40, 70, this->pos.x + 70, this->pos.y + 30));
+	if (tip == Game::Boton_t::Comprar)
+		texto->draw(juegootp->pRender, nullptr, &texto->myFont.setRect(30, 70, this->pos.x + 10, this->pos.y + 5));
+	else if (tip==Game::Boton_t::Recolocar)
+		texto->draw(juegootp->pRender, nullptr, &texto->myFont.setRect(30, 90, this->pos.x + 40, this->pos.y + 15));
+	else texto->draw(juegootp->pRender, nullptr, &texto->myFont.setRect(30, 70, this->pos.x + 50, this->pos.y + 15));
 	texto->loadFromText(juegootp->pRender, textB, fontColor);
 }

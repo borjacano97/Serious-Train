@@ -28,8 +28,7 @@ public:
 	void jugar(Game * jg);
 	void salir(Game * jg){ jg->pushState(new Menu(jg)); }
 private:
-	Texturas* font;
-	SDL_Color fontColor;
+	
 
 	Selector* sel;
 
@@ -52,6 +51,14 @@ private:
 	Sound*s4;
 
 	bool suena = false;
+
+	Texturas* font;
+	SDL_Color fontColor;
+
+	Texturas* textTienda;
+	Texturas* textVag;
+	Texturas* textArmas;
+
 };
 
 #endif

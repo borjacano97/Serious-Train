@@ -15,6 +15,9 @@ private:
 	static void salir(Game * jg);
 	static void jugar(Game * jg);
 	static void survMode(Game * jg);
+
+	static void spa(Game * jg) { jg->spanish = true; }
+	static void eng(Game * jg) { jg->spanish = false; }
 	bool initLibraries();
 	Sound* sound;
 };
