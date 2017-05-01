@@ -13,11 +13,17 @@ public:
 	BotonTienda(Game* juego, Tienda*ti, ObjetoTienda*obj, Game::Texturas_t t, float x, float y, Game::Boton_t tipo);
 	~BotonTienda(){}
 	bool onClick();
+	void draw();
 private:
 	Tienda*t;
 	ObjetoTienda*o;
+
 	int mpbx, mpby;
 	Game::Boton_t tip;
+
+	Texturas* texto;
+	SDL_Color fontColor;
+	std::string textB;
 };
 
 #endif

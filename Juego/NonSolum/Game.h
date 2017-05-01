@@ -21,7 +21,7 @@ public:
 	enum Enemigo_t { Normal, Rapido, Tank, ElQueDispara/*...*/ };
 	enum Vagon_t { Locom, Vacio, Automatico, Laser, Lanzallamas, Escudo/*...*/ };
 	enum Bala_t { BalaEnem, Piedra, Rayo, Fuego, Escopeta, E1, E2, Pistola, Sniper, Metralleta, Minigun/*...*/ };
-	enum Boton_t { Comprar, Jugar, Recolocar, Salir/*...*/ };
+	enum Boton_t { Comprar, Jugar, Recolocar, Salir, Supervivencia, Historia/*...*/ };
 
 	Texturas* getTextura(Texturas_t et) const { return texts[et]; }
 	SDL_Renderer* getRender() const;

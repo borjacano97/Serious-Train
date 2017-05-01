@@ -5,7 +5,7 @@
 FinNivel::FinNivel(Game* juego, bool v) :Estado(juego)
 {		
 	victory = v;
-	objetos.emplace_back(new Button(ptsjuego, Game::TBotonJ, 300, 600, jugar)); 
+	objetos.emplace_back(new Button(ptsjuego, Game::TBotonJ, 300, 600, Game::Boton_t::Jugar, jugar));
 	initLibraries();
 	sound = new Sound;
 	sound->playMusic("../sounds/wonLevel.mp3", 2, 20);

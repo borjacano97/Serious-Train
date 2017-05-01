@@ -6,9 +6,9 @@
 
 Menu::Menu(Game * juego) :Estado(juego)
 {
-	objetos.emplace_back(new Button(ptsjuego, Game::TBotonJ, 600, 0, jugar));
-	objetos.emplace_back(new Button(ptsjuego, Game::TBotonJ, 400, 100, survMode));
-	objetos.emplace_back(new Button(ptsjuego, Game::TBotonS, 200, 200, salir));
+	objetos.emplace_back(new Button(ptsjuego, Game::TBotonJ, 600, 0, Game::Boton_t::Historia, jugar));
+	objetos.emplace_back(new Button(ptsjuego, Game::TBotonJ, 400, 100, Game::Boton_t::Supervivencia, survMode));
+	objetos.emplace_back(new Button(ptsjuego, Game::TBotonS, 200, 200, Game::Boton_t::Salir, salir));
 	initLibraries();
 	sound = new Sound;
 	sound->playMusic("../sounds/musicaMenuP.mp3", 2, 12);

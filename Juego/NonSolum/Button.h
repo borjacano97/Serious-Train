@@ -7,11 +7,18 @@ class Button :
 {
 public:
 	typedef void CallBack_t(Game * g);
-	Button(Game* juego, Game::Texturas_t text, float x, float y, CallBack_t * cbCons);
+	Button(Game* juego, Game::Texturas_t text, float x, float y, Game::Boton_t tipo, CallBack_t * cbCons);
 	~Button(){}
 	bool onClick();
+	void draw();
 protected:
 	CallBack_t * cb;
+
+	Texturas* texto;
+	SDL_Color fontColor;
+
+	Game::Boton_t t;
+	std::string textB;
 
 	int mpbx, mpby;
 };

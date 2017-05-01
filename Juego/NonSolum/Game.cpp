@@ -195,6 +195,8 @@ bool Game::handle_event() { //eventos del teclado y raton
 			else if (e.key.keysym.sym == SDLK_l || e.key.keysym.sym == SDLK_SPACE && topEstado()->getEst() == 'P')
 				topEstado()->dispara(false);
 		}
+		else if (e.type == SDL_MOUSEBUTTONUP && topEstado()->getEst() == 'P')topEstado()->dispara(false);
+
 		else if (e.type == SDL_KEYDOWN) {
 			if (e.key.keysym.sym == SDLK_s) { //mov lateral
 				topEstado()->move('S');
@@ -224,6 +226,7 @@ bool Game::handle_event() { //eventos del teclado y raton
 		}
 		else if (e.type == SDL_MOUSEBUTTONDOWN) { // click izquierdo para llamar al onclick
 			if (e.button.state == SDL_BUTTON_LEFT) {
+				if(topEstado()->getEst() == 'P')topEstado()->dispara(true);
 				onClick(e.button.x, e.button.y);
 			}
 		}
