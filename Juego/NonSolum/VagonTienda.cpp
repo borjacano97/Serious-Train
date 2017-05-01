@@ -75,7 +75,7 @@ void VagonTienda::draw() {
 	{
 	case Game::Automatico:
 		if (juegootp->spanish) tipoVagon = "Automático";
-		else tipoVagon = "Automatic";
+		else tipoVagon = "Auto";
 		break;
 	case Game::Laser:
 		if (juegootp->spanish) tipoVagon = "Láser";

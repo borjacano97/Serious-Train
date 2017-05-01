@@ -3,7 +3,7 @@
 #include "Escenario.h"
 
 
-// FALTA POR CREAR EL CONTADOR DE TIEMPO, CAMBIAR PUNTOS POR Nº DE RONDA 
+// FALTA POR CREAR EL CONTADOR DE TIEMPO, CAMBIAR PUNTOS POR Nº DE RONDA , Y PENSAR SI SE VAN A METER VAGONES ENTRE LAS RONDAS
 // Y CREAR UNA CLASE DE FIN NIVEL ESPECIAL QUE TE MUESTRE EL TIEMPO (YA QUE SIEMPRE SE PIERDE)
 Survival::Survival(Game * j) : Play(j)
 {
@@ -38,7 +38,7 @@ void Survival::update(Uint32 delta) {
 	{
 	case 1:
 		
-		if (enem < (2 * contRondas) && spawnTimer >= spawn ) {
+		if (enem < (7 * contRondas) && spawnTimer >= spawn ) {
 			if (rand() % 2 == 0) {
 				if (rand() % 2 == 0) enems.emplace_back
 				(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 280, Game::Enemigo_t::Normal));
@@ -51,14 +51,14 @@ void Survival::update(Uint32 delta) {
 		break;
 	case 2:
 		if (!created) {
-			armaActual = new ArmaTienda(ptsjuego, NULL, 130, 70, 0, Game::Bala_t::Escopeta, true);
+			armaActual = new ArmaTienda(ptsjuego, NULL, 130, 70, 0, Game::Bala_t::Pistola, true);
 			created = true;
 		}
 			
-		arma = Game::Bala_t::Escopeta;
-		cadencia = 700;
+		arma = Game::Bala_t::Pistola;
+		cadencia = 600;
 
-		if (enem < (2 * contRondas) && spawnTimer >= (spawn -50)) {
+		if (enem < (7 * contRondas) && spawnTimer >= (spawn -50)) {
 			if (newRonda) {
 				spawn -= 5000;
 				newRonda = false;
@@ -80,13 +80,13 @@ void Survival::update(Uint32 delta) {
 		break;
 	case 3:
 		if (!created) {
-			armaActual = new ArmaTienda(ptsjuego, NULL, 130, 70, 0, Game::Bala_t::Pistola, true);
+			armaActual = new ArmaTienda(ptsjuego, NULL, 130, 70, 0, Game::Bala_t::Escopeta, true);
 			created = true;
 		}
-		arma = Game::Bala_t::Pistola;
-		cadencia = 600;
+		arma = Game::Bala_t::Escopeta;
+		cadencia = 700;
 
-		if (enem < (2 * contRondas) && spawnTimer >= (spawn -100)) {
+		if (enem < (7 * contRondas) && spawnTimer >= (spawn -100)) {
 			if (newRonda) {
 				spawn -= 5000;
 				newRonda = false;
@@ -111,9 +111,9 @@ void Survival::update(Uint32 delta) {
 			created = true;
 		}
 		arma = Game::Bala_t::Metralleta;
-		cadencia = 200;
+		cadencia = 300;
 
-		if (enem < (2 * contRondas) && spawnTimer >= (spawn - 110)) {
+		if (enem < (7 * contRondas) && spawnTimer >= (spawn - 110)) {
 			if (newRonda) {
 				spawn -= 5000;
 				newRonda = false;
@@ -140,7 +140,7 @@ void Survival::update(Uint32 delta) {
 		arma = Game::Bala_t::Sniper;
 		cadencia = 1000;
 
-		if (enem < (2 * contRondas) && spawnTimer >= (spawn - 120)) {
+		if (enem < (7 * contRondas) && spawnTimer >= (spawn - 120)) {
 			if (newRonda) {
 				spawn -= 5000;
 				newRonda = false;
@@ -173,7 +173,7 @@ void Survival::update(Uint32 delta) {
 		arma = Game::Bala_t::Minigun;
 		cadencia = 150;
 
-		if (enem < (2 * contRondas) && spawnTimer >= spawn) {
+		if (enem < (7 * contRondas) && spawnTimer >= spawn) {
 			if (newRonda) {
 				spawn -= 5000;
 				newRonda = false;
@@ -207,7 +207,7 @@ void Survival::update(Uint32 delta) {
 	}
 		
 
-		if (killed >= (2 * contRondas)) {
+		if (killed >= (7 * contRondas)) {
 			if (contRondas >= 6) spawn -= 10;
 
 			enem = 0;

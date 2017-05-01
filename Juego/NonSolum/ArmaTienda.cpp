@@ -101,11 +101,11 @@ void ArmaTienda::draw() {
 	{
 	case Game::Escopeta:
 		if (juegootp->spanish) tipoArma = "Escopeta";
-		else tipoArma = "Shootgun";
+		else tipoArma = "Shotgun";
 		break;
 	case Game::Pistola:
 		if (juegootp->spanish) tipoArma = "Pistola";
-		else tipoArma = "Pistol";
+		else tipoArma = "Revolver";
 		break;
 	case Game::Sniper:
 		if (juegootp->spanish) tipoArma = "Francotirador";
@@ -113,7 +113,7 @@ void ArmaTienda::draw() {
 		break;
 	case Game::Metralleta:
 		if (juegootp->spanish) tipoArma = "Metralleta";
-		else tipoArma = "Machine-gun";
+		else tipoArma = "Asault-Rifle";
 		break;
 	default:
 		break;

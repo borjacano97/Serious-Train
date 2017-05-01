@@ -70,9 +70,9 @@ Bala::Bala(Game* juego, Play*pl, float x, float y, int mira, Game::Bala_t b)
 		Ttextura = Game::Texturas_t::TBala;
 		break;
 	case Game::Sniper:
-		alto = 14;
-		ancho = 34;
-		vel = 0.7;
+		alto = 20;
+		ancho = 40;
+		vel = 0.8;
 		dmg = 30; // no nos habiamos dado cuenta que como la bala no se destruye en el franco colisiona varias veces con el enemigo
 		          // por eso hay que poner menor damage que si no es insta kill hasta pa los bosses xd
 		Ttextura = Game::Texturas_t::TBala;
@@ -88,7 +88,7 @@ Bala::Bala(Game* juego, Play*pl, float x, float y, int mira, Game::Bala_t b)
 		alto = 20;
 		ancho = 20;
 		vel = 0.6;
-		dmg = 400;
+		dmg = 300;
 		Ttextura = Game::Texturas_t::TBala;
 		break;
 	default:
