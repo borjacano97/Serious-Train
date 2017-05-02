@@ -135,6 +135,9 @@
     <ClCompile Include="Survival.cpp">
       <Filter>Archivos de código fuente\Niveles</Filter>
     </ClCompile>
+    <ClCompile Include="Controles.cpp">
+      <Filter>Archivos de código fuente\Estados</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Texturas.h">
@@ -235,6 +238,9 @@
     </ClInclude>
     <ClInclude Include="Survival.h">
       <Filter>Archivos de encabezado\Niveles</Filter>
+    </ClInclude>
+    <ClInclude Include="Controles.h">
+      <Filter>Archivos de encabezado\Estados</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

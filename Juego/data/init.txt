@@ -28,3 +28,5 @@
 ../bmps/botonV.png
 ../bmps/botonR.png
 ../bmps/botonA.png
+../bmps/controlesEng.png
+../bmps/controlesEsp.png

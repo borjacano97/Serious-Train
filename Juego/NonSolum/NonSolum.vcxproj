@@ -72,6 +72,7 @@
     <ClCompile Include="BarraHP.cpp" />
     <ClCompile Include="BotonTienda.cpp" />
     <ClCompile Include="Button.cpp" />
+    <ClCompile Include="Controles.cpp" />
     <ClCompile Include="Enemigo.cpp" />
     <ClCompile Include="Error.cpp" />
     <ClCompile Include="Escenario.cpp" />
@@ -106,6 +107,7 @@
     <ClInclude Include="BarraHP.h" />
     <ClInclude Include="BotonTienda.h" />
     <ClInclude Include="Button.h" />
+    <ClInclude Include="Controles.h" />
     <ClInclude Include="Enemigo.h" />
     <ClInclude Include="Error.h" />
     <ClInclude Include="Escenario.h" />

@@ -18,11 +18,11 @@ public:
 	enum Texturas_t {
 		TFondo, TFondoT, TPersonaje, TEnemigo, TEnemigo2, TLocomotora, TVagon1, TVacioBloq, TBarra,
 		Tlose, TWin, TRoca, TLaser, TFuegod, TFuegoi, TRect, TVagonAuto, TBotonPosible, TBala, TPistol,
-		TEscopeta, TMetralleta, TSniper, TMenuP, TVagonFuego, TVagonLaser, TMinigun, TBotonV, TBotonR, TBotonA};
+		TEscopeta, TMetralleta, TSniper, TMenuP, TVagonFuego, TVagonLaser, TMinigun, TBotonV, TBotonR, TBotonA, TControlEng, TControlEsp};
 	enum Enemigo_t { Normal, Rapido, Tank, ElQueDispara/*...*/ };
 	enum Vagon_t { Locom, Vacio, Automatico, Laser, Lanzallamas, Escudo/*...*/ };
 	enum Bala_t { BalaEnem, Piedra, Rayo, Fuego, Escopeta, E1, E2, Pistola, Sniper, Metralleta, Minigun /*...*/ };
-	enum Boton_t { Comprar, Jugar, Recolocar, Salir, Supervivencia, Historia, Spanish, English, Volver /*...*/ };
+	enum Boton_t { Comprar, Jugar, Recolocar, Salir, Supervivencia, Historia, Spanish, English, Volver, Controles /*...*/ };
 
 	Texturas* getTextura(Texturas_t et) const { return texts[et]; }
 	SDL_Renderer* getRender() const;
@@ -51,15 +51,15 @@ public:
 	bool tiendaCreada = false;
 	bool spanish = true;
 
-
+	std::vector<Texturas*> texts;
 	Sound* sound;
 
 private:
 	
 	SDL_Event e;
 
-	std::string ntexturas[30]; 
-	std::vector<Texturas*> texts;
+	std::string ntexturas[32]; 
+	
 	std::stack<RaizEstado*> estados;
 
 	bool initSDL(); //ventana de render SDL (pantalla)

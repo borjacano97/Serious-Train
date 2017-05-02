@@ -8,7 +8,10 @@ Menu::Menu(Game * juego) :Estado(juego)
 {
 	objetos.emplace_back(new Button(ptsjuego, 450, 0, Game::Boton_t::Historia, jugar));
 	objetos.emplace_back(new Button(ptsjuego, 350, 100, Game::Boton_t::Supervivencia, survMode));
-	objetos.emplace_back(new Button(ptsjuego, 250, 200, Game::Boton_t::Salir, salir));
+
+	objetos.emplace_back(new Button(ptsjuego, 250, 200, Game::Boton_t::Controles, control));
+	objetos.emplace_back(new Button(ptsjuego, 150, 300, Game::Boton_t::Salir, salir));
+
 	objetos.emplace_back(new Button(ptsjuego, 1050, 630, Game::Boton_t::Spanish, spa));
 	objetos.emplace_back(new Button(ptsjuego, 850, 630, Game::Boton_t::English, eng));
 
