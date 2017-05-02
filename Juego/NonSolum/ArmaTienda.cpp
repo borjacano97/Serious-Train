@@ -135,7 +135,8 @@ void ArmaTienda::draw() {
 		tipoText->loadFromText(juegootp->pRender, tipoArma, tipoTextColor);
 	}
 	else if (!bloqueado) {
-		tipoText->draw(juegootp->pRender, nullptr, &puntosText->myFont.setRect(50, 120, this->pos.x - 13, this->pos.y - 25));
+		if (tip == Game::Bala_t::Pistola) tipoText->draw(juegootp->pRender, nullptr, &puntosText->myFont.setRect(50, 110, this->pos.x - 13, this->pos.y - 35));
+		else tipoText->draw(juegootp->pRender, nullptr, &puntosText->myFont.setRect(50, 110, this->pos.x - 13, this->pos.y - 25));
 		tipoText->loadFromText(juegootp->pRender, tipoArma, tipoTextColor);
 	}
 	else {
