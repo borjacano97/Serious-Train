@@ -10,6 +10,7 @@ public:
 	~Nivel5() {  }
 	void dispara(bool shoot) { disparando = shoot; }
 	void update(Uint32 delta);
+	void draw();
 private:
 	int  enem, emax, shootTimer, spawnTimer, cadencia;
 	bool created = false;

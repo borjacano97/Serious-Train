@@ -73,7 +73,7 @@ Bala::Bala(Game* juego, Play*pl, float x, float y, int mira, Game::Bala_t b)
 		alto = 20;
 		ancho = 40;
 		vel = 0.8;
-		dmg = 30; // no nos habiamos dado cuenta que como la bala no se destruye en el franco colisiona varias veces con el enemigo
+		dmg = 150; // no nos habiamos dado cuenta que como la bala no se destruye en el franco colisiona varias veces con el enemigo
 		          // por eso hay que poner menor damage que si no es insta kill hasta pa los bosses xd
 		Ttextura = Game::Texturas_t::TBala;
 		break;

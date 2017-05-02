@@ -68,9 +68,7 @@ void Play::freeObjects() {
 	}
 }
 void Play::draw() {
-	esc->draw();
-	font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(60, 60, 50, 70));
-	font->loadFromText(ptsjuego->pRender, /* + Aqui podria ir imagen de monedas */ std::to_string(ptsjuego->coins), fontColor);
+	esc->draw();	
 
 	for (auto i : tren) {
 		i->draw();

@@ -10,7 +10,7 @@ Survival::Survival(Game * j) : Play(j)
 	for (unsigned int i = 0; i < 4; i++) {
 		tren.emplace_back(new Vagon(ptsjuego, this, 580, 100 + 150 * i, Game::Vagon_t::Vacio));
 	}
-	armaActual = new ArmaTienda(ptsjuego, NULL, 130 , 70, 0, Game::Bala_t::Piedra, true);
+	armaActual = new ArmaTienda(ptsjuego, NULL, 170 , 70, 0, Game::Bala_t::Piedra, true);
 	arma = Game::Bala_t::Piedra;
 	cadencia = 800;
 
@@ -24,8 +24,11 @@ Survival::Survival(Game * j) : Play(j)
 	contRondas = 1;
 
 	enem = 0; // variable que cuenta los enemigos creados por ronda
+	
 }
 void Survival::update(Uint32 delta) {
+	
+
 	shootTimer += delta;
 	spawnTimer += delta;
 
@@ -51,7 +54,7 @@ void Survival::update(Uint32 delta) {
 		break;
 	case 2:
 		if (!created) {
-			armaActual = new ArmaTienda(ptsjuego, NULL, 130, 70, 0, Game::Bala_t::Pistola, true);
+			armaActual = new ArmaTienda(ptsjuego, NULL, 170, 50, 0, Game::Bala_t::Pistola, true);
 			created = true;
 		}
 			
@@ -80,7 +83,7 @@ void Survival::update(Uint32 delta) {
 		break;
 	case 3:
 		if (!created) {
-			armaActual = new ArmaTienda(ptsjuego, NULL, 130, 70, 0, Game::Bala_t::Escopeta, true);
+			armaActual = new ArmaTienda(ptsjuego, NULL, 170, 70, 0, Game::Bala_t::Escopeta, true);
 			created = true;
 		}
 		arma = Game::Bala_t::Escopeta;
@@ -107,7 +110,7 @@ void Survival::update(Uint32 delta) {
 		break;
 	case 4:
 		if (!created) {
-			armaActual = new ArmaTienda(ptsjuego, NULL, 130, 70, 0, Game::Bala_t::Sniper, true);
+			armaActual = new ArmaTienda(ptsjuego, NULL, 170, 70, 0, Game::Bala_t::Sniper, true);
 			created = true;
 		}
 		arma = Game::Bala_t::Sniper;
@@ -134,7 +137,7 @@ void Survival::update(Uint32 delta) {
 		break;
 	case 5:
 		if (!created) {
-			armaActual = new ArmaTienda(ptsjuego, NULL, 130, 70, 0, Game::Bala_t::Metralleta, true);
+			armaActual = new ArmaTienda(ptsjuego, NULL, 170, 70, 0, Game::Bala_t::Metralleta, true);
 			created = true;
 		}
 		arma = Game::Bala_t::Metralleta;
@@ -167,7 +170,7 @@ void Survival::update(Uint32 delta) {
 		break;
 	default:
 		if (!created) {
-			armaActual = new ArmaTienda(ptsjuego, NULL, 130, 70, 0, Game::Bala_t::Minigun, true);
+			armaActual = new ArmaTienda(ptsjuego, NULL, 170, 70, 0, Game::Bala_t::Minigun, true);
 			created = true;
 		}
 		arma = Game::Bala_t::Minigun;
@@ -221,4 +224,11 @@ void Survival::update(Uint32 delta) {
 			spawn += 5000; //estaria bien aquí parar el tiempo de spawn por así decirlo durante un ratejo para que se note el tiempo entre rondas
 		}
 	Play::update(delta);
+}
+void Survival::draw() {
+	Play::draw();
+
+	if (ptsjuego->spanish) font->loadFromText(ptsjuego->pRender, " Ronda: " + std::to_string(contRondas), fontColor);
+	else font->loadFromText(ptsjuego->pRender, " Round: " + std::to_string(contRondas), fontColor);
+	font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(70, 120, 10, 70));	
 }

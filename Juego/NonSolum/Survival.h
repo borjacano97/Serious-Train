@@ -11,6 +11,7 @@ public:
 	~Survival() {  }
 	void dispara(bool shoot) { disparando = shoot; }
 	void update(Uint32 delta);
+	void draw();
 
 private:
 	int  enem, shootTimer, spawnTimer, cadencia, contRondas, spawn;
@@ -19,6 +20,7 @@ private:
 	bool created = true;
 
 	Game::Bala_t arma;
+
 };
 
 #endif

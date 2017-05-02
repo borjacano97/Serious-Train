@@ -35,24 +35,37 @@ Game::Game()
 
 	initSDL();
 	initMedia();
-
 	espera = false;
 	exit = false;
 
+
+	initLibraries();
+	sound = new Sound;
+
 	estados.push(new Menu(this)); // estado que queremos inicial
 }
+
 
 
 Game::~Game()
 {
 	freeMedia();
 	closeSDL();
-
+	sound->stopMusic();
 
 	pWin = nullptr;
 	pRender = nullptr;
 }
 
+
+
+bool Game::initLibraries() {
+	if (Mix_OpenAudio(22050, MIX_DEFAULT_FORMAT, 2, 4096) == -1)
+	{
+		return false;
+	}
+	return true;
+}
 SDL_Renderer* Game::getRender()const {
 	return pRender;
 }

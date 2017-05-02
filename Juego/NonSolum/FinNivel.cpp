@@ -7,15 +7,19 @@ FinNivel::FinNivel(Game* juego, bool v) :Estado(juego)
 	victory = v;
 	objetos.emplace_back(new Button(ptsjuego, 300, 600, Game::Boton_t::Jugar, jugar));
 	initLibraries();
-	sound = new Sound;
-	sound->playMusic("../sounds/wonLevel.mp3", 2, 20);
+
+	if (juego->sound != nullptr)  juego->sound->stopMusic();
+
+	juego->sound->playMusic("../sounds/wonLevel.mp3", 2, 20);
 }
 
 void FinNivel::jugar(Game * jg) {
+	jg->sound->stopMusic();
 	jg->popState(); // vuelve a la tienda
 }
 
 void FinNivel::salir(Game * jg){
+	jg->sound->stopMusic();
 	jg->setSalir();
 }
 

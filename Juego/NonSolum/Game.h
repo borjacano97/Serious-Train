@@ -4,6 +4,7 @@
 #include "Texturas.h"
 #include "RaizObjeto.h"
 #include "RaizEstado.h"
+#include "Sound.h"
 
 #include <SDL.h>
 #include <vector> // para vectores de texturas, objetos, ect.
@@ -50,6 +51,9 @@ public:
 	bool tiendaCreada = false;
 	bool spanish = true;
 
+
+	Sound* sound;
+
 private:
 	
 	SDL_Event e;
@@ -64,7 +68,7 @@ private:
 	void onClick(int pmx, int pmy);
 	void update(Uint32 delta);
 	bool handle_event();
-
+	bool initLibraries();
 
 	bool espera, exit;
 	int mx, my;

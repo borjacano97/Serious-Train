@@ -71,3 +71,9 @@ void Nivel1::update(Uint32 delta) {
 	Play::update(delta);
 
 }
+void Nivel1::draw() {
+	Play::draw();
+
+	font->loadFromText(ptsjuego->pRender, "$" + std::to_string(ptsjuego->coins), fontColor);
+	font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(60, 60, 50, 70));	
+}

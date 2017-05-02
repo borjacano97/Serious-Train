@@ -67,7 +67,6 @@ Tienda::Tienda(Game* juego) :Estado(juego)
 	fontColor.r = 218;
 	fontColor.g = 165;
 	fontColor.b = 32;
-
 	
 
 	s = new Sound;

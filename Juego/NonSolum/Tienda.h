@@ -26,7 +26,7 @@ public:
 	void elegirArma(Game::Bala_t a);
 	void recolocar(Game * jg);
 	void jugar(Game * jg);
-	void salir(Game * jg){ jg->pushState(new Menu(jg)); }
+	void salir(Game * jg) { jg->pushState(new Menu(jg)); s->stopMusic(); jg->sound->playMusic("../sounds/musicaMenuP.mp3", 2, 12); }
 private:
 	
 
@@ -54,11 +54,6 @@ private:
 
 	Texturas* font;
 	SDL_Color fontColor;
-
-	Texturas* textTienda;
-	Texturas* textVag;
-	Texturas* textArmas;
-
 };
 
 #endif
