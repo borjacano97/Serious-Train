@@ -33,7 +33,7 @@ void Menu::jugar(Game * jg) {
 void Menu::survMode(Game * jg) {
 	jg->sound->stopMusic();
 	jg->pushState(new Survival(jg));
-	jg->sound->playMusic("../sounds/level4.mp3", 5, 12);
+	jg->sound->playMusic("../sounds/levasPolka.mp3", 5, 12);
 }
 
 void Menu::salir(Game * jg){
