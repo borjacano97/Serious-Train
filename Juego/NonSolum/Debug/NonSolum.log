@@ -1,8 +1,6 @@
-﻿  Bala.cpp
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=': conversión de 'double' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\bala.cpp(18): warning C4305: '=': truncamiento de 'double' a 'float'
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\bala.cpp(75): warning C4305: '=': truncamiento de 'double' a 'float'
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\bala.cpp(90): warning C4305: '=': truncamiento de 'double' a 'float'
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\bala.cpp(126): warning C4244: '+=': conversión de 'double' a 'float'; posible pérdida de datos
+﻿  Button.cpp
+c:\users\alejandro\desktop\serious-train\juego\nonsolum\button.cpp(90): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+c:\users\alejandro\desktop\serious-train\juego\nonsolum\button.cpp(91): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+c:\users\alejandro\desktop\serious-train\juego\nonsolum\button.cpp(96): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
   NonSolum.vcxproj -> C:\Users\Alejandro\Desktop\Serious-Train\Juego\bin\NonSolumDebug.exe
   NonSolum.vcxproj -> C:\Users\Alejandro\Desktop\Serious-Train\Juego\bin\NonSolumDebug.pdb (Full PDB)

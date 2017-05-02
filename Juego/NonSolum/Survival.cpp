@@ -107,11 +107,11 @@ void Survival::update(Uint32 delta) {
 		break;
 	case 4:
 		if (!created) {
-			armaActual = new ArmaTienda(ptsjuego, NULL, 130, 70, 0, Game::Bala_t::Metralleta, true);
+			armaActual = new ArmaTienda(ptsjuego, NULL, 130, 70, 0, Game::Bala_t::Sniper, true);
 			created = true;
 		}
-		arma = Game::Bala_t::Metralleta;
-		cadencia = 300;
+		arma = Game::Bala_t::Sniper;
+		cadencia = 1000;
 
 		if (enem < (7 * contRondas) && spawnTimer >= (spawn - 110)) {
 			if (newRonda) {
@@ -134,11 +134,11 @@ void Survival::update(Uint32 delta) {
 		break;
 	case 5:
 		if (!created) {
-			armaActual = new ArmaTienda(ptsjuego, NULL, 130, 70, 0, Game::Bala_t::Sniper, true);
+			armaActual = new ArmaTienda(ptsjuego, NULL, 130, 70, 0, Game::Bala_t::Metralleta, true);
 			created = true;
 		}
-		arma = Game::Bala_t::Sniper;
-		cadencia = 1000;
+		arma = Game::Bala_t::Metralleta;
+		cadencia = 300;
 
 		if (enem < (7 * contRondas) && spawnTimer >= (spawn - 120)) {
 			if (newRonda) {
