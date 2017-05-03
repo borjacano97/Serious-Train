@@ -25,6 +25,7 @@ Survival::Survival(Game * j) : Play(j)
 	contRondas = 1;
 
 	enem = 0; // variable que cuenta los enemigos creados por ronda
+
 }
 void Survival::update(Uint32 delta) {
 	
@@ -65,6 +66,7 @@ void Survival::update(Uint32 delta) {
 		if (enem < (7 * contRondas) && spawnTimer >= (spawn -50)) {
 			if (newRonda) {
 				spawn -= 5000;
+				std::cout << "SUENO" << std::endl;
 				newRonda = false;
 			}
 			else {

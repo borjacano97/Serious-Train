@@ -21,21 +21,24 @@ Play::Play(Game * j) : Estado(j)
 	font->loadFuente("../fonts/fuenteNumbers.ttf", 200);
 
 	/*sonido = new Sound;
-	sonido->playMusic("../sounds/prueba.mp3", 3);*/
-	soundLoss = new Sound;
-	soundWon = new Sound;
+	sonido->playMusic("../sounds/prueba.mp3", 3, 20);
+	/*soundLoss = new Sound;
+	soundWon = new Sound;*/
 
 	fontColor.r = 218;
 	fontColor.g = 165;
 	fontColor.b = 32;
 
 	fin = false;
+
+	j->sound->playEffect("../sounds/trainEffect.mp3", 300, 15, 1);
 }
 
 
 Play::~Play()
 {
 	freeObjects();
+	
 }
 
 bool Play::initObjects() { // creaci�n de los objetos dando un puntero, una textura y una posici�n (constructora de objs)
@@ -66,6 +69,7 @@ void Play::freeObjects() {
 	for (auto b : balas) {
 		delete b;
 	}
+	Mix_OpenAudio(22050, MIX_DEFAULT_FORMAT, 2, 4096) == -1;
 }
 void Play::draw() {
 	esc->draw();	

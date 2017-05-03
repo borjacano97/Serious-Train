@@ -23,6 +23,7 @@ private:
 	bool created = true;
 
 	Game::Bala_t arma;
+	Game* aux;
 
 
 };

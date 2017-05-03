@@ -16,7 +16,7 @@ Menu::Menu(Game * juego) :Estado(juego)
 	objetos.emplace_back(new Button(ptsjuego, 850, 630, Game::Boton_t::English, eng));
 
 
-	juego->sound->playMusic("../sounds/musicaMenuP.mp3", 2, 12);
+	juego->sound->playMusic("../sounds/musicaMenuP.mp3", 2, 17);
 }
 
 Menu::~Menu() {
@@ -38,6 +38,7 @@ void Menu::survMode(Game * jg) {
 	jg->sound->stopMusic();
 	jg->pushState(new Survival(jg));
 	jg->sound->playMusic("../sounds/levasPolka.mp3", 5, 12);
+	jg->sound->playEffect("../sounds/newRound.mp3", 0, 600, 4);
 }
 
 void Menu::salir(Game * jg){

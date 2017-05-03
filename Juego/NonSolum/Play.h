@@ -40,6 +40,7 @@ protected:
 	SDL_Color fontColor;
 	Sound* soundLoss;
 	Sound* soundWon;
+	//Sound* sonido;
 	ArmaTienda* armaActual;
 
 

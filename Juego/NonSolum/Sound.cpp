@@ -63,11 +63,12 @@ void Sound::stopMusic() {
 }
 
 
-void Sound::playEffect(const std::string& file) {
+void Sound::playEffect(const std::string& file, int loops, int volume, int chan) {
 	//if (currentState != ERROR)
 	//{
 	Mix_Chunk* fx = Mix_LoadWAV(file.c_str());
-	Mix_PlayChannel(-1, fx, 0);
+	Mix_PlayChannel(chan, fx, loops);
+	Mix_VolumeChunk(fx, volume);
 	//}
 }
 

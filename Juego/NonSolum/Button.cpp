@@ -52,6 +52,8 @@ Button::Button(Game* juego,  float x, float y, Game::Boton_t tipo, CallBack_t * 
 bool Button::onClick(){
 	juegootp->getMousePos(mpbx, mpby);
 
+	juegootp->sound->playEffect("../sounds/buttonSound.mp3", 0, 100, 2);
+
 	if (dentro(mpbx, mpby)){
 		cb(juegootp);
 		return true;

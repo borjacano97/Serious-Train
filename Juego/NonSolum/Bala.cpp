@@ -24,6 +24,7 @@ Bala::Bala(Game* juego, Play*pl, float x, float y, int mira, Game::Bala_t b)
 		vel = 0.5;
 		dmg = 500;
 		Ttextura = Game::Texturas_t::TRoca;
+		juego->sound->playEffect("../sounds/stoneEffect.mp3", 0, 7, 3);
 		break;
 	case Game::Rayo:
 		alto = 1400;
@@ -38,6 +39,7 @@ Bala::Bala(Game* juego, Play*pl, float x, float y, int mira, Game::Bala_t b)
 		dmg = 5;
 		if (x <= 600) Ttextura = Game::Texturas_t::TFuegoi;
 		else Ttextura = Game::Texturas_t::TFuegod;
+		juego->sound->playEffect("../sounds/flameEffect.mp3", 0, 250, 3);
 		break;
 	case Game::Escopeta:
 		alto = 20;
@@ -47,6 +49,7 @@ Bala::Bala(Game* juego, Play*pl, float x, float y, int mira, Game::Bala_t b)
 		Ttextura = Game::Texturas_t::TBala;
 		p->balas.emplace_back(new Bala(juegootp, p, p->player->getPos().x, p->player->getPos().y, p->player->getMira(), Game::Bala_t::E1));
 		p->balas.emplace_back(new Bala(juegootp, p, p->player->getPos().x, p->player->getPos().y, p->player->getMira(), Game::Bala_t::E2));
+		juego->sound->playEffect("../sounds/shotgunEffect.mp3", 0, 40, 3);
 		break;
 	case Game::E1: // digamos que son balas auxiliares de la escopeta xd
 		alto = 20;
@@ -68,6 +71,7 @@ Bala::Bala(Game* juego, Play*pl, float x, float y, int mira, Game::Bala_t b)
 		vel = 0.5;
 		dmg = 500;
 		Ttextura = Game::Texturas_t::TBala;
+		juego->sound->playEffect("../sounds/revolverEffect.mp3", 0, 50, 3);
 		break;
 	case Game::Sniper:
 		alto = 20;
@@ -76,6 +80,7 @@ Bala::Bala(Game* juego, Play*pl, float x, float y, int mira, Game::Bala_t b)
 		dmg = 150; // no nos habiamos dado cuenta que como la bala no se destruye en el franco colisiona varias veces con el enemigo
 		          // por eso hay que poner menor damage que si no es insta kill hasta pa los bosses xd
 		Ttextura = Game::Texturas_t::TBala;
+		juego->sound->playEffect("../sounds/rifleEffect.mp3", 0, 90, 3);
 		break;
 	case Game::Metralleta:
 		alto = 20;
@@ -83,6 +88,7 @@ Bala::Bala(Game* juego, Play*pl, float x, float y, int mira, Game::Bala_t b)
 		vel = 0.5;
 		dmg = 500;
 		Ttextura = Game::Texturas_t::TBala;
+		juego->sound->playEffect("../sounds/rifleEffect.mp3", 0, 90, 3);
 		break;
 	case Game::Minigun:
 		alto = 20;
@@ -90,6 +96,7 @@ Bala::Bala(Game* juego, Play*pl, float x, float y, int mira, Game::Bala_t b)
 		vel = 0.6;
 		dmg = 200;
 		Ttextura = Game::Texturas_t::TBala;
+		juego->sound->playEffect("../sounds/miniGunEffect.mp3", 0, 40, 3);
 		break;
 	default:
 		break;

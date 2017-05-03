@@ -26,7 +26,7 @@ public:
 	void playMusic(const std::string& file, int loops, int volume);
 	void pauseMusic();
 	void stopMusic();
-	void playEffect(const std::string& file);
+	void playEffect(const std::string& file, int loops, int volume, int chan);
 
 	bool isPaused() {
 		return currentState == PAUSED;

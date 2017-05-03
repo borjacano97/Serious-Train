@@ -70,7 +70,7 @@ Tienda::Tienda(Game* juego) :Estado(juego)
 	
 
 	s = new Sound;
-	s1 = new Sound;
+	//s1 = new Sound;
 }
 
 
@@ -130,22 +130,26 @@ void Tienda::jugar(Game * jg) {
 	case(1) : {		
 		jg->pushState(new Nivel1(jg, vagonesNivel, armaNivel));	
 		s->stopMusic();
-		s1->playMusic("../sounds/prueba.mp3", 1, 20);
+		//jg->sound->playEffect("../sounds/trainEffect.mp3", 300, 17);
+		//s1->playEffect("../sounds/trainEffect.mp3", 300, 17);
+		//jg->sound->playEffect("../sounds/trainEffect.mp3", 300, 17);
+		jg->sound->playMusic("../sounds/nivelpos.mp3", 1, 17);
 		break; }
 	case(2) : {
 		jg->pushState(new Nivel2(jg, vagonesNivel, armaNivel));
 		s->stopMusic();
-		s2->playMusic("../sounds/inGameMusic2.mp3", 1, 20);
+		//s2->playMusic("../sounds/inGameMusic2.mp3", 1, 20);
+		jg->sound->playMusic("../sounds/level3Music.mp3", 1, 17);
 		break; }
 	case(3) : {
 		jg->pushState(new Nivel3(jg, vagonesNivel, armaNivel));
 		s->stopMusic();
-		s3->playMusic("../sounds/inGameMusic2.mp3", 3, 20);
+		s3->playMusic("../sounds/inGameMusic2.mp3", 3, 17);
 		break; }
 	case(4) : {
 		jg->pushState(new Nivel4(jg, vagonesNivel, armaNivel));
 		s->stopMusic();
-		s4->playMusic("../sounds/level4.mp3", 3, 20);
+		s4->playMusic("../sounds/level4.mp3", 3, 17);
 		break; }
 	case(5): {
 		jg->pushState(new Nivel5(jg, vagonesNivel, armaNivel));
