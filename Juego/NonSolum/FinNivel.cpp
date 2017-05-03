@@ -14,6 +14,7 @@ FinNivel::FinNivel(Game* juego, bool v) :Estado(juego)
 }
 
 void FinNivel::jugar(Game * jg) {
+	if (jg->survival) jg->survival = false;
 	jg->sound->stopMusic();
 	jg->popState(); // vuelve a la tienda
 }

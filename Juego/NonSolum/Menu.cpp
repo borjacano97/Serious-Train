@@ -34,6 +34,7 @@ void Menu::jugar(Game * jg) {
 	//Problemas para crear musica en tienda ya que se necesita un miembro estatico.
 }
 void Menu::survMode(Game * jg) {
+	jg->survival = true;
 	jg->sound->stopMusic();
 	jg->pushState(new Survival(jg));
 	jg->sound->playMusic("../sounds/levasPolka.mp3", 5, 12);

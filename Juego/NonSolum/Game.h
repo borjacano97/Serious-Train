@@ -50,6 +50,7 @@ public:
 
 	bool tiendaCreada = false;
 	bool spanish = true;
+	bool survival = false;
 
 	std::vector<Texturas*> texts;
 	Sound* sound;

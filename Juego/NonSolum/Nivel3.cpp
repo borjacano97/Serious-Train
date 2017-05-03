@@ -27,7 +27,7 @@ Nivel3::Nivel3(Game * j, std::vector <Game::Vagon_t> v, Game::Bala_t a) : Play(j
 		break;
 	case Game::Sniper: cadencia = 1000;
 		break;
-	case Game::Minigun: cadencia = 30;
+	case Game::Minigun: cadencia = 100;
 		break;
 	default:
 		break;

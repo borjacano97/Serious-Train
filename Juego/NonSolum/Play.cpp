@@ -134,7 +134,7 @@ void Play::update(Uint32 delta) {
 				enems[i]->update(delta);
 			}
 			if (enems[i] != nullptr && enems[i]->getDest()) {
-				ptsjuego->addCoins(enems[i]->getPoints());
+				if (!ptsjuego->survival) ptsjuego->addCoins(enems[i]->getPoints());
 				delete enems[i];
 				enems[i] = nullptr;
 				killed++;

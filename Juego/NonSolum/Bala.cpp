@@ -88,7 +88,7 @@ Bala::Bala(Game* juego, Play*pl, float x, float y, int mira, Game::Bala_t b)
 		alto = 20;
 		ancho = 20;
 		vel = 0.6;
-		dmg = 300;
+		dmg = 200;
 		Ttextura = Game::Texturas_t::TBala;
 		break;
 	default:

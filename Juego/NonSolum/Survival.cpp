@@ -175,7 +175,7 @@ void Survival::update(Uint32 delta) {
 			created = true;
 		}
 		arma = Game::Bala_t::Minigun;
-		cadencia = 150;
+		cadencia = 100;
 
 		if (enem < (7 * contRondas) && spawnTimer >= spawn) {
 			if (newRonda) {
