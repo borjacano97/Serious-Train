@@ -16,6 +16,7 @@ Survival::Survival(Game * j) : Play(j)
 
 	shootTimer = 0;
 	spawnTimer = 0;
+	textInit = 0;
 
 	spawn = 1500; // variable que va a hacer que a partir de la ronda 6 cada vez se generen más y más enemigos
 	
@@ -24,11 +25,9 @@ Survival::Survival(Game * j) : Play(j)
 	contRondas = 1;
 
 	enem = 0; // variable que cuenta los enemigos creados por ronda
-	
 }
 void Survival::update(Uint32 delta) {
 	
-
 	shootTimer += delta;
 	spawnTimer += delta;
 
@@ -39,6 +38,8 @@ void Survival::update(Uint32 delta) {
 
 	switch (contRondas)
 	{
+		/*font->loadFromText(ptsjuego->pRender, " " + std::to_string(contRondas), fontColor);
+		font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(220, 410, 480, 120));*/
 	case 1:
 		
 		if (enem < (7 * contRondas) && spawnTimer >= spawn ) {
@@ -228,7 +229,44 @@ void Survival::update(Uint32 delta) {
 void Survival::draw() {
 	Play::draw();
 
-	if (ptsjuego->spanish) font->loadFromText(ptsjuego->pRender, " Ronda: " + std::to_string(contRondas), fontColor);
-	else font->loadFromText(ptsjuego->pRender, " Round: " + std::to_string(contRondas), fontColor);
+
+	if (ptsjuego->spanish) { 
+		font->loadFromText(ptsjuego->pRender, " Ronda: " + std::to_string(contRondas), fontColor);
+	}
+	else { 
+		font->loadFromText(ptsjuego->pRender, " Round: " + std::to_string(contRondas), fontColor); 
+	}
+
 	font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(70, 120, 10, 70));	
+
+
+	if (newRonda && ptsjuego->spanish) {
+		font->loadFromText(ptsjuego->pRender, " Nueva    Ronda:  " + std::to_string(contRondas), fontColor);
+		font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(220, 500, 400, 120));
+	}
+	if (newRonda && !ptsjuego->spanish) {
+		font->loadFromText(ptsjuego->pRender, " New    Round:    " + std::to_string(contRondas), fontColor);
+		font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(220, 500, 400, 120));
+	}
+
+
+	if (ptsjuego->spanish && enem < 2 && textInit < 1) {
+		font->loadFromText(ptsjuego->pRender, "L o s   C o w b o y s   n a c e n ,   n o   s e   h a c e n", fontColor);
+		font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(210, 1050, 120, 180));
+		textInit++;
+	}
+	if (!ptsjuego->spanish && enem < 2 && textInit < 1) {
+		font->loadFromText(ptsjuego->pRender, "C o w b o y s   a r e   b o r n ,   t h e y   a i n t   m a d e", fontColor);
+		font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(210, 1050, 90, 180));
+		textInit++;
+	}
+	/*else {
+		font->loadFromText(ptsjuego->pRender, "Cowboys are born, they ain’t made!" + std::to_string(contRondas), fontColor);
+		font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(220, 410, 480, 120));
+	}*/
+	/*else  {
+		font->loadFromText(ptsjuego->pRender, " New Round: " + std::to_string(contRondas), fontColor);
+		font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(220, 380, 520, 120));
+	}*/
+
 }

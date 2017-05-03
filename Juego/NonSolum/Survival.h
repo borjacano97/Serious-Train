@@ -2,6 +2,9 @@
 #define H_SURVIVAL_H
 
 #include "play.h"
+#include <string>       // std::string
+#include <iostream>     // std::cout
+#include <sstream> 
 
 class Survival :
 	public Play
@@ -14,12 +17,13 @@ public:
 	void draw();
 
 private:
-	int  enem, shootTimer, spawnTimer, cadencia, contRondas, spawn;
+	int  enem, shootTimer, spawnTimer, cadencia, contRondas, spawn, textInit;
 	bool newRonda = false;
 	bool disparando = false;
 	bool created = true;
 
 	Game::Bala_t arma;
+
 
 };
 

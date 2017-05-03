@@ -113,7 +113,7 @@ void ArmaTienda::draw() {
 		break;
 	case Game::Metralleta:
 		if (juegootp->spanish) tipoArma = "Metralleta";
-		else tipoArma = "Asault-Rifle";
+		else tipoArma = "Assault - Rifle";
 		break;
 	default:
 		break;

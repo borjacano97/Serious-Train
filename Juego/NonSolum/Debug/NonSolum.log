@@ -1,11 +1,145 @@
 ﻿  ArmaTienda.cpp
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\armatienda.cpp(124): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\armatienda.cpp(125): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\armatienda.cpp(130): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\armatienda.cpp(131): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\armatienda.cpp(133): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\armatienda.cpp(134): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\armatienda.cpp(138): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\armatienda.cpp(139): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-  NonSolum.vcxproj -> C:\Users\Alejandro\Desktop\Serious-Train\Juego\bin\NonSolumDebug.exe
-  NonSolum.vcxproj -> C:\Users\Alejandro\Desktop\Serious-Train\Juego\bin\NonSolumDebug.pdb (Full PDB)
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\armatienda.cpp(124): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\armatienda.cpp(125): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\armatienda.cpp(130): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\armatienda.cpp(131): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\armatienda.cpp(133): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\armatienda.cpp(134): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\armatienda.cpp(138): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\armatienda.cpp(139): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Generating Code...
+  Compiling...
+  VagonTienda.cpp
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\vagontienda.cpp(97): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\vagontienda.cpp(98): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\vagontienda.cpp(103): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\vagontienda.cpp(105): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\vagontienda.cpp(109): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\vagontienda.cpp(115): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Vagon.cpp
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+  Trigger.cpp
+  Tienda.cpp
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\tienda.cpp(223): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Survival.cpp
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\survival.cpp(11): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\survival.cpp(48): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\survival.cpp(50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\survival.cpp(72): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\survival.cpp(73): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\survival.cpp(76): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\survival.cpp(77): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\survival.cpp(100): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\survival.cpp(101): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\survival.cpp(104): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\survival.cpp(105): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\survival.cpp(127): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\survival.cpp(128): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\survival.cpp(131): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\survival.cpp(132): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\survival.cpp(154): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\survival.cpp(155): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\survival.cpp(159): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\survival.cpp(160): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\survival.cpp(163): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\survival.cpp(164): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\survival.cpp(187): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\survival.cpp(188): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\survival.cpp(192): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\survival.cpp(193): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\survival.cpp(197): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\survival.cpp(198): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\survival.cpp(201): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\survival.cpp(202): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Selector.cpp
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\selector.cpp(14): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\selector.cpp(18): warning C4244: '=': conversion from 'Uint32' to 'float', possible loss of data
+  Play.cpp
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+  Personaje.cpp
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\personaje.cpp(23): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\personaje.cpp(24): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  Pausa.cpp
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+  ObjetoTienda.cpp
+  Objeto.cpp
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\objeto.cpp(15): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\objeto.cpp(16): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\objeto.cpp(26): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Nivel5.cpp
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\nivel5.cpp(10): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\nivel5.cpp(51): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\nivel5.cpp(52): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\nivel5.cpp(57): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\nivel5.cpp(58): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\nivel5.cpp(62): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\nivel5.cpp(63): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Nivel4.cpp
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\nivel4.cpp(10): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\nivel4.cpp(51): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\nivel4.cpp(52): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\nivel4.cpp(56): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\nivel4.cpp(57): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Nivel3.cpp
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\nivel3.cpp(11): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\nivel3.cpp(53): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\nivel3.cpp(54): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\nivel3.cpp(58): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\nivel3.cpp(59): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Nivel2.cpp
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\nivel2.cpp(10): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\nivel2.cpp(51): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\nivel2.cpp(53): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Nivel1.cpp
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\nivel1.cpp(11): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\nivel1.cpp(57): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\nivel1.cpp(59): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Menu.cpp
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+  Main.cpp
+  Game.cpp
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+  FinNivel.cpp
+  Generating Code...
+  Compiling...
+  Estado.cpp
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+  Escenario.cpp
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\escenario.cpp(15): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+  Enemigo.cpp
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\enemigo.cpp(23): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\enemigo.cpp(29): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\enemigo.cpp(35): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\enemigo.cpp(41): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\enemigo.cpp(55): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\enemigo.cpp(61): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\enemigo.cpp(84): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\enemigo.cpp(85): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  Controles.cpp
+  Button.cpp
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\button.cpp(96): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\button.cpp(97): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\button.cpp(102): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  BotonTienda.cpp
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\botontienda.cpp(107): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\botontienda.cpp(108): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\botontienda.cpp(112): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\botontienda.cpp(114): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\botontienda.cpp(115): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  BarraHP.cpp
+  Bala.cpp
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\bala.cpp(18): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\bala.cpp(75): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\bala.cpp(90): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\gonzalo guzmán\desktop\aleeexcrack!!\serious-train\juego\nonsolum\bala.cpp(126): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+  Generating Code...
+  NonSolum.vcxproj -> C:\Users\Gonzalo Guzmán\Desktop\aleeexCrack!!\Serious-Train\Juego\bin\NonSolumDebug.exe
