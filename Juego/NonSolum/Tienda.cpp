@@ -156,7 +156,6 @@ void Tienda::jugar(Game * jg) {
 		break;
 	}
 	suena = false;
-	recolocar(jg);
 }
 
 void Tienda::recolocar(Game * jg){

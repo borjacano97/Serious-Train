@@ -15,5 +15,6 @@ public:
 private:
 	Game::Bala_t tip;
 	std::string tipoArma;
+	bool first = false;
 };
 #endif

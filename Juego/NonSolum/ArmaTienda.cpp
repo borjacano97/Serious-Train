@@ -97,6 +97,8 @@ bool ArmaTienda::onClick() {
 
 void ArmaTienda::draw() {
 
+
+
 	switch (tip)
 	{
 	case Game::Escopeta:
@@ -139,7 +141,7 @@ void ArmaTienda::draw() {
 		else tipoText->draw(juegootp->pRender, nullptr, &puntosText->myFont.setRect(50, 110, this->pos.x - 13, this->pos.y - 25));
 		tipoText->loadFromText(juegootp->pRender, tipoArma, tipoTextColor);
 	}
-	else {
+	else  {
 		puntosText->draw(juegootp->pRender, nullptr, &puntosText->myFont.setRect(50, 45, mpbx, mpby));
 		puntosText->loadFromText(juegootp->pRender, " ", fontColor);
 		tipoText->draw(juegootp->pRender, nullptr, &puntosText->myFont.setRect(50, 120, 850, 190));
@@ -149,4 +151,11 @@ void ArmaTienda::draw() {
 		}
 			
 	}
+
+	if (!bloqueado && !first){
+	
+		t->elegirArma(tip);
+		first = true;
+	}
+
 }
