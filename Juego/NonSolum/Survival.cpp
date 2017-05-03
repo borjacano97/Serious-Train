@@ -224,6 +224,7 @@ void Survival::update(Uint32 delta) {
 			contRondas++;
 			spawn += 5000; //estaria bien aquí parar el tiempo de spawn por así decirlo durante un ratejo para que se note el tiempo entre rondas
 		}
+		textInit += delta;
 	Play::update(delta);
 }
 void Survival::draw() {
@@ -250,15 +251,13 @@ void Survival::draw() {
 	}
 
 
-	if (ptsjuego->spanish && enem < 2 && textInit < 1) {
+	if (ptsjuego->spanish && enem < 2 && textInit < 2000) {
 		font->loadFromText(ptsjuego->pRender, "L o s   C o w b o y s   n a c e n ,   n o   s e   h a c e n", fontColor);
 		font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(210, 1050, 120, 180));
-		textInit++;
 	}
-	if (!ptsjuego->spanish && enem < 2 && textInit < 1) {
+	else if (!ptsjuego->spanish && enem < 2 && textInit <  2000) {
 		font->loadFromText(ptsjuego->pRender, "C o w b o y s   a r e   b o r n ,   t h e y   a i n t   m a d e", fontColor);
 		font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(210, 1050, 90, 180));
-		textInit++;
 	}
 	/*else {
 		font->loadFromText(ptsjuego->pRender, "Cowboys are born, they ain’t made!" + std::to_string(contRondas), fontColor);
