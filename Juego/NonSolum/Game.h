@@ -37,6 +37,7 @@ public:
 
 	void changeState(RaizEstado* newSt);
 	void pushState(RaizEstado* newState);
+	void pushNewState(Estado::Estado_t newState);
 	void popState();
 	void setSalir();
 	void incrNivel() { nivel++; }
@@ -68,7 +69,7 @@ private:
 	void render(); //const
 	void onClick(int pmx, int pmy);
 	void update(Uint32 delta);
-	bool handle_event();
+	void handle_event();
 	bool initLibraries();
 
 	bool espera, exit;

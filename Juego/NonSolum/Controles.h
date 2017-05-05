@@ -8,7 +8,7 @@ class Controles :
 public:
 	Controles(Game* juego);
 	~Controles(){}
-	char getEst() { return 'C'; }
+	Estado_t getEstado() { return Controles_t; }
 private:
 	static void salir(Game * jg) { jg->popState(); }
 };

@@ -15,7 +15,7 @@ class Tienda :
 public:
 	Tienda(Game* juego);
 	~Tienda(){}
-	char getEst(){  return 'T';}
+	Estado_t getEstado(){  return Tienda_t;}
 	void draw();
 	void onClick();
 

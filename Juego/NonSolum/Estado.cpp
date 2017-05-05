@@ -26,3 +26,6 @@ void Estado::onClick() {
 		i--;
 	}
 }
+bool Estado::handle_events(SDL_Event * evento) {
+	return !(evento->type == SDL_QUIT);
+}

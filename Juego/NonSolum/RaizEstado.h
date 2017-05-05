@@ -5,7 +5,7 @@
 class RaizEstado
 {
 public:
-	
+	enum Estado_t { Pausa_t, Menu_t, Play_t, Tienda_t, Win_t, Lose_t, Controles_t };
 	RaizEstado()
 	{
 	}
@@ -13,13 +13,12 @@ public:
 	virtual ~RaizEstado()
 	{
 	}
+
 	virtual void draw() = 0;
 	virtual void update(Uint32 delta) = 0;
 	virtual void onClick() = 0;
-	virtual void move(char c) = 0;
-	virtual char getEst() = 0;
-	virtual void select(Uint32 n) = 0;
-	virtual void dispara(bool shoot) = 0;
+	virtual Estado_t getEstado() = 0;
+	virtual bool handle_events(SDL_Event * evento) = 0;
 };
 
 

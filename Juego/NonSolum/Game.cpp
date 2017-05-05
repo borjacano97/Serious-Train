@@ -159,9 +159,9 @@ void Game::render() { //const
 		texts[0]->draw(pRender, nullptr, nullptr);*/
 	 if (topEstado()->getEst() == 'M')
 		texts[23]->draw(pRender, nullptr, nullptr);
-	else if (topEstado()->getEst() == 'W')
+	else if (topEstado()->getEstado() == 'W')
 		texts[23]->draw(pRender, nullptr, nullptr); // texts[24] for Borja :D
-	else if (topEstado()->getEst() == 'L')
+	else if (topEstado()->getEstado() == 'L')
 		texts[10]->draw(pRender, nullptr, nullptr);
 	else if (topEstado()->getEst() == 'T')
 		texts[1]->draw(pRender, nullptr, nullptr);
@@ -202,54 +202,8 @@ void Game::update(Uint32 delta) {
 }
 
 
-bool Game::handle_event() { //eventos del teclado y raton
-	while (SDL_PollEvent(&e) && !exit) {
-		if (e.type == SDL_QUIT) {
-			exit = true;
-		}
-		else if (e.type == SDL_KEYUP) {
-			if (e.key.keysym.sym == SDLK_s || e.key.keysym.sym == SDLK_w || e.key.keysym.sym == SDLK_a || e.key.keysym.sym == SDLK_d)
-				topEstado()->move('N');
-			else if (e.key.keysym.sym == SDLK_l || e.key.keysym.sym == SDLK_SPACE && topEstado()->getEst() == 'P')
-				topEstado()->dispara(false);
-		}
-		else if (e.type == SDL_MOUSEBUTTONUP && topEstado()->getEst() == 'P')topEstado()->dispara(false);
-
-		else if (e.type == SDL_KEYDOWN) {
-			if (e.key.keysym.sym == SDLK_s) { //mov lateral
-				topEstado()->move('S');
-			}
-			else if (e.key.keysym.sym == SDLK_w) {
-				topEstado()->move('W');
-			}
-			if (e.key.keysym.sym == SDLK_a) {
-				topEstado()->move('A');
-			}
-			else if (e.key.keysym.sym == SDLK_d) {
-				topEstado()->move('D');
-			}
-			if (e.key.keysym.sym == SDLK_ESCAPE) {
-				if (topEstado()->getEst() == 'P') pushState(new Pausa(this));
-			}
-			 if (e.key.keysym.sym == SDLK_1) if (topEstado()->getEst() == 'T') topEstado()->select(1);
-			 if (e.key.keysym.sym == SDLK_2) if (topEstado()->getEst() == 'T') topEstado()->select(2);
-			 if (e.key.keysym.sym == SDLK_3) if (topEstado()->getEst() == 'T') topEstado()->select(3);
-			 if (e.key.keysym.sym == SDLK_4) if (topEstado()->getEst() == 'T') topEstado()->select(4);
-
-			 if ((e.key.keysym.sym ==  SDLK_l || e.key.keysym.sym == SDLK_SPACE)) {
-			
-				 topEstado()->dispara(true);
-			}
-			 
-		}
-		else if (e.type == SDL_MOUSEBUTTONDOWN) { // click izquierdo para llamar al onclick
-			if (e.button.state == SDL_BUTTON_LEFT) {
-				if(topEstado()->getEst() == 'P')topEstado()->dispara(true);
-				onClick(e.button.x, e.button.y);
-			}
-		}
-	}
-	return espera;
+void Game::handle_event() { //Pasa el evento al estado activo
+	while (SDL_PollEvent(&e) && topEstado()->handle_events(&e)) {}
 }
 
 RaizEstado * Game::topEstado() {
@@ -260,14 +214,27 @@ void Game::setSalir() {
 	exit = true;
 	closeSDL();
 }
-void Game::changeState(RaizEstado* newSt) {
+void Game::changeState(RaizEstado* newState) {
 	popState();
-	pushState(newSt);
+	pushState(newState);
 }
 void Game::pushState(RaizEstado* newState) {
 	estados.push(newState);
 }
-
+void Game::pushNewState(RaizEstado::Estado_t newState) {
+	switch (newState)
+	{
+		case RaizEstado::Estado_t::Play_t:
+		pushState(new Play(this));
+		break;
+	case RaizEstado::Estado_t::Pausa_t:
+		pushState(new Pausa(this));
+		break;
+		case RaizEstado::Estado_t::Menu_t:
+		pushState(new Menu(this));
+		break;
+	}
+}
 
 void Game::popState() {
 	delete estados.top();

@@ -13,7 +13,7 @@
 Play::Play(Game * j) : Estado(j)
 {
 	//srand(time(NULL));
-	//ptsjuego = j;
+	game_ptr = j;
 	initObjects();
 	killed = 0;
 
@@ -30,6 +30,8 @@ Play::Play(Game * j) : Estado(j)
 	fontColor.b = 32;
 
 	fin = false;
+	
+	estado = Estado_t::Play;
 
 	j->sound->playEffect("../sounds/trainEffect.mp3", 300, 15, 1);
 }
@@ -154,6 +156,57 @@ void Play::update(Uint32 delta) {
 	}
 	Estado::update(delta);
 }
-void Play::move(char c) {
-	player->move(c); // El Dios de la programaci�n quiere suicidarse. Pero no puede, es inmortal.
+bool Play::handle_events(SDL_Event * evento){
+	Personaje::HorizontalMov_t horizontalDireccion;
+	Personaje::VerticalMov_t verticalDireccion;
+	switch (evento->type)
+	{
+	case SDL_KEYUP:
+		
+		switch (evento->key.keysym.sym)
+		{
+		case SDLK_w:
+		case SDLK_s:
+			verticalDireccion = Personaje::VerticalMov_t::STOP;
+			break;
+		case SDLK_a:
+		case SDLK_d:
+			horizontalDireccion = Personaje::HorizontalMov_t::STOP;
+			break;
+		case SDLK_l:
+		case SDLK_SPACE:
+			dispara(false);
+		default:
+			break;
+		}
+		break;
+	case SDL_KEYDOWN:
+		switch (evento->key.keysym.sym)
+		{
+		case SDLK_w:
+			verticalDireccion = Personaje::VerticalMov_t::UP;
+			break;
+		case SDLK_s:
+			verticalDireccion = Personaje::VerticalMov_t::DOWN;
+			break;
+		case SDLK_a:
+			horizontalDireccion = Personaje::HorizontalMov_t::LEFT;
+			break;
+		case SDLK_d:
+			horizontalDireccion = Personaje::HorizontalMov_t::RIGHT;
+			break;
+		case SDLK_ESCAPE:
+			game_ptr->pushNewState(Pausa_t);
+			break;
+		case SDLK_l:
+		case SDLK_SPACE:
+			dispara(true);
+
+		default:
+			break;
+		}
+		break;
+	}
+	player->move(horizontalDireccion, verticalDireccion);
+	return Estado::handle_events(evento);
 }

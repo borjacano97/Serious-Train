@@ -46,67 +46,7 @@ void Personaje::update(Uint32 delta) {
 		pos.y = 650;
 }
 
-void Personaje::move(char c) {
-
-	switch (c) {
-	case 'W':
-		dir.y = -1;
-		//Coloca al jugador en la fila del spritesheet de la animación de avanzar hacia arriba
-		srcR.y = 187;
-		//Recorre esa animacion y la reinicia al acabar
-		if (srcR.x < 65) {
-			srcR.x += ancho;
-		}
-		else {
-			srcR.x = 0;
-		}
-		break;
-	case 'S':
-		dir.y = 1;
-		//Coloca al jugador en la fila del spritesheet de la animación de avanzar hacia arriba
-		srcR.y = 0;
-		//Recorre esa animacion y la reinicia al acabar
-		if (srcR.x < 65) {
-			srcR.x += ancho;
-		}
-		else {
-			srcR.x = 0;
-		}
-		break;
-	case 'A':
-		mira = -1;
-		dir.x = -1;
-		//Coloca al jugador en la fila del spritesheet de la animación de avanzar hacia arriba
-		srcR.y = 124;
-		//Recorre esa animacion y la reinicia al acabar
-		if (srcR.x < 65) {
-			srcR.x += ancho;
-		}
-		else {
-			srcR.x = 0;
-		}
-		break;
-	case 'D':
-		mira = 1;
-		dir.x = 1;
-		//Coloca al jugador en la fila del spritesheet de la animación de avanzar hacia arriba
-		srcR.y = 62;
-		//Recorre esa animacion y la reinicia al acabar
-		if (srcR.x < 65) {
-			srcR.x += ancho;
-		}
-		else {
-			srcR.x = 0;
-		}
-		break;
-	default:
-		dir.x = 0;
-		dir.y = 0;
-		if (srcR.y == 124) {
-			srcR.x = 32;
-		}
-		else srcR.x = 0;
-		
-		break;
-	}
+void Personaje::move(HorizontalMov_t dirH, VerticalMov_t dirV) {
+	dir.x = dirH;
+	dir.y = dirV;	
 }

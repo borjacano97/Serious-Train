@@ -11,7 +11,7 @@ class Menu :
 public:
 	Menu(Game* juego);
 	~Menu();
-	char getEst(){ return 'M'; }
+	Estado_t getEstado(){ return Menu_t; }
 private:
 	static void salir(Game * jg);
 	static void jugar(Game * jg);

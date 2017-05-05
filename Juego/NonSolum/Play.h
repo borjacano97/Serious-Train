@@ -19,13 +19,13 @@ class Play : public Estado
 public:
 	Play(Game * j);
 	~Play();
-
+	Estado_t getEst() { return Play_t; }
 	void draw();
 	void update(Uint32 delta);
 	void move(char c);
-	char getEst() { return 'P'; }
 	int getKilled() { return killed; }
 	void finish() { fin = true; }
+	bool handle_events(SDL_Event * evento);
 
 	vector <Bala*> balas;
 	vector <Enemigo*> enems;
@@ -36,6 +36,7 @@ public:
 	barraHP* TrainHp;
 	Personaje* player;
 protected:
+	Game* game_ptr;
 	Texturas* font;
 	SDL_Color fontColor;
 	Sound* soundLoss;
@@ -43,7 +44,7 @@ protected:
 	//Sound* sonido;
 	ArmaTienda* armaActual;
 
-
+	void dispara(bool disparando) {};
 	bool fin;
 	bool initObjects(); //crear y destruir los objetos del juego
 	void freeObjects();

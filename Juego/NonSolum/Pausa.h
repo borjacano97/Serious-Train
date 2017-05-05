@@ -11,7 +11,6 @@ class Pausa :
 public:
 	Pausa(Game* juego);
 	~Pausa(){}
-	char getEst(){  return 'S'; }	
 private:
 	static void salir(Game * jg);
 	static void reanudar(Game * jg);
