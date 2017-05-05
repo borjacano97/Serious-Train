@@ -97,7 +97,7 @@ void BotonTienda::draw() {
 		break;
 	case Game::Recolocar:
 		if (juegootp->spanish)	textB = "Recolocar";
-		else textB = "Choose Again";
+		else textB = "Relocate";
 		break;
 	default:
 		break;

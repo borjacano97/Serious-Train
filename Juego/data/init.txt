@@ -1,7 +1,7 @@
 ../bmps/fondoprot.png
 ../bmps/menutienda.png
 ../bmps/personaje.png
-../bmps/murcielago.png
+../bmps/zombieRapido2.png
 ../bmps/zombief.png
 ../bmps/locomotora.png
 ../bmps/vagon1.png
@@ -30,3 +30,4 @@
 ../bmps/botonA.png
 ../bmps/controlesEng.png
 ../bmps/controlesEsp.png
+../bmps/zombiebazookaf.png

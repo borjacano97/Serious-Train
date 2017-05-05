@@ -23,8 +23,11 @@ Enemigo::Enemigo(Game* juego, Play* pl, float x, float y, Game::Enemigo_t clase)
 		vel = 0.1;
 		break;
 	case Game::Enemigo_t::Rapido:
+		alto = 81;
+		ancho = 74;
+		anchoc = 444;
 		Ttextura = Game::Texturas_t::TEnemigo;
-		hp = 500;
+		hp = 600;
 		points = 10;
 		vel = 0.3;
 		break;
@@ -35,7 +38,7 @@ Enemigo::Enemigo(Game* juego, Play* pl, float x, float y, Game::Enemigo_t clase)
 		vel = 0.05;
 		break;
 	case Game::Enemigo_t::ElQueDispara:
-		Ttextura = Game::Texturas_t::TEnemigo2;
+		Ttextura = Game::Texturas_t::TEnemigoD;
 		hp = 1000;
 		points = 15;
 		vel = 0.1;
@@ -58,7 +61,7 @@ void Enemigo::update(Uint32 delta) {
 		}
 
 		if (_clase == Game::Enemigo_t::ElQueDispara && pos.x <= 1100 && pos.x >= 100){
-			if (disparo == nullptr)  disparo = new Bala(juegootp, p, pos.x, pos.y, vel * 10, Game::Bala_t::BalaEnem);
+			if (disparo == nullptr)  disparo = new Bala(juegootp, p, pos.x, pos.y+30, vel * 10, Game::Bala_t::BalaEnem);
 			else if ( disparo->getDest()) {
 				delete disparo;
 				disparo = nullptr;
@@ -67,7 +70,7 @@ void Enemigo::update(Uint32 delta) {
 			 
 			parado = true;
 		}
-		else if (j >= 150){
+		 if (j >= 150){
 			i += ancho;
 			rectA.x = i;
 

@@ -72,9 +72,6 @@
     <ClCompile Include="Enemigo.cpp">
       <Filter>Archivos de código fuente\Objetos</Filter>
     </ClCompile>
-    <ClCompile Include="Error.cpp">
-      <Filter>Archivos de código fuente\Objetos</Filter>
-    </ClCompile>
     <ClCompile Include="Personaje.cpp">
       <Filter>Archivos de código fuente\Objetos</Filter>
     </ClCompile>
@@ -137,6 +134,9 @@
     </ClCompile>
     <ClCompile Include="Controles.cpp">
       <Filter>Archivos de código fuente\Estados</Filter>
+    </ClCompile>
+    <ClCompile Include="Error.cpp">
+      <Filter>Archivos de código fuente</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
