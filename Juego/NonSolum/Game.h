@@ -37,7 +37,7 @@ public:
 
 	void changeState(RaizEstado* newSt);
 	void pushState(RaizEstado* newState);
-	void pushNewState(Estado::Estado_t newState);
+	void pushNewState(Estado_t newState);
 	void popState();
 	void setSalir();
 	void incrNivel() { nivel++; }

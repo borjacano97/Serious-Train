@@ -47,6 +47,35 @@ void Personaje::update(Uint32 delta) {
 }
 
 void Personaje::move(HorizontalMov_t dirH, VerticalMov_t dirV) {
-	dir.x = dirH;
-	dir.y = dirV;	
+	/*dir.x = dirH;
+	dir.y = dirV;
+	*/
+	switch (dirH)
+	{
+	case Personaje::LEFT:
+		dir.x = -1;
+		break;
+	case Personaje::STOP_h:
+		dir.x = 0;
+		break;
+	case Personaje::RIGHT:
+		dir.x = 1;
+		break;
+	default:
+		break;
+	}
+	switch (dirV)
+	{
+	case Personaje::UP:
+		dir.y = 1;
+		break;
+	case Personaje::STOP_v:
+		dir.y = 0;
+		break;
+	case Personaje::DOWN:
+		dir.y = -1;
+		break;
+	default:
+		break;
+	}
 }

@@ -34,7 +34,6 @@ public:
 	virtual void draw() = 0;
 	virtual void update(Uint32 delta) = 0;
 	virtual bool onClick() = 0;
-	virtual void move(char c) = 0;
 	virtual Posicion getPos() = 0;
 	virtual Direccion getDir() = 0;
 	virtual bool getDest() = 0;

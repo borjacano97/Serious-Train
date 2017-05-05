@@ -19,7 +19,7 @@ class Play : public Estado
 public:
 	Play(Game * j);
 	~Play();
-	Estado_t getEst() { return Play_t; }
+	Estado_t getEstado() { return Estado_t::Play_t; }
 	void draw();
 	void update(Uint32 delta);
 	void move(char c);

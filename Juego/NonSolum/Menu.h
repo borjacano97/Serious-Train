@@ -11,7 +11,7 @@ class Menu :
 public:
 	Menu(Game* juego);
 	~Menu();
-	Estado_t getEstado(){ return Menu_t; }
+	Estado_t getEstado(){ return Estado_t::Menu_t; }
 private:
 	static void salir(Game * jg);
 	static void jugar(Game * jg);

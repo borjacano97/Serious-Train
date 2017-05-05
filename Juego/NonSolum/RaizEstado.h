@@ -1,11 +1,11 @@
 #ifndef H_RAIZESTADO_H
 #define H_RAIZESTADO_H
 #include "Game.h"
-
+enum class Estado_t { Pausa_t, Menu_t, Play_t, Tienda_t, Win_t, Lose_t, Controles_t };
 class RaizEstado
 {
 public:
-	enum Estado_t { Pausa_t, Menu_t, Play_t, Tienda_t, Win_t, Lose_t, Controles_t };
+	
 	RaizEstado()
 	{
 	}

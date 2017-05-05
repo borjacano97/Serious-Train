@@ -15,7 +15,7 @@ class Tienda :
 public:
 	Tienda(Game* juego);
 	~Tienda(){}
-	Estado_t getEstado(){  return Tienda_t;}
+	Estado_t getEstado() { return Estado_t::Tienda_t; }
 	void draw();
 	void onClick();
 

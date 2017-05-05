@@ -155,21 +155,26 @@ void Game::render() { //const
 	SDL_RenderClear(pRender);
 
 	//fondo
-	/*if (topEstado()->getEst() == 'P' || topEstado()->getEst() == 'S')
-		texts[0]->draw(pRender, nullptr, nullptr);*/
-	 if (topEstado()->getEst() == 'M')
+	switch (topEstado()->getEstado()) {
+	case Estado_t::Menu_t:
 		texts[23]->draw(pRender, nullptr, nullptr);
-	else if (topEstado()->getEstado() == 'W')
-		texts[23]->draw(pRender, nullptr, nullptr); // texts[24] for Borja :D
-	else if (topEstado()->getEstado() == 'L')
+		break;
+	case Estado_t::Win_t:
+		texts[23]->draw(pRender, nullptr, nullptr);
+		break;
+	case Estado_t::Lose_t:
 		texts[10]->draw(pRender, nullptr, nullptr);
-	else if (topEstado()->getEst() == 'T')
+		break;
+	case Estado_t::Tienda_t:
 		texts[1]->draw(pRender, nullptr, nullptr);
-	else if (topEstado()->getEst() == 'C') {
+		break;
+	case Estado_t::Controles_t:		
 		if (spanish) texts[31]->draw(pRender, nullptr, nullptr);
 		else texts[30]->draw(pRender, nullptr, nullptr);
+		break;
+
 	}
-		
+
 	topEstado()->draw();
 	SDL_RenderPresent(pRender);
 }
@@ -221,16 +226,16 @@ void Game::changeState(RaizEstado* newState) {
 void Game::pushState(RaizEstado* newState) {
 	estados.push(newState);
 }
-void Game::pushNewState(RaizEstado::Estado_t newState) {
+void Game::pushNewState(Estado_t newState) {
 	switch (newState)
 	{
-		case RaizEstado::Estado_t::Play_t:
+		case Estado_t::Play_t:
 		pushState(new Play(this));
 		break;
-	case RaizEstado::Estado_t::Pausa_t:
+		case Estado_t::Pausa_t:
 		pushState(new Pausa(this));
 		break;
-		case RaizEstado::Estado_t::Menu_t:
+		case Estado_t::Menu_t:
 		pushState(new Menu(this));
 		break;
 	}

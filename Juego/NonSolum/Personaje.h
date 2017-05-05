@@ -7,8 +7,8 @@ class Personaje :public Objeto
 {
 public:
 	//Dir enumns
-	enum VerticalMov_t { UP = 1, STOP = 0, DOWN = -1 };
-	enum HorizontalMov_t { LEFT = -1, STOP = 0, RIGHT = 1 };
+	enum VerticalMov_t { UP, STOP_v, DOWN };
+	enum HorizontalMov_t { LEFT, STOP_h, RIGHT};
 public:
 	Personaje(Game* juego, Game::Texturas_t text, float x, float y);
 	~Personaje() {}

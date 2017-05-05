@@ -9,7 +9,7 @@ class FinNivel :
 public:
 	FinNivel(Game* juego, bool v);
 	~FinNivel() { sound->stopMusic(); }
-	Estado_t getEst(){ if (victory) return Win; else return Lose; }
+	Estado_t getEst(){ if (victory) return Estado_t::Win_t; else return Estado_t::Lose_t; }
 private:
 	static void salir(Game * jg);
 	static void jugar(Game * jg);

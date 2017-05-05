@@ -13,7 +13,6 @@ public:
 	void draw();
 	void update(Uint32 delta){}
 	bool onClick() { return true; }
-	void move(char c){}
 	virtual Direccion getDir() { return dir; };
 	Posicion getPos(){ return pos; }
 	bool getDest() { return destruido; }

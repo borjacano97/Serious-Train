@@ -30,9 +30,6 @@ Play::Play(Game * j) : Estado(j)
 	fontColor.b = 32;
 
 	fin = false;
-	
-	estado = Estado_t::Play;
-
 	j->sound->playEffect("../sounds/trainEffect.mp3", 300, 15, 1);
 }
 
@@ -167,11 +164,11 @@ bool Play::handle_events(SDL_Event * evento){
 		{
 		case SDLK_w:
 		case SDLK_s:
-			verticalDireccion = Personaje::VerticalMov_t::STOP;
+			verticalDireccion = Personaje::VerticalMov_t::STOP_v;
 			break;
 		case SDLK_a:
 		case SDLK_d:
-			horizontalDireccion = Personaje::HorizontalMov_t::STOP;
+			horizontalDireccion = Personaje::HorizontalMov_t::STOP_h;
 			break;
 		case SDLK_l:
 		case SDLK_SPACE:
@@ -196,7 +193,7 @@ bool Play::handle_events(SDL_Event * evento){
 			horizontalDireccion = Personaje::HorizontalMov_t::RIGHT;
 			break;
 		case SDLK_ESCAPE:
-			game_ptr->pushNewState(Pausa_t);
+			game_ptr->pushNewState(Estado_t::Pausa_t);
 			break;
 		case SDLK_l:
 		case SDLK_SPACE:
