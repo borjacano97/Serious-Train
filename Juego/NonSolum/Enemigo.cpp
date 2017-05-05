@@ -32,7 +32,7 @@ Enemigo::Enemigo(Game* juego, Play* pl, float x, float y, Game::Enemigo_t clase)
 		vel = 0.3;
 		break;
 	case Game::Enemigo_t::Tank:
-		Ttextura = Game::Texturas_t::TEnemigo2;
+		Ttextura = Game::Texturas_t::TEnemigoG;
 		hp = 5000;
 		points = 50;
 		vel = 0.05;
