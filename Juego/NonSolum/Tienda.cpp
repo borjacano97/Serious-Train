@@ -235,3 +235,8 @@ void Tienda::update(Uint32 d){
 		suena = true;
 	}
 }
+bool Tienda::handle_events(SDL_Event * e) {
+	if (e->type == SDL_MOUSEBUTTONDOWN && e->button.state == SDL_BUTTON_LEFT)
+		onClick();
+	return Estado::handle_events(e);
+}

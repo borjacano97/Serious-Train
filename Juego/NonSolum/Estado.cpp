@@ -27,5 +27,10 @@ void Estado::onClick() {
 	}
 }
 bool Estado::handle_events(SDL_Event * evento) {
+	if (evento->type == SDL_MOUSEBUTTONDOWN && evento->key.keysym.sym == SDL_BUTTON_LEFT) {
+		mx = evento->button.x;
+		my = evento->button.y;
+		onClick();
+	}
 	return !(evento->type == SDL_QUIT);
 }

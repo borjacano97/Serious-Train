@@ -1,5 +1,112 @@
-﻿Build started 05/05/2017 13:20:05.
-
-Build succeeded.
-
-Time Elapsed 00:00:00.03
+﻿  VagonTienda.cpp
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\vagontienda.cpp(97): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\vagontienda.cpp(98): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\vagontienda.cpp(103): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\vagontienda.cpp(105): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\vagontienda.cpp(109): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\vagontienda.cpp(115): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+  Tienda.cpp
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=': conversión de 'double' a 'float'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\tienda.cpp(226): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  Pausa.cpp
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=': conversión de 'double' a 'float'; posible pérdida de datos
+  ObjetoTienda.cpp
+  Menu.cpp
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=': conversión de 'double' a 'float'; posible pérdida de datos
+  Game.cpp
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=': conversión de 'double' a 'float'; posible pérdida de datos
+  FinNivel.cpp
+  BotonTienda.cpp
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\botontienda.cpp(109): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\botontienda.cpp(110): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\botontienda.cpp(114): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\botontienda.cpp(116): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\botontienda.cpp(117): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+  ArmaTienda.cpp
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\armatienda.cpp(126): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\armatienda.cpp(127): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\armatienda.cpp(132): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\armatienda.cpp(133): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\armatienda.cpp(135): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\armatienda.cpp(136): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\armatienda.cpp(140): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\armatienda.cpp(141): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+  Generando código...
+  Compilando...
+  Survival.cpp
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=': conversión de 'double' a 'float'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\survival.cpp(11): warning C4244: 'argumento': conversión de 'unsigned int' a 'float'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\survival.cpp(49): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\survival.cpp(51): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\survival.cpp(74): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\survival.cpp(75): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\survival.cpp(78): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\survival.cpp(79): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\survival.cpp(102): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\survival.cpp(103): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\survival.cpp(106): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\survival.cpp(107): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\survival.cpp(129): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\survival.cpp(130): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\survival.cpp(133): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\survival.cpp(134): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\survival.cpp(156): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\survival.cpp(157): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\survival.cpp(161): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\survival.cpp(162): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\survival.cpp(165): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\survival.cpp(166): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\survival.cpp(189): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\survival.cpp(190): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\survival.cpp(194): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\survival.cpp(195): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\survival.cpp(199): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\survival.cpp(200): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\survival.cpp(203): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\survival.cpp(204): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  Play.cpp
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=': conversión de 'double' a 'float'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\play.cpp(71): warning C4553: '==': el operador no tiene efecto; ¿ha pensado en '='?
+  Nivel5.cpp
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=': conversión de 'double' a 'float'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\nivel5.cpp(10): warning C4244: 'argumento': conversión de 'unsigned int' a 'float'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\nivel5.cpp(51): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\nivel5.cpp(52): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\nivel5.cpp(57): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\nivel5.cpp(58): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\nivel5.cpp(62): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\nivel5.cpp(63): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  Nivel4.cpp
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=': conversión de 'double' a 'float'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\nivel4.cpp(10): warning C4244: 'argumento': conversión de 'unsigned int' a 'float'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\nivel4.cpp(51): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\nivel4.cpp(52): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\nivel4.cpp(56): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\nivel4.cpp(57): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  Nivel3.cpp
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=': conversión de 'double' a 'float'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\nivel3.cpp(11): warning C4244: 'argumento': conversión de 'unsigned int' a 'float'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\nivel3.cpp(53): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\nivel3.cpp(54): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\nivel3.cpp(58): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\nivel3.cpp(59): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  Nivel2.cpp
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=': conversión de 'double' a 'float'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\nivel2.cpp(10): warning C4244: 'argumento': conversión de 'unsigned int' a 'float'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\nivel2.cpp(51): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\nivel2.cpp(53): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  Nivel1.cpp
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=': conversión de 'double' a 'float'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\nivel1.cpp(11): warning C4244: 'argumento': conversión de 'unsigned int' a 'float'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\nivel1.cpp(55): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\nivel1.cpp(57): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  Estado.cpp
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=': conversión de 'double' a 'float'; posible pérdida de datos
+  Controles.cpp
+  Generando código...
+  Omitiendo... (no se detectaron cambios relevantes)
+  Vagon.cpp
+  Enemigo.cpp
+  Bala.cpp
+  NonSolum.vcxproj -> D:\Documentos\UCM\Segundo curso\Proyecto_2\Repositorio\Serious-Train\Juego\bin\NonSolumDebug.exe
+  NonSolum.vcxproj -> D:\Documentos\UCM\Segundo curso\Proyecto_2\Repositorio\Serious-Train\Juego\bin\NonSolumDebug.pdb (Full PDB)

@@ -9,12 +9,15 @@ class FinNivel :
 public:
 	FinNivel(Game* juego, bool v);
 	~FinNivel() { sound->stopMusic(); }
+	void getMousePos(int &x, int &y) { x = mx, y = my; }
 	Estado_t getEst(){ if (victory) return Estado_t::Win_t; else return Estado_t::Lose_t; }
 private:
 	static void salir(Game * jg);
 	static void jugar(Game * jg);
 	bool initLibraries();
+	bool handle_events(SDL_Event * e);
 	bool victory;
+	int mx, my;
 	Sound* sound;
 };
 

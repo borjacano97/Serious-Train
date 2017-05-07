@@ -31,3 +31,17 @@ bool FinNivel::initLibraries() {
 	}
 	return true;
 }
+bool FinNivel::handle_events(SDL_Event* e) {
+	switch (e->type)
+	{
+	case SDL_MOUSEBUTTONDOWN:
+		if (e->button.state == SDL_BUTTON_LEFT) {
+			mx = e->button.x;
+			my = e->button.y;
+			onClick();
+		}
+	default:
+		break;
+	}
+	return Estado::handle_events(e);
+}

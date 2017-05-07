@@ -77,9 +77,8 @@ void Game::initMedia() {
 	}
 }
 
-void Game::getMousePos(int & mpx, int & mpy) const { //obtener posicion del mouse
-	mpx = mx;
-	mpy = my;
+void Game::getMousePos(int & mpx, int & mpy) { //obtener posicion del mouse
+	topEstado()->getMousePos(mpx, mpy);
 }
 
 void Game::freeMedia() {
@@ -208,7 +207,9 @@ void Game::update(Uint32 delta) {
 
 
 void Game::handle_event() { //Pasa el evento al estado activo
-	while (SDL_PollEvent(&e) && topEstado()->handle_events(&e)) {}
+	while (SDL_PollEvent(&e) && topEstado()->handle_events(&e)) {
+	
+	}
 }
 
 RaizEstado * Game::topEstado() {

@@ -139,7 +139,7 @@ void Play::update(Uint32 delta) {
 			if (enems[i] != nullptr && enems[i]->getDest()) {
 				if (!ptsjuego->survival) ptsjuego->addCoins(enems[i]->getPoints());
 				delete enems[i];
-				enems[i] = nullptr;
+				enems[i] = nullptr;	//enems.erase(enems.begin() + i);
 				killed++;
 			}
 		}
@@ -153,6 +153,7 @@ void Play::update(Uint32 delta) {
 	}
 	Estado::update(delta);
 }
+
 bool Play::handle_events(SDL_Event * evento){
 	Personaje::HorizontalMov_t horizontalDireccion;
 	Personaje::VerticalMov_t verticalDireccion;

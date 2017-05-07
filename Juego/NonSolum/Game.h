@@ -33,7 +33,7 @@ public:
 	void freeMedia();
 
 	void run(); // método principal (bucle del juego)
-	void getMousePos(int & mpx, int & mpy) const;
+	void getMousePos(int & mpx, int & mpy);
 
 	void changeState(RaizEstado* newSt);
 	void pushState(RaizEstado* newState);
@@ -71,9 +71,10 @@ private:
 	void update(Uint32 delta);
 	void handle_event();
 	bool initLibraries();
+	
+	int mx, my;
 
 	bool espera, exit;
-	int mx, my;
 	int nivel = 1;
 };
 
