@@ -23,6 +23,8 @@ protected:
 	int mpbx, mpby;
 	int a = 40;
 	int h;
+
+	bool clickado = false;
 };
 
 #endif

@@ -20,6 +20,8 @@ private:
 
 	static void spa(Game * jg) { jg->spanish = true; }
 	static void eng(Game * jg) { jg->spanish = false; }
+
+	static void muteMusicVolume(Game * jg);
 };
 
 

@@ -32,3 +32,5 @@
 ../bmps/controlesEsp.png
 ../bmps/zombiebazookaf.png
 ../bmps/zombieGordo.png
+../bmps/volumeBoton.png
+../bmps/volume0.png

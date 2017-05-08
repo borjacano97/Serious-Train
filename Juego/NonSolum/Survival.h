@@ -25,6 +25,10 @@ private:
 	Game::Bala_t arma;
 	Game* aux;
 
+	bool initLibraries();
+
+	Sound* sonidoSurvival;
+
 
 };
 

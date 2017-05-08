@@ -44,6 +44,14 @@ Button::Button(Game* juego,  float x, float y, Game::Boton_t tipo, CallBack_t * 
 		textB = "English";
 		Ttextura = Game::Texturas_t::TBotonA;
 		break;
+
+	case Game::Mute:
+		Ttextura = Game::Texturas_t::TBotonMute;
+		break;
+
+	case Game::Unmute:
+		Ttextura = Game::Texturas_t::TBotonMuteado;
+		break;
 	default:
 		break;
 	}
@@ -53,8 +61,23 @@ bool Button::onClick(){
 	juegootp->getMousePos(mpbx, mpby);
 
 	juegootp->sound->playEffect("../sounds/buttonSound.mp3", 0, 100, 2);
-
+	std::cout << "EYYY: " << clickado;
 	if (dentro(mpbx, mpby)){
+		if (t == Game::Mute && !clickado){
+			Ttextura = Game::Texturas_t::TBotonMuteado;
+			clickado = true;
+			std::cout << "EYYY: " << clickado;
+		}
+
+		else if (Ttextura == Game::Texturas_t::TBotonMuteado && clickado)
+		{
+			Ttextura = Game::Texturas_t::TBotonMute;
+			clickado = false;
+		}
+		/*if (t == Game::Unmute && !clickado){
+			Ttextura = Game::Texturas_t::TBotonMute;
+			clickado = false;
+		}*/
 		cb(juegootp);
 		return true;
 	}
@@ -88,6 +111,16 @@ void Button::draw() {
 	case Game::Controles:
 		if (juegootp->spanish) textB = "Controles";
 		else textB = "Controls";
+		break;
+
+	case Game::Mute:
+		ancho = 60;
+		alto = 60;
+		break;
+
+	case Game::Unmute:
+		ancho = 60;
+		alto = 60;
 		break;
 	default:
 		break;

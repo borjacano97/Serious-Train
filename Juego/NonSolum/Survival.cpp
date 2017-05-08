@@ -26,6 +26,21 @@ Survival::Survival(Game * j) : Play(j)
 
 	enem = 0; // variable que cuenta los enemigos creados por ronda
 
+	initLibraries();
+	sonidoSurvival->playEffect("../sounds/newRound.mp3", 0, 600, 4);
+
+
+}
+
+bool Survival::initLibraries(){
+
+		TTF_Init();
+
+		if (Mix_OpenAudio(22050, MIX_DEFAULT_FORMAT, 2, 4096) == -1)
+		{
+			return false;
+		}
+		return true;
 }
 void Survival::update(Uint32 delta) {
 	
@@ -66,7 +81,7 @@ void Survival::update(Uint32 delta) {
 		if (enem < (7 * contRondas) && spawnTimer >= (spawn -50)) {
 			if (newRonda) {
 				spawn -= 5000;
-				std::cout << "SUENO" << std::endl;
+				//std::cout << "SUENO" << std::endl;
 				newRonda = false;
 			}
 			else {
@@ -225,6 +240,8 @@ void Survival::update(Uint32 delta) {
 
 			contRondas++;
 			spawn += 5000; //estaria bien aquí parar el tiempo de spawn por así decirlo durante un ratejo para que se note el tiempo entre rondas
+			sonidoSurvival->playEffect("../sounds/newRound.mp3", 0, 600, 4);
+
 		}
 		textInit += delta;
 	Play::update(delta);
