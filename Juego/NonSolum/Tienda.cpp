@@ -32,9 +32,13 @@ Tienda::Tienda(Game* juego) :Estado(juego)
 
 	vags.emplace_back(new VagonTienda(ptsjuego, this, 600, 200, 200, Game::Vagon_t::Escudo, false));
 	botones.emplace_back(new BotonTienda(ptsjuego, this, vags[2], 600, 340, Game::Boton_t::Comprar));
-
-	vags.emplace_back(new VagonTienda(ptsjuego, this, 200, 500, 300, Game::Vagon_t::Laser, false));
+	
+	vags.emplace_back(new VagonTienda(ptsjuego, this, 200, 500, 250, Game::Vagon_t::Recuperador, false));
 	botones.emplace_back(new BotonTienda(ptsjuego, this, vags[3], 200, 640, Game::Boton_t::Comprar));
+
+	vags.emplace_back(new VagonTienda(ptsjuego, this, 400, 500, 300, Game::Vagon_t::Laser, false));
+	botones.emplace_back(new BotonTienda(ptsjuego, this, vags[4], 400, 640, Game::Boton_t::Comprar));
+
 
 	//ARMAS PARA COMPRAR Y RESPECTIVOS BOTONES
 

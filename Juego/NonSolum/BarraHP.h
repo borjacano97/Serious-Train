@@ -10,9 +10,9 @@ public:
 	~barraHP(){}
 	void update(Uint32 delta);
 	void damage(Game::EnemyDmg_t d);
-	void giveHP(int extra){ ancho += extra; }
+	void giveHP(int extra); 
 private:
-	int cont;
+	int cont, maxHP;
 	Uint32 d;
 };
 

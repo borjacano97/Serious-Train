@@ -33,6 +33,8 @@ Vagon::Vagon(Game* juego, Play*pl, float x, float y, Game::Vagon_t t)
 		p->TrainHp->giveHP(150);
 	}
 		break;
+	case Game::Recuperador: Ttextura = Game::Texturas_t::TVagonLaser;
+	    break;
 	default:
 		break;
 	}
@@ -67,6 +69,11 @@ void Vagon::update(Uint32 delta) {
 			p->balas.emplace_back(new Bala(juegootp, p, pos.x + 130, pos.y, 1, Game::Bala_t::Fuego));
 			p->balas.emplace_back(new Bala(juegootp, p, pos.x - 120, pos.y, -1, Game::Bala_t::Fuego));
 			cont = 0;
+		}
+		break;
+	case Game::Recuperador:
+		if (this->collision(p->player)) {
+			p->TrainHp->giveHP(1);
 		}
 		break;
 	default:
