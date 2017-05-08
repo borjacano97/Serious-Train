@@ -28,6 +28,8 @@ Nivel4::Nivel4(Game * j, std::vector <Game::Vagon_t> v, Game::Bala_t a) : Play(j
 		break;
 	case Game::Minigun: cadencia = 100;
 		break;
+	case Game::Canon: cadencia = 1500;
+		break;
 	default:
 		break;
 	}

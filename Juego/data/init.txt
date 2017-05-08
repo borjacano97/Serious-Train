@@ -32,3 +32,4 @@
 ../bmps/controlesEsp.png
 ../bmps/zombiebazookaf.png
 ../bmps/zombieGordo.png
+../bmps/canon.png

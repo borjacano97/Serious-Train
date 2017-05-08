@@ -18,10 +18,11 @@ public:
 	enum Texturas_t {
 		TFondo, TFondoT, TPersonaje, TEnemigo, TEnemigo2, TLocomotora, TVagon1, TVacioBloq, TBarra,
 		Tlose, TWin, TRoca, TLaser, TFuegod, TFuegoi, TRect, TVagonAuto, TBotonPosible, TBala, TPistol,
-		TEscopeta, TMetralleta, TSniper, TMenuP, TVagonFuego, TVagonLaser, TMinigun, TBotonV, TBotonR, TBotonA, TControlEng, TControlEsp, TEnemigoD, TEnemigoG};
+		TEscopeta, TMetralleta, TSniper, TMenuP, TVagonFuego, TVagonLaser, TMinigun, TBotonV, TBotonR, TBotonA, 
+		TControlEng, TControlEsp, TEnemigoD, TEnemigoG, TCanon};
 	enum Enemigo_t { Normal, Rapido, Tank, Enano, Invisible, Slender/*...*/ };
 	enum Vagon_t { Locom, Vacio, Automatico, Laser, Lanzallamas, Escudo/*...*/ };
-	enum Bala_t { BalaEnem, Piedra, Rayo, Fuego, Escopeta, E1, E2, Pistola, Sniper, Metralleta, Minigun /*...*/ };
+	enum Bala_t { BalaEnem, Piedra, Rayo, Fuego, Escopeta, E1, E2, Pistola, Sniper, Metralleta, Minigun, Canon /*...*/ };
 	enum Boton_t { Comprar, Jugar, Recolocar, Salir, Supervivencia, Historia, Spanish, English, Volver, Controles /*...*/ };
 	enum EnemyDmg_t { Simple, Explosion, Bala };
 	Texturas* getTextura(Texturas_t et) const { return texts[et]; }
@@ -59,7 +60,7 @@ private:
 	
 	SDL_Event e;
 
-	std::string ntexturas[34]; 
+	std::string ntexturas[35]; 
 	
 	std::stack<RaizEstado*> estados;
 

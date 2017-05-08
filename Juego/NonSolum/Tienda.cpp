@@ -21,10 +21,7 @@ Tienda::Tienda(Game* juego) :Estado(juego)
 	armaNivel = Game::Bala_t::Piedra;
 	armaActual = new ArmaTienda(ptsjuego, this, 920, 200, 0, Game::Bala_t::Piedra, true);
 
-	// BOTONES PRINCIPALES 
-	botones.emplace_back(new BotonTienda(ptsjuego, this, NULL, 1140, 650, Game::Boton_t::Jugar));
-	botones.emplace_back(new BotonTienda(ptsjuego, this, NULL, 0, 670, Game::Boton_t::Recolocar));
-	botones.emplace_back(new BotonTienda(ptsjuego, this, NULL, 690, 660, Game::Boton_t::Salir));
+	
 
 	//VAGONES PARA COMPRAR Y RESPECTIVOS BOTONES
 	vags.emplace_back(new VagonTienda(ptsjuego, this, 200, 200, 50, Game::Vagon_t::Automatico, false));
@@ -55,6 +52,16 @@ Tienda::Tienda(Game* juego) :Estado(juego)
 
 	armas.emplace_back(new ArmaTienda(ptsjuego, this, 965, 500, 500, Game::Bala_t::Minigun, false));
 	botones.emplace_back(new BotonTienda(ptsjuego, this, armas[4], 965, 630, Game::Boton_t::Comprar));
+
+	armas.emplace_back(new ArmaTienda(ptsjuego, this, 1090, 500, 700, Game::Bala_t::Canon, false));
+	botones.emplace_back(new BotonTienda(ptsjuego, this, armas[5], 1090, 630, Game::Boton_t::Comprar));
+
+
+	// BOTONES PRINCIPALES 
+	botones.emplace_back(new BotonTienda(ptsjuego, this, NULL, 1150, 650, Game::Boton_t::Jugar));
+	botones.emplace_back(new BotonTienda(ptsjuego, this, NULL, 0, 670, Game::Boton_t::Recolocar));
+	botones.emplace_back(new BotonTienda(ptsjuego, this, NULL, 690, 660, Game::Boton_t::Salir));
+
 
 	//VAGONES DEL NIVEL, EMPIEZAN VACIOS
 	for (int i = 0; i < 4; i++) {

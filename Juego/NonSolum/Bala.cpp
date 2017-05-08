@@ -98,6 +98,14 @@ Bala::Bala(Game* juego, Play*pl, float x, float y, int mira, Game::Bala_t b)
 		Ttextura = Game::Texturas_t::TBala;
 		juego->sound->playEffect("../sounds/miniGunEffect.mp3", 0, 40, 3);
 		break;
+	case Game::Canon:
+		alto = 70;
+		ancho = 70;
+		vel = 1;
+		dmg = 5000;
+		Ttextura = Game::Texturas_t::TRoca;
+		juego->sound->playEffect("../sounds/rifleEffect.mp3", 0, 40, 3);
+		break;
 	default:
 		break;
 	}	
@@ -229,6 +237,18 @@ void Bala::update(Uint32 delta) {
 			if (var != nullptr && var->collision(this)) {
 				var->damage(dmg);
 				destruido = true;
+			}
+		}
+		break;
+	case Game::Canon:
+		pos.x += dir * vel*delta;
+
+		if (pos.x <= 0 || pos.x >= 1500)
+			destruido = true;
+		for each (auto var in p->enems)
+		{
+			if (var != nullptr && var->collision(this)) {
+				var->damage(dmg);
 			}
 		}
 		break;
