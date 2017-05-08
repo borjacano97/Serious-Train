@@ -1,5 +1,6 @@
 #include "Button.h"
 
+using namespace std;
 
 Button::Button(Game* juego,  float x, float y, Game::Boton_t tipo, CallBack_t * cbCons)
 {
@@ -50,15 +51,20 @@ Button::Button(Game* juego,  float x, float y, Game::Boton_t tipo, CallBack_t * 
 }
 
 bool Button::onClick(){
-	juegootp->getMousePos(mpbx, mpby);
+	juegootp->topEstado()->getMousePos(mpbx, mpby);
+	cout << "Boton click: ";
 
 	juegootp->sound->playEffect("../sounds/buttonSound.mp3", 0, 100, 2);
 
 	if (dentro(mpbx, mpby)){
 		cb(juegootp);
+		cout << "true\n";
 		return true;
 	}
-	else return false;
+	else {
+		cout << "false\n";
+		return false;	
+	}
 }
 void Button::draw() {
 	

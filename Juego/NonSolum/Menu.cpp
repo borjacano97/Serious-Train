@@ -45,7 +45,7 @@ void Menu::salir(Game * jg){
 	jg->setSalir();
 }
 bool Menu::handle_events(SDL_Event* e) {
-	switch (e->type)
+	/*switch (e->type)
 	{
 	case SDL_MOUSEBUTTONDOWN:
 		if (e->button.state == SDL_BUTTON_LEFT) {
@@ -56,6 +56,6 @@ bool Menu::handle_events(SDL_Event* e) {
 		}
 	default:
 		break;
-	}
+	}*/
 	return Estado::handle_events(e);
 }

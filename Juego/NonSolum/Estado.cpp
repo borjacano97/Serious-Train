@@ -25,12 +25,14 @@ void Estado::onClick() {
 			clickeado = true;
 		i--;
 	}
+	cout << "Estado onClick\n";
 }
 bool Estado::handle_events(SDL_Event * evento) {
-	if (evento->type == SDL_MOUSEBUTTONDOWN && evento->key.keysym.sym == SDL_BUTTON_LEFT) {
+	if (evento->type == SDL_MOUSEBUTTONDOWN && evento->button.state == SDL_BUTTON_LEFT) {
 		mx = evento->button.x;
 		my = evento->button.y;
 		onClick();
+		cout << "Click izquierdo, x: "<<mx<<" y: "<<my << endl;
 	}
-	return !(evento->type == SDL_QUIT);
+	return evento->type != SDL_QUIT;
 }

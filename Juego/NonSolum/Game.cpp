@@ -207,8 +207,9 @@ void Game::update(Uint32 delta) {
 
 
 void Game::handle_event() { //Pasa el evento al estado activo
-	while (SDL_PollEvent(&e) && topEstado()->handle_events(&e)) {
-	
+	bool exit = false;
+	while (SDL_PollEvent(&e) && !exit) {
+		exit = !topEstado()->handle_events(&e);
 	}
 }
 
