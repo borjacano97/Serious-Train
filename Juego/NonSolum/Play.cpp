@@ -46,7 +46,7 @@ bool Play::initObjects() { // creaci�n de los objetos dando un puntero, una te
 	tg = new Trigger(ptsjuego, NULL, 530, -20);
 	player = new Personaje(ptsjuego, Game::TPersonaje, 650, 500);
 	TrainHp = new barraHP(ptsjuego, Game::TBarra, 10, 15);
-	tren.emplace_back(new Vagon(ptsjuego, this, 580, -50, Game::Vagon_t::Locom));
+	tren.emplace_back(new Vagon(ptsjuego, this, 590, -50, Game::Vagon_t::Locom));
 
 	TTF_Init();
 	/*if (Mix_OpenAudio(22050, MIX_DEFAULT_FORMAT, 2, 4096) == -1)

@@ -30,7 +30,8 @@ protected: // son protegidas porque las subclases usan estas variables, si no se
 	Posicion pos; //posición del objeto
 	Direccion dir;
 	bool destruido = false;
-	int alto, ancho, anchoc; // tamaño del objeto
+	int alto, ancho, anchoc;// tamaño del objeto
+	
 };
 
 

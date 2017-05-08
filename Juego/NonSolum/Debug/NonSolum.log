@@ -1,15 +1,14 @@
-﻿  Enemigo.cpp
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=': conversión de 'double' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\enemigo.cpp(24): warning C4305: '=': truncamiento de 'double' a 'float'
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\enemigo.cpp(33): warning C4305: '=': truncamiento de 'double' a 'float'
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\enemigo.cpp(39): warning C4305: '=': truncamiento de 'double' a 'float'
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\enemigo.cpp(40): warning C4244: '*=': conversión de 'double' a 'int'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\enemigo.cpp(46): warning C4305: '=': truncamiento de 'double' a 'float'
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\enemigo.cpp(52): warning C4305: '=': truncamiento de 'double' a 'float'
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\enemigo.cpp(59): warning C4305: '=': truncamiento de 'double' a 'float'
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\enemigo.cpp(73): warning C4244: '-=': conversión de 'double' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\enemigo.cpp(81): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\enemigo.cpp(116): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\enemigo.cpp(117): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-  NonSolum.vcxproj -> C:\Users\Alejandro\Desktop\Serious-Train\Juego\bin\NonSolumDebug.exe
-  NonSolum.vcxproj -> C:\Users\Alejandro\Desktop\Serious-Train\Juego\bin\NonSolumDebug.pdb (Full PDB)
+﻿  Vagon.cpp
+c:\hlocal\b\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+c:\hlocal\b\serious-train\juego\nonsolum\vagon.cpp(119): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+c:\hlocal\b\serious-train\juego\nonsolum\vagon.cpp(120): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+  Play.cpp
+c:\hlocal\b\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+c:\hlocal\b\serious-train\juego\nonsolum\play.cpp(72): warning C4553: '==' : operator has no effect; did you intend '='?
+  Nivel1.cpp
+c:\hlocal\b\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+c:\hlocal\b\serious-train\juego\nonsolum\nivel1.cpp(11): warning C4244: 'argument' : conversion from 'unsigned int' to 'float', possible loss of data
+c:\hlocal\b\serious-train\juego\nonsolum\nivel1.cpp(57): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\hlocal\b\serious-train\juego\nonsolum\nivel1.cpp(59): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+  Generating Code...
+  NonSolum.vcxproj -> C:\hlocal\b\Serious-Train\Juego\bin\NonSolumDebug.exe

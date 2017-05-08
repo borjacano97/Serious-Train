@@ -97,13 +97,13 @@ void Enemigo::update(Uint32 delta) {
 			points = 0;
 			p->TrainHp->damage(Game::EnemyDmg_t::Explosion);
 			destruido = true;
-			//falta animación
+		
 		}
 		 if (j >= 150){
 			i += ancho;
 			rectA.x = i;
 
-			if (i >= Enemigo::anchoc) i = ancho;
+			if (i >= anchoc) i = ancho;
 			j = 0;
 		}
 

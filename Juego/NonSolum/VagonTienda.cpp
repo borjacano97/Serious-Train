@@ -13,7 +13,7 @@ VagonTienda::VagonTienda(Game* juego, Tienda* ti, float x, float y, int p, Game:
 	Ttextura = Game::Texturas_t::TVacioBloq;
 
 	alto = 130;
-	ancho = 95;
+	ancho = 392 / 4;
 	precio = p;
 
 	pos.set(x, y);

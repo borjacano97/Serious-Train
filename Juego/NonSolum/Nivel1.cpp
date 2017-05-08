@@ -8,7 +8,7 @@ Nivel1::Nivel1(Game * j, std::vector <Game::Vagon_t> v, Game::Bala_t a) : Play(j
 	enem = 0;
 	emax = 10;
 	for (unsigned int i = 0; i < 4; i++) {
-		tren.emplace_back(new Vagon(ptsjuego, this, 580, 100 + 150 * i, v[i]));
+		tren.emplace_back(new Vagon(ptsjuego, this, 590, 100 + 150 * i, v[i]));
 	}
 	arma = a;
 	shootTimer = 0;
@@ -56,7 +56,7 @@ void Nivel1::update(Uint32 delta) {
 				if (rand() % 2 == 0) enems.emplace_back
 					(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 280, Game::Enemigo_t::Normal));
 				else enems.emplace_back
-					(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 280, Game::Enemigo_t::Normal));
+					(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 280, Game::Enemigo_t::Slender));
 				enem++;
 			}
 			spawnTimer = 0;

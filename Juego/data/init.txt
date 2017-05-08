@@ -32,3 +32,6 @@
 ../bmps/controlesEsp.png
 ../bmps/zombiebazookaf.png
 ../bmps/zombieGordo.png
+../bmps/vagonFuegoA.png
+../bmps/vagonLaserA.png
+../bmps/vagonAutoA.png

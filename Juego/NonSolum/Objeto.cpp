@@ -14,6 +14,7 @@ void Objeto::draw() {
 	rect.w = ancho;
 	rect.x = pos.x;
 	rect.y = pos.y;
+
 	SDL_Renderer* render = juegootp->getRender();
 	juegootp->getTextura(Ttextura)->draw(render, nullptr, &rect);
 }
