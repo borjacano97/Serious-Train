@@ -24,19 +24,19 @@ Tienda::Tienda(Game* juego) :Estado(juego)
 	
 
 	//VAGONES PARA COMPRAR Y RESPECTIVOS BOTONES
-	vags.emplace_back(new VagonTienda(ptsjuego, this, 200, 200, 0, Game::Vagon_t::Automatico, false));
+	vags.emplace_back(new VagonTienda(ptsjuego, this, 200, 200, 50, Game::Vagon_t::Automatico, false));
 	botones.emplace_back(new BotonTienda(ptsjuego, this, vags[0], 200, 340, Game::Boton_t::Comprar));
 
-	vags.emplace_back(new VagonTienda(ptsjuego, this, 400, 200, 0, Game::Vagon_t::Lanzallamas, false));
+	vags.emplace_back(new VagonTienda(ptsjuego, this, 400, 200, 150, Game::Vagon_t::Lanzallamas, false));
 	botones.emplace_back(new BotonTienda(ptsjuego, this, vags[1], 400, 340, Game::Boton_t::Comprar));
 
-	vags.emplace_back(new VagonTienda(ptsjuego, this, 600, 200, 0, Game::Vagon_t::Escudo, false));
+	vags.emplace_back(new VagonTienda(ptsjuego, this, 600, 200, 200, Game::Vagon_t::Escudo, false));
 	botones.emplace_back(new BotonTienda(ptsjuego, this, vags[2], 600, 340, Game::Boton_t::Comprar));
 	
-	vags.emplace_back(new VagonTienda(ptsjuego, this, 200, 500, 0, Game::Vagon_t::Recuperador, false));
+	vags.emplace_back(new VagonTienda(ptsjuego, this, 200, 500, 250, Game::Vagon_t::Recuperador, false));
 	botones.emplace_back(new BotonTienda(ptsjuego, this, vags[3], 200, 640, Game::Boton_t::Comprar));
 
-	vags.emplace_back(new VagonTienda(ptsjuego, this, 400, 500, 0, Game::Vagon_t::Laser, false));
+	vags.emplace_back(new VagonTienda(ptsjuego, this, 400, 500, 300, Game::Vagon_t::Laser, false));
 	botones.emplace_back(new BotonTienda(ptsjuego, this, vags[4], 400, 640, Game::Boton_t::Comprar));
 
 
