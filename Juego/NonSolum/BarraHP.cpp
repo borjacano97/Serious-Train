@@ -20,15 +20,16 @@ void barraHP::update(Uint32 delta) {
 	d = delta;
 	if (ancho <= 0) destruido = true;
 }
-void barraHP::move(char c) {
-	if (c == 'b'){ //daño por bala
-		ancho -= 10;
-	}
-	if (c == 'z'){ // daño por zombie
-		cont+=d;
+void barraHP::damage(Game::EnemyDmg_t dm) {
+
+	
+	if (dm == Game::Simple) {
+		cont += d;
 		if (cont >= 100) {
 			cont = 0;
 			ancho--;
 		}
 	}
+	 if ( dm == Game::Explosion)ancho -= 50;
+	else if (dm == Game::Bala) ancho -= 10;	
 }

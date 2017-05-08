@@ -1,6 +1,7 @@
 #include "Enemigo.h"
 #include "Estado.h"
 #include "Game.h"
+#include "Play.h"
 
 Enemigo::Enemigo(Game* juego, Play* pl, float x, float y, Game::Enemigo_t clase)
 {
@@ -36,6 +37,7 @@ Enemigo::Enemigo(Game* juego, Play* pl, float x, float y, Game::Enemigo_t clase)
 		hp = 5000;
 		points = 50;
 		vel = 0.05;
+		alto *= 1.5;
 		break;
 	case Game::Enemigo_t::ElQueDispara:
 		Ttextura = Game::Texturas_t::TEnemigoD;
@@ -61,14 +63,19 @@ void Enemigo::update(Uint32 delta) {
 		}
 
 		if (_clase == Game::Enemigo_t::ElQueDispara && pos.x <= 1100 && pos.x >= 100){
-			if (disparo == nullptr)  disparo = new Bala(juegootp, p, pos.x, pos.y+30, vel * 10, Game::Bala_t::BalaEnem);
-			else if ( disparo->getDest()) {
-				delete disparo;
-				disparo = nullptr;
+			shootTime += delta;
+			if (shootTime >= 3000) {
+				p->balas.emplace_back(new Bala(juegootp, p, pos.x, pos.y + 30, vel * 10, Game::Bala_t::BalaEnem));
+				shootTime = 0;
 			}
-			else disparo->update(delta);
-			 
+			
 			parado = true;
+		}
+		else if (_clase == Game::Enemigo_t::Tank && p->tg->collision(this)) {
+			points = 0;
+			p->TrainHp->damage(Game::EnemyDmg_t::Explosion);
+			destruido = true;
+			//falta animación
 		}
 		 if (j >= 150){
 			i += ancho;
@@ -81,7 +88,7 @@ void Enemigo::update(Uint32 delta) {
 }
 void Enemigo::draw() {
 
-	if (disparo != nullptr) disparo->draw();
+	
 	rect.h = alto;
 	rect.w = ancho;
 	rect.x = pos.x;

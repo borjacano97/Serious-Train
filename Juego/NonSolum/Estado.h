@@ -13,7 +13,7 @@ public:
 	void onClick();
 	void update(Uint32 d){}
 	void move(char c){}
-	void select(Uint32 n){}
+	void select(int n){}
 	void dispara(bool shoot){}
 	// Estos métodos solo se pueden quitar si TODOS los miembros que heredan de esto tienen
 	// implementados dicho método. Si hay algún estado que por ejemplo no necesita un onClick

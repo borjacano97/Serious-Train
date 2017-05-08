@@ -231,10 +231,6 @@ bool Game::handle_event() { //eventos del teclado y raton
 			if (e.key.keysym.sym == SDLK_ESCAPE) {
 				if (topEstado()->getEst() == 'P') pushState(new Pausa(this));
 			}
-			 if (e.key.keysym.sym == SDLK_1) if (topEstado()->getEst() == 'T') topEstado()->select(1);
-			 if (e.key.keysym.sym == SDLK_2) if (topEstado()->getEst() == 'T') topEstado()->select(2);
-			 if (e.key.keysym.sym == SDLK_3) if (topEstado()->getEst() == 'T') topEstado()->select(3);
-			 if (e.key.keysym.sym == SDLK_4) if (topEstado()->getEst() == 'T') topEstado()->select(4);
 
 			 if ((e.key.keysym.sym ==  SDLK_l || e.key.keysym.sym == SDLK_SPACE)) {
 			

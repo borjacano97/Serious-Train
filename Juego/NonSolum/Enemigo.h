@@ -19,13 +19,16 @@ public:
 private:
 	int cont = 0;
 	int points, hp;
+
 	SDL_Rect rect;
 	SDL_Rect rectA;
+
 	float vel;
 	int i, j; //animacion
 	bool parado;
+	int shootTime = 3000;
+
 	Game::Enemigo_t _clase;
-	Bala* disparo;
 	Play*p;
 };
 

@@ -1,12 +1,30 @@
 #include "Trigger.h"
+#include "Tienda.h"
 
 
-Trigger::Trigger(Game* juego, float x, float y)
+Trigger::Trigger(Game* juego, Tienda* ti, float x, float y)
 {
 	juegootp = juego;
 
-	alto = 2000;  
-	ancho = 170;
+	if (ti == NULL) {
+		alto = 2000;
+		ancho = 170;
+	}
+	else {
+		t = ti;
+		alto = 130;
+		ancho = 95;
+	}
 
 	pos.set(x, y);
+}
+bool Trigger::onClick() {
+	juegootp->getMousePos(mpbx, mpby);
+
+	if (dentro(mpbx, mpby)) {
+		  t->select((pos.y-170)/130 +1);
+		return true;
+	}
+
+	else return false;
 }

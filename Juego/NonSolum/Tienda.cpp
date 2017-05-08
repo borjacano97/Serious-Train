@@ -11,6 +11,7 @@
 #include "ArmaTienda.h"
 #include "BotonTienda.h"
 #include "Selector.h"
+#include "Trigger.h"
 
 Tienda::Tienda(Game* juego) :Estado(juego)
 {
@@ -55,10 +56,14 @@ Tienda::Tienda(Game* juego) :Estado(juego)
 	armas.emplace_back(new ArmaTienda(ptsjuego, this, 965, 500, 500, Game::Bala_t::Minigun, false));
 	botones.emplace_back(new BotonTienda(ptsjuego, this, armas[4], 965, 630, Game::Boton_t::Comprar));
 
+	//VAGONES DEL NIVEL, EMPIEZAN VACIOS
 	for (int i = 0; i < 4; i++) {
 		vagonesNivel.emplace_back(Game::Vagon_t::Vacio);
 	}
-
+	//TRIGGERS PARA DETECTAR VAGÓN SELECCIONADO
+	for (int i = 0; i < 4; i++) {
+		tgs.emplace_back(new Trigger(ptsjuego, this, 30 , i * 130 + 170));
+	}
 	initLibraries();
 
 	font = new Texturas(/*100, 80, 50, 50*/);
@@ -106,6 +111,7 @@ void Tienda::draw() {
 
 	sel->draw();
 	armaActual->draw();
+
 }
 
 bool Tienda::initLibraries() {
@@ -200,9 +206,16 @@ void Tienda::onClick() {
 			clickeado = true;
 		k--;
 	}
+	int h = tgs.size() - 1;
+	while (!clickeado && h >= 0)
+	{
+		if (tgs[h]->onClick())
+			clickeado = true;
+		h--;
+	}
 }
 
-void Tienda::select(Uint32 n) {
+void Tienda::select(int n) {
 	seleccionado = n - 1;
 	sel->update(n);
 }

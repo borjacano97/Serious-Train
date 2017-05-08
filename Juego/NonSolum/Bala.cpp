@@ -110,7 +110,7 @@ void Bala::update(Uint32 delta) {
 	case Game::BalaEnem:
 		pos.x += dir * vel*delta;
 		if (p->tg->collision(this)) {
-			p->TrainHp->move('b');
+			p->TrainHp->damage(Game::EnemyDmg_t::Bala);
 			destruido = true;
 		}
 		break;

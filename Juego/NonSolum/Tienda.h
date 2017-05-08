@@ -6,6 +6,7 @@
 #include "ArmaTienda.h"
 #include "Selector.h"
 #include "BotonTienda.h"
+#include "Trigger.h"
 #include "Menu.h"
 #include "Sound.h"
 
@@ -20,7 +21,7 @@ public:
 	void onClick();
 
 	void comprar(ObjetoTienda*o) { o->desbloquear(); ptsjuego->buy(o->getPrecio()); }
-	void select(Uint32 n);
+	void select(int n);
 	void update(Uint32 d);
 	void colocarVagon(Game::Vagon_t v);
 	void elegirArma(Game::Bala_t a);
@@ -37,6 +38,8 @@ private:
 	std::vector <ArmaTienda*> armas; //  armas del nivel
 
 	std::vector <VagonTienda*> vagsIzq; // vagones visuales en el tren izq
+	std::vector <Trigger*> tgs; // triggers para detectar vagón seleccionado
+
 	ArmaTienda* armaActual; // arma actual elegida
 
 	Game::Bala_t armaNivel; //tipo de arma finalmente usada
