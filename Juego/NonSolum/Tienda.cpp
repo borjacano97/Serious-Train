@@ -18,25 +18,25 @@ Tienda::Tienda(Game* juego) :Estado(juego)
 	// SELECTOR
 	sel = new Selector(ptsjuego, Game::TRect, 20, 170);
 	//ARMA ELEGIDA
-	armaNivel = Game::Bala_t::Piedra;
+	armaNivel = Game::Bala_t::Canon;
 	armaActual = new ArmaTienda(ptsjuego, this, 920, 200, 0, Game::Bala_t::Piedra, true);
 
 	
 
 	//VAGONES PARA COMPRAR Y RESPECTIVOS BOTONES
-	vags.emplace_back(new VagonTienda(ptsjuego, this, 200, 200, 50, Game::Vagon_t::Automatico, false));
+	vags.emplace_back(new VagonTienda(ptsjuego, this, 200, 200, 0, Game::Vagon_t::Automatico, false));
 	botones.emplace_back(new BotonTienda(ptsjuego, this, vags[0], 200, 340, Game::Boton_t::Comprar));
 
-	vags.emplace_back(new VagonTienda(ptsjuego, this, 400, 200, 150, Game::Vagon_t::Lanzallamas, false));
+	vags.emplace_back(new VagonTienda(ptsjuego, this, 400, 200, 0, Game::Vagon_t::Lanzallamas, false));
 	botones.emplace_back(new BotonTienda(ptsjuego, this, vags[1], 400, 340, Game::Boton_t::Comprar));
 
-	vags.emplace_back(new VagonTienda(ptsjuego, this, 600, 200, 200, Game::Vagon_t::Escudo, false));
+	vags.emplace_back(new VagonTienda(ptsjuego, this, 600, 200, 0, Game::Vagon_t::Escudo, false));
 	botones.emplace_back(new BotonTienda(ptsjuego, this, vags[2], 600, 340, Game::Boton_t::Comprar));
 	
-	vags.emplace_back(new VagonTienda(ptsjuego, this, 200, 500, 250, Game::Vagon_t::Recuperador, false));
+	vags.emplace_back(new VagonTienda(ptsjuego, this, 200, 500, 0, Game::Vagon_t::Recuperador, false));
 	botones.emplace_back(new BotonTienda(ptsjuego, this, vags[3], 200, 640, Game::Boton_t::Comprar));
 
-	vags.emplace_back(new VagonTienda(ptsjuego, this, 400, 500, 300, Game::Vagon_t::Laser, false));
+	vags.emplace_back(new VagonTienda(ptsjuego, this, 400, 500, 0, Game::Vagon_t::Laser, false));
 	botones.emplace_back(new BotonTienda(ptsjuego, this, vags[4], 400, 640, Game::Boton_t::Comprar));
 
 
@@ -239,7 +239,9 @@ void Tienda::colocarVagon(Game::Vagon_t v){
 		break;
 	case Game::Vagon_t::Escudo: vags[2]->rehacer();
 		break;
-	case Game::Vagon_t::Laser: vags[3]->rehacer();
+	case Game::Vagon_t::Recuperador: vags[3]->rehacer();
+		break;
+	case Game::Vagon_t::Laser: vags[4]->rehacer();
 		break;
 
 	default:

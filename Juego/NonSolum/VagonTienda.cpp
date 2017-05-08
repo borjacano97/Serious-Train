@@ -35,7 +35,7 @@ VagonTienda::VagonTienda(Game* juego, Tienda* ti, float x, float y, int p, Game:
 	tipoTextColor.g = 165;
 	tipoTextColor.b = 32;
 
-
+	tic = new Tick(juegootp, pos.x, pos.y);
 
 	estatico = est;
 	switch (tipo)
@@ -121,6 +121,6 @@ void VagonTienda::draw() {
 		tipoText->draw(juegootp->pRender, nullptr, &puntosText->myFont.setRect(50, 120, this->pos.x - 13, this->pos.y - 25));
 		tipoText->loadFromText(juegootp->pRender, " ", tipoTextColor);
 	}
-
+	if (usado)tic->draw();
 }
 

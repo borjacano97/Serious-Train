@@ -1,4 +1,4 @@
-﻿Compilación iniciada a las 08/05/2017 18:23:45.
+﻿Compilación iniciada a las 08/05/2017 19:17:09.
      1>Proyecto "C:\hlocal\Serious-Train\Juego\NonSolum\NonSolum.vcxproj" en el nodo 2 (Build destinos).
      1>ClCompile:
          C:\software\programacion\MSVStudio2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Tienda.cpp
@@ -36,6 +36,7 @@
          Debug\Sound.obj
          Debug\Survival.obj
          Debug\Texturas.obj
+         Debug\Tick.obj
          Debug\Tienda.obj
          Debug\Trigger.obj
          Debug\Vagon.obj
@@ -45,4 +46,4 @@
 
 Compilación correcta.
 
-Tiempo transcurrido 00:00:00.80
+Tiempo transcurrido 00:00:00.70

@@ -2,7 +2,7 @@
 #define H_VAGONTIENDA_H
 
 #include "ObjetoTienda.h"
-
+#include "Tick.h"
 
 class VagonTienda :
 	public ObjetoTienda
@@ -15,6 +15,8 @@ public:
 private:
 	Game::Vagon_t tip;
 	std::string tipoVagon;
+
+	Tick* tic;
 };
 
 #endif
