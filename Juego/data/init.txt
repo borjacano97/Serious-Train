@@ -34,3 +34,4 @@
 ../bmps/zombieGordo.png
 ../bmps/canon.png
 ../bmps/tick.png
+../bmps/hud.png

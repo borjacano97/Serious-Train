@@ -138,8 +138,8 @@
     <ClCompile Include="Error.cpp">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
-    <ClCompile Include="Tick.cpp">
-      <Filter>Archivos de código fuente</Filter>
+    <ClCompile Include="Hud.cpp">
+      <Filter>Archivos de código fuente\Objetos</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -245,8 +245,8 @@
     <ClInclude Include="Error.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="Tick.h">
-      <Filter>Archivos de encabezado</Filter>
+    <ClInclude Include="Hud.h">
+      <Filter>Archivos de encabezado\Objetos</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

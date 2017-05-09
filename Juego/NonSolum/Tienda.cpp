@@ -18,7 +18,7 @@ Tienda::Tienda(Game* juego) :Estado(juego)
 	// SELECTOR
 	sel = new Selector(ptsjuego, Game::TRect, 20, 170);
 	//ARMA ELEGIDA
-	armaNivel = Game::Bala_t::Canon;
+	armaNivel = Game::Bala_t::Piedra;
 	armaActual = new ArmaTienda(ptsjuego, this, 920, 200, 0, Game::Bala_t::Piedra, true);
 
 	

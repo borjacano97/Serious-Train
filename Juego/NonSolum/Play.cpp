@@ -42,10 +42,10 @@ Play::~Play()
 }
 
 bool Play::initObjects() { // creaci�n de los objetos dando un puntero, una textura y una posici�n (constructora de objs)
-	
+	h = new Hud(ptsjuego, -10, -20, Game::Hud_t::Hud1);
 	tg = new Trigger(ptsjuego, NULL, 530, -20);
 	player = new Personaje(ptsjuego, Game::TPersonaje, 650, 500);
-	TrainHp = new barraHP(ptsjuego, Game::TBarra, 10, 15);
+	TrainHp = new barraHP(ptsjuego, Game::TBarra, 125, 5);
 	tren.emplace_back(new Vagon(ptsjuego, this, 580, -50, Game::Vagon_t::Locom));
 
 	TTF_Init();
@@ -89,6 +89,7 @@ void Play::draw() {
 	}
 
 	player->draw();
+	h->draw();
 	TrainHp->draw();
 	if (armaActual != nullptr) armaActual->draw(); // quitar comprobación de nullptr si se traslada al modo Historia
 }

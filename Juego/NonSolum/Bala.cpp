@@ -102,7 +102,7 @@ Bala::Bala(Game* juego, Play*pl, float x, float y, int mira, Game::Bala_t b)
 		alto = 70;
 		ancho = 70;
 		vel = 1;
-		dmg = 5000;
+		dmg = 300;
 		Ttextura = Game::Texturas_t::TRoca;
 		juego->sound->playEffect("../sounds/rifleEffect.mp3", 0, 40, 3);
 		break;

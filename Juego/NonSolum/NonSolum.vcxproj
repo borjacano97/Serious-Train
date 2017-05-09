@@ -19,7 +19,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -96,7 +96,7 @@
     <ClCompile Include="Sound.cpp" />
     <ClCompile Include="Survival.cpp" />
     <ClCompile Include="Texturas.cpp" />
-    <ClCompile Include="Tick.cpp" />
+    <ClCompile Include="Hud.cpp" />
     <ClCompile Include="Tienda.cpp" />
     <ClCompile Include="Trigger.cpp" />
     <ClCompile Include="Vagon.cpp" />
@@ -133,7 +133,7 @@
     <ClInclude Include="Sound.h" />
     <ClInclude Include="Survival.h" />
     <ClInclude Include="Texturas.h" />
-    <ClInclude Include="Tick.h" />
+    <ClInclude Include="Hud.h" />
     <ClInclude Include="Tienda.h" />
     <ClInclude Include="Trigger.h" />
     <ClInclude Include="Vagon.h" />

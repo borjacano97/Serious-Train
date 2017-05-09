@@ -11,6 +11,7 @@
 #include "Sound.h"
 #include "Escenario.h"
 #include "ArmaTienda.h"
+#include "Hud.h"
 
 using namespace std;
 
@@ -49,6 +50,7 @@ protected:
 	void freeObjects();
 
 	Escenario*esc;
+	Hud* h;
 };
 
 

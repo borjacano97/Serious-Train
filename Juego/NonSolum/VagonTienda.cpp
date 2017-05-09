@@ -35,7 +35,7 @@ VagonTienda::VagonTienda(Game* juego, Tienda* ti, float x, float y, int p, Game:
 	tipoTextColor.g = 165;
 	tipoTextColor.b = 32;
 
-	tic = new Tick(juegootp, pos.x, pos.y);
+	tic = new Hud(juegootp, pos.x, pos.y, Game::Hud_t::Tick);
 
 	estatico = est;
 	switch (tipo)
