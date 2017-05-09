@@ -35,3 +35,4 @@
 ../bmps/canon.png
 ../bmps/tick.png
 ../bmps/hud.png
+../bmps/trayecto.png

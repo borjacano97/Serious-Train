@@ -44,13 +44,14 @@ protected:
 	//Sound* sonido;
 	ArmaTienda* armaActual;
 
-
+	int contWin = 0;
 	bool fin;
 	bool initObjects(); //crear y destruir los objetos del juego
 	void freeObjects();
 
 	Escenario*esc;
 	Hud* h;
+	Hud* tray;
 };
 
 

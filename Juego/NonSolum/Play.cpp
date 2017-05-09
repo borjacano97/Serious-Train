@@ -90,6 +90,7 @@ void Play::draw() {
 
 	player->draw();
 	h->draw();
+	if (tray!=nullptr) tray->draw();
 	TrainHp->draw();
 	if (armaActual != nullptr) armaActual->draw(); // quitar comprobación de nullptr si se traslada al modo Historia
 }
@@ -111,18 +112,19 @@ void Play::update(Uint32 delta) {
 	player->update(delta);
 	TrainHp->update(delta);
 
-
-	if (TrainHp->getDest() || fin) {
-		if (TrainHp->getDest()) {
+	if (TrainHp->getDest()) {
 			ptsjuego->changeState(new FinNivel(ptsjuego, false));
 		soundLoss->playMusic("../sounds/lossLevel.mp3", 2, 20);
-		}
-		else {
-			ptsjuego->incrNivel();
-			ptsjuego->changeState(new FinNivel(ptsjuego, true));
-			soundWon->playMusic("../sounds/wonLevel.mp3", 2, 20);
-		}
 	}
+	else if (fin){
+			if (contWin >= 2000){
+				ptsjuego->incrNivel();
+				ptsjuego->changeState(new FinNivel(ptsjuego, true));
+				soundWon->playMusic("../sounds/wonLevel.mp3", 2, 20);
+			}
+			else contWin += delta;
+	}
+	
 
 	else {
 		for (unsigned int i = 0; i < enems.size(); i++) {

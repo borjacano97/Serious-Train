@@ -10,7 +10,7 @@ Survival::Survival(Game * j) : Play(j)
 	for (unsigned int i = 0; i < 4; i++) {
 		tren.emplace_back(new Vagon(ptsjuego, this, 580, 100 + 150 * i, Game::Vagon_t::Vacio));
 	}
-	armaActual = new ArmaTienda(ptsjuego, NULL, 160 , 110, 0, Game::Bala_t::Piedra, true);
+	armaActual = new ArmaTienda(ptsjuego, NULL, 300 , 40, 0, Game::Bala_t::Piedra, true);
 
 	arma = Game::Bala_t::Piedra;
 	cadencia = 800;
@@ -57,7 +57,7 @@ void Survival::update(Uint32 delta) {
 		break;
 	case 2:
 		if (!created) {
-			armaActual = new ArmaTienda(ptsjuego, NULL, 160, 90, 0, Game::Bala_t::Pistola, true);
+			armaActual = new ArmaTienda(ptsjuego, NULL, 310, 30, 0, Game::Bala_t::Pistola, true);
 			created = true;
 		}
 			
@@ -87,7 +87,7 @@ void Survival::update(Uint32 delta) {
 		break;
 	case 3:
 		if (!created) {
-			armaActual = new ArmaTienda(ptsjuego, NULL, 150, 110, 0, Game::Bala_t::Escopeta, true);
+			armaActual = new ArmaTienda(ptsjuego, NULL, 300, 40, 0, Game::Bala_t::Escopeta, true);
 			created = true;
 		}
 		arma = Game::Bala_t::Escopeta;
@@ -114,7 +114,7 @@ void Survival::update(Uint32 delta) {
 		break;
 	case 4:
 		if (!created) {
-			armaActual = new ArmaTienda(ptsjuego, NULL, 150, 110, 0, Game::Bala_t::Sniper, true);
+			armaActual = new ArmaTienda(ptsjuego, NULL, 300, 40, 0, Game::Bala_t::Sniper, true);
 			created = true;
 		}
 		arma = Game::Bala_t::Sniper;
@@ -141,7 +141,7 @@ void Survival::update(Uint32 delta) {
 		break;
 	case 5:
 		if (!created) {
-			armaActual = new ArmaTienda(ptsjuego, NULL, 150, 110, 0, Game::Bala_t::Metralleta, true);
+			armaActual = new ArmaTienda(ptsjuego, NULL, 300, 40, 0, Game::Bala_t::Metralleta, true);
 			created = true;
 		}
 		arma = Game::Bala_t::Metralleta;
@@ -174,7 +174,7 @@ void Survival::update(Uint32 delta) {
 		break;
 	default:
 		if (!created) {
-			armaActual = new ArmaTienda(ptsjuego, NULL, 150, 110, 0, Game::Bala_t::Minigun, true);
+			armaActual = new ArmaTienda(ptsjuego, NULL, 300, 40, 0, Game::Bala_t::Minigun, true);
 			created = true;
 		}
 		arma = Game::Bala_t::Minigun;

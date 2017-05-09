@@ -35,6 +35,8 @@ Nivel1::Nivel1(Game * j, std::vector <Game::Vagon_t> v, Game::Bala_t a) : Play(j
 	default:
 		break;
 	}
+
+	//tray = new Hud(ptsjuego, 0, 0, Game::Hud_t::Trayecto);
 	esc = new Escenario(ptsjuego, Game::Texturas_t::TFondo, 0, -4280);
 }
 
