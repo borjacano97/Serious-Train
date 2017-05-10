@@ -19,7 +19,7 @@ Survival::Survival(Game * j) : Play(j)
 	spawnTimer = 0;
 	textInit = 0;
 
-	spawn = 1500; // variable que va a hacer que a partir de la ronda 6 cada vez se generen más y más enemigos
+	spawn = 1700; // variable que va a hacer que a partir de la ronda 6 cada vez se generen más y más enemigos
 	
 
 	contRondas = 1;

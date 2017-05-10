@@ -13,9 +13,13 @@ public:
 private:
 	static void salir(Game * jg);
 	static void jugar(Game * jg);
+	void draw();
 	bool initLibraries();
 	bool victory;
+
 	Sound* sound;
+	Texturas* font;
+	SDL_Color fontColor;
 };
 
 

@@ -77,7 +77,7 @@ Bala::Bala(Game* juego, Play*pl, float x, float y, int mira, Game::Bala_t b)
 		alto = 20;
 		ancho = 40;
 		vel = 0.8;
-		dmg = 150; // no nos habiamos dado cuenta que como la bala no se destruye en el franco colisiona varias veces con el enemigo
+		dmg = 1500; // no nos habiamos dado cuenta que como la bala no se destruye en el franco colisiona varias veces con el enemigo
 		          // por eso hay que poner menor damage que si no es insta kill hasta pa los bosses xd
 		Ttextura = Game::Texturas_t::TBala;
 		juego->sound->playEffect("../sounds/rifleEffect.mp3", 0, 90, 3);
@@ -102,7 +102,7 @@ Bala::Bala(Game* juego, Play*pl, float x, float y, int mira, Game::Bala_t b)
 		alto = 70;
 		ancho = 70;
 		vel = 1;
-		dmg = 300;
+		dmg = 3000;
 		Ttextura = Game::Texturas_t::TRoca;
 		juego->sound->playEffect("../sounds/rifleEffect.mp3", 0, 40, 3);
 		break;
@@ -211,8 +211,9 @@ void Bala::update(Uint32 delta) {
 			destruido = true;
 		for each (auto var in p->enems)
 		{
-			if (var != nullptr && var->collision(this)) {
+			if (var != nullptr && !colisionado &&  var->collision(this)) {
 				var->damage(dmg);
+				colisionado = true;
 			}
 		}
 		break;
@@ -247,8 +248,9 @@ void Bala::update(Uint32 delta) {
 			destruido = true;
 		for each (auto var in p->enems)
 		{
-			if (var != nullptr && var->collision(this)) {
+			if (var != nullptr && !colisionado && var->collision(this)) {
 				var->damage(dmg);
+				colisionado = true;
 			}
 		}
 		break;

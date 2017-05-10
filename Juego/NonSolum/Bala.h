@@ -11,6 +11,7 @@ public:
 	void update(Uint32 delta);
 private:
 	int dir, cont, dmg;
+	bool colisionado = false;
 	float vel;
 	Game::Bala_t tipo;
 	Play*p;
