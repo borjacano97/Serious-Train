@@ -14,9 +14,13 @@ public:
 	void draw();
 
 private:
-	int  enem, emax,  shootTimer, spawnTimer, cadencia;
+	int  enem, emax,  shootTimer, spawnTimer, cadencia, cont;
 	Game::Bala_t arma;
 	bool disparando = false;
+	bool firstZombieTime;
+	Texturas* textoIz;
+	Texturas* textoDer;
+	SDL_Color colorTexto;
 };
 
 #endif

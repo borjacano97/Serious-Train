@@ -13,6 +13,7 @@ Nivel1::Nivel1(Game * j, std::vector <Game::Vagon_t> v, Game::Bala_t a) : Play(j
 	arma = a;
 	shootTimer = 0;
 	spawnTimer = 0;
+	cont = 0;
 	//Falta por completar conforme se implementen las nuevas clases y me da palo hacerlo para nada ^^'
 	
 	switch (a)
@@ -38,6 +39,18 @@ Nivel1::Nivel1(Game * j, std::vector <Game::Vagon_t> v, Game::Bala_t a) : Play(j
 
 	//tray = new Hud(ptsjuego, 0, 0, Game::Hud_t::Trayecto);
 	esc = new Escenario(ptsjuego, Game::Texturas_t::TFondo, 0, -4280);
+
+	TTF_Init();
+
+	textoIz = new Texturas();
+	textoIz->loadFuente("../fonts/fuenteNumbers.ttf", 250);
+
+	textoDer = new Texturas();
+	textoDer->loadFuente("../fonts/fuenteNumbers.ttf", 250);
+
+	colorTexto.r = 218;
+	colorTexto.g = 165;
+	colorTexto.b = 32;
 }
 
 
@@ -52,8 +65,11 @@ void Nivel1::update(Uint32 delta) {
 		balas.emplace_back(new Bala(ptsjuego, this, player->getPos().x, player->getPos().y + 10, player->getMira(), arma));
 		shootTimer = 0;
 	}
-
-	if (enem < emax){
+	if (!firstZombieTime && cont <= 6000){
+		cont+=delta;
+	}
+	else firstZombieTime = true;
+	if (enem < emax && firstZombieTime){
 		//generar zombies aleatorios
 		if (spawnTimer >= 1500){			
 			if (rand()%2 == 0) {				
@@ -80,4 +96,14 @@ void Nivel1::draw() {
 
 	font->loadFromText(ptsjuego->pRender, "$ " + std::to_string(ptsjuego->coins), fontColor);
 	font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(40, 50, 170, 53));	
+	if (ptsjuego->spanish){
+		if (enem < 1){
+			textoIz->loadFromText(ptsjuego->pRender, "Meneate con WASD!", fontColor);
+			textoIz->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(40, 400, 80, 180));
+		}
+		else if(enem >= 1 && enem <= 6){
+			textoIz->loadFromText(ptsjuego->pRender, "Presiona el raton para flipar!", fontColor);
+			textoIz->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(40, 400, 80, 180));
+		}
+	}
 }

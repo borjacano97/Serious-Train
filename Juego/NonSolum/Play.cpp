@@ -32,6 +32,8 @@ Play::Play(Game * j) : Estado(j)
 	fin = false;
 
 	j->sound->playEffect("../sounds/trainEffect.mp3", 300, 15, 1);
+
+
 }
 
 
