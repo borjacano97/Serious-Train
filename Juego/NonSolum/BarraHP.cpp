@@ -7,14 +7,14 @@ barraHP::barraHP(Game* juego, Game::Texturas_t text, float x, float y)
 	juegootp = juego;
 	Ttextura = text;
 
-	alto = 30;
-	ancho = 200 ;
+	alto = 12;
+	ancho = 270 ;
 
 	pos.set(x, y);
 
 	cont = 0;
 
-	maxHP=270;
+	maxHP = 360;
 }
 
 

@@ -19,13 +19,13 @@ public:
 		TFondo, TFondoT, TPersonaje, TEnemigo, TEnemigo2, TLocomotora, TVagon1, TVacioBloq, TBarra,
 		Tlose, TWin, TRoca, TLaser, TFuegod, TFuegoi, TRect, TVagonAuto, TBotonPosible, TBala, TPistol,
 		TEscopeta, TMetralleta, TSniper, TMenuP, TVagonFuego, TVagonLaser, TMinigun, TBotonV, TBotonR, TBotonA, 
-		TControlEng, TControlEsp, TEnemigoD, TEnemigoG, TCanon, TTick, THud, TTrayecto};
+		TControlEng, TControlEsp, TEnemigoD, TEnemigoG, TCanon, TTick, THud, TTrayecto, THud2};
 	enum Enemigo_t { Normal, Rapido, Tank, Enano, Invisible, Slender/*...*/ };
 	enum Vagon_t { Locom, Vacio, Automatico, Laser, Lanzallamas, Escudo, Recuperador/*...*/ };
 	enum Bala_t { BalaEnem, Piedra, Rayo, Fuego, Escopeta, E1, E2, Pistola, Sniper, Metralleta, Minigun, Canon /*...*/ };
 	enum Boton_t { Comprar, Jugar, Recolocar, Salir, Supervivencia, Historia, Spanish, English, Volver, Controles /*...*/ };
 	enum EnemyDmg_t { Simple, Explosion, Bala };
-	enum Hud_t {Tick, Hud1, Trayecto, Cuadrado};
+	enum Hud_t {Tick, Hud1, Trayecto, Tren};
 
 	Texturas* getTextura(Texturas_t et) const { return texts[et]; }
 	SDL_Renderer* getRender() const;
@@ -54,7 +54,7 @@ public:
 	bool tiendaCreada = false;
 	bool spanish = true;
 	bool survival = false;
-
+	bool bigHP = false;
 	std::vector<Texturas*> texts;
 	Sound* sound;
 
@@ -62,7 +62,7 @@ private:
 	
 	SDL_Event e;
 
-	std::string ntexturas[38]; 
+	std::string ntexturas[39]; 
 	
 	std::stack<RaizEstado*> estados;
 

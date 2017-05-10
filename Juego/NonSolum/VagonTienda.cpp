@@ -35,7 +35,7 @@ VagonTienda::VagonTienda(Game* juego, Tienda* ti, float x, float y, int p, Game:
 	tipoTextColor.g = 165;
 	tipoTextColor.b = 32;
 
-	tic = new Hud(juegootp, pos.x, pos.y, Game::Hud_t::Tick);
+	tic = new Hud(juegootp, NULL, pos.x, pos.y, Game::Hud_t::Tick);
 
 	estatico = est;
 	switch (tipo)
@@ -62,6 +62,7 @@ bool VagonTienda::onClick() {
 	if (dentro(mpbx, mpby)) {
 		if (!bloqueado && !usado) {
 			usado = true;
+			if (tip == Game::Vagon_t::Escudo || tip == Game::Vagon_t::Recuperador)juegootp->bigHP = true;
 			t->colocarVagon(tip);
 
 		}

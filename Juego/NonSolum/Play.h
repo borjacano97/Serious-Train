@@ -32,6 +32,7 @@ public:
 	vector <Enemigo*> enems;
 	vector <Vagon*> tren; 
 	int killed;
+	int emax;
 
 	Trigger* tg;
 	barraHP* TrainHp;
@@ -52,6 +53,7 @@ protected:
 	Escenario*esc;
 	Hud* h;
 	Hud* tray;
+	Hud* locom;
 };
 
 

@@ -84,5 +84,6 @@ void Nivel4::draw() {
 	Play::draw();
 
 	font->loadFromText(ptsjuego->pRender, "$ " + std::to_string(ptsjuego->coins), fontColor);
-	font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(40, 50, 170, 53));
+	if (ptsjuego->bigHP)font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(40, 50, 170, 46));
+	else font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(40, 50, 170, 53));
 }

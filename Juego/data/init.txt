@@ -36,3 +36,4 @@
 ../bmps/tick.png
 ../bmps/hud.png
 ../bmps/trayecto.png
+../bmps/hud2.png

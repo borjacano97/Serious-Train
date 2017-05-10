@@ -12,7 +12,7 @@ public:
 	void update(Uint32 delta);
 	void draw();
 private:
-	int  enem, emax, shootTimer, spawnTimer, cadencia;
+	int  enem, shootTimer, spawnTimer, cadencia;
 	Game::Bala_t arma;
 	bool disparando= false;
 };

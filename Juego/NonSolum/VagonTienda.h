@@ -12,6 +12,7 @@ public:
 	~VagonTienda(){}
 	bool onClick();
 	void draw();
+	void rehacer() { usado = false; if (tip == Game::Vagon_t::Escudo || tip == Game::Vagon_t::Recuperador)juegootp->bigHP = false; }
 private:
 	Game::Vagon_t tip;
 	std::string tipoVagon;
