@@ -35,10 +35,6 @@ Nivel1::Nivel1(Game * j, std::vector <Game::Vagon_t> v, Game::Bala_t a) : Play(j
 	default:
 		break;
 	}
-
-	tray = new Hud(ptsjuego, this, 1200, 0, Game::Hud_t::Trayecto);
-	locom = new Hud(ptsjuego, this, 1223, 280, Game::Hud_t::Tren);
-	esc = new Escenario(ptsjuego, Game::Texturas_t::TFondo, 0, -4280);
 }
 
 
@@ -75,11 +71,4 @@ void Nivel1::update(Uint32 delta) {
 
 	Play::update(delta);
 
-}
-void Nivel1::draw() {
-	Play::draw();
-	
-	font->loadFromText(ptsjuego->pRender, "$ " + std::to_string(ptsjuego->coins), fontColor);
-	if (ptsjuego->bigHP)font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(40, 50, 170, 46));
-	else font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(40, 50, 170, 53));	
 }

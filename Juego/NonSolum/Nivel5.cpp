@@ -33,7 +33,6 @@ Nivel5::Nivel5(Game * j, std::vector <Game::Vagon_t> v, Game::Bala_t a) : Play(j
 	default:
 		break;
 	}
-	esc = new Escenario(ptsjuego, Game::Texturas_t::TFondo, 0, -4200);
 }
 
 
@@ -88,12 +87,4 @@ void Nivel5::update(Uint32 delta) {
 
 	Play::update(delta);
 
-}
-
-void Nivel5::draw() {
-	Play::draw();
-
-	font->loadFromText(ptsjuego->pRender, "$ " + std::to_string(ptsjuego->coins), fontColor);
-	if (ptsjuego->bigHP)font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(40, 50, 170, 46));
-	else font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(40, 50, 170, 53));
 }

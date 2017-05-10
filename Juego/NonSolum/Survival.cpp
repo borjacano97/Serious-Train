@@ -21,7 +21,6 @@ Survival::Survival(Game * j) : Play(j)
 
 	spawn = 1500; // variable que va a hacer que a partir de la ronda 6 cada vez se generen más y más enemigos
 	
-	esc = new Escenario(ptsjuego, Game::Texturas_t::TFondo, 0, -4280);
 
 	contRondas = 1;
 
@@ -262,13 +261,4 @@ void Survival::draw() {
 		font->loadFromText(ptsjuego->pRender, "C o w b o y s   a r e   b o r n ,   t h e y   a i n t   m a d e", fontColor);
 		font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(210, 1050, 90, 180));
 	}
-	/*else {
-		font->loadFromText(ptsjuego->pRender, "Cowboys are born, they ain’t made!" + std::to_string(contRondas), fontColor);
-		font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(220, 410, 480, 120));
-	}*/
-	/*else  {
-		font->loadFromText(ptsjuego->pRender, " New Round: " + std::to_string(contRondas), fontColor);
-		font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(220, 380, 520, 120));
-	}*/
-
 }

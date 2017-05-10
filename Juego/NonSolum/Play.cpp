@@ -43,11 +43,17 @@ Play::~Play()
 
 bool Play::initObjects() { // creaci�n de los objetos dando un puntero, una textura y una posici�n (constructora de objs)
 	h = new Hud(ptsjuego, this,  -10, -20, Game::Hud_t::Hud1);
-
+	if (!ptsjuego->survival) {
+		tray = new Hud(ptsjuego, this, 1200, 0, Game::Hud_t::Trayecto);
+		locom = new Hud(ptsjuego, this, 1223, 280, Game::Hud_t::Tren);
+	}	
 	tg = new Trigger(ptsjuego, NULL, 530, -20);
 	player = new Personaje(ptsjuego, Game::TPersonaje, 650, 500);
 	TrainHp = new barraHP(ptsjuego, Game::TBarra, 123, 14);
 	tren.emplace_back(new Vagon(ptsjuego, this, 580, -50, Game::Vagon_t::Locom));
+	
+
+	esc = new Escenario(ptsjuego, Game::Texturas_t::TFondo, 0, -4280);
 
 	TTF_Init();
 	/*if (Mix_OpenAudio(22050, MIX_DEFAULT_FORMAT, 2, 4096) == -1)
@@ -95,6 +101,11 @@ void Play::draw() {
 	if (locom != nullptr) locom->draw();
 	TrainHp->draw();
 	if (armaActual != nullptr) armaActual->draw(); // quitar comprobación de nullptr si se traslada al modo Historia
+	if (!ptsjuego->survival){
+		font->loadFromText(ptsjuego->pRender, "$ " + std::to_string(ptsjuego->coins), fontColor);
+		if (ptsjuego->bigHP)font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(40, 50, 170, 46));
+		else font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(40, 50, 170, 53));
+	}
 }
 
 

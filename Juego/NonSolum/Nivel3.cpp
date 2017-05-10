@@ -35,7 +35,6 @@ Nivel3::Nivel3(Game * j, std::vector <Game::Vagon_t> v, Game::Bala_t a) : Play(j
 		break;
 	}
 
-	esc = new Escenario(ptsjuego, Game::Texturas_t::TFondo, 0, -4200);
 }
 
 void Nivel3::update(Uint32 delta) {
@@ -69,12 +68,4 @@ void Nivel3::update(Uint32 delta) {
 		
 	}
 		Play::update(delta);
-	}
-
-void Nivel3::draw() {
-	Play::draw();
-
-	font->loadFromText(ptsjuego->pRender, "$ " + std::to_string(ptsjuego->coins), fontColor);
-	if (ptsjuego->bigHP)font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(40, 50, 170, 46));
-	else font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(40, 50, 170, 53));
 }

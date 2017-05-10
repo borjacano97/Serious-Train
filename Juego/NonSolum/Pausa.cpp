@@ -14,6 +14,7 @@ void Pausa::reanudar(Game * jg) {
 	jg->popState();
 }
 void Pausa::salir(Game * jg){
+	if (jg->survival) jg->survival = false;
 	jg->popState();
 	jg->popState();
 }
