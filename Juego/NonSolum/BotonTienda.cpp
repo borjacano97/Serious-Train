@@ -52,9 +52,9 @@ BotonTienda::BotonTienda(Game* juego, Tienda*ti, ObjetoTienda*obj,  float x, flo
 bool BotonTienda::onClick() {
 	juegootp->getMousePos(mpbx, mpby);
 
-	juegootp->sound->playEffect("../sounds/buttonSound.mp3", 0, 100, 2);
 
 	if (dentro(mpbx, mpby)) {
+		juegootp->sound->playEffect("../sounds/buttonSound.mp3", 0, 100, 2);
 		switch (tip)
 		{
 		case Game::Comprar:

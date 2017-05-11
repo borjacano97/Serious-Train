@@ -26,6 +26,9 @@ private:
 	Game* aux;
 
 
+	Texturas* textTut;
+	SDL_Color color;
+
 };
 
 #endif

@@ -35,6 +35,11 @@ Nivel1::Nivel1(Game * j, std::vector <Game::Vagon_t> v, Game::Bala_t a) : Play(j
 	default:
 		break;
 	}
+
+	TTF_Init();
+
+	textTut = new Texturas();
+	textTut->loadFuente("../fonts/fuenteNumbers.ttf", 200);
 }
 
 
@@ -50,9 +55,15 @@ void Nivel1::update(Uint32 delta) {
 		shootTimer = 0;
 	}
 
+	if (!firstZombieTime && cont <= 7000) {
+		cont += delta;
+	}
+	else {
+		firstZombieTime = true;
+	}
 	if (enem < emax){
 		//generar zombies aleatorios
-		if (spawnTimer >= 1500){			
+		if (spawnTimer >= 1500 && firstZombieTime){			
 			if (rand()%2 == 0) {				
 				if (rand() % 2 == 0) enems.emplace_back
 					(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 280, Game::Enemigo_t::Normal));
@@ -71,4 +82,26 @@ void Nivel1::update(Uint32 delta) {
 
 	Play::update(delta);
 
+}
+
+void Nivel1::draw() {
+	Play::draw();
+
+	if (ptsjuego->spanish && enem < 1) {
+		textTut->loadFromText(ptsjuego->pRender, "Muevete con WASD!!", fontColor);
+		textTut->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(35, 350, 50, 170));
+	}
+	if (ptsjuego->spanish && enem >= 1 && enem < 3) {
+		textTut->loadFromText(ptsjuego->pRender, "Dispara con el raton!!", fontColor);
+		textTut->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(35, 350, 50, 170));
+	}
+
+	if (!ptsjuego->spanish && enem < 1) {
+		textTut->loadFromText(ptsjuego->pRender, "Move with WASD!!", fontColor);
+		textTut->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(35, 350, 50, 170));
+	}
+	if (!ptsjuego->spanish && enem >= 1 && enem < 3) {
+		textTut->loadFromText(ptsjuego->pRender, "Shoot with the mouse!", fontColor);
+		textTut->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(35, 350, 50, 170));
+	}
 }

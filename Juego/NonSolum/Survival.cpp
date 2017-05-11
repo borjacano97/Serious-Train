@@ -26,6 +26,10 @@ Survival::Survival(Game * j) : Play(j)
 
 	enem = 0; // variable que cuenta los enemigos creados por ronda
 
+	TTF_Init();
+	textTut = new Texturas();
+	textTut->loadFuente("../fonts/fuenteNumbers.ttf", 200);
+
 }
 void Survival::update(Uint32 delta) {
 	
@@ -255,10 +259,28 @@ void Survival::draw() {
 
 	if (ptsjuego->spanish && enem < 2 && textInit < 2000) {
 		font->loadFromText(ptsjuego->pRender, "L o s   C o w b o y s   n a c e n ,   n o   s e   h a c e n", fontColor);
-		font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(210, 1050, 120, 180));
+		font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(130, 950, 140, 270));
 	}
-	else if (!ptsjuego->spanish && enem < 2 && textInit <  2000) {
+	if (!ptsjuego->spanish && enem < 2 && textInit <  2000) {
 		font->loadFromText(ptsjuego->pRender, "C o w b o y s   a r e   b o r n ,   t h e y   a i n t   m a d e", fontColor);
-		font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(210, 1050, 90, 180));
+		font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(130, 950, 140, 270));
+	}
+
+	if (ptsjuego->spanish && enem <= 1) {
+		textTut->loadFromText(ptsjuego->pRender, "Muevete con WASD!!", fontColor);
+		textTut->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(35, 350, 50, 170));
+	}
+	if (ptsjuego->spanish && enem >= 1 && enem < 3) {
+		textTut->loadFromText(ptsjuego->pRender, "Dispara con el raton!!", fontColor);
+		textTut->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(35, 350, 50, 210));
+	}
+
+	if (!ptsjuego->spanish && enem <= 1) {
+		textTut->loadFromText(ptsjuego->pRender, "Move with WASD!!", fontColor);
+		textTut->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(35, 350, 50, 170));
+	}
+	if (!ptsjuego->spanish && enem >= 1 && enem < 3) {
+		textTut->loadFromText(ptsjuego->pRender, "Shoot with the mouse!", fontColor);
+		textTut->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(35, 350, 50, 210));
 	}
 }
