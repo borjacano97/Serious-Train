@@ -22,6 +22,7 @@ Enemigo::Enemigo(Game* juego, Play* pl, float x, float y, Game::Enemigo_t clase)
 		hp = 1000;
 		points = 5;
 		vel = 0.1;
+		velVertical = 0.035;
 		break;
 	case Game::Enemigo_t::Rapido:
 		alto = 81;
@@ -31,6 +32,7 @@ Enemigo::Enemigo(Game* juego, Play* pl, float x, float y, Game::Enemigo_t clase)
 		hp = 600;
 		points = 10;
 		vel = 0.3;
+		velVertical = 0.015;
 		break;
 	case Game::Enemigo_t::Tank:
 		Ttextura = Game::Texturas_t::TEnemigoG;
@@ -38,18 +40,21 @@ Enemigo::Enemigo(Game* juego, Play* pl, float x, float y, Game::Enemigo_t clase)
 		points = 50;
 		vel = 0.05;
 		alto *= 1.5;
+		velVertical = 0.004;
 		break;
 	case Game::Enemigo_t::Enano:
 		Ttextura = Game::Texturas_t::TEnemigoD;
 		hp = 1000;
 		points = 15;
 		vel = 0.1;
+		velVertical = 0.004;
 		break;
 	case Game::Enemigo_t::Invisible:
 		Ttextura = Game::Texturas_t::TEnemigo2;
 		hp = 1500;
 		points = 25;
 		vel = 0.1;
+		velVertical = 0.004;
 		anchoc *= 3;
 		break;
 	case Game::Enemigo_t::Slender:
@@ -57,6 +62,7 @@ Enemigo::Enemigo(Game* juego, Play* pl, float x, float y, Game::Enemigo_t clase)
 		hp = 5000;
 		points = 200;
 		vel = 0.01;
+		velVertical = 0.004;
 		break;
 	default:
 		break;
@@ -70,7 +76,7 @@ void Enemigo::update(Uint32 delta) {
 		if (hp <= 0) destruido = true;
 		j += delta;
 		if (!parado) {
-			pos.y -= (delta *0.04); // hay que meter aqui la velocidad
+			pos.y -= (delta * velVertical); // hay que meter aqui la velocidad
 
 			pos.x += vel*delta;//*dir //someday 
 		}
@@ -99,8 +105,8 @@ void Enemigo::update(Uint32 delta) {
 			destruido = true;
 			//falta animación
 		}
-		 if (j >= 150){
-			i += ancho;
+		 if (j >= 100){
+			i += ancho ;
 			rectA.x = i;
 
 			if (i >= Enemigo::anchoc) i = ancho;

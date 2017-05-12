@@ -111,7 +111,7 @@ void Play::draw() {
 		else font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(40, 50, 170, 53));
 	}
 
-	if (!ptsjuego->survival && !tutorial){
+	if (!ptsjuego->survival && !tutorial && ptsjuego->getNivel() == 1){
 		if (ptsjuego->spanish && enem < 1) {
 			textTut->loadFromText(ptsjuego->pRender, "Muevete con WASD!!", fontColor);
 			textTut->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(35, 350, 50, 170));
