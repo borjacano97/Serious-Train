@@ -67,9 +67,9 @@ ArmaTienda::ArmaTienda(Game* juego, Tienda* ti, float x, float y, int p, Game::B
 		tipoArma = "Pistola";
 		break;
 
-	case Game::Escopeta: Ttextura = Game::Texturas_t::TEscopeta;  desb = Game::Texturas_t::TEscopeta; 
+	case Game::Escopeta: Ttextura = Game::Texturas_t::TEscopeta;  desb = Game::Texturas_t::TEscopeta; ancho += 10; pos.x -= 10;
 		break;		
-	case Game::Metralleta: Ttextura = Game::Texturas_t::TMetralleta;  desb = Game::Texturas_t::TMetralleta;
+	case Game::Metralleta: Ttextura = Game::Texturas_t::TMetralleta;  desb = Game::Texturas_t::TMetralleta; ancho += 10;
 		break;
 	case Game::Sniper: Ttextura = Game::Texturas_t::TSniper;  desb = Game::Texturas_t::TSniper;
 		break;

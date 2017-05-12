@@ -48,7 +48,7 @@ VagonTienda::VagonTienda(Game* juego, Tienda* ti, float x, float y, int p, Game:
 		break;
 	case Game::Escudo: desb = Game::Texturas_t::TVagon1; 
 		break;
-	case Game::Recuperador: desb = Game::Texturas_t::TVagonLaser;
+	case Game::Recuperador: desb = Game::Texturas_t::TVagonReg;
 		break;
 	default:
 		break;

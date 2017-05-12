@@ -75,7 +75,7 @@ void Enemigo::update(Uint32 delta) {
 			pos.x += vel*delta;//*dir //someday 
 		}
 
-		if (_clase == Game::Enemigo_t::Enano && pos.x <= 1100 && pos.x >= 100){
+		if (_clase == Game::Enemigo_t::Enano && pos.x <= 1000 && pos.x >= 200){
 			shootTime += delta;
 			if (shootTime >= 3000) {
 				p->balas.emplace_back(new Bala(juegootp, p, pos.x, pos.y + 30, vel * 10, Game::Bala_t::BalaEnem));

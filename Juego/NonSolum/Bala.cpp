@@ -216,6 +216,7 @@ void Bala::update(Uint32 delta) {
 				colisionado = true;
 			}
 		}
+		colisionado = false;
 		break;
 	case Game::Metralleta:
 		pos.x += dir * vel*delta;
@@ -253,6 +254,7 @@ void Bala::update(Uint32 delta) {
 				colisionado = true;
 			}
 		}
+		colisionado = false;
 		break;
 	default:
 		break;

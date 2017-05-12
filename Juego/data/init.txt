@@ -37,3 +37,4 @@
 ../bmps/hud.png
 ../bmps/trayecto.png
 ../bmps/hud2.png
+../bmps/vagonReg.png

@@ -40,8 +40,8 @@ void Personaje::update(Uint32 delta) {
 		pos.x = 590;
 	else if (pos.x > 660)
 		pos.x = 660;
-	if (pos.y < 110)
-		pos.y = 110;
+	if (pos.y < 90)
+		pos.y = 90;
 	else if (pos.y > 650)
 		pos.y = 650;
 }

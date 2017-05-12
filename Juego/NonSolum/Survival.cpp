@@ -19,7 +19,7 @@ Survival::Survival(Game * j) : Play(j)
 	spawnTimer = 0;
 	textInit = 0;
 
-	spawn = 1700; // variable que va a hacer que a partir de la ronda 6 cada vez se generen más y más enemigos
+	spawn = 1800; // variable que va a hacer que a partir de la ronda 6 cada vez se generen más y más enemigos
 	
 
 	contRondas = 1;
@@ -166,8 +166,8 @@ void Survival::update(Uint32 delta) {
 						else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 120, Game::Enemigo_t::Rapido));
 					}
 					else {
-						if (rand() % 2 == 0)enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 130, Game::Enemigo_t::Enano));
-						else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 130, Game::Enemigo_t::Enano));
+						if (rand() % 2 == 0)enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 180, Game::Enemigo_t::Enano));
+						else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 180, Game::Enemigo_t::Enano));
 					}
 				}
 				enem++;
@@ -175,7 +175,7 @@ void Survival::update(Uint32 delta) {
 			spawnTimer = 0;
 		}
 		break;
-	default:
+	case 6:
 		if (!created) {
 			armaActual = new ArmaTienda(ptsjuego, NULL, 300, 40, 0, Game::Bala_t::Minigun, true);
 			created = true;
@@ -200,8 +200,47 @@ void Survival::update(Uint32 delta) {
 					}
 					else {
 						if (rand() % 2 == 0) {
-							if (rand() % 2 == 0)enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 130, Game::Enemigo_t::Enano));
-							else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 130, Game::Enemigo_t::Enano));
+							if (rand() % 2 == 0)enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 180, Game::Enemigo_t::Enano));
+							else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 180, Game::Enemigo_t::Enano));
+						}
+						else {
+							if (rand() % 2 == 0)enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 380, Game::Enemigo_t::Tank));
+							else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 280, Game::Enemigo_t::Tank));
+						}
+					}
+				}
+				enem++;
+			}
+			spawnTimer = 0;
+		}
+		break;
+	default:
+		if (!created) {
+			armaActual = new ArmaTienda(ptsjuego, NULL, 300, 40, 0, Game::Bala_t::Canon, true);
+			created = true;
+		}
+		arma = Game::Bala_t::Canon;
+		cadencia = 1700;
+
+		if (enem < (7 * contRondas) && spawnTimer >= spawn) {
+			if (newRonda) {
+				spawn -= 5000;
+				newRonda = false;
+			}
+			else {
+				if (rand() % 2 == 0) {
+					if (rand() % 2 == 0) enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 280, Game::Enemigo_t::Normal));
+					else  enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 280, Game::Enemigo_t::Normal));
+				}
+				else {
+					if (rand() % 2 == 0) {
+						if (rand() % 2 == 0)enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 120, Game::Enemigo_t::Rapido));
+						else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 120, Game::Enemigo_t::Rapido));
+					}
+					else {
+						if (rand() % 2 == 0) {
+							if (rand() % 2 == 0)enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 180, Game::Enemigo_t::Enano));
+							else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 180, Game::Enemigo_t::Enano));
 						}
 						else {
 							if (rand() % 2 == 0)enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 380, Game::Enemigo_t::Tank));
@@ -218,7 +257,7 @@ void Survival::update(Uint32 delta) {
 		
 
 		if (killed >= (7 * contRondas)) {
-			if (contRondas >= 6) spawn -= 10;
+			if (contRondas >= 7) spawn -= 10;
 
 			enem = 0;
 			spawnTimer = 0;
@@ -266,20 +305,20 @@ void Survival::draw() {
 		font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(130, 950, 140, 270));
 	}
 
-	if (ptsjuego->spanish && enem <= 1) {
+	if (ptsjuego->spanish && enem <= 1 && contRondas == 1) {
 		textTut->loadFromText(ptsjuego->pRender, "Muevete con WASD!!", fontColor);
 		textTut->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(35, 350, 50, 170));
 	}
-	if (ptsjuego->spanish && enem >= 1 && enem < 3) {
+	if (ptsjuego->spanish && enem >= 1 && enem < 3 && contRondas == 1) {
 		textTut->loadFromText(ptsjuego->pRender, "Dispara con el raton!!", fontColor);
 		textTut->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(35, 350, 50, 210));
 	}
 
-	if (!ptsjuego->spanish && enem <= 1) {
+	if (!ptsjuego->spanish && enem <= 1 && contRondas == 1) {
 		textTut->loadFromText(ptsjuego->pRender, "Move with WASD!!", fontColor);
 		textTut->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(35, 350, 50, 170));
 	}
-	if (!ptsjuego->spanish && enem >= 1 && enem < 3) {
+	if (!ptsjuego->spanish && enem >= 1 && enem < 3 && contRondas == 1) {
 		textTut->loadFromText(ptsjuego->pRender, "Shoot with the mouse!", fontColor);
 		textTut->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(35, 350, 50, 210));
 	}

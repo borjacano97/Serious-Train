@@ -33,7 +33,7 @@ Vagon::Vagon(Game* juego, Play*pl, float x, float y, Game::Vagon_t t)
 		p->TrainHp->giveHP(90);		
 	}
 		break;
-	case Game::Recuperador: Ttextura = Game::Texturas_t::TVagonLaser; 
+	case Game::Recuperador: Ttextura = Game::Texturas_t::TVagonReg; 
 	    break;
 	default:
 		break;
