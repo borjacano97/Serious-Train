@@ -6,7 +6,7 @@
 Nivel1::Nivel1(Game * j, std::vector <Game::Vagon_t> v, Game::Bala_t a) : Play(j)
 {
 	enem = 0;
-	emax = 10;
+	emax = 5 + 5 * j->getNivel();;
 	for (unsigned int i = 0; i < 4; i++) {
 		tren.emplace_back(new Vagon(ptsjuego, this, 580, 100 + 150 * i, v[i]));
 	}
@@ -16,8 +16,7 @@ Nivel1::Nivel1(Game * j, std::vector <Game::Vagon_t> v, Game::Bala_t a) : Play(j
 	//Falta por completar conforme se implementen las nuevas clases y me da palo hacerlo para nada ^^'
 	
 	switch (a)
-	{
-	
+	{	
 	case Game::Piedra: cadencia = 800;//0'8s || 800 ms 
 		break;
 	case Game::Escopeta: cadencia = 700;
@@ -35,7 +34,6 @@ Nivel1::Nivel1(Game * j, std::vector <Game::Vagon_t> v, Game::Bala_t a) : Play(j
 	default:
 		break;
 	}
-
 }
 
 
@@ -74,8 +72,5 @@ void Nivel1::update(Uint32 delta) {
 		Play::finish();
 
 	}
-
-
 	Play::update(delta);
-
 }

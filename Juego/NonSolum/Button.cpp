@@ -54,11 +54,15 @@ bool Button::onClick(){
 
 
 	if (dentro(mpbx, mpby)){
+		
 		cb(juegootp);
 		juegootp->sound->playEffect("../sounds/buttonSound.mp3", 0, 100, 2);
 		return true;
 	}
-	else return false;
+
+	else {
+		return false;
+	}
 }
 void Button::draw() {
 	

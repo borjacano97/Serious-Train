@@ -71,7 +71,7 @@ SDL_Renderer* Game::getRender()const {
 }
 
 void Game::initMedia() {
-	for (unsigned int i = 0; i < 40 /*magic namber dude*/; i++) {
+	for (unsigned int i = 0; i < 41 /*magic namber dude*/; i++) {
 		texts.emplace_back(new Texturas);
 		texts[i]->load(getRender(), ntexturas[i]);
 	}

@@ -142,37 +142,47 @@ void Tienda::jugar(Game * jg) {
 	// hacemos pushState para "salvar" la tienda y no tener que volver a hacer un new tienda
 	// ya que perderíamos los datos de los objetos desbloqueados
 	
+
+
+	// OJO: VA A IR LA COSA DE 3 EN 3 NIVELES, PERO EN EL ÚLTIMO NIVEL DE CADA AMBIENTACIÓN 
+	// METEMOS EL ENEMIGO NUEVO POR LO QUE "LLAMAMOS" AL NIVEL SIGUIENTE PERO LA AMBIENTACIÓN NO CAMBIA 
 	switch (jg->getNivel())
 	{		
-	case(1) : {		
+	case(1):
+	case(2):
 		jg->pushState(new Nivel1(jg, vagonesNivel, armaNivel));	
 		s->stopMusic();
-		//jg->sound->playEffect("../sounds/trainEffect.mp3", 300, 17);
-		//s1->playEffect("../sounds/trainEffect.mp3", 300, 17);
-		//jg->sound->playEffect("../sounds/trainEffect.mp3", 300, 17);
 		jg->sound->playMusic("../sounds/nivelpos.mp3", 1, 17);
-		break; }
-	case(2) : {
+		break; 
+	case(3): 
+	case(4):
+	case(5):
 		jg->pushState(new Nivel2(jg, vagonesNivel, armaNivel));
 		s->stopMusic();
-		//s2->playMusic("../sounds/inGameMusic2.mp3", 1, 20);
 		jg->sound->playMusic("../sounds/level3Music.mp3", 1, 17);
-		break; }
-	case(3) : {
+		break; 
+	case(6):
+	case(7):
+	case(8):
 		jg->pushState(new Nivel3(jg, vagonesNivel, armaNivel));
 		s->stopMusic();
 		s3->playMusic("../sounds/inGameMusic2.mp3", 3, 17);
-		break; }
-	case(4) : {
+		break; 
+	case(9): 
+	case(10):
+	case(11):
 		jg->pushState(new Nivel4(jg, vagonesNivel, armaNivel));
 		s->stopMusic();
 		s4->playMusic("../sounds/level4.mp3", 3, 17);
-		break; }
-	case(5): {
+		break; 
+	case(13):
+	case(14):
 		jg->pushState(new Nivel5(jg, vagonesNivel, armaNivel));
 		s->stopMusic();
 		s4->playMusic("../sounds/level3Music.mp3", 3, 20);
-		break; }
+		break; 
+	case(15):
+		//NIVEL FINAL CON MALO SUPER MALO
 	default:
 		break;
 	}

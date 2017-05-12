@@ -8,6 +8,7 @@ Escenario::Escenario(Game* juego, Game::Texturas_t text, float x, float y)
 	alto = 5000;
 	ancho = 1280;
 
+	Ttextura = text;
 	pos.set(x, y);
 }
 void Escenario::update(Uint32 delta){

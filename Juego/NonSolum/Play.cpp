@@ -56,15 +56,46 @@ bool Play::initObjects() { // creaci�n de los objetos dando un puntero, una te
 	TrainHp = new barraHP(ptsjuego, Game::TBarra, 123, 14);
 	tren.emplace_back(new Vagon(ptsjuego, this, 580, -50, Game::Vagon_t::Locom));
 	
+	switch (ptsjuego->getNivel())
+	{
+	case(1) :
+	case(2) :
+	case(3) :
+			if (ptsjuego->survival)esc = new Escenario(ptsjuego, Game::Texturas_t::TFondo, 0, -4280);
+			else  esc = new Escenario(ptsjuego, Game::Texturas_t::TFondo, 0, -4280);
+		break;
+	case(4) :
+	case(5) :
+	case(6) :
+			 esc = new Escenario(ptsjuego, Game::Texturas_t::TFondo, 0, -4280);
+		break;
+	case(7) :
+	case(8) :
+	case(9) :
+			if (ptsjuego->survival)esc = new Escenario(ptsjuego, Game::Texturas_t::TFondo, 0, -4280);
+			else  esc = new Escenario(ptsjuego, Game::Texturas_t::TDesierto, 0, -4280);
+		break;
+	case(10) :
+	case(11) :
+	case(12) :
+			 if (ptsjuego->survival)esc = new Escenario(ptsjuego, Game::Texturas_t::TFondo, 0, -4280);
+			 else  esc = new Escenario(ptsjuego, Game::Texturas_t::TFondo, 0, -4280);
+		break;
+	case(13) :
+	case(14) :
+	case(15) :
+			 if (ptsjuego->survival)esc = new Escenario(ptsjuego, Game::Texturas_t::TFondo, 0, -4280);
+			 else  esc = new Escenario(ptsjuego, Game::Texturas_t::TFondo, 0, -4280);
+		break;
+	default:
+		break;
 
-	esc = new Escenario(ptsjuego, Game::Texturas_t::TFondo, 0, -4280);
+	
+	}
+
 
 	TTF_Init();
-	/*if (Mix_OpenAudio(22050, MIX_DEFAULT_FORMAT, 2, 4096) == -1)
-	{
-		return false;
-	}
-	return true;*/
+	
 	return Mix_OpenAudio(22050, MIX_DEFAULT_FORMAT, 2, 4096) != -1;
 }
 
