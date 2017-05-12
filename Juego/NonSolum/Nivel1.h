@@ -11,16 +11,13 @@ public:
 	~Nivel1() { }
 	void dispara(bool shoot) { disparando = shoot; }
 	void update(Uint32 delta);
-	void draw();
 
 private:
-	int  enem, shootTimer, spawnTimer, cadencia, cont;
+	int   shootTimer, spawnTimer, cadencia, cont;
 	Game::Bala_t arma;
 	bool disparando = false;
 	bool firstZombieTime;
 
-	Texturas* textTut;
-	SDL_Color color;
 };
 
 #endif

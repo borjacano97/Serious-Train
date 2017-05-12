@@ -32,7 +32,7 @@ public:
 	vector <Enemigo*> enems;
 	vector <Vagon*> tren; 
 	int killed;
-	int emax;
+	int emax, enem;
 
 	Trigger* tg;
 	barraHP* TrainHp;
@@ -47,6 +47,7 @@ protected:
 
 	int contWin = 0;
 	bool fin;
+	bool tutorial = false;
 	bool initObjects(); //crear y destruir los objetos del juego
 	void freeObjects();
 
@@ -54,6 +55,10 @@ protected:
 	Hud* h;
 	Hud* tray;
 	Hud* locom;
+
+
+	Texturas* textTut;
+	SDL_Color color;
 };
 
 

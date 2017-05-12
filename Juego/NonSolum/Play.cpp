@@ -28,6 +28,10 @@ Play::Play(Game * j) : Estado(j)
 	fontColor.r = 218;
 	fontColor.g = 165;
 	fontColor.b = 32;
+	
+	textTut = new Texturas();
+	textTut->loadFuente("../fonts/fuenteNumbers.ttf", 200);
+
 
 	fin = false;
 
@@ -105,6 +109,26 @@ void Play::draw() {
 		font->loadFromText(ptsjuego->pRender, "$ " + std::to_string(ptsjuego->coins), fontColor);
 		if (ptsjuego->bigHP)font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(40, 50, 170, 46));
 		else font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(40, 50, 170, 53));
+	}
+
+	if (!ptsjuego->survival && !tutorial){
+		if (ptsjuego->spanish && enem < 1) {
+			textTut->loadFromText(ptsjuego->pRender, "Muevete con WASD!!", fontColor);
+			textTut->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(35, 350, 50, 170));
+		}
+		if (ptsjuego->spanish && enem >= 1 && enem < 3) {
+			textTut->loadFromText(ptsjuego->pRender, "Dispara con el raton!!", fontColor);
+			textTut->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(35, 350, 50, 170));
+		}
+
+		if (!ptsjuego->spanish && enem < 1) {
+			textTut->loadFromText(ptsjuego->pRender, "Move with WASD!!", fontColor);
+			textTut->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(35, 350, 50, 170));
+		}
+		if (!ptsjuego->spanish && enem >= 1 && enem < 3) {
+			textTut->loadFromText(ptsjuego->pRender, "Shoot with the mouse!", fontColor);
+			textTut->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(35, 350, 50, 170));
+		}
 	}
 }
 
