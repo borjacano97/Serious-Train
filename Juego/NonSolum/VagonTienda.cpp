@@ -94,7 +94,7 @@ void VagonTienda::draw() {
 		break;
 	case Game::Recuperador:
 		if (juegootp->spanish) tipoVagon = "Recuperador";
-		else tipoVagon = "Recover";
+		else tipoVagon = "Repairer";
 		break;
 	default:
 		break;

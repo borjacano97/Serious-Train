@@ -39,3 +39,4 @@
 ../bmps/hud2.png
 ../bmps/vagonReg.png
 ../bmps/desierto.png
+../bmps/pradera.png

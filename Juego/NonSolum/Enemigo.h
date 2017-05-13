@@ -24,6 +24,7 @@ private:
 	SDL_Rect rectA;
 
 	float vel;
+	float velVertical;
 	int i, j; //animacion
 	bool parado;
 	int shootTime = 3000;
