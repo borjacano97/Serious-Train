@@ -46,7 +46,7 @@ VagonTienda::VagonTienda(Game* juego, Tienda* ti, float x, float y, int p, Game:
 		break;
 	case Game::Lanzallamas: desb = Game::Texturas_t::TVagonFuego; 
 		break;
-	case Game::Escudo: desb = Game::Texturas_t::TVagon1; 
+	case Game::Escudo: desb = Game::Texturas_t::TVagonEscudo; 
 		break;
 	case Game::Recuperador: desb = Game::Texturas_t::TVagonReg;
 		break;

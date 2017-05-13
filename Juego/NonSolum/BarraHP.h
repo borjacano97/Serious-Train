@@ -12,7 +12,7 @@ public:
 	void damage(Game::EnemyDmg_t d);
 	void giveHP(int extra); 
 private:
-	int cont, maxHP;
+	int contGive, contDmg, maxHP;
 	Uint32 d;
 };
 

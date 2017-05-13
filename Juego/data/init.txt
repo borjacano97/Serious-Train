@@ -40,3 +40,4 @@
 ../bmps/vagonReg.png
 ../bmps/desierto.png
 ../bmps/pradera.png
+../bmps/vagonEscudo.png

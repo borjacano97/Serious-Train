@@ -12,7 +12,8 @@ barraHP::barraHP(Game* juego, Game::Texturas_t text, float x, float y)
 
 	pos.set(x, y);
 
-	cont = 0;
+	contDmg = 0;
+	contGive = 0;
 
 	maxHP = 360;
 }
@@ -26,9 +27,9 @@ void barraHP::damage(Game::EnemyDmg_t dm) {
 
 	
 	if (dm == Game::Simple) {
-		cont += d;
-		if (cont >= 100) {
-			cont = 0;
+		contDmg += d;
+		if (contDmg >= 100) {
+			contDmg = 0;
 			ancho--;
 		}
 	}
@@ -38,9 +39,9 @@ void barraHP::damage(Game::EnemyDmg_t dm) {
 void barraHP::giveHP(int i){
 
 	if (i == 1){
-		cont += d;
-		if (cont >= 200) {
-			cont = 0;
+		contGive += d;
+		if (contGive >= 200) {
+			contGive = 0;
 			if (ancho<=maxHP) ancho ++;
 		}
 	}
