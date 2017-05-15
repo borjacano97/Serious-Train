@@ -41,3 +41,4 @@
 ../bmps/desierto.png
 ../bmps/pradera.png
 ../bmps/vagonEscudo.png
+../bmps/oscuridad.png

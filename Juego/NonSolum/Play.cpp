@@ -67,19 +67,19 @@ bool Play::initObjects() { // creaci�n de los objetos dando un puntero, una te
 	case(4) :
 	case(5) :
 	case(6) :
-			 esc = new Escenario(ptsjuego, Game::Texturas_t::TFondo, 0, -4280);
+		     if (ptsjuego->survival)esc = new Escenario(ptsjuego, Game::Texturas_t::TFondo, 0, -4280);
+		     else  esc = new Escenario(ptsjuego, Game::Texturas_t::TDesierto, 0, -4280);
 		break;
 	case(7) :
 	case(8) :
 	case(9) :
-			if (ptsjuego->survival)esc = new Escenario(ptsjuego, Game::Texturas_t::TFondo, 0, -4280);
-			else  esc = new Escenario(ptsjuego, Game::Texturas_t::TDesierto, 0, -4280);
+		     esc = new Escenario(ptsjuego, Game::Texturas_t::TFondo, 0, -4280);			
 		break;
 	case(10) :
 	case(11) :
 	case(12) :
-			 if (ptsjuego->survival)esc = new Escenario(ptsjuego, Game::Texturas_t::TFondo, 0, -4280);
-			 else  esc = new Escenario(ptsjuego, Game::Texturas_t::TFondo, 0, -4280);
+		     if (ptsjuego->survival)esc = new Escenario(ptsjuego, Game::Texturas_t::TFondo, 0, -4280);
+	         else  esc = new Escenario(ptsjuego, Game::Texturas_t::TPradera, 0, -4280);
 		break;
 	case(13) :
 	case(14) :
@@ -132,6 +132,20 @@ void Play::draw() {
 
 	player->draw();
 	h->draw();
+
+	if (!ptsjuego->survival) {
+		switch (ptsjuego->getNivel())
+		{
+		case(10):
+		case(11):
+		case(12):
+			ptsjuego->texts[43]->draw(ptsjuego->pRender, nullptr, nullptr);//nocheeeeeeeeeeee
+			break;
+		default:
+			break;
+		}
+	}
+
 	if (tray!=nullptr) tray->draw();
 	if (locom != nullptr) locom->draw();
 	TrainHp->draw();
@@ -161,6 +175,7 @@ void Play::draw() {
 			textTut->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(35, 350, 50, 170));
 		}
 	}
+	
 }
 
 
