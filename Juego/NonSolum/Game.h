@@ -20,8 +20,8 @@ public:
 		Tlose, TWin, TRoca, TLaser, TFuegod, TFuegoi, TRect, TVagonAuto, TBotonPosible, TBala, TPistol,
 		TEscopeta, TMetralleta, TSniper, TMenuP, TVagonFuego, TVagonLaser, TMinigun, TBotonV, TBotonR, TBotonA, 
 		TControlEng, TControlEsp, TEnemigoD, TEnemigoG, TCanon, TTick, THud, TTrayecto, THud2, TVagonReg, TDesierto,
-		TPradera, TVagonEscudo, TOscuridad};
-	enum Enemigo_t { Normal, Rapido, Tank, Enano, Invisible, Slender/*...*/ };
+		TPradera, TVagonEscudo, TOscuridad, TTocho, TInvisible};
+	enum Enemigo_t { Normal, Rapido, Tank, Enano, Invisible, Slender, Tocho/*...*/ };
 	enum Vagon_t { Locom, Vacio, Automatico, Laser, Lanzallamas, Escudo, Recuperador/*...*/ };
 	enum Bala_t { BalaEnem, Piedra, Rayo, Fuego, Escopeta, E1, E2, Pistola, Sniper, Metralleta, Minigun, Canon /*...*/ };
 	enum Boton_t { Comprar, Jugar, Recolocar, Salir, Supervivencia, Historia, Spanish, English, Volver, Controles /*...*/ };
@@ -63,7 +63,7 @@ private:
 	
 	SDL_Event e;
 
-	std::string ntexturas[44]; 
+	std::string ntexturas[46]; 
 	
 	std::stack<RaizEstado*> estados;
 

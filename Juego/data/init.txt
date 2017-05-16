@@ -42,3 +42,5 @@
 ../bmps/pradera.png
 ../bmps/vagonEscudo.png
 ../bmps/oscuridad.png
+../bmps/tocho.png
+../bmps/invisible.png

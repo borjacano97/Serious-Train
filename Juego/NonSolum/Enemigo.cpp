@@ -21,7 +21,7 @@ Enemigo::Enemigo(Game* juego, Play* pl, float x, float y, Game::Enemigo_t clase)
 		Ttextura = Game::Texturas_t::TEnemigo2;
 		hp = 1000;
 		points = 5;
-		vel = 0.1;
+		vel = 0.08;
 		velVertical = 0.035;
 		break;
 	case Game::Enemigo_t::Rapido:
@@ -31,30 +31,30 @@ Enemigo::Enemigo(Game* juego, Play* pl, float x, float y, Game::Enemigo_t clase)
 		Ttextura = Game::Texturas_t::TEnemigo;
 		hp = 600;
 		points = 10;
-		vel = 0.3;
+		vel = 0.2;
 		velVertical = 0.015;
 		break;
 	case Game::Enemigo_t::Tank:
 		Ttextura = Game::Texturas_t::TEnemigoG;
 		hp = 5000;
-		points = 50;
+		points = 25;
 		vel = 0.05;
 		alto *= 1.5;
-		velVertical = 0.004;
+		velVertical = 0.02;
 		break;
 	case Game::Enemigo_t::Enano:
 		Ttextura = Game::Texturas_t::TEnemigoD;
 		hp = 1000;
-		points = 15;
+		points = 10;
 		vel = 0.1;
 		velVertical = 0.004;
 		break;
 	case Game::Enemigo_t::Invisible:
-		Ttextura = Game::Texturas_t::TEnemigo2;
+		Ttextura = Game::Texturas_t::TInvisible;
 		hp = 1500;
-		points = 25;
-		vel = 0.1;
-		velVertical = 0.004;
+		points = 15;
+		vel = 0.05;
+		velVertical = 0.02;
 		anchoc *= 3;
 		break;
 	case Game::Enemigo_t::Slender:
@@ -63,6 +63,13 @@ Enemigo::Enemigo(Game* juego, Play* pl, float x, float y, Game::Enemigo_t clase)
 		points = 200;
 		vel = 0.01;
 		velVertical = 0.004;
+		break;
+	case Game::Enemigo_t::Tocho:
+		Ttextura = Game::Texturas_t::TTocho;
+		hp = 6000;
+		points = 30;
+		vel = 0.07;
+		velVertical = 0.02;
 		break;
 	default:
 		break;
