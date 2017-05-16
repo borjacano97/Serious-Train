@@ -10,6 +10,8 @@
 #include <vector> // para vectores de texturas, objetos, ect.
 #include <string>
 #include <stack> //  uso de pila para los estados
+
+using namespace std;
 class Game {
 public:
 	Game();
@@ -27,6 +29,10 @@ public:
 	enum Boton_t { Comprar, Jugar, Recolocar, Salir, Supervivencia, Historia, Spanish, English, Volver, Controles /*...*/ };
 	enum EnemyDmg_t { Simple, Explosion, Bala };
 	enum Hud_t {Tick, Hud1, Trayecto, Tren};
+
+	/*std::string* textMenu[0] = "Buenas0;"*/
+	std::string chooseText(string textArr[]);
+
 
 	Texturas* getTextura(Texturas_t et) const { return texts[et]; }
 	SDL_Renderer* getRender() const;
@@ -58,6 +64,8 @@ public:
 	bool bigHP = false;
 	std::vector<Texturas*> texts;
 	Sound* sound;
+	Texturas* font;
+	SDL_Color fontColor;
 
 private:
 	
@@ -72,12 +80,26 @@ private:
 	void render(); //const
 	void onClick(int pmx, int pmy);
 	void update(Uint32 delta);
+	void draw();
 	bool handle_event();
 	bool initLibraries();
 
 	bool espera, exit;
 	int mx, my;
 	int nivel = 1;
+	int cont = 0;
+	bool shown = false;
+	std::string textoo;
+	int arrIndex = 0;
+	string texto;
+	string arrTextSpa[4] = { "Hola", "Adios", "Viva", "Espania" };
+
+	/***************************************************************************/
+
+	//string arrTextEng[4] = { "Hello", "Bye", "Hurra", "Spain" };Hay que controlar el idioma.
+	//Propongo pantalla de inicio en la que eliges el idioma.
+
+	/***************************************************************************/
 };
 
 

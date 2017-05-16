@@ -7,6 +7,7 @@
 #include <iostream>
 #include <fstream>
 #include <typeinfo>
+#include <ctime> 
 #include <vector>
 #include <string>
 
@@ -41,6 +42,13 @@ Game::Game()
 
 	initLibraries();
 	sound = new Sound;
+	TTF_Init();
+	font = new Texturas();
+	font->loadFuente("../fonts/fuenteNumbers.ttf", 200);
+	fontColor.r = 218;
+	fontColor.g = 165;
+	fontColor.b = 32;
+
 
 	estados.push(new Menu(this)); // estado que queremos inicial
 }
@@ -157,17 +165,35 @@ void Game::render() { //const
 	//fondo
 	/*if (topEstado()->getEst() == 'P' || topEstado()->getEst() == 'S')
 		texts[0]->draw(pRender, nullptr, nullptr);*/
-	 if (topEstado()->getEst() == 'M')
+	if (topEstado()->getEst() == 'M') {
 		texts[23]->draw(pRender, nullptr, nullptr);
-	else if (topEstado()->getEst() == 'W')
+		if (!shown) {
+			textoo = chooseText(arrTextSpa);
+			shown = true;
+		}
+			font->loadFromText(pRender, textoo, fontColor);
+			font->draw(pRender, nullptr, &font->myFont.setRect(35, 350, 50, 170));
+	}
+	else if (topEstado()->getEst() == 'W') {
 		texts[23]->draw(pRender, nullptr, nullptr); // texts[24] for Borja :D
-	else if (topEstado()->getEst() == 'L')
+		shown = false;
+	}
+	else if (topEstado()->getEst() == 'L') {
 		texts[10]->draw(pRender, nullptr, nullptr);
-	else if (topEstado()->getEst() == 'T')
+		shown = false;
+	}
+	else if (topEstado()->getEst() == 'T') {
 		texts[1]->draw(pRender, nullptr, nullptr);
+		shown = false;
+	}
 	else if (topEstado()->getEst() == 'C') {
-		if (spanish) texts[31]->draw(pRender, nullptr, nullptr);
-		else texts[30]->draw(pRender, nullptr, nullptr);
+		if (spanish) { 
+			texts[31]->draw(pRender, nullptr, nullptr); 
+		}
+		else { 
+			texts[30]->draw(pRender, nullptr, nullptr);
+		}
+		shown = false;
 	}
 		
 	topEstado()->draw();
@@ -268,4 +294,14 @@ void Game::pushState(RaizEstado* newState) {
 void Game::popState() {
 	delete estados.top();
 	estados.pop();
+}
+
+string Game::chooseText(string textArr[]) {
+	
+	srand((unsigned)time(0));
+	arrIndex = rand() % 4;
+	texto = textArr[arrIndex];
+	std::cout << "ALEATORIO: " << arrIndex << std::endl;
+
+	return texto;
 }

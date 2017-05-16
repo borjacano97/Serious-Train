@@ -4,6 +4,7 @@
 #include "Survival.h"
 
 
+
 Menu::Menu(Game * juego) :Estado(juego)
 {
 	objetos.emplace_back(new Button(ptsjuego, 450, 0, Game::Boton_t::Historia, jugar));
@@ -17,6 +18,11 @@ Menu::Menu(Game * juego) :Estado(juego)
 
 
 	juego->sound->playMusic("../sounds/musicaMenuP.mp3", 2, 17);
+
+	/*TTF_Init();
+	font = new Texturas();
+	font->loadFuente("../fonts/fuenteNumbers.ttf", 200);*/
+
 }
 
 Menu::~Menu() {
@@ -44,3 +50,4 @@ void Menu::survMode(Game * jg) {
 void Menu::salir(Game * jg){
 	jg->setSalir();
 }
+

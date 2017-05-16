@@ -12,7 +12,12 @@ public:
 	Menu(Game* juego);
 	~Menu();
 	char getEst(){ return 'M'; }
+
 private:
+
+	Texturas* font;
+	SDL_Color fontColor;
+
 	static void salir(Game * jg);
 	static void jugar(Game * jg);
 	static void survMode(Game * jg);
@@ -20,6 +25,7 @@ private:
 
 	static void spa(Game * jg) { jg->spanish = true; }
 	static void eng(Game * jg) { jg->spanish = false; }
+
 };
 
 
