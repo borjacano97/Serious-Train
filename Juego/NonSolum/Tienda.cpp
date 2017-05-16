@@ -33,12 +33,16 @@ Tienda::Tienda(Game* juego) :Estado(juego)
 	vags.emplace_back(new VagonTienda(ptsjuego, this, 600, 200, 200, Game::Vagon_t::Escudo, false));
 	botones.emplace_back(new BotonTienda(ptsjuego, this, vags[2], 600, 340, Game::Boton_t::Comprar));
 	
-	vags.emplace_back(new VagonTienda(ptsjuego, this, 200, 500, 250, Game::Vagon_t::Recuperador, false));
+	vags.emplace_back(new VagonTienda(ptsjuego, this, 200, 500, 300, Game::Vagon_t::Succionador, false));
 	botones.emplace_back(new BotonTienda(ptsjuego, this, vags[3], 200, 640, Game::Boton_t::Comprar));
 
-	vags.emplace_back(new VagonTienda(ptsjuego, this, 400, 500, 300, Game::Vagon_t::Laser, false));
+	vags.emplace_back(new VagonTienda(ptsjuego, this, 400, 500, 250, Game::Vagon_t::Recuperador, false));
 	botones.emplace_back(new BotonTienda(ptsjuego, this, vags[4], 400, 640, Game::Boton_t::Comprar));
 
+	vags.emplace_back(new VagonTienda(ptsjuego, this, 600, 500, 300, Game::Vagon_t::Laser, false));
+	botones.emplace_back(new BotonTienda(ptsjuego, this, vags[5], 600, 640, Game::Boton_t::Comprar));
+
+	
 
 	//ARMAS PARA COMPRAR Y RESPECTIVOS BOTONES
 
@@ -249,10 +253,13 @@ void Tienda::colocarVagon(Game::Vagon_t v){
 		break;
 	case Game::Vagon_t::Escudo: vags[2]->rehacer();
 		break;
-	case Game::Vagon_t::Recuperador: vags[3]->rehacer();
+	case Game::Vagon_t::Succionador: vags[3]->rehacer();
 		break;
-	case Game::Vagon_t::Laser: vags[4]->rehacer();
+	case Game::Vagon_t::Recuperador: vags[4]->rehacer();
 		break;
+	case Game::Vagon_t::Laser: vags[5]->rehacer();
+		break;
+	
 
 	default:
 		break;

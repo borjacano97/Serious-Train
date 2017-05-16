@@ -35,6 +35,8 @@ Vagon::Vagon(Game* juego, Play*pl, float x, float y, Game::Vagon_t t)
 		break;
 	case Game::Recuperador: Ttextura = Game::Texturas_t::TVagonReg; 
 	    break;
+	case Game::Succionador: Ttextura = Game::Texturas_t::TVagonAuto;
+		break;
 	default:
 		break;
 	}
@@ -74,6 +76,27 @@ void Vagon::update(Uint32 delta) {
 	case Game::Recuperador:
 		if (this->collision(p->player)) {
 			p->TrainHp->giveHP(1);
+		}
+		break;
+	case Game::Succionador:
+		for each (auto var in p->enems)
+		{
+			if (var != nullptr && p->tg->collision(var)){
+				if (var->getPos().y > pos.y) {
+					if (contSucc >= 10){
+						contSucc = 0;
+						var->pos.y--;
+					}					
+					else contSucc+=delta;
+				}
+				else if (var->getPos().y < pos.y){
+					if (contSucc >= 10){
+						contSucc = 0;
+						var->pos.y++;
+					}
+					else contSucc+=delta;
+				}
+			}
 		}
 		break;
 	default:

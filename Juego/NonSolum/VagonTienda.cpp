@@ -50,6 +50,8 @@ VagonTienda::VagonTienda(Game* juego, Tienda* ti, float x, float y, int p, Game:
 		break;
 	case Game::Recuperador: desb = Game::Texturas_t::TVagonReg;
 		break;
+	case Game::Succionador: desb = Game::Texturas_t::TVagonAuto;
+		break;
 	default:
 		break;
 	}
@@ -95,6 +97,10 @@ void VagonTienda::draw() {
 	case Game::Recuperador:
 		if (juegootp->spanish) tipoVagon = "Recuperador";
 		else tipoVagon = "Repairer";
+		break;
+	case Game::Succionador:
+		if (juegootp->spanish) tipoVagon = "Succionador";
+		else tipoVagon = "Catcher";
 		break;
 	default:
 		break;

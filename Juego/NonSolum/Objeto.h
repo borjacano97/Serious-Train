@@ -22,12 +22,13 @@ public:
 	int getPoints() { return 0; }
 	
 	bool dentro(int x, int y) const;
+	Posicion pos; //posición del objeto
 protected: // son protegidas porque las subclases usan estas variables, si no serían privadas
 	SDL_Rect rect;
 	Game* juegootp;
 	Game::Texturas_t Ttextura; // array de texturas (aún no declarado en Juego)
 
-	Posicion pos; //posición del objeto
+	
 	Direccion dir;
 	bool destruido = false;
 	int alto, ancho, anchoc; // tamaño del objeto
