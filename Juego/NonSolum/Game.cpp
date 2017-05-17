@@ -44,18 +44,46 @@ Game::Game()
 	sound = new Sound;
 	TTF_Init();
 	font = new Texturas();
-	font->loadFuente("../fonts/fuenteNumbers.ttf", 200);
-	fontColor.r = 218;
-	fontColor.g = 165;
-	fontColor.b = 32;
-	arrTextSpa = new string[4];
-	arrTextEng = new string[4];
-	
+	font->loadFuente("../fonts/fuentenumbers.ttf", 300);
+	fontColor.r = 250;
+	fontColor.g = 250;
+	fontColor.b = 250;
 
-		arrTextEng[0] = "You";
-		arrTextEng[1] = "Are";
-		arrTextEng[2] = "A";
-		arrTextEng[3] = "Genius";
+	arrTextSpa[0] = "Gasta monedas en armas y vagones";
+	arrTextSpa[1] = "Mata enemigos para conseguir monedas";
+	arrTextSpa[2] = "Todos los vagones tienen utilidad, colocalos estrategicamente";
+	arrTextSpa[3] = "Desafia a tus amigos en el modo supervivencia";
+
+	arrTextEng[0] = "Spend coins on weapons and wagons";
+	arrTextEng[1] = "Kill enemies for getting coins";
+	arrTextEng[2] = "Every wagon has it own utility, place them strategically";
+	arrTextEng[3] = "Challenge your friends in survival mode";
+
+	// ejemplos pa textos:
+
+	// no olvides colocarte los vagones antes de comenzar la aventura
+	// el vagón escudo te proporciona una vida extra que te puede salvar el cuello
+	// colocate encima del vagon regenerador, ya verás lo que pasa!
+	// yo no dejaría hacercarse mucho a los zombies gordos, parece que vayan a explotar!!
+	// cambia de ambientación cada 3 niveles en el modo historia!!
+	// mantén presionado el raton para disparar continuamente
+	// si te equivocas al elegir, no dudes volver atrás, todos tus cambios se guardan
+	// algunos niveles de la historia son imposibles pasarselos a la primera, no te frustres
+	// algunos enemigos no se pueden matar con las armas de corta distancia, ten cuidado
+	// por que el zombie con capucha nunca ataca? es inquietante
+	// dale al boton de recolocar si te equivocas eligiendo vagones
+	// solo puedes usar un vagon de cada tipo, usalos con cabeza!!
+	// quien conduce el tren? :O
+	// en supervivencia, las rondas cada vez son mas largas y dificiles
+	// el record mundial actualmente es de 8 rondas en el modo supervivencia
+	// como pudo mutar el zombie volador? esas alas no le pegan
+	// los zombies no son muy listos, yo creo que incluso se les puede poner un cebo...
+	// ten cuidado con los zombies que aparecen desde mas abajo!!
+	// yo que tú mataría a los zombies enanos lo antes posible
+	// adentrate en el modo historia y cruza una gran variedad de lugares!!
+
+
+	textoo = chooseText(arrTextSpa);
 
 
 
@@ -176,13 +204,12 @@ void Game::render() { //const
 		texts[0]->draw(pRender, nullptr, nullptr);*/
 	if (topEstado()->getEst() == 'M') {
 		texts[23]->draw(pRender, nullptr, nullptr);
-		if (!shown) {
-			
-			textoo = chooseText();
+		/*if (!shown) {
 			shown = true;
-		}
+
+		}*/
 			font->loadFromText(pRender, textoo, fontColor);
-			font->draw(pRender, nullptr, &font->myFont.setRect(35, 100, 50, 170));
+			font->draw(pRender, nullptr, &font->myFont.setRect(40, 700, 20, 670));
 	}
 	else if (topEstado()->getEst() == 'W') {
 		texts[23]->draw(pRender, nullptr, nullptr); // texts[24] for Borja :D
@@ -306,13 +333,13 @@ void Game::popState() {
 	estados.pop();
 }
 
-string Game::chooseText(/*string textArr[]*/) {
+string Game::chooseText(string textArr[]) {
 
 		//std::cout << "ALEATORIO: " << arrIndex << std::endl;
 
 		srand((unsigned)time(0));
 		arrIndex = rand() % 4;
-		texto = arrTextEng[arrIndex];
+		texto = textArr[arrIndex];
 
 	return texto;
 }
