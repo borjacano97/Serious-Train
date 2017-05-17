@@ -52,22 +52,22 @@ Button::Button(Game* juego,  float x, float y, Game::Boton_t tipo, CallBack_t * 
 bool Button::onClick(){
 	// os odio bastante
 	int mx, my;
-	juegootp->topEstado()->getMousePos(mx, my);//No se actualizan mx y my, siempre devuelven 0
+	juegootp->topEstado()->getMousePos(mx, my);//¡¡¡¡FUNCIONA!!!!! LLORO T-T
 	///////////////CONSOLA DEBUG/////////////////////////////////////////////////////////////////////////////////////
-	cout << "Posicion del objeto: " << pos.x << ", " << pos.y << endl;	//Posicion del boton
-	cout << "Mouse position: " << mx << ", "<< my << endl;				//Posicion del raton heredada de estado
-	cout << "Boton click: ";											//true->click on button, false if not
+	//cout << "Posicion del objeto: " << pos.x << ", " << pos.y << endl;	//Posicion del boton
+	//cout << "Mouse position: " << mx << ", "<< my << endl;				//Posicion del raton heredada de estado
+	//cout << "Boton click: ";												//true->click on button, false if not
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	juegootp->sound->playEffect("../sounds/buttonSound.mp3", 0, 100, 2);
 
 	if (dentro(mx, my)){
 		cb(juegootp);
-		cout << "true\n";
+		//cout << "true\n";
 		return true;
 	}
 	else {
-		cout << "false\n";
+		//cout << "false\n";
 		return false;	
 	}
 }

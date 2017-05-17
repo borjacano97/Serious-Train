@@ -67,13 +67,13 @@ void Personaje::move(HorizontalMov_t dirH, VerticalMov_t dirV) {
 	switch (dirV)
 	{
 	case Personaje::UP:
-		dir.y = 1;
+		dir.y = -1;
 		break;
 	case Personaje::STOP_v:
 		dir.y = 0;
 		break;
 	case Personaje::DOWN:
-		dir.y = -1;
+		dir.y = 1;
 		break;
 	default:
 		break;

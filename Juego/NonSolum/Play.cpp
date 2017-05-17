@@ -73,19 +73,11 @@ void Play::freeObjects() {
 void Play::draw() {
 	esc->draw();	
 
-	for (auto i : tren) {
-		i->draw();
-	}
-	for (auto i : enems) {
-		if (i != nullptr) {
-			i->draw();
-		}
-	}
-	for (auto i : balas) {
-		if (i != nullptr) {
-			i->draw();
-		}
-	}
+	for (auto i : tren) i->draw();
+
+	for (auto i : enems) { if (i != nullptr)	i->draw(); }
+
+	for (auto i : balas) { if (i != nullptr) 	i->draw(); }
 
 	player->draw();
 	TrainHp->draw();
@@ -155,56 +147,62 @@ void Play::update(Uint32 delta) {
 }
 
 bool Play::handle_events(SDL_Event * evento){
-	Personaje::HorizontalMov_t horizontalDireccion;
-	Personaje::VerticalMov_t verticalDireccion;
-	switch (evento->type)
-	{
-	case SDL_KEYUP:
-		
-		switch (evento->key.keysym.sym)
-		{
-		case SDLK_w:
-		case SDLK_s:
-			verticalDireccion = Personaje::VerticalMov_t::STOP_v;
-			break;
-		case SDLK_a:
-		case SDLK_d:
-			horizontalDireccion = Personaje::HorizontalMov_t::STOP_h;
-			break;
-		case SDLK_l:
-		case SDLK_SPACE:
-			dispara(false);
-		default:
-			break;
-		}
-		break;
-	case SDL_KEYDOWN:
-		switch (evento->key.keysym.sym)
-		{
-		case SDLK_w:
-			verticalDireccion = Personaje::VerticalMov_t::UP;
-			break;
-		case SDLK_s:
-			verticalDireccion = Personaje::VerticalMov_t::DOWN;
-			break;
-		case SDLK_a:
-			horizontalDireccion = Personaje::HorizontalMov_t::LEFT;
-			break;
-		case SDLK_d:
-			horizontalDireccion = Personaje::HorizontalMov_t::RIGHT;
-			break;
-		case SDLK_ESCAPE:
-			game_ptr->pushNewState(Estado_t::Pausa_t);
-			break;
-		case SDLK_l:
-		case SDLK_SPACE:
-			dispara(true);
+	
 
-		default:
+	if (evento->type == SDL_KEYUP || evento->type == SDL_KEYDOWN) {
+		Personaje::HorizontalMov_t horizontalDireccion = player->STOP_h;
+		Personaje::VerticalMov_t verticalDireccion = player->STOP_v;
+		switch (evento->type)
+		{
+
+		case SDL_KEYUP:
+
+			switch (evento->key.keysym.sym)
+			{
+			case SDLK_w:
+			case SDLK_s:
+				verticalDireccion = Personaje::VerticalMov_t::STOP_v;
+				break;
+			case SDLK_a:
+			case SDLK_d:
+				horizontalDireccion = Personaje::HorizontalMov_t::STOP_h;
+				break;
+			case SDLK_l:
+			case SDLK_SPACE:
+				dispara(false);
+			default:
+				break;
+			}
+			break;
+		case SDL_KEYDOWN:
+			switch (evento->key.keysym.sym)
+			{
+			case SDLK_w:
+				verticalDireccion = Personaje::VerticalMov_t::UP;
+				break;
+			case SDLK_s:
+				verticalDireccion = Personaje::VerticalMov_t::DOWN;
+				break;
+			case SDLK_a:
+				horizontalDireccion = Personaje::HorizontalMov_t::LEFT;
+				break;
+			case SDLK_d:
+				horizontalDireccion = Personaje::HorizontalMov_t::RIGHT;
+				break;
+			case SDLK_ESCAPE:
+				game_ptr->pushNewState(Estado_t::Pausa_t);
+				break;
+			case SDLK_l:
+			case SDLK_SPACE:
+				dispara(true);
+
+			default:
+				break;
+			}
 			break;
 		}
-		break;
+		player->move(horizontalDireccion, verticalDireccion);
 	}
-	player->move(horizontalDireccion, verticalDireccion);
+	
 	return Estado::handle_events(evento);
 }
