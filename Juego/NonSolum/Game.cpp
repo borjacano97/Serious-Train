@@ -48,6 +48,15 @@ Game::Game()
 	fontColor.r = 218;
 	fontColor.g = 165;
 	fontColor.b = 32;
+	arrTextSpa = new string[4];
+	arrTextEng = new string[4];
+	
+
+		arrTextEng[0] = "You";
+		arrTextEng[1] = "Are";
+		arrTextEng[2] = "A";
+		arrTextEng[3] = "Genius";
+
 
 
 	estados.push(new Menu(this)); // estado que queremos inicial
@@ -168,11 +177,12 @@ void Game::render() { //const
 	if (topEstado()->getEst() == 'M') {
 		texts[23]->draw(pRender, nullptr, nullptr);
 		if (!shown) {
-			textoo = chooseText(arrTextSpa);
+			
+			textoo = chooseText();
 			shown = true;
 		}
 			font->loadFromText(pRender, textoo, fontColor);
-			font->draw(pRender, nullptr, &font->myFont.setRect(35, 350, 50, 170));
+			font->draw(pRender, nullptr, &font->myFont.setRect(35, 100, 50, 170));
 	}
 	else if (topEstado()->getEst() == 'W') {
 		texts[23]->draw(pRender, nullptr, nullptr); // texts[24] for Borja :D
@@ -296,12 +306,13 @@ void Game::popState() {
 	estados.pop();
 }
 
-string Game::chooseText(string textArr[]) {
-	
-	srand((unsigned)time(0));
-	arrIndex = rand() % 4;
-	texto = textArr[arrIndex];
-	std::cout << "ALEATORIO: " << arrIndex << std::endl;
+string Game::chooseText(/*string textArr[]*/) {
+
+		//std::cout << "ALEATORIO: " << arrIndex << std::endl;
+
+		srand((unsigned)time(0));
+		arrIndex = rand() % 4;
+		texto = arrTextEng[arrIndex];
 
 	return texto;
 }

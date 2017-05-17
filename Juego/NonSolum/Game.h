@@ -31,7 +31,7 @@ public:
 	enum Hud_t {Tick, Hud1, Trayecto, Tren};
 
 	/*std::string* textMenu[0] = "Buenas0;"*/
-	std::string chooseText(string textArr[]);
+	std::string chooseText(/*string textArr[]*/);
 
 
 	Texturas* getTextura(Texturas_t et) const { return texts[et]; }
@@ -92,11 +92,11 @@ private:
 	std::string textoo;
 	int arrIndex = 0;
 	string texto;
-	string arrTextSpa[4] = { "Hola", "Adios", "Viva", "Espania" };
+	string* arrTextSpa;
 
 	/***************************************************************************/
 
-	//string arrTextEng[4] = { "Hello", "Bye", "Hurra", "Spain" };Hay que controlar el idioma.
+	string* arrTextEng;
 	//Propongo pantalla de inicio en la que eliges el idioma.
 
 	/***************************************************************************/
