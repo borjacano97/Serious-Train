@@ -19,7 +19,7 @@ Survival::Survival(Game * j) : Play(j)
 	spawnTimer = 0;
 	textInit = 0;
 
-	spawn = 1800; // variable que va a hacer que a partir de la ronda 6 cada vez se generen más y más enemigos
+	spawn = 3000; // variable que va a hacer que a partir de la ronda 6 cada vez se generen más y más enemigos
 	
 
 	contRondas = 1;
@@ -50,9 +50,9 @@ void Survival::update(Uint32 delta) {
 		if (enem < (7 * contRondas) && spawnTimer >= spawn ) {
 			if (rand() % 2 == 0) {
 				if (rand() % 2 == 0) enems.emplace_back
-				(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 280, Game::Enemigo_t::Normal));
+				(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 300, Game::Enemigo_t::Normal));
 				else enems.emplace_back
-				(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 280, Game::Enemigo_t::Normal));
+					(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 300, Game::Enemigo_t::Normal));
 				enem++;
 			}
 			spawnTimer = 0;
@@ -75,8 +75,8 @@ void Survival::update(Uint32 delta) {
 			}
 			else {
 				if (rand() % 2 == 0) {
-					if (rand() % 2 == 0) enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 280, Game::Enemigo_t::Normal));
-					else  enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 280, Game::Enemigo_t::Normal));
+					if (rand() % 2 == 0) enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 300, Game::Enemigo_t::Normal));
+					else  enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 300, Game::Enemigo_t::Normal));
 				}
 				else {
 					if (rand() % 2 == 0) enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 120, Game::Enemigo_t::Rapido));
@@ -103,8 +103,8 @@ void Survival::update(Uint32 delta) {
 			}
 			else {
 				if (rand() % 2 == 0) {
-					if (rand() % 2 == 0) enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 280, Game::Enemigo_t::Normal));
-					else  enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 280, Game::Enemigo_t::Normal));
+					if (rand() % 2 == 0) enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 300, Game::Enemigo_t::Normal));
+					else  enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 300, Game::Enemigo_t::Normal));
 				}
 				else {
 					if (rand() % 2 == 0) enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 120, Game::Enemigo_t::Rapido));
@@ -130,15 +130,21 @@ void Survival::update(Uint32 delta) {
 			}
 			else {
 				if (rand() % 2 == 0) {
-					if (rand() % 2 == 0) enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 280, Game::Enemigo_t::Normal));
-					else  enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 280, Game::Enemigo_t::Normal));
+					if (rand() % 2 == 0) enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 300, Game::Enemigo_t::Normal));
+					else  enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 300, Game::Enemigo_t::Normal));
 				}
 				else {
-					if (rand() % 2 == 0) enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 120, Game::Enemigo_t::Rapido));
-					else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 120, Game::Enemigo_t::Rapido));
+					if (rand() % 2 == 0) {
+						if (rand() % 2 == 0)enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 120, Game::Enemigo_t::Rapido));
+						else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 120, Game::Enemigo_t::Rapido));
+					}
+					else {
+						if (rand() % 2 == 0)enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 200, Game::Enemigo_t::Invisible));
+						else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 200, Game::Enemigo_t::Invisible));
+					}
 				}
 				enem++;
-			}			
+			}
 			spawnTimer = 0;
 		}
 		break;
@@ -150,15 +156,21 @@ void Survival::update(Uint32 delta) {
 		arma = Game::Bala_t::Metralleta;
 		cadencia = 300;
 
-		if (enem < (7 * contRondas) && spawnTimer >= (spawn - 120)) {
+		if (enem < (7 * contRondas) && spawnTimer >= (spawn - 200)) {
 			if (newRonda) {
 				spawn -= 5000;
 				newRonda = false;
 			}
 			else {
 				if (rand() % 2 == 0) {
-					if (rand() % 2 == 0) enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 280, Game::Enemigo_t::Normal));
-					else  enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 280, Game::Enemigo_t::Normal));
+					if (rand() % 2 == 0) {
+						if (rand() % 2 == 0)enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 300, Game::Enemigo_t::Normal));
+						else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 300, Game::Enemigo_t::Normal));
+					}
+					else {
+						if (rand() % 2 == 0)enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 200, Game::Enemigo_t::Invisible));
+						else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 200, Game::Enemigo_t::Invisible));
+					}
 				}
 				else {
 					if (rand() % 2 == 0) {
@@ -183,15 +195,21 @@ void Survival::update(Uint32 delta) {
 		arma = Game::Bala_t::Canon;
 		cadencia = 1700;
 
-		if (enem < (7 * contRondas) && spawnTimer >= spawn) {
+		if (enem < (7 * contRondas) && spawnTimer >= (spawn-250)) {
 			if (newRonda) {
 				spawn -= 5000;
 				newRonda = false;
 			}
 			else {
 				if (rand() % 2 == 0) {
-					if (rand() % 2 == 0) enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 280, Game::Enemigo_t::Normal));
-					else  enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 280, Game::Enemigo_t::Normal));
+					if (rand() % 2 == 0) {
+						if (rand() % 2 == 0)enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 300, Game::Enemigo_t::Normal));
+						else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 300, Game::Enemigo_t::Normal));
+					}
+					else {
+						if (rand() % 2 == 0)enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 200, Game::Enemigo_t::Invisible));
+						else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 200, Game::Enemigo_t::Invisible));
+					}
 				}
 				else {
 					if (rand() % 2 == 0) {
@@ -199,14 +217,8 @@ void Survival::update(Uint32 delta) {
 						else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 120, Game::Enemigo_t::Rapido));
 					}
 					else {
-						if (rand() % 2 == 0) {
-							if (rand() % 2 == 0)enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 120, Game::Enemigo_t::Enano));
-							else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 120, Game::Enemigo_t::Enano));
-						}
-						else {
-							if (rand() % 2 == 0)enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 380, Game::Enemigo_t::Tank));
-							else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 280, Game::Enemigo_t::Tank));
-						}
+						if (rand() % 2 == 0)enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 120, Game::Enemigo_t::Enano));
+						else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 120, Game::Enemigo_t::Enano));
 					}
 				}
 				enem++;
@@ -222,15 +234,27 @@ void Survival::update(Uint32 delta) {
 		arma = Game::Bala_t::Minigun;
 		cadencia = 100;
 
-		if (enem < (7 * contRondas) && spawnTimer >= spawn) {
+		if (enem < (7 * contRondas) && spawnTimer >= (spawn-260)) {
 			if (newRonda) {
 				spawn -= 5000;
 				newRonda = false;
 			}
 			else {
 				if (rand() % 2 == 0) {
-					if (rand() % 2 == 0) enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 280, Game::Enemigo_t::Normal));
-					else  enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 280, Game::Enemigo_t::Normal));
+					if (rand() % 2 == 0) {
+						if (rand() % 2 == 0)enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 300, Game::Enemigo_t::Normal));
+						else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 300, Game::Enemigo_t::Normal));
+					}
+					else {
+						if (rand() % 2 == 0){
+							if (rand() % 2 == 0)enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 200, Game::Enemigo_t::Invisible));
+							else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 200, Game::Enemigo_t::Invisible));
+						}
+						else {
+							if (rand() % 2 == 0)enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 300, Game::Enemigo_t::Tank));
+							else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 300, Game::Enemigo_t::Tank));
+						}
+					}
 				}
 				else {
 					if (rand() % 2 == 0) {
@@ -238,16 +262,16 @@ void Survival::update(Uint32 delta) {
 						else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 120, Game::Enemigo_t::Rapido));
 					}
 					else {
-						if (rand() % 2 == 0) {
+						if (rand() % 2 == 0){
 							if (rand() % 2 == 0)enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 120, Game::Enemigo_t::Enano));
 							else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 120, Game::Enemigo_t::Enano));
 						}
 						else {
-							if (rand() % 2 == 0)enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 380, Game::Enemigo_t::Tank));
-							else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 280, Game::Enemigo_t::Tank));
+							if (rand() % 2 == 0)enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 300, Game::Enemigo_t::Tocho));
+							else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 300, Game::Enemigo_t::Tocho));
 						}
-					}					
-			     }
+					}
+				}
 				enem++;
 			}
 			spawnTimer = 0;

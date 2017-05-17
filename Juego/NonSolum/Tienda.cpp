@@ -24,44 +24,44 @@ Tienda::Tienda(Game* juego) :Estado(juego)
 	
 
 	//VAGONES PARA COMPRAR Y RESPECTIVOS BOTONES
-	vags.emplace_back(new VagonTienda(ptsjuego, this, 200, 200, 50, Game::Vagon_t::Automatico, false));
+	vags.emplace_back(new VagonTienda(ptsjuego, this, 200, 200, 350, Game::Vagon_t::Automatico, false));
 	botones.emplace_back(new BotonTienda(ptsjuego, this, vags[0], 200, 340, Game::Boton_t::Comprar));
 
-	vags.emplace_back(new VagonTienda(ptsjuego, this, 400, 200, 150, Game::Vagon_t::Lanzallamas, false));
+	vags.emplace_back(new VagonTienda(ptsjuego, this, 400, 200, 400, Game::Vagon_t::Lanzallamas, false));
 	botones.emplace_back(new BotonTienda(ptsjuego, this, vags[1], 400, 340, Game::Boton_t::Comprar));
 
-	vags.emplace_back(new VagonTienda(ptsjuego, this, 600, 200, 200, Game::Vagon_t::Escudo, false));
+	vags.emplace_back(new VagonTienda(ptsjuego, this, 600, 200, 450, Game::Vagon_t::Escudo, false));
 	botones.emplace_back(new BotonTienda(ptsjuego, this, vags[2], 600, 340, Game::Boton_t::Comprar));
 	
-	vags.emplace_back(new VagonTienda(ptsjuego, this, 200, 500, 300, Game::Vagon_t::Succionador, false));
+	vags.emplace_back(new VagonTienda(ptsjuego, this, 200, 500, 500, Game::Vagon_t::Succionador, false));
 	botones.emplace_back(new BotonTienda(ptsjuego, this, vags[3], 200, 640, Game::Boton_t::Comprar));
 
-	vags.emplace_back(new VagonTienda(ptsjuego, this, 400, 500, 250, Game::Vagon_t::Recuperador, false));
+	vags.emplace_back(new VagonTienda(ptsjuego, this, 400, 500, 550, Game::Vagon_t::Recuperador, false));
 	botones.emplace_back(new BotonTienda(ptsjuego, this, vags[4], 400, 640, Game::Boton_t::Comprar));
 
-	vags.emplace_back(new VagonTienda(ptsjuego, this, 600, 500, 300, Game::Vagon_t::Laser, false));
+	vags.emplace_back(new VagonTienda(ptsjuego, this, 600, 500, 600, Game::Vagon_t::Laser, false));
 	botones.emplace_back(new BotonTienda(ptsjuego, this, vags[5], 600, 640, Game::Boton_t::Comprar));
 
 	
 
 	//ARMAS PARA COMPRAR Y RESPECTIVOS BOTONES
 
-	armas.emplace_back(new ArmaTienda(ptsjuego, this, 830, 300, 100, Game::Bala_t::Pistola, false));
+	armas.emplace_back(new ArmaTienda(ptsjuego, this, 830, 300, 250, Game::Bala_t::Pistola, false));
 	botones.emplace_back(new BotonTienda(ptsjuego, this, armas[0], 830, 430, Game::Boton_t::Comprar));
 
-	armas.emplace_back(new ArmaTienda(ptsjuego, this, 965, 300, 100, Game::Bala_t::Escopeta, false));
+	armas.emplace_back(new ArmaTienda(ptsjuego, this, 965, 300, 250, Game::Bala_t::Escopeta, false));
 	botones.emplace_back(new BotonTienda(ptsjuego, this, armas[1], 965, 430, Game::Boton_t::Comprar));
 
-	armas.emplace_back(new ArmaTienda(ptsjuego, this, 1090, 300, 200, Game::Bala_t::Sniper, false));
+	armas.emplace_back(new ArmaTienda(ptsjuego, this, 1090, 300, 400, Game::Bala_t::Sniper, false));
 	botones.emplace_back(new BotonTienda(ptsjuego, this, armas[2], 1090, 430, Game::Boton_t::Comprar));
 
-	armas.emplace_back(new ArmaTienda(ptsjuego, this, 830, 500, 300, Game::Bala_t::Metralleta, false));
+	armas.emplace_back(new ArmaTienda(ptsjuego, this, 830, 500, 500, Game::Bala_t::Metralleta, false));
 	botones.emplace_back(new BotonTienda(ptsjuego, this, armas[3], 830, 630, Game::Boton_t::Comprar));
 
-	armas.emplace_back(new ArmaTienda(ptsjuego, this, 965, 500, 500, Game::Bala_t::Minigun, false));
+	armas.emplace_back(new ArmaTienda(ptsjuego, this, 965, 500, 700, Game::Bala_t::Minigun, false));
 	botones.emplace_back(new BotonTienda(ptsjuego, this, armas[4], 965, 630, Game::Boton_t::Comprar));
 
-	armas.emplace_back(new ArmaTienda(ptsjuego, this, 1090, 500, 0, Game::Bala_t::Canon, false));
+	armas.emplace_back(new ArmaTienda(ptsjuego, this, 1090, 500, 700, Game::Bala_t::Canon, false));
 	botones.emplace_back(new BotonTienda(ptsjuego, this, armas[5], 1090, 630, Game::Boton_t::Comprar));
 
 
@@ -150,6 +150,8 @@ void Tienda::jugar(Game * jg) {
 
 	// OJO: VA A IR LA COSA DE 3 EN 3 NIVELES, PERO EN EL ÚLTIMO NIVEL DE CADA AMBIENTACIÓN 
 	// METEMOS EL ENEMIGO NUEVO POR LO QUE "LLAMAMOS" AL NIVEL SIGUIENTE PERO LA AMBIENTACIÓN NO CAMBIA 
+
+	// pero yo creo que si ponemos el juego serio, es mejor que vaya de 5 en 5 pa disfrutar las vistas
 	switch (jg->getNivel())
 	{		
 	case(1):
@@ -159,13 +161,21 @@ void Tienda::jugar(Game * jg) {
 		jg->sound->playMusic("../sounds/nivelpos.mp3", 1, 17);
 		break; 
 	case(3): 
+		jg->pushState(new Nivel2(jg, vagonesNivel, armaNivel));
+		s->stopMusic();
+		jg->sound->playMusic("../sounds/nivelpos.mp3", 1, 17);
+		break;
 	case(4):
 	case(5):
 		jg->pushState(new Nivel2(jg, vagonesNivel, armaNivel));
 		s->stopMusic();
-		jg->sound->playMusic("../sounds/level3Music.mp3", 1, 17);
+		jg->sound->playMusic("../sounds/level3Music.mp3", 1, 17);//otra música
 		break; 
 	case(6):
+		jg->pushState(new Nivel3(jg, vagonesNivel, armaNivel));
+		s->stopMusic();
+		jg->sound->playMusic("../sounds/level3Music.mp3", 1, 17);
+		break;
 	case(7):
 	case(8):
 		jg->pushState(new Nivel3(jg, vagonesNivel, armaNivel));
@@ -173,12 +183,21 @@ void Tienda::jugar(Game * jg) {
 		s3->playMusic("../sounds/inGameMusic2.mp3", 3, 17);
 		break; 
 	case(9): 
+		jg->pushState(new Nivel4(jg, vagonesNivel, armaNivel));
+		s->stopMusic();
+		s3->playMusic("../sounds/inGameMusic2.mp3", 3, 17);
+		break;
 	case(10):
 	case(11):
 		jg->pushState(new Nivel4(jg, vagonesNivel, armaNivel));
 		s->stopMusic();
 		s4->playMusic("../sounds/level4.mp3", 3, 17);
 		break; 
+	case(12):
+		jg->pushState(new Nivel5(jg, vagonesNivel, armaNivel));
+		s->stopMusic();
+		s4->playMusic("../sounds/level4.mp3", 3, 17);
+		break;
 	case(13):
 	case(14):
 		jg->pushState(new Nivel5(jg, vagonesNivel, armaNivel));

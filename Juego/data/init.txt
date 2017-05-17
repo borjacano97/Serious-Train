@@ -44,3 +44,8 @@
 ../bmps/oscuridad.png
 ../bmps/tocho.png
 ../bmps/invisible.png
+../bmps/escopetaN.png
+../bmps/francoN.png
+../bmps/metralletaN.png
+../bmps/minigunN.png
+../bmps/revolverN.png

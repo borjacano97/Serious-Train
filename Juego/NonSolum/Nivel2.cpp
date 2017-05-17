@@ -5,7 +5,7 @@
 Nivel2::Nivel2(Game * j, std::vector <Game::Vagon_t> v, Game::Bala_t a) : Play(j)
 {
 	enem = 0;
-	emax = 15;
+	emax = 15 + 5 * ptsjuego->getNivel();
 	for (unsigned int i = 0; i < 4; i++) {
 		tren.emplace_back(new Vagon(ptsjuego, this, 580, 100 +150*i, v[i]));
 	}	
@@ -46,14 +46,18 @@ void Nivel2::update(Uint32 delta) {
 
 	if (enem < emax){
 		 //generar zombies aleatorios
-		if (spawnTimer >= 1500){
-			if (rand() % 2 == 0) {
-				if (rand() % 2 == 0) enems.emplace_back
-					(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 280, Game::Enemigo_t::Normal));
-				else enems.emplace_back
-					(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 280, Game::Enemigo_t::Normal));
-				enem++;
-			}
+			if (spawnTimer >= 1800){
+
+				if (rand() % 2 == 0){
+					if (rand() % 2 == 0) enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 300, Game::Enemigo_t::Normal));
+					else  enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 300, Game::Enemigo_t::Normal));
+					enem++;
+				}
+				else {
+					if (rand() % 2 == 0) enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 120, Game::Enemigo_t::Rapido));
+					else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 120, Game::Enemigo_t::Rapido));
+					enem++;
+				}
 			spawnTimer = 0;
 		}
 	}

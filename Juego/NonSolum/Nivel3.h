@@ -14,6 +14,7 @@ private:
 	int  shootTimer, spawnTimer, cadencia;
 	Game::Bala_t arma;
 	bool disparando = false;
+	bool created = false;
 };
 
 #endif

@@ -46,26 +46,42 @@ void Nivel3::update(Uint32 delta) {
 		shootTimer = 0;
 	}
 
-	if (enem < emax){
-
-		if (spawnTimer >= 1400){
+	if (enem < emax - 1){
+		if (spawnTimer >= 2380){
 
 			if (rand() % 2 == 0){
-				if (rand() % 2 == 0) enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 280, Game::Enemigo_t::Normal));
-				else  enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 280, Game::Enemigo_t::Normal));
+				if (rand() % 2 == 0) enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 300, Game::Enemigo_t::Normal));
+				else  enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 300, Game::Enemigo_t::Normal));
 				enem++;
 			}
 			else {
-				if (rand() % 2 == 0) enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) +140, Game::Enemigo_t::Rapido));
-				else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) +140, Game::Enemigo_t::Rapido));
+				if (rand() % 2 == 0) {
+					if (rand() % 2 == 0)enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 140, Game::Enemigo_t::Rapido));
+					else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 140, Game::Enemigo_t::Rapido));				
+				}
+				else if (ptsjuego->getNivel() > 6){
+					if (rand() % 2 == 0)enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 300, Game::Enemigo_t::Tocho));
+					else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 300, Game::Enemigo_t::Tocho));
+				}
+					
 				enem++;
 			}
 			spawnTimer = 0;
 		}
 	}
-		else if (emax == Play::getKilled()){
-			Play::finish();
-		
+	else {
+		if (!created){
+			enems.emplace_back
+				(new Enemigo(ptsjuego, this, 0, 550, Game::Enemigo_t::Tocho));
+			created = true;
+		}
+
+
 	}
-		Play::update(delta);
+	if (emax == Play::getKilled()){
+		Play::finish();
+
+	}
+
+	Play::update(delta);
 }

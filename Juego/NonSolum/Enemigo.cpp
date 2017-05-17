@@ -39,7 +39,7 @@ Enemigo::Enemigo(Game* juego, Play* pl, float x, float y, Game::Enemigo_t clase)
 		hp = 5000;
 		points = 25;
 		vel = 0.05;
-		alto *= 1.5;
+		//alto *= 1.5;
 		velVertical = 0.02;
 		break;
 	case Game::Enemigo_t::Enano:
@@ -55,7 +55,7 @@ Enemigo::Enemigo(Game* juego, Play* pl, float x, float y, Game::Enemigo_t clase)
 		points = 15;
 		vel = 0.05;
 		velVertical = 0.02;
-		anchoc *= 3;
+		anchoc *= 3; // esto es lo que le hace invisible xd
 		break;
 	case Game::Enemigo_t::Slender:
 		Ttextura = Game::Texturas_t::TEnemigo2;
@@ -144,5 +144,3 @@ void Enemigo::draw() {
 		juegootp->getTextura(Ttextura)->drawInvertido(render, &rectA, &rect);
 	}
 }
-
-

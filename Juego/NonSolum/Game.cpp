@@ -88,7 +88,7 @@ SDL_Renderer* Game::getRender()const {
 }
 
 void Game::initMedia() {
-	for (unsigned int i = 0; i < 46 /*magic namber dude*/; i++) {
+	for (unsigned int i = 0; i < 51 /*magic namber dude*/; i++) {
 		texts.emplace_back(new Texturas);
 		texts[i]->load(getRender(), ntexturas[i]);
 	}
@@ -268,7 +268,7 @@ bool Game::handle_event() { //eventos del teclado y raton
 				if (topEstado()->getEst() == 'P') pushState(new Pausa(this));
 			}
 
-			 if ((e.key.keysym.sym ==  SDLK_l || e.key.keysym.sym == SDLK_SPACE)) {
+			if ((e.key.keysym.sym ==  SDLK_l || e.key.keysym.sym == SDLK_SPACE)) {
 			
 				 topEstado()->dispara(true);
 			}

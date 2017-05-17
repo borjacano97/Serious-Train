@@ -247,7 +247,7 @@ void Bala::update(Uint32 delta) {
 	case Game::Canon:
 		pos.x += dir * vel*delta;
 
-		if (pos.x <= 0 || pos.x >= 1500)
+		if (pos.x <= -30 || pos.x >= 1500)
 			destruido = true;
 		for each (auto var in p->enems)
 		{
