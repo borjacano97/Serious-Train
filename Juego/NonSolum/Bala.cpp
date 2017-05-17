@@ -211,12 +211,14 @@ void Bala::update(Uint32 delta) {
 			destruido = true;
 		for each (auto var in p->enems)
 		{
-			if (var != nullptr && !colisionado &&  var->collision(this)) {
-				var->damage(dmg);
-				colisionado = true;
+			if (var != nullptr  &&  var->collision(this)) {
+				if ((lastEnemy != nullptr && lastEnemy != var) || lastEnemy == nullptr) {
+					var->damage(dmg);
+					lastEnemy = var;
+				}
 			}
 		}
-		colisionado = false;
+		
 		break;
 	case Game::Metralleta:
 		pos.x += dir * vel*delta;
@@ -249,12 +251,14 @@ void Bala::update(Uint32 delta) {
 			destruido = true;
 		for each (auto var in p->enems)
 		{
-			if (var != nullptr && !colisionado && var->collision(this)) {
-				var->damage(dmg);
-				colisionado = true;
+			if (var != nullptr  && var->collision(this)) {
+				if ((lastEnemy != nullptr && lastEnemy != var) || lastEnemy == nullptr) {
+					var->damage(dmg);
+					lastEnemy = var;
+				}
 			}
 		}
-		colisionado = false;
+		
 		break;
 	default:
 		break;

@@ -10,7 +10,7 @@ class Trigger :
 {
 public:
 	Trigger(Game* juego, Tienda*ti, float x, float y);
-	~Trigger(){}
+	virtual ~Trigger(){}
 	bool onClick();
 private:
 	Tienda* t;

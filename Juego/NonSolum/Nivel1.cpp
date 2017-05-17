@@ -60,9 +60,9 @@ void Nivel1::update(Uint32 delta) {
 		if (spawnTimer >= 1500 && firstZombieTime){			
 			if (rand()%2 == 0) {				
 				if (rand() % 2 == 0) enems.emplace_back
-					(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 280, Game::Enemigo_t::Normal));
+					(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 280, Game::Enemigo_t::Tocho));
 				else enems.emplace_back
-					(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 280, Game::Enemigo_t::Normal));
+					(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 280, Game::Enemigo_t::Tocho));
 				enem++;
 			}
 			spawnTimer = 0;

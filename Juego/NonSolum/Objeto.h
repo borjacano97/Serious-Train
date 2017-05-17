@@ -7,7 +7,7 @@ class Objeto: public RaizObjeto
 {
 public:
 	Objeto();
-	~Objeto();
+	virtual ~Objeto();
 	// Los métodos de raizObjeto los hereda y no hace falta ponerlos aqui
 	// Aún así hay que poner otros métodos aquí
 	void draw();

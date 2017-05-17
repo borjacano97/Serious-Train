@@ -8,7 +8,7 @@ class Enemigo: public Objeto
 {
 public:
 	Enemigo(Game* juego, Play* pl,  float x, float y, Game::Enemigo_t clase);
-	~Enemigo(){}
+	virtual ~Enemigo(){}
 	void update(Uint32 delta);
 	bool getDest() { return destruido; }
 	void destroy() { destruido = true; }

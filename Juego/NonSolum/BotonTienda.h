@@ -11,7 +11,7 @@ class BotonTienda :
 {
 public:
 	BotonTienda(Game* juego, Tienda*ti, ObjetoTienda*obj,  float x, float y, Game::Boton_t tipo);
-	~BotonTienda(){}
+	virtual ~BotonTienda(){}
 	bool onClick();
 	void draw();
 private:

@@ -8,7 +8,7 @@ class FinNivel :
 {
 public:
 	FinNivel(Game* juego, bool v);
-	~FinNivel() { sound->stopMusic(); }
+	virtual ~FinNivel() { sound->stopMusic(); }
 	char getEst(){ if (victory) return 'W'; else return 'L'; }
 private:
 	static void salir(Game * jg);

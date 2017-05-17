@@ -12,7 +12,7 @@ class Sound
 {
 public:
 	Sound();
-	~Sound();
+	virtual ~Sound();
 
 
 	static Sound* getInstance() {
