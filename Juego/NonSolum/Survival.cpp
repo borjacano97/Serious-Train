@@ -3,7 +3,7 @@
 #include "Escenario.h"
 
 
-// FALTA POR CREAR EL CONTADOR DE TIEMPO, CAMBIAR PUNTOS POR Nº DE RONDA , Y PENSAR SI SE VAN A METER VAGONES ENTRE LAS RONDAS
+// FALTA POR CREAR EL CONTADOR DE TIEMPO
 // Y CREAR UNA CLASE DE FIN NIVEL ESPECIAL QUE TE MUESTRE EL TIEMPO (YA QUE SIEMPRE SE PIERDE)
 Survival::Survival(Game * j) : Play(j)
 {
@@ -166,8 +166,8 @@ void Survival::update(Uint32 delta) {
 						else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 120, Game::Enemigo_t::Rapido));
 					}
 					else {
-						if (rand() % 2 == 0)enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 180, Game::Enemigo_t::Enano));
-						else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 180, Game::Enemigo_t::Enano));
+						if (rand() % 2 == 0)enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 120, Game::Enemigo_t::Enano));
+						else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 120, Game::Enemigo_t::Enano));
 					}
 				}
 				enem++;
@@ -176,45 +176,6 @@ void Survival::update(Uint32 delta) {
 		}
 		break;
 	case 6:
-		if (!created) {
-			armaActual = new ArmaTienda(ptsjuego, NULL, 300, 40, 0, Game::Bala_t::Minigun, true);
-			created = true;
-		}
-		arma = Game::Bala_t::Minigun;
-		cadencia = 100;
-
-		if (enem < (7 * contRondas) && spawnTimer >= spawn) {
-			if (newRonda) {
-				spawn -= 5000;
-				newRonda = false;
-			}
-			else {
-				if (rand() % 2 == 0) {
-					if (rand() % 2 == 0) enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 280, Game::Enemigo_t::Normal));
-					else  enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 280, Game::Enemigo_t::Normal));
-				}
-				else {
-					if (rand() % 2 == 0) {
-						if (rand() % 2 == 0)enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 120, Game::Enemigo_t::Rapido));
-						else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 120, Game::Enemigo_t::Rapido));
-					}
-					else {
-						if (rand() % 2 == 0) {
-							if (rand() % 2 == 0)enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 180, Game::Enemigo_t::Enano));
-							else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 180, Game::Enemigo_t::Enano));
-						}
-						else {
-							if (rand() % 2 == 0)enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 380, Game::Enemigo_t::Tank));
-							else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 280, Game::Enemigo_t::Tank));
-						}
-					}
-				}
-				enem++;
-			}
-			spawnTimer = 0;
-		}
-		break;
-	default:
 		if (!created) {
 			armaActual = new ArmaTienda(ptsjuego, NULL, 300, 40, 0, Game::Bala_t::Canon, true);
 			created = true;
@@ -239,8 +200,47 @@ void Survival::update(Uint32 delta) {
 					}
 					else {
 						if (rand() % 2 == 0) {
-							if (rand() % 2 == 0)enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 180, Game::Enemigo_t::Enano));
-							else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 180, Game::Enemigo_t::Enano));
+							if (rand() % 2 == 0)enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 120, Game::Enemigo_t::Enano));
+							else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 120, Game::Enemigo_t::Enano));
+						}
+						else {
+							if (rand() % 2 == 0)enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 380, Game::Enemigo_t::Tank));
+							else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 280, Game::Enemigo_t::Tank));
+						}
+					}
+				}
+				enem++;
+			}
+			spawnTimer = 0;
+		}
+		break;
+	default:
+		if (!created) {
+			armaActual = new ArmaTienda(ptsjuego, NULL, 300, 40, 0, Game::Bala_t::Minigun, true);
+			created = true;
+		}
+		arma = Game::Bala_t::Minigun;
+		cadencia = 100;
+
+		if (enem < (7 * contRondas) && spawnTimer >= spawn) {
+			if (newRonda) {
+				spawn -= 5000;
+				newRonda = false;
+			}
+			else {
+				if (rand() % 2 == 0) {
+					if (rand() % 2 == 0) enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 280, Game::Enemigo_t::Normal));
+					else  enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 280, Game::Enemigo_t::Normal));
+				}
+				else {
+					if (rand() % 2 == 0) {
+						if (rand() % 2 == 0)enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 120, Game::Enemigo_t::Rapido));
+						else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 120, Game::Enemigo_t::Rapido));
+					}
+					else {
+						if (rand() % 2 == 0) {
+							if (rand() % 2 == 0)enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 120, Game::Enemigo_t::Enano));
+							else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 120, Game::Enemigo_t::Enano));
 						}
 						else {
 							if (rand() % 2 == 0)enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 380, Game::Enemigo_t::Tank));

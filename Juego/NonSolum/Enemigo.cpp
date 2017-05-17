@@ -66,7 +66,7 @@ Enemigo::Enemigo(Game* juego, Play* pl, float x, float y, Game::Enemigo_t clase)
 		break;
 	case Game::Enemigo_t::Tocho:
 		Ttextura = Game::Texturas_t::TTocho;
-		hp = 6000;
+		hp = 6500;
 		points = 30;
 		vel = 0.07;
 		velVertical = 0.02;
@@ -91,7 +91,8 @@ void Enemigo::update(Uint32 delta) {
 		if (_clase == Game::Enemigo_t::Enano && pos.x <= 1000 && pos.x >= 200){
 			shootTime += delta;
 			if (shootTime >= 3000) {
-				p->balas.emplace_back(new Bala(juegootp, p, pos.x, pos.y + 30, vel * 10, Game::Bala_t::BalaEnem));
+				if (vel <=0) p->balas.emplace_back(new Bala(juegootp, p, pos.x, pos.y + 30, vel * 10, Game::Bala_t::BalaEnem));
+				else p->balas.emplace_back(new Bala(juegootp, p, pos.x +25, pos.y + 30, vel * 10, Game::Bala_t::BalaEnem));
 				shootTime = 0;
 			}
 			

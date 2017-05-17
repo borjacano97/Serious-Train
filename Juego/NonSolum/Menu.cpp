@@ -43,7 +43,7 @@ void Menu::survMode(Game * jg) {
 	jg->survival = true;
 	jg->sound->stopMusic();
 	jg->pushState(new Survival(jg));
-	jg->sound->playMusic("../sounds/levasPolka.mp3", 5, 12);
+	jg->sound->playMusic("../sounds/levasPolka.mp3", 5, 18);
 	jg->sound->playEffect("../sounds/newRound.mp3", 0, 600, 4);
 }
 

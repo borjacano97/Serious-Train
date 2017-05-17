@@ -1,3 +1,51 @@
-﻿  Game.cpp
-c:\users\gonzalo guzmán\desktop\pruebatextomenu\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
-  NonSolum.vcxproj -> C:\Users\Gonzalo Guzmán\Desktop\pruebaTextoMenu\Serious-Train\Juego\bin\NonSolumDebug.exe
+﻿  Tienda.cpp
+c:\users\alejandro\desktop\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=': conversión de 'double' a 'float'; posible pérdida de datos
+c:\users\alejandro\desktop\serious-train\juego\nonsolum\tienda.cpp(80): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\alejandro\desktop\serious-train\juego\nonsolum\tienda.cpp(269): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  Enemigo.cpp
+c:\users\alejandro\desktop\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=': conversión de 'double' a 'float'; posible pérdida de datos
+c:\users\alejandro\desktop\serious-train\juego\nonsolum\enemigo.cpp(24): warning C4305: '=': truncamiento de 'double' a 'float'
+c:\users\alejandro\desktop\serious-train\juego\nonsolum\enemigo.cpp(25): warning C4305: '=': truncamiento de 'double' a 'float'
+c:\users\alejandro\desktop\serious-train\juego\nonsolum\enemigo.cpp(34): warning C4305: '=': truncamiento de 'double' a 'float'
+c:\users\alejandro\desktop\serious-train\juego\nonsolum\enemigo.cpp(35): warning C4305: '=': truncamiento de 'double' a 'float'
+c:\users\alejandro\desktop\serious-train\juego\nonsolum\enemigo.cpp(41): warning C4305: '=': truncamiento de 'double' a 'float'
+c:\users\alejandro\desktop\serious-train\juego\nonsolum\enemigo.cpp(42): warning C4244: '*=': conversión de 'double' a 'int'; posible pérdida de datos
+c:\users\alejandro\desktop\serious-train\juego\nonsolum\enemigo.cpp(43): warning C4305: '=': truncamiento de 'double' a 'float'
+c:\users\alejandro\desktop\serious-train\juego\nonsolum\enemigo.cpp(49): warning C4305: '=': truncamiento de 'double' a 'float'
+c:\users\alejandro\desktop\serious-train\juego\nonsolum\enemigo.cpp(50): warning C4305: '=': truncamiento de 'double' a 'float'
+c:\users\alejandro\desktop\serious-train\juego\nonsolum\enemigo.cpp(56): warning C4305: '=': truncamiento de 'double' a 'float'
+c:\users\alejandro\desktop\serious-train\juego\nonsolum\enemigo.cpp(57): warning C4305: '=': truncamiento de 'double' a 'float'
+c:\users\alejandro\desktop\serious-train\juego\nonsolum\enemigo.cpp(64): warning C4305: '=': truncamiento de 'double' a 'float'
+c:\users\alejandro\desktop\serious-train\juego\nonsolum\enemigo.cpp(65): warning C4305: '=': truncamiento de 'double' a 'float'
+c:\users\alejandro\desktop\serious-train\juego\nonsolum\enemigo.cpp(71): warning C4305: '=': truncamiento de 'double' a 'float'
+c:\users\alejandro\desktop\serious-train\juego\nonsolum\enemigo.cpp(72): warning C4305: '=': truncamiento de 'double' a 'float'
+c:\users\alejandro\desktop\serious-train\juego\nonsolum\enemigo.cpp(94): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+c:\users\alejandro\desktop\serious-train\juego\nonsolum\enemigo.cpp(95): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+c:\users\alejandro\desktop\serious-train\juego\nonsolum\enemigo.cpp(130): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+c:\users\alejandro\desktop\serious-train\juego\nonsolum\enemigo.cpp(131): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+  Generando código...
+  Compilando...
+  Bala.cpp
+c:\users\alejandro\desktop\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=': conversión de 'double' a 'float'; posible pérdida de datos
+c:\users\alejandro\desktop\serious-train\juego\nonsolum\bala.cpp(18): warning C4305: '=': truncamiento de 'double' a 'float'
+c:\users\alejandro\desktop\serious-train\juego\nonsolum\bala.cpp(79): warning C4305: '=': truncamiento de 'double' a 'float'
+c:\users\alejandro\desktop\serious-train\juego\nonsolum\bala.cpp(96): warning C4305: '=': truncamiento de 'double' a 'float'
+c:\users\alejandro\desktop\serious-train\juego\nonsolum\bala.cpp(141): warning C4244: '+=': conversión de 'double' a 'float'; posible pérdida de datos
+  Generando código...
+  Omitiendo... (no se detectaron cambios relevantes)
+  Vagon.cpp
+  Survival.cpp
+  Play.cpp
+  Personaje.cpp
+  Pausa.cpp
+  Nivel5.cpp
+  Nivel4.cpp
+  Nivel3.cpp
+  Nivel2.cpp
+  Nivel1.cpp
+  Menu.cpp
+  Hud.cpp
+  Game.cpp
+  Estado.cpp
+  NonSolum.vcxproj -> C:\Users\Alejandro\Desktop\Serious-Train\Juego\bin\NonSolumDebug.exe
+  NonSolum.vcxproj -> C:\Users\Alejandro\Desktop\Serious-Train\Juego\bin\NonSolumDebug.pdb (Full PDB)

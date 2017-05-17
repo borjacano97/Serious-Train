@@ -16,6 +16,7 @@ public:
 	void draw();
 	void parar() { parado = true; }
 	void damage(int d) { hp -= d; }
+
 private:
 	int cont = 0;
 	int points, hp;
