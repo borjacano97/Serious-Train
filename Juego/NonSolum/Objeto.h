@@ -12,7 +12,7 @@ public:
 	// Aún así hay que poner otros métodos aquí
 	void draw();
 	void update(Uint32 delta){}
-	bool onClick() { return true; }
+	bool onClick() { return false; };
 	virtual Direccion getDir() { return dir; };
 	Posicion getPos(){ return pos; }
 	bool getDest() { return destruido; }

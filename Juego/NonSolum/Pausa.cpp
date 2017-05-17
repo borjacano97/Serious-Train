@@ -24,11 +24,6 @@ bool Pausa::handle_events(SDL_Event * evento)
 
 	return Estado::handle_events(evento);
 }
-void Pausa::getMousePos(int & x, int & y)
-{
-	x = mx;
-	y = my;
-}
 void Pausa::salir(Game * jg){
 	jg->popState();
 	jg->popState();

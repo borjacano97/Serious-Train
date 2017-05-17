@@ -1,6 +1,9 @@
-﻿  Button.cpp
-d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\button.cpp(104): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\button.cpp(105): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\button.cpp(110): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+﻿  Game.cpp
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=': conversión de 'double' a 'float'; posible pérdida de datos
+  Generando código...
+  Compilando...
+  Pausa.cpp
+d:\documentos\ucm\segundo curso\proyecto_2\repositorio\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=': conversión de 'double' a 'float'; posible pérdida de datos
+  Generando código...
   NonSolum.vcxproj -> D:\Documentos\UCM\Segundo curso\Proyecto_2\Repositorio\Serious-Train\Juego\bin\NonSolumDebug.exe
   NonSolum.vcxproj -> D:\Documentos\UCM\Segundo curso\Proyecto_2\Repositorio\Serious-Train\Juego\bin\NonSolumDebug.pdb (Full PDB)

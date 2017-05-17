@@ -31,8 +31,9 @@ bool Estado::handle_events(SDL_Event * evento) {
 	if (evento->type == SDL_MOUSEBUTTONDOWN && evento->button.state == SDL_BUTTON_LEFT) {
 		mx = evento->button.x;
 		my = evento->button.y;
+		cout << "Click izquierdo, en la posicion: " << mx << ", " << my << endl;
 		onClick();
-		cout << "Click izquierdo, x: "<<mx<<" y: "<<my << endl;
+		
 	}
 	return evento->type != SDL_QUIT;
 }

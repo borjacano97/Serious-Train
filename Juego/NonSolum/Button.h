@@ -18,11 +18,9 @@ protected:
 	SDL_Color fontColor;
 
 	Game::Boton_t t;
-	std::string textB;
-
-	int mpbx, mpby;
-	int a = 40;
-	int h;
+	std::string textB;//que es esto??
+	int a = 40;//que es esto?
+	int h;     //que es esto?
 };
 
 #endif

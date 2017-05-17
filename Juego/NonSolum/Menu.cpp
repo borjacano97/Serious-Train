@@ -44,18 +44,3 @@ void Menu::survMode(Game * jg) {
 void Menu::salir(Game * jg){
 	jg->setSalir();
 }
-bool Menu::handle_events(SDL_Event* e) {
-	/*switch (e->type)
-	{
-	case SDL_MOUSEBUTTONDOWN:
-		if (e->button.state == SDL_BUTTON_LEFT) {
-			mx = e->button.x;
-			my = e->button.y;
-			onClick();
-			cout << "onClick Menu";
-		}
-	default:
-		break;
-	}*/
-	return Estado::handle_events(e);
-}
