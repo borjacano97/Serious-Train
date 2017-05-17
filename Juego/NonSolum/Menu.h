@@ -23,8 +23,13 @@ private:
 	static void survMode(Game * jg);
 	static void control(Game * jg) { jg->pushState(new Controles(jg)); }
 
-	static void spa(Game * jg) { jg->spanish = true;}
-	static void eng(Game * jg) { jg->spanish = false; }
+	static void spa(Game * jg) {
+		jg->spanish = true;
+		jg->textoo = jg->chooseText(jg->arrTextSpa);
+	}
+	static void eng(Game * jg) { jg->spanish = false; 
+	jg->textoo = jg->chooseText(jg->arrTextEng);
+	}
 
 };
 

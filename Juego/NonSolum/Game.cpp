@@ -44,18 +44,24 @@ Game::Game()
 	sound = new Sound;
 	TTF_Init();
 	font = new Texturas();
-	font->loadFuente("../fonts/fuenteNumbers.ttf", 200);
-	fontColor.r = 218;
-	fontColor.g = 165;
-	fontColor.b = 32;
-	arrTextSpa = new string[4];
-	arrTextEng = new string[4];
-	
+	font->loadFuente("../fonts/fuentenumbers.ttf", 300);
+	fontColor.r = 250;
+	fontColor.g = 250;
+	fontColor.b = 250;
 
-		arrTextEng[0] = "You";
-		arrTextEng[1] = "Are";
-		arrTextEng[2] = "A";
-		arrTextEng[3] = "Genius";
+	arrTextSpa[0] = "Gasta monedas en armas y vagones";
+	arrTextSpa[1] = "Mata enemigos para conseguir monedas";
+	arrTextSpa[2] = "Todos los vagones tienen utilidad, colocalos estrategicamente";
+	arrTextSpa[3] = "Desafia a tus amigos en el modo supervivencia";
+
+	arrTextEng[0] = "Spend coins on weapons and wagons";
+	arrTextEng[1] = "Kill enemies for getting coins";
+	arrTextEng[2] = "Every wagon has it own utility, place them strategically";
+	arrTextEng[3] = "Challenge your friends in survival mode";
+
+
+	
+	textoo = chooseText(arrTextSpa);
 
 
 
@@ -176,13 +182,12 @@ void Game::render() { //const
 		texts[0]->draw(pRender, nullptr, nullptr);*/
 	if (topEstado()->getEst() == 'M') {
 		texts[23]->draw(pRender, nullptr, nullptr);
-		if (!shown) {
-			
-			textoo = chooseText();
+		/*if (!shown) {
 			shown = true;
-		}
+
+		}*/
 			font->loadFromText(pRender, textoo, fontColor);
-			font->draw(pRender, nullptr, &font->myFont.setRect(35, 100, 50, 170));
+			font->draw(pRender, nullptr, &font->myFont.setRect(40, 700, 20, 670));
 	}
 	else if (topEstado()->getEst() == 'W') {
 		texts[23]->draw(pRender, nullptr, nullptr); // texts[24] for Borja :D
@@ -306,13 +311,13 @@ void Game::popState() {
 	estados.pop();
 }
 
-string Game::chooseText(/*string textArr[]*/) {
+string Game::chooseText(string textArr[]) {
 
 		//std::cout << "ALEATORIO: " << arrIndex << std::endl;
 
 		srand((unsigned)time(0));
 		arrIndex = rand() % 4;
-		texto = arrTextEng[arrIndex];
+		texto = textArr[arrIndex];
 
 	return texto;
 }
