@@ -157,48 +157,30 @@ bool Play::handle_events(SDL_Event * evento){
 
 		case SDL_KEYUP:
 
-			switch (evento->key.keysym.sym)
-			{
-			case SDLK_w:
-			case SDLK_s:
+			if (evento->key.keysym.sym == SDLK_w || evento->key.keysym.sym == SDLK_s)
 				verticalDireccion = Personaje::VerticalMov_t::STOP_v;
-				break;
-			case SDLK_a:
-			case SDLK_d:
+
+			else if (evento->key.keysym.sym == SDLK_a|| evento->key.keysym.sym == SDLK_d)
 				horizontalDireccion = Personaje::HorizontalMov_t::STOP_h;
-				break;
-			case SDLK_l:
-			case SDLK_SPACE:
-				dispara(false);
-			default:
-				break;
-			}
+
+			if (evento->key.keysym.sym == SDLK_l || evento->key.keysym.sym == SDLK_SPACE)
+					dispara(false);
 			break;
 		case SDL_KEYDOWN:
-			switch (evento->key.keysym.sym)
-			{
-			case SDLK_w:
+			if (evento->key.keysym.sym == SDLK_w)
 				verticalDireccion = Personaje::VerticalMov_t::UP;
-				break;
-			case SDLK_s:
+			else if (evento->key.keysym.sym == SDLK_s)
 				verticalDireccion = Personaje::VerticalMov_t::DOWN;
-				break;
-			case SDLK_a:
+			if (evento->key.keysym.sym == SDLK_a)
 				horizontalDireccion = Personaje::HorizontalMov_t::LEFT;
-				break;
-			case SDLK_d:
+			else if (evento->key.keysym.sym == SDLK_d)
 				horizontalDireccion = Personaje::HorizontalMov_t::RIGHT;
-				break;
-			case SDLK_ESCAPE:
+			if (evento->key.keysym.sym == SDLK_ESCAPE)
 				game_ptr->pushNewState(Estado_t::Pausa_t);
 				break;
-			case SDLK_l:
-			case SDLK_SPACE:
+			if (evento->key.keysym.sym == SDLK_l || evento->key.keysym.sym == SDLK_SPACE)
 				dispara(true);
-
-			default:
-				break;
-			}
+			
 			break;
 		}
 		player->move(horizontalDireccion, verticalDireccion);

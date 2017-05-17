@@ -14,7 +14,6 @@ private:
 	static void salir(Game * jg);
 	static void jugar(Game * jg);
 	bool initLibraries();
-	bool handle_events(SDL_Event * e);
 	bool victory;
 	Sound* sound;
 };

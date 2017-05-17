@@ -14,16 +14,6 @@ Pausa::Pausa(Game* juego) : Estado(juego)
 void Pausa::reanudar(Game * jg) {
 	jg->popState();
 }
-bool Pausa::handle_events(SDL_Event * evento)
-{
-	if (evento->type == SDL_MOUSEBUTTONDOWN && evento->button.state == SDL_BUTTON_LEFT) {
-		mx = evento->button.x;
-		my = evento->button.y;
-		onClick();
-	}
-
-	return Estado::handle_events(evento);
-}
 void Pausa::salir(Game * jg){
 	jg->popState();
 	jg->popState();

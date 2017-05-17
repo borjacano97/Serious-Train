@@ -22,10 +22,10 @@ public:
 	Estado_t getEstado() { return Estado_t::Play_t; }
 	void draw();
 	void update(Uint32 delta);
+	bool handle_events(SDL_Event * evento);
 	void move(char c);
 	int getKilled() { return killed; }
 	void finish() { fin = true; }
-	bool handle_events(SDL_Event * evento);
 
 	vector <Bala*> balas;
 	vector <Enemigo*> enems;

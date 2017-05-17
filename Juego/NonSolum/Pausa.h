@@ -11,8 +11,6 @@ class Pausa :
 public:
 	Pausa(Game* juego);
 	~Pausa() {}
-
-	bool handle_events(SDL_Event * evento);
 private:
 	static void salir(Game * jg);
 	static void reanudar(Game * jg);

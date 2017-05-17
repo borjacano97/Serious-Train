@@ -3,8 +3,7 @@
 #include "Tienda.h"
 
 FinNivel::FinNivel(Game* juego, bool v) :Estado(juego)
-{		
-	victory = v;
+{	victory = v;
 	objetos.emplace_back(new Button(ptsjuego, 300, 600, Game::Boton_t::Jugar, jugar));
 	initLibraries();
 
@@ -30,18 +29,4 @@ bool FinNivel::initLibraries() {
 		return false;
 	}
 	return true;
-}
-bool FinNivel::handle_events(SDL_Event* e) {
-	switch (e->type)
-	{
-	case SDL_MOUSEBUTTONDOWN:
-		if (e->button.state == SDL_BUTTON_LEFT) {
-			mx = e->button.x;
-			my = e->button.y;
-			onClick();
-		}
-	default:
-		break;
-	}
-	return Estado::handle_events(e);
 }
