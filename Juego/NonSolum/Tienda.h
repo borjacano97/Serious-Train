@@ -15,7 +15,7 @@ class Tienda :
 {
 public:
 	Tienda(Game* juego);
-	~Tienda(){}
+	virtual ~Tienda(){}
 	char getEst(){  return 'T';}
 	void draw();
 	void onClick();

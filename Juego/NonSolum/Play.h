@@ -19,7 +19,7 @@ class Play : public Estado
 {
 public:
 	Play(Game * j);
-	~Play();
+	virtual ~Play();
 
 	void draw();
 	void update(Uint32 delta);

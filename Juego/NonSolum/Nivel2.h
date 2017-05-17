@@ -7,7 +7,7 @@ class Nivel2 :
 {
 public:
 	Nivel2(Game * j, std::vector <Game::Vagon_t> v, Game::Bala_t a);
-	~Nivel2(){  }
+	virtual ~Nivel2(){  }
 	void dispara(bool shoot) { disparando = shoot; }
 	void update(Uint32 delta);
 private:

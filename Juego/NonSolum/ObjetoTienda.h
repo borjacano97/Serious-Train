@@ -10,7 +10,7 @@ class ObjetoTienda :
 {
 public:
 	ObjetoTienda();
-	~ObjetoTienda() {}
+	virtual ~ObjetoTienda() {}
 	void desbloquear() { bloqueado = false; Ttextura = desb; }
 	bool getBloq() { return bloqueado; }
 	int getPrecio() { return precio; }

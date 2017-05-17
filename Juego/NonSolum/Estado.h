@@ -7,7 +7,7 @@ class Estado: public RaizEstado
 {
 public:
 	Estado(Game * j);
-	~Estado();
+	virtual ~Estado();
 
 	void draw();
 	void onClick();

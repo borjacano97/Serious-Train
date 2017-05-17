@@ -61,7 +61,7 @@ Tienda::Tienda(Game* juego) :Estado(juego)
 	armas.emplace_back(new ArmaTienda(ptsjuego, this, 965, 500, 500, Game::Bala_t::Minigun, false));
 	botones.emplace_back(new BotonTienda(ptsjuego, this, armas[4], 965, 630, Game::Boton_t::Comprar));
 
-	armas.emplace_back(new ArmaTienda(ptsjuego, this, 1090, 500, 700, Game::Bala_t::Canon, false));
+	armas.emplace_back(new ArmaTienda(ptsjuego, this, 1090, 500, 0, Game::Bala_t::Canon, false));
 	botones.emplace_back(new BotonTienda(ptsjuego, this, armas[5], 1090, 630, Game::Boton_t::Comprar));
 
 

@@ -9,7 +9,7 @@ class ArmaTienda :
 {
 public:
 	ArmaTienda(Game* juego, Tienda*ti, float x, float y, int p, Game::Bala_t tipo, bool est);
-	~ArmaTienda() {}
+	virtual ~ArmaTienda() {}
 	bool onClick();
 	void draw();
 private:

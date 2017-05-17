@@ -8,7 +8,7 @@ class Button :
 public:
 	typedef void CallBack_t(Game * g);
 	Button(Game* juego, float x, float y, Game::Boton_t tipo, CallBack_t * cbCons);
-	~Button(){}
+	virtual ~Button(){}
 	bool onClick();
 	void draw();
 protected:

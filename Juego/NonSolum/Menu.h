@@ -10,7 +10,7 @@ class Menu :
 {
 public:
 	Menu(Game* juego);
-	~Menu();
+	virtual ~Menu();
 	char getEst(){ return 'M'; }
 
 private:

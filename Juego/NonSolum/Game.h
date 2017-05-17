@@ -15,7 +15,7 @@ using namespace std;
 class Game {
 public:
 	Game();
-	~Game();
+	virtual ~Game();
 
 	enum Texturas_t {
 		TFondo, TFondoT, TPersonaje, TEnemigo, TEnemigo2, TLocomotora, TVagon1, TVacioBloq, TBarra,

@@ -10,7 +10,7 @@ class Vagon :
 {
 public:
 	Vagon(Game* juego, Play*pl, float x, float y, Game::Vagon_t t);
-	~Vagon(){}
+	virtual ~Vagon(){}
 	void update(Uint32 delta);
 private: 
 	int cont = 0;

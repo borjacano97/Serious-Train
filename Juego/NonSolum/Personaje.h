@@ -7,7 +7,7 @@ class Personaje :public Objeto
 {
 public:
 	Personaje(Game* juego, Game::Texturas_t text, float x, float y);
-	~Personaje() {}
+	virtual ~Personaje() {}
 	void update(Uint32 delta);
 	void draw();
 	void move(char c);

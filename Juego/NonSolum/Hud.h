@@ -9,7 +9,7 @@ class Hud :
 {
 public:
 	Hud(Game* juego, Play*pl, float x, float y, Game::Hud_t t);
-	~Hud(){}
+	virtual ~Hud(){}
 	void update(Uint32 delta);
 private:
 	Game::Hud_t tipo;

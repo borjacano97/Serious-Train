@@ -7,7 +7,7 @@ class Escenario :
 {
 public:
 	Escenario(Game* juego, Game::Texturas_t text /*hasta que se haga el enum*/, float x, float y);
-	~Escenario(){}
+	virtual ~Escenario(){}
 	void update(Uint32 delta);
 	void ralentizar(Uint32 d) { pos.y -= d * 0.04; }
 };

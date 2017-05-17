@@ -7,7 +7,7 @@ class barraHP :
 {
 public:
 	barraHP(Game* juego, Game::Texturas_t text, float x, float y);
-	~barraHP(){}
+	virtual ~barraHP(){}
 	void update(Uint32 delta);
 	void damage(Game::EnemyDmg_t d);
 	void giveHP(int extra); 

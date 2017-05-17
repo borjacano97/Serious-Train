@@ -10,7 +10,7 @@ class Pausa :
 {
 public:
 	Pausa(Game* juego);
-	~Pausa(){}
+	virtual ~Pausa(){}
 	char getEst(){  return 'S'; }	
 private:
 	static void salir(Game * jg);

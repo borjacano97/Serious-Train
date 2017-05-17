@@ -11,7 +11,7 @@ class Survival :
 {
 public:
 	Survival(Game * j);
-	~Survival() {  }
+	virtual ~Survival() {  }
 	void dispara(bool shoot) { disparando = shoot; }
 	void update(Uint32 delta);
 	void draw();
