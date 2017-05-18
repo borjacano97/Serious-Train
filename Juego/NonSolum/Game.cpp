@@ -56,7 +56,7 @@ Game::Game()
 
 	arrTextEng[0] = "Spend coins on weapons and wagons";
 	arrTextEng[1] = "Kill enemies for getting coins";
-	arrTextEng[2] = "Every wagon has it own utility, place them strategically";
+	arrTextEng[2] = "Every wagon has its own utility, place them strategically";
 	arrTextEng[3] = "Challenge your friends in survival mode";
 
 	// ejemplos pa textos:

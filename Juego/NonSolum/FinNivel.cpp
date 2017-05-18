@@ -10,7 +10,7 @@ FinNivel::FinNivel(Game* juego, bool v) :Estado(juego)
 
 	if (juego->sound != nullptr)  juego->sound->stopMusic();
 
-	juego->sound->playMusic("../sounds/wonLevel.mp3", 2, 20);
+	juego->sound->playMusic("../sounds/wonLevel.mp3", -1, 20);
 
 	font = new Texturas();
 	font->loadFuente("../fonts/fuenteNumbers.ttf", 200);

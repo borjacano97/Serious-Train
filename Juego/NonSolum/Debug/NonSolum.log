@@ -1,61 +1,25 @@
-﻿Build started 18/05/2017 18:22:56.
-     1>Project "C:\hlocal\Serious-Train\Juego\NonSolum\NonSolum.vcxproj" on node 2 (Build target(s)).
-     1>ClCompile:
-         C:\software\programacion\MSVStudio2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Extrem.cpp
-         Extrem.cpp
-     1>c:\hlocal\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\hlocal\serious-train\juego\nonsolum\extrem.cpp(7): warning C4244: 'argument' : conversion from 'unsigned int' to 'float', possible loss of data
-     1>c:\hlocal\serious-train\juego\nonsolum\extrem.cpp(45): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\hlocal\serious-train\juego\nonsolum\extrem.cpp(47): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\hlocal\serious-train\juego\nonsolum\extrem.cpp(64): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\hlocal\serious-train\juego\nonsolum\extrem.cpp(66): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\hlocal\serious-train\juego\nonsolum\extrem.cpp(82): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\hlocal\serious-train\juego\nonsolum\extrem.cpp(84): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\hlocal\serious-train\juego\nonsolum\extrem.cpp(100): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\hlocal\serious-train\juego\nonsolum\extrem.cpp(102): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\hlocal\serious-train\juego\nonsolum\extrem.cpp(118): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\hlocal\serious-train\juego\nonsolum\extrem.cpp(120): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\hlocal\serious-train\juego\nonsolum\extrem.cpp(136): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\hlocal\serious-train\juego\nonsolum\extrem.cpp(138): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-       Link:
-         C:\software\programacion\MSVStudio2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\hlocal\Serious-Train\Juego\bin\NonSolumDebug.exe" /INCREMENTAL /NOLOGO SDL2.lib SDL2main.lib SDL2_image.lib SDL2_ttf.lib SDL2_mixer.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\hlocal\Serious-Train\Juego\bin\NonSolumDebug.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\hlocal\Serious-Train\Juego\bin\NonSolumDebug.lib" /MACHINE:X86 Debug\ArmaTienda.obj
-         Debug\Bala.obj
-         Debug\BarraHP.obj
-         Debug\BotonTienda.obj
-         Debug\Button.obj
-         Debug\Controles.obj
-         Debug\Enemigo.obj
-         Debug\Error.obj
-         Debug\Escenario.obj
-         Debug\Estado.obj
-         Debug\Extrem.obj
-         Debug\Font.obj
-         Debug\Game.obj
-         Debug\FinNivel.obj
-         Debug\Main.obj
-         Debug\Menu.obj
-         Debug\Nivel1.obj
-         Debug\Nivel2.obj
-         Debug\Nivel3.obj
-         Debug\Nivel4.obj
-         Debug\Nivel5.obj
-         Debug\Objeto.obj
-         Debug\ObjetoTienda.obj
-         Debug\Pausa.obj
-         Debug\Personaje.obj
-         Debug\Play.obj
-         Debug\Selector.obj
-         Debug\Sound.obj
-         Debug\Survival.obj
-         Debug\Texturas.obj
-         Debug\Hud.obj
-         Debug\Tienda.obj
-         Debug\Trigger.obj
-         Debug\Vagon.obj
-         Debug\VagonTienda.obj
-         NonSolum.vcxproj -> C:\hlocal\Serious-Train\Juego\bin\NonSolumDebug.exe
-     1>Done Building Project "C:\hlocal\Serious-Train\Juego\NonSolum\NonSolum.vcxproj" (Build target(s)).
-
-Build succeeded.
-
-Time Elapsed 00:00:00.76
+﻿  Tienda.cpp
+c:\users\gonzalo guzmán\universidad\proyecto2\xtreme\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+c:\users\gonzalo guzmán\universidad\proyecto2\xtreme\serious-train\juego\nonsolum\tienda.cpp(80): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gonzalo guzmán\universidad\proyecto2\xtreme\serious-train\juego\nonsolum\tienda.cpp(288): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Play.cpp
+c:\users\gonzalo guzmán\universidad\proyecto2\xtreme\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+c:\users\gonzalo guzmán\universidad\proyecto2\xtreme\serious-train\juego\nonsolum\play.cpp(114): warning C4553: '==': operator has no effect; did you intend '='?
+  Menu.cpp
+c:\users\gonzalo guzmán\universidad\proyecto2\xtreme\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+  FinNivel.cpp
+  Generating Code...
+  Compiling...
+  BotonTienda.cpp
+c:\users\gonzalo guzmán\universidad\proyecto2\xtreme\serious-train\juego\nonsolum\botontienda.cpp(110): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gonzalo guzmán\universidad\proyecto2\xtreme\serious-train\juego\nonsolum\botontienda.cpp(111): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gonzalo guzmán\universidad\proyecto2\xtreme\serious-train\juego\nonsolum\botontienda.cpp(115): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\gonzalo guzmán\universidad\proyecto2\xtreme\serious-train\juego\nonsolum\botontienda.cpp(117): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\gonzalo guzmán\universidad\proyecto2\xtreme\serious-train\juego\nonsolum\botontienda.cpp(118): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Generating Code...
+  Skipping... (no relevant changes detected)
+  VagonTienda.cpp
+  Trigger.cpp
+  ObjetoTienda.cpp
+  ArmaTienda.cpp
+  NonSolum.vcxproj -> C:\Users\Gonzalo Guzmán\Universidad\PROYECTO2\xtreme\Serious-Train\Juego\bin\NonSolumDebug.exe

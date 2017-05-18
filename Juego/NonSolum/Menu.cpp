@@ -18,7 +18,7 @@ Menu::Menu(Game * juego) :Estado(juego)
 	objetos.emplace_back(new Button(ptsjuego, 850, 630, Game::Boton_t::English, eng));
 
 
-	juego->sound->playMusic("../sounds/musicaMenuP.mp3", 2, 17);
+	juego->sound->playMusic("../sounds/musicaMenuP.mp3", -1, 17);
 
 	/*TTF_Init();
 	font = new Texturas();
@@ -41,7 +41,7 @@ void Menu::survMode(Game * jg) {
 	jg->survival = true;
 	jg->sound->stopMusic();
 	jg->pushState(new Survival(jg));
-	jg->sound->playMusic("../sounds/levasPolka.mp3", 5, 18);
+	jg->sound->playMusic("../sounds/levasPolka.mp3", -1, 18);
 	jg->sound->playEffect("../sounds/newRound.mp3", 0, 600, 4);
 }
 void Menu::extremo(Game * jg) {
@@ -49,7 +49,7 @@ void Menu::extremo(Game * jg) {
 	jg->extrem = true;
 	jg->sound->stopMusic();
 	jg->pushState(new Extrem(jg));
-	jg->sound->playMusic("../sounds/levasPolka.mp3", 5, 18);
+	jg->sound->playMusic("../sounds/levasPolka.mp3", -1, 18);
 	jg->sound->playEffect("../sounds/newRound.mp3", 0, 600, 4);
 }
 

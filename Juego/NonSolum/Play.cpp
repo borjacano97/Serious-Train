@@ -35,7 +35,7 @@ Play::Play(Game * j) : Estado(j)
 
 	fin = false;
 
-	j->sound->playEffect("../sounds/trainEffect.mp3", 300, 15, 1);
+	j->sound->playEffect("../sounds/trainEffect.mp3", -1, 15, 1);
 }
 
 
@@ -199,13 +199,13 @@ void Play::update(Uint32 delta) {
 
 	if (TrainHp->getDest()) {
 			ptsjuego->changeState(new FinNivel(ptsjuego, false));
-		soundLoss->playMusic("../sounds/lossLevel.mp3", 2, 20);
+		soundLoss->playMusic("../sounds/lossLevel.mp3", -1, 20);
 	}
 	else if (fin){
 			if (contWin >= 2000){
 				ptsjuego->incrNivel();
 				ptsjuego->changeState(new FinNivel(ptsjuego, true));
-				soundWon->playMusic("../sounds/wonLevel.mp3", 2, 20);
+				soundWon->playMusic("../sounds/wonLevel.mp3", -1, 20);
 			}
 			else contWin += delta;
 	}

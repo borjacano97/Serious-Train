@@ -158,51 +158,51 @@ void Tienda::jugar(Game * jg) {
 	case(2):
 		jg->pushState(new Nivel1(jg, vagonesNivel, armaNivel));	
 		s->stopMusic();
-		jg->sound->playMusic("../sounds/nivelpos.mp3", 1, 17);
+		jg->sound->playMusic("../sounds/nivelpos.mp3", -1, 17);
 		break; 
 	case(3): 
 		jg->pushState(new Nivel2(jg, vagonesNivel, armaNivel));
 		s->stopMusic();
-		jg->sound->playMusic("../sounds/nivelpos.mp3", 1, 17);
+		jg->sound->playMusic("../sounds/nivelpos.mp3", -1, 17);
 		break;
 	case(4):
 	case(5):
 		jg->pushState(new Nivel2(jg, vagonesNivel, armaNivel));
 		s->stopMusic();
-		jg->sound->playMusic("../sounds/level3Music.mp3", 1, 17);//otra música
+		jg->sound->playMusic("../sounds/level3Music.mp3", -1, 17);//otra música
 		break; 
 	case(6):
 		jg->pushState(new Nivel3(jg, vagonesNivel, armaNivel));
 		s->stopMusic();
-		jg->sound->playMusic("../sounds/level3Music.mp3", 1, 17);
+		jg->sound->playMusic("../sounds/level3Music.mp3",- 1, 17);
 		break;
 	case(7):
 	case(8):
 		jg->pushState(new Nivel3(jg, vagonesNivel, armaNivel));
 		s->stopMusic();
-		s3->playMusic("../sounds/inGameMusic2.mp3", 3, 17);
+		s3->playMusic("../sounds/inGameMusic2.mp3", -1, 17);
 		break; 
 	case(9): 
 		jg->pushState(new Nivel4(jg, vagonesNivel, armaNivel));
 		s->stopMusic();
-		s3->playMusic("../sounds/inGameMusic2.mp3", 3, 17);
+		s3->playMusic("../sounds/inGameMusic2.mp3", -1, 17);
 		break;
 	case(10):
 	case(11):
 		jg->pushState(new Nivel4(jg, vagonesNivel, armaNivel));
 		s->stopMusic();
-		s4->playMusic("../sounds/level4.mp3", 3, 17);
+		s4->playMusic("../sounds/level4.mp3", -1, 17);
 		break; 
 	case(12):
 		jg->pushState(new Nivel5(jg, vagonesNivel, armaNivel));
 		s->stopMusic();
-		s4->playMusic("../sounds/level4.mp3", 3, 17);
+		s4->playMusic("../sounds/level4.mp3", -1, 17);
 		break;
 	case(13):
 	case(14):
 		jg->pushState(new Nivel5(jg, vagonesNivel, armaNivel));
 		s->stopMusic();
-		s4->playMusic("../sounds/level3Music.mp3", 3, 20);
+		s4->playMusic("../sounds/level3Music.mp3", -1, 20);
 		break; 
 	case(15):
 		//NIVEL FINAL CON MALO SUPER MALO
