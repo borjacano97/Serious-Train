@@ -81,7 +81,10 @@ Game::Game()
 	// ten cuidado con los zombies que aparecen desde mas abajo!!
 	// yo que tú mataría a los zombies enanos lo antes posible
 	// adentrate en el modo historia y cruza una gran variedad de lugares!!
-
+	// el zombie volador empezó siendo una lechuza
+	// sabias que solo hay una seta en todo el juego? encuentrala
+	// a nuestro personaje le ha dado mucho el sol
+	// sabias que los zombies son azules porque no respiran??
 
 	textoo = chooseText(arrTextSpa);
 

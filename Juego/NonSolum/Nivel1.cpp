@@ -1,6 +1,5 @@
 #include "Nivel1.h"
 #include "Enemigo.h"
-#include "Escenario.h"
 
 
 Nivel1::Nivel1(Game * j, std::vector <Game::Vagon_t> v, Game::Bala_t a) : Play(j)

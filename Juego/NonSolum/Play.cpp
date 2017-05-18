@@ -139,13 +139,13 @@ void Play::draw() {
 		case(10):
 		case(11):
 		case(12):
-			ptsjuego->texts[43]->draw(ptsjuego->pRender, nullptr, nullptr);//nocheeeeeeeeeeee
+			if (!ptsjuego->survival) ptsjuego->texts[43]->draw(ptsjuego->pRender, nullptr, nullptr);//nocheeeeeeeeeeee
 			break;
 		default:
 			break;
 		}
 	}
-
+	if (ptsjuego->extrem) ptsjuego->texts[43]->draw(ptsjuego->pRender, nullptr, nullptr);
 	if (tray!=nullptr) tray->draw();
 	if (locom != nullptr) locom->draw();
 	TrainHp->draw();

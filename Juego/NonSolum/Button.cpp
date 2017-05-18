@@ -36,6 +36,8 @@ Button::Button(Game* juego,  float x, float y, Game::Boton_t tipo, CallBack_t * 
 		break;
 	case Game::Controles:Ttextura = Game::Texturas_t::TBotonA;
 		break;
+	case Game::Extrem:Ttextura = Game::Texturas_t::TBotonV;
+		break;
 	case Game::Spanish: 
 		textB = "Spanish";
 		Ttextura = Game::Texturas_t::TBotonA;
@@ -92,6 +94,10 @@ void Button::draw() {
 	case Game::Controles:
 		if (juegootp->spanish) textB = "Controles";
 		else textB = "Controls";
+		break;
+	case Game::Extrem:
+		if (juegootp->spanish) textB = "Extremo";
+		else textB = "Extrem";
 		break;
 	default:
 		break;

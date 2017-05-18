@@ -10,7 +10,7 @@ class Menu :
 {
 public:
 	Menu(Game* juego);
-	virtual ~Menu();
+	virtual ~Menu(){}
 	char getEst(){ return 'M'; }
 
 private:
@@ -21,7 +21,9 @@ private:
 	static void salir(Game * jg);
 	static void jugar(Game * jg);
 	static void survMode(Game * jg);
-	static void control(Game * jg) { jg->pushState(new Controles(jg)); }
+	//static void control(Game * jg) { jg->pushState(new Controles(jg)); }
+	;
+	static void extremo(Game * jg);
 
 	static void spa(Game * jg) {
 		jg->spanish = true;

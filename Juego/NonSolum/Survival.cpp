@@ -1,6 +1,5 @@
 #include "Survival.h"
 #include "Enemigo.h"
-#include "Escenario.h"
 
 
 // FALTA POR CREAR EL CONTADOR DE TIEMPO
@@ -46,7 +45,6 @@ void Survival::update(Uint32 delta) {
 		/*font->loadFromText(ptsjuego->pRender, " " + std::to_string(contRondas), fontColor);
 		font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(220, 410, 480, 120));*/
 	case 1:
-		
 		if (enem < (7 * contRondas) && spawnTimer >= spawn ) {
 			if (rand() % 2 == 0) {
 				if (rand() % 2 == 0) enems.emplace_back
@@ -139,8 +137,8 @@ void Survival::update(Uint32 delta) {
 						else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 120, Game::Enemigo_t::Rapido));
 					}
 					else {
-						if (rand() % 2 == 0)enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 200, Game::Enemigo_t::Invisible));
-						else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 200, Game::Enemigo_t::Invisible));
+						if (rand() % 2 == 0)enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 250, Game::Enemigo_t::Invisible));
+						else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 250, Game::Enemigo_t::Invisible));
 					}
 				}
 				enem++;
@@ -168,8 +166,8 @@ void Survival::update(Uint32 delta) {
 						else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 300, Game::Enemigo_t::Normal));
 					}
 					else {
-						if (rand() % 2 == 0)enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 200, Game::Enemigo_t::Invisible));
-						else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 200, Game::Enemigo_t::Invisible));
+						if (rand() % 2 == 0)enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 250, Game::Enemigo_t::Invisible));
+						else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 250, Game::Enemigo_t::Invisible));
 					}
 				}
 				else {
@@ -207,8 +205,8 @@ void Survival::update(Uint32 delta) {
 						else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 300, Game::Enemigo_t::Normal));
 					}
 					else {
-						if (rand() % 2 == 0)enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 200, Game::Enemigo_t::Invisible));
-						else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 200, Game::Enemigo_t::Invisible));
+						if (rand() % 2 == 0)enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 250, Game::Enemigo_t::Invisible));
+						else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 250, Game::Enemigo_t::Invisible));
 					}
 				}
 				else {
@@ -247,8 +245,8 @@ void Survival::update(Uint32 delta) {
 					}
 					else {
 						if (rand() % 2 == 0){
-							if (rand() % 2 == 0)enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 200, Game::Enemigo_t::Invisible));
-							else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 200, Game::Enemigo_t::Invisible));
+							if (rand() % 2 == 0)enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 250, Game::Enemigo_t::Invisible));
+							else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 250, Game::Enemigo_t::Invisible));
 						}
 						else {
 							if (rand() % 2 == 0)enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 300, Game::Enemigo_t::Tank));
@@ -327,23 +325,5 @@ void Survival::draw() {
 	if (!ptsjuego->spanish && enem < 2 && textInit <  2000) {
 		font->loadFromText(ptsjuego->pRender, "C o w b o y s   a r e   b o r n ,   t h e y   a i n t   m a d e", fontColor);
 		font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(130, 950, 140, 270));
-	}
-
-	if (ptsjuego->spanish && enem <= 1 && contRondas == 1) {
-		textTut->loadFromText(ptsjuego->pRender, "Muevete con WASD!!", fontColor);
-		textTut->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(35, 350, 50, 170));
-	}
-	if (ptsjuego->spanish && enem >= 1 && enem < 3 && contRondas == 1) {
-		textTut->loadFromText(ptsjuego->pRender, "Dispara con el raton!!", fontColor);
-		textTut->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(35, 350, 50, 210));
-	}
-
-	if (!ptsjuego->spanish && enem <= 1 && contRondas == 1) {
-		textTut->loadFromText(ptsjuego->pRender, "Move with WASD!!", fontColor);
-		textTut->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(35, 350, 50, 170));
-	}
-	if (!ptsjuego->spanish && enem >= 1 && enem < 3 && contRondas == 1) {
-		textTut->loadFromText(ptsjuego->pRender, "Shoot with the mouse!", fontColor);
-		textTut->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(35, 350, 50, 210));
-	}
+	}	
 }

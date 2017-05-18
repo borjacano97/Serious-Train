@@ -26,7 +26,7 @@ public:
 	enum Enemigo_t { Normal, Rapido, Tank, Enano, Invisible, Slender, Tocho/*...*/ };
 	enum Vagon_t { Locom, Vacio, Automatico, Laser, Lanzallamas, Escudo, Recuperador, Succionador/*...*/ };
 	enum Bala_t { BalaEnem, Piedra, Rayo, Fuego, Escopeta, E1, E2, Pistola, Sniper, Metralleta, Minigun, Canon /*...*/ };
-	enum Boton_t { Comprar, Jugar, Recolocar, Salir, Supervivencia, Historia, Spanish, English, Volver, Controles /*...*/ };
+	enum Boton_t { Comprar, Jugar, Recolocar, Salir, Supervivencia, Historia, Spanish, English, Volver, Controles, Extrem /*...*/ };
 	enum EnemyDmg_t { Simple, Explosion, Bala };
 	enum Hud_t {Tick, Hud1, Trayecto, Tren};
 
@@ -61,6 +61,7 @@ public:
 	bool tiendaCreada = false;
 	bool spanish = true;
 	bool survival = false;
+	bool extrem = false;
 	bool bigHP = false;
 	std::vector<Texturas*> texts;
 	Sound* sound;
