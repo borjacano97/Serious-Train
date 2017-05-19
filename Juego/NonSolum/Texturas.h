@@ -27,8 +27,7 @@ public:
 
 	void setColor(Uint8 red, Uint8 green, Uint8 blue){ SDL_SetTextureColorMod(ptext, red, green, blue); }
 	
-	//int SDL_SetTextureColorMod(SDL_Texture* ptext, Uint8 r, Uint8 g, Uint8 b) { r = r ; g = r; b = b; return 0; }
-	
+		
 	SDL_Texture* ptext;
 private:
 	SDL_Surface* pSurface;

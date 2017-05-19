@@ -15,7 +15,7 @@ public:
 	int getPoints() { return points; }
 	void draw();
 	void parar() { parado = true; }
-	void damage(int d) { hp -= d; }
+	void damage(int d) { hp -= d; dañado = true; }
 
 private:
 	int cont = 0;
@@ -27,6 +27,7 @@ private:
 	float vel;
 	float velVertical;
 	int i, j; //animacion
+	int k;
 	bool parado;
 	int shootTime = 3000;
 	int disappearTime = 0;
