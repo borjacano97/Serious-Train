@@ -54,14 +54,14 @@ Game::Game()
 	arrTextSpa[2] = "Todos los vagones tienen utilidad, colocalos estrategicamente";
 	arrTextSpa[3] = "Desafia a tus amigos en el modo supervivencia";
 	arrTextSpa[4] = "No olvides colocar los vagones antes de comenzar la aventura";
-	arrTextSpa[5] = "¿Quien conduce el tren?";
-	arrTextSpa[6] = "¿Como pudo mutar el zombie volador? esas alas no le pegan";
-	arrTextSpa[7] = "¿Sabias que en 1815 Stephenson construyo la primera locomotora de vapor?";
+	arrTextSpa[5] = "Quien conduce el tren?";
+	arrTextSpa[6] = "Como pudo mutar el zombie volador? esas alas no le pegan";
+	arrTextSpa[7] = "Sabias que en 1815 Stephenson construyo la primera locomotora de vapor?";
 	arrTextSpa[8] = "Prueba tus habilidades en el modo Extremo!";
 	arrTextSpa[9] = "Utiliza el vagon regenerador, para recuperar vida";
 	arrTextSpa[10] = "Cuidado con los enemigos, tienen sed de venganza";
 	arrTextSpa[11] = "Manten presionado el raton para disparar continuamente";
-	arrTextSpa[12] = "¿Sabias que la revolucion industrial trajo consigo la tecnologia?";
+	arrTextSpa[12] = "Sabias que la revolucion industrial trajo consigo la tecnologia?";
 	arrTextSpa[13] = "Sumergete en el modo historia y conoce el interior del Ubi Trinus!";
 	arrTextSpa[14] = "Siguenos en Twitter _nonSolum";
 

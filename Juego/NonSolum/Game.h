@@ -58,6 +58,7 @@ public:
 	SDL_Renderer* pRender = nullptr;
 	int coins = 0;
 
+	int contRondas = 1;
 	bool tiendaCreada = false;
 	bool spanish = true;
 	bool survival = false;

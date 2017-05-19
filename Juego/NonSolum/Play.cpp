@@ -3,6 +3,7 @@
 #include "Enemigo.h"
 #include "Vagon.h"
 #include "FinNivel.h"
+#include "FinNivelSvl.h"
 #include "Trigger.h"
 
 #include <string>
@@ -198,7 +199,8 @@ void Play::update(Uint32 delta) {
 	TrainHp->update(delta);
 
 	if (TrainHp->getDest()) {
-			ptsjuego->changeState(new FinNivel(ptsjuego, false));
+		if (ptsjuego->survival)ptsjuego->changeState(new FinNivelSvl(ptsjuego));
+		else ptsjuego->changeState(new FinNivel(ptsjuego, false));
 		soundLoss->playMusic("../sounds/lossLevel.mp3", -1, 20);
 	}
 	else if (fin){

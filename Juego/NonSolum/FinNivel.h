@@ -11,7 +11,7 @@ public:
 	virtual ~FinNivel() { sound->stopMusic(); }
 	char getEst(){ if (victory) return 'W'; else return 'L'; }
 private:
-	static void salir(Game * jg);
+	
 	static void jugar(Game * jg);
 	void draw();
 	bool initLibraries();

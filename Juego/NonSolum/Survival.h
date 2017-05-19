@@ -17,7 +17,7 @@ public:
 	void draw();
 
 private:
-	int  enem, shootTimer, spawnTimer, cadencia, contRondas, spawn, textInit;
+	int  enem, shootTimer, spawnTimer, cadencia, spawn, textInit;
 	bool newRonda = false;
 	bool disparando = false;
 	bool created = true;

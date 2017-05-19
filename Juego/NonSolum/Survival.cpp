@@ -21,7 +21,7 @@ Survival::Survival(Game * j) : Play(j)
 	spawn = 3000; // variable que va a hacer que a partir de la ronda 6 cada vez se generen más y más enemigos
 	
 
-	contRondas = 1;
+	ptsjuego->contRondas = 1;
 
 	enem = 0; // variable que cuenta los enemigos creados por ronda
 
@@ -40,12 +40,12 @@ void Survival::update(Uint32 delta) {
 		shootTimer = 0;
 	}
 
-	switch (contRondas)
+	switch (ptsjuego->contRondas)
 	{
 		/*font->loadFromText(ptsjuego->pRender, " " + std::to_string(contRondas), fontColor);
 		font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(220, 410, 480, 120));*/
 	case 1:
-		if (enem < (7 * contRondas) && spawnTimer >= spawn ) {
+		if (enem < (7 * ptsjuego->contRondas) && spawnTimer >= spawn) {
 			if (rand() % 2 == 0) {
 				if (rand() % 2 == 0) enems.emplace_back
 				(new Enemigo(ptsjuego, this, 0, (rand() % 500) + 320, Game::Enemigo_t::Normal));
@@ -65,7 +65,7 @@ void Survival::update(Uint32 delta) {
 		arma = Game::Bala_t::Pistola;
 		cadencia = 600;
 
-		if (enem < (7 * contRondas) && spawnTimer >= (spawn -50)) {
+		if (enem < (7 * ptsjuego->contRondas) && spawnTimer >= (spawn - 50)) {
 			if (newRonda) {
 				spawn -= 5000;
 				std::cout << "SUENO" << std::endl;
@@ -94,7 +94,7 @@ void Survival::update(Uint32 delta) {
 		arma = Game::Bala_t::Escopeta;
 		cadencia = 700;
 
-		if (enem < (7 * contRondas) && spawnTimer >= (spawn -100)) {
+		if (enem < (7 * ptsjuego->contRondas) && spawnTimer >= (spawn - 100)) {
 			if (newRonda) {
 				spawn -= 5000;
 				newRonda = false;
@@ -121,7 +121,7 @@ void Survival::update(Uint32 delta) {
 		arma = Game::Bala_t::Sniper;
 		cadencia = 1000;
 
-		if (enem < (7 * contRondas) && spawnTimer >= (spawn - 110)) {
+		if (enem < (7 * ptsjuego->contRondas) && spawnTimer >= (spawn - 110)) {
 			if (newRonda) {
 				spawn -= 5000;
 				newRonda = false;
@@ -154,7 +154,7 @@ void Survival::update(Uint32 delta) {
 		arma = Game::Bala_t::Metralleta;
 		cadencia = 300;
 
-		if (enem < (7 * contRondas) && spawnTimer >= (spawn - 200)) {
+		if (enem < (7 * ptsjuego->contRondas) && spawnTimer >= (spawn - 200)) {
 			if (newRonda) {
 				spawn -= 5000;
 				newRonda = false;
@@ -193,7 +193,7 @@ void Survival::update(Uint32 delta) {
 		arma = Game::Bala_t::Canon;
 		cadencia = 1700;
 
-		if (enem < (7 * contRondas) && spawnTimer >= (spawn-250)) {
+		if (enem < (7 * ptsjuego->contRondas) && spawnTimer >= (spawn - 250)) {
 			if (newRonda) {
 				spawn -= 5000;
 				newRonda = false;
@@ -232,7 +232,7 @@ void Survival::update(Uint32 delta) {
 		arma = Game::Bala_t::Minigun;
 		cadencia = 100;
 
-		if (enem < (7 * contRondas) && spawnTimer >= (spawn-260)) {
+		if (enem < (7 * ptsjuego->contRondas) && spawnTimer >= (spawn - 260)) {
 			if (newRonda) {
 				spawn -= 5000;
 				newRonda = false;
@@ -278,8 +278,8 @@ void Survival::update(Uint32 delta) {
 	}
 		
 
-		if (killed >= (7 * contRondas)) {
-			if (contRondas >= 7) spawn -= 10;
+	if (killed >= (7 * ptsjuego->contRondas)) {
+		if (ptsjuego->contRondas >= 7) spawn -= 10;
 
 			enem = 0;
 			spawnTimer = 0;
@@ -288,7 +288,7 @@ void Survival::update(Uint32 delta) {
 			newRonda = true;
 			created = false; // para que no haga un new arma cada frame
 
-			contRondas++;
+			ptsjuego->contRondas++;
 			spawn += 5000; //estaria bien aquí parar el tiempo de spawn por así decirlo durante un ratejo para que se note el tiempo entre rondas
 		}
 		textInit += delta;
@@ -299,21 +299,21 @@ void Survival::draw() {
 
 
 	if (ptsjuego->spanish) { 
-		font->loadFromText(ptsjuego->pRender, " Ronda: " + std::to_string(contRondas), fontColor);
+		font->loadFromText(ptsjuego->pRender, " Ronda: " + std::to_string(ptsjuego->contRondas), fontColor);
 	}
 	else { 
-		font->loadFromText(ptsjuego->pRender, " Round: " + std::to_string(contRondas), fontColor); 
+		font->loadFromText(ptsjuego->pRender, " Round: " + std::to_string(ptsjuego->contRondas), fontColor);
 	}
 
 	font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(40, 90, 150, 53));
 
 
 	if (newRonda && ptsjuego->spanish) {
-		font->loadFromText(ptsjuego->pRender, " Nueva    Ronda:  " + std::to_string(contRondas), fontColor);
+		font->loadFromText(ptsjuego->pRender, " Nueva    Ronda:  " + std::to_string(ptsjuego->contRondas), fontColor);
 		font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(220, 500, 400, 120));
 	}
 	if (newRonda && !ptsjuego->spanish) {
-		font->loadFromText(ptsjuego->pRender, " New    Round:    " + std::to_string(contRondas), fontColor);
+		font->loadFromText(ptsjuego->pRender, " New    Round:    " + std::to_string(ptsjuego->contRondas), fontColor);
 		font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(220, 500, 400, 120));
 	}
 
