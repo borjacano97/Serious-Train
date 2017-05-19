@@ -20,6 +20,8 @@ private:
 	Sound* sound;
 	Texturas* font;
 	SDL_Color fontColor;
+	string textoo;
+	bool shown = false;
 };
 
 

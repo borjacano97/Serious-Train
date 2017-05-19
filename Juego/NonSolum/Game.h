@@ -67,9 +67,8 @@ public:
 	Sound* sound;
 	Texturas* font;
 	SDL_Color fontColor;
-	string* arrTextSpa = new string[4];
-	string* arrTextEng = new string[4];
-	string textoo;
+	string* arrTextSpa = new string[15];
+	string* arrTextEng = new string[15];
 
 private:
 	

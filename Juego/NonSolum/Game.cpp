@@ -53,11 +53,33 @@ Game::Game()
 	arrTextSpa[1] = "Mata enemigos para conseguir monedas";
 	arrTextSpa[2] = "Todos los vagones tienen utilidad, colocalos estrategicamente";
 	arrTextSpa[3] = "Desafia a tus amigos en el modo supervivencia";
+	arrTextSpa[4] = "No olvides colocar los vagones antes de comenzar la aventura";
+	arrTextSpa[5] = "¿Quien conduce el tren?";
+	arrTextSpa[6] = "¿Como pudo mutar el zombie volador? esas alas no le pegan";
+	arrTextSpa[7] = "¿Sabias que en 1815 Stephenson construyo la primera locomotora de vapor?";
+	arrTextSpa[8] = "Prueba tus habilidades en el modo Extremo!";
+	arrTextSpa[9] = "Utiliza el vagon regenerador, para recuperar vida";
+	arrTextSpa[10] = "Cuidado con los enemigos, tienen sed de venganza";
+	arrTextSpa[11] = "Manten presionado el raton para disparar continuamente";
+	arrTextSpa[12] = "¿Sabias que la revolucion industrial trajo consigo la tecnologia?";
+	arrTextSpa[13] = "Sumergete en el modo historia y conoce el interior del Ubi Trinus!";
+	arrTextSpa[14] = "Siguenos en Twitter _nonSolum";
 
 	arrTextEng[0] = "Spend coins on weapons and wagons";
 	arrTextEng[1] = "Kill enemies for getting coins";
 	arrTextEng[2] = "Every wagon has its own utility, place them strategically";
 	arrTextEng[3] = "Challenge your friends in survival mode";
+	arrTextEng[4] = "Don't forget placing your wagons before starting the adventure";
+	arrTextEng[5] = "Who drives the train?";
+	arrTextEng[6] = "How could the flying zombie mutate?. That wings doesn't fit him!";
+	arrTextEng[7] = "Did you know that Stephenson built the first steam locomotive in 1815?";
+	arrTextEng[8] = "Try your habilities in the Extreme Mode!";
+	arrTextEng[9] = "Use the regenerator wagon for getting extra life";
+	arrTextEng[10] = "Take care with the enemies, they want revenge!";
+	arrTextEng[11] = "Hold down the mouse for shooting repeatedly";
+	arrTextEng[12] = "Did you know that Industrial Revolution brought with it technology?";
+	arrTextEng[13] = "In story mode you can discover the entrails of Ubi Trinus!";
+	arrTextEng[14] = "Follow us on Twitter _nonSolum";
 
 	// ejemplos pa textos:
 
@@ -86,7 +108,7 @@ Game::Game()
 	// a nuestro personaje le ha dado mucho el sol
 	// sabias que los zombies son azules porque no respiran??
 
-	textoo = chooseText(arrTextSpa);
+	//textoo = chooseText(arrTextSpa);
 
 
 
@@ -211,8 +233,8 @@ void Game::render() { //const
 			shown = true;
 
 		}*/
-			font->loadFromText(pRender, textoo, fontColor);
-			font->draw(pRender, nullptr, &font->myFont.setRect(40, 700, 20, 670));
+			/*font->loadFromText(pRender, textoo, fontColor);
+			font->draw(pRender, nullptr, &font->myFont.setRect(40, 700, 20, 670));*/
 	}
 	else if (topEstado()->getEst() == 'W') {
 		texts[23]->draw(pRender, nullptr, nullptr); // texts[24] for Borja :D
@@ -339,10 +361,12 @@ void Game::popState() {
 string Game::chooseText(string textArr[]) {
 
 		//std::cout << "ALEATORIO: " << arrIndex << std::endl;
-
+	if (!shown){
 		srand((unsigned)time(0));
-		arrIndex = rand() % 4;
+		arrIndex = rand() % 15;
 		texto = textArr[arrIndex];
+		shown = true;
+	}
 
 	return texto;
 }
