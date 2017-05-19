@@ -24,13 +24,23 @@ public:
 	bool loadFuente(std::string fuente, int tamaño);
 	bool loadFromText(SDL_Renderer* pRender, const std::string texture, SDL_Color color);
 	//SDL_Rect setRect(int h, int w, int x, int y);
-private:
+
+	void setColor(Uint8 red, Uint8 green, Uint8 blue){ SDL_SetTextureColorMod(ptext, red, green, blue); }
+	
+	//int SDL_SetTextureColorMod(SDL_Texture* ptext, Uint8 r, Uint8 g, Uint8 b) { r = r ; g = r; b = b; return 0; }
+	
 	SDL_Texture* ptext;
+private:
 	SDL_Surface* pSurface;
 	SDL_Rect rectFont;
 
 	int alto; // en principio las texturas han de ser cuadradas
 	int ancho;
+
+	Uint8 red;
+	Uint8 green;
+	Uint8 blue;
+	
 };
 
 #endif

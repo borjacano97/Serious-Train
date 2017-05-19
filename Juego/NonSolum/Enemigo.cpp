@@ -19,6 +19,7 @@ Enemigo::Enemigo(Game* juego, Play* pl, float x, float y, Game::Enemigo_t clase)
 	{
 	case Game::Enemigo_t::Normal:
 		Ttextura = Game::Texturas_t::TEnemigo2;
+		juegootp->getTextura(Ttextura)->setColor(240, 0, 0);
 		hp = 1000;
 		points = 5;
 		vel = 0.08;
@@ -135,7 +136,10 @@ void Enemigo::draw() {
 	rectA.x = i;
 	rectA.y = 0;
 
-
+	if (dañado){
+		std::cout << "Dañado";
+		
+	}
 	SDL_Renderer* render = juegootp->getRender();
 	if (rect.x < 640) {
 		juegootp->getTextura(Ttextura)->draw(render, &rectA, &rect);
@@ -143,4 +147,5 @@ void Enemigo::draw() {
 	else if (rect.x > 640) {
 		juegootp->getTextura(Ttextura)->drawInvertido(render, &rectA, &rect);
 	}
+
 }
