@@ -49,13 +49,13 @@ void Nivel4::update(Uint32 delta) {
 		if (spawnTimer >= 2380){
 
 			if (rand() % 2 == 0){
-				if (rand() % 2 == 0) enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 300, Game::Enemigo_t::Normal));
-				else  enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 300, Game::Enemigo_t::Normal));
+				if (rand() % 2 == 0) enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 500) + 230, Game::Enemigo_t::Normal));
+				else  enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 500) + 230, Game::Enemigo_t::Normal));
 				enem++;
 			}
 			else {
-				if (rand() % 2 == 0) enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) +140, Game::Enemigo_t::Rapido));
-				else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 140, Game::Enemigo_t::Rapido));
+				if (rand() % 2 == 0) enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) +100, Game::Enemigo_t::Rapido));
+				else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 100, Game::Enemigo_t::Rapido));
 				enem++; 
 			}
 			spawnTimer = 0;

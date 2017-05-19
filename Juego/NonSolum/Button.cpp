@@ -97,7 +97,7 @@ void Button::draw() {
 		break;
 	case Game::Extrem:
 		if (juegootp->spanish) textB = "Extremo";
-		else textB = "Extrem";
+		else textB = "Extreme";
 		break;
 	default:
 		break;

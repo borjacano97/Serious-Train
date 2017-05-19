@@ -49,19 +49,19 @@ void Nivel5::update(Uint32 delta) {
 		if (spawnTimer >= 2380) {
 
 			if (rand() % 2 == 0) {
-				if (rand() % 2 == 0) enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 280, Game::Enemigo_t::Normal));
-				else  enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 280, Game::Enemigo_t::Normal));
+				if (rand() % 2 == 0) enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 500) + 320, Game::Enemigo_t::Normal));
+				else  enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 500) + 320, Game::Enemigo_t::Normal));
 				enem++;
 			}
 			else {
 				if (rand() % 2 == 0) {
-				     if (rand() % 2 == 0)enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 140, Game::Enemigo_t::Rapido));
-				     else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 140, Game::Enemigo_t::Rapido));
+				     if (rand() % 2 == 0)enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 100, Game::Enemigo_t::Rapido));
+				     else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 100, Game::Enemigo_t::Rapido));
 				     enem++;
 				}
 				else {
-					if (rand() % 2 == 0)enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 180, Game::Enemigo_t::Enano));
-					else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 180, Game::Enemigo_t::Enano));
+					if (rand() % 2 == 0)enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 80, Game::Enemigo_t::Enano));
+					else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 80, Game::Enemigo_t::Enano));
 					enem++;
 				}
 			}
@@ -71,10 +71,10 @@ void Nivel5::update(Uint32 delta) {
 	else {
 		if (!created) {
 			enems.emplace_back
-			(new Enemigo(ptsjuego, this, 0, 550, Game::Enemigo_t::Tank));
+				(new Enemigo(ptsjuego, this, 0, (rand() % 500) + 300, Game::Enemigo_t::Tank));
 			created = true;
 			enems.emplace_back
-			(new Enemigo(ptsjuego, this, 1300, 650, Game::Enemigo_t::Tank));
+				(new Enemigo(ptsjuego, this, 1300, (rand() % 500) + 300, Game::Enemigo_t::Tank));
 			created = true;
 		}
 
