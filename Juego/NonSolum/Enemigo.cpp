@@ -75,6 +75,9 @@ Enemigo::Enemigo(Game* juego, Play* pl, float x, float y, Game::Enemigo_t clase)
 		break;
 	}
 	if (pos.x > 745) vel *=-1;//Programming God, please forgive us
+
+
+	k = 0;
 }
 
 void Enemigo::update(Uint32 delta) {
@@ -120,7 +123,17 @@ void Enemigo::update(Uint32 delta) {
 			if (i >= Enemigo::anchoc) i = ancho;
 			j = 0;
 		}
-
+		 // TEMPORIZADOR DEL CAMBIO DE COLOR DE LOS ENEMIGOS (FEEDBACK)
+		 //·······
+		 if (dañado){
+			 if (k < 50) k ++;
+			 else{
+				 dañado = false;
+				 k = 0;
+			 }
+		 }
+		
+		 //·······
 }
 void Enemigo::draw() {
 
@@ -135,6 +148,30 @@ void Enemigo::draw() {
 	rectA.x = i;
 	rectA.y = 0;
 
+	/*if (dañado)	{
+			 
+			 juegootp->getTextura(Ttextura)->setColor(240, 0, 0);
+
+				 if (k < 100){
+					 if (k == 99) Ttextura->set
+						 juegootp->getTextura(Ttextura)->setColor(255, 255, 255);
+
+					 k += delta;
+					 dañado = false;
+				 }
+			 
+		 }*/
+	//SOLO CAMBIA EL COLOR DE LOS ENEMIGOS QUE SON GOLPEADOS
+	//···············
+	if (dañado){
+
+		juegootp->getTextura(Ttextura)->setColor(240, 0, 0);
+	}
+	else
+	{
+		juegootp->getTextura(Ttextura)->setColor(255, 255, 255);
+	}
+	//···············
 
 	SDL_Renderer* render = juegootp->getRender();
 	if (rect.x < 640) {
@@ -143,4 +180,5 @@ void Enemigo::draw() {
 	else if (rect.x > 640) {
 		juegootp->getTextura(Ttextura)->drawInvertido(render, &rectA, &rect);
 	}
+
 }
