@@ -5,8 +5,9 @@
 FinNivel::FinNivel(Game* juego, bool v) :Estado(juego)
 {		
 	victory = v;
-	objetos.emplace_back(new Button(ptsjuego, 300, 600, Game::Boton_t::Jugar, jugar));
+	objetos.emplace_back(new Button(ptsjuego, 550, 500, Game::Boton_t::Jugar, jugar));
 	initLibraries();
+	TTF_Init();
 
 	if (juego->sound != nullptr)  juego->sound->stopMusic();
 
@@ -14,6 +15,10 @@ FinNivel::FinNivel(Game* juego, bool v) :Estado(juego)
 
 	font = new Texturas();
 	font->loadFuente("../fonts/fuenteNumbers.ttf", 200);
+
+	fontColor = { 255, 255, 255 };
+
+	//textoo = juego->chooseText(juego->arrTextSpa);
 }
 
 void FinNivel::jugar(Game * jg) {
@@ -50,6 +55,23 @@ void FinNivel::draw(){
 		if (ptsjuego->spanish) font->loadFromText(ptsjuego->pRender, "Fallaste", fontColor);
 		else font->loadFromText(ptsjuego->pRender, "Game over", fontColor);
 		font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(90, 180, 580, 50));
+	}
+	if (ptsjuego->spanish){
+		if (!shown){
+			textoo = ptsjuego->chooseText(ptsjuego->arrTextSpa);
+			shown = true;
+		}
+		font->loadFromText(ptsjuego->pRender, textoo, fontColor);
+		font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(40, 700, 20, 670));
+	}
+	else{
+		if (!shown){
+			textoo = ptsjuego->chooseText(ptsjuego->arrTextEng);
+			shown = true;
+		}
+		font->loadFromText(ptsjuego->pRender, textoo, fontColor);
+		font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(40, 700, 20, 670));
+
 	}
 	
 }

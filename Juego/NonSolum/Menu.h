@@ -27,10 +27,9 @@ private:
 
 	static void spa(Game * jg) {
 		jg->spanish = true;
-		jg->textoo = jg->chooseText(jg->arrTextSpa);
 	}
 	static void eng(Game * jg) { jg->spanish = false; 
-	jg->textoo = jg->chooseText(jg->arrTextEng);
+	//jg->textoo = jg->chooseText(jg->arrTextEng);
 	}
 
 };
