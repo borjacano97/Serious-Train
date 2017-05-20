@@ -87,6 +87,9 @@ Tienda::Tienda(Game* juego) :Estado(juego)
 	fontColor.r = 218;
 	fontColor.g = 165;
 	fontColor.b = 32;
+
+	actNivelText = new Texturas();
+	actNivelText->loadFuente("../fonts/fuenteNumbers.ttf", 200);
 	
 
 	s = new Sound;
@@ -123,6 +126,15 @@ void Tienda::draw() {
 
 	font->loadFromText(ptsjuego->pRender, std::to_string(ptsjuego->coins), fontColor);
 	font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(45, 45, 1100, 30));
+
+	if (ptsjuego->spanish) {
+		actNivelText->loadFromText(ptsjuego->pRender, "Prox Nvl: " + std::to_string(ptsjuego->getNivel()), fontColor);
+	}
+	else {
+		actNivelText->loadFromText(ptsjuego->pRender, "Next Lvl: " + std::to_string(ptsjuego->getNivel()), fontColor);
+	}
+	actNivelText->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(30, 150, 1085, 105));
+
 
 	sel->draw();
 	armaActual->draw();

@@ -37,7 +37,7 @@ void FinNivelSvl::draw(){
 		text2 = " round!!";
 	}
 	if (ptsjuego->spanish) font->loadFromText(ptsjuego->pRender, "Has aguantado " + to_string(ptsjuego->contRondas) + text1, fontColor);
-	else font->loadFromText(ptsjuego->pRender, "You have survive " + to_string(ptsjuego->contRondas) + text2, fontColor);
+	else font->loadFromText(ptsjuego->pRender, "You have survived " + to_string(ptsjuego->contRondas) + text2, fontColor);
 	font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(60, 380, 480, 50));
 	
 	if (ptsjuego->spanish){

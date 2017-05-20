@@ -57,6 +57,8 @@ private:
 
 	Texturas* font;
 	SDL_Color fontColor;
+
+	Texturas* actNivelText;
 };
 
 #endif
