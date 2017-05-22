@@ -235,7 +235,3 @@ void Tienda::update(Uint32 d){
 		suena = true;
 	}
 }
-bool Tienda::handle_events(SDL_Event * e) {
-
-	return Estado::handle_events(e);
-}

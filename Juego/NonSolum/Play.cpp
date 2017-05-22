@@ -30,6 +30,8 @@ Play::Play(Game * j) : Estado(j)
 	fontColor.b = 32;
 
 	fin = false;
+	disparando = false;
+
 	j->sound->playEffect("../sounds/trainEffect.mp3", 300, 15, 1);
 }
 
@@ -160,26 +162,29 @@ bool Play::handle_events(SDL_Event * evento){
 			if (evento->key.keysym.sym == SDLK_w || evento->key.keysym.sym == SDLK_s)
 				verticalDireccion = Personaje::VerticalMov_t::STOP_v;
 
-			else if (evento->key.keysym.sym == SDLK_a|| evento->key.keysym.sym == SDLK_d)
+			else if (evento->key.keysym.sym == SDLK_a || evento->key.keysym.sym == SDLK_d)
 				horizontalDireccion = Personaje::HorizontalMov_t::STOP_h;
 
 			if (evento->key.keysym.sym == SDLK_l || evento->key.keysym.sym == SDLK_SPACE)
-					dispara(false);
+				disparando = false;
 			break;
 		case SDL_KEYDOWN:
+
 			if (evento->key.keysym.sym == SDLK_w)
 				verticalDireccion = Personaje::VerticalMov_t::UP;
 			else if (evento->key.keysym.sym == SDLK_s)
 				verticalDireccion = Personaje::VerticalMov_t::DOWN;
+
 			if (evento->key.keysym.sym == SDLK_a)
 				horizontalDireccion = Personaje::HorizontalMov_t::LEFT;
 			else if (evento->key.keysym.sym == SDLK_d)
 				horizontalDireccion = Personaje::HorizontalMov_t::RIGHT;
+
 			if (evento->key.keysym.sym == SDLK_ESCAPE)
 				game_ptr->pushNewState(Estado_t::Pausa_t);
-				break;
+
 			if (evento->key.keysym.sym == SDLK_l || evento->key.keysym.sym == SDLK_SPACE)
-				dispara(true);
+				disparando = true;
 			
 			break;
 		}

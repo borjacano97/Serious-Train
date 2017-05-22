@@ -36,7 +36,6 @@ Nivel1::Nivel1(Game * j, std::vector <Game::Vagon_t> v, Game::Bala_t a) : Play(j
 	esc = new Escenario(ptsjuego, Game::Texturas_t::TFondo, 0, -4280);
 }
 
-
 void Nivel1::update(Uint32 delta) {
 
 	shootTimer += delta;

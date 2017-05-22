@@ -31,6 +31,7 @@ public:
 	vector <Enemigo*> enems;
 	vector <Vagon*> tren; 
 	int killed;
+	bool disparando;
 
 	Trigger* tg;
 	barraHP* TrainHp;
@@ -44,7 +45,6 @@ protected:
 	//Sound* sonido;
 	ArmaTienda* armaActual;
 
-	void dispara(bool disparando) {};
 	bool fin;
 	bool initObjects(); //crear y destruir los objetos del juego
 	void freeObjects();

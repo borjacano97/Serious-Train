@@ -16,7 +16,6 @@ public:
 private:
 	int  enem, emax,  shootTimer, spawnTimer, cadencia;
 	Game::Bala_t arma;
-	bool disparando = false;
 };
 
 #endif

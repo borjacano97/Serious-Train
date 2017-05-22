@@ -22,7 +22,6 @@ public:
 	void comprar(ObjetoTienda*o) { o->desbloquear(); ptsjuego->buy(o->getPrecio()); }
 	void select(Uint32 n);
 	void update(Uint32 d);
-	bool handle_events(SDL_Event * e);
 	void colocarVagon(Game::Vagon_t v);
 	void elegirArma(Game::Bala_t a);
 	void recolocar(Game * jg);

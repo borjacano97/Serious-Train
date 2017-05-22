@@ -54,12 +54,14 @@ void Personaje::move(HorizontalMov_t dirH, VerticalMov_t dirV) {
 	{
 	case Personaje::LEFT:
 		dir.x = -1;
+		mira = -1;
 		break;
 	case Personaje::STOP_h:
 		dir.x = 0;
 		break;
 	case Personaje::RIGHT:
 		dir.x = 1;
+		mira = 1;
 		break;
 	default:
 		break;
