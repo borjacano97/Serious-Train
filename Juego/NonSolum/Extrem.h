@@ -18,7 +18,7 @@ private:
 	int lastEnemy;
 	Game::Bala_t arma;
 	Game* aux;
-
+	bool vagonCambiado = false;
 
 	Texturas* textTut;
 	SDL_Color color;

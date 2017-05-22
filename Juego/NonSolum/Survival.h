@@ -21,7 +21,7 @@ private:
 	bool newRonda = false;
 	bool disparando = false;
 	bool created = true;
-
+	bool vagonCambiado = false;
 	Game::Bala_t arma;
 	Game* aux;
 

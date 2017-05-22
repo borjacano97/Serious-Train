@@ -4,9 +4,9 @@
 Extrem::Extrem(Game * j) : Play(j)
 {
 	for (unsigned int i = 0; i < 4; i++) {
-		tren.emplace_back(new Vagon(ptsjuego, this, 580, 100 + 150 * i, Game::Vagon_t::Vacio));
+		if (i == 0)	tren.emplace_back(new Vagon(ptsjuego, this, 580, 100 + 150 * i, Game::Vagon_t::Recuperador));
+		else tren.emplace_back(new Vagon(ptsjuego, this, 580, 100 + 150 * i, Game::Vagon_t::Vacio));
 	}
-	
 
 	arma = Game::Bala_t::Minigun;
 	cadencia = 100;
@@ -38,6 +38,13 @@ void Extrem::update(Uint32 delta) {
 	switch (ptsjuego->contRondas % 6) // 6 tipos de enemigos
 	{
 	case (1) :
+
+		if (!vagonCambiado && (ptsjuego->contRondas == 7 || ptsjuego->contRondas == 13 || ptsjuego->contRondas == 19)) {
+			
+			tren[(ptsjuego->contRondas / 6) +1]->cambiar();
+			vagonCambiado = true;
+		}
+
 		spawn = 750 - (3 * ptsjuego->contRondas); // ha de variar entre rondas
 		lastEnemy = 30 + (2 * ptsjuego->contRondas);
 		if (enem < lastEnemy && spawnTimer >= spawn) {
@@ -59,6 +66,7 @@ void Extrem::update(Uint32 delta) {
 		
 		break;
 	case (2) :
+		
 		spawn = 650 - (3 * ptsjuego->contRondas);
 		lastEnemy = 25 + (2 * ptsjuego->contRondas);
 		if (enem < lastEnemy && spawnTimer >= spawn) {
@@ -160,6 +168,7 @@ void Extrem::update(Uint32 delta) {
 		killed = 0;
 
 		newRonda = true;
+		vagonCambiado = false;
 
 		ptsjuego->contRondas++;
 		spawn += 9000; 

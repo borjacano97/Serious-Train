@@ -7,7 +7,8 @@
 Survival::Survival(Game * j) : Play(j)
 {
 	for (unsigned int i = 0; i < 4; i++) {
-		tren.emplace_back(new Vagon(ptsjuego, this, 580, 100 + 150 * i, Game::Vagon_t::Vacio));
+		if (i==0)	tren.emplace_back(new Vagon(ptsjuego, this, 580, 100 + 150 * i, Game::Vagon_t::Recuperador));
+		else tren.emplace_back(new Vagon(ptsjuego, this, 580, 100 + 150 * i, Game::Vagon_t::Vacio));
 	}
 	armaActual = new ArmaTienda(ptsjuego, NULL, 300 , 40, 0, Game::Bala_t::Piedra, true);
 
@@ -28,7 +29,6 @@ Survival::Survival(Game * j) : Play(j)
 	TTF_Init();
 	textTut = new Texturas();
 	textTut->loadFuente("../fonts/fuenteNumbers.ttf", 200);
-
 }
 void Survival::update(Uint32 delta) {
 	
@@ -68,7 +68,6 @@ void Survival::update(Uint32 delta) {
 		if (enem < (7 * ptsjuego->contRondas) && spawnTimer >= (spawn - 50)) {
 			if (newRonda) {
 				spawn -= 5000;
-				std::cout << "SUENO" << std::endl;
 				newRonda = false;
 			}
 			else {
@@ -225,6 +224,12 @@ void Survival::update(Uint32 delta) {
 		}
 		break;
 	default:
+
+		if (!vagonCambiado && (ptsjuego->contRondas == 8 || ptsjuego->contRondas == 9 || ptsjuego->contRondas == 10)) {
+
+			tren[ptsjuego->contRondas - 6]->cambiar();
+			vagonCambiado = true;
+		}
 		if (!created) {
 			armaActual = new ArmaTienda(ptsjuego, NULL, 300, 40, 0, Game::Bala_t::Minigun, true);
 			created = true;
@@ -287,6 +292,7 @@ void Survival::update(Uint32 delta) {
 
 			newRonda = true;
 			created = false; // para que no haga un new arma cada frame
+			vagonCambiado = false;
 
 			ptsjuego->contRondas++;
 			spawn += 5000; //estaria bien aquí parar el tiempo de spawn por así decirlo durante un ratejo para que se note el tiempo entre rondas

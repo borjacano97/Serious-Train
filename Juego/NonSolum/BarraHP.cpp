@@ -14,8 +14,8 @@ barraHP::barraHP(Game* juego, Game::Texturas_t text, float x, float y)
 
 	contDmg = 0;
 	contGive = 0;
-
-	maxHP = 360;
+	if(juegootp->bigHP)	maxHP = 360;
+	else maxHP = 270;
 }
 
 

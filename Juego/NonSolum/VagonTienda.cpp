@@ -64,7 +64,7 @@ bool VagonTienda::onClick() {
 	if (dentro(mpbx, mpby)) {
 		if (!bloqueado && !usado) {
 			usado = true;
-			if (tip == Game::Vagon_t::Escudo || tip == Game::Vagon_t::Recuperador)juegootp->bigHP = true;
+			if (tip == Game::Vagon_t::Escudo) juegootp->bigHP = true;
 			t->colocarVagon(tip);
 
 		}
