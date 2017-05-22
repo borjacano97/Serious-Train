@@ -20,9 +20,7 @@ Menu::Menu(Game * juego) :Estado(juego)
 
 	juego->sound->playMusic("../sounds/musicaMenuP.mp3", -1, 17);
 
-	/*TTF_Init();
-	font = new Texturas();
-	font->loadFuente("../fonts/fuenteNumbers.ttf", 200);*/
+	fondo = new Hud(ptsjuego, NULL, 0, 0, Game::Hud_t::Fondo, Game::Fondo_t::MenuP);
 
 }
 
@@ -57,3 +55,7 @@ void Menu::salir(Game * jg){
 	jg->setSalir();
 }
 
+void Menu::draw(){
+	fondo->draw();
+	Estado::draw();
+}

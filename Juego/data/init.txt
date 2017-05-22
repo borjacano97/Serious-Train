@@ -55,3 +55,4 @@
 ../bmps/vagonEscudoR.png
 ../bmps/vagonFuegoR.png
 ../bmps/vagonAutoR.png
+../bmps/vagonSuc.png

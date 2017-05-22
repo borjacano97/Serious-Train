@@ -3,6 +3,7 @@
 
 #include "Estado.h"
 #include "Sound.h"
+#include "Hud.h"
 
 class FinNivelSvl :
 	public Estado
@@ -10,12 +11,12 @@ class FinNivelSvl :
 public:
 	FinNivelSvl(Game* juego);
 	~FinNivelSvl(){ sound->stopMusic(); }
-	char getEst(){ return 'L'; }
 private:
 	
 	static void volver(Game * jg);
 	void draw();
 
+	Hud* fondo;
 	Sound* sound;
 	Texturas* font;
 	SDL_Color fontColor;

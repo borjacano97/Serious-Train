@@ -141,7 +141,7 @@ SDL_Renderer* Game::getRender()const {
 }
 
 void Game::initMedia() {
-	for (unsigned int i = 0; i < 57 /*magic namber dude*/; i++) {
+	for (unsigned int i = 0; i < 58 /*magic namber dude*/; i++) {
 		texts.emplace_back(new Texturas);
 		texts[i]->load(getRender(), ntexturas[i]);
 	}
@@ -222,42 +222,7 @@ void Game::closeSDL() {
 
 void Game::render() { //const
 					  //limpiamos el render
-	SDL_RenderClear(pRender);
-
-	//fondo
-	/*if (topEstado()->getEst() == 'P' || topEstado()->getEst() == 'S')
-		texts[0]->draw(pRender, nullptr, nullptr);*/
-	if (topEstado()->getEst() == 'M') {
-		texts[23]->draw(pRender, nullptr, nullptr);
-		/*if (!shown) {
-			shown = true;
-
-		}*/
-			/*font->loadFromText(pRender, textoo, fontColor);
-			font->draw(pRender, nullptr, &font->myFont.setRect(40, 700, 20, 670));*/
-	}
-	else if (topEstado()->getEst() == 'W') {
-		texts[23]->draw(pRender, nullptr, nullptr); // texts[24] for Borja :D
-		shown = false;
-	}
-	else if (topEstado()->getEst() == 'L') {
-		texts[10]->draw(pRender, nullptr, nullptr);
-		shown = false;
-	}
-	else if (topEstado()->getEst() == 'T') {
-		texts[1]->draw(pRender, nullptr, nullptr);
-		shown = false;
-	}
-	else if (topEstado()->getEst() == 'C') {
-		if (spanish) { 
-			texts[31]->draw(pRender, nullptr, nullptr); 
-		}
-		else { 
-			texts[30]->draw(pRender, nullptr, nullptr);
-		}
-		shown = false;
-	}
-		
+	SDL_RenderClear(pRender);	
 	topEstado()->draw();
 	SDL_RenderPresent(pRender);
 }

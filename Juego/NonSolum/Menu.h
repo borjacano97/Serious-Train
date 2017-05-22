@@ -4,6 +4,7 @@
 #include "Estado.h"
 #include "Sound.h"
 #include "Controles.h"
+#include "Hud.h"
 
 class Menu :
 	public Estado
@@ -11,10 +12,11 @@ class Menu :
 public:
 	Menu(Game* juego);
 	virtual ~Menu(){}
-	char getEst(){ return 'M'; }
+	void draw();
 
 private:
 
+	Hud*fondo;
 	Texturas* font;
 	SDL_Color fontColor;
 

@@ -15,6 +15,7 @@ FinNivelSvl::FinNivelSvl(Game* juego) :Estado(juego)
 	font->loadFuente("../fonts/fuenteNumbers.ttf", 200);
 
 	fontColor = { 255, 255, 255 };
+	fondo = new Hud(ptsjuego, NULL, 0, 0, Game::Hud_t::Fondo, Game::Fondo_t::Lose);
 }
 
 void FinNivelSvl::volver(Game * jg) {
@@ -25,6 +26,7 @@ void FinNivelSvl::volver(Game * jg) {
 	jg->popState(); // vuelve al menu
 }
 void FinNivelSvl::draw(){
+	fondo->draw();
 	for (auto i : objetos) {
 		if (i != nullptr) {
 			i->draw();

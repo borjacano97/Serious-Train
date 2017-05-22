@@ -36,7 +36,7 @@ Play::Play(Game * j) : Estado(j)
 
 	fin = false;
 
-	j->sound->playEffect("../sounds/trainEffect.mp3", -1, 15, 1);
+	//j->sound->playEffect("../sounds/trainEffect.mp3", -1, 15, 1);
 }
 
 
@@ -47,10 +47,10 @@ Play::~Play()
 }
 
 bool Play::initObjects() { // creaci�n de los objetos dando un puntero, una textura y una posici�n (constructora de objs)
-	h = new Hud(ptsjuego, this,  -10, -20, Game::Hud_t::Hud1);
+	h = new Hud(ptsjuego, this, -10, -20, Game::Hud_t::Hud1, Game::Fondo_t::Control);
 	if (!ptsjuego->survival) {
-		tray = new Hud(ptsjuego, this, 1200, 0, Game::Hud_t::Trayecto);
-		locom = new Hud(ptsjuego, this, 1223, 280, Game::Hud_t::Tren);
+		tray = new Hud(ptsjuego, this, 1200, 0, Game::Hud_t::Trayecto, Game::Fondo_t::Control);
+		locom = new Hud(ptsjuego, this, 1223, 280, Game::Hud_t::Tren, Game::Fondo_t::Control);
 	}	
 	tg = new Trigger(ptsjuego, NULL, 530, -20);
 	player = new Personaje(ptsjuego, Game::TPersonaje, 650, 500);

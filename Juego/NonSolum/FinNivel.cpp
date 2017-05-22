@@ -16,6 +16,8 @@ FinNivel::FinNivel(Game* juego, bool v) :Estado(juego)
 	font->loadFuente("../fonts/fuenteNumbers.ttf", 200);
 
 	fontColor = { 255, 255, 255 };
+	if (v)	fondo = new Hud(ptsjuego, NULL, 0, 0, Game::Hud_t::Fondo, Game::Fondo_t::Win);
+	else fondo = new Hud(ptsjuego, NULL, 0, 0, Game::Hud_t::Fondo, Game::Fondo_t::Lose);
 
 	//textoo = juego->chooseText(juego->arrTextSpa);
 }
@@ -35,6 +37,7 @@ bool FinNivel::initLibraries() {
 	return true;
 }
 void FinNivel::draw(){
+	fondo->draw();
 	for (auto i : objetos) {
 		if (i != nullptr) {
 			i->draw();

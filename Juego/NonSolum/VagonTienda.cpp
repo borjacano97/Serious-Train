@@ -35,7 +35,7 @@ VagonTienda::VagonTienda(Game* juego, Tienda* ti, float x, float y, int p, Game:
 	tipoTextColor.g = 165;
 	tipoTextColor.b = 32;
 
-	tic = new Hud(juegootp, NULL, pos.x, pos.y, Game::Hud_t::Tick);
+	tic = new Hud(juegootp, NULL, pos.x, pos.y, Game::Hud_t::Tick, Game::Fondo_t::Control);
 
 	estatico = est;
 	switch (tipo)
@@ -50,7 +50,7 @@ VagonTienda::VagonTienda(Game* juego, Tienda* ti, float x, float y, int p, Game:
 		break;
 	case Game::Recuperador: desb = Game::Texturas_t::TVagonReg;
 		break;
-	case Game::Succionador: desb = Game::Texturas_t::TVagonAuto;
+	case Game::Succionador: desb = Game::Texturas_t::TVagonSuc;
 		break;
 	default:
 		break;

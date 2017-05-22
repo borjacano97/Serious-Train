@@ -3,13 +3,13 @@
 
 #include "Estado.h"
 #include "Sound.h"
+#include "Hud.h"
 class FinNivel :
 	public Estado
 {
 public:
 	FinNivel(Game* juego, bool v);
 	virtual ~FinNivel() { sound->stopMusic(); }
-	char getEst(){ if (victory) return 'W'; else return 'L'; }
 private:
 	
 	static void jugar(Game * jg);
@@ -17,6 +17,7 @@ private:
 	bool initLibraries();
 	bool victory;
 
+	Hud* fondo;
 	Sound* sound;
 	Texturas* font;
 	SDL_Color fontColor;

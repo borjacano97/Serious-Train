@@ -33,7 +33,7 @@ Tienda::Tienda(Game* juego) :Estado(juego)
 	vags.emplace_back(new VagonTienda(ptsjuego, this, 600, 200, 450, Game::Vagon_t::Escudo, false));
 	botones.emplace_back(new BotonTienda(ptsjuego, this, vags[2], 600, 340, Game::Boton_t::Comprar));
 	
-	vags.emplace_back(new VagonTienda(ptsjuego, this, 200, 500, 500, Game::Vagon_t::Succionador, false));
+	vags.emplace_back(new VagonTienda(ptsjuego, this, 200, 500, 0, Game::Vagon_t::Succionador, false));
 	botones.emplace_back(new BotonTienda(ptsjuego, this, vags[3], 200, 640, Game::Boton_t::Comprar));
 
 	vags.emplace_back(new VagonTienda(ptsjuego, this, 400, 500, 550, Game::Vagon_t::Recuperador, false));
@@ -93,12 +93,12 @@ Tienda::Tienda(Game* juego) :Estado(juego)
 	
 
 	s = new Sound;
-	//s1 = new Sound;
+	fondo = new Hud(ptsjuego, NULL, 0, 0, Game::Hud_t::Fondo, Game::Fondo_t::Tienda);
 }
 
 
 void Tienda::draw() {
-
+	fondo->draw();
 	for (auto i : vags) {
 		i->draw();
 	}

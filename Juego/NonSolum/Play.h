@@ -24,7 +24,7 @@ public:
 	void draw();
 	void update(Uint32 delta);
 	void move(char c);
-	char getEst() { return 'P'; }
+	char getEst(){ return 'P'; }
 	int getKilled() { return killed; }
 	void finish() { fin = true; }
 

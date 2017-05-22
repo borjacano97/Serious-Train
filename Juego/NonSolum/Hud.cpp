@@ -1,12 +1,13 @@
 #include "Hud.h"
 #include "Play.h"
 
-Hud::Hud(Game* juego, Play* pl, float x, float y, Game::Hud_t t)
+Hud::Hud(Game* juego, Play* pl, float x, float y, Game::Hud_t t, Game::Fondo_t f)
 {
 	juegootp = juego;
 	pos.set(x, y);
 
 	tipo = t;
+	fondo = f;
 	p = pl;
 	switch (tipo)
 	{
@@ -39,6 +40,25 @@ Hud::Hud(Game* juego, Play* pl, float x, float y, Game::Hud_t t)
 		alto = 50;
 		ancho = 30;
 		Ttextura = Game::Texturas_t::TLocomotora;
+		break;
+	case Game::Fondo:
+		alto = 720;
+		ancho = 1280;
+		switch (fondo)
+		{
+		case Game::Control:Ttextura = Game::Texturas_t::TControlEsp;
+			break;
+		case Game::MenuP:Ttextura = Game::Texturas_t::TMenuP;
+			break;
+		case Game::Win:Ttextura = Game::Texturas_t::TWin;
+			break;
+		case Game::Lose:Ttextura = Game::Texturas_t::Tlose;
+			break;
+		case Game::Tienda:Ttextura = Game::Texturas_t::TFondoT;
+			break;
+		default:
+			break;
+		}
 		break;
 	default:
 		break;

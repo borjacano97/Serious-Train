@@ -9,6 +9,7 @@
 #include "Trigger.h"
 #include "Menu.h"
 #include "Sound.h"
+#include "Hud.h"
 
 class Tienda :
 	public Estado
@@ -16,7 +17,6 @@ class Tienda :
 public:
 	Tienda(Game* juego);
 	virtual ~Tienda(){}
-	char getEst(){  return 'T';}
 	void draw();
 	void onClick();
 
@@ -29,7 +29,7 @@ public:
 	void jugar(Game * jg);
 	void salir(Game * jg) { jg->pushState(new Menu(jg)); s->stopMusic(); jg->sound->playMusic("../sounds/musicaMenuP.mp3", -1, 12); }
 private:
-	
+	Hud*fondo;
 
 	Selector* sel;
 

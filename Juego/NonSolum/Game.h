@@ -23,15 +23,15 @@ public:
 		TEscopeta, TMetralleta, TSniper, TMenuP, TVagonFuego, TVagonLaser, TMinigun, TBotonV, TBotonR, TBotonA, 
 		TControlEng, TControlEsp, TEnemigoD, TEnemigoG, TCanon, TTick, THud, TTrayecto, THud2, TVagonReg, TDesierto,
 		TPradera, TVagonEscudo, TOscuridad, TTocho, TInvisible, TEscopetaN, TFrancoN, TMetralletaN, TMinigunN, TRevolverN,
-	    TSlender, TExplosion, TLaserRoto, TEscudoRoto, TFuegoRoto, TAutoRoto};
+	    TSlender, TExplosion, TLaserRoto, TEscudoRoto, TFuegoRoto, TAutoRoto, TVagonSuc};
 	enum Enemigo_t { Normal, Rapido, Tank, Enano, Invisible, Slender, Tocho/*...*/ };
 	enum Vagon_t { Locom, Vacio, Automatico, Laser, Lanzallamas, Escudo, Recuperador, Succionador/*...*/ };
 	enum Bala_t { BalaEnem, Piedra, Rayo, Fuego, Escopeta, E1, E2, Pistola, Sniper, Metralleta, Minigun, Canon /*...*/ };
 	enum Boton_t { Comprar, Jugar, Recolocar, Salir, Supervivencia, Historia, Spanish, English, Volver, Controles, Extrem /*...*/ };
 	enum EnemyDmg_t { Simple, Explosion, Bala };
-	enum Hud_t {Tick, Hud1, Trayecto, Tren};
-
-	/*std::string* textMenu[0] = "Buenas0;"*/
+	enum Hud_t { Tick, Hud1, Trayecto, Tren, Fondo};
+	enum Fondo_t { Control, MenuP, Win, Lose, Tienda};
+	
 	std::string chooseText(string textArr[]);
 
 
@@ -76,7 +76,7 @@ private:
 	
 	SDL_Event e;
 
-	std::string ntexturas[57]; 
+	std::string ntexturas[58]; 
 	
 	std::stack<RaizEstado*> estados;
 
