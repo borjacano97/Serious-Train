@@ -73,3 +73,4 @@ void Nivel1::update(Uint32 delta) {
 	}
 	Play::update(delta);
 }
+ 

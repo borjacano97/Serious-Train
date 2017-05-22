@@ -59,3 +59,4 @@
 ../bmps/vagonVacioR.png
 ../bmps/vagonSucR.png
 ../bmps/vagonRegR.png
+../bmps/canonN.png

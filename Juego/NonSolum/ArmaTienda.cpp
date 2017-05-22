@@ -68,7 +68,7 @@ ArmaTienda::ArmaTienda(Game* juego, Tienda* ti, float x, float y, int p, Game::B
 		break;
 	case Game::Minigun: if (estatico) pos.y += 20; Ttextura = Game::Texturas_t::TMinigunN;  desb = Game::Texturas_t::TMinigun; tipoArma = "Minigun";
 		break;
-	case Game::Canon: alto = 60; pos.y += 10; Ttextura = Game::Texturas_t::TCanon;  desb = Game::Texturas_t::TCanon;
+	case Game::Canon: alto = 60; pos.y += 10; Ttextura = Game::Texturas_t::TCanonN;  desb = Game::Texturas_t::TCanon;
 		break;
 	default:
 		break;
