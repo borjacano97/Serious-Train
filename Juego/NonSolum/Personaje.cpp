@@ -47,9 +47,6 @@ void Personaje::update(Uint32 delta) {
 }
 
 void Personaje::move(HorizontalMov_t dirH, VerticalMov_t dirV) {
-	/*dir.x = dirH;
-	dir.y = dirV;
-	*/
 	switch (dirH)
 	{
 	case Personaje::LEFT:
