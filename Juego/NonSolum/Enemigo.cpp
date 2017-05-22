@@ -58,7 +58,7 @@ Enemigo::Enemigo(Game* juego, Play* pl, float x, float y, Game::Enemigo_t clase)
 		anchoc *= 3; // esto es lo que le hace invisible xd
 		break;
 	case Game::Enemigo_t::Slender:
-		Ttextura = Game::Texturas_t::TEnemigo2;
+		Ttextura = Game::Texturas_t::TSlender;
 		hp = 5000;
 		points = 200;
 		vel = 0.01;
@@ -112,9 +112,20 @@ void Enemigo::update(Uint32 delta) {
 		}
 		else if (_clase == Game::Enemigo_t::Tank && p->tg->collision(this)) {
 			points = 0;
-			p->TrainHp->damage(Game::EnemyDmg_t::Explosion);
-			destruido = true;
-			//falta animación
+			if (!explotao){
+				j = 0;
+				Ttextura = Game::Texturas_t::TExplosion;
+				explotao = true;
+			}
+			else {
+				if (contExplo >= 100){
+					p->TrainHp->damage(Game::EnemyDmg_t::Explosion);
+					destruido = true;
+					contExplo = 0;
+				}
+				else contExplo++;
+			}
+			
 		}
 		 if (j >= 100){
 			i += ancho ;

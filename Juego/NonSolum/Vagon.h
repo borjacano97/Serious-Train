@@ -12,6 +12,7 @@ public:
 	Vagon(Game* juego, Play*pl, float x, float y, Game::Vagon_t t);
 	virtual ~Vagon(){}
 	void update(Uint32 delta);
+	void romper();
 private: 
 	int cont = 0;
 	int contSucc = 0;

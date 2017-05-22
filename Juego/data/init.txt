@@ -49,3 +49,9 @@
 ../bmps/metralletaN.png
 ../bmps/minigunN.png
 ../bmps/revolverN.png
+../bmps/slender.png
+../bmps/explosion.png
+../bmps/vagonLaserR.png
+../bmps/vagonEscudoR.png
+../bmps/vagonFuegoR.png
+../bmps/vagonAutoR.png

@@ -112,3 +112,24 @@ void Vagon::update(Uint32 delta) {
 	 if (vib >= 2001) vib = 0;
 	
 }
+void Vagon::romper(){
+	switch (tipo)
+	{	
+	case Game::Vacio:
+		break;
+	case Game::Automatico:Ttextura = Game::Texturas_t::TAutoRoto;
+		break;
+	case Game::Laser: Ttextura = Game::Texturas_t::TLaserRoto;
+		break;
+	case Game::Lanzallamas: Ttextura = Game::Texturas_t::TFuegoRoto;
+		break;
+	case Game::Escudo:Ttextura = Game::Texturas_t::TEscudoRoto;
+		break;
+	case Game::Recuperador:
+		break;
+	case Game::Succionador:
+		break;
+	default:
+		break;
+	}
+}

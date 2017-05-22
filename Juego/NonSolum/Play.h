@@ -56,6 +56,7 @@ protected:
 	Hud* tray;
 	Hud* locom;
 
+	bool roto = false;
 
 	Texturas* textTut;
 	SDL_Color color;

@@ -8,7 +8,7 @@ Trigger::Trigger(Game* juego, Tienda* ti, float x, float y)
 
 	if (ti == NULL) {
 		alto = 2000;
-		ancho = 170;
+		ancho = 165;
 	}
 	else {
 		t = ti;

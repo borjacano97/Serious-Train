@@ -11,6 +11,7 @@ public:
 	void update(Uint32 delta);
 	void damage(Game::EnemyDmg_t d);
 	void giveHP(int extra); 
+	bool romper(){ return (ancho < (maxHP / 4)); }
 private:
 	int contGive, contDmg, maxHP;
 	Uint32 d;

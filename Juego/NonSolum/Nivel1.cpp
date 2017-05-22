@@ -59,9 +59,9 @@ void Nivel1::update(Uint32 delta) {
 		if (spawnTimer >= 2500 && firstZombieTime){			
 			if (rand()%2 == 0) {				
 				if (rand() % 2 == 0) enems.emplace_back
-					(new Enemigo(ptsjuego, this, 0, (rand() % 500) + 320, Game::Enemigo_t::Normal));
+					(new Enemigo(ptsjuego, this, 0, (rand() % 500) + 320, Game::Enemigo_t::Tank));
 				else enems.emplace_back
-					(new Enemigo(ptsjuego, this, 1300, (rand() % 500) + 320, Game::Enemigo_t::Normal));
+					(new Enemigo(ptsjuego, this, 1300, (rand() % 500) + 320, Game::Enemigo_t::Tank));
 				enem++;
 			}
 			spawnTimer = 0;

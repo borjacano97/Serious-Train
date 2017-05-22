@@ -32,7 +32,8 @@ private:
 	int shootTime = 3000;
 	int disappearTime = 0;
 	bool dañado = false;
-
+	bool explotao = false;
+	int contExplo = 0;
 	Game::Enemigo_t _clase;
 	Play*p;
 };

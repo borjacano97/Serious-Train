@@ -374,6 +374,12 @@ void Play::update(Uint32 delta) {
 			}
 		}
 	}
+	if (!roto && TrainHp->romper()){
+		roto = true;
+		for (auto i : tren) {
+			i->romper();
+		}
+	}
 	Estado::update(delta);
 }
 void Play::move(char c) {
