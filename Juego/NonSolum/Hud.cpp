@@ -52,7 +52,7 @@ Hud::Hud(Game* juego, Play* pl, float x, float y, Game::Hud_t t, Game::Fondo_t f
 			break;
 		case Game::Win:Ttextura = Game::Texturas_t::TWin;
 			break;
-		case Game::Lose:Ttextura = Game::Texturas_t::Tlose;
+		case Game::Lose:Ttextura = Game::Texturas_t::TLose;
 			break;
 		case Game::Tienda:Ttextura = Game::Texturas_t::TFondoT;
 			break;

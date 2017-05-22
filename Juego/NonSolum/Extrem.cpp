@@ -41,12 +41,19 @@ void Extrem::update(Uint32 delta) {
 		spawn = 750 - (3 * ptsjuego->contRondas); // ha de variar entre rondas
 		lastEnemy = 30 + (2 * ptsjuego->contRondas);
 		if (enem < lastEnemy && spawnTimer >= spawn) {
+			if (newRonda){
+				spawn -= 9000;
+				newRonda = false;
+			}
+			else{
 				if (rand() % 2 == 0) enems.emplace_back
 					(new Enemigo(ptsjuego, this, 0, (rand() % 500) + 320, Game::Enemigo_t::Normal));
 				else enems.emplace_back
 					(new Enemigo(ptsjuego, this, 1300, (rand() % 500) + 320, Game::Enemigo_t::Normal));
 				enem++;
 				spawnTimer = 0;
+			}
+				
 			}
 			
 		

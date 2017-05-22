@@ -115,7 +115,7 @@ void Vagon::update(Uint32 delta) {
 void Vagon::romper(){
 	switch (tipo)
 	{	
-	case Game::Vacio:
+	case Game::Vacio:Ttextura = Game::Texturas_t::TVacioR;
 		break;
 	case Game::Automatico:Ttextura = Game::Texturas_t::TAutoRoto;
 		break;
@@ -125,9 +125,9 @@ void Vagon::romper(){
 		break;
 	case Game::Escudo:Ttextura = Game::Texturas_t::TEscudoRoto;
 		break;
-	case Game::Recuperador:
+	case Game::Recuperador:Ttextura = Game::Texturas_t::TRegR;
 		break;
-	case Game::Succionador:
+	case Game::Succionador:Ttextura = Game::Texturas_t::TSucR;
 		break;
 	default:
 		break;

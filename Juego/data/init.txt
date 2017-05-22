@@ -56,3 +56,6 @@
 ../bmps/vagonFuegoR.png
 ../bmps/vagonAutoR.png
 ../bmps/vagonSuc.png
+../bmps/vagonVacioR.png
+../bmps/vagonSucR.png
+../bmps/vagonRegR.png
