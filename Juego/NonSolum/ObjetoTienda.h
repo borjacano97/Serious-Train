@@ -15,9 +15,9 @@ public:
 	bool getBloq() { return bloqueado; }
 	int getPrecio() { return precio; }
 	void rehacer() { usado = false; }
+	bool bloqueado = true;
 
 protected:
-	bool bloqueado = true;
 	bool usado = false;
 	bool estatico;
 

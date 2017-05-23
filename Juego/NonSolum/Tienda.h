@@ -54,10 +54,14 @@ private:
 	Sound*s4;
 
 	bool suena = false;
+	bool primerArma = false;
+	bool primerVagon = false;
 
+	bool shownArma = false;
+	bool shownVagon = false;
 	Texturas* font;
 	SDL_Color fontColor;
-
+	SDL_Color fontColor2;
 	Texturas* actNivelText;
 };
 
