@@ -1,6 +1,7 @@
 #include "Button.h"
 
 
+
 Button::Button(Game* juego,  float x, float y, Game::Boton_t tipo, CallBack_t * cbCons)
 {
 	TTF_Init();
@@ -28,7 +29,9 @@ Button::Button(Game* juego,  float x, float y, Game::Boton_t tipo, CallBack_t * 
 		break;
 	case Game::Salir: Ttextura = Game::Texturas_t::TBotonR;
 		break;
-	case Game::Supervivencia: Ttextura = Game::Texturas_t::TBotonV;
+	case Game::Supervivencia: 
+		Ttextura = Game::Texturas_t::TBotonV;
+		osc = new Hud(juegootp, NULL, pos.x, pos.y, Game::Hud_t::BotonOsc, Game::Fondo_t::Control);
 		break;
 	case Game::Historia:Ttextura = Game::Texturas_t::TBotonV;
 		break;
@@ -36,7 +39,9 @@ Button::Button(Game* juego,  float x, float y, Game::Boton_t tipo, CallBack_t * 
 		break;
 	case Game::Controles:Ttextura = Game::Texturas_t::TBotonA;
 		break;
-	case Game::Extrem:Ttextura = Game::Texturas_t::TBotonV;
+	case Game::Extrem:
+		Ttextura = Game::Texturas_t::TBotonV;
+		osc = new Hud(juegootp, NULL, pos.x, pos.y, Game::Hud_t::BotonOsc, Game::Fondo_t::Control);
 		break;
 	case Game::Spanish: 
 		textB = "Spanish";
@@ -45,6 +50,8 @@ Button::Button(Game* juego,  float x, float y, Game::Boton_t tipo, CallBack_t * 
 	case Game::English: 
 		textB = "English";
 		Ttextura = Game::Texturas_t::TBotonA;
+		break;
+	case Game::Desb:Ttextura = Game::Texturas_t::TBotonA;
 		break;
 	default:
 		break;
@@ -99,6 +106,10 @@ void Button::draw() {
 		if (juegootp->spanish) textB = "Extremo";
 		else textB = "Extreme";
 		break;
+	case Game::Desb:
+		
+		 textB = "Desbloquear";
+		break;
 	default:
 		break;
 
@@ -113,4 +124,7 @@ void Button::draw() {
 	else h = 90;
 	texto->draw(juegootp->pRender, nullptr, &texto->myFont.setRect(a, h, this->pos.x + 60, this->pos.y + 24));
 	texto->loadFromText(juegootp->pRender, textB , fontColor);
+
+	if (t == Game::Supervivencia && (!juegootp->desbloquear && juegootp->getNivel() < 9)) osc->draw();
+	else if (t == Game::Extrem && (!juegootp->desbloquear && juegootp->getNivel() < 12)) osc->draw();
 }

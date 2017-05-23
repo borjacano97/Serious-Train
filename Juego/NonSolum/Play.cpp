@@ -148,8 +148,7 @@ void Play::draw() {
 	}
 
 	if (!ptsjuego->survival) {
-		switch (ptsjuego->getNivel()) {
-		case(1) :
+		
 			if (ptsjuego->spanish) {
 				font->loadFromText(ptsjuego->pRender, " Nivel: " + std::to_string(ptsjuego->getNivel()), fontColor);
 			}
@@ -157,127 +156,8 @@ void Play::draw() {
 				font->loadFromText(ptsjuego->pRender, " Level: " + std::to_string(ptsjuego->getNivel()), fontColor);
 			}
 			font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(40, 90, 300, 53));
-			break;
-		case(2) :
-			if (ptsjuego->spanish) {
-				font->loadFromText(ptsjuego->pRender, " Nivel: " + std::to_string(ptsjuego->getNivel()), fontColor);
-			}
-			else {
-				font->loadFromText(ptsjuego->pRender, " Level: " + std::to_string(ptsjuego->getNivel()), fontColor);
-			}
-			font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(40, 90, 300, 53));
-			break;
-		case(3) :
-			if (ptsjuego->spanish) {
-				font->loadFromText(ptsjuego->pRender, " Nivel: " + std::to_string(ptsjuego->getNivel()), fontColor);
-			}
-			else {
-				font->loadFromText(ptsjuego->pRender, " Level: " + std::to_string(ptsjuego->getNivel()), fontColor);
-			}
-			font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(40, 90, 300, 53));
-			break;
-		case(4) :
-			if (ptsjuego->spanish) {
-				font->loadFromText(ptsjuego->pRender, " Nivel: " + std::to_string(ptsjuego->getNivel()), fontColor);
-			}
-			else {
-				font->loadFromText(ptsjuego->pRender, " Level: " + std::to_string(ptsjuego->getNivel()), fontColor);
-			}
-			font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(40, 90, 300, 53));
-			break;
-		case(5) :
-			if (ptsjuego->spanish) {
-				font->loadFromText(ptsjuego->pRender, " Nivel: " + std::to_string(ptsjuego->getNivel()), fontColor);
-			}
-			else {
-				font->loadFromText(ptsjuego->pRender, " Level: " + std::to_string(ptsjuego->getNivel()), fontColor);
-			}
-			font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(40, 90, 300, 53));
-			break;
-		case(6) :
-			if (ptsjuego->spanish) {
-				font->loadFromText(ptsjuego->pRender, " Nivel: " + std::to_string(ptsjuego->getNivel()), fontColor);
-			}
-			else {
-				font->loadFromText(ptsjuego->pRender, " Level: " + std::to_string(ptsjuego->getNivel()), fontColor);
-			}
-			break;
-		case(7) :
-			if (ptsjuego->spanish) {
-				font->loadFromText(ptsjuego->pRender, " Nivel: " + std::to_string(ptsjuego->getNivel()), fontColor);
-			}
-			else {
-				font->loadFromText(ptsjuego->pRender, " Level: " + std::to_string(ptsjuego->getNivel()), fontColor);
-			}
-			break;
-		case(8) :
-			if (ptsjuego->spanish) {
-				font->loadFromText(ptsjuego->pRender, " Nivel: " + std::to_string(ptsjuego->getNivel()), fontColor);
-			}
-			else {
-				font->loadFromText(ptsjuego->pRender, " Level: " + std::to_string(ptsjuego->getNivel()), fontColor);
-			}
-			break;
-		case(9) :
-			if (ptsjuego->spanish) {
-				font->loadFromText(ptsjuego->pRender, " Nivel: " + std::to_string(ptsjuego->getNivel()), fontColor);
-			}
-			else {
-				font->loadFromText(ptsjuego->pRender, " Level: " + std::to_string(ptsjuego->getNivel()), fontColor);
-			}
-			break;
-		case(10) :
-			if (ptsjuego->spanish) {
-				font->loadFromText(ptsjuego->pRender, " Nivel: " + std::to_string(ptsjuego->getNivel()), fontColor);
-			}
-			else {
-				font->loadFromText(ptsjuego->pRender, " Level: " + std::to_string(ptsjuego->getNivel()), fontColor);
-			}
-			break;
-		case(11) :
-			if (ptsjuego->spanish) {
-				font->loadFromText(ptsjuego->pRender, " Nivel: " + std::to_string(ptsjuego->getNivel()), fontColor);
-			}
-			else {
-				font->loadFromText(ptsjuego->pRender, " Level: " + std::to_string(ptsjuego->getNivel()), fontColor);
-			}
-			break;
-		case(12) :
-			if (ptsjuego->spanish) {
-				font->loadFromText(ptsjuego->pRender, " Nivel: " + std::to_string(ptsjuego->getNivel()), fontColor);
-			}
-			else {
-				font->loadFromText(ptsjuego->pRender, " Level: " + std::to_string(ptsjuego->getNivel()), fontColor);
-			}
-			break;
-		case(13) :
-			if (ptsjuego->spanish) {
-				font->loadFromText(ptsjuego->pRender, " Nivel: " + std::to_string(ptsjuego->getNivel()), fontColor);
-			}
-			else {
-				font->loadFromText(ptsjuego->pRender, " Level: " + std::to_string(ptsjuego->getNivel()), fontColor);
-			}
-			break;
-		case(14) :
-			if (ptsjuego->spanish) {
-				font->loadFromText(ptsjuego->pRender, " Nivel: " + std::to_string(ptsjuego->getNivel()), fontColor);
-			}
-			else {
-				font->loadFromText(ptsjuego->pRender, " Level: " + std::to_string(ptsjuego->getNivel()), fontColor);
-			}
-			break;
-		case(15) :
-			if (ptsjuego->spanish) {
-				font->loadFromText(ptsjuego->pRender, " Nivel: " + std::to_string(ptsjuego->getNivel()), fontColor);
-			}
-			else {
-				font->loadFromText(ptsjuego->pRender, " Level: " + std::to_string(ptsjuego->getNivel()), fontColor);
-			}
-			break;
-
-		default:
-			break;
-		}
+			
+		
 	}
 	if (ptsjuego->extrem) ptsjuego->texts[43]->draw(ptsjuego->pRender, nullptr, nullptr);
 	if (tray!=nullptr) tray->draw();

@@ -2,6 +2,7 @@
 #define H_BUTTON_H
 
 #include "Objeto.h"
+#include "Hud.h"
 class Button :
 	public Objeto
 {
@@ -20,6 +21,7 @@ protected:
 	Game::Boton_t t;
 	std::string textB;
 
+	Hud*osc;
 	int mpbx, mpby;
 	int a = 40;
 	int h;

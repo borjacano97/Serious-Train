@@ -60,3 +60,4 @@
 ../bmps/vagonSucR.png
 ../bmps/vagonRegR.png
 ../bmps/canonN.png
+../bmps/botonOsc.png

@@ -26,14 +26,9 @@ private:
 	//static void control(Game * jg) { jg->pushState(new Controles(jg)); }
 	;
 	static void extremo(Game * jg);
-
-	static void spa(Game * jg) {
-		jg->spanish = true;
-	}
-	static void eng(Game * jg) { jg->spanish = false; 
-	//jg->textoo = jg->chooseText(jg->arrTextEng);
-	}
-
+	static void spa(Game * jg) {jg->spanish = true;	}
+	static void eng(Game * jg) { jg->spanish = false; }
+	static void desb(Game * jg) { jg->desbloquear = true; }
 };
 
 

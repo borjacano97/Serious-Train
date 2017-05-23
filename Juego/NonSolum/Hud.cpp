@@ -60,6 +60,11 @@ Hud::Hud(Game* juego, Play* pl, float x, float y, Game::Hud_t t, Game::Fondo_t f
 			break;
 		}
 		break;
+	case Game::BotonOsc:
+		Ttextura = Game::Texturas_t::TBotonOsc;
+		alto = 90;
+		ancho = 200;
+		break;
 	default:
 		break;
 	}	

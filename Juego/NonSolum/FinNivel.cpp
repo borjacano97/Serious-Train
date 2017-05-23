@@ -4,7 +4,9 @@
 FinNivel::FinNivel(Game* juego, bool v) :Estado(juego)
 {		
 	victory = v;
-	objetos.emplace_back(new Button(ptsjuego, 550, 500, Game::Boton_t::Jugar, jugar));
+	if (v) objetos.emplace_back(new Button(ptsjuego, 550, 200, Game::Boton_t::Jugar, jugar));
+	else	objetos.emplace_back(new Button(ptsjuego, 550, 580, Game::Boton_t::Volver, jugar));
+
 	initLibraries();
 	TTF_Init();
 
