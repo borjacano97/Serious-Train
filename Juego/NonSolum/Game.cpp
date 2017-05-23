@@ -32,7 +32,7 @@ Game::Game()
 	}
 	f.close();
 
-	srand(SDL_GetTicks()); // no se que coño es esto xd
+	//srand(SDL_GetTicks()); // no se que coño es esto xd
 
 	initSDL();
 	initMedia();

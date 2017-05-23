@@ -18,6 +18,12 @@ Bala::Bala(Game* juego, Play*pl, float x, float y, int mira, Game::Bala_t b)
 		vel = 0.3;
 		Ttextura = Game::Texturas_t::TRoca;
 		break;
+	case Game::BalaEnemGorda:
+		alto = 70;
+		ancho = 70;
+		vel = 0.5;
+		Ttextura = Game::Texturas_t::TRoca;
+		break;
 	case Game::Piedra:
 		alto = 20; 
 		ancho = 20;
@@ -119,6 +125,13 @@ void Bala::update(Uint32 delta) {
 		pos.x += dir * vel*delta;
 		if (p->tg->collision(this)) {
 			p->TrainHp->damage(Game::EnemyDmg_t::Bala);
+			destruido = true;
+		}
+		break;
+	case Game::BalaEnemGorda:
+		pos.x += dir * vel*delta;
+		if (p->tg->collision(this)) {
+			p->TrainHp->damage(Game::EnemyDmg_t::Explosion);
 			destruido = true;
 		}
 		break;

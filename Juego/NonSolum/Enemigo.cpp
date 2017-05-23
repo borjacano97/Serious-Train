@@ -71,6 +71,14 @@ Enemigo::Enemigo(Game* juego, Play* pl, float x, float y, Game::Enemigo_t clase)
 		vel = 0.07;
 		velVertical = 0.02;
 		break;
+	case Game::Enemigo_t::Boss:
+		Ttextura = Game::Texturas_t::TEnemigo2;
+		hp = 20000;
+		points = 350;
+		vel = 0.08;
+		velVertical = 0.035;
+		alto *= 2.5;
+		break;
 	default:
 		break;
 	}
@@ -127,6 +135,86 @@ void Enemigo::update(Uint32 delta) {
 			}
 			
 		}
+		if (_clase == Game::Enemigo_t::Boss) {
+			if (pos.y >= 600) pos.y = 600;
+			else if (pos.y <= 100) pos.y = 100;
+			
+
+
+			if (decidido) {
+				if (pos.x <= 100) {
+					parado = true;
+					decidido = false;
+					entrar = true;
+				}
+				else if (pos.x >= 1100) {
+					parado = true;
+					decidido = false;
+					entrar = true;
+				}
+				if (contBoss < 4000) {
+					contBoss += delta;
+				}
+				else {
+					contBoss = 0;
+					if (p->tg->collision(this)) {
+						if (pos.x > 650) {
+							pos.x += 20;
+							vel = 0.4;
+							parado = false;
+						}
+						else {
+							pos.x -= 20;
+							vel = -0.4;
+							parado = false;
+						}
+					}
+					else {
+						velVertical *= -1;
+						decidido = false;
+					}
+				}
+			}
+			if ( !decidido && (pos.x <= 1100 && pos.x >= 100 || entrar)) {
+				
+				parado = true;
+				if (contBoss < 2000) {
+					contBoss +=delta;
+				 }
+				else{
+					if (!decidido) {
+						contBoss = 0;
+						decidido = true;
+						entrar = false;
+						switch (rand() % 4)
+						{
+						case 0:
+							vel = 0;
+							velVertical = 0.4;
+							parado = false;
+							break;
+						case 1:
+							vel = 0;
+							velVertical = -0.4;
+							parado = false;
+							break;
+						case 2:
+							if (pos.x < 650) p->balas.emplace_back(new Bala(juegootp, p, pos.x, pos.y + 30, 1 , Game::Bala_t::BalaEnemGorda));
+							else p->balas.emplace_back(new Bala(juegootp, p, pos.x + 25, pos.y + 30, -1, Game::Bala_t::BalaEnemGorda));
+							break;
+						default:
+							if (pos.x>745) vel = -0.4;
+							else vel = 0.4;
+							velVertical = 0;
+							parado = false;
+							break;
+						}
+					 }
+					
+				}				
+			}
+		}
+		
 		 if (j >= 100){
 			i += ancho ;
 			rectA.x = i;

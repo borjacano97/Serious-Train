@@ -33,6 +33,11 @@ private:
 	int disappearTime = 0;
 	bool dañado = false;
 	bool explotao = false;
+
+	bool decidido = false; // decision boss
+	bool entrar = false;
+	int contBoss = 0;
+
 	int contExplo = 0;
 	Game::Enemigo_t _clase;
 	Play*p;
