@@ -138,7 +138,7 @@ void Bala::update(Uint32 delta) {
 		for each (auto b in p->balas)
 		{
 			if (b != nullptr && this->collision(b)){
-				if (contBalaBoss >= 3) destruido = true;
+				if (contBalaBoss >= 5) destruido = true;
 				else contBalaBoss++;
 
 				b->destroy();

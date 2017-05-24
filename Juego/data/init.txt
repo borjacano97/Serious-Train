@@ -61,3 +61,4 @@
 ../bmps/vagonRegR.png
 ../bmps/canonN.png
 ../bmps/botonOsc.png
+../bmps/pausa.png

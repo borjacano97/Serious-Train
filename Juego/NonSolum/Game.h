@@ -23,14 +23,15 @@ public:
 		TEscopeta, TMetralleta, TSniper, TMenuP, TVagonFuego, TVagonLaser, TMinigun, TBotonV, TBotonR, TBotonA, 
 		TControlEng, TControlEsp, TEnemigoD, TEnemigoG, TCanon, TTick, THud, TTrayecto, THud2, TVagonReg, TDesierto,
 		TPradera, TVagonEscudo, TOscuridad, TTocho, TInvisible, TEscopetaN, TFrancoN, TMetralletaN, TMinigunN, TRevolverN,
-	    TSlender, TExplosion, TLaserRoto, TEscudoRoto, TFuegoRoto, TAutoRoto, TVagonSuc, TVacioR, TSucR, TRegR, TCanonN, TBotonOsc};
+	    TSlender, TExplosion, TLaserRoto, TEscudoRoto, TFuegoRoto, TAutoRoto, TVagonSuc, TVacioR, TSucR, TRegR, 
+		TCanonN, TBotonOsc, TPausa	};
 	enum Enemigo_t { Normal, Rapido, Tank, Enano, Invisible, Slender, Tocho, Boss/*...*/ };
 	enum Vagon_t { Locom, Vacio, Automatico, Laser, Lanzallamas, Escudo, Recuperador, Succionador/*...*/ };
 	enum Bala_t { BalaEnem, Piedra, Rayo, Fuego, Escopeta, E1, E2, Pistola, Sniper, Metralleta, Minigun, Canon, BalaEnemGorda/*...*/ };
 	enum Boton_t { Comprar, Jugar, Recolocar, Salir, Supervivencia, Historia, Spanish, English, Volver, Controles, Extrem, Desb /*...*/ };
 	enum EnemyDmg_t { Simple, Explosion, Bala };
 	enum Hud_t { Tick, Hud1, Trayecto, Tren, Fondo, BotonOsc};
-	enum Fondo_t { Control, MenuP, Win, Lose, Tienda};
+	enum Fondo_t { Control, MenuP, Win, Lose, Tienda, Pause};
 	
 	std::string chooseText(string textArr[]);
 
@@ -57,7 +58,6 @@ public:
 
 	SDL_Window * pWin = nullptr;
 	SDL_Renderer* pRender = nullptr;
-	int coins = 0;
 
 	int contRondas = 1;
 	bool tiendaCreada = false;
@@ -75,11 +75,15 @@ public:
 	string* arrTextSpa = new string[15];
 	string* arrTextEng = new string[15];
 
+	int coins = 0;
+
 private:
-	
+
+	int nivel = 1;
+
 	SDL_Event e;
 
-	std::string ntexturas[63]; 
+	std::string ntexturas[64]; 
 	
 	std::stack<RaizEstado*> estados;
 
@@ -93,7 +97,6 @@ private:
 
 	bool espera, exit;
 	int mx, my;
-	int nivel = 1;
 	int cont = 0;
 	bool shown = false;
 	int arrIndex = 0;

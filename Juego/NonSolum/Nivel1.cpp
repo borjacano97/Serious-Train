@@ -56,7 +56,7 @@ void Nivel1::update(Uint32 delta) {
 	}
 	if (enem < emax){
 		//generar zombies aleatorios
-		if (spawnTimer >= 2000 && firstZombieTime){			
+		if (spawnTimer >= 1900 && firstZombieTime){			
 			if (rand()%2 == 0) {				
 				if (rand() % 2 == 0) enems.emplace_back
 					(new Enemigo(ptsjuego, this, 0, (rand() % 500) + 320, Game::Enemigo_t::Normal));
