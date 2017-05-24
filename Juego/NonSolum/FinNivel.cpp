@@ -21,6 +21,8 @@ FinNivel::FinNivel(Game* juego, bool v) :Estado(juego)
 	if (v)	fondo = new Hud(ptsjuego, NULL, 0, 0, Game::Hud_t::Fondo, Game::Fondo_t::Win);
 	else fondo = new Hud(ptsjuego, NULL, 0, 0, Game::Hud_t::Fondo, Game::Fondo_t::Lose);
 
+
+
 	//textoo = juego->chooseText(juego->arrTextSpa);
 }
 

@@ -326,12 +326,9 @@ void Game::popState() {
 string Game::chooseText(string textArr[]) {
 
 		//std::cout << "ALEATORIO: " << arrIndex << std::endl;
-	if (!shown){
 		srand((unsigned)time(0));
 		arrIndex = rand() % 15;
 		texto = textArr[arrIndex];
-		shown = true;
-	}
 
 	return texto;
 }
