@@ -63,7 +63,7 @@ Game::Game()
 	arrTextSpa[11] = "Manten presionado el raton para disparar continuamente";
 	arrTextSpa[12] = "Sabias que la revolucion industrial trajo consigo la tecnologia?";
 	arrTextSpa[13] = "Sumergete en el modo historia y conoce el interior del Ubi Trinus!";
-	arrTextSpa[14] = "Siguenos en Twitter _nonSolum";
+	arrTextSpa[14] = "Siguenos en Twitter - nonSolum";
 
 	arrTextEng[0] = "Spend coins on weapons and wagons";
 	arrTextEng[1] = "Kill enemies for getting coins";
@@ -79,7 +79,7 @@ Game::Game()
 	arrTextEng[11] = "Hold down the mouse for shooting repeatedly";
 	arrTextEng[12] = "Did you know that Industrial Revolution brought with it technology?";
 	arrTextEng[13] = "In story mode you can discover the entrails of Ubi Trinus!";
-	arrTextEng[14] = "Follow us on Twitter _nonSolum";
+	arrTextEng[14] = "Follow us on Twitter - nonSolum";
 
 	// ejemplos pa textos:
 

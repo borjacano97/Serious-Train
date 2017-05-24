@@ -144,14 +144,12 @@ void Tienda::draw() {
 		if (ptsjuego->spanish) font->loadFromText(ptsjuego->pRender, "Compra tu primer arma !!", fontColor2);
 		else font->loadFromText(ptsjuego->pRender, "Buy your first weapon !!", fontColor2);
 		font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(30, 380, 700, 0));
-		if (armaNivel != Game::Bala_t::Piedra) shownArma = true;
 	}
 	
 	if (!primerVagon && primerArma && ptsjuego->coins >= 500){
 		if (ptsjuego->spanish) font->loadFromText(ptsjuego->pRender, "Compra tu primer vagon y colocalo !!", fontColor2);
 		else font->loadFromText(ptsjuego->pRender, "Buy your first wagon and put it on the train !!", fontColor2);
 		font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(30, 480, 200, 420));
-		if (!vags[0]->bloqueado) shownVagon = true;
 	}
 	
 	sel->draw();

@@ -136,8 +136,8 @@ void Enemigo::update(Uint32 delta) {
 			
 		}
 		if (_clase == Game::Enemigo_t::Boss) {
-			if (pos.y >= 600) pos.y = 600;
-			else if (pos.y <= 100) pos.y = 100;
+			if (pos.y >= 550) pos.y = 550;
+			else if (pos.y <= 70) pos.y = 70;
 			
 
 

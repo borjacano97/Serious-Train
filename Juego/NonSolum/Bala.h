@@ -11,7 +11,7 @@ public:
 	virtual ~Bala() {}
 	void update(Uint32 delta);
 private:
-	int dir, cont, dmg;
+	int dir, cont, dmg, contBalaBoss;
 	float vel;
 	Game::Bala_t tipo;
 	Play*p;

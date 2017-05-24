@@ -23,6 +23,7 @@ Bala::Bala(Game* juego, Play*pl, float x, float y, int mira, Game::Bala_t b)
 		ancho = 70;
 		vel = 0.5;
 		Ttextura = Game::Texturas_t::TRoca;
+		contBalaBoss = 0;
 		break;
 	case Game::Piedra:
 		alto = 20; 
@@ -134,6 +135,16 @@ void Bala::update(Uint32 delta) {
 			p->TrainHp->damage(Game::EnemyDmg_t::Explosion);
 			destruido = true;
 		}
+		for each (auto b in p->balas)
+		{
+			if (b != nullptr && this->collision(b)){
+				if (contBalaBoss >= 3) destruido = true;
+				else contBalaBoss++;
+
+				b->destroy();
+			}
+		}
+
 		break;
 	case Game::Piedra:
 		pos.x += dir * vel*delta;

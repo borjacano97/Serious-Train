@@ -54,8 +54,8 @@ private:
 	Sound*s4;
 
 	bool suena = false;
-	bool primerArma = false;
-	bool primerVagon = false;
+	bool primerArma ;
+	bool primerVagon ;
 
 	bool shownArma = false;
 	bool shownVagon = false;
