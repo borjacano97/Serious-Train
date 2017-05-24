@@ -10,9 +10,12 @@
 #include <stdlib.h> // para nºs aleatorios
 #include <time.h>
 
+#include "Historia.h"
 
 Play::Play(Game * j) : Estado(j)
 {
+
+	
 	//srand(time(NULL));
 	//ptsjuego = j;
 	initObjects();
@@ -31,7 +34,9 @@ Play::Play(Game * j) : Estado(j)
 	fontColor.g = 165;
 	fontColor.b = 32;
 	
-	if (!ptsjuego->survival && ((ptsjuego->getNivel() - 1) / 3) == 1){
+	
+
+	if (!ptsjuego->survival && ((ptsjuego->getNivel() - 1) / 3) == 2){
 		fontColor2.r = 218;
 		fontColor2.g = 195;
 		fontColor2.b = 150;
@@ -59,6 +64,8 @@ Play::~Play()
 }
 
 bool Play::initObjects() { // creaci�n de los objetos dando un puntero, una textura y una posici�n (constructora de objs)
+
+	
 	h = new Hud(ptsjuego, this, -10, -20, Game::Hud_t::Hud1, Game::Fondo_t::Control);
 	if (!ptsjuego->survival) {
 		tray = new Hud(ptsjuego, this, 1200, 0, Game::Hud_t::Trayecto, Game::Fondo_t::Control);
@@ -80,13 +87,13 @@ bool Play::initObjects() { // creaci�n de los objetos dando un puntero, una te
 	case(4) :
 	case(5) :
 	case(6) :
-		     if (ptsjuego->survival)esc = new Escenario(ptsjuego, Game::Texturas_t::TFondo, 0, -4280);
-		     else  esc = new Escenario(ptsjuego, Game::Texturas_t::TDesierto, 0, -4280);
+		     esc = new Escenario(ptsjuego, Game::Texturas_t::TFondo, 0, -4280);		    
 		break;
 	case(7) :
 	case(8) :
 	case(9) :
-		     esc = new Escenario(ptsjuego, Game::Texturas_t::TFondo, 0, -4280);			
+		     if (ptsjuego->survival)esc = new Escenario(ptsjuego, Game::Texturas_t::TFondo, 0, -4280);
+		     else  esc = new Escenario(ptsjuego, Game::Texturas_t::TDesierto, 0, -4280);
 		break;
 	case(10) :
 	case(11) :
@@ -178,8 +185,8 @@ void Play::draw() {
 	if (armaActual != nullptr) armaActual->draw(); // quitar comprobación de nullptr si se traslada al modo Historia
 	if (!ptsjuego->survival){
 		font->loadFromText(ptsjuego->pRender, "$ " + std::to_string(ptsjuego->coins), fontColor);
-		if (ptsjuego->bigHP)font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(40, 50, 170, 46));
-		else font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(40, 50, 170, 53));
+		if (ptsjuego->bigHP)font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(40, 50 + 15 * (ptsjuego->coins / 1000), 170, 46));
+		else font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(40, 50 + 15 * (ptsjuego->coins / 1000), 170, 53));
 	}
 
 	if (!ptsjuego->survival && !tutorial && ptsjuego->getNivel() == 1){
@@ -206,6 +213,19 @@ void Play::draw() {
 
 
 void Play::update(Uint32 delta) {
+
+	// no entiendo por que no me deja meterlo en la constructora :(
+	if (!hist && !ptsjuego->survival) { 
+
+		switch (ptsjuego->getNivel())
+		{
+		case 1:	ptsjuego->pushState(new Historia(ptsjuego));
+			break;
+		default:
+			break;
+		}
+		hist = true; // pa que no entre aqui tol puto rato		
+	}
 
 	if (locom != nullptr) locom->update(delta);
 	esc->update(delta);

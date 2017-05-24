@@ -50,12 +50,12 @@ void FinNivel::draw(){
 	if (victory){
 		if (ptsjuego->spanish) font->loadFromText(ptsjuego->pRender, "Bien hecho!", fontColor);
 		else font->loadFromText(ptsjuego->pRender, "Well done!", fontColor);
-		font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(90, 180, 90, 30));
+		font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(90, 250, 90, 30));
 	}
 	else{
 		if (ptsjuego->spanish) font->loadFromText(ptsjuego->pRender, "Fallaste", fontColor);
 		else font->loadFromText(ptsjuego->pRender, "Game over", fontColor);
-		font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(90, 180, 580, 50));
+		font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(90, 250, 580, 50));
 	}
 	if (ptsjuego->spanish){
 		if (!shown){

@@ -27,19 +27,19 @@ Tienda::Tienda(Game* juego) :Estado(juego)
 	vags.emplace_back(new VagonTienda(ptsjuego, this, 200, 200, 500, Game::Vagon_t::Automatico, false));
 	botones.emplace_back(new BotonTienda(ptsjuego, this, vags[0], 200, 340, Game::Boton_t::Comprar));
 
-	vags.emplace_back(new VagonTienda(ptsjuego, this, 400, 200, 700, Game::Vagon_t::Lanzallamas, false));
+	vags.emplace_back(new VagonTienda(ptsjuego, this, 400, 200, 750, Game::Vagon_t::Lanzallamas, false));
 	botones.emplace_back(new BotonTienda(ptsjuego, this, vags[1], 400, 340, Game::Boton_t::Comprar));
 
-	vags.emplace_back(new VagonTienda(ptsjuego, this, 600, 200, 700, Game::Vagon_t::Escudo, false));
+	vags.emplace_back(new VagonTienda(ptsjuego, this, 600, 200, 750, Game::Vagon_t::Escudo, false));
 	botones.emplace_back(new BotonTienda(ptsjuego, this, vags[2], 600, 340, Game::Boton_t::Comprar));
 	
-	vags.emplace_back(new VagonTienda(ptsjuego, this, 200, 500, 750, Game::Vagon_t::Succionador, false));
+	vags.emplace_back(new VagonTienda(ptsjuego, this, 200, 500, 800, Game::Vagon_t::Succionador, false));
 	botones.emplace_back(new BotonTienda(ptsjuego, this, vags[3], 200, 640, Game::Boton_t::Comprar));
 
-	vags.emplace_back(new VagonTienda(ptsjuego, this, 400, 500, 800, Game::Vagon_t::Recuperador, false));
+	vags.emplace_back(new VagonTienda(ptsjuego, this, 400, 500, 850, Game::Vagon_t::Recuperador, false));
 	botones.emplace_back(new BotonTienda(ptsjuego, this, vags[4], 400, 640, Game::Boton_t::Comprar));
 
-	vags.emplace_back(new VagonTienda(ptsjuego, this, 600, 500, 850, Game::Vagon_t::Laser, false));
+	vags.emplace_back(new VagonTienda(ptsjuego, this, 600, 500, 900, Game::Vagon_t::Laser, false));
 	botones.emplace_back(new BotonTienda(ptsjuego, this, vags[5], 600, 640, Game::Boton_t::Comprar));
 
 	
@@ -55,13 +55,13 @@ Tienda::Tienda(Game* juego) :Estado(juego)
 	armas.emplace_back(new ArmaTienda(ptsjuego, this, 1090, 300, 650, Game::Bala_t::Sniper, false));
 	botones.emplace_back(new BotonTienda(ptsjuego, this, armas[2], 1090, 430, Game::Boton_t::Comprar));
 
-	armas.emplace_back(new ArmaTienda(ptsjuego, this, 830, 500, 700, Game::Bala_t::Metralleta, false));
+	armas.emplace_back(new ArmaTienda(ptsjuego, this, 830, 500, 750, Game::Bala_t::Metralleta, false));
 	botones.emplace_back(new BotonTienda(ptsjuego, this, armas[3], 830, 630, Game::Boton_t::Comprar));
 
-	armas.emplace_back(new ArmaTienda(ptsjuego, this, 965, 500, 800, Game::Bala_t::Minigun, false));
+	armas.emplace_back(new ArmaTienda(ptsjuego, this, 965, 500, 850, Game::Bala_t::Minigun, false));
 	botones.emplace_back(new BotonTienda(ptsjuego, this, armas[4], 965, 630, Game::Boton_t::Comprar));
 
-	armas.emplace_back(new ArmaTienda(ptsjuego, this, 1090, 500, 800, Game::Bala_t::Canon, false));
+	armas.emplace_back(new ArmaTienda(ptsjuego, this, 1090, 500, 850, Game::Bala_t::Canon, false));
 	botones.emplace_back(new BotonTienda(ptsjuego, this, armas[5], 1090, 630, Game::Boton_t::Comprar));
 
 
@@ -129,7 +129,7 @@ void Tienda::draw() {
 	font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(70, 160, 820, 55));
 
 	font->loadFromText(ptsjuego->pRender, std::to_string(ptsjuego->coins), fontColor);
-	font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(45, 45, 1100, 30));
+	font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(45, 45 + 15*(ptsjuego->coins/1000), 1100, 30));
 
 	if (ptsjuego->spanish) {
 		actNivelText->loadFromText(ptsjuego->pRender, "Prox Nvl: " + std::to_string(ptsjuego->getNivel()), fontColor);
@@ -140,18 +140,25 @@ void Tienda::draw() {
 	actNivelText->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(30, 150, 1085, 105));
 
 	if (armaNivel != Game::Bala_t::Piedra) ptsjuego->primerArma = true;
-	if ((!ptsjuego->primerArma) && (ptsjuego->coins >= 250)){
+	else if ((!ptsjuego->primerArma) && (ptsjuego->coins >= 250)){
 		if (ptsjuego->spanish) font->loadFromText(ptsjuego->pRender, "Compra tu primer arma !!", fontColor2);
 		else font->loadFromText(ptsjuego->pRender, "Buy your first weapon !!", fontColor2);
-		font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(30, 380, 700, 0));
+		font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(30, 380, 680, 0));
 		
 	}
 	if (!vags[0]->bloqueado) ptsjuego->primerVagon = true;
-	if ((!ptsjuego->primerVagon) && (ptsjuego->primerArma) && (ptsjuego->coins >= 500)){
+	else if ((!ptsjuego->primerVagon) && (ptsjuego->primerArma) && (ptsjuego->coins >= 500)){
 		if (ptsjuego->spanish) font->loadFromText(ptsjuego->pRender, "Compra tu primer vagon y colocalo !!", fontColor2);
 		else font->loadFromText(ptsjuego->pRender, "Buy your first wagon and put it on the train !!", fontColor2);
 		font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(30, 480, 200, 420));
 		
+	}
+	if (!armas[2]->bloqueado) ptsjuego->segundoArma = true;
+	else if ((!ptsjuego->segundoArma) && (ptsjuego->primerVagon) && (ptsjuego->primerArma) && (ptsjuego->coins >= 650)) {
+		if (ptsjuego->spanish) font->loadFromText(ptsjuego->pRender, "Probemos ese francotirador !!", fontColor2);
+		else font->loadFromText(ptsjuego->pRender, "Lets try with the sniper !!", fontColor2);
+		font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(30, 480, 580, 0));
+
 	}
 	
 	sel->draw();
@@ -185,8 +192,7 @@ void Tienda::jugar(Game * jg) {
 	switch (jg->getNivel())
 	{		
 	case(1):
-	case(2):
-	
+	case(2):	    
 		jg->pushState(new Nivel1(jg, vagonesNivel, armaNivel));	
 		s->stopMusic();
 		jg->sound->playMusic("../sounds/nivelpos.mp3", -1, 17);

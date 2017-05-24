@@ -147,6 +147,9 @@
     <ClCompile Include="FinNivelSvl.cpp">
       <Filter>Archivos de código fuente\Estados</Filter>
     </ClCompile>
+    <ClCompile Include="Historia.cpp">
+      <Filter>Archivos de código fuente\Estados</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Texturas.h">
@@ -258,6 +261,9 @@
       <Filter>Archivos de encabezado\Niveles</Filter>
     </ClInclude>
     <ClInclude Include="FinNivelSvl.h">
+      <Filter>Archivos de encabezado\Estados</Filter>
+    </ClInclude>
+    <ClInclude Include="Historia.h">
       <Filter>Archivos de encabezado\Estados</Filter>
     </ClInclude>
   </ItemGroup>

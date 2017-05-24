@@ -6,7 +6,7 @@
 Nivel3::Nivel3(Game * j, std::vector <Game::Vagon_t> v, Game::Bala_t a) : Play(j)
 {
 	enem = 0;
-	emax = 30;
+	emax = 20 + 5 * ptsjuego->getNivel();
 	for (unsigned int i = 0; i < 4; i++) {
 		tren.emplace_back(new Vagon(ptsjuego, this, 580, 100 + 150 * i, v[i]));
 	}
@@ -35,6 +35,8 @@ Nivel3::Nivel3(Game * j, std::vector <Game::Vagon_t> v, Game::Bala_t a) : Play(j
 		break;
 	}
 
+	if (ptsjuego->getNivel() == 6) spawnRonda = 950 - (50 * ptsjuego->getNivel());
+	else spawnRonda = 1400 - (50 * ptsjuego->getNivel());
 }
 
 void Nivel3::update(Uint32 delta) {
@@ -46,8 +48,9 @@ void Nivel3::update(Uint32 delta) {
 		shootTimer = 0;
 	}
 
-	if (enem < emax - 1){
-		if (spawnTimer >= 2380){
+	if (enem < emax - 2){
+
+		if (spawnTimer >= spawnRonda){
 
 			if (rand() % 2 == 0){
 				if (rand() % 2 == 0) enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 500) + 320, Game::Enemigo_t::Normal));
@@ -55,13 +58,13 @@ void Nivel3::update(Uint32 delta) {
 				enem++;
 			}
 			else {
-				if (rand() % 2 == 0) {
-					if (rand() % 2 == 0)enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 100, Game::Enemigo_t::Rapido));
-					else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 100, Game::Enemigo_t::Rapido));				
-				}
-				else if (ptsjuego->getNivel() > 6){
+				if (rand() % 4 == 0 && ptsjuego->getNivel() > 6) {
 					if (rand() % 2 == 0)enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 500) + 230, Game::Enemigo_t::Tocho));
-					else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 500) + 230, Game::Enemigo_t::Tocho));
+					else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 500) + 230, Game::Enemigo_t::Tocho));							
+				}
+				else {
+					if (rand() % 2 == 0)enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 100, Game::Enemigo_t::Rapido));
+					else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 100, Game::Enemigo_t::Rapido));
 				}
 					
 				enem++;
@@ -73,6 +76,8 @@ void Nivel3::update(Uint32 delta) {
 		if (!created){
 			enems.emplace_back
 				(new Enemigo(ptsjuego, this, 0, 550, Game::Enemigo_t::Tocho));
+			enems.emplace_back
+			    (new Enemigo(ptsjuego, this, 1300, 550, Game::Enemigo_t::Tocho));
 			created = true;
 		}
 

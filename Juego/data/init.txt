@@ -63,3 +63,4 @@
 ../bmps/botonOsc.png
 ../bmps/pausa.png
 ../bmps/bala2.png
+../bmps/historia1.png

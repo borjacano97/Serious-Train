@@ -50,7 +50,7 @@ void Menu::survMode(Game * jg) {
 	}	
 }
 void Menu::extremo(Game * jg) {
-	if (jg->getNivel() >= 12 || jg->desbloquear) {
+	if (jg->getNivel() >= 15 || jg->desbloquear) {
 		jg->survival = true;
 		jg->extrem = true;
 		jg->sound->stopMusic();
@@ -72,9 +72,9 @@ void Menu::draw(){
 		else font->loadFromText(ptsjuego->pRender, "Get level 9 to unlock!!", fontColor);
 		font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(40, 350, 100, 120));
 	}
-    if (ptsjuego->getNivel()<12){
-		if (ptsjuego->spanish) font->loadFromText(ptsjuego->pRender, "Llega al nivel 12 para desbloquear!!", fontColor);
-		else font->loadFromText(ptsjuego->pRender, "Get level 12 to unlock!!", fontColor);
+    if (ptsjuego->getNivel()<15){
+		if (ptsjuego->spanish) font->loadFromText(ptsjuego->pRender, "Llega al nivel 15 para desbloquear!!", fontColor);
+		else font->loadFromText(ptsjuego->pRender, "Get level 15 to unlock!!", fontColor);
 		font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(40, 350, 10, 230));
 	}
 	Estado::draw();

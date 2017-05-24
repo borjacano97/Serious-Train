@@ -15,6 +15,8 @@ private:
 	Game::Bala_t arma;
 	bool disparando = false;
 	bool created = false;
+
+	int spawnRonda;
 };
 
 #endif

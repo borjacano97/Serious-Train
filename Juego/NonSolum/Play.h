@@ -58,6 +58,7 @@ protected:
 	Hud* locom;
 
 	bool roto = false;
+	bool hist = false;
 
 	Texturas* textTut;
 	SDL_Color color;
