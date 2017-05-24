@@ -56,6 +56,8 @@ Hud::Hud(Game* juego, Play* pl, float x, float y, Game::Hud_t t, Game::Fondo_t f
 			break;
 		case Game::Tienda:Ttextura = Game::Texturas_t::TFondoT;
 			break;
+		case Game::FondoInicio:Ttextura = Game::Texturas_t::TFondoIni;
+			break;
 		default:
 			break;
 		}
