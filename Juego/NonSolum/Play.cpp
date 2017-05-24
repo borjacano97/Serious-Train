@@ -25,11 +25,23 @@ Play::Play(Game * j) : Estado(j)
 	sonido->playMusic("../sounds/prueba.mp3", 3, 20);
 	/*soundLoss = new Sound;
 	soundWon = new Sound;*/
-
+	
+	
 	fontColor.r = 218;
 	fontColor.g = 165;
 	fontColor.b = 32;
 	
+	if (!ptsjuego->survival && ((ptsjuego->getNivel() - 1) / 3) == 1){
+		fontColor2.r = 218;
+		fontColor2.g = 195;
+		fontColor2.b = 150;
+	}
+	else {
+		fontColor2.r = 218;
+		fontColor2.g = 165;
+		fontColor2.b = 32;
+	}
+
 	textTut = new Texturas();
 	textTut->loadFuente("../fonts/fuenteNumbers.ttf", 200);
 
@@ -150,10 +162,10 @@ void Play::draw() {
 	if (!ptsjuego->survival) {
 		
 			if (ptsjuego->spanish) {
-				font->loadFromText(ptsjuego->pRender, " Nivel: " + std::to_string(ptsjuego->getNivel()), fontColor);
+				font->loadFromText(ptsjuego->pRender, " Nivel: " + std::to_string(ptsjuego->getNivel()), fontColor2);
 			}
 			else {
-				font->loadFromText(ptsjuego->pRender, " Level: " + std::to_string(ptsjuego->getNivel()), fontColor);
+				font->loadFromText(ptsjuego->pRender, " Level: " + std::to_string(ptsjuego->getNivel()), fontColor2);
 			}
 			font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(40, 90, 300, 53));
 			

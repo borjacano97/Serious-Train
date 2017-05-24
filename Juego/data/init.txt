@@ -62,3 +62,4 @@
 ../bmps/canonN.png
 ../bmps/botonOsc.png
 ../bmps/pausa.png
+../bmps/bala2.png

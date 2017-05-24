@@ -24,7 +24,7 @@ public:
 		TControlEng, TControlEsp, TEnemigoD, TEnemigoG, TCanon, TTick, THud, TTrayecto, THud2, TVagonReg, TDesierto,
 		TPradera, TVagonEscudo, TOscuridad, TTocho, TInvisible, TEscopetaN, TFrancoN, TMetralletaN, TMinigunN, TRevolverN,
 	    TSlender, TExplosion, TLaserRoto, TEscudoRoto, TFuegoRoto, TAutoRoto, TVagonSuc, TVacioR, TSucR, TRegR, 
-		TCanonN, TBotonOsc, TPausa	};
+		TCanonN, TBotonOsc, TPausa, TBala2	};
 	enum Enemigo_t { Normal, Rapido, Tank, Enano, Invisible, Slender, Tocho, Boss/*...*/ };
 	enum Vagon_t { Locom, Vacio, Automatico, Laser, Lanzallamas, Escudo, Recuperador, Succionador/*...*/ };
 	enum Bala_t { BalaEnem, Piedra, Rayo, Fuego, Escopeta, E1, E2, Pistola, Sniper, Metralleta, Minigun, Canon, BalaEnemGorda/*...*/ };
@@ -66,6 +66,9 @@ public:
 	bool extrem = false;
 	bool bigHP = false;
 
+	bool primerArma = false;
+	bool primerVagon = false;
+
 	bool desbloquear = false; // solo para version no definitiva, desbloquear svl y extrem
 
 	std::vector<Texturas*> texts;
@@ -83,7 +86,7 @@ private:
 
 	SDL_Event e;
 
-	std::string ntexturas[64]; 
+	std::string ntexturas[65]; 
 	
 	std::stack<RaizEstado*> estados;
 
