@@ -24,14 +24,14 @@ public:
 		TControlEng, TControlEsp, TEnemigoD, TEnemigoG, TCanon, TTick, THud, TTrayecto, THud2, TVagonReg, TDesierto,
 		TPradera, TVagonEscudo, TOscuridad, TTocho, TInvisible, TEscopetaN, TFrancoN, TMetralletaN, TMinigunN, TRevolverN,
 	    TSlender, TExplosion, TLaserRoto, TEscudoRoto, TFuegoRoto, TAutoRoto, TVagonSuc, TVacioR, TSucR, TRegR, 
-		TCanonN, TBotonOsc, TPausa, TBala2, THistoria1	};
+		TCanonN, TBotonOsc, TPausa, TBala2, THistoria1, TFondoIni};
 	enum Enemigo_t { Normal, Rapido, Tank, Enano, Invisible, Slender, Tocho, Boss/*...*/ };
 	enum Vagon_t { Locom, Vacio, Automatico, Laser, Lanzallamas, Escudo, Recuperador, Succionador/*...*/ };
 	enum Bala_t { BalaEnem, Piedra, Rayo, Fuego, Escopeta, E1, E2, Pistola, Sniper, Metralleta, Minigun, Canon, BalaEnemGorda/*...*/ };
 	enum Boton_t { Comprar, Jugar, Recolocar, Salir, Supervivencia, Historia, Spanish, English, Volver, Controles, Extrem, Desb /*...*/ };
 	enum EnemyDmg_t { Simple, Explosion, Bala };
 	enum Hud_t { Tick, Hud1, Trayecto, Tren, Fondo, BotonOsc};
-	enum Fondo_t { Control, MenuP, Win, Lose, Tienda, Pause, Historia1};
+	enum Fondo_t { Control, MenuP, Win, Lose, Tienda, Pause, Historia1, FondoInicio};
 	
 	std::string chooseText(string textArr[]);
 
@@ -79,6 +79,8 @@ public:
 	string* arrTextSpa = new string[15];
 	string* arrTextEng = new string[15];
 
+	std::stack<RaizEstado*> estados;
+
 	int coins = 0;
 
 private:
@@ -87,9 +89,8 @@ private:
 
 	SDL_Event e;
 
-	std::string ntexturas[66]; 
+	std::string ntexturas[67]; 
 	
-	std::stack<RaizEstado*> estados;
 
 	bool initSDL(); //ventana de render SDL (pantalla)
 	void closeSDL();

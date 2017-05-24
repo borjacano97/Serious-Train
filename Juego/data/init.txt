@@ -64,3 +64,4 @@
 ../bmps/pausa.png
 ../bmps/bala2.png
 ../bmps/historia1.png
+../bmps/fondoInicio.png

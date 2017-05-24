@@ -150,6 +150,9 @@
     <ClCompile Include="Historia.cpp">
       <Filter>Archivos de código fuente\Estados</Filter>
     </ClCompile>
+    <ClCompile Include="PantallaInicio.cpp">
+      <Filter>Archivos de código fuente</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Texturas.h">
@@ -265,6 +268,9 @@
     </ClInclude>
     <ClInclude Include="Historia.h">
       <Filter>Archivos de encabezado\Estados</Filter>
+    </ClInclude>
+    <ClInclude Include="PantallaInicio.h">
+      <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

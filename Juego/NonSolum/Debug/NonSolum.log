@@ -1,16 +1,6 @@
-﻿  Tienda.cpp
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=': conversión de 'double' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\tienda.cpp(80): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\tienda.cpp(328): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-  Nivel3.cpp
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=': conversión de 'double' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\nivel3.cpp(11): warning C4244: 'argumento': conversión de 'unsigned int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\nivel3.cpp(56): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\nivel3.cpp(57): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\nivel3.cpp(62): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\nivel3.cpp(63): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\nivel3.cpp(66): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\nivel3.cpp(67): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+﻿  PantallaInicio.cpp
+  Game.cpp
+c:\users\gonzalo guzmán\universidad\proyecto2\master-proyecto\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=': conversión de 'double' a 'float'; posible pérdida de datos
   Generando código...
-  NonSolum.vcxproj -> C:\Users\Alejandro\Desktop\Serious-Train\Juego\bin\NonSolumDebug.exe
-  NonSolum.vcxproj -> C:\Users\Alejandro\Desktop\Serious-Train\Juego\bin\NonSolumDebug.pdb (Full PDB)
+  NonSolum.vcxproj -> C:\Users\Gonzalo Guzmán\Universidad\PROYECTO2\Master-Proyecto\Serious-Train\Juego\bin\NonSolumDebug.exe
+  NonSolum.vcxproj -> C:\Users\Gonzalo Guzmán\Universidad\PROYECTO2\Master-Proyecto\Serious-Train\Juego\bin\NonSolumDebug.pdb (Partial PDB)
