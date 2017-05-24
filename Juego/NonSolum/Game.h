@@ -30,7 +30,7 @@ public:
 	enum Bala_t { BalaEnem, Piedra, Rayo, Fuego, Escopeta, E1, E2, Pistola, Sniper, Metralleta, Minigun, Canon, BalaEnemGorda/*...*/ };
 	enum Boton_t { Comprar, Jugar, Recolocar, Salir, Supervivencia, Historia, Spanish, English, Volver, Controles, Extrem, Desb /*...*/ };
 	enum EnemyDmg_t { Simple, Explosion, Bala };
-	enum Hud_t { Tick, Hud1, Trayecto, Tren, Fondo, BotonOsc, FondoIni};
+	enum Hud_t { Tick, Hud1, Trayecto, Tren, Fondo, BotonOsc};
 	enum Fondo_t { Control, MenuP, Win, Lose, Tienda, FondoInicio};
 	
 	std::string chooseText(string textArr[]);

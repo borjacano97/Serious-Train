@@ -3,7 +3,7 @@
 
 PantallaInicio::PantallaInicio(Game* juego) : Estado(juego)
 {
-	fondo = new Hud(ptsjuego, NULL, 0, 0, Game::Hud_t::FondoIni, Game::Fondo_t::FondoInicio);
+	fondo = new Hud(ptsjuego, NULL, 0, 0, Game::Hud_t::Fondo, Game::Fondo_t::FondoInicio);
 }
 
 
