@@ -56,6 +56,7 @@ protected:
 	Uint32 d;
 	int contWin = 0;
 	int contTexto = 0;
+	int textInit = 0;
 	bool fin;
 	bool tutorial = false;
 	bool initObjects(); //crear y destruir los objetos del juego
@@ -81,6 +82,7 @@ protected:
 
 	bool roto = false;
 	bool hist = false;
+	bool newRonda = false;//para surv
 
 
 	int alphaCont = 0;

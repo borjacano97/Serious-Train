@@ -183,7 +183,6 @@ void Survival::update(Uint32 delta) {
 			}
 			if (ptsjuego->contRondas == 7) fin = true;
 			
-			textInit += delta;
 		}
 		else {
 			shootTimer += delta;
@@ -451,56 +450,7 @@ void Survival::update(Uint32 delta) {
 				ptsjuego->contRondas++;
 				spawn += 5000; //estaria bien aquí parar el tiempo de spawn por así decirlo durante un ratejo para que se note el tiempo entre rondas
 			}
-			textInit += delta;
-		}
-
-		
+		}		
 		Play::update(delta);
-	}	
-}
-void Survival::draw() {
-	Play::draw();
-
-	if (!ptsjuego->extrem){
-		if (ptsjuego->spanish) {
-			font->loadFromText(ptsjuego->pRender, " Ronda: " + std::to_string(ptsjuego->contRondas), fontColor);
-		}
-		else {
-			font->loadFromText(ptsjuego->pRender, " Round: " + std::to_string(ptsjuego->contRondas), fontColor);
-		}
-
-		font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(40, 90, 150, 53));
-
-
-		if (newRonda && ptsjuego->spanish) {
-			font->loadFromText(ptsjuego->pRender, " Nueva    Ronda:  " + std::to_string(ptsjuego->contRondas), fontColor);
-			font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(220, 500, 400, 120));
-		}
-		if (newRonda && !ptsjuego->spanish) {
-			font->loadFromText(ptsjuego->pRender, " New    Round:    " + std::to_string(ptsjuego->contRondas), fontColor);
-			font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(220, 500, 400, 120));
-		}
-	}
-	
-
-	if (ptsjuego->extrem){
-		if (ptsjuego->spanish && enem < 2 && textInit < 2000) {
-			font->loadFromText(ptsjuego->pRender, "A g u a n t a   h a s t a   e l   a m a n e c e r", fontColor);
-			font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(130, 950, 140, 270));
-		}
-		if (!ptsjuego->spanish && enem < 2 && textInit <  2000) {
-			font->loadFromText(ptsjuego->pRender, "S u r v i v e   u n t i l   d a w n", fontColor);
-			font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(130, 950, 140, 270));
-		}
-	}
-	else{
-		if (ptsjuego->spanish && enem < 2 && textInit < 2000) {
-			font->loadFromText(ptsjuego->pRender, "L o s   C o w b o y s   n a c e n ,   n o   s e   h a c e n", fontColor);
-			font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(130, 950, 140, 270));
-		}
-		if (!ptsjuego->spanish && enem < 2 && textInit <  2000) {
-			font->loadFromText(ptsjuego->pRender, "C o w b o y s   a r e   b o r n ,   t h e y   a i n t   m a d e", fontColor);
-			font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(130, 950, 140, 270));
-		}
 	}	
 }

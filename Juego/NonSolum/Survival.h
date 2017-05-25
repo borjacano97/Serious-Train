@@ -14,11 +14,9 @@ public:
 	virtual ~Survival() {  }
 	void dispara(bool shoot) { disparando = shoot; }
 	void update(Uint32 delta);
-	void draw();
 
 private:
-	int  enem, shootTimer, spawnTimer, cadencia, spawn, textInit;
-	bool newRonda = false;
+	int  enem, shootTimer, spawnTimer, cadencia, spawn;
 	bool disparando = false;
 	bool created = true;
 	bool vagonCambiado = false;

@@ -135,7 +135,7 @@ void Play::freeObjects() {
 	Mix_OpenAudio(22050, MIX_DEFAULT_FORMAT, 2, 4096) == -1;
 }
 void Play::draw() {
-	esc->draw();	
+	esc->draw();
 
 	for (auto i : tren) {
 		i->draw();
@@ -156,7 +156,7 @@ void Play::draw() {
 
 
 	if (!ptsjuego->survival) {
-		switch(ptsjuego->getNivel()){
+		switch (ptsjuego->getNivel()) {
 		case(10):
 		case(11):
 		case(12):
@@ -168,20 +168,20 @@ void Play::draw() {
 	}
 
 	if (!ptsjuego->survival) {
-		
-			if (ptsjuego->spanish) {
-				font->loadFromText(ptsjuego->pRender, " Nivel: " + std::to_string(ptsjuego->getNivel()), fontColor2);
-			}
-			else {
-				font->loadFromText(ptsjuego->pRender, " Level: " + std::to_string(ptsjuego->getNivel()), fontColor2);
-			}
-			font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(40, 90, 300, 53));
-			
-		
+
+		if (ptsjuego->spanish) {
+			font->loadFromText(ptsjuego->pRender, " Nivel: " + std::to_string(ptsjuego->getNivel()), fontColor2);
+		}
+		else {
+			font->loadFromText(ptsjuego->pRender, " Level: " + std::to_string(ptsjuego->getNivel()), fontColor2);
+		}
+		font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(40, 90, 300, 53));
+
+
 	}
 	// control de capa de noche en extrem
-	if (ptsjuego->extrem){
-		if (contAlpha2 >= 1000 && alphaCont<255){
+	if (ptsjuego->extrem) {
+		if (contAlpha2 >= 1000 && alphaCont < 255) {
 			contAlpha2 = 0;
 			alphaCont++;
 		}
@@ -191,17 +191,17 @@ void Play::draw() {
 	}
 
 
-	if (tray!=nullptr) tray->draw();
+	if (tray != nullptr) tray->draw();
 	if (locom != nullptr) locom->draw();
 	TrainHp->draw();
 	if (armaActual != nullptr) armaActual->draw(); // quitar comprobación de nullptr si se traslada al modo Historia
-	if (!ptsjuego->survival){
+	if (!ptsjuego->survival) {
 		font->loadFromText(ptsjuego->pRender, "$ " + std::to_string(ptsjuego->coins), fontColor);
 		if (ptsjuego->bigHP)font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(40, 50 + 15 * (ptsjuego->coins / 1000), 170, 46));
 		else font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(40, 50 + 15 * (ptsjuego->coins / 1000), 170, 53));
 	}
 
-	if (!ptsjuego->survival && !tutorial && ptsjuego->getNivel() == 1){
+	if (!ptsjuego->survival && !tutorial && ptsjuego->getNivel() == 1) {
 
 		if (enem < 1) {
 			if (contTexto <= 4500) {
@@ -235,7 +235,52 @@ void Play::draw() {
 				textTut->loadFromText(ptsjuego->pRender, "Shoot with the mouse!", fontColor);
 				textTut->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(35, 350, 50, 170));
 			}
-		}	
+		}
+	}
+
+	if (ptsjuego->survival) {
+		if (!ptsjuego->extrem) {
+			if (ptsjuego->spanish) {
+				font->loadFromText(ptsjuego->pRender, " Ronda: " + std::to_string(ptsjuego->contRondas), fontColor);
+			}
+			else {
+				font->loadFromText(ptsjuego->pRender, " Round: " + std::to_string(ptsjuego->contRondas), fontColor);
+			}
+
+			font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(40, 90, 150, 53));
+
+
+			if (newRonda && ptsjuego->spanish) {
+				font->loadFromText(ptsjuego->pRender, " Nueva    Ronda:  " + std::to_string(ptsjuego->contRondas), fontColor);
+				font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(220, 500, 400, 120));
+			}
+			if (newRonda && !ptsjuego->spanish) {
+				font->loadFromText(ptsjuego->pRender, " New    Round:    " + std::to_string(ptsjuego->contRondas), fontColor);
+				font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(220, 500, 400, 120));
+			}
+		}
+
+
+		if (ptsjuego->extrem) {
+			if (ptsjuego->spanish && enem < 2 && textInit < 2000) {
+				font->loadFromText(ptsjuego->pRender, "A g u a n t a   h a s t a   e l   a m a n e c e r", fontColor);
+				font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(130, 950, 140, 270));
+			}
+			if (!ptsjuego->spanish && enem < 2 && textInit < 2000) {
+				font->loadFromText(ptsjuego->pRender, "S u r v i v e   u n t i l   d a w n", fontColor);
+				font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(130, 950, 140, 270));
+			}
+		}
+		else {
+			if (ptsjuego->spanish && enem < 2 && textInit < 2000) {
+				font->loadFromText(ptsjuego->pRender, "L o s   C o w b o y s   n a c e n ,   n o   s e   h a c e n", fontColor);
+				font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(130, 950, 140, 270));
+			}
+			if (!ptsjuego->spanish && enem < 2 && textInit < 2000) {
+				font->loadFromText(ptsjuego->pRender, "C o w b o y s   a r e   b o r n ,   t h e y   a i n t   m a d e", fontColor);
+				font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(130, 950, 140, 270));
+			}
+		}
 	}
 	if (ptsjuego->paused) {
 		fondoP->draw();
@@ -256,6 +301,7 @@ void Play::draw() {
 
 void Play::update(Uint32 delta) {
 	d = delta;
+	textInit += delta;
 	// no entiendo por que no me deja meterlo en la constructora :(
 	if (!hist && !ptsjuego->survival) { 
 

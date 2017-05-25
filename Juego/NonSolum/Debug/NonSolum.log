@@ -1,28 +1,5 @@
-﻿  Bala.cpp
+﻿  Hud.cpp
 c:\users\alejandro\desktop\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=': conversión de 'double' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\bala.cpp(18): warning C4305: '=': truncamiento de 'double' a 'float'
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\bala.cpp(90): warning C4305: '=': truncamiento de 'double' a 'float'
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\bala.cpp(108): warning C4305: '=': truncamiento de 'double' a 'float'
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\bala.cpp(171): warning C4244: '+=': conversión de 'double' a 'float'; posible pérdida de datos
-  Generando código...
-  Compilando...
-  Play.cpp
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=': conversión de 'double' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\play.cpp(135): warning C4553: '==': el operador no tiene efecto; ¿ha pensado en '='?
-  Generando código...
-  Omitiendo... (no se detectaron cambios relevantes)
-  Vagon.cpp
-  Tienda.cpp
-  Survival.cpp
-  Nivel5.cpp
-  Nivel4.cpp
-  Nivel3.cpp
-  Nivel2.cpp
-  Nivel1.cpp
-  Menu.cpp
-  Hud.cpp
-  Game.cpp
-  Estado.cpp
-  Enemigo.cpp
+c:\users\alejandro\desktop\serious-train\juego\nonsolum\hud.cpp(92): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
   NonSolum.vcxproj -> C:\Users\Alejandro\Desktop\Serious-Train\Juego\bin\NonSolumDebug.exe
   NonSolum.vcxproj -> C:\Users\Alejandro\Desktop\Serious-Train\Juego\bin\NonSolumDebug.pdb (Full PDB)
