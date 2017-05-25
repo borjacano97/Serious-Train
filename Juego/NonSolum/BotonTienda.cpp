@@ -55,7 +55,7 @@ bool BotonTienda::onClick() {
 
 	if (dentro(mpbx, mpby)) {
 
-		juegootp->sound->playEffect("../sounds/buttonSound.mp3", 0, 100, 2);
+		juegootp->sound->playEffect("../sounds/buttonSound.mp3", 0, 20, 2);
 		switch (tip)
 		{
 		case Game::Comprar:

@@ -65,7 +65,7 @@ bool Button::onClick(){
 	if (dentro(mpbx, mpby)){
 		
 		cb(juegootp);
-		juegootp->sound->playEffect("../sounds/buttonSound.mp3", 0, 100, 2);
+		juegootp->sound->playEffect("../sounds/buttonSound.mp3", 0, 20, 2);
 		return true;
 	}
 

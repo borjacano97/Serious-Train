@@ -52,7 +52,9 @@ protected:
 	Button* b1;
 	Button* b2;
 
+	Uint32 d;
 	int contWin = 0;
+	int contTexto = 0;
 	bool fin;
 	bool tutorial = false;
 	bool initObjects(); //crear y destruir los objetos del juego
