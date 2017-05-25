@@ -19,6 +19,7 @@ private:
 	Hud*fondo;
 	Texturas* font;
 	SDL_Color fontColor;
+	SDL_Color fontColor2;
 
 	static void salir(Game * jg);
 	static void jugar(Game * jg);

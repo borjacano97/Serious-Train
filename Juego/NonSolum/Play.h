@@ -44,6 +44,7 @@ protected:
 	Texturas* font;
 	SDL_Color fontColor;
 	SDL_Color fontColor2;
+	SDL_Color fontColor3;
 	Sound* soundLoss;
 	Sound* soundWon;
 	//Sound* sonido;

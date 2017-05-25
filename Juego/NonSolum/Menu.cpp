@@ -25,7 +25,9 @@ Menu::Menu(Game * juego) :Estado(juego)
 	font = new Texturas();
 	font->loadFuente("../fonts/fuenteNumbers.ttf", 200);
 
-	
+	fontColor2.r = 255;
+	fontColor2.g = 255;
+	fontColor2.b = 255;
 }
 
 
@@ -65,6 +67,11 @@ void Menu::salir(Game * jg){
 
 void Menu::draw(){
 	fondo->draw();
+
+	font->loadFromText(ptsjuego->pRender, "NON", fontColor2);
+	font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(100, 250, 850, 80));
+	font->loadFromText(ptsjuego->pRender, "SOLUM", fontColor2);
+	font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(100, 350, 800, 200));
 
 	if (ptsjuego->getNivel()<9){
 		if (ptsjuego->spanish) font->loadFromText(ptsjuego->pRender, "Llega al nivel 9 para desbloquear!!", fontColor);

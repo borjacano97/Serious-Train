@@ -32,7 +32,6 @@ Play::Play(Game * j) : Estado(j)
 	fontColor.g = 165;
 	fontColor.b = 32;
 	
-	
 
 	if (!ptsjuego->survival && ((ptsjuego->getNivel() - 1) / 3) == 2){
 		fontColor2.r = 218;
@@ -44,6 +43,10 @@ Play::Play(Game * j) : Estado(j)
 		fontColor2.g = 165;
 		fontColor2.b = 32;
 	}
+
+	fontColor3.r = 255;
+	fontColor3.g = 255;
+	fontColor3.b = 255;
 
 	textTut = new Texturas();
 	textTut->loadFuente("../fonts/fuenteNumbers.ttf", 200);
@@ -225,6 +228,14 @@ void Play::draw() {
 	}
 	if (ptsjuego->paused) {
 		fondoP->draw();
+		if (ptsjuego->spanish) {
+			textTut->loadFromText(ptsjuego->pRender, "PAUSA", fontColor3);
+			textTut->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(100, 350, 350, 60));
+		}
+		else {
+			textTut->loadFromText(ptsjuego->pRender, "PAUSE", fontColor3);
+			textTut->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(100, 350, 350, 60));
+		}
 		b1->draw();
 		b2->draw();
 	}
