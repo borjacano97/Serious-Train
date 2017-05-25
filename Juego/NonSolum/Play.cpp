@@ -10,9 +10,10 @@
 #include <stdlib.h> // para nºs aleatorios
 #include <time.h>
 
+#include "Historia.h"
 
 Play::Play(Game * j) : Estado(j)
-{
+{	
 	//srand(time(NULL));
 	//ptsjuego = j;
 	initObjects();
@@ -25,11 +26,25 @@ Play::Play(Game * j) : Estado(j)
 	sonido->playMusic("../sounds/prueba.mp3", 3, 20);
 	/*soundLoss = new Sound;
 	soundWon = new Sound;*/
-
+	
+	
 	fontColor.r = 218;
 	fontColor.g = 165;
 	fontColor.b = 32;
 	
+	
+
+	if (!ptsjuego->survival && ((ptsjuego->getNivel() - 1) / 3) == 2){
+		fontColor2.r = 218;
+		fontColor2.g = 195;
+		fontColor2.b = 150;
+	}
+	else {
+		fontColor2.r = 218;
+		fontColor2.g = 165;
+		fontColor2.b = 32;
+	}
+
 	textTut = new Texturas();
 	textTut->loadFuente("../fonts/fuenteNumbers.ttf", 200);
 
@@ -47,6 +62,8 @@ Play::~Play()
 }
 
 bool Play::initObjects() { // creaci�n de los objetos dando un puntero, una textura y una posici�n (constructora de objs)
+
+	
 	h = new Hud(ptsjuego, this, -10, -20, Game::Hud_t::Hud1, Game::Fondo_t::Control);
 	if (!ptsjuego->survival) {
 		tray = new Hud(ptsjuego, this, 1200, 0, Game::Hud_t::Trayecto, Game::Fondo_t::Control);
@@ -68,13 +85,13 @@ bool Play::initObjects() { // creaci�n de los objetos dando un puntero, una te
 	case(4) :
 	case(5) :
 	case(6) :
-		     if (ptsjuego->survival)esc = new Escenario(ptsjuego, Game::Texturas_t::TFondo, 0, -4280);
-		     else  esc = new Escenario(ptsjuego, Game::Texturas_t::TDesierto, 0, -4280);
+		     esc = new Escenario(ptsjuego, Game::Texturas_t::TFondo, 0, -4280);		    
 		break;
 	case(7) :
 	case(8) :
 	case(9) :
-		     esc = new Escenario(ptsjuego, Game::Texturas_t::TFondo, 0, -4280);			
+		     if (ptsjuego->survival)esc = new Escenario(ptsjuego, Game::Texturas_t::TFondo, 0, -4280);
+		     else  esc = new Escenario(ptsjuego, Game::Texturas_t::TDesierto, 0, -4280);
 		break;
 	case(10) :
 	case(11) :
@@ -90,11 +107,11 @@ bool Play::initObjects() { // creaci�n de los objetos dando un puntero, una te
 		break;
 	default:
 		break;
-
-	
 	}
 
-
+	b1 = new Button(ptsjuego, 840, 250, Game::Boton_t::Jugar, reanudar);
+	b2 = new Button(ptsjuego, 840, 550, Game::Boton_t::Volver, salir);	
+	fondoP = new Hud(ptsjuego, NULL, 0, 0, Game::Hud_t::Fondo, Game::Fondo_t::Pause);
 	TTF_Init();
 	
 	return Mix_OpenAudio(22050, MIX_DEFAULT_FORMAT, 2, 4096) != -1;
@@ -150,10 +167,10 @@ void Play::draw() {
 	if (!ptsjuego->survival) {
 		
 			if (ptsjuego->spanish) {
-				font->loadFromText(ptsjuego->pRender, " Nivel: " + std::to_string(ptsjuego->getNivel()), fontColor);
+				font->loadFromText(ptsjuego->pRender, " Nivel: " + std::to_string(ptsjuego->getNivel()), fontColor2);
 			}
 			else {
-				font->loadFromText(ptsjuego->pRender, " Level: " + std::to_string(ptsjuego->getNivel()), fontColor);
+				font->loadFromText(ptsjuego->pRender, " Level: " + std::to_string(ptsjuego->getNivel()), fontColor2);
 			}
 			font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(40, 90, 300, 53));
 			
@@ -166,34 +183,68 @@ void Play::draw() {
 	if (armaActual != nullptr) armaActual->draw(); // quitar comprobación de nullptr si se traslada al modo Historia
 	if (!ptsjuego->survival){
 		font->loadFromText(ptsjuego->pRender, "$ " + std::to_string(ptsjuego->coins), fontColor);
-		if (ptsjuego->bigHP)font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(40, 50, 170, 46));
-		else font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(40, 50, 170, 53));
+		if (ptsjuego->bigHP)font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(40, 50 + 15 * (ptsjuego->coins / 1000), 170, 46));
+		else font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(40, 50 + 15 * (ptsjuego->coins / 1000), 170, 53));
 	}
 
 	if (!ptsjuego->survival && !tutorial && ptsjuego->getNivel() == 1){
-		if (ptsjuego->spanish && enem < 1) {
-			textTut->loadFromText(ptsjuego->pRender, "Muevete con WASD!!", fontColor);
-			textTut->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(35, 350, 50, 170));
-		}
-		if (ptsjuego->spanish && enem >= 1 && enem < 3) {
-			textTut->loadFromText(ptsjuego->pRender, "Dispara con el raton!!", fontColor);
-			textTut->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(35, 350, 50, 170));
-		}
 
-		if (!ptsjuego->spanish && enem < 1) {
-			textTut->loadFromText(ptsjuego->pRender, "Move with WASD!!", fontColor);
-			textTut->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(35, 350, 50, 170));
+		if (enem < 1) {
+			if (contTexto <= 4500) {
+				if (ptsjuego->spanish) {
+					textTut->loadFromText(ptsjuego->pRender, "Muevete con WASD!!", fontColor);
+					textTut->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(35, 350, 50, 170));
+				}
+				else {
+					textTut->loadFromText(ptsjuego->pRender, "Move with WASD!!", fontColor);
+					textTut->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(35, 350, 50, 170));
+				}
+				contTexto += d;
+			}
+			else {
+				if (ptsjuego->spanish) {
+					textTut->loadFromText(ptsjuego->pRender, "Pausa el juego con ESC !!", fontColor);
+					textTut->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(35, 350, 50, 170));
+				}
+				else {
+					textTut->loadFromText(ptsjuego->pRender, "Pause the game with ESC !!", fontColor);
+					textTut->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(35, 350, 50, 170));
+				}
+			}
 		}
-		if (!ptsjuego->spanish && enem >= 1 && enem < 3) {
-			textTut->loadFromText(ptsjuego->pRender, "Shoot with the mouse!", fontColor);
-			textTut->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(35, 350, 50, 170));
-		}
+		else if (enem < 3) {
+			if (ptsjuego->spanish) {
+				textTut->loadFromText(ptsjuego->pRender, "Dispara con el raton!!", fontColor);
+				textTut->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(35, 350, 50, 170));
+			}
+			else {
+				textTut->loadFromText(ptsjuego->pRender, "Shoot with the mouse!", fontColor);
+				textTut->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(35, 350, 50, 170));
+			}
+		}	
 	}
-	
+	if (ptsjuego->paused) {
+		fondoP->draw();
+		b1->draw();
+		b2->draw();
+	}
 }
 
 
 void Play::update(Uint32 delta) {
+	d = delta;
+	// no entiendo por que no me deja meterlo en la constructora :(
+	if (!hist && !ptsjuego->survival) { 
+
+		switch (ptsjuego->getNivel())
+		{
+		case 1:	ptsjuego->pushState(new Historia(ptsjuego));
+			break;
+		default:
+			break;
+		}
+		hist = true; // pa que no entre aqui tol puto rato		
+	}
 
 	if (locom != nullptr) locom->update(delta);
 	esc->update(delta);
@@ -264,4 +315,12 @@ void Play::update(Uint32 delta) {
 }
 void Play::move(char c) {
 	player->move(c); // El Dios de la programaci�n quiere suicidarse. Pero no puede, es inmortal.
+}
+
+void Play::onClick() {
+	if (ptsjuego->paused) {
+		bool clickeado = false;		
+
+		if (b1->onClick() || b2->onClick())	clickeado = true;		
+	}	
 }

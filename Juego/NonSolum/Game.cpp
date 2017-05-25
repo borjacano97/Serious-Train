@@ -2,7 +2,7 @@
 #include "Error.h"
 #include "Menu.h"
 #include "Play.h"
-#include "Pausa.h"
+#include "PantallaInicio.h"
 
 #include <iostream>
 #include <fstream>
@@ -112,7 +112,7 @@ Game::Game()
 
 
 
-	estados.push(new Menu(this)); // estado que queremos inicial
+	estados.push(new PantallaInicio(this)); // estado que queremos inicial
 }
 
 
@@ -141,7 +141,7 @@ SDL_Renderer* Game::getRender()const {
 }
 
 void Game::initMedia() {
-	for (unsigned int i = 0; i < 64 /*magic namber dude*/; i++) {
+	for (unsigned int i = 0; i < 69 /*magic namber dude*/; i++) {
 		texts.emplace_back(new Texturas);
 		texts[i]->load(getRender(), ntexturas[i]);
 	}
@@ -282,7 +282,7 @@ bool Game::handle_event() { //eventos del teclado y raton
 				topEstado()->move('D');
 			}
 			if (e.key.keysym.sym == SDLK_ESCAPE) {
-				if (topEstado()->getEst() == 'P') pushState(new Pausa(this));
+				topEstado()->pause();
 			}
 
 			if ((e.key.keysym.sym ==  SDLK_l || e.key.keysym.sym == SDLK_SPACE)) {
@@ -293,7 +293,7 @@ bool Game::handle_event() { //eventos del teclado y raton
 		}
 		else if (e.type == SDL_MOUSEBUTTONDOWN) { // click izquierdo para llamar al onclick
 			if (e.button.state == SDL_BUTTON_LEFT) {
-				if(topEstado()->getEst() == 'P')topEstado()->dispara(true);
+				if(topEstado()->getEst() == 'P' && !paused)topEstado()->dispara(true);
 				onClick(e.button.x, e.button.y);
 			}
 		}

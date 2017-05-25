@@ -12,6 +12,7 @@
 #include "Escenario.h"
 #include "ArmaTienda.h"
 #include "Hud.h"
+#include "Button.h"
 
 using namespace std;
 
@@ -21,12 +22,14 @@ public:
 	Play(Game * j);
 	virtual ~Play();
 
+	void onClick();
 	void draw();
 	void update(Uint32 delta);
 	void move(char c);
 	char getEst(){ return 'P'; }
 	int getKilled() { return killed; }
 	void finish() { fin = true; }
+	void pause() { ptsjuego->paused = true; }
 
 	vector <Bala*> balas;
 	vector <Enemigo*> enems;
@@ -40,23 +43,39 @@ public:
 protected:
 	Texturas* font;
 	SDL_Color fontColor;
+	SDL_Color fontColor2;
 	Sound* soundLoss;
 	Sound* soundWon;
 	//Sound* sonido;
 	ArmaTienda* armaActual;
 
+	Button* b1;
+	Button* b2;
+
+	Uint32 d;
 	int contWin = 0;
+	int contTexto = 0;
 	bool fin;
 	bool tutorial = false;
 	bool initObjects(); //crear y destruir los objetos del juego
 	void freeObjects();
 
+	static void reanudar(Game * jg) { jg->paused = false; }
+	static void salir(Game * jg){
+		jg->survival = false;
+		jg->extrem = false;
+		jg->paused = false;
+		jg->popState();
+	}
+
 	Escenario*esc;
 	Hud* h;
 	Hud* tray;
 	Hud* locom;
+	Hud* fondoP;
 
 	bool roto = false;
+	bool hist = false;
 
 	Texturas* textTut;
 	SDL_Color color;

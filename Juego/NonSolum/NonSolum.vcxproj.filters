@@ -48,9 +48,6 @@
     <ClCompile Include="Menu.cpp">
       <Filter>Archivos de código fuente\Estados</Filter>
     </ClCompile>
-    <ClCompile Include="Pausa.cpp">
-      <Filter>Archivos de código fuente\Estados</Filter>
-    </ClCompile>
     <ClCompile Include="Play.cpp">
       <Filter>Archivos de código fuente\Estados</Filter>
     </ClCompile>
@@ -147,6 +144,12 @@
     <ClCompile Include="FinNivelSvl.cpp">
       <Filter>Archivos de código fuente\Estados</Filter>
     </ClCompile>
+    <ClCompile Include="Historia.cpp">
+      <Filter>Archivos de código fuente\Estados</Filter>
+    </ClCompile>
+    <ClCompile Include="PantallaInicio.cpp">
+      <Filter>Archivos de código fuente\Estados</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Texturas.h">
@@ -181,9 +184,6 @@
     </ClInclude>
     <ClInclude Include="Objeto.h">
       <Filter>Archivos de encabezado\Abstractas/Padres</Filter>
-    </ClInclude>
-    <ClInclude Include="Pausa.h">
-      <Filter>Archivos de encabezado\Estados</Filter>
     </ClInclude>
     <ClInclude Include="Personaje.h">
       <Filter>Archivos de encabezado\Objetos</Filter>
@@ -258,6 +258,12 @@
       <Filter>Archivos de encabezado\Niveles</Filter>
     </ClInclude>
     <ClInclude Include="FinNivelSvl.h">
+      <Filter>Archivos de encabezado\Estados</Filter>
+    </ClInclude>
+    <ClInclude Include="Historia.h">
+      <Filter>Archivos de encabezado\Estados</Filter>
+    </ClInclude>
+    <ClInclude Include="PantallaInicio.h">
       <Filter>Archivos de encabezado\Estados</Filter>
     </ClInclude>
   </ItemGroup>

@@ -3,7 +3,7 @@
 
 
 Nivel2::Nivel2(Game * j, std::vector <Game::Vagon_t> v, Game::Bala_t a) : Play(j)
-{
+{	
 	enem = 0;
 	emax = 15 + 5 * ptsjuego->getNivel();
 	for (unsigned int i = 0; i < 4; i++) {
@@ -36,19 +36,20 @@ Nivel2::Nivel2(Game * j, std::vector <Game::Vagon_t> v, Game::Bala_t a) : Play(j
 }
 
 void Nivel2::update(Uint32 delta) {
-	shootTimer += delta;
-	spawnTimer += delta;
+	if (!ptsjuego->paused) {
+		shootTimer += delta;
+		spawnTimer += delta;
 
-	if (disparando && shootTimer >= cadencia) {
-		balas.emplace_back(new Bala(ptsjuego, this, player->getPos().x, player->getPos().y + 10, player->getMira(), arma));
-		shootTimer = 0;
-	}
+		if (disparando && shootTimer >= cadencia) {
+			balas.emplace_back(new Bala(ptsjuego, this, player->getPos().x, player->getPos().y + 10, player->getMira(), arma));
+			shootTimer = 0;
+		}
 
-	if (enem < emax){
-		 //generar zombies aleatorios
-			if (spawnTimer >= (1850 - (50*ptsjuego->getNivel()))){
+		if (enem < emax) {
+			//generar zombies aleatorios
+			if (spawnTimer >= (1850 - (50 * ptsjuego->getNivel()))) {
 
-				if (rand() % 2 == 0){
+				if (rand() % 2 == 0) {
 					if (rand() % 2 == 0) enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 500) + 320, Game::Enemigo_t::Normal));
 					else  enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 500) + 320, Game::Enemigo_t::Normal));
 					enem++;
@@ -58,14 +59,12 @@ void Nivel2::update(Uint32 delta) {
 					else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 100, Game::Enemigo_t::Rapido));
 					enem++;
 				}
-			spawnTimer = 0;
+				spawnTimer = 0;
+			}
 		}
+		else if (emax == Play::getKilled()) {
+			Play::finish();
+		}
+		Play::update(delta);
 	}
-	else if (emax == Play::getKilled()){
-		Play::finish();
-	}
-	
-	
-	Play::update(delta);
-	
 }

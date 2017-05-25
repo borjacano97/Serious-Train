@@ -62,3 +62,8 @@
 ../bmps/canonN.png
 ../bmps/botonOsc.png
 ../bmps/pausa.png
+../bmps/bala2.png
+../bmps/historia1.png
+../bmps/fondoInicio.png
+../bmps/logo.png
+../bmps/sangre.png

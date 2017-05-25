@@ -19,7 +19,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -82,6 +82,7 @@
     <ClCompile Include="Font.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="FinNivel.cpp" />
+    <ClCompile Include="Historia.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Nivel1.cpp" />
@@ -91,7 +92,7 @@
     <ClCompile Include="Nivel5.cpp" />
     <ClCompile Include="Objeto.cpp" />
     <ClCompile Include="ObjetoTienda.cpp" />
-    <ClCompile Include="Pausa.cpp" />
+    <ClCompile Include="PantallaInicio.cpp" />
     <ClCompile Include="Personaje.cpp" />
     <ClCompile Include="Play.cpp" />
     <ClCompile Include="Selector.cpp" />
@@ -120,6 +121,7 @@
     <ClInclude Include="Font.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="FinNivel.h" />
+    <ClInclude Include="Historia.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="Nivel1.h" />
     <ClInclude Include="Nivel2.h" />
@@ -128,7 +130,7 @@
     <ClInclude Include="Nivel5.h" />
     <ClInclude Include="Objeto.h" />
     <ClInclude Include="ObjetoTienda.h" />
-    <ClInclude Include="Pausa.h" />
+    <ClInclude Include="PantallaInicio.h" />
     <ClInclude Include="Personaje.h" />
     <ClInclude Include="Play.h" />
     <ClInclude Include="RaizEstado.h" />
