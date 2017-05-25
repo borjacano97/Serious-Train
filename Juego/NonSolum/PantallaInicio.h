@@ -12,9 +12,11 @@ public:
 	virtual ~PantallaInicio() {};
 	void draw();
 	void update(Uint32 delta);
-	void onClick() { cont = 5000; }
+	void onClick() { cont = 6000; }
 private:
 	Hud* fondo;
+	Hud* logo;
+	Hud* sangre;
 	int cont = 0;
 	Sound* iniSound;
 	bool initLibraries();

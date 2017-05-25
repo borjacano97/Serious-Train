@@ -15,6 +15,7 @@ private:
 	Game::Hud_t tipo;
 	Game::Fondo_t fondo;
 	Play* p;
+	int cont = 0;
 };
 
 #endif

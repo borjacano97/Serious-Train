@@ -71,11 +71,42 @@ Hud::Hud(Game* juego, Play* pl, float x, float y, Game::Hud_t t, Game::Fondo_t f
 		alto = 90;
 		ancho = 200;
 		break;
+	case Game::Logo:
+		Ttextura = Game::Texturas_t::TLogo;
+		alto = 1;
+		ancho = 1;
+		break;
+	case Game::Sangre:
+		Ttextura = Game::Texturas_t::TSangre;
+		alto = 400;
+		ancho = 600;
+		break;
 	default:
 		break;
 	}	
 }
 
-void Hud::update(Uint32 delta){
-	pos.y = 280 - ((230 / p->emax) *p->getKilled());
+void Hud::update(Uint32 delta) {
+	switch (tipo)
+	{
+	case Game::Tren: pos.y = 280 - ((230 / p->emax) *p->getKilled());
+		break;
+	case Game::Logo: 
+		if (alto <= 150) {
+			if (cont >= 25) {
+				alto++;
+				ancho += 2;
+
+				pos.y--;
+				pos.x--;
+				cont = 0;
+			}
+			else cont += delta;
+		}		
+		break;
+	default:
+		break;
+	}
 }
+	
+	
