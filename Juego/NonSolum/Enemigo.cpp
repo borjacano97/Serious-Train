@@ -139,8 +139,6 @@ void Enemigo::update(Uint32 delta) {
 			if (pos.y >= 550) pos.y = 550;
 			else if (pos.y <= 70) pos.y = 70;
 			
-
-
 			if (decidido) {
 				if (pos.x <= 100) {
 					parado = true;

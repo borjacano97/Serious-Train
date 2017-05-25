@@ -28,8 +28,8 @@ public:
 	void move(char c);
 	char getEst(){ return 'P'; }
 	int getKilled() { return killed; }
-	void finish() { fin = true; }
-	void pause() { ptsjuego->paused = true; }
+	void finish() { fin = true;  }
+	void pause() { if (ptsjuego->paused) ptsjuego->paused = false; else ptsjuego->paused = true; }
 
 	vector <Bala*> balas;
 	vector <Enemigo*> enems;
@@ -44,6 +44,7 @@ protected:
 	Texturas* font;
 	SDL_Color fontColor;
 	SDL_Color fontColor2;
+	SDL_Color fontColor3;
 	Sound* soundLoss;
 	Sound* soundWon;
 	//Sound* sonido;
@@ -62,8 +63,12 @@ protected:
 
 	static void reanudar(Game * jg) { jg->paused = false; }
 	static void salir(Game * jg){
-		jg->survival = false;
-		jg->extrem = false;
+		if (jg->survival) {
+			jg->sound->stopMusic();
+			jg->sound->playMusic("../sounds/musicaMenuP.mp3", -1, 6);
+			jg->survival = false;
+			jg->extrem = false;
+		}		
 		jg->paused = false;
 		jg->popState();
 	}
@@ -76,6 +81,10 @@ protected:
 
 	bool roto = false;
 	bool hist = false;
+
+
+	int alphaCont = 0;
+	int contAlpha2 = 0;
 
 	Texturas* textTut;
 	SDL_Color color;

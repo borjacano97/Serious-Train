@@ -15,10 +15,11 @@ public:
 	void draw();
 
 private:
-
+	int cont = 0;
 	Hud*fondo;
 	Texturas* font;
 	SDL_Color fontColor;
+	SDL_Color fontColor2;
 
 	static void salir(Game * jg);
 	static void jugar(Game * jg);

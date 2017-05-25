@@ -62,10 +62,8 @@ void Personaje::move(char c) {
 		}
 		break;
 	case 'S':
-		dir.y = 1;
-		//Coloca al jugador en la fila del spritesheet de la animación de avanzar hacia arriba
+		dir.y = 1;		
 		srcR.y = 0;
-		//Recorre esa animacion y la reinicia al acabar
 		if (srcR.x < 65) {
 			srcR.x += ancho;
 		}
@@ -76,9 +74,7 @@ void Personaje::move(char c) {
 	case 'A':
 		mira = -1;
 		dir.x = -1;
-		//Coloca al jugador en la fila del spritesheet de la animación de avanzar hacia arriba
 		srcR.y = 124;
-		//Recorre esa animacion y la reinicia al acabar
 		if (srcR.x < 65) {
 			srcR.x += ancho;
 		}
@@ -89,9 +85,7 @@ void Personaje::move(char c) {
 	case 'D':
 		mira = 1;
 		dir.x = 1;
-		//Coloca al jugador en la fila del spritesheet de la animación de avanzar hacia arriba
 		srcR.y = 62;
-		//Recorre esa animacion y la reinicia al acabar
 		if (srcR.x < 65) {
 			srcR.x += ancho;
 		}

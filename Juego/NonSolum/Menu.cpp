@@ -2,7 +2,6 @@
 #include "Button.h"
 #include "Tienda.h"
 #include "Survival.h"
-#include "Extrem.h"
 
 
 
@@ -25,7 +24,11 @@ Menu::Menu(Game * juego) :Estado(juego)
 	font = new Texturas();
 	font->loadFuente("../fonts/fuenteNumbers.ttf", 200);
 
-	
+	fontColor2.r = 255;
+	fontColor2.g = 255;
+	fontColor2.b = 255;
+
+	ptsjuego->sound->playMusic("../sounds/musicaMenuP.mp3", -1, 6);
 }
 
 
@@ -44,7 +47,7 @@ void Menu::survMode(Game * jg) {
 		jg->survival = true;
 		jg->sound->stopMusic();
 		jg->pushState(new Survival(jg));
-		jg->sound->playMusic("../sounds/levasPolka.mp3", -1, 18);
+		jg->sound->playMusic("../sounds/survivalMusic.mp3", -1, 200);
 		jg->sound->playEffect("../sounds/newRound.mp3", 0, 600, 4);
 	}	
 }
@@ -53,8 +56,8 @@ void Menu::extremo(Game * jg) {
 		jg->survival = true;
 		jg->extrem = true;
 		jg->sound->stopMusic();
-		jg->pushState(new Extrem(jg));
-		jg->sound->playMusic("../sounds/levasPolka.mp3", -1, 18);
+		jg->pushState(new Survival(jg));
+		jg->sound->playMusic("../sounds/survivalMusic.mp3", -1, 200);
 		jg->sound->playEffect("../sounds/newRound.mp3", 0, 600, 4);
 	}
 }
@@ -65,6 +68,11 @@ void Menu::salir(Game * jg){
 
 void Menu::draw(){
 	fondo->draw();
+
+	font->loadFromText(ptsjuego->pRender, "NON", fontColor2);
+	font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(100, 250, 850, 80));
+	font->loadFromText(ptsjuego->pRender, "SOLUM", fontColor2);
+	font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(100, 350, 800, 200));
 
 	if (ptsjuego->getNivel()<9){
 		if (ptsjuego->spanish) font->loadFromText(ptsjuego->pRender, "Llega al nivel 9 para desbloquear!!", fontColor);
@@ -77,4 +85,12 @@ void Menu::draw(){
 		font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(40, 350, 10, 230));
 	}
 	Estado::draw();
+
+	if (cont <= 250) {
+		cont+=5;
+		ptsjuego->texts[43]->setColor(cont, cont, cont);
+		ptsjuego->texts[43]->setColor(255 - cont);
+		ptsjuego->texts[43]->draw(ptsjuego->pRender, nullptr, nullptr);
+	}
+	
 }

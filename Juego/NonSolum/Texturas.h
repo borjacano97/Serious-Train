@@ -26,7 +26,8 @@ public:
 	//SDL_Rect setRect(int h, int w, int x, int y);
 
 	void setColor(Uint8 red, Uint8 green, Uint8 blue){ SDL_SetTextureColorMod(ptext, red, green, blue); }
-	
+	void setColor(Uint8 alpha){ SDL_SetTextureAlphaMod(ptext, alpha); };
+	   
 		
 	SDL_Texture* ptext;
 private:

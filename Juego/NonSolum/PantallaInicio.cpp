@@ -21,15 +21,20 @@ void PantallaInicio::draw() {
 	if (cont >= 5000) sangre->draw();
 	logo->draw();
 	
+	if (cont >= 6500) {
+		ptsjuego->texts[43]->setColor(255-(cont - 6500) / 2, 255-(cont - 6500) / 2, 255-(cont - 6500) / 2);
+		ptsjuego->texts[43]->setColor((cont-6500)/2);
+		ptsjuego->texts[43]->draw(ptsjuego->pRender, nullptr, nullptr);
+	}
+
 	Estado::draw();
 }
 
 void PantallaInicio::update(Uint32 delta) {
 	logo->update(delta);
 	cont+= delta;
-	if (cont >= 6000) {
+	if (cont >= 7000) {
 		iniSound->stopMusic();
-		ptsjuego->sound->playMusic("../sounds/musicaMenuP.mp3", -1, 10);
 		ptsjuego->estados.push(new Menu(ptsjuego));
 	}
 }

@@ -138,9 +138,6 @@
     <ClCompile Include="Hud.cpp">
       <Filter>Archivos de código fuente\Objetos</Filter>
     </ClCompile>
-    <ClCompile Include="Extrem.cpp">
-      <Filter>Archivos de código fuente\Niveles</Filter>
-    </ClCompile>
     <ClCompile Include="FinNivelSvl.cpp">
       <Filter>Archivos de código fuente\Estados</Filter>
     </ClCompile>
@@ -253,9 +250,6 @@
     </ClInclude>
     <ClInclude Include="Hud.h">
       <Filter>Archivos de encabezado\Objetos</Filter>
-    </ClInclude>
-    <ClInclude Include="Extrem.h">
-      <Filter>Archivos de encabezado\Niveles</Filter>
     </ClInclude>
     <ClInclude Include="FinNivelSvl.h">
       <Filter>Archivos de encabezado\Estados</Filter>
