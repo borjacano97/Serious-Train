@@ -77,7 +77,6 @@
     <ClCompile Include="Error.cpp" />
     <ClCompile Include="Escenario.cpp" />
     <ClCompile Include="Estado.cpp" />
-    <ClCompile Include="Extrem.cpp" />
     <ClCompile Include="FinNivelSvl.cpp" />
     <ClCompile Include="Font.cpp" />
     <ClCompile Include="Game.cpp" />
@@ -116,7 +115,6 @@
     <ClInclude Include="Error.h" />
     <ClInclude Include="Escenario.h" />
     <ClInclude Include="Estado.h" />
-    <ClInclude Include="Extrem.h" />
     <ClInclude Include="FinNivelSvl.h" />
     <ClInclude Include="Font.h" />
     <ClInclude Include="Game.h" />

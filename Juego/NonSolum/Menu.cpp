@@ -2,7 +2,6 @@
 #include "Button.h"
 #include "Tienda.h"
 #include "Survival.h"
-#include "Extrem.h"
 
 
 
@@ -55,7 +54,7 @@ void Menu::extremo(Game * jg) {
 		jg->survival = true;
 		jg->extrem = true;
 		jg->sound->stopMusic();
-		jg->pushState(new Extrem(jg));
+		jg->pushState(new Survival(jg));
 		jg->sound->playMusic("../sounds/levasPolka.mp3", -1, 18);
 		jg->sound->playEffect("../sounds/newRound.mp3", 0, 600, 4);
 	}

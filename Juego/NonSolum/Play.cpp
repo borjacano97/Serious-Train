@@ -160,7 +160,7 @@ void Play::draw() {
 		case(10):
 		case(11):
 		case(12):
-			if (!ptsjuego->survival) ptsjuego->texts[43]->draw(ptsjuego->pRender, nullptr, nullptr);//nocheeeeeeeeeeee
+			if (!ptsjuego->survival) ptsjuego->texts[43]/*capa oscura*/->draw(ptsjuego->pRender, nullptr, nullptr);
 			break;
 		default:
 			break;
@@ -179,7 +179,18 @@ void Play::draw() {
 			
 		
 	}
-	if (ptsjuego->extrem) ptsjuego->texts[43]->draw(ptsjuego->pRender, nullptr, nullptr);
+	// control de capa de noche en extrem
+	if (ptsjuego->extrem){
+		if (contAlpha2 >= 1000 && alphaCont<255){
+			contAlpha2 = 0;
+			alphaCont++;
+		}
+		else contAlpha2 += d;
+		ptsjuego->texts[43]->setColor(255 - alphaCont);
+		ptsjuego->texts[43]->draw(ptsjuego->pRender, nullptr, nullptr);
+	}
+
+
 	if (tray!=nullptr) tray->draw();
 	if (locom != nullptr) locom->draw();
 	TrainHp->draw();

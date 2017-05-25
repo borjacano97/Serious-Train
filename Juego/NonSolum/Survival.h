@@ -25,6 +25,7 @@ private:
 	Game::Bala_t arma;
 	Game* aux;
 
+	int lastEnemy;
 
 	Texturas* textTut;
 	SDL_Color color;

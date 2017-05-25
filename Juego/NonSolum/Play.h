@@ -78,6 +78,10 @@ protected:
 	bool roto = false;
 	bool hist = false;
 
+
+	int alphaCont = 0;
+	int contAlpha2 = 0;
+
 	Texturas* textTut;
 	SDL_Color color;
 };
