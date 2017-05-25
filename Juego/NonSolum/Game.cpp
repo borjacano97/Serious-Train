@@ -2,7 +2,6 @@
 #include "Error.h"
 #include "Menu.h"
 #include "Play.h"
-#include "Pausa.h"
 #include "PantallaInicio.h"
 
 #include <iostream>
@@ -283,7 +282,7 @@ bool Game::handle_event() { //eventos del teclado y raton
 				topEstado()->move('D');
 			}
 			if (e.key.keysym.sym == SDLK_ESCAPE) {
-				if (topEstado()->getEst() == 'P') pushState(new Pausa(this));
+				topEstado()->pause();
 			}
 
 			if ((e.key.keysym.sym ==  SDLK_l || e.key.keysym.sym == SDLK_SPACE)) {
@@ -294,7 +293,7 @@ bool Game::handle_event() { //eventos del teclado y raton
 		}
 		else if (e.type == SDL_MOUSEBUTTONDOWN) { // click izquierdo para llamar al onclick
 			if (e.button.state == SDL_BUTTON_LEFT) {
-				if(topEstado()->getEst() == 'P')topEstado()->dispara(true);
+				if(topEstado()->getEst() == 'P' && !paused)topEstado()->dispara(true);
 				onClick(e.button.x, e.button.y);
 			}
 		}

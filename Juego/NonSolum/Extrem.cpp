@@ -25,157 +25,158 @@ Extrem::Extrem(Game * j) : Play(j)
 }
 
 void Extrem::update(Uint32 delta) {
+	if (!ptsjuego->paused) {
+		shootTimer += delta;
+		spawnTimer += delta;
 
-	shootTimer += delta;
-	spawnTimer += delta;
-
-	if (disparando && shootTimer >= cadencia) {
-		balas.emplace_back(new Bala(ptsjuego, this, player->getPos().x, player->getPos().y + 10, player->getMira(), arma));
-		shootTimer = 0;
-	}
-
-
-	switch (ptsjuego->contRondas % 6) // 6 tipos de enemigos
-	{
-	case (1) :
-
-		if (!vagonCambiado && (ptsjuego->contRondas == 7 || ptsjuego->contRondas == 13 || ptsjuego->contRondas == 19)) {
-			
-			tren[(ptsjuego->contRondas / 6) +1]->cambiar();
-			vagonCambiado = true;
+		if (disparando && shootTimer >= cadencia) {
+			balas.emplace_back(new Bala(ptsjuego, this, player->getPos().x, player->getPos().y + 10, player->getMira(), arma));
+			shootTimer = 0;
 		}
 
-		spawn = 750 - (3 * ptsjuego->contRondas); // ha de variar entre rondas
-		lastEnemy = 30 + (2 * ptsjuego->contRondas);
-		if (enem < lastEnemy && spawnTimer >= spawn) {
-			if (newRonda){
-				spawn -= 9000;
-				newRonda = false;
+
+		switch (ptsjuego->contRondas % 6) // 6 tipos de enemigos
+		{
+		case (1):
+
+			if (!vagonCambiado && (ptsjuego->contRondas == 7 || ptsjuego->contRondas == 13 || ptsjuego->contRondas == 19)) {
+
+				tren[(ptsjuego->contRondas / 6) + 1]->cambiar();
+				vagonCambiado = true;
 			}
-			else{
-				if (rand() % 2 == 0) enems.emplace_back
+
+			spawn = 750 - (3 * ptsjuego->contRondas); // ha de variar entre rondas
+			lastEnemy = 30 + (2 * ptsjuego->contRondas);
+			if (enem < lastEnemy && spawnTimer >= spawn) {
+				if (newRonda) {
+					spawn -= 9000;
+					newRonda = false;
+				}
+				else {
+					if (rand() % 2 == 0) enems.emplace_back
 					(new Enemigo(ptsjuego, this, 0, (rand() % 500) + 320, Game::Enemigo_t::Normal));
-				else enems.emplace_back
+					else enems.emplace_back
 					(new Enemigo(ptsjuego, this, 1300, (rand() % 500) + 320, Game::Enemigo_t::Normal));
-				enem++;
-				spawnTimer = 0;
+					enem++;
+					spawnTimer = 0;
+				}
+
 			}
-				
-			}
-			
-		
-		break;
-	case (2) :
-		
-		spawn = 650 - (3 * ptsjuego->contRondas);
-		lastEnemy = 25 + (2 * ptsjuego->contRondas);
-		if (enem < lastEnemy && spawnTimer >= spawn) {
-			if (newRonda) {
-				spawn -= 9000;
-				newRonda = false;
-			}
-			else{
-				if (rand() % 2 == 0) enems.emplace_back
+
+
+			break;
+		case (2):
+
+			spawn = 650 - (3 * ptsjuego->contRondas);
+			lastEnemy = 25 + (2 * ptsjuego->contRondas);
+			if (enem < lastEnemy && spawnTimer >= spawn) {
+				if (newRonda) {
+					spawn -= 9000;
+					newRonda = false;
+				}
+				else {
+					if (rand() % 2 == 0) enems.emplace_back
 					(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 100, Game::Enemigo_t::Rapido));
-				else enems.emplace_back
+					else enems.emplace_back
 					(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 100, Game::Enemigo_t::Rapido));
-				enem++;
-				spawnTimer = 0;
+					enem++;
+					spawnTimer = 0;
+				}
 			}
-		}
-		break;
-	case (3) :
-		spawn = 950 - (3 * ptsjuego->contRondas);
-		lastEnemy = 20 + (2 * ptsjuego->contRondas);
-		if (enem < lastEnemy && spawnTimer >= spawn) {
-			if (newRonda) {
-				spawn -= 9000;
-				newRonda = false;
-			}
-			else{
-				if (rand() % 2 == 0) enems.emplace_back
+			break;
+		case (3):
+			spawn = 950 - (3 * ptsjuego->contRondas);
+			lastEnemy = 20 + (2 * ptsjuego->contRondas);
+			if (enem < lastEnemy && spawnTimer >= spawn) {
+				if (newRonda) {
+					spawn -= 9000;
+					newRonda = false;
+				}
+				else {
+					if (rand() % 2 == 0) enems.emplace_back
 					(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 280, Game::Enemigo_t::Invisible));
-				else enems.emplace_back
+					else enems.emplace_back
 					(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 280, Game::Enemigo_t::Invisible));
-				enem++;
-				spawnTimer = 0;
+					enem++;
+					spawnTimer = 0;
+				}
 			}
-		}
-		break;
-	case (4) :
-		spawn = 2950 - (3 * ptsjuego->contRondas);
-		lastEnemy = 7 + (2 * ptsjuego->contRondas);
-		if (enem < lastEnemy && spawnTimer >= spawn) {
-			if (newRonda) {
-				spawn -= 9000;
-				newRonda = false;
-			}
-			else{
-				if (rand() % 2 == 0) enems.emplace_back
+			break;
+		case (4):
+			spawn = 2950 - (3 * ptsjuego->contRondas);
+			lastEnemy = 7 + (2 * ptsjuego->contRondas);
+			if (enem < lastEnemy && spawnTimer >= spawn) {
+				if (newRonda) {
+					spawn -= 9000;
+					newRonda = false;
+				}
+				else {
+					if (rand() % 2 == 0) enems.emplace_back
 					(new Enemigo(ptsjuego, this, 0, (rand() % 500) + 300, Game::Enemigo_t::Tank));
-				else enems.emplace_back
+					else enems.emplace_back
 					(new Enemigo(ptsjuego, this, 1300, (rand() % 500) + 300, Game::Enemigo_t::Tank));
-				enem++;
-				spawnTimer = 0;
+					enem++;
+					spawnTimer = 0;
+				}
 			}
-		}
-		break;
-	case (5) :
-		spawn = 1600 - (3 * ptsjuego->contRondas);
-		lastEnemy = 20 + (2 * ptsjuego->contRondas);
-		if (enem < lastEnemy && spawnTimer >= spawn) {
-			if (newRonda) {
-				spawn -= 9000;
-				newRonda = false;
-			}
-			else{
-				if (rand() % 2 == 0) enems.emplace_back
+			break;
+		case (5):
+			spawn = 1600 - (3 * ptsjuego->contRondas);
+			lastEnemy = 20 + (2 * ptsjuego->contRondas);
+			if (enem < lastEnemy && spawnTimer >= spawn) {
+				if (newRonda) {
+					spawn -= 9000;
+					newRonda = false;
+				}
+				else {
+					if (rand() % 2 == 0) enems.emplace_back
 					(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 80, Game::Enemigo_t::Enano));
-				else enems.emplace_back
+					else enems.emplace_back
 					(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 80, Game::Enemigo_t::Enano));
-				enem++;
-				spawnTimer = 0;
+					enem++;
+					spawnTimer = 0;
+				}
 			}
-		}
-		break;
-	case (0) :
-		spawn = 3800 - (3 * ptsjuego->contRondas);
-		lastEnemy = 5 + (2 * ptsjuego->contRondas);
-		if (enem < lastEnemy && spawnTimer >= spawn) {
-			if (newRonda) {
-				spawn -= 9000;
-				newRonda = false;
-			}
-			else{
-				if (rand() % 2 == 0) enems.emplace_back
+			break;
+		case (0):
+			spawn = 3800 - (3 * ptsjuego->contRondas);
+			lastEnemy = 5 + (2 * ptsjuego->contRondas);
+			if (enem < lastEnemy && spawnTimer >= spawn) {
+				if (newRonda) {
+					spawn -= 9000;
+					newRonda = false;
+				}
+				else {
+					if (rand() % 2 == 0) enems.emplace_back
 					(new Enemigo(ptsjuego, this, 0, (rand() % 500) + 230, Game::Enemigo_t::Tocho));
-				else enems.emplace_back
+					else enems.emplace_back
 					(new Enemigo(ptsjuego, this, 1300, (rand() % 500) + 230, Game::Enemigo_t::Tocho));
-				enem++;
-				spawnTimer = 0;
+					enem++;
+					spawnTimer = 0;
+				}
 			}
+			break;
+		default:
+			break;
 		}
-		break;
-	default:
-		break;
-	}
 
 
-	if (killed >= lastEnemy) {
+		if (killed >= lastEnemy) {
 
-		enem = 0;
-		spawnTimer = 0;
-		killed = 0;
+			enem = 0;
+			spawnTimer = 0;
+			killed = 0;
 
-		newRonda = true;
-		vagonCambiado = false;
+			newRonda = true;
+			vagonCambiado = false;
 
-		ptsjuego->contRondas++;
-		spawn += 9000; 
-	}
+			ptsjuego->contRondas++;
+			spawn += 9000;
+		}
 
-	textInit += delta;
-	Play::update(delta);
+		textInit += delta;
+		Play::update(delta);
+	}	
 }
 void Extrem::draw() {
 	Play::draw();

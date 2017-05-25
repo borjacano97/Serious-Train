@@ -65,6 +65,7 @@ public:
 	bool survival = false;
 	bool extrem = false;
 	bool bigHP = false;
+	bool paused = false;
 
 	bool primerArma = false;
 	bool primerVagon = false;

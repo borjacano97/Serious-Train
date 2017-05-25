@@ -13,9 +13,7 @@
 #include "Historia.h"
 
 Play::Play(Game * j) : Estado(j)
-{
-
-	
+{	
 	//srand(time(NULL));
 	//ptsjuego = j;
 	initObjects();
@@ -109,11 +107,11 @@ bool Play::initObjects() { // creaci�n de los objetos dando un puntero, una te
 		break;
 	default:
 		break;
-
-	
 	}
 
-
+	b1 = new Button(ptsjuego, 840, 250, Game::Boton_t::Jugar, reanudar);
+	b2 = new Button(ptsjuego, 840, 550, Game::Boton_t::Volver, salir);	
+	fondoP = new Hud(ptsjuego, NULL, 0, 0, Game::Hud_t::Fondo, Game::Fondo_t::Pause);
 	TTF_Init();
 	
 	return Mix_OpenAudio(22050, MIX_DEFAULT_FORMAT, 2, 4096) != -1;
@@ -208,7 +206,11 @@ void Play::draw() {
 			textTut->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(35, 350, 50, 170));
 		}
 	}
-	
+	if (ptsjuego->paused) {
+		fondoP->draw();
+		b1->draw();
+		b2->draw();
+	}
 }
 
 
@@ -296,4 +298,12 @@ void Play::update(Uint32 delta) {
 }
 void Play::move(char c) {
 	player->move(c); // El Dios de la programaci�n quiere suicidarse. Pero no puede, es inmortal.
+}
+
+void Play::onClick() {
+	if (ptsjuego->paused) {
+		bool clickeado = false;		
+
+		if (b1->onClick() || b2->onClick())	clickeado = true;		
+	}	
 }

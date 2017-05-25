@@ -37,44 +37,45 @@ Nivel4::Nivel4(Game * j, std::vector <Game::Vagon_t> v, Game::Bala_t a) : Play(j
 
 
 void Nivel4::update(Uint32 delta) {
-	shootTimer += delta;
-	spawnTimer += delta;
+	if (!ptsjuego->paused) {
+		shootTimer += delta;
+		spawnTimer += delta;
 
-	if (disparando && shootTimer >= cadencia) {
-		balas.emplace_back(new Bala(ptsjuego, this, player->getPos().x, player->getPos().y + 10, player->getMira(), arma));
-		shootTimer = 0;
-	}
-
-	if (enem < emax - 1){
-		if (spawnTimer >= 2380){
-
-			if (rand() % 2 == 0){
-				if (rand() % 2 == 0) enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 500) + 230, Game::Enemigo_t::Normal));
-				else  enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 500) + 230, Game::Enemigo_t::Normal));
-				enem++;
-			}
-			else {
-				if (rand() % 2 == 0) enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) +100, Game::Enemigo_t::Rapido));
-				else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 100, Game::Enemigo_t::Rapido));
-				enem++; 
-			}
-			spawnTimer = 0;
+		if (disparando && shootTimer >= cadencia) {
+			balas.emplace_back(new Bala(ptsjuego, this, player->getPos().x, player->getPos().y + 10, player->getMira(), arma));
+			shootTimer = 0;
 		}
-	}
-	else {
-		if (!created){
-			enems.emplace_back
+
+		if (enem < emax - 1) {
+			if (spawnTimer >= 2380) {
+
+				if (rand() % 2 == 0) {
+					if (rand() % 2 == 0) enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 500) + 230, Game::Enemigo_t::Normal));
+					else  enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 500) + 230, Game::Enemigo_t::Normal));
+					enem++;
+				}
+				else {
+					if (rand() % 2 == 0) enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 100, Game::Enemigo_t::Rapido));
+					else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 100, Game::Enemigo_t::Rapido));
+					enem++;
+				}
+				spawnTimer = 0;
+			}
+		}
+		else {
+			if (!created) {
+				enems.emplace_back
 				(new Enemigo(ptsjuego, this, 0, 550, Game::Enemigo_t::Tank));
-			created = true;
+				created = true;
+			}
+
+
 		}
-
-
-	}
-		if (emax == Play::getKilled()){
+		if (emax == Play::getKilled()) {
 			Play::finish();
-		
-	}
+
+		}
 
 		Play::update(delta);
-
+	}
 }

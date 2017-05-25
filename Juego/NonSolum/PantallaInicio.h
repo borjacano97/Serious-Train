@@ -12,7 +12,7 @@ public:
 	virtual ~PantallaInicio() {};
 	void draw();
 	void update(Uint32 delta);
-
+	void onClick() { cont = 5000; }
 private:
 	Hud* fondo;
 	int cont = 0;

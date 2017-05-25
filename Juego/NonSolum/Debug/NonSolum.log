@@ -1,6 +1,3 @@
 ﻿  PantallaInicio.cpp
-  Game.cpp
-c:\users\gonzalo guzmán\universidad\proyecto2\master-proyecto\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=': conversión de 'double' a 'float'; posible pérdida de datos
-  Generando código...
-  NonSolum.vcxproj -> C:\Users\Gonzalo Guzmán\Universidad\PROYECTO2\Master-Proyecto\Serious-Train\Juego\bin\NonSolumDebug.exe
-  NonSolum.vcxproj -> C:\Users\Gonzalo Guzmán\Universidad\PROYECTO2\Master-Proyecto\Serious-Train\Juego\bin\NonSolumDebug.pdb (Partial PDB)
+  NonSolum.vcxproj -> C:\Users\Alejandro\Desktop\Serious-Train\Juego\bin\NonSolumDebug.exe
+  NonSolum.vcxproj -> C:\Users\Alejandro\Desktop\Serious-Train\Juego\bin\NonSolumDebug.pdb (Full PDB)

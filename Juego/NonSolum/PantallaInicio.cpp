@@ -4,10 +4,11 @@
 
 PantallaInicio::PantallaInicio(Game* juego) : Estado(juego)
 {
+	ptsjuego = juego;
 	fondo = new Hud(ptsjuego, NULL, 0, 0, Game::Hud_t::Fondo, Game::Fondo_t::FondoInicio);
 	initLibraries();
 	iniSound = new Sound;
-	iniSound->playEffect("../sounds/iniSound.mp3", 0, 45, -1);
+	iniSound->playMusic("../sounds/iniSound.mp3",-1,17);
 }
 
 
@@ -17,11 +18,12 @@ void PantallaInicio::draw() {
 }
 
 void PantallaInicio::update(Uint32 delta) {
-	cont++;
+	cont+= delta;
 	if (cont >= 5000) {
+		iniSound->stopMusic();
+		ptsjuego->sound->playMusic("../sounds/musicaMenuP.mp3", -1, 17);
 		ptsjuego->estados.push(new Menu(ptsjuego));
 	}
-
 }
 
 bool PantallaInicio::initLibraries() {

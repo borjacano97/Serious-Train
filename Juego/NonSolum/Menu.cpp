@@ -19,7 +19,6 @@ Menu::Menu(Game * juego) :Estado(juego)
 
 	objetos.emplace_back(new Button(ptsjuego, 850, 430, Game::Boton_t::Desb, desb));
 
-	juego->sound->playMusic("../sounds/musicaMenuP.mp3", -1, 17);
 
 	fondo = new Hud(ptsjuego, NULL, 0, 0, Game::Hud_t::Fondo, Game::Fondo_t::MenuP);
 

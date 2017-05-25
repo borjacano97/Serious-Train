@@ -20,6 +20,7 @@ public:
 	virtual char getEst() = 0;
 	virtual void select(int n) = 0;
 	virtual void dispara(bool shoot) = 0;
+	virtual void pause() = 0;
 };
 
 

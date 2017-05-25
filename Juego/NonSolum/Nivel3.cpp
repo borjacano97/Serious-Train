@@ -40,53 +40,56 @@ Nivel3::Nivel3(Game * j, std::vector <Game::Vagon_t> v, Game::Bala_t a) : Play(j
 }
 
 void Nivel3::update(Uint32 delta) {
-	shootTimer += delta;
-	spawnTimer += delta;
 
-	if (disparando && shootTimer >= cadencia) {
-		balas.emplace_back(new Bala(ptsjuego, this, player->getPos().x, player->getPos().y + 10, player->getMira(), arma));
-		shootTimer = 0;
-	}
+	if (!ptsjuego->paused) {
+		shootTimer += delta;
+		spawnTimer += delta;
 
-	if (enem < emax - 2){
+		if (disparando && shootTimer >= cadencia) {
+			balas.emplace_back(new Bala(ptsjuego, this, player->getPos().x, player->getPos().y + 10, player->getMira(), arma));
+			shootTimer = 0;
+		}
 
-		if (spawnTimer >= spawnRonda){
+		if (enem < emax - 2) {
 
-			if (rand() % 2 == 0){
-				if (rand() % 2 == 0) enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 500) + 320, Game::Enemigo_t::Normal));
-				else  enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 500) + 320, Game::Enemigo_t::Normal));
-				enem++;
-			}
-			else {
-				if (rand() % 4 == 0 && ptsjuego->getNivel() > 6) {
-					if (rand() % 2 == 0)enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 500) + 230, Game::Enemigo_t::Tocho));
-					else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 500) + 230, Game::Enemigo_t::Tocho));							
+			if (spawnTimer >= spawnRonda) {
+
+				if (rand() % 2 == 0) {
+					if (rand() % 2 == 0) enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 500) + 320, Game::Enemigo_t::Normal));
+					else  enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 500) + 320, Game::Enemigo_t::Normal));
+					enem++;
 				}
 				else {
-					if (rand() % 2 == 0)enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 100, Game::Enemigo_t::Rapido));
-					else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 100, Game::Enemigo_t::Rapido));
+					if (rand() % 4 == 0 && ptsjuego->getNivel() > 6) {
+						if (rand() % 2 == 0)enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 500) + 230, Game::Enemigo_t::Tocho));
+						else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 500) + 230, Game::Enemigo_t::Tocho));
+					}
+					else {
+						if (rand() % 2 == 0)enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 100, Game::Enemigo_t::Rapido));
+						else enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 100, Game::Enemigo_t::Rapido));
+					}
+
+					enem++;
 				}
-					
-				enem++;
+				spawnTimer = 0;
 			}
-			spawnTimer = 0;
 		}
-	}
-	else {
-		if (!created){
-			enems.emplace_back
+		else {
+			if (!created) {
+				enems.emplace_back
 				(new Enemigo(ptsjuego, this, 0, 550, Game::Enemigo_t::Tocho));
-			enems.emplace_back
-			    (new Enemigo(ptsjuego, this, 1300, 550, Game::Enemigo_t::Tocho));
-			created = true;
+				enems.emplace_back
+				(new Enemigo(ptsjuego, this, 1300, 550, Game::Enemigo_t::Tocho));
+				created = true;
+			}
+
+
+		}
+		if (emax == Play::getKilled()) {
+			Play::finish();
+
 		}
 
-
-	}
-	if (emax == Play::getKilled()){
-		Play::finish();
-
-	}
-
-	Play::update(delta);
+		Play::update(delta);
+	}	
 }
