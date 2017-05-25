@@ -209,34 +209,34 @@ void Tienda::jugar(Game * jg) {
 	case(5):
 		jg->pushState(new Nivel2(jg, vagonesNivel, armaNivel));
 		s->stopMusic();
-		jg->sound->playMusic("../sounds/level3Music.mp3", -1, 17);//otra música
+		jg->sound->playMusic("../sounds/inGameMusic2.mp3", -1, 17);//otra música
 		break; 
 	case(6):
 		jg->pushState(new Nivel3(jg, vagonesNivel, armaNivel));
 		s->stopMusic();
-		jg->sound->playMusic("../sounds/level3Music.mp3",- 1, 17);
+		jg->sound->playMusic("../sounds/inGameMusic2.mp3",- 1, 17);
 		break;
 	case(7):
 	case(8):
 		jg->pushState(new Nivel3(jg, vagonesNivel, armaNivel));
 		s->stopMusic();
-		s3->playMusic("../sounds/inGameMusic2.mp3", -1, 17);
+		s3->playMusic("../sounds/level4.mp3", -1, 17);
 		break; 
 	case(9): 
 		jg->pushState(new Nivel4(jg, vagonesNivel, armaNivel));
 		s->stopMusic();
-		s3->playMusic("../sounds/inGameMusic2.mp3", -1, 17);
+		s3->playMusic("../sounds/level4.mp3", -1, 17);
 		break;
 	case(10):
 	case(11):
 		jg->pushState(new Nivel4(jg, vagonesNivel, armaNivel));
 		s->stopMusic();
-		s4->playMusic("../sounds/level4.mp3", -1, 17);
+		s4->playMusic("../sounds/level4.mp3", -1, 17); // cambiar music
 		break; 
 	case(12):
 		jg->pushState(new Nivel5(jg, vagonesNivel, armaNivel));
 		s->stopMusic();
-		s4->playMusic("../sounds/level4.mp3", -1, 17);
+		s4->playMusic("../sounds/level4.mp3", -1, 17); // cambiar music
 		break;
 	case(13):
 	case(14):

@@ -188,33 +188,64 @@ void Play::draw() {
 	}
 
 	if (!ptsjuego->survival && !tutorial && ptsjuego->getNivel() == 1){
-		if (ptsjuego->spanish && enem < 1) {
-			textTut->loadFromText(ptsjuego->pRender, "Muevete con WASD!!", fontColor);
-			textTut->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(35, 350, 50, 170));
-		}
-		if (ptsjuego->spanish && enem >= 1 && enem < 3) {
-			textTut->loadFromText(ptsjuego->pRender, "Dispara con el raton!!", fontColor);
-			textTut->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(35, 350, 50, 170));
-		}
 
-		if (!ptsjuego->spanish && enem < 1) {
-			textTut->loadFromText(ptsjuego->pRender, "Move with WASD!!", fontColor);
-			textTut->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(35, 350, 50, 170));
+		if (enem < 1) {
+			if (contTexto <= 4500) {
+				if (ptsjuego->spanish) {
+					textTut->loadFromText(ptsjuego->pRender, "Muevete con WASD!!", fontColor);
+					textTut->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(35, 350, 50, 170));
+				}
+				else {
+					textTut->loadFromText(ptsjuego->pRender, "Move with WASD!!", fontColor);
+					textTut->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(35, 350, 50, 170));
+				}
+				contTexto += d;
+			}
+			else {
+				if (ptsjuego->spanish) {
+					textTut->loadFromText(ptsjuego->pRender, "Pausa el juego con ESC !!", fontColor);
+					textTut->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(35, 350, 50, 170));
+				}
+				else {
+					textTut->loadFromText(ptsjuego->pRender, "Pause the game with ESC !!", fontColor);
+					textTut->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(35, 350, 50, 170));
+				}
+			}
 		}
-		if (!ptsjuego->spanish && enem >= 1 && enem < 3) {
-			textTut->loadFromText(ptsjuego->pRender, "Shoot with the mouse!", fontColor);
-			textTut->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(35, 350, 50, 170));
-		}
+		else if (enem < 3) {
+			if (ptsjuego->spanish) {
+				textTut->loadFromText(ptsjuego->pRender, "Dispara con el raton!!", fontColor);
+				textTut->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(35, 350, 50, 170));
+			}
+			else {
+				textTut->loadFromText(ptsjuego->pRender, "Shoot with the mouse!", fontColor);
+				textTut->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(35, 350, 50, 170));
+			}
+		}	
 	}
 	if (ptsjuego->paused) {
 		fondoP->draw();
 		b1->draw();
 		b2->draw();
 	}
+
 }
 
 
 void Play::update(Uint32 delta) {
+	d = delta;
+	// no entiendo por que no me deja meterlo en la constructora :(
+	if (!hist && !ptsjuego->survival) { 
+
+		switch (ptsjuego->getNivel())
+		{
+		case 1:	ptsjuego->pushState(new Historia(ptsjuego));
+			break;
+		default:
+			break;
+		}
+		hist = true; // pa que no entre aqui tol puto rato		
+	}
 
 	// no entiendo por que no me deja meterlo en la constructora :(
 	if (!hist && !ptsjuego->survival) { 

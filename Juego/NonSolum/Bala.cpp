@@ -31,7 +31,7 @@ Bala::Bala(Game* juego, Play*pl, float x, float y, int mira, Game::Bala_t b)
 		vel = 0.5;
 		dmg = 500;
 		Ttextura = Game::Texturas_t::TRoca;
-		juego->sound->playEffect("../sounds/stoneEffect.mp3", 0, 7, 3);
+		juego->sound->playEffect("../sounds/stoneEffect.mp3", 0, 5, 3);
 		break;
 	case Game::Rayo:
 		alto = 1400;
@@ -57,7 +57,7 @@ Bala::Bala(Game* juego, Play*pl, float x, float y, int mira, Game::Bala_t b)
 		else Ttextura = Game::Texturas_t::TBala;
 		p->balas.emplace_back(new Bala(juegootp, p, p->player->getPos().x, p->player->getPos().y, p->player->getMira(), Game::Bala_t::E1));
 		p->balas.emplace_back(new Bala(juegootp, p, p->player->getPos().x, p->player->getPos().y, p->player->getMira(), Game::Bala_t::E2));
-		juego->sound->playEffect("../sounds/shotgunEffect.mp3", 0, 40, 3);
+		juego->sound->playEffect("../sounds/shotgunEffect.mp3", 0, 20, 3);
 		break;
 	case Game::E1: // digamos que son balas auxiliares de la escopeta xd
 		alto = 20;
@@ -82,7 +82,7 @@ Bala::Bala(Game* juego, Play*pl, float x, float y, int mira, Game::Bala_t b)
 		dmg = 500;
 		if (!juegootp->survival && ((juegootp->getNivel() - 1) / 3) == 2) Ttextura = Game::Texturas_t::TBala2;
 		else Ttextura = Game::Texturas_t::TBala;
-		juego->sound->playEffect("../sounds/revolverEffect.mp3", 0, 50, 3);
+		juego->sound->playEffect("../sounds/revolverEffect.mp3", 0, 10, 3);
 		break;
 	case Game::Sniper:
 		alto = 20;
@@ -91,7 +91,7 @@ Bala::Bala(Game* juego, Play*pl, float x, float y, int mira, Game::Bala_t b)
 		dmg = 1500; 
 		if (!juegootp->survival && ((juegootp->getNivel() - 1) / 3) == 2) Ttextura = Game::Texturas_t::TBala2;
 		else Ttextura = Game::Texturas_t::TBala;
-		juego->sound->playEffect("../sounds/rifleEffect.mp3", 0, 90, 3);
+		juego->sound->playEffect("../sounds/rifleEffect.mp3", 0, 20, 3);
 		break;
 	case Game::Metralleta:
 		alto = 20;
@@ -100,7 +100,7 @@ Bala::Bala(Game* juego, Play*pl, float x, float y, int mira, Game::Bala_t b)
 		dmg = 500;
 		if (!juegootp->survival && ((juegootp->getNivel() - 1) / 3) == 2) Ttextura = Game::Texturas_t::TBala2;
 		else Ttextura = Game::Texturas_t::TBala;
-		juego->sound->playEffect("../sounds/rifleEffect.mp3", 0, 90, 3);
+		juego->sound->playEffect("../sounds/rifleEffect.mp3", 0, 20, 3);
 		break;
 	case Game::Minigun:
 		alto = 20;
@@ -109,7 +109,7 @@ Bala::Bala(Game* juego, Play*pl, float x, float y, int mira, Game::Bala_t b)
 		dmg = 200;
 		if (!juegootp->survival && ((juegootp->getNivel() - 1) / 3) == 2) Ttextura = Game::Texturas_t::TBala2;
 		else Ttextura = Game::Texturas_t::TBala;
-		juego->sound->playEffect("../sounds/miniGunEffect.mp3", 0, 40, 3);
+		juego->sound->playEffect("../sounds/miniGunEffect.mp3", 0, 10, 3);
 		break;
 	case Game::Canon:
 		alto = 70;
@@ -117,7 +117,7 @@ Bala::Bala(Game* juego, Play*pl, float x, float y, int mira, Game::Bala_t b)
 		vel = 1;
 		dmg = 3000;
 		Ttextura = Game::Texturas_t::TRoca;
-		juego->sound->playEffect("../sounds/rifleEffect.mp3", 0, 40, 3);
+		juego->sound->playEffect("../sounds/rifleEffect.mp3", 0, 20, 3);
 		break;
 	default:
 		break;
