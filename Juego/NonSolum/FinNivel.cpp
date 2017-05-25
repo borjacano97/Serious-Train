@@ -47,16 +47,24 @@ void FinNivel::draw(){
 			i->draw();
 		}
 	}
-	if (victory){
-		if (ptsjuego->spanish) font->loadFromText(ptsjuego->pRender, "Bien hecho!", fontColor);
-		else font->loadFromText(ptsjuego->pRender, "Well done!", fontColor);
-		font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(90, 250, 90, 30));
+	if (ptsjuego->extrem){
+		if (ptsjuego->spanish) font->loadFromText(ptsjuego->pRender, "Bien hecho, sobreviviste !", fontColor);
+		else font->loadFromText(ptsjuego->pRender, "Well done, you have survived!", fontColor);
+		font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(90, 450, 90, 30));
 	}
-	else{
-		if (ptsjuego->spanish) font->loadFromText(ptsjuego->pRender, "Fallaste", fontColor);
-		else font->loadFromText(ptsjuego->pRender, "Game over", fontColor);
-		font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(90, 250, 580, 50));
+	else {
+		if (victory){
+			if (ptsjuego->spanish) font->loadFromText(ptsjuego->pRender, "Bien hecho!", fontColor);
+			else font->loadFromText(ptsjuego->pRender, "Well done!", fontColor);
+			font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(90, 250, 90, 30));
+		}
+		else{
+			if (ptsjuego->spanish) font->loadFromText(ptsjuego->pRender, "Fallaste", fontColor);
+			else font->loadFromText(ptsjuego->pRender, "Game over", fontColor);
+			font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(90, 250, 580, 50));
+		}
 	}
+	
 	if (ptsjuego->spanish){
 		if (!shown){
 			textoo = ptsjuego->chooseText(ptsjuego->arrTextSpa);

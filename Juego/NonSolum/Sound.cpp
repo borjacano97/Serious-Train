@@ -68,7 +68,7 @@ void Sound::playEffect(const std::string& file, int loops, int volume, int chan)
 	//{
 	Mix_Chunk* fx = Mix_LoadWAV(file.c_str());
 	Mix_PlayChannel(chan, fx, loops);
-	Mix_VolumeChunk(fx, volume);
+    Mix_VolumeChunk(fx, volume);
 	//}
 }
 

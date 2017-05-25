@@ -156,11 +156,11 @@ void Play::draw() {
 
 
 	if (!ptsjuego->survival) {
-		switch(ptsjuego->contRondas){
+		switch(ptsjuego->getNivel()){
 		case(10):
 		case(11):
 		case(12):
-			if (!ptsjuego->survival) ptsjuego->texts[43]/*capa oscura*/->draw(ptsjuego->pRender, nullptr, nullptr);
+			if (!ptsjuego->survival) ptsjuego->texts[43]->draw(ptsjuego->pRender, nullptr, nullptr);
 			break;
 		default:
 			break;

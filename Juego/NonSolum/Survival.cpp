@@ -8,7 +8,7 @@ Survival::Survival(Game * j) : Play(j)
 {
 
 	for (unsigned int i = 0; i < 4; i++) {
-		if (i==0)	tren.emplace_back(new Vagon(ptsjuego, this, 580, 100 + 150 * i, Game::Vagon_t::Recuperador));
+		if (i==0 && !ptsjuego->extrem)	tren.emplace_back(new Vagon(ptsjuego, this, 580, 100 + 150 * i, Game::Vagon_t::Recuperador));
 		else tren.emplace_back(new Vagon(ptsjuego, this, 580, 100 + 150 * i, Game::Vagon_t::Vacio));
 	}
 
@@ -17,32 +17,25 @@ Survival::Survival(Game * j) : Play(j)
 		arma = Game::Bala_t::Minigun;
 		cadencia = 100;
 
-		shootTimer = 0;
-		spawnTimer = 0;
-		textInit = 0;
-
-		j->contRondas = 1;
-
-		enem = 0; // variable que cuenta los enemigos creados por ronda
 	}
 	else {
 		armaActual = new ArmaTienda(ptsjuego, NULL, 300, 40, 0, Game::Bala_t::Piedra, true);
 
 		arma = Game::Bala_t::Piedra;
 		cadencia = 800;
-
-		shootTimer = 0;
-		spawnTimer = 0;
-		textInit = 0;
-
+		
 		spawn = 3000; // variable que va a hacer que a partir de la ronda 6 cada vez se generen más y más enemigos
 
-
-		ptsjuego->contRondas = 1;
-
-		enem = 0; // variable que cuenta los enemigos creados por ronda
 	}
-	
+
+	shootTimer = 0;
+	spawnTimer = 0;
+	textInit = 0;
+
+
+	ptsjuego->contRondas = 1;
+
+	enem = 0; // variable que cuenta los enemigos creados por ronda
 
 	TTF_Init();
 	textTut = new Texturas();
@@ -61,32 +54,21 @@ void Survival::update(Uint32 delta) {
 			}
 
 
-			switch (ptsjuego->contRondas % 6) // 6 tipos de enemigos
+			switch (ptsjuego->contRondas) // 6 tipos de enemigos
 			{
 			case (1) :
 
-				if (!vagonCambiado && (ptsjuego->contRondas == 7 || ptsjuego->contRondas == 13 || ptsjuego->contRondas == 19)) {
-
-					tren[(ptsjuego->contRondas / 6) + 1]->cambiar();
-					vagonCambiado = true;
-				}
 
 					 spawn = 750 - (3 * ptsjuego->contRondas); // ha de variar entre rondas
 					 lastEnemy = 30 + (2 * ptsjuego->contRondas);
 					 if (enem < lastEnemy && spawnTimer >= spawn) {
-						 if (newRonda) {
-							 spawn -= 9000;
-							 newRonda = false;
-						 }
-						 else {
-							 if (rand() % 2 == 0) enems.emplace_back
-								 (new Enemigo(ptsjuego, this, 0, (rand() % 500) + 320, Game::Enemigo_t::Normal));
-							 else enems.emplace_back
-								 (new Enemigo(ptsjuego, this, 1300, (rand() % 500) + 320, Game::Enemigo_t::Normal));
-							 enem++;
-							 spawnTimer = 0;
-						 }
 
+						 if (rand() % 2 == 0) enems.emplace_back
+							 (new Enemigo(ptsjuego, this, 0, (rand() % 500) + 320, Game::Enemigo_t::Normal));
+						 else enems.emplace_back
+							 (new Enemigo(ptsjuego, this, 1300, (rand() % 500) + 320, Game::Enemigo_t::Normal));
+						 enem++;
+						 spawnTimer = 0;
 					 }
 
 
@@ -164,7 +146,7 @@ void Survival::update(Uint32 delta) {
 					}
 				}
 				break;
-			case (0) :
+			case (6) :
 				spawn = 3800 - (3 * ptsjuego->contRondas);
 				lastEnemy = 5 + (2 * ptsjuego->contRondas);
 				if (enem < lastEnemy && spawnTimer >= spawn) {
@@ -199,7 +181,8 @@ void Survival::update(Uint32 delta) {
 				ptsjuego->contRondas++;
 				spawn += 9000;
 			}
-
+			if (ptsjuego->contRondas == 7) fin = true;
+			
 			textInit += delta;
 		}
 		else {
@@ -478,25 +461,28 @@ void Survival::update(Uint32 delta) {
 void Survival::draw() {
 	Play::draw();
 
+	if (!ptsjuego->extrem){
+		if (ptsjuego->spanish) {
+			font->loadFromText(ptsjuego->pRender, " Ronda: " + std::to_string(ptsjuego->contRondas), fontColor);
+		}
+		else {
+			font->loadFromText(ptsjuego->pRender, " Round: " + std::to_string(ptsjuego->contRondas), fontColor);
+		}
 
-	if (ptsjuego->spanish) { 
-		font->loadFromText(ptsjuego->pRender, " Ronda: " + std::to_string(ptsjuego->contRondas), fontColor);
-	}
-	else { 
-		font->loadFromText(ptsjuego->pRender, " Round: " + std::to_string(ptsjuego->contRondas), fontColor);
-	}
-
-	font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(40, 90, 150, 53));
+		font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(40, 90, 150, 53));
 
 
-	if (newRonda && ptsjuego->spanish) {
-		font->loadFromText(ptsjuego->pRender, " Nueva    Ronda:  " + std::to_string(ptsjuego->contRondas), fontColor);
-		font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(220, 500, 400, 120));
+		if (newRonda && ptsjuego->spanish) {
+			font->loadFromText(ptsjuego->pRender, " Nueva    Ronda:  " + std::to_string(ptsjuego->contRondas), fontColor);
+			font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(220, 500, 400, 120));
+		}
+		if (newRonda && !ptsjuego->spanish) {
+			font->loadFromText(ptsjuego->pRender, " New    Round:    " + std::to_string(ptsjuego->contRondas), fontColor);
+			font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(220, 500, 400, 120));
+		}
 	}
-	if (newRonda && !ptsjuego->spanish) {
-		font->loadFromText(ptsjuego->pRender, " New    Round:    " + std::to_string(ptsjuego->contRondas), fontColor);
-		font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(220, 500, 400, 120));
-	}
+	
+
 	if (ptsjuego->extrem){
 		if (ptsjuego->spanish && enem < 2 && textInit < 2000) {
 			font->loadFromText(ptsjuego->pRender, "A g u a n t a   h a s t a   e l   a m a n e c e r", fontColor);

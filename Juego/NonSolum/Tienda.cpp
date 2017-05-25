@@ -189,6 +189,7 @@ void Tienda::jugar(Game * jg) {
 	// METEMOS EL ENEMIGO NUEVO POR LO QUE "LLAMAMOS" AL NIVEL SIGUIENTE PERO LA AMBIENTACIÓN NO CAMBIA 
 
 	// pero yo creo que si ponemos el juego serio, es mejor que vaya de 5 en 5 pa disfrutar las vistas
+	
 	switch (jg->getNivel())
 	{		
 	case(1):
@@ -231,12 +232,12 @@ void Tienda::jugar(Game * jg) {
 	case(11):
 		jg->pushState(new Nivel4(jg, vagonesNivel, armaNivel));
 		s->stopMusic();
-		s4->playMusic("../sounds/level4.mp3", -1, 17); // cambiar music
+		s4->playMusic("../sounds/nocheMusic.mp3", -1, 34); 
 		break; 
 	case(12):
 		jg->pushState(new Nivel5(jg, vagonesNivel, armaNivel));
 		s->stopMusic();
-		s4->playMusic("../sounds/level4.mp3", -1, 17); // cambiar music
+		s4->playMusic("../sounds/nocheMusic.mp3", -1, 34); 
 		break;
 	case(13):
 	case(14):

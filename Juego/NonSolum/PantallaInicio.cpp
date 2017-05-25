@@ -29,7 +29,7 @@ void PantallaInicio::update(Uint32 delta) {
 	cont+= delta;
 	if (cont >= 6000) {
 		iniSound->stopMusic();
-		ptsjuego->sound->playMusic("../sounds/musicaMenuP.mp3", -1, 10);
+		ptsjuego->sound->playMusic("../sounds/musicaMenuP.mp3", -1, 6);
 		ptsjuego->estados.push(new Menu(ptsjuego));
 	}
 }
