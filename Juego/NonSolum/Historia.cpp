@@ -3,16 +3,33 @@
 
 Historia::Historia(Game* juego) :Estado(juego)
 {
-	objetos.emplace_back(new Button(ptsjuego, 1050, 480, Game::Boton_t::Jugar, jugar));
 
+	int posBotony;
+	int posBotonx;
 	switch (juego->getNivel())
 	{
-	case 1: fondo = new Hud(ptsjuego, NULL, 0, 0, Game::Hud_t::Fondo, Game::Fondo_t::Historia1);
+	case 1:
+	case 7:
+		posBotony = 480;
+		posBotonx = 1050;
+		break;
+	case 4:
+	case 10:
+		posBotony = 600;
+		posBotonx = 1000;
+		break;
+	case 13:
+		posBotony = 580;
+		posBotonx = 1050;
 		break;
 	default:
 		break;
 	}
-	
+
+
+	objetos.emplace_back(new Button(ptsjuego, posBotonx, posBotony, Game::Boton_t::Jugar, jugar));
+
+	 fondo = new Hud(ptsjuego, NULL, 0, 0, Game::Hud_t::Fondo, Game::Fondo_t::Historia1);		
 }
 
 void Historia::draw() {

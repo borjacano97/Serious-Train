@@ -67,3 +67,7 @@
 ../bmps/fondoInicio.png
 ../bmps/logo.png
 ../bmps/sangre.png
+../bmps/historia2.png
+../bmps/historia3.png
+../bmps/historia4.png
+../bmps/historia5.png

@@ -307,7 +307,12 @@ void Play::update(Uint32 delta) {
 
 		switch (ptsjuego->getNivel())
 		{
-		case 1:	ptsjuego->pushState(new Historia(ptsjuego));
+		case 1:
+		case 4:
+		case 7:
+		case 10:
+		case 13:
+			ptsjuego->pushState(new Historia(ptsjuego));
 			break;
 		default:
 			break;

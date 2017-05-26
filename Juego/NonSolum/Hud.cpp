@@ -58,7 +58,24 @@ Hud::Hud(Game* juego, Play* pl, float x, float y, Game::Hud_t t, Game::Fondo_t f
 			break;
 		case Game::Pause:Ttextura = Game::Texturas_t::TPausa;
 			break;
-		case Game::Historia1:Ttextura = Game::Texturas_t::THistoria1;
+		case Game::Historia1:
+
+			switch (juegootp->getNivel())
+			{
+			case 1:Ttextura = Game::Texturas_t::THistoria1;
+				break;
+			case 4:Ttextura = Game::Texturas_t::THistoria2;
+				break;
+			case 7:Ttextura = Game::Texturas_t::THistoria3;
+				break;
+			case 10:Ttextura = Game::Texturas_t::THistoria4;
+				break;
+			case 13:Ttextura = Game::Texturas_t::THistoria5;
+				break;
+			default:
+				break;
+			}
+			
 			break;
 		case Game::FondoInicio:Ttextura = Game::Texturas_t::TFondoIni;
 			break;

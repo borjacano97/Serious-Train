@@ -24,7 +24,7 @@ public:
 		TControlEng, TControlEsp, TEnemigoD, TEnemigoG, TCanon, TTick, THud, TTrayecto, THud2, TVagonReg, TDesierto,
 		TPradera, TVagonEscudo, TOscuridad, TTocho, TInvisible, TEscopetaN, TFrancoN, TMetralletaN, TMinigunN, TRevolverN,
 	    TSlender, TExplosion, TLaserRoto, TEscudoRoto, TFuegoRoto, TAutoRoto, TVagonSuc, TVacioR, TSucR, TRegR, 
-		TCanonN, TBotonOsc, TPausa, TBala2, THistoria1, TFondoIni, TLogo, TSangre};
+		TCanonN, TBotonOsc, TPausa, TBala2, THistoria1, TFondoIni, TLogo, TSangre, THistoria2, THistoria3, THistoria4, THistoria5};
 	enum Enemigo_t { Normal, Rapido, Tank, Enano, Invisible, Slender, Tocho, Boss/*...*/ };
 	enum Vagon_t { Locom, Vacio, Automatico, Laser, Lanzallamas, Escudo, Recuperador, Succionador/*...*/ };
 	enum Bala_t { BalaEnem, Piedra, Rayo, Fuego, Escopeta, E1, E2, Pistola, Sniper, Metralleta, Minigun, Canon, BalaEnemGorda/*...*/ };
@@ -87,11 +87,11 @@ public:
 
 private:
 
-	int nivel = 1;
+	int nivel = 13;
 
 	SDL_Event e;
 
-	std::string ntexturas[69]; 
+	std::string ntexturas[73]; 
 	
 
 	bool initSDL(); //ventana de render SDL (pantalla)
