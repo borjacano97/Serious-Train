@@ -87,7 +87,7 @@ public:
 
 private:
 
-	int nivel = 13;
+	int nivel = 1;
 
 	SDL_Event e;
 
