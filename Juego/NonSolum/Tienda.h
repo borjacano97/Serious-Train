@@ -27,7 +27,12 @@ public:
 	void elegirArma(Game::Bala_t a);
 	void recolocar(Game * jg);
 	void jugar(Game * jg);
-	void salir(Game * jg) { jg->pushState(new Menu(jg)); s->stopMusic(); jg->sound->playMusic("../sounds/musicaMenuP.mp3", -1, 12); }
+	void salir(Game * jg) { 
+		jg->pushState(new Menu(jg)); s->stopMusic(); 
+		jg->sound->playMusic("../sounds/musicaMenuP.mp3", -1, 12); 
+	}
+	void inicio();
+
 private:
 	Hud*fondo;
 

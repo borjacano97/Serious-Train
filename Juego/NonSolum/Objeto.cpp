@@ -25,3 +25,17 @@ bool Objeto::dentro(int x, int y) const{
 bool Objeto::collision(RaizObjeto* other){
 	return dentro(other->getPos().x, other->getPos().y);
 }
+
+void Objeto::inicio(){
+	if (!desplazado) {
+		desplazado = true;
+		pos.y += 720;
+	}
+	else {
+		if (contador >= 720) juegootp->inicioTienda = false;
+		else {
+			contador+=60;
+			pos.y-=60;
+		}
+	}
+}

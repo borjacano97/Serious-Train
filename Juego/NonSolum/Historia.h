@@ -14,6 +14,7 @@ public:
 private:
 	static void jugar(Game * jg);
 	Hud* fondo;
+	int cont;
 };
 
 #endif

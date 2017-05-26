@@ -71,7 +71,7 @@ protected:
 			jg->extrem = false;
 		}		
 		jg->paused = false;
-		jg->popState();
+		jg->popState(); 
 	}
 
 	Escenario*esc;

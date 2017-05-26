@@ -18,6 +18,12 @@ Historia::Historia(Game* juego) :Estado(juego)
 void Historia::draw() {
 	fondo->draw();
 	Estado::draw();
+	if (cont <= 250) {
+		cont ++;
+		ptsjuego->texts[43]->setColor(cont, cont, cont);
+		ptsjuego->texts[43]->setColor(255 - cont);
+		ptsjuego->texts[43]->draw(ptsjuego->pRender, nullptr, nullptr);
+	}
 }
 void Historia::jugar(Game* juego) {
 	juego->popState();

@@ -20,7 +20,8 @@ public:
 	void destroy() { destruido = true; }
 	bool collision(RaizObjeto* other);
 	int getPoints() { return 0; }
-	
+	void inicio();
+
 	bool dentro(int x, int y) const;
 	Posicion pos; //posición del objeto
 protected: // son protegidas porque las subclases usan estas variables, si no serían privadas
@@ -28,9 +29,10 @@ protected: // son protegidas porque las subclases usan estas variables, si no se
 	Game* juegootp;
 	Game::Texturas_t Ttextura; // array de texturas (aún no declarado en Juego)
 
-	
 	Direccion dir;
 	bool destruido = false;
+	bool desplazado = false;
+	int contador = 0;
 	int alto, ancho, anchoc; // tamaño del objeto
 };
 

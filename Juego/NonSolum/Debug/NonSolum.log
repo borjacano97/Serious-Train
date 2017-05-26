@@ -1,5 +1,69 @@
-﻿  Hud.cpp
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=': conversión de 'double' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\hud.cpp(92): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
-  NonSolum.vcxproj -> C:\Users\Alejandro\Desktop\Serious-Train\Juego\bin\NonSolumDebug.exe
-  NonSolum.vcxproj -> C:\Users\Alejandro\Desktop\Serious-Train\Juego\bin\NonSolumDebug.pdb (Full PDB)
+﻿Build started 26/05/2017 13:12:30.
+     1>Project "C:\hlocal\Serious-Train\Juego\NonSolum\NonSolum.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\software\programacion\MSVStudio2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Bala.cpp Enemigo.cpp Estado.cpp Game.cpp Hud.cpp Menu.cpp Nivel1.cpp Nivel2.cpp Nivel3.cpp Nivel4.cpp Nivel5.cpp Play.cpp Survival.cpp Tienda.cpp Vagon.cpp
+         Menu.cpp
+     1>c:\hlocal\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+         Generating Code...
+         Compiling...
+         Play.cpp
+     1>c:\hlocal\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\hlocal\serious-train\juego\nonsolum\play.cpp(135): warning C4553: '==' : operator has no effect; did you intend '='?
+         Generating Code...
+         Skipping... (no relevant changes detected)
+         Vagon.cpp
+         Tienda.cpp
+         Survival.cpp
+         Nivel5.cpp
+         Nivel4.cpp
+         Nivel3.cpp
+         Nivel2.cpp
+         Nivel1.cpp
+         Hud.cpp
+         Game.cpp
+         Estado.cpp
+         Enemigo.cpp
+         Bala.cpp
+       Link:
+         C:\software\programacion\MSVStudio2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\hlocal\Serious-Train\Juego\bin\NonSolumDebug.exe" /INCREMENTAL /NOLOGO SDL2.lib SDL2main.lib SDL2_image.lib SDL2_ttf.lib SDL2_mixer.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\hlocal\Serious-Train\Juego\bin\NonSolumDebug.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\hlocal\Serious-Train\Juego\bin\NonSolumDebug.lib" /MACHINE:X86 Debug\ArmaTienda.obj
+         Debug\Bala.obj
+         Debug\BarraHP.obj
+         Debug\BotonTienda.obj
+         Debug\Button.obj
+         Debug\Controles.obj
+         Debug\Enemigo.obj
+         Debug\Error.obj
+         Debug\Escenario.obj
+         Debug\Estado.obj
+         Debug\FinNivelSvl.obj
+         Debug\Font.obj
+         Debug\Game.obj
+         Debug\FinNivel.obj
+         Debug\Historia.obj
+         Debug\Main.obj
+         Debug\Menu.obj
+         Debug\Nivel1.obj
+         Debug\Nivel2.obj
+         Debug\Nivel3.obj
+         Debug\Nivel4.obj
+         Debug\Nivel5.obj
+         Debug\Objeto.obj
+         Debug\ObjetoTienda.obj
+         Debug\PantallaInicio.obj
+         Debug\Personaje.obj
+         Debug\Play.obj
+         Debug\Selector.obj
+         Debug\Sound.obj
+         Debug\Survival.obj
+         Debug\Texturas.obj
+         Debug\Hud.obj
+         Debug\Tienda.obj
+         Debug\Trigger.obj
+         Debug\Vagon.obj
+         Debug\VagonTienda.obj
+         NonSolum.vcxproj -> C:\hlocal\Serious-Train\Juego\bin\NonSolumDebug.exe
+     1>Done Building Project "C:\hlocal\Serious-Train\Juego\NonSolum\NonSolum.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.40
