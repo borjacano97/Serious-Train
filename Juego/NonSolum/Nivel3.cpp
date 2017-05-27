@@ -36,7 +36,7 @@ Nivel3::Nivel3(Game * j, std::vector <Game::Vagon_t> v, Game::Bala_t a) : Play(j
 	}
 
 	if (ptsjuego->getNivel() == 6) spawnRonda = 950 - (50 * ptsjuego->getNivel());
-	else spawnRonda = 1400 - (50 * ptsjuego->getNivel());
+	else spawnRonda = 1650 ;
 }
 
 void Nivel3::update(Uint32 delta) {

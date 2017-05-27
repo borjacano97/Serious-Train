@@ -11,7 +11,7 @@ public:
 	void dispara(bool shoot) { disparando = shoot; }
 	void update(Uint32 delta);
 private:
-	int  shootTimer, spawnTimer, cadencia;
+	int  shootTimer, spawnTimer, cadencia, spawnRonda;
 	bool created = false;
 	Game::Bala_t arma;
 	bool disparando = false;

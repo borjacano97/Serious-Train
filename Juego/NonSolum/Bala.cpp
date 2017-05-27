@@ -178,11 +178,12 @@ void Bala::update(Uint32 delta) {
 		else ancho += 5;
 		for each (auto var in p->enems)
 		{
+			pos.y -= 20;
 			if (var != nullptr &&  this->collision(var) || var != nullptr && var->collision(this)) var->damage(dmg);
-						
+			pos.y += 20;
 		}
 
-		if (cont >= 1000) destruido = true;
+		if (cont >= 1000 || p->tren[1]->roto) destruido = true;
 		break;
 	case Game::Escopeta:
 		pos.x += dir * vel*delta;

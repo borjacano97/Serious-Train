@@ -89,6 +89,5 @@ void Menu::draw(){
 		ptsjuego->texts[43]->setColor(cont, cont, cont);
 		ptsjuego->texts[43]->setColor(255 - cont);
 		ptsjuego->texts[43]->draw(ptsjuego->pRender, nullptr, nullptr);
-	}
-	
+	}	
 }

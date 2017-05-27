@@ -14,12 +14,12 @@ public:
 	void update(Uint32 delta);
 	void romper();
 	void cambiar();
+	bool roto = false;
 private: 
 	int cont = 0;
 	int contSucc = 0;
 	Uint32 vib = 0;
 	bool disparo;
-	bool roto = false;
 	Game::Vagon_t tipo; //struct tbn
 	Play*p;
 };

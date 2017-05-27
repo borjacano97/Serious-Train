@@ -83,11 +83,11 @@ public:
 
 	std::stack<RaizEstado*> estados;
 
-	int coins = 0;
+	int coins = 3030;
 
 private:
 
-	int nivel = 1;
+	int nivel = 8;
 
 	SDL_Event e;
 
