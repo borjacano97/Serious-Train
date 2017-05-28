@@ -33,7 +33,7 @@ Play::Play(Game * j) : Estado(j)
 	fontColor.b = 32;
 	
 
-	if (!ptsjuego->survival && ((ptsjuego->getNivel() - 1) / 3) == 2){
+	if (!ptsjuego->survival && (ptsjuego->getNivel()<=10) && (ptsjuego->getNivel() >= 7)){
 		fontColor2.r = 218;
 		fontColor2.g = 195;
 		fontColor2.b = 150;
@@ -100,7 +100,7 @@ bool Play::initObjects() { // creaci�n de los objetos dando un puntero, una te
 	case(11) :
 	case(12) :
 		     if (ptsjuego->survival)esc = new Escenario(ptsjuego, Game::Texturas_t::TFondo, 0, -4280);
-	         else  esc = new Escenario(ptsjuego, Game::Texturas_t::TPradera, 0, -4280);
+	         else  esc = new Escenario(ptsjuego, Game::Texturas_t::TDesierto, 0, -4280);
 		break;
 	case(13) :
 	case(14) :
@@ -157,10 +157,12 @@ void Play::draw() {
 
 	if (!ptsjuego->survival) {
 		switch (ptsjuego->getNivel()) {
-		case(10):
 		case(11):
 		case(12):
-			if (!ptsjuego->survival) ptsjuego->texts[43]->draw(ptsjuego->pRender, nullptr, nullptr);
+			if (!ptsjuego->survival) {
+				ptsjuego->texts[43]->setColor(255);
+				ptsjuego->texts[43]->draw(ptsjuego->pRender, nullptr, nullptr); // nocheeeee
+			}
 			break;
 		default:
 			break;
@@ -177,7 +179,6 @@ void Play::draw() {
 		}
 		font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(40, 90, 300, 53));
 
-
 	}
 	// control de capa de noche en extrem
 	if (ptsjuego->extrem) {
@@ -189,7 +190,16 @@ void Play::draw() {
 		ptsjuego->texts[43]->setColor(255 - alphaCont);
 		ptsjuego->texts[43]->draw(ptsjuego->pRender, nullptr, nullptr);
 	}
-
+	// control de capa de noche en nvl 10
+	else if (ptsjuego->getNivel() == 10) {
+		if (contAlpha2 >= 600 && alphaCont < 255) {
+			contAlpha2 = 0;
+			alphaCont++;
+		}
+		else contAlpha2 += d;
+		ptsjuego->texts[43]->setColor(alphaCont);
+		ptsjuego->texts[43]->draw(ptsjuego->pRender, nullptr, nullptr);
+	}
 
 	if (tray != nullptr) tray->draw();
 	if (locom != nullptr) locom->draw();

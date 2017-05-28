@@ -64,7 +64,7 @@ Bala::Bala(Game* juego, Play*pl, float x, float y, int mira, Game::Bala_t b)
 		ancho = 20;
 		vel = 0.5;
 		dmg = 500;
-		if (!juegootp->survival && ((juegootp->getNivel() - 1) / 3) == 2) Ttextura = Game::Texturas_t::TBala2;
+		if (!juegootp->survival && (juegootp->getNivel() <= 10) && (juegootp->getNivel() >= 7)) Ttextura = Game::Texturas_t::TBala2;
 		else Ttextura = Game::Texturas_t::TBala;
 		break;
 	case Game::E2:
@@ -72,7 +72,7 @@ Bala::Bala(Game* juego, Play*pl, float x, float y, int mira, Game::Bala_t b)
 		ancho = 20;
 		vel = 0.5;
 		dmg = 500;
-		if (!juegootp->survival && ((juegootp->getNivel() - 1) / 3) == 2) Ttextura = Game::Texturas_t::TBala2;
+		if (!juegootp->survival && (juegootp->getNivel() <= 10) && (juegootp->getNivel() >= 7)) Ttextura = Game::Texturas_t::TBala2;
 		else Ttextura = Game::Texturas_t::TBala;
 		break;	
 	case Game::Pistola:
@@ -80,7 +80,7 @@ Bala::Bala(Game* juego, Play*pl, float x, float y, int mira, Game::Bala_t b)
 		ancho = 20;
 		vel = 0.5;
 		dmg = 500;
-		if (!juegootp->survival && ((juegootp->getNivel() - 1) / 3) == 2) Ttextura = Game::Texturas_t::TBala2;
+		if (!juegootp->survival && (juegootp->getNivel() <= 10) && (juegootp->getNivel() >= 7)) Ttextura = Game::Texturas_t::TBala2;
 		else Ttextura = Game::Texturas_t::TBala;
 		juego->sound->playEffect("../sounds/revolverEffect.mp3", 0, 10, 3);
 		break;
@@ -89,7 +89,7 @@ Bala::Bala(Game* juego, Play*pl, float x, float y, int mira, Game::Bala_t b)
 		ancho = 40;
 		vel = 0.8;
 		dmg = 1500; 
-		if (!juegootp->survival && ((juegootp->getNivel() - 1) / 3) == 2) Ttextura = Game::Texturas_t::TBala2;
+		if (!juegootp->survival && (juegootp->getNivel() <= 10) && (juegootp->getNivel() >= 7)) Ttextura = Game::Texturas_t::TBala2;
 		else Ttextura = Game::Texturas_t::TBala;
 		juego->sound->playEffect("../sounds/rifleEffect.mp3", 0, 20, 3);
 		break;
@@ -98,7 +98,7 @@ Bala::Bala(Game* juego, Play*pl, float x, float y, int mira, Game::Bala_t b)
 		ancho = 20;
 		vel = 0.5;
 		dmg = 500;
-		if (!juegootp->survival && ((juegootp->getNivel() - 1) / 3) == 2) Ttextura = Game::Texturas_t::TBala2;
+		if (!juegootp->survival && (juegootp->getNivel() <= 10) && (juegootp->getNivel() >= 7)) Ttextura = Game::Texturas_t::TBala2;
 		else Ttextura = Game::Texturas_t::TBala;
 		juego->sound->playEffect("../sounds/rifleEffect.mp3", 0, 20, 3);
 		break;
@@ -107,7 +107,7 @@ Bala::Bala(Game* juego, Play*pl, float x, float y, int mira, Game::Bala_t b)
 		ancho = 20;
 		vel = 0.6;
 		dmg = 200;
-		if (!juegootp->survival && ((juegootp->getNivel() - 1) / 3) == 2) Ttextura = Game::Texturas_t::TBala2;
+		if (!juegootp->survival && (juegootp->getNivel() <= 10) && (juegootp->getNivel() >= 7)) Ttextura = Game::Texturas_t::TBala2;
 		else Ttextura = Game::Texturas_t::TBala;
 		juego->sound->playEffect("../sounds/miniGunEffect.mp3", 0, 10, 3);
 		break;
@@ -133,6 +133,13 @@ void Bala::update(Uint32 delta) {
 		if (p->tg->collision(this)) {
 			p->TrainHp->damage(Game::EnemyDmg_t::Bala);
 			destruido = true;
+		}
+		for each (auto b in p->balas)
+		{
+			if (b != nullptr && this->collision(b)) {
+				destruido = true;
+				if ((b->tipo != Game::Bala_t::Sniper) && (b->tipo != Game::Bala_t::Canon)) b->destroy();
+			}
 		}
 		break;
 	case Game::BalaEnemGorda:
@@ -178,9 +185,11 @@ void Bala::update(Uint32 delta) {
 		else ancho += 5;
 		for each (auto var in p->enems)
 		{
-			pos.y -= 20;
+			pos.y -= 30;
+			ancho += 10;
 			if (var != nullptr &&  this->collision(var) || var != nullptr && var->collision(this)) var->damage(dmg);
-			pos.y += 20;
+			pos.y += 30;
+			ancho -= 10;
 		}
 
 		if (cont >= 1000 || p->tren[1]->roto) destruido = true;

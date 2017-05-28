@@ -51,7 +51,7 @@ Enemigo::Enemigo(Game* juego, Play* pl, float x, float y, Game::Enemigo_t clase)
 		break;
 	case Game::Enemigo_t::Invisible:
 		Ttextura = Game::Texturas_t::TInvisible;
-		hp = 1500;
+		hp = 1550;
 		points = 15;
 		vel = 0.05;
 		velVertical = 0.02;
