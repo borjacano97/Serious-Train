@@ -102,8 +102,7 @@ Tienda::Tienda(Game* juego) :Estado(juego)
 
 
 void Tienda::draw() {
-	if (ptsjuego->inicioTienda) inicio();
-	
+
 
 	fondo->draw();
 	for (auto i : vags) {
@@ -112,9 +111,9 @@ void Tienda::draw() {
 	for (auto i : armas) {
 		i->draw();
 	}
-	
+
 	for (auto i : vagsIzq) {
-		if (i!=nullptr)	i->draw();
+		if (i != nullptr)	i->draw();
 	}
 	for (auto i : botones) {
 		if (!i->getDest())	i->draw();
@@ -122,53 +121,51 @@ void Tienda::draw() {
 	sel->draw();
 	armaActual->draw();
 
+	if (ptsjuego->spanish) font->loadFromText(ptsjuego->pRender, "Tienda", fontColor);
+	else font->loadFromText(ptsjuego->pRender, "Shop", fontColor);
+	font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(90, 180, 90, 30));
 
-	if (!ptsjuego->inicioTienda){
-		if (ptsjuego->spanish) font->loadFromText(ptsjuego->pRender, "Tienda", fontColor);
-		else font->loadFromText(ptsjuego->pRender, "Shop", fontColor);
-		font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(90, 180, 90, 30));
+	if (ptsjuego->spanish) font->loadFromText(ptsjuego->pRender, "Vagones", fontColor);
+	else  font->loadFromText(ptsjuego->pRender, "Carriages", fontColor);
+	font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(70, 160, 480, 55));
 
-		if (ptsjuego->spanish) font->loadFromText(ptsjuego->pRender, "Vagones", fontColor);
-		else  font->loadFromText(ptsjuego->pRender, "Carriages", fontColor);
-		font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(70, 160, 480, 55));
+	if (ptsjuego->spanish) font->loadFromText(ptsjuego->pRender, "Armas", fontColor);
+	else font->loadFromText(ptsjuego->pRender, "Weapons", fontColor);
+	font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(70, 160, 820, 55));
 
-		if (ptsjuego->spanish) font->loadFromText(ptsjuego->pRender, "Armas", fontColor);
-		else font->loadFromText(ptsjuego->pRender, "Weapons", fontColor);
-		font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(70, 160, 820, 55));
+	font->loadFromText(ptsjuego->pRender, std::to_string(ptsjuego->coins), fontColor);
+	font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(45, 45 + 15 * (ptsjuego->coins / 1000), 1100, 30));
 
-		font->loadFromText(ptsjuego->pRender, std::to_string(ptsjuego->coins), fontColor);
-		font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(45, 45 + 15 * (ptsjuego->coins / (ptsjuego->coins/2)), 1100, 30));
+	if (ptsjuego->spanish) {
+		actNivelText->loadFromText(ptsjuego->pRender, "Prox Nvl: " + std::to_string(ptsjuego->getNivel()), fontColor);
+	}
+	else {
+		actNivelText->loadFromText(ptsjuego->pRender, "Next Lvl: " + std::to_string(ptsjuego->getNivel()), fontColor);
+	}
+	actNivelText->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(30, 150, 1085, 105));
 
-		if (ptsjuego->spanish) {
-			actNivelText->loadFromText(ptsjuego->pRender, "Prox Nvl: " + std::to_string(ptsjuego->getNivel()), fontColor);
-		}
-		else {
-			actNivelText->loadFromText(ptsjuego->pRender, "Next Lvl: " + std::to_string(ptsjuego->getNivel()), fontColor);
-		}
-		actNivelText->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(30, 150, 1085, 105));
+	if (armaNivel != Game::Bala_t::Piedra) ptsjuego->primerArma = true;
+	else if ((!ptsjuego->primerArma) && (ptsjuego->coins >= 250)) {
+		if (ptsjuego->spanish) font->loadFromText(ptsjuego->pRender, "Compra tu primer arma !!", fontColor2);
+		else font->loadFromText(ptsjuego->pRender, "Buy your first weapon !!", fontColor2);
+		font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(30, 380, 680, 0));
 
-		if (armaNivel != Game::Bala_t::Piedra) ptsjuego->primerArma = true;
-		else if ((!ptsjuego->primerArma) && (ptsjuego->coins >= 250)){
-			if (ptsjuego->spanish) font->loadFromText(ptsjuego->pRender, "Compra tu primer arma !!", fontColor2);
-			else font->loadFromText(ptsjuego->pRender, "Buy your first weapon !!", fontColor2);
-			font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(30, 380, 680, 0));
+	}
+	if (!vags[0]->bloqueado) ptsjuego->primerVagon = true;
+	else if ((!ptsjuego->primerVagon) && (ptsjuego->primerArma) && (ptsjuego->coins >= 500)) {
+		if (ptsjuego->spanish) font->loadFromText(ptsjuego->pRender, "Compra tu primer vagon y colocalo !!", fontColor2);
+		else font->loadFromText(ptsjuego->pRender, "Buy your first wagon and put it on the train !!", fontColor2);
+		font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(30, 480, 200, 420));
 
-		}
-		if (!vags[0]->bloqueado) ptsjuego->primerVagon = true;
-		else if ((!ptsjuego->primerVagon) && (ptsjuego->primerArma) && (ptsjuego->coins >= 500)){
-			if (ptsjuego->spanish) font->loadFromText(ptsjuego->pRender, "Compra tu primer vagon y colocalo !!", fontColor2);
-			else font->loadFromText(ptsjuego->pRender, "Buy your first wagon and put it on the train !!", fontColor2);
-			font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(30, 480, 200, 420));
+	}
+	if (!armas[2]->bloqueado) ptsjuego->segundoArma = true;
+	else if ((!ptsjuego->segundoArma) && (ptsjuego->primerVagon) && (ptsjuego->primerArma) && (ptsjuego->coins >= 650)) {
+		if (ptsjuego->spanish) font->loadFromText(ptsjuego->pRender, "Probemos ese francotirador !!", fontColor2);
+		else font->loadFromText(ptsjuego->pRender, "Lets try with the sniper !!", fontColor2);
+		font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(30, 480, 580, 0));
 
-		}
-		if (!armas[2]->bloqueado) ptsjuego->segundoArma = true;
-		else if ((!ptsjuego->segundoArma) && (ptsjuego->primerVagon) && (ptsjuego->primerArma) && (ptsjuego->coins >= 650)) {
-			if (ptsjuego->spanish) font->loadFromText(ptsjuego->pRender, "Probemos ese francotirador !!", fontColor2);
-			else font->loadFromText(ptsjuego->pRender, "Lets try with the sniper !!", fontColor2);
-			font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(30, 480, 580, 0));
+	}
 
-		}
-	}	
 }
 
 bool Tienda::initLibraries() {
@@ -342,23 +339,4 @@ void Tienda::update(Uint32 d){
 		s->playMusic("../sounds/menuMusic1.mp3", 2, 20);
 		suena = true;
 	}
-}
-
-void Tienda::inicio(){
-	fondo->inicio();
-	for (auto i : vags) {
-		i->inicio();
-	}
-	for (auto i : armas) {
-		i->inicio();
-	}
-
-	for (auto i : vagsIzq) {
-		if (i != nullptr)	i->inicio();
-	}
-	for (auto i : botones) {
-		if (!i->getDest())	i->inicio();
-	}
-	sel->inicio();
-	armaActual->inicio();
 }

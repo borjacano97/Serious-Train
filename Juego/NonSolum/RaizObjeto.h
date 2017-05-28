@@ -41,7 +41,6 @@ public:
 	virtual void destroy() = 0;
 	virtual bool collision(RaizObjeto* other) = 0;
 	virtual int getPoints() = 0;
-	virtual void inicio() = 0;
 };
 
 

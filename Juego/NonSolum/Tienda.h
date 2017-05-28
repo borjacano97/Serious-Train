@@ -31,7 +31,6 @@ public:
 		jg->pushState(new Menu(jg)); s->stopMusic(); 
 		jg->sound->playMusic("../sounds/musicaMenuP.mp3", -1, 12); 
 	}
-	void inicio();
 
 private:
 	Hud*fondo;

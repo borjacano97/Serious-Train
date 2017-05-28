@@ -20,7 +20,6 @@ public:
 	void destroy() { destruido = true; }
 	bool collision(RaizObjeto* other);
 	int getPoints() { return 0; }
-	void inicio();
 
 	bool dentro(int x, int y) const;
 	Posicion pos; //posición del objeto

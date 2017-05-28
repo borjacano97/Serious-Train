@@ -70,7 +70,6 @@ public:
 	bool primerArma = false;
 	bool primerVagon = false;
 	bool segundoArma = false;
-	bool inicioTienda = true;
 
 	bool desbloquear = false; // solo para version no definitiva, desbloquear svl y extrem
 

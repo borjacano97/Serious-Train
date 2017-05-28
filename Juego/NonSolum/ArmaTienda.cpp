@@ -144,7 +144,7 @@ void ArmaTienda::draw() {
 		puntosText->draw(juegootp->pRender, nullptr, &puntosText->myFont.setRect(50, 45, mpbx, mpby));
 		puntosText->loadFromText(juegootp->pRender, " ", fontColor);
 		tipoText->draw(juegootp->pRender, nullptr, &puntosText->myFont.setRect(50, 120, 850, 190));
-		if (t != NULL && !juegootp->inicioTienda) {
+		if (t != NULL) {
 			if (juegootp->spanish) tipoText->loadFromText(juegootp->pRender, "Elegida -> ", tipoTextColor);
 			else tipoText->loadFromText(juegootp->pRender, "Chosen -> ", tipoTextColor);
 		}
