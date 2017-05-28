@@ -82,7 +82,7 @@ Tienda::Tienda(Game* juego) :Estado(juego)
 	initLibraries();
 
 	font = new Texturas(/*100, 80, 50, 50*/);
-	font->loadFuente("../fonts/fuenteNumbers.ttf", 200);
+	font->loadFuente("../fonts/fuenteNumbers.ttf", 100);
 
 	fontColor.r = 218;
 	fontColor.g = 165;
@@ -137,7 +137,7 @@ void Tienda::draw() {
 		font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(70, 160, 820, 55));
 
 		font->loadFromText(ptsjuego->pRender, std::to_string(ptsjuego->coins), fontColor);
-		font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(45, 45 + 15 * (ptsjuego->coins / 1000), 1100, 30));
+		font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(45, 45 + 15 * (ptsjuego->coins / (ptsjuego->coins/2)), 1100, 30));
 
 		if (ptsjuego->spanish) {
 			actNivelText->loadFromText(ptsjuego->pRender, "Prox Nvl: " + std::to_string(ptsjuego->getNivel()), fontColor);

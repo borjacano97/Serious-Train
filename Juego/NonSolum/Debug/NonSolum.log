@@ -1,11 +1,5 @@
-﻿  Nivel3.cpp
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=': conversión de 'double' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\nivel3.cpp(11): warning C4244: 'argumento': conversión de 'unsigned int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\nivel3.cpp(58): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\nivel3.cpp(59): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\nivel3.cpp(64): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\nivel3.cpp(65): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\nivel3.cpp(68): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\nivel3.cpp(69): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-  NonSolum.vcxproj -> C:\Users\Alejandro\Desktop\Serious-Train\Juego\bin\NonSolumDebug.exe
-  NonSolum.vcxproj -> C:\Users\Alejandro\Desktop\Serious-Train\Juego\bin\NonSolumDebug.pdb (Full PDB)
+﻿  Play.cpp
+c:\users\gonzalo guzmán\universidad\proyecto2\ult-ns\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=': conversión de 'double' a 'float'; posible pérdida de datos
+c:\users\gonzalo guzmán\universidad\proyecto2\ult-ns\serious-train\juego\nonsolum\play.cpp(135): warning C4553: '==': el operador no tiene efecto; ¿ha pensado en '='?
+  NonSolum.vcxproj -> C:\Users\Gonzalo Guzmán\Universidad\PROYECTO2\Ult-ns\Serious-Train\Juego\bin\NonSolumDebug.exe
+  NonSolum.vcxproj -> C:\Users\Gonzalo Guzmán\Universidad\PROYECTO2\Ult-ns\Serious-Train\Juego\bin\NonSolumDebug.pdb (Partial PDB)
