@@ -38,6 +38,7 @@ Nivel4::Nivel4(Game * j, std::vector <Game::Vagon_t> v, Game::Bala_t a) : Play(j
 	spawnRonda = 2300 - (50 * ptsjuego->getNivel());
 
 	if (ptsjuego->getNivel() == 10) enemsNvl = emax - 5;
+	else if (ptsjuego->getNivel() == 11) enemsNvl = emax - 10;
 	else enemsNvl = emax;
 }
 
@@ -84,7 +85,7 @@ void Nivel4::update(Uint32 delta) {
 			}
 		}
 		else {
-			if (enem < enemsNvl + 5) {
+			if (enem < emax) {
 
 				if (spawnTimer >= spawnRonda+500) {
 

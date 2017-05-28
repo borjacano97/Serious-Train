@@ -77,7 +77,7 @@ bool Play::initObjects() { // creaci�n de los objetos dando un puntero, una te
 	TrainHp = new barraHP(ptsjuego, Game::TBarra, 123, 14);
 	tren.emplace_back(new Vagon(ptsjuego, this, 580, -50, Game::Vagon_t::Locom));
 	
-	switch (ptsjuego->getNivel())
+	switch (ptsjuego->getNivel()%15)
 	{
 	case(1) :
 	case(2) :
@@ -93,9 +93,6 @@ bool Play::initObjects() { // creaci�n de los objetos dando un puntero, una te
 	case(7) :
 	case(8) :
 	case(9) :
-		     if (ptsjuego->survival)esc = new Escenario(ptsjuego, Game::Texturas_t::TFondo, 0, -4280);
-		     else  esc = new Escenario(ptsjuego, Game::Texturas_t::TDesierto, 0, -4280);
-		break;
 	case(10) :
 	case(11) :
 	case(12) :
@@ -104,7 +101,7 @@ bool Play::initObjects() { // creaci�n de los objetos dando un puntero, una te
 		break;
 	case(13) :
 	case(14) :
-	case(15) :
+	case(0) :
 			 if (ptsjuego->survival)esc = new Escenario(ptsjuego, Game::Texturas_t::TFondo, 0, -4280);
 			 else  esc = new Escenario(ptsjuego, Game::Texturas_t::TFondo, 0, -4280);
 		break;
