@@ -72,7 +72,6 @@
     <ClCompile Include="BarraHP.cpp" />
     <ClCompile Include="BotonTienda.cpp" />
     <ClCompile Include="Button.cpp" />
-    <ClCompile Include="Controles.cpp" />
     <ClCompile Include="Enemigo.cpp" />
     <ClCompile Include="Error.cpp" />
     <ClCompile Include="Escenario.cpp" />
@@ -89,6 +88,7 @@
     <ClCompile Include="Nivel3.cpp" />
     <ClCompile Include="Nivel4.cpp" />
     <ClCompile Include="Nivel5.cpp" />
+    <ClCompile Include="Nivel6.cpp" />
     <ClCompile Include="Objeto.cpp" />
     <ClCompile Include="ObjetoTienda.cpp" />
     <ClCompile Include="PantallaInicio.cpp" />
@@ -110,7 +110,6 @@
     <ClInclude Include="BarraHP.h" />
     <ClInclude Include="BotonTienda.h" />
     <ClInclude Include="Button.h" />
-    <ClInclude Include="Controles.h" />
     <ClInclude Include="Enemigo.h" />
     <ClInclude Include="Error.h" />
     <ClInclude Include="Escenario.h" />
@@ -126,6 +125,7 @@
     <ClInclude Include="Nivel3.h" />
     <ClInclude Include="Nivel4.h" />
     <ClInclude Include="Nivel5.h" />
+    <ClInclude Include="Nivel6.h" />
     <ClInclude Include="Objeto.h" />
     <ClInclude Include="ObjetoTienda.h" />
     <ClInclude Include="PantallaInicio.h" />

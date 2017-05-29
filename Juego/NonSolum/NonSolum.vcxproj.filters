@@ -129,9 +129,6 @@
     <ClCompile Include="Survival.cpp">
       <Filter>Archivos de código fuente\Niveles</Filter>
     </ClCompile>
-    <ClCompile Include="Controles.cpp">
-      <Filter>Archivos de código fuente\Estados</Filter>
-    </ClCompile>
     <ClCompile Include="Error.cpp">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
@@ -146,6 +143,9 @@
     </ClCompile>
     <ClCompile Include="PantallaInicio.cpp">
       <Filter>Archivos de código fuente\Estados</Filter>
+    </ClCompile>
+    <ClCompile Include="Nivel6.cpp">
+      <Filter>Archivos de código fuente\Niveles</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -242,9 +242,6 @@
     <ClInclude Include="Survival.h">
       <Filter>Archivos de encabezado\Niveles</Filter>
     </ClInclude>
-    <ClInclude Include="Controles.h">
-      <Filter>Archivos de encabezado\Estados</Filter>
-    </ClInclude>
     <ClInclude Include="Error.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
@@ -259,6 +256,9 @@
     </ClInclude>
     <ClInclude Include="PantallaInicio.h">
       <Filter>Archivos de encabezado\Estados</Filter>
+    </ClInclude>
+    <ClInclude Include="Nivel6.h">
+      <Filter>Archivos de encabezado\Niveles</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

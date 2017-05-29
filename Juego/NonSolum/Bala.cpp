@@ -97,7 +97,7 @@ Bala::Bala(Game* juego, Play*pl, float x, float y, int mira, Game::Bala_t b)
 		alto = 20;
 		ancho = 20;
 		vel = 0.5;
-		dmg = 500;
+		dmg = 300;
 		if (!juegootp->survival && (juegootp->getNivel() <= 10) && (juegootp->getNivel() >= 7)) Ttextura = Game::Texturas_t::TBala2;
 		else Ttextura = Game::Texturas_t::TBala;
 		juego->sound->playEffect("../sounds/rifleEffect.mp3", 0, 20, 3);

@@ -283,13 +283,7 @@ bool Game::handle_event() { //eventos del teclado y raton
 			}
 			if (e.key.keysym.sym == SDLK_ESCAPE) {
 				topEstado()->pause();
-			}
-
-			if ((e.key.keysym.sym ==  SDLK_l || e.key.keysym.sym == SDLK_SPACE)) {
-			
-				 topEstado()->dispara(true);
-			}
-			 
+			}			 
 		}
 		else if (e.type == SDL_MOUSEBUTTONDOWN) { // click izquierdo para llamar al onclick
 			if (e.button.state == SDL_BUTTON_LEFT) {

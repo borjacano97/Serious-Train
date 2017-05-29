@@ -6,6 +6,7 @@
 #include "Nivel3.h"
 #include "Nivel4.h"
 #include "Nivel5.h"
+#include "Nivel6.h"
 
 #include "VagonTienda.h"
 #include "ArmaTienda.h"
@@ -234,7 +235,7 @@ void Tienda::jugar(Game * jg) {
 	case(11):
 		jg->pushState(new Nivel4(jg, vagonesNivel, armaNivel));
 		s->stopMusic();
-		s4->playMusic("../sounds/level4.mp3", -1, 34); 
+		s4->playMusic("../sounds/nocheMusic.mp3", -1, 34); 
 		break; 
 	case(12):
 		jg->pushState(new Nivel5(jg, vagonesNivel, armaNivel));
@@ -245,10 +246,12 @@ void Tienda::jugar(Game * jg) {
 	case(14):
 		jg->pushState(new Nivel5(jg, vagonesNivel, armaNivel));
 		s->stopMusic();
-		s4->playMusic("../sounds/level3Music.mp3", -1, 20);
+		s4->playMusic("../sounds/level3Music.mp3", -1, 20); // cambiar musica y ponerla pal siguiente 15
 		break; 		
 	default:
-		// faltan 3 niveles y el ultimisimo
+		jg->pushState(new Nivel6(jg, vagonesNivel, armaNivel));
+		s->stopMusic();
+		s4->playMusic("../sounds/level3Music.mp3", -1, 20);
 		break;
 	}
 	suena = false;

@@ -89,21 +89,7 @@ void Nivel5::update(Uint32 delta) {
 				}
 				spawnTimer = 0;
 			}
-		}
-		else {
-			if (enem < emax) {
-
-				if (spawnTimer >= spawnRonda + 500) {
-
-					if (rand() % 2 == 0) {
-						if (rand() % 2 == 0) enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 280, Game::Enemigo_t::Invisible));
-						else  enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 550) + 280, Game::Enemigo_t::Invisible));
-						enem++;
-					}
-					spawnTimer = 0;
-				}
-			}
-		}
+		}		
 		if (emax == Play::getKilled()) {
 			Play::finish();
 
