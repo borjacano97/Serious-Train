@@ -98,6 +98,35 @@ Hud::Hud(Game* juego, Play* pl, float x, float y, Game::Hud_t t, Game::Fondo_t f
 		alto = 400;
 		ancho = 600;
 		break;
+	case Game::LetrasHist:
+		alto = 500;
+		ancho = 1000;
+		switch (juegootp->getNivel())
+		{
+		case 1:
+			if (juegootp->spanish) Ttextura = Game::Texturas_t::THistEsp1;
+			else Ttextura = Game::Texturas_t::THistEng1;
+			break;
+		case 4:
+			if (juegootp->spanish) Ttextura = Game::Texturas_t::THistEsp2;
+			else Ttextura = Game::Texturas_t::THistEng2;
+			break;
+		case 7:
+			if (juegootp->spanish) Ttextura = Game::Texturas_t::THistEsp3;
+			else Ttextura = Game::Texturas_t::THistEng3;
+			break;
+		case 10:
+			if (juegootp->spanish) Ttextura = Game::Texturas_t::THistEsp4;
+			else Ttextura = Game::Texturas_t::THistEng4;
+			break;
+		case 13:
+			if (juegootp->spanish) Ttextura = Game::Texturas_t::THistEsp5;
+			else Ttextura = Game::Texturas_t::THistEng5;
+			break;
+		default:
+			break;
+		}
+		break;
 	default:
 		break;
 	}	
@@ -120,6 +149,14 @@ void Hud::update(Uint32 delta) {
 			}
 			else cont += delta;
 		}		
+		break;
+	case Game::LetrasHist: 
+
+		if (pos.y >= 200 && cont>=15) {
+			pos.y--;
+			cont = 0;
+		}
+		else cont += delta;
 		break;
 	default:
 		break;

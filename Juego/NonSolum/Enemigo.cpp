@@ -72,7 +72,7 @@ Enemigo::Enemigo(Game* juego, Play* pl, float x, float y, Game::Enemigo_t clase)
 		velVertical = 0.02;
 		break;
 	case Game::Enemigo_t::Boss:
-		Ttextura = Game::Texturas_t::TEnemigo2;
+		Ttextura = Game::Texturas_t::TBoss;
 		hp = 20000;
 		points = 350;
 		vel = 0.08;

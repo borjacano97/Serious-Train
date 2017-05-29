@@ -11,9 +11,11 @@ public:
 	Historia(Game* juego);
 	virtual ~Historia(){}
 	void draw();
+	void update(Uint32 d);
 private:
 	static void jugar(Game * jg);
 	Hud* fondo;
+	Hud* letras;
 	int cont;
 };
 

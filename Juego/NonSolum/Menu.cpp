@@ -75,11 +75,11 @@ void Menu::draw(){
 	font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(100, 350, 800, 200));
 
 	if (ptsjuego->getNivel()<9){
-		if (ptsjuego->spanish) font->loadFromText(ptsjuego->pRender, "(lvl 9)", fontColor);
+		font->loadFromText(ptsjuego->pRender, "(lvl 9)", fontColor);
 		font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(40, 150, 280, 120));
 	}
     if (ptsjuego->getNivel()<15){
-		if (ptsjuego->spanish) font->loadFromText(ptsjuego->pRender, "(lvl 15)", fontColor);
+		font->loadFromText(ptsjuego->pRender, "(lvl 15)", fontColor);
 		font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(40, 150, 180, 230));
 	}
 	Estado::draw();

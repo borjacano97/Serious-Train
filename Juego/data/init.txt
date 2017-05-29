@@ -71,3 +71,14 @@
 ../bmps/historia3.png
 ../bmps/historia4.png
 ../bmps/historia5.png
+../bmps/boss.png
+../bmps/historiaEsp1.png
+../bmps/historiaEsp2.png
+../bmps/historiaEsp3.png
+../bmps/historiaEsp4.png
+../bmps/historiaEsp5.png
+../bmps/historiaEng1.png
+../bmps/historiaEng2.png
+../bmps/historiaEng3.png
+../bmps/historiaEng4.png
+../bmps/historiaEng5.png
