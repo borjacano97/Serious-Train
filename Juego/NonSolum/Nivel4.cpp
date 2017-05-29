@@ -35,7 +35,7 @@ Nivel4::Nivel4(Game * j, std::vector <Game::Vagon_t> v, Game::Bala_t a) : Play(j
 		break;
 	}
 
-	spawnRonda = 2300 - (50 * ptsjuego->getNivel());
+	spawnRonda = 2100 - (50 * ptsjuego->getNivel());
 
 	if (ptsjuego->getNivel() == 10) enemsNvl = emax - 5;
 	else if (ptsjuego->getNivel() == 11) enemsNvl = emax - 10;
@@ -54,7 +54,11 @@ void Nivel4::update(Uint32 delta) {
 		}
 
 		if (enem < enemsNvl) {
-
+			if (!slender && enem >= 15 && (ptsjuego->getNivel() == 11 || ptsjuego->getNivel() == 12)){
+				enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 550) + 80, Game::Enemigo_t::Slender));
+				enem++;
+				slender = true;
+			}
 			if (spawnTimer >= spawnRonda) {
 
 				if (rand() % 2 == 0) {

@@ -16,7 +16,7 @@ Menu::Menu(Game * juego) :Estado(juego)
 	objetos.emplace_back(new Button(ptsjuego, 1050, 630, Game::Boton_t::Spanish, spa));
 	objetos.emplace_back(new Button(ptsjuego, 850, 630, Game::Boton_t::English, eng));
 
-	objetos.emplace_back(new Button(ptsjuego, 850, 430, Game::Boton_t::Desb, desb));
+	//objetos.emplace_back(new Button(ptsjuego, 850, 430, Game::Boton_t::Desb, desb));
 
 
 	fondo = new Hud(ptsjuego, NULL, 0, 0, Game::Hud_t::Fondo, Game::Fondo_t::MenuP);
@@ -24,9 +24,9 @@ Menu::Menu(Game * juego) :Estado(juego)
 	font = new Texturas();
 	font->loadFuente("../fonts/fuenteNumbers.ttf", 200);
 
-	fontColor2.r = 255;
-	fontColor2.g = 255;
-	fontColor2.b = 255;
+	fontColor2.r = 205;
+	fontColor2.g = 205;
+	fontColor2.b = 205;
 
 	ptsjuego->sound->playMusic("../sounds/musicaMenuP.mp3", -1, 6);
 }

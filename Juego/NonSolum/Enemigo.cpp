@@ -58,8 +58,8 @@ Enemigo::Enemigo(Game* juego, Play* pl, float x, float y, Game::Enemigo_t clase)
 		break;
 	case Game::Enemigo_t::Slender:
 		Ttextura = Game::Texturas_t::TSlender;
-		hp = 5000;
-		points = 200;
+		hp = 7000;
+		points = 500;
 		vel = 0.05;
 		velVertical = 0.004;
 		break;

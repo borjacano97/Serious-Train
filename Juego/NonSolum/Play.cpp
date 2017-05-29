@@ -115,8 +115,8 @@ bool Play::initObjects() { // creaci�n de los objetos dando un puntero, una te
 		break;
 	}
 
-	b1 = new Button(ptsjuego, 840, 250, Game::Boton_t::Jugar, reanudar);
-	b2 = new Button(ptsjuego, 840, 550, Game::Boton_t::Volver, salir);	
+	b1 = new Button(ptsjuego, 950, 250, Game::Boton_t::Jugar, reanudar);
+	b2 = new Button(ptsjuego, 950, 550, Game::Boton_t::Volver, salir);	
 	fondoP = new Hud(ptsjuego, NULL, 0, 0, Game::Hud_t::Fondo, Game::Fondo_t::Pause);
 	TTF_Init();
 	
@@ -299,11 +299,11 @@ void Play::draw() {
 		fondoP->draw();
 		if (ptsjuego->spanish) {
 			textTut->loadFromText(ptsjuego->pRender, "PAUSA", fontColor3);
-			textTut->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(100, 350, 350, 60));
+			textTut->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(100, 350, 150, 60));
 		}
 		else {
 			textTut->loadFromText(ptsjuego->pRender, "PAUSE", fontColor3);
-			textTut->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(100, 350, 350, 60));
+			textTut->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(100, 350, 150, 60));
 		}
 		b1->draw();
 		b2->draw();

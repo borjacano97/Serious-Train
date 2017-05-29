@@ -248,7 +248,7 @@ void Tienda::jugar(Game * jg) {
 		s4->playMusic("../sounds/level3Music.mp3", -1, 20);
 		break; 		
 	default:
-		// faltan 2 niveles y el ultimisimo
+		// faltan 3 niveles y el ultimisimo
 		break;
 	}
 	suena = false;

@@ -13,6 +13,7 @@ public:
 private:
 	int  shootTimer, spawnTimer, cadencia, spawnRonda, enemsNvl;
 	bool created = false;
+	bool slender = false;
 	Game::Bala_t arma;
 	bool disparando = false;
 };
