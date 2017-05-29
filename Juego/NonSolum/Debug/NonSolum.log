@@ -1,22 +1,24 @@
-﻿Build started 29/05/2017 18:24:29.
+﻿Build started 29/05/2017 18:39:02.
      1>Project "C:\hlocal\Serious-Train\Juego\NonSolum\NonSolum.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\software\programacion\MSVStudio2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Bala.cpp Nivel6.cpp
-         Nivel6.cpp
+         C:\software\programacion\MSVStudio2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ArmaTienda.cpp Bala.cpp BarraHP.cpp BotonTienda.cpp Button.cpp Enemigo.cpp Escenario.cpp Estado.cpp FinNivel.cpp FinNivelSvl.cpp Game.cpp Historia.cpp Hud.cpp Main.cpp Menu.cpp Nivel1.cpp Nivel2.cpp Nivel3.cpp Nivel4.cpp Nivel5.cpp Nivel6.cpp Objeto.cpp ObjetoTienda.cpp PantallaInicio.cpp Personaje.cpp Play.cpp Selector.cpp Survival.cpp Tienda.cpp Trigger.cpp Vagon.cpp VagonTienda.cpp
+         ArmaTienda.cpp
+     1>c:\hlocal\serious-train\juego\nonsolum\armatienda.cpp(125): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+     1>c:\hlocal\serious-train\juego\nonsolum\armatienda.cpp(126): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+     1>c:\hlocal\serious-train\juego\nonsolum\armatienda.cpp(131): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>c:\hlocal\serious-train\juego\nonsolum\armatienda.cpp(132): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>c:\hlocal\serious-train\juego\nonsolum\armatienda.cpp(134): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>c:\hlocal\serious-train\juego\nonsolum\armatienda.cpp(135): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>c:\hlocal\serious-train\juego\nonsolum\armatienda.cpp(139): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>c:\hlocal\serious-train\juego\nonsolum\armatienda.cpp(140): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+         Generating Code...
+         Compiling...
+         Main.cpp
+         Hud.cpp
      1>c:\hlocal\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\hlocal\serious-train\juego\nonsolum\nivel6.cpp(11): warning C4244: 'argument' : conversion from 'unsigned int' to 'float', possible loss of data
-     1>c:\hlocal\serious-train\juego\nonsolum\nivel6.cpp(60): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\hlocal\serious-train\juego\nonsolum\nivel6.cpp(61): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\hlocal\serious-train\juego\nonsolum\nivel6.cpp(65): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\hlocal\serious-train\juego\nonsolum\nivel6.cpp(66): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\hlocal\serious-train\juego\nonsolum\nivel6.cpp(69): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\hlocal\serious-train\juego\nonsolum\nivel6.cpp(70): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\hlocal\serious-train\juego\nonsolum\nivel6.cpp(78): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\hlocal\serious-train\juego\nonsolum\nivel6.cpp(79): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\hlocal\serious-train\juego\nonsolum\nivel6.cpp(82): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\hlocal\serious-train\juego\nonsolum\nivel6.cpp(83): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\hlocal\serious-train\juego\nonsolum\nivel6.cpp(88): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\hlocal\serious-train\juego\nonsolum\nivel6.cpp(90): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\hlocal\serious-train\juego\nonsolum\hud.cpp(138): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+         Game.cpp
+     1>c:\hlocal\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
          Bala.cpp
      1>c:\hlocal\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
      1>c:\hlocal\serious-train\juego\nonsolum\bala.cpp(18): warning C4305: '=' : truncation from 'double' to 'float'
@@ -25,6 +27,34 @@
      1>c:\hlocal\serious-train\juego\nonsolum\bala.cpp(108): warning C4305: '=' : truncation from 'double' to 'float'
      1>c:\hlocal\serious-train\juego\nonsolum\bala.cpp(178): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
          Generating Code...
+         Skipping... (no relevant changes detected)
+         VagonTienda.cpp
+         Vagon.cpp
+         Trigger.cpp
+         Tienda.cpp
+         Survival.cpp
+         Selector.cpp
+         Play.cpp
+         Personaje.cpp
+         PantallaInicio.cpp
+         ObjetoTienda.cpp
+         Objeto.cpp
+         Nivel6.cpp
+         Nivel5.cpp
+         Nivel4.cpp
+         Nivel3.cpp
+         Nivel2.cpp
+         Nivel1.cpp
+         Menu.cpp
+         Historia.cpp
+         FinNivelSvl.cpp
+         FinNivel.cpp
+         Estado.cpp
+         Escenario.cpp
+         Enemigo.cpp
+         Button.cpp
+         BotonTienda.cpp
+         BarraHP.cpp
        Link:
          C:\software\programacion\MSVStudio2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\hlocal\Serious-Train\Juego\bin\NonSolumDebug.exe" /INCREMENTAL /NOLOGO SDL2.lib SDL2main.lib SDL2_image.lib SDL2_ttf.lib SDL2_mixer.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\hlocal\Serious-Train\Juego\bin\NonSolumDebug.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\hlocal\Serious-Train\Juego\bin\NonSolumDebug.lib" /MACHINE:X86 Debug\ArmaTienda.obj
          Debug\Bala.obj
@@ -67,4 +97,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.98
+Time Elapsed 00:00:02.05
