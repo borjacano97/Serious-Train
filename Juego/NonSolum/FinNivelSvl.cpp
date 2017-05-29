@@ -1,5 +1,6 @@
 #include "FinNivelSvl.h"
 #include "Button.h"
+#include "Menu.h"
 
 
 FinNivelSvl::FinNivelSvl(Game* juego) :Estado(juego)
@@ -19,11 +20,11 @@ FinNivelSvl::FinNivelSvl(Game* juego) :Estado(juego)
 }
 
 void FinNivelSvl::volver(Game * jg) {
+	jg->sound->stopMusic();
 	jg->survival = false;
 	jg->extrem = false;
 
-	jg->sound->stopMusic();
-	jg->popState(); // vuelve al menu
+	jg->changeState(new Menu(jg)); // vuelve al menu
 }
 void FinNivelSvl::draw(){
 	fondo->draw();

@@ -13,6 +13,7 @@
 #include "ArmaTienda.h"
 #include "Hud.h"
 #include "Button.h"
+#include "Menu.h"
 
 using namespace std;
 
@@ -64,14 +65,15 @@ protected:
 
 	static void reanudar(Game * jg) { jg->paused = false; }
 	static void salir(Game * jg){
+		jg->paused = false;
 		if (jg->survival) {
 			jg->sound->stopMusic();
-			jg->sound->playMusic("../sounds/musicaMenuP.mp3", -1, 6);
 			jg->survival = false;
 			jg->extrem = false;
+			jg->changeState(new Menu(jg));
 		}		
-		jg->paused = false;
-		jg->popState(); 
+		
+		else jg->popState(); 
 	}
 
 	Escenario*esc;

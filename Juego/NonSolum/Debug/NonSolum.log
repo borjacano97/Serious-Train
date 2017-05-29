@@ -1,217 +1,109 @@
-﻿  ArmaTienda.cpp
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\armatienda.cpp(125): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\armatienda.cpp(126): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\armatienda.cpp(131): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\armatienda.cpp(132): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\armatienda.cpp(134): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\armatienda.cpp(135): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\armatienda.cpp(139): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\armatienda.cpp(140): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-  Generando código...
-  Compilando...
-  VagonTienda.cpp
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\vagontienda.cpp(110): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\vagontienda.cpp(111): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\vagontienda.cpp(116): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\vagontienda.cpp(118): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\vagontienda.cpp(122): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\vagontienda.cpp(128): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-  Vagon.cpp
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=': conversión de 'double' a 'float'; posible pérdida de datos
-  Trigger.cpp
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\trigger.cpp(25): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-  Tienda.cpp
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=': conversión de 'double' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\tienda.cpp(80): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\tienda.cpp(330): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-  Survival.cpp
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=': conversión de 'double' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\survival.cpp(11): warning C4244: 'argumento': conversión de 'unsigned int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\survival.cpp(12): warning C4244: 'argumento': conversión de 'unsigned int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\survival.cpp(67): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\survival.cpp(69): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\survival.cpp(87): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\survival.cpp(89): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\survival.cpp(105): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\survival.cpp(107): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\survival.cpp(123): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\survival.cpp(125): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\survival.cpp(141): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\survival.cpp(143): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\survival.cpp(159): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\survival.cpp(161): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\survival.cpp(175): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\survival.cpp(176): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\survival.cpp(220): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\survival.cpp(222): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\survival.cpp(244): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\survival.cpp(245): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\survival.cpp(248): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\survival.cpp(249): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\survival.cpp(272): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\survival.cpp(273): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\survival.cpp(276): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\survival.cpp(277): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\survival.cpp(299): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\survival.cpp(300): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\survival.cpp(304): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\survival.cpp(305): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\survival.cpp(308): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\survival.cpp(309): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\survival.cpp(333): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\survival.cpp(334): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\survival.cpp(337): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\survival.cpp(338): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\survival.cpp(343): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\survival.cpp(344): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\survival.cpp(347): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\survival.cpp(348): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\survival.cpp(372): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\survival.cpp(373): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\survival.cpp(376): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\survival.cpp(377): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\survival.cpp(382): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\survival.cpp(383): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\survival.cpp(386): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\survival.cpp(387): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\survival.cpp(417): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\survival.cpp(418): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\survival.cpp(422): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\survival.cpp(423): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\survival.cpp(426): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\survival.cpp(427): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\survival.cpp(433): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\survival.cpp(434): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\survival.cpp(438): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\survival.cpp(439): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\survival.cpp(442): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\survival.cpp(443): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-  Selector.cpp
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\selector.cpp(14): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\selector.cpp(18): warning C4244: '=': conversión de 'Uint32' a 'float'; posible pérdida de datos
-  Play.cpp
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=': conversión de 'double' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\play.cpp(138): warning C4553: '==': el operador no tiene efecto; ¿ha pensado en '='?
-  Personaje.cpp
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\personaje.cpp(23): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\personaje.cpp(24): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-  PantallaInicio.cpp
-  ObjetoTienda.cpp
-  Objeto.cpp
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\objeto.cpp(15): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\objeto.cpp(16): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\objeto.cpp(26): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-  Nivel5.cpp
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=': conversión de 'double' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\nivel5.cpp(11): warning C4244: 'argumento': conversión de 'unsigned int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\nivel5.cpp(58): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\nivel5.cpp(59): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\nivel5.cpp(64): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\nivel5.cpp(65): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\nivel5.cpp(68): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\nivel5.cpp(69): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-  Nivel4.cpp
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=': conversión de 'double' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\nivel4.cpp(11): warning C4244: 'argumento': conversión de 'unsigned int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\nivel4.cpp(62): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\nivel4.cpp(63): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\nivel4.cpp(66): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\nivel4.cpp(67): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\nivel4.cpp(73): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\nivel4.cpp(74): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\nivel4.cpp(78): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\nivel4.cpp(80): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\nivel4.cpp(93): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\nivel4.cpp(94): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-  Nivel3.cpp
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=': conversión de 'double' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\nivel3.cpp(11): warning C4244: 'argumento': conversión de 'unsigned int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\nivel3.cpp(58): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\nivel3.cpp(59): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\nivel3.cpp(64): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\nivel3.cpp(65): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\nivel3.cpp(68): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\nivel3.cpp(69): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-  Nivel2.cpp
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=': conversión de 'double' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\nivel2.cpp(10): warning C4244: 'argumento': conversión de 'unsigned int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\nivel2.cpp(53): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\nivel2.cpp(54): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\nivel2.cpp(58): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\nivel2.cpp(59): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-  Nivel1.cpp
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=': conversión de 'double' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\nivel1.cpp(10): warning C4244: 'argumento': conversión de 'unsigned int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\nivel1.cpp(62): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\nivel1.cpp(64): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-  Menu.cpp
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=': conversión de 'double' a 'float'; posible pérdida de datos
-  Main.cpp
-  Hud.cpp
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=': conversión de 'double' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\hud.cpp(138): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
-  Historia.cpp
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\historia.cpp(30): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-  Generando código...
-  Compilando...
-  Game.cpp
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=': conversión de 'double' a 'float'; posible pérdida de datos
-  FinNivelSvl.cpp
-  FinNivel.cpp
-  Estado.cpp
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=': conversión de 'double' a 'float'; posible pérdida de datos
-  Escenario.cpp
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=': conversión de 'double' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\escenario.cpp(16): warning C4244: '+=': conversión de 'double' a 'float'; posible pérdida de datos
-  Enemigo.cpp
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=': conversión de 'double' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\enemigo.cpp(24): warning C4305: '=': truncamiento de 'double' a 'float'
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\enemigo.cpp(25): warning C4305: '=': truncamiento de 'double' a 'float'
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\enemigo.cpp(34): warning C4305: '=': truncamiento de 'double' a 'float'
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\enemigo.cpp(35): warning C4305: '=': truncamiento de 'double' a 'float'
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\enemigo.cpp(41): warning C4305: '=': truncamiento de 'double' a 'float'
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\enemigo.cpp(42): warning C4305: '=': truncamiento de 'double' a 'float'
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\enemigo.cpp(48): warning C4305: '=': truncamiento de 'double' a 'float'
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\enemigo.cpp(49): warning C4305: '=': truncamiento de 'double' a 'float'
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\enemigo.cpp(55): warning C4305: '=': truncamiento de 'double' a 'float'
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\enemigo.cpp(56): warning C4305: '=': truncamiento de 'double' a 'float'
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\enemigo.cpp(63): warning C4305: '=': truncamiento de 'double' a 'float'
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\enemigo.cpp(64): warning C4305: '=': truncamiento de 'double' a 'float'
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\enemigo.cpp(70): warning C4305: '=': truncamiento de 'double' a 'float'
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\enemigo.cpp(71): warning C4305: '=': truncamiento de 'double' a 'float'
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\enemigo.cpp(77): warning C4305: '=': truncamiento de 'double' a 'float'
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\enemigo.cpp(78): warning C4305: '=': truncamiento de 'double' a 'float'
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\enemigo.cpp(110): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\enemigo.cpp(111): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\enemigo.cpp(123): warning C4305: '=': truncamiento de 'double' a 'float'
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\enemigo.cpp(124): warning C4305: '=': truncamiento de 'double' a 'float'
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\enemigo.cpp(170): warning C4305: '=': truncamiento de 'double' a 'float'
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\enemigo.cpp(176): warning C4305: '=': truncamiento de 'double' a 'float'
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\enemigo.cpp(202): warning C4305: '=': truncamiento de 'double' a 'float'
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\enemigo.cpp(207): warning C4305: '=': truncamiento de 'double' a 'float'
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\enemigo.cpp(215): warning C4305: '=': truncamiento de 'double' a 'float'
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\enemigo.cpp(216): warning C4305: '=': truncamiento de 'double' a 'float'
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\enemigo.cpp(252): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\enemigo.cpp(253): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-  Controles.cpp
-  Button.cpp
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\button.cpp(119): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\button.cpp(120): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\button.cpp(125): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-  BotonTienda.cpp
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\botontienda.cpp(110): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\botontienda.cpp(111): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\botontienda.cpp(115): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\botontienda.cpp(117): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\botontienda.cpp(118): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-  BarraHP.cpp
-  Bala.cpp
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=': conversión de 'double' a 'float'; posible pérdida de datos
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\bala.cpp(18): warning C4305: '=': truncamiento de 'double' a 'float'
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\bala.cpp(24): warning C4305: '=': truncamiento de 'double' a 'float'
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\bala.cpp(90): warning C4305: '=': truncamiento de 'double' a 'float'
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\bala.cpp(108): warning C4305: '=': truncamiento de 'double' a 'float'
-c:\users\alejandro\desktop\serious-train\juego\nonsolum\bala.cpp(178): warning C4244: '+=': conversión de 'double' a 'float'; posible pérdida de datos
-  Generando código...
-  NonSolum.vcxproj -> C:\Users\Alejandro\Desktop\Serious-Train\Juego\bin\NonSolumDebug.exe
-  NonSolum.vcxproj -> C:\Users\Alejandro\Desktop\Serious-Train\Juego\bin\NonSolumDebug.pdb (Full PDB)
+﻿Build started 29/05/2017 16:39:31.
+     1>Project "C:\hlocal\Serious-Train\Juego\NonSolum\NonSolum.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\software\programacion\MSVStudio2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Survival.cpp
+         Survival.cpp
+     1>c:\hlocal\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\hlocal\serious-train\juego\nonsolum\survival.cpp(11): warning C4244: 'argument' : conversion from 'unsigned int' to 'float', possible loss of data
+     1>c:\hlocal\serious-train\juego\nonsolum\survival.cpp(12): warning C4244: 'argument' : conversion from 'unsigned int' to 'float', possible loss of data
+     1>c:\hlocal\serious-train\juego\nonsolum\survival.cpp(67): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\hlocal\serious-train\juego\nonsolum\survival.cpp(69): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\hlocal\serious-train\juego\nonsolum\survival.cpp(87): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\hlocal\serious-train\juego\nonsolum\survival.cpp(89): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\hlocal\serious-train\juego\nonsolum\survival.cpp(105): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\hlocal\serious-train\juego\nonsolum\survival.cpp(107): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\hlocal\serious-train\juego\nonsolum\survival.cpp(123): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\hlocal\serious-train\juego\nonsolum\survival.cpp(125): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\hlocal\serious-train\juego\nonsolum\survival.cpp(141): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\hlocal\serious-train\juego\nonsolum\survival.cpp(143): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\hlocal\serious-train\juego\nonsolum\survival.cpp(159): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\hlocal\serious-train\juego\nonsolum\survival.cpp(161): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\hlocal\serious-train\juego\nonsolum\survival.cpp(175): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\hlocal\serious-train\juego\nonsolum\survival.cpp(176): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\hlocal\serious-train\juego\nonsolum\survival.cpp(220): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\hlocal\serious-train\juego\nonsolum\survival.cpp(222): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\hlocal\serious-train\juego\nonsolum\survival.cpp(244): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\hlocal\serious-train\juego\nonsolum\survival.cpp(245): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\hlocal\serious-train\juego\nonsolum\survival.cpp(248): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\hlocal\serious-train\juego\nonsolum\survival.cpp(249): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\hlocal\serious-train\juego\nonsolum\survival.cpp(272): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\hlocal\serious-train\juego\nonsolum\survival.cpp(273): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\hlocal\serious-train\juego\nonsolum\survival.cpp(276): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\hlocal\serious-train\juego\nonsolum\survival.cpp(277): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\hlocal\serious-train\juego\nonsolum\survival.cpp(299): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\hlocal\serious-train\juego\nonsolum\survival.cpp(300): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\hlocal\serious-train\juego\nonsolum\survival.cpp(304): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\hlocal\serious-train\juego\nonsolum\survival.cpp(305): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\hlocal\serious-train\juego\nonsolum\survival.cpp(308): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\hlocal\serious-train\juego\nonsolum\survival.cpp(309): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\hlocal\serious-train\juego\nonsolum\survival.cpp(333): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\hlocal\serious-train\juego\nonsolum\survival.cpp(334): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\hlocal\serious-train\juego\nonsolum\survival.cpp(337): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\hlocal\serious-train\juego\nonsolum\survival.cpp(338): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\hlocal\serious-train\juego\nonsolum\survival.cpp(343): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\hlocal\serious-train\juego\nonsolum\survival.cpp(344): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\hlocal\serious-train\juego\nonsolum\survival.cpp(347): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\hlocal\serious-train\juego\nonsolum\survival.cpp(348): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\hlocal\serious-train\juego\nonsolum\survival.cpp(372): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\hlocal\serious-train\juego\nonsolum\survival.cpp(373): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\hlocal\serious-train\juego\nonsolum\survival.cpp(376): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\hlocal\serious-train\juego\nonsolum\survival.cpp(377): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\hlocal\serious-train\juego\nonsolum\survival.cpp(382): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\hlocal\serious-train\juego\nonsolum\survival.cpp(383): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\hlocal\serious-train\juego\nonsolum\survival.cpp(386): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\hlocal\serious-train\juego\nonsolum\survival.cpp(387): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\hlocal\serious-train\juego\nonsolum\survival.cpp(417): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\hlocal\serious-train\juego\nonsolum\survival.cpp(418): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\hlocal\serious-train\juego\nonsolum\survival.cpp(422): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\hlocal\serious-train\juego\nonsolum\survival.cpp(423): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\hlocal\serious-train\juego\nonsolum\survival.cpp(426): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\hlocal\serious-train\juego\nonsolum\survival.cpp(427): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\hlocal\serious-train\juego\nonsolum\survival.cpp(433): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\hlocal\serious-train\juego\nonsolum\survival.cpp(434): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\hlocal\serious-train\juego\nonsolum\survival.cpp(438): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\hlocal\serious-train\juego\nonsolum\survival.cpp(439): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\hlocal\serious-train\juego\nonsolum\survival.cpp(442): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\hlocal\serious-train\juego\nonsolum\survival.cpp(443): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+       Link:
+         C:\software\programacion\MSVStudio2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\hlocal\Serious-Train\Juego\bin\NonSolumDebug.exe" /INCREMENTAL /NOLOGO SDL2.lib SDL2main.lib SDL2_image.lib SDL2_ttf.lib SDL2_mixer.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\hlocal\Serious-Train\Juego\bin\NonSolumDebug.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\hlocal\Serious-Train\Juego\bin\NonSolumDebug.lib" /MACHINE:X86 Debug\ArmaTienda.obj
+         Debug\Bala.obj
+         Debug\BarraHP.obj
+         Debug\BotonTienda.obj
+         Debug\Button.obj
+         Debug\Controles.obj
+         Debug\Enemigo.obj
+         Debug\Error.obj
+         Debug\Escenario.obj
+         Debug\Estado.obj
+         Debug\FinNivelSvl.obj
+         Debug\Font.obj
+         Debug\Game.obj
+         Debug\FinNivel.obj
+         Debug\Historia.obj
+         Debug\Main.obj
+         Debug\Menu.obj
+         Debug\Nivel1.obj
+         Debug\Nivel2.obj
+         Debug\Nivel3.obj
+         Debug\Nivel4.obj
+         Debug\Nivel5.obj
+         Debug\Objeto.obj
+         Debug\ObjetoTienda.obj
+         Debug\PantallaInicio.obj
+         Debug\Personaje.obj
+         Debug\Play.obj
+         Debug\Selector.obj
+         Debug\Sound.obj
+         Debug\Survival.obj
+         Debug\Texturas.obj
+         Debug\Hud.obj
+         Debug\Tienda.obj
+         Debug\Trigger.obj
+         Debug\Vagon.obj
+         Debug\VagonTienda.obj
+         NonSolum.vcxproj -> C:\hlocal\Serious-Train\Juego\bin\NonSolumDebug.exe
+     1>Done Building Project "C:\hlocal\Serious-Train\Juego\NonSolum\NonSolum.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.65

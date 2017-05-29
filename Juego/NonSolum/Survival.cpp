@@ -40,10 +40,10 @@ Survival::Survival(Game * j) : Play(j)
 	TTF_Init();
 	textTut = new Texturas();
 	textTut->loadFuente("../fonts/fuenteNumbers.ttf", 200);
+	//ptsjuego->sound->playEffect("../sounds/newRound.mp3", 0, 600, 4);
 }
 void Survival::update(Uint32 delta) {
 	if (!ptsjuego->paused) {
-
 		if (ptsjuego->extrem){
 			shootTimer += delta;
 			spawnTimer += delta;

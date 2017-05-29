@@ -46,9 +46,8 @@ void Menu::survMode(Game * jg) {
 	if (jg->getNivel() >= 9 || jg->desbloquear) {
 		jg->survival = true;
 		jg->sound->stopMusic();
-		jg->pushState(new Survival(jg));
+		jg->changeState(new Survival(jg));
 		jg->sound->playMusic("../sounds/survivalMusic.mp3", -1, 200);
-		jg->sound->playEffect("../sounds/newRound.mp3", 0, 600, 4);
 	}	
 }
 void Menu::extremo(Game * jg) {
@@ -56,9 +55,8 @@ void Menu::extremo(Game * jg) {
 		jg->survival = true;
 		jg->extrem = true;
 		jg->sound->stopMusic();
-		jg->pushState(new Survival(jg));
+		jg->changeState(new Survival(jg));
 		jg->sound->playMusic("../sounds/survivalMusic.mp3", -1, 200);
-		jg->sound->playEffect("../sounds/newRound.mp3", 0, 600, 4);
 	}
 }
 
