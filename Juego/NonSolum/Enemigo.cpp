@@ -39,7 +39,6 @@ Enemigo::Enemigo(Game* juego, Play* pl, float x, float y, Game::Enemigo_t clase)
 		hp = 5000;
 		points = 25;
 		vel = 0.05;
-		//alto *= 1.5;
 		velVertical = 0.02;
 		break;
 	case Game::Enemigo_t::Enano:
@@ -73,12 +72,14 @@ Enemigo::Enemigo(Game* juego, Play* pl, float x, float y, Game::Enemigo_t clase)
 		break;
 	case Game::Enemigo_t::Boss:
 		Ttextura = Game::Texturas_t::TBoss;
-		hp = 20000;
+		hp = 40000;
 		points = 350;
 		vel = 0.08;
 		velVertical = 0.035;
-		alto *= 2.5;
-		//ancho = anchoc / 6;
+		alto *= 2;
+		anchoc *= 2;
+		ancho = anchoc / 6;
+		if (pos.x <= 500) bossIzq = true;
 		break;
 	default:
 		break;
@@ -139,8 +140,11 @@ void Enemigo::update(Uint32 delta) {
 		if (_clase == Game::Enemigo_t::Boss) {
 			if (pos.y >= 550) pos.y = 550;
 			else if (pos.y <= 70) pos.y = 70;
-			
 			if (decidido) {
+				if (bossAtacando && bossIzq && pos.x >= 470) {
+					pos.x = 470;
+					p->TrainHp->damage(Game::Simple);
+				}
 				if (pos.x <= 100) {
 					parado = true;
 					decidido = false;
@@ -157,17 +161,18 @@ void Enemigo::update(Uint32 delta) {
 				else {
 					contBoss = 0;
 					if (p->tg->collision(this)) {
-						if (pos.x > 650) {
-							pos.x += 20;
-							vel = 0.4;
-							parado = false;
-						}
-						else {
-							pos.x -= 20;
-							vel = -0.4;
-							parado = false;
-						}
+						pos.x += 20;
+						vel = 0.4;
+						parado = false;
+						
 					}
+					else if (bossAtacando && bossIzq && pos.x >= 470){
+						pos.x -= 20;
+						vel = -0.4;
+						parado = false;
+						bossAtacando = false;
+					}		
+					
 					else {
 						velVertical *= -1;
 						decidido = false;
@@ -198,14 +203,15 @@ void Enemigo::update(Uint32 delta) {
 							parado = false;
 							break;
 						case 2:
-							if (pos.x < 650) p->balas.emplace_back(new Bala(juegootp, p, pos.x, pos.y + 30, 1 , Game::Bala_t::BalaEnemGorda));
-							else p->balas.emplace_back(new Bala(juegootp, p, pos.x + 25, pos.y + 30, -1, Game::Bala_t::BalaEnemGorda));
+							if (pos.x < 650) p->balas.emplace_back(new Bala(juegootp, p, pos.x, pos.y + 50, 1 , Game::Bala_t::BalaEnemGorda));
+							else p->balas.emplace_back(new Bala(juegootp, p, pos.x + 25, pos.y + 50, -1, Game::Bala_t::BalaEnemGorda));
 							break;
 						default:
-							if (pos.x>745) vel = -0.4;
+							if (pos.x > 745) vel = -0.4;
 							else vel = 0.4;
 							velVertical = 0;
 							parado = false;
+							bossAtacando = true;
 							break;
 						}
 					 }

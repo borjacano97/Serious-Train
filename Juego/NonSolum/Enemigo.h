@@ -34,6 +34,9 @@ private:
 	bool dañado = false;
 	bool explotao = false;
 
+	bool bossAtacando = false;
+	bool bossIzq = false;
+
 	bool decidido = false; // decision boss
 	bool entrar = false;
 	int contBoss = 0;

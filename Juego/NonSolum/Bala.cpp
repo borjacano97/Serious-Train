@@ -19,9 +19,9 @@ Bala::Bala(Game* juego, Play*pl, float x, float y, int mira, Game::Bala_t b)
 		Ttextura = Game::Texturas_t::TRoca;
 		break;
 	case Game::BalaEnemGorda:
-		alto = 70;
-		ancho = 70;
-		vel = 0.5;
+		alto = 55;
+		ancho = 55;
+		vel = 0.4;
 		Ttextura = Game::Texturas_t::TRoca;
 		contBalaBoss = 0;
 		break;
