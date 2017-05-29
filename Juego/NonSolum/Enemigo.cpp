@@ -60,7 +60,7 @@ Enemigo::Enemigo(Game* juego, Play* pl, float x, float y, Game::Enemigo_t clase)
 		Ttextura = Game::Texturas_t::TSlender;
 		hp = 5000;
 		points = 200;
-		vel = 0.01;
+		vel = 0.05;
 		velVertical = 0.004;
 		break;
 	case Game::Enemigo_t::Tocho:
@@ -72,7 +72,7 @@ Enemigo::Enemigo(Game* juego, Play* pl, float x, float y, Game::Enemigo_t clase)
 		break;
 	case Game::Enemigo_t::Boss:
 		Ttextura = Game::Texturas_t::TBoss;
-		hp = 40000;
+		hp = 30000;
 		points = 350;
 		vel = 0.08;
 		velVertical = 0.035;
@@ -92,7 +92,10 @@ Enemigo::Enemigo(Game* juego, Play* pl, float x, float y, Game::Enemigo_t clase)
 
 void Enemigo::update(Uint32 delta) {
 
-
+	if (pos.x <= -50 || pos.x >= 1350) {
+		points = 0;
+		destruido = true;
+	}
 		if (hp <= 0) destruido = true;
 		j += delta;
 		if (!parado) {
@@ -115,10 +118,12 @@ void Enemigo::update(Uint32 delta) {
 			
 			parado = true;
 			disappearTime += delta;
-			if (disappearTime >= 10000) {
-				points = 0;
-				destruido = true;
+			if (disappearTime >= 8000) {
+				parado = false;
+				if (pos.x <= 500)vel = -0.05;
+				else vel = 0.05;
 			}
+			
 		}
 		else if (_clase == Game::Enemigo_t::Tank && p->tg->collision(this)) {
 			points = 0;
@@ -182,7 +187,7 @@ void Enemigo::update(Uint32 delta) {
 			if ( !decidido && (pos.x <= 1100 && pos.x >= 100 || entrar)) {
 				
 				parado = true;
-				if (contBoss < 2000) {
+				if (contBoss < 500) {
 					contBoss +=delta;
 				 }
 				else{

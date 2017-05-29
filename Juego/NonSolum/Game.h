@@ -60,7 +60,7 @@ public:
 	SDL_Window * pWin = nullptr;
 	SDL_Renderer* pRender = nullptr;
 
-	int contRondas = 1;
+	int contRondas = 1; // svl y extrem
 	bool tiendaCreada = false;
 	bool spanish = true;
 	bool survival = false;

@@ -164,6 +164,22 @@ void Survival::update(Uint32 delta) {
 					}
 				}
 				break;
+			case (7):
+				lastEnemy = 2;
+				if (enem < 2 && spawnTimer >= spawn) {
+					if (newRonda) {
+						spawn -= 9000;
+						newRonda = false;
+					}
+					else {
+						 enems.emplace_back(new Enemigo(ptsjuego, this, 0, (rand() % 500) + 230, Game::Enemigo_t::Boss));
+						 enems.emplace_back(new Enemigo(ptsjuego, this, 1300, (rand() % 500) + 230, Game::Enemigo_t::Boss));
+
+						enem+=2;
+						spawnTimer = 0;
+					}
+				}
+				break;
 			default:
 				break;
 			}
@@ -181,7 +197,7 @@ void Survival::update(Uint32 delta) {
 				ptsjuego->contRondas++;
 				spawn += 9000;
 			}
-			if (ptsjuego->contRondas == 7) fin = true;
+			if (ptsjuego->contRondas == 8) fin = true;
 			
 		}
 		else {

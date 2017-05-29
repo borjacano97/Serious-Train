@@ -179,7 +179,7 @@ void Play::draw() {
 	}
 	// control de capa de noche en extrem
 	if (ptsjuego->extrem) {
-		if (contAlpha2 >= 1000 && alphaCont < 255) {
+		if (contAlpha2 >= 1300 && alphaCont < 255) {
 			contAlpha2 = 0;
 			alphaCont++;
 		}
