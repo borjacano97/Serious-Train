@@ -78,6 +78,7 @@ Enemigo::Enemigo(Game* juego, Play* pl, float x, float y, Game::Enemigo_t clase)
 		vel = 0.08;
 		velVertical = 0.035;
 		alto *= 2.5;
+		//ancho = anchoc / 6;
 		break;
 	default:
 		break;

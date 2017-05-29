@@ -30,7 +30,7 @@ Historia::Historia(Game* juego) :Estado(juego)
 	objetos.emplace_back(new Button(ptsjuego, posBotonx, posBotony, Game::Boton_t::Jugar, jugar));
 
 	fondo = new Hud(ptsjuego, NULL, 0, 0, Game::Hud_t::Fondo, Game::Fondo_t::Historia1);
-	letras = new Hud(ptsjuego, NULL, 100, 800, Game::Hud_t::LetrasHist, Game::Fondo_t::Historia1);
+	letras = new Hud(ptsjuego, NULL, 100, 720, Game::Hud_t::LetrasHist, Game::Fondo_t::Historia1);
 }
 
 void Historia::draw() {
