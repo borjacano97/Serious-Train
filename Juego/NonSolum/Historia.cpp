@@ -14,11 +14,11 @@ Historia::Historia(Game* juego) :Estado(juego)
 		posBotonx = 1050;
 		break;
 	case 4:
-	case 10:
+	case 13:
 		posBotony = 600;
 		posBotonx = 1000;
 		break;
-	case 13:
+	case 16:
 		posBotony = 580;
 		posBotonx = 1050;
 		break;

@@ -82,3 +82,5 @@
 ../bmps/historiaEng3.png
 ../bmps/historiaEng4.png
 ../bmps/historiaEng5.png
+../bmps/tramoFinal.png
+../bmps/tramoRoca.png

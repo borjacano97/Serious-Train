@@ -77,7 +77,7 @@ bool Play::initObjects() { // creaci�n de los objetos dando un puntero, una te
 	TrainHp = new barraHP(ptsjuego, Game::TBarra, 123, 14);
 	tren.emplace_back(new Vagon(ptsjuego, this, 580, -50, Game::Vagon_t::Locom));
 	
-	switch (ptsjuego->getNivel()%15)
+	switch (ptsjuego->getNivel()%18)
 	{
 	case(1) :
 	case(2) :
@@ -99,11 +99,17 @@ bool Play::initObjects() { // creaci�n de los objetos dando un puntero, una te
 		     if (ptsjuego->survival)esc = new Escenario(ptsjuego, Game::Texturas_t::TFondo, 0, -4280);
 	         else  esc = new Escenario(ptsjuego, Game::Texturas_t::TDesierto, 0, -4280);
 		break;
-	case(13) :
-	case(14) :
+	case(13):
+	case(14):
+	case(15):
+		     if (ptsjuego->survival)esc = new Escenario(ptsjuego, Game::Texturas_t::TFondo, 0, -4280);
+		     else  esc = new Escenario(ptsjuego, Game::Texturas_t::TTramoRoca, 0, -4280);
+		break;
+	case(16) :
+	case(17) :
 	case(0) :
 			 if (ptsjuego->survival)esc = new Escenario(ptsjuego, Game::Texturas_t::TFondo, 0, -4280);
-			 else  esc = new Escenario(ptsjuego, Game::Texturas_t::TFondo, 0, -4280);
+			 else  esc = new Escenario(ptsjuego, Game::Texturas_t::TTramoFinal, 0, -4280);
 		break;
 	default:
 		break;
@@ -177,8 +183,8 @@ void Play::draw() {
 		font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(40, 90, 300, 53));
 
 	}
-	// control de capa de noche en extrem
-	if (ptsjuego->extrem) {
+	// control de capa de noche en extrem y lvl 13
+	if (ptsjuego->extrem || ptsjuego->getNivel() == 13) {
 		if (contAlpha2 >= 1300 && alphaCont < 255) {
 			contAlpha2 = 0;
 			alphaCont++;
@@ -317,8 +323,8 @@ void Play::update(Uint32 delta) {
 		case 1:
 		case 4:
 		case 7:
-		case 10:
 		case 13:
+		case 16:
 			ptsjuego->pushState(new Historia(ptsjuego));
 			break;
 		default:

@@ -57,7 +57,7 @@ Bala::Bala(Game* juego, Play*pl, float x, float y, int mira, Game::Bala_t b)
 		else Ttextura = Game::Texturas_t::TBala;
 		p->balas.emplace_back(new Bala(juegootp, p, p->player->getPos().x, p->player->getPos().y, p->player->getMira(), Game::Bala_t::E1));
 		p->balas.emplace_back(new Bala(juegootp, p, p->player->getPos().x, p->player->getPos().y, p->player->getMira(), Game::Bala_t::E2));
-		juego->sound->playEffect("../sounds/shotgunEffect.mp3", 0, 20, 3);
+		juego->sound->playEffect("../sounds/shotgunEffect.mp3", 0, 6, 3);
 		break;
 	case Game::E1: // digamos que son balas auxiliares de la escopeta xd
 		alto = 20;

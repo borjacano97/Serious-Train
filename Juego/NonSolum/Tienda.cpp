@@ -192,7 +192,7 @@ void Tienda::jugar(Game * jg) {
 
 	// pero yo creo que si ponemos el juego serio, es mejor que vaya de 5 en 5 pa disfrutar las vistas
 	
-	switch (jg->getNivel()% 15)
+	switch (jg->getNivel()% 18)
 	{		
 	case(1):
 	case(2):	    
@@ -248,7 +248,7 @@ void Tienda::jugar(Game * jg) {
 		s4->playMusic("../sounds/level3Music.mp3", -1, 20);
 		break; 		
 	default:
-		//NIVEL FINAL CON MALO SUPER MALO
+		// faltan 2 niveles y el ultimisimo
 		break;
 	}
 	suena = false;

@@ -126,5 +126,5 @@ void Button::draw() {
 	texto->loadFromText(juegootp->pRender, textB , fontColor);
 
 	if (t == Game::Supervivencia && (!juegootp->desbloquear && juegootp->getNivel() < 9)) osc->draw();
-	else if (t == Game::Extrem && (!juegootp->desbloquear && juegootp->getNivel() < 12)) osc->draw();
+	else if (t == Game::Extrem && (!juegootp->desbloquear && juegootp->getNivel() < 18)) osc->draw();
 }

@@ -68,9 +68,9 @@ Hud::Hud(Game* juego, Play* pl, float x, float y, Game::Hud_t t, Game::Fondo_t f
 				break;
 			case 7:Ttextura = Game::Texturas_t::THistoria3;
 				break;
-			case 10:Ttextura = Game::Texturas_t::THistoria4;
+			case 13:Ttextura = Game::Texturas_t::THistoria4;
 				break;
-			case 13:Ttextura = Game::Texturas_t::THistoria5;
+			case 16:Ttextura = Game::Texturas_t::THistoria5;
 				break;
 			default:
 				break;
@@ -115,11 +115,11 @@ Hud::Hud(Game* juego, Play* pl, float x, float y, Game::Hud_t t, Game::Fondo_t f
 			if (juegootp->spanish) Ttextura = Game::Texturas_t::THistEsp3;
 			else Ttextura = Game::Texturas_t::THistEng3;
 			break;
-		case 10:
+		case 13:
 			if (juegootp->spanish) Ttextura = Game::Texturas_t::THistEsp4;
 			else Ttextura = Game::Texturas_t::THistEng4;
 			break;
-		case 13:
+		case 16:
 			if (juegootp->spanish) Ttextura = Game::Texturas_t::THistEsp5;
 			else Ttextura = Game::Texturas_t::THistEng5;
 			break;
