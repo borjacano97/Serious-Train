@@ -5,7 +5,7 @@ FinNivel::FinNivel(Game* juego, bool v) :Estado(juego)
 {		
 	victory = v;
 	if (v) {
-		if (ptsjuego->getNivel() == 19)	objetos.emplace_back(new Button(ptsjuego, 550, 650, Game::Boton_t::Jugar, jugar));
+		if (ptsjuego->getNivel() == 19)	objetos.emplace_back(new Button(ptsjuego, 1100, 650, Game::Boton_t::CreditosB, cred));
 		else objetos.emplace_back(new Button(ptsjuego, 550, 200, Game::Boton_t::Jugar, jugar));
 	}
 
@@ -28,6 +28,8 @@ FinNivel::FinNivel(Game* juego, bool v) :Estado(juego)
 	}
 	else fondo = new Hud(ptsjuego, NULL, 0, 0, Game::Hud_t::Fondo, Game::Fondo_t::Lose);
 
+
+	letras = new Hud(ptsjuego, NULL, 100, 720, Game::Hud_t::LetrasHist, Game::Fondo_t::History);
 }
 
 void FinNivel::jugar(Game * jg) {
@@ -46,6 +48,8 @@ bool FinNivel::initLibraries() {
 }
 void FinNivel::draw(){
 	fondo->draw();
+
+	if (ptsjuego->getNivel() == 19) letras->draw();
 	for (auto i : objetos) {
 		if (i != nullptr) {
 			i->draw();
@@ -87,4 +91,9 @@ void FinNivel::draw(){
 
 		}
 	}
+}
+
+void FinNivel::update(Uint32 d){
+	if (ptsjuego->getNivel() == 19) letras->update(d);
+	Estado::update(d);
 }

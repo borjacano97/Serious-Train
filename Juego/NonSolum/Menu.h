@@ -3,7 +3,6 @@
 
 #include "Estado.h"
 #include "Sound.h"
-#include "Controles.h"
 #include "Hud.h"
 
 class Menu :

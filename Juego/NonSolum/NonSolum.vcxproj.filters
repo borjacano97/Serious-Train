@@ -147,6 +147,9 @@
     <ClCompile Include="Nivel6.cpp">
       <Filter>Archivos de código fuente\Niveles</Filter>
     </ClCompile>
+    <ClCompile Include="Creditos.cpp">
+      <Filter>Archivos de código fuente\Estados</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Texturas.h">
@@ -259,6 +262,9 @@
     </ClInclude>
     <ClInclude Include="Nivel6.h">
       <Filter>Archivos de encabezado\Niveles</Filter>
+    </ClInclude>
+    <ClInclude Include="Creditos.h">
+      <Filter>Archivos de encabezado\Estados</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -4,6 +4,7 @@
 #include "Estado.h"
 #include "Sound.h"
 #include "Hud.h"
+#include "Creditos.h"
 class FinNivel :
 	public Estado
 {
@@ -13,11 +14,16 @@ public:
 private:
 	
 	static void jugar(Game * jg);
+	static void cred(Game * jg){
+		jg->changeState(new Creditos(jg));
+	}
 	void draw();
+	void update(Uint32 d);
 	bool initLibraries();
 	bool victory;
 
 	Hud* fondo;
+	Hud* letras;
 	Sound* sound;
 	Texturas* font;
 	SDL_Color fontColor;

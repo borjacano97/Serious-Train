@@ -85,3 +85,7 @@
 ../bmps/tramoFinal.png
 ../bmps/tramoRoca.png
 ../bmps/historia6.png
+../bmps/historiaEspFin.png
+../bmps/historiaEngFin.png
+../bmps/creditosEsp.png
+../bmps/creditosEng.png

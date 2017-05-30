@@ -37,7 +37,7 @@ Button::Button(Game* juego,  float x, float y, Game::Boton_t tipo, CallBack_t * 
 		break;
 	case Game::Volver:Ttextura = Game::Texturas_t::TBotonR;
 		break;
-	case Game::Controles:Ttextura = Game::Texturas_t::TBotonA;
+	case Game::CreditosB:Ttextura = Game::Texturas_t::TBotonA;
 		break;
 	case Game::Extrem:
 		Ttextura = Game::Texturas_t::TBotonV;
@@ -98,9 +98,9 @@ void Button::draw() {
 		if (juegootp->spanish) textB = "Volver";
 		else textB = "Back";
 		break;
-	case Game::Controles:
-		if (juegootp->spanish) textB = "Controles";
-		else textB = "Controls";
+	case Game::CreditosB:
+		if (juegootp->spanish) textB = "Creditos";
+		else textB = "Credits";
 		break;
 	case Game::Extrem:
 		if (juegootp->spanish) textB = "Extremo";
