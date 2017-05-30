@@ -46,7 +46,7 @@ Bala::Bala(Game* juego, Play*pl, float x, float y, int mira, Game::Bala_t b)
 		dmg = 5;
 		if (x <= 600) Ttextura = Game::Texturas_t::TFuegoi;
 		else Ttextura = Game::Texturas_t::TFuegod;
-		juego->sound->playEffect("../sounds/flameEffect.mp3", 0, 250, 3);
+		//juego->sound->playEffect("../sounds/flameEffect.mp3", 0, 250, 3); queda fatal xd
 		break;
 	case Game::Escopeta:
 		alto = 20;

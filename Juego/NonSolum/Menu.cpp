@@ -16,7 +16,7 @@ Menu::Menu(Game * juego) :Estado(juego)
 	objetos.emplace_back(new Button(ptsjuego, 1050, 630, Game::Boton_t::Spanish, spa));
 	objetos.emplace_back(new Button(ptsjuego, 850, 630, Game::Boton_t::English, eng));
 
-	//objetos.emplace_back(new Button(ptsjuego, 850, 430, Game::Boton_t::Desb, desb));
+	objetos.emplace_back(new Button(ptsjuego, 850, 430, Game::Boton_t::Desb, desb));
 
 
 	fondo = new Hud(ptsjuego, NULL, 0, 0, Game::Hud_t::Fondo, Game::Fondo_t::MenuP);
@@ -44,6 +44,7 @@ void Menu::jugar(Game * jg) {
 }
 void Menu::survMode(Game * jg) {
 	if (jg->getNivel() >= 9 || jg->desbloquear) {
+		jg->bigHP = false;
 		jg->survival = true;
 		jg->sound->stopMusic();
 		jg->changeState(new Survival(jg));
@@ -52,6 +53,7 @@ void Menu::survMode(Game * jg) {
 }
 void Menu::extremo(Game * jg) {
 	if (jg->getNivel() >= 19 || jg->desbloquear) {
+		jg->bigHP = false;
 		jg->survival = true;
 		jg->extrem = true;
 		jg->sound->stopMusic();

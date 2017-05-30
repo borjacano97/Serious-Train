@@ -16,9 +16,9 @@ public:
 	int getPrecio() { return precio; }
 	void rehacer() { usado = false; }
 	bool bloqueado = true;
+	bool usado = false;
 
 protected:
-	bool usado = false;
 	bool estatico;
 
 	Tienda*t;

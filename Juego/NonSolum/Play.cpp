@@ -183,8 +183,8 @@ void Play::draw() {
 		font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(40, 90, 300, 53));
 
 	}
-	// control de capa de noche en extrem y lvl 13
-	if (ptsjuego->extrem || ptsjuego->getNivel() == 13) {
+	// control de capa de noche en extrem 
+	if (ptsjuego->extrem ) {
 		if (contAlpha2 >= 1300 && alphaCont < 255) {
 			contAlpha2 = 0;
 			alphaCont++;
@@ -193,8 +193,18 @@ void Play::draw() {
 		ptsjuego->texts[43]->setColor(255 - alphaCont);
 		ptsjuego->texts[43]->draw(ptsjuego->pRender, nullptr, nullptr);
 	}
+	// control de capa de noche en nvl 13
+	else if (!ptsjuego->survival && ptsjuego->getNivel() == 13) {
+		if (contAlpha2 >= 600 && alphaCont < 255) {
+			contAlpha2 = 0;
+			alphaCont++;
+		}
+		else contAlpha2 += d;
+		ptsjuego->texts[43]->setColor(255 - alphaCont);
+		ptsjuego->texts[43]->draw(ptsjuego->pRender, nullptr, nullptr);
+	}
 	// control de capa de noche en nvl 10
-	else if (ptsjuego->getNivel() == 10) {
+	else if (!ptsjuego->survival && ptsjuego->getNivel() == 10) {
 		if (contAlpha2 >= 600 && alphaCont < 255) {
 			contAlpha2 = 0;
 			alphaCont++;

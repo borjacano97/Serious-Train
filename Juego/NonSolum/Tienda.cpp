@@ -31,16 +31,16 @@ Tienda::Tienda(Game* juego) :Estado(juego)
 	vags.emplace_back(new VagonTienda(ptsjuego, this, 400, 200, 1000, Game::Vagon_t::Lanzallamas, false));
 	botones.emplace_back(new BotonTienda(ptsjuego, this, vags[1], 400, 340, Game::Boton_t::Comprar));
 
-	vags.emplace_back(new VagonTienda(ptsjuego, this, 600, 200, 1300, Game::Vagon_t::Escudo, false));
+	vags.emplace_back(new VagonTienda(ptsjuego, this, 600, 200, 1500, Game::Vagon_t::Escudo, false));
 	botones.emplace_back(new BotonTienda(ptsjuego, this, vags[2], 600, 340, Game::Boton_t::Comprar));
 	
-	vags.emplace_back(new VagonTienda(ptsjuego, this, 200, 500, 1500, Game::Vagon_t::Succionador, false));
+	vags.emplace_back(new VagonTienda(ptsjuego, this, 200, 500, 1800, Game::Vagon_t::Succionador, false));
 	botones.emplace_back(new BotonTienda(ptsjuego, this, vags[3], 200, 640, Game::Boton_t::Comprar));
 
-	vags.emplace_back(new VagonTienda(ptsjuego, this, 400, 500, 2000, Game::Vagon_t::Recuperador, false));
+	vags.emplace_back(new VagonTienda(ptsjuego, this, 400, 500, 2500, Game::Vagon_t::Recuperador, false));
 	botones.emplace_back(new BotonTienda(ptsjuego, this, vags[4], 400, 640, Game::Boton_t::Comprar));
 
-	vags.emplace_back(new VagonTienda(ptsjuego, this, 600, 500, 2300, Game::Vagon_t::Laser, false));
+	vags.emplace_back(new VagonTienda(ptsjuego, this, 600, 500, 3000, Game::Vagon_t::Laser, false));
 	botones.emplace_back(new BotonTienda(ptsjuego, this, vags[5], 600, 640, Game::Boton_t::Comprar));
 
 	
@@ -56,13 +56,13 @@ Tienda::Tienda(Game* juego) :Estado(juego)
 	armas.emplace_back(new ArmaTienda(ptsjuego, this, 1090, 300, 650, Game::Bala_t::Sniper, false));
 	botones.emplace_back(new BotonTienda(ptsjuego, this, armas[2], 1090, 430, Game::Boton_t::Comprar));
 
-	armas.emplace_back(new ArmaTienda(ptsjuego, this, 830, 500, 1000, Game::Bala_t::Metralleta, false));
+	armas.emplace_back(new ArmaTienda(ptsjuego, this, 830, 500, 1200, Game::Bala_t::Metralleta, false));
 	botones.emplace_back(new BotonTienda(ptsjuego, this, armas[3], 830, 630, Game::Boton_t::Comprar));
 
-	armas.emplace_back(new ArmaTienda(ptsjuego, this, 965, 500, 2500, Game::Bala_t::Minigun, false));
+	armas.emplace_back(new ArmaTienda(ptsjuego, this, 965, 500, 2500, Game::Bala_t::Canon, false));
 	botones.emplace_back(new BotonTienda(ptsjuego, this, armas[4], 965, 630, Game::Boton_t::Comprar));
 
-	armas.emplace_back(new ArmaTienda(ptsjuego, this, 1090, 500, 2500, Game::Bala_t::Canon, false));
+	armas.emplace_back(new ArmaTienda(ptsjuego, this, 1090, 500, 3000, Game::Bala_t::Minigun, false));
 	botones.emplace_back(new BotonTienda(ptsjuego, this, armas[5], 1090, 630, Game::Boton_t::Comprar));
 
 
@@ -104,7 +104,7 @@ Tienda::Tienda(Game* juego) :Estado(juego)
 
 void Tienda::draw() {
 
-
+	if (vags[2]->usado)	ptsjuego->bigHP = true;
 	fondo->draw();
 	for (auto i : vags) {
 		i->draw();
