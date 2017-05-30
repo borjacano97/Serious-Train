@@ -26,7 +26,7 @@ public:
 	    TSlender, TExplosion, TLaserRoto, TEscudoRoto, TFuegoRoto, TAutoRoto, TVagonSuc, TVacioR, TSucR, TRegR, 
 		TCanonN, TBotonOsc, TPausa, TBala2, THistoria1, TFondoIni, TLogo, TSangre, THistoria2, THistoria3, THistoria4, THistoria5, TBoss,
 	    THistEsp1, THistEsp2, THistEsp3, THistEsp4, THistEsp5, THistEng1, THistEng2, THistEng3, THistEng4, THistEng5, TTramoFinal,
-		TTramoRoca, THistoria6, THistoriaEspFin, THistoriaEngFin, TCreditosEsp, TCreditosEng};
+		TTramoRoca, THistoria6, THistoriaEspFin, THistoriaEngFin, TCreditosEsp, TCreditosEng, TFondoCreditos};
 	enum Enemigo_t { Normal, Rapido, Tank, Enano, Invisible, Slender, Tocho, Boss/*...*/ };
 	enum Vagon_t { Locom, Vacio, Automatico, Laser, Lanzallamas, Escudo, Recuperador, Succionador/*...*/ };
 	enum Bala_t { BalaEnem, Piedra, Rayo, Fuego, Escopeta, E1, E2, Pistola, Sniper, Metralleta, Minigun, Canon, BalaEnemGorda/*...*/ };
@@ -96,7 +96,7 @@ private:
 
 	SDL_Event e;
 
-	std::string ntexturas[91]; 
+	std::string ntexturas[92]; 
 	
 
 	bool initSDL(); //ventana de render SDL (pantalla)

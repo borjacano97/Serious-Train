@@ -137,7 +137,7 @@ Hud::Hud(Game* juego, Play* pl, float x, float y, Game::Hud_t t, Game::Fondo_t f
 		if (juegootp->spanish) Ttextura = Game::Texturas_t::TCreditosEsp;
 		else Ttextura = Game::Texturas_t::TCreditosEng;
 		alto = 1280;
-		ancho = 1280;
+		ancho = 800;
 		break;
 	default:
 		break;

@@ -89,3 +89,4 @@
 ../bmps/historiaEngFin.png
 ../bmps/creditosEsp.png
 ../bmps/creditosEng.png
+../bmps/fondoCreditos.png
