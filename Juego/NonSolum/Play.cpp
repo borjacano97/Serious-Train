@@ -210,8 +210,9 @@ void Play::draw() {
 	if (armaActual != nullptr) armaActual->draw(); // quitar comprobación de nullptr si se traslada al modo Historia
 	if (!ptsjuego->survival) {
 		font->loadFromText(ptsjuego->pRender, "$ " + std::to_string(ptsjuego->coins), fontColor);
-		int cosa = 50 + 15 * (ptsjuego->coins / 1000);
-		if (ptsjuego->coins >= 10000) cosa = 50 + 15 * (ptsjuego->coins / 10000);
+		int cosa = 50;
+		if (ptsjuego->coins >= 1000) cosa = 80;
+		if (ptsjuego->coins >= 10000) cosa = 110;
 		if (ptsjuego->bigHP)font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(40, cosa , 150, 46));
 		else font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(40, cosa, 150, 53));
 	}

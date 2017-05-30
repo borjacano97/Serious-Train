@@ -95,7 +95,7 @@ void Nivel6::update(Uint32 delta) {
 			}
 		}		
 		else {		
-			if (!created){
+			if (!created && (ptsjuego->getNivel() == 18)){
 				enems.emplace_back(new Enemigo(ptsjuego, this, 0, 300, Game::Enemigo_t::Boss));
 				enems.emplace_back(new Enemigo(ptsjuego, this, 1300, 300, Game::Enemigo_t::Boss));
 				enem += 2;
@@ -104,7 +104,6 @@ void Nivel6::update(Uint32 delta) {
 		}
 		if (emax == Play::getKilled()) {
 			Play::finish();
-
 		}
 
 		Play::update(delta);

@@ -187,7 +187,7 @@ void Enemigo::update(Uint32 delta) {
 			if ( !decidido && (pos.x <= 1100 && pos.x >= 100 || entrar)) {
 				
 				parado = true;
-				if (contBoss < 500) {
+				if (contBoss < 800) {
 					contBoss +=delta;
 				 }
 				else{

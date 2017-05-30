@@ -4,7 +4,11 @@
 FinNivel::FinNivel(Game* juego, bool v) :Estado(juego)
 {		
 	victory = v;
-	if (v) objetos.emplace_back(new Button(ptsjuego, 550, 200, Game::Boton_t::Jugar, jugar));
+	if (v) {
+		if (ptsjuego->getNivel() == 19)	objetos.emplace_back(new Button(ptsjuego, 550, 650, Game::Boton_t::Jugar, jugar));
+		else objetos.emplace_back(new Button(ptsjuego, 550, 200, Game::Boton_t::Jugar, jugar));
+	}
+
 	else	objetos.emplace_back(new Button(ptsjuego, 550, 580, Game::Boton_t::Volver, jugar));
 
 	initLibraries();
@@ -18,12 +22,12 @@ FinNivel::FinNivel(Game* juego, bool v) :Estado(juego)
 	font->loadFuente("../fonts/fuenteNumbers.ttf", 200);
 
 	fontColor = { 255, 255, 255 };
-	if (v)	fondo = new Hud(ptsjuego, NULL, 0, 0, Game::Hud_t::Fondo, Game::Fondo_t::Win);
+	if (v) {
+		if (ptsjuego->getNivel() == 19) fondo = new Hud(ptsjuego, NULL, 0, 0, Game::Hud_t::Fondo, Game::Fondo_t::History);
+		else fondo = new Hud(ptsjuego, NULL, 0, 0, Game::Hud_t::Fondo, Game::Fondo_t::Win);
+	}
 	else fondo = new Hud(ptsjuego, NULL, 0, 0, Game::Hud_t::Fondo, Game::Fondo_t::Lose);
 
-
-
-	//textoo = juego->chooseText(juego->arrTextSpa);
 }
 
 void FinNivel::jugar(Game * jg) {
@@ -53,34 +57,34 @@ void FinNivel::draw(){
 		font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(90, 450, 90, 30));
 	}
 	else {
-		if (victory){
+		if (victory && ptsjuego->getNivel() != 19){
 			if (ptsjuego->spanish) font->loadFromText(ptsjuego->pRender, "Bien hecho!", fontColor);
 			else font->loadFromText(ptsjuego->pRender, "Well done!", fontColor);
 			font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(90, 250, 90, 30));
 		}
-		else{
+		else if (!victory){
 			if (ptsjuego->spanish) font->loadFromText(ptsjuego->pRender, "Fallaste", fontColor);
 			else font->loadFromText(ptsjuego->pRender, "Game over", fontColor);
 			font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(90, 250, 580, 50));
 		}
 	}
-	
-	if (ptsjuego->spanish){
-		if (!shown){
-			textoo = ptsjuego->chooseText(ptsjuego->arrTextSpa);
-			shown = true;
+	if (ptsjuego->getNivel() != 19 && !ptsjuego->survival) {
+		if (ptsjuego->spanish) {
+			if (!shown) {
+				textoo = ptsjuego->chooseText(ptsjuego->arrTextSpa);
+				shown = true;
+			}
+			font->loadFromText(ptsjuego->pRender, textoo, fontColor);
+			font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(40, 700, 20, 670));
 		}
-		font->loadFromText(ptsjuego->pRender, textoo, fontColor);
-		font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(40, 700, 20, 670));
-	}
-	else{
-		if (!shown){
-			textoo = ptsjuego->chooseText(ptsjuego->arrTextEng);
-			shown = true;
-		}
-		font->loadFromText(ptsjuego->pRender, textoo, fontColor);
-		font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(40, 700, 20, 670));
+		else {
+			if (!shown) {
+				textoo = ptsjuego->chooseText(ptsjuego->arrTextEng);
+				shown = true;
+			}
+			font->loadFromText(ptsjuego->pRender, textoo, fontColor);
+			font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(40, 700, 20, 670));
 
+		}
 	}
-	
 }

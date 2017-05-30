@@ -137,8 +137,10 @@ void Tienda::draw() {
 
 
 	font->loadFromText(ptsjuego->pRender, std::to_string(ptsjuego->coins), fontColor);
-	if (ptsjuego->coins >= 10000)  font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(45, 45 + 15 * (ptsjuego->coins / 10000), 1100, 30));
-	else font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(45, 45 + 15 * (ptsjuego->coins / 1000), 1100, 30));
+	int cosa = 50;
+	if (ptsjuego->coins >= 1000) cosa = 80;
+	if (ptsjuego->coins >= 10000) cosa = 110;
+	font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(45, cosa, 1100, 30));
 
 	if (ptsjuego->spanish) {
 		actNivelText->loadFromText(ptsjuego->pRender, "Prox Nvl: " + std::to_string(ptsjuego->getNivel()), fontColor);
@@ -195,65 +197,57 @@ void Tienda::jugar(Game * jg) {
 	// METEMOS EL ENEMIGO NUEVO POR LO QUE "LLAMAMOS" AL NIVEL SIGUIENTE PERO LA AMBIENTACIÓN NO CAMBIA 
 
 	// pero yo creo que si ponemos el juego serio, es mejor que vaya de 5 en 5 pa disfrutar las vistas
-	
+
+	s->stopMusic();
 	switch (jg->getNivel()% 18)
-	{		
+	{
 	case(1):
 	case(2):	    
 		jg->pushState(new Nivel1(jg, vagonesNivel, armaNivel));	
-		s->stopMusic();
-		jg->sound->playMusic("../sounds/nivelpos.mp3", -1, 17);
-		
+		jg->sound->playMusic("../sounds/nivelpos.mp3", -1, 20);		
 		break; 
-	case(3): 
-		
+	case(3): 		
 		jg->pushState(new Nivel2(jg, vagonesNivel, armaNivel));
-		s->stopMusic();
-		jg->sound->playMusic("../sounds/nivelpos.mp3", -1, 17);
-		
+		jg->sound->playMusic("../sounds/nivelpos.mp3", -1, 20);		
 		break;
 	case(4):
 	case(5):
 		jg->pushState(new Nivel2(jg, vagonesNivel, armaNivel));
-		s->stopMusic();
-		jg->sound->playMusic("../sounds/inGameMusic2.mp3", -1, 17);//otra música
+		jg->sound->playMusic("../sounds/inGameMusic2.mp3", -1, 20);
 		break; 
 	case(6):
 		jg->pushState(new Nivel3(jg, vagonesNivel, armaNivel));
-		s->stopMusic();
-		jg->sound->playMusic("../sounds/inGameMusic2.mp3",- 1, 17);
+		jg->sound->playMusic("../sounds/inGameMusic2.mp3",- 1, 20);
 		break;
 	case(7):
 	case(8):
 		jg->pushState(new Nivel3(jg, vagonesNivel, armaNivel));
-		s->stopMusic();
-		s3->playMusic("../sounds/level4.mp3", -1, 17);
+		s3->playMusic("../sounds/level4.mp3", -1, 20);
 		break; 
 	case(9): 
 		jg->pushState(new Nivel4(jg, vagonesNivel, armaNivel));
-		s->stopMusic();
-		s3->playMusic("../sounds/level4.mp3", -1, 17);
+		s3->playMusic("../sounds/level4.mp3", -1, 20);
 		break;
 	case(10):
 	case(11):
 		jg->pushState(new Nivel4(jg, vagonesNivel, armaNivel));
-		s->stopMusic();
-		s4->playMusic("../sounds/nocheMusic.mp3", -1, 34); 
+		s4->playMusic("../sounds/nocheMusic.mp3", -1, 50); 
 		break; 
 	case(12):
 		jg->pushState(new Nivel5(jg, vagonesNivel, armaNivel));
-		s->stopMusic();
-		s4->playMusic("../sounds/nocheMusic.mp3", -1, 34); 
+		s4->playMusic("../sounds/nocheMusic.mp3", -1, 50); 
 		break;
 	case(13):
 	case(14):
 		jg->pushState(new Nivel5(jg, vagonesNivel, armaNivel));
-		s->stopMusic();
-		s4->playMusic("../sounds/level3Music.mp3", -1, 20); // cambiar musica y ponerla pal siguiente 15
-		break; 		
+		s4->playMusic("../sounds/levelRoca.mp3", -1, 57);
+		break; 
+	case (15):
+		jg->pushState(new Nivel6(jg, vagonesNivel, armaNivel));
+		s4->playMusic("../sounds/levelRoca.mp3", -1, 57);
+		break;
 	default:
 		jg->pushState(new Nivel6(jg, vagonesNivel, armaNivel));
-		s->stopMusic();
 		s4->playMusic("../sounds/level3Music.mp3", -1, 20);
 		break;
 	}

@@ -51,7 +51,7 @@ void Menu::survMode(Game * jg) {
 	}	
 }
 void Menu::extremo(Game * jg) {
-	if (jg->getNivel() >= 18 || jg->desbloquear) {
+	if (jg->getNivel() >= 19 || jg->desbloquear) {
 		jg->survival = true;
 		jg->extrem = true;
 		jg->sound->stopMusic();
@@ -76,8 +76,8 @@ void Menu::draw(){
 		font->loadFromText(ptsjuego->pRender, "(lvl 9)", fontColor);
 		font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(40, 150, 280, 120));
 	}
-    if (ptsjuego->getNivel()<18){
-		font->loadFromText(ptsjuego->pRender, "(lvl 18)", fontColor);
+    if (ptsjuego->getNivel()<19){
+		font->loadFromText(ptsjuego->pRender, "(lvl 19)", fontColor);
 		font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(40, 150, 180, 230));
 	}
 	Estado::draw();
