@@ -12,7 +12,6 @@ public:
 	void draw();
 	void update(Uint32 d);
 private:
-	int cont = 0;
 	int conTiempo = 0;
 	Hud* letras;
 };

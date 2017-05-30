@@ -27,7 +27,6 @@ Menu::Menu(Game * juego) :Estado(juego)
 	fontColor2.r = 205;
 	fontColor2.g = 205;
 	fontColor2.b = 205;
-
 	ptsjuego->sound->playMusic("../sounds/musicaMenuP.mp3", -1, 6);
 }
 
@@ -77,11 +76,11 @@ void Menu::draw(){
 	font->loadFromText(ptsjuego->pRender, "SOLUM", fontColor2);
 	font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(100, 350, 800, 200));
 
-	if (ptsjuego->getNivel()<9){
+	if (ptsjuego->getNivel()<9 || !ptsjuego->desbloquear){
 		font->loadFromText(ptsjuego->pRender, "(lvl 9)", fontColor);
 		font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(40, 150, 280, 120));
 	}
-    if (ptsjuego->getNivel()<19){
+    if (!ptsjuego->desbloquear){
 		font->loadFromText(ptsjuego->pRender, "(lvl 19)", fontColor);
 		font->draw(ptsjuego->pRender, nullptr, &font->myFont.setRect(40, 150, 180, 230));
 	}

@@ -334,6 +334,11 @@ void Tienda::elegirArma(Game::Bala_t a) {
 	armaActual = new ArmaTienda(ptsjuego, this, 1000, 170, 100, a, true);
 }
 void Tienda::update(Uint32 d){ 
+	if (ptsjuego->getNivel() >= 19){
+		ptsjuego->restart();
+		ptsjuego->tiendaCreada = false;
+		ptsjuego->changeState(new Menu(ptsjuego));
+	}
 	if (!suena)	{
 		s->playMusic("../sounds/menuMusic1.mp3", 2, 20);
 		suena = true;

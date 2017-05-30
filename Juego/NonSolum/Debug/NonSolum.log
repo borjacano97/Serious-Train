@@ -1,9 +1,68 @@
-﻿Compilación iniciada a las 30/05/2017 17:13:16.
+﻿Compilación iniciada a las 30/05/2017 17:40:01.
      1>Proyecto "C:\hlocal\Sirius Train\Serious-Train\Juego\NonSolum\NonSolum.vcxproj" en el nodo 2 (Build destinos).
      1>ClCompile:
-         C:\software\programacion\MSVStudio2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Menu.cpp
+         C:\software\programacion\MSVStudio2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ArmaTienda.cpp Bala.cpp BarraHP.cpp BotonTienda.cpp Button.cpp Creditos.cpp Enemigo.cpp Escenario.cpp Estado.cpp FinNivel.cpp FinNivelSvl.cpp Game.cpp Historia.cpp Hud.cpp Main.cpp Menu.cpp Nivel1.cpp Nivel2.cpp Nivel3.cpp Nivel4.cpp Nivel5.cpp Nivel6.cpp Objeto.cpp ObjetoTienda.cpp PantallaInicio.cpp Personaje.cpp Play.cpp Selector.cpp Survival.cpp Tienda.cpp Trigger.cpp Vagon.cpp VagonTienda.cpp
+         Nivel6.cpp
+     1>c:\hlocal\sirius train\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=' : conversión de 'double' a 'float'; posible pérdida de datos
+     1>c:\hlocal\sirius train\serious-train\juego\nonsolum\nivel6.cpp(11): warning C4244: 'argumento' : conversión de 'unsigned int' a 'float'; posible pérdida de datos
+     1>c:\hlocal\sirius train\serious-train\juego\nonsolum\nivel6.cpp(60): warning C4244: 'argumento' : conversión de 'int' a 'float'; posible pérdida de datos
+     1>c:\hlocal\sirius train\serious-train\juego\nonsolum\nivel6.cpp(61): warning C4244: 'argumento' : conversión de 'int' a 'float'; posible pérdida de datos
+     1>c:\hlocal\sirius train\serious-train\juego\nonsolum\nivel6.cpp(65): warning C4244: 'argumento' : conversión de 'int' a 'float'; posible pérdida de datos
+     1>c:\hlocal\sirius train\serious-train\juego\nonsolum\nivel6.cpp(66): warning C4244: 'argumento' : conversión de 'int' a 'float'; posible pérdida de datos
+     1>c:\hlocal\sirius train\serious-train\juego\nonsolum\nivel6.cpp(69): warning C4244: 'argumento' : conversión de 'int' a 'float'; posible pérdida de datos
+     1>c:\hlocal\sirius train\serious-train\juego\nonsolum\nivel6.cpp(70): warning C4244: 'argumento' : conversión de 'int' a 'float'; posible pérdida de datos
+     1>c:\hlocal\sirius train\serious-train\juego\nonsolum\nivel6.cpp(78): warning C4244: 'argumento' : conversión de 'int' a 'float'; posible pérdida de datos
+     1>c:\hlocal\sirius train\serious-train\juego\nonsolum\nivel6.cpp(79): warning C4244: 'argumento' : conversión de 'int' a 'float'; posible pérdida de datos
+     1>c:\hlocal\sirius train\serious-train\juego\nonsolum\nivel6.cpp(82): warning C4244: 'argumento' : conversión de 'int' a 'float'; posible pérdida de datos
+     1>c:\hlocal\sirius train\serious-train\juego\nonsolum\nivel6.cpp(83): warning C4244: 'argumento' : conversión de 'int' a 'float'; posible pérdida de datos
+     1>c:\hlocal\sirius train\serious-train\juego\nonsolum\nivel6.cpp(88): warning C4244: 'argumento' : conversión de 'int' a 'float'; posible pérdida de datos
+     1>c:\hlocal\sirius train\serious-train\juego\nonsolum\nivel6.cpp(90): warning C4244: 'argumento' : conversión de 'int' a 'float'; posible pérdida de datos
          Menu.cpp
      1>c:\hlocal\sirius train\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=' : conversión de 'double' a 'float'; posible pérdida de datos
+         Generando código...
+         Compilando...
+         Main.cpp
+         Hud.cpp
+     1>c:\hlocal\sirius train\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=' : conversión de 'double' a 'float'; posible pérdida de datos
+     1>c:\hlocal\sirius train\serious-train\juego\nonsolum\hud.cpp(150): warning C4244: '=' : conversión de 'int' a 'float'; posible pérdida de datos
+         Game.cpp
+     1>c:\hlocal\sirius train\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=' : conversión de 'double' a 'float'; posible pérdida de datos
+         Bala.cpp
+     1>c:\hlocal\sirius train\serious-train\juego\nonsolum\escenario.h(12): warning C4244: '-=' : conversión de 'double' a 'float'; posible pérdida de datos
+     1>c:\hlocal\sirius train\serious-train\juego\nonsolum\bala.cpp(18): warning C4305: '=' : truncamiento de 'double' a 'float'
+     1>c:\hlocal\sirius train\serious-train\juego\nonsolum\bala.cpp(24): warning C4305: '=' : truncamiento de 'double' a 'float'
+     1>c:\hlocal\sirius train\serious-train\juego\nonsolum\bala.cpp(90): warning C4305: '=' : truncamiento de 'double' a 'float'
+     1>c:\hlocal\sirius train\serious-train\juego\nonsolum\bala.cpp(108): warning C4305: '=' : truncamiento de 'double' a 'float'
+     1>c:\hlocal\sirius train\serious-train\juego\nonsolum\bala.cpp(178): warning C4244: '+=' : conversión de 'double' a 'float'; posible pérdida de datos
+         Generando código...
+         Omitiendo... (no se detectaron cambios relevantes)
+         VagonTienda.cpp
+         Vagon.cpp
+         Trigger.cpp
+         Tienda.cpp
+         Survival.cpp
+         Selector.cpp
+         Play.cpp
+         Personaje.cpp
+         PantallaInicio.cpp
+         ObjetoTienda.cpp
+         Objeto.cpp
+         Nivel5.cpp
+         Nivel4.cpp
+         Nivel3.cpp
+         Nivel2.cpp
+         Nivel1.cpp
+         Historia.cpp
+         FinNivelSvl.cpp
+         FinNivel.cpp
+         Estado.cpp
+         Escenario.cpp
+         Enemigo.cpp
+         Creditos.cpp
+         Button.cpp
+         BotonTienda.cpp
+         BarraHP.cpp
+         ArmaTienda.cpp
        Link:
          C:\software\programacion\MSVStudio2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\hlocal\Sirius Train\Serious-Train\Juego\bin\NonSolumDebug.exe" /INCREMENTAL /NOLOGO SDL2.lib SDL2main.lib SDL2_image.lib SDL2_ttf.lib SDL2_mixer.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\hlocal\Sirius Train\Serious-Train\Juego\bin\NonSolumDebug.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\hlocal\Sirius Train\Serious-Train\Juego\bin\NonSolumDebug.lib" /MACHINE:X86 Debug\ArmaTienda.obj
          Debug\Bala.obj
@@ -47,4 +106,4 @@
 
 Compilación correcta.
 
-Tiempo transcurrido 00:00:00.67
+Tiempo transcurrido 00:00:02.43

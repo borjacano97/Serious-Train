@@ -57,7 +57,11 @@ public:
 	int getNivel() { return nivel;; }
 	void addCoins(int n) { coins += n; }
 	void buy(int n) { coins -= n; }
-
+	void restart(){
+		coins = 0;
+		nivel = 1;
+		desbloquear = true;
+	}
 	SDL_Window * pWin = nullptr;
 	SDL_Renderer* pRender = nullptr;
 

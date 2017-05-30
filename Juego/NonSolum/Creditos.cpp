@@ -1,4 +1,5 @@
 #include "Creditos.h"
+#include "Menu.h"
 
 
 Creditos::Creditos(Game* juego) :Estado(juego)
@@ -10,4 +11,9 @@ void Creditos::draw(){
 }
 void Creditos::update(Uint32 d){
 	letras->update(d);
+	if (conTiempo >= 10000){
+		ptsjuego->popState();
+		//ptsjuego->changeState(new Menu(ptsjuego));
+	}
+	else conTiempo += d;
 }
